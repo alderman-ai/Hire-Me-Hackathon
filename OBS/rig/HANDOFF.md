@@ -37,7 +37,7 @@ Read these too:
 | 12. Dress rehearsal | Not started |
 | 13. Runbook | Drafted in `rig\RUNBOOK.md`. Update it after Task 12. |
 
-All of this work is committed and pushed on the branch `capture-rig`, which is checked out. `main` still has only the first commit, `6bd2f1f`, and merging is Alex's call. `.env`, `.venv`, `models` and `run` are gitignored.
+All of this work is committed, pushed and merged to `main`, which is checked out. `.env`, `.venv`, `models` and `run` are gitignored.
 
 ## The machine right now
 
