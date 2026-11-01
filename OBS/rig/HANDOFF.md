@@ -48,7 +48,7 @@ Read these too:
 | 12. Dress rehearsal | Not started. It now also carries the read-aloud. |
 | 13. Runbook | Drafted in `rig\RUNBOOK.md`. Update it after Task 12. |
 
-Everything through commit `f8dc739` is pushed and on `main`. The Wave:3, preflight, alignment and YouTube sign-in changes are committed on `capture-rig`, which is checked out, and **aren't pushed or merged yet**. `.env`, `client_secret.json`, `.venv`, `models` and `run` are gitignored.
+All of this work is committed, pushed and on `main`, which is checked out. There are no other branches, and all work goes straight on `main`. `.env`, `client_secret.json`, `.venv`, `models` and `run` are gitignored.
 
 ## The machine right now
 

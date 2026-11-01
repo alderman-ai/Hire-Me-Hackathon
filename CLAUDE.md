@@ -3,3 +3,5 @@ This project is called hire me hackaton. It's about 12 hours of total work, reco
 Start with the pre hackathon spec.
 
 The capture rig is mid-build. Read `OBS\rig\HANDOFF.md` first: it says where things stand and what to do next.
+
+All work goes straight on `main`. No separate branches.
