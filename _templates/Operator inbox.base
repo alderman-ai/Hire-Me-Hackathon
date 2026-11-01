@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.inFolder("Operator tasks")
+    - file.ext == "md"
+    - '!file.inFolder("Operator tasks/Archive")'
+    - '!file.inFolder("Operator tasks/_templates")'
+    - or:
+        - note["Intake State"] == "Waiting on operator"
+        - note["Task State"] == "Open"
+properties:
+  file.name:
+    displayName: Item
+  note.Time:
+    displayName: Time
+  note.Cost:
+    displayName: Cost
+  note.Unblocks:
+    displayName: Unblocks
+  file.mtime:
+    displayName: Last changed
+views:
+  - type: table
+    name: Waiting on the operator
+    order:
+      - file.name
+      - Time
+      - Cost
+      - Unblocks
+      - file.mtime
