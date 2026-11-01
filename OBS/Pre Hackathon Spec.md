@@ -1,5 +1,7 @@
 # Hackathon Capture Rig: Executable Spec
 
+> **Changed by DI-1 on 1 Nov 2026.** The "Spec changes from DI-1" section of `rig\RIG_NOTES.md` overrides anything below. It removes timed stops and hotkeys, and adds a webcam file.
+
 ## 1. Goal and context
 
 Build a capture rig on this Windows PC that records all 12 hours of a solo GTM-engineering hackathon in timed sessions. It files each session's video, audio, transcript and markers, so on hackathon day Alex only has to start each session.

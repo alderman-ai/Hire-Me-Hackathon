@@ -4,13 +4,18 @@
 !.env.example
 client_secret*.json
 
-# Capture rig output: transcripts, audio, markers and Claude Code logs
+# Capture rig output: transcripts, audio and Claude Code logs
 OBS/Live/
 OBS/Processed/
+OBS/_test/
+OBS/rig/run/
 
 # Local tool state
 .obsidian/
 .claude/settings.local.json
+
+# Transcription models
+OBS/rig/models/
 
 # Python
 __pycache__/
