@@ -18,7 +18,6 @@ from pathlib import Path
 import obs_client as oc
 
 WEBCAM = "BRIO 4K Stream Edition"
-WEBCAM_MIC = "Mikrofon (BRIO 4K Stream Edition)"
 TEST_DIR = Path(r"D:\OBS Outputs\To process\_load_test")
 REAL_DIR = "D:/OBS Outputs/To process"
 SAMPLE_EVERY = 5
@@ -31,7 +30,7 @@ def webcam_command(folder: Path) -> list[str]:
         str(FFMPEG), "-hide_banner", "-loglevel", "warning", "-nostats",
         "-f", "dshow", "-rtbufsize", "512M", "-vcodec", "mjpeg",
         "-video_size", "1920x1080", "-framerate", "30",
-        "-i", f"video={WEBCAM}:audio={WEBCAM_MIC}",
+        "-i", f"video={WEBCAM}:{oc.mic_dshow()}",
         # The BRIO's MJPEG decodes to 4:2:2, which h264_nvenc refuses, so convert it.
         "-pix_fmt", "nv12",
         "-c:v", "h264_nvenc", "-preset", "p4", "-rc", "vbr", "-cq", "28", "-b:v", "0",

@@ -32,6 +32,8 @@ def launch_controller(folder: str) -> None:
 
 
 def start() -> int:
+    if rs.TEST:
+        print("TEST MODE: this goes to the _test folders, not the real hackathon.")
     if rs.controller_pid():
         record = rs.current_session()
         name = rs.load_json(record)["id"] if record else "A session"

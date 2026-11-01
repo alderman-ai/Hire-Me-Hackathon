@@ -20,7 +20,7 @@ def main() -> int:
         return 1
     flow = InstalledAppFlow.from_client_secrets_file(str(SECRET_FILE), scopes=upload.SCOPES)
     credentials = flow.run_local_server(
-        port=0, prompt="consent", access_type="offline",
+        port=0, prompt="select_account consent", access_type="offline",
         success_message="Signed in. You can close this tab.",
     )
     client = json.loads(SECRET_FILE.read_text(encoding="utf-8"))["installed"]
@@ -29,7 +29,12 @@ def main() -> int:
     oc.write_env_value("YOUTUBE_REFRESH_TOKEN", credentials.refresh_token)
 
     channels = upload.service().channels().list(part="snippet", mine=True).execute()
-    for channel in channels.get("items", []):
+    items = channels.get("items", [])
+    if not items:
+        print("Signed in, but that account has no YouTube channel, so uploads will fail. "
+              "Run this again and pick the account or channel you upload to.")
+        return 1
+    for channel in items:
         print(f"Signed in. Uploads will go to the channel: {channel['snippet']['title']}")
     return 0
 

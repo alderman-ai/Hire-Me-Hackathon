@@ -22,6 +22,7 @@ Build a capture rig on this Windows PC that records all 12 hours of a solo GTM-e
 - Steps marked **\[Human\]** need Alex at the machine. Group them and ask for them together so Alex does as little as possible.
 - Before relying on any OBS, plugin or library behavior, check it against the installed version with `--help`, the docs or a test run. Versions here were current on 1 Nov 2026.
 - If an open question in section 7 blocks a task, use its stated default and log the choice in `rig\RIG_NOTES.md`.
+- Any test that depends on sound uses Alex's real voice through the Wave:3, and says so plainly before it starts. A synthetic voice or a silent recording doesn't pass it.
 
 ## 2. Scope and non-goals
 
@@ -53,7 +54,7 @@ Build a capture rig on this Windows PC that records all 12 hours of a solo GTM-e
 | GPU | NVIDIA RTX 3060 | Record with NVENC. Whether it's the 8 GB or 12 GB card is unknown, and ComfyUI shares that memory. |
 | System RAM | Unknown | Alex expects memory to be tight. Record it in Task 1. |
 | Monitors | 3, but only the main one is recorded | Alex keeps on-camera work on the main monitor. The other two are off camera. Task 4 tests whether a second recorded monitor is worth it. |
-| Microphone | Elgato Wave:3 (USB) | Capture it directly in OBS. No Wave Link or mixing software for Alex to learn. |
+| Microphone | Elgato Wave:3 (USB) | The one mic for every recording: OBS, the ffmpeg backup and the webcam file. Capture it directly, with no Wave Link or mixing software for Alex to learn. ffmpeg opens it by device ID, because its name contains a colon. |
 | Recorder | OBS Studio 33.0 (latest stable, released 23 Oct 2026) | Install with winget or the official installer. Alex never has to open it. |
 | Control | A separate Claude Code session in `C:\Users\alder\Desktop\Hire me hackaton\OBS\rig\` | Project skills in `.claude\skills\<name>\SKILL.md` run as `/<name>`. Setting `disable-model-invocation: true` means only Alex can trigger them. |
 | OBS link | obs-websocket, built into OBS (default port 4455) | Claude Code turns it on and keeps the password in `rig\.env`. |
@@ -249,7 +250,7 @@ The default is the main monitor only. Alex keeps the on-camera work there, and a
 
 ### Task 12: Dress rehearsal
 
-- **\[Human\]** Run one full 60-minute session of realistic work, with ComfyUI running and dictation into Claude Code. Drop at least one marker of each kind.
+- **\[Human\]** Run one full 60-minute session of realistic work, with Comfy Cloud open in Chrome and dictation into Claude Code.
 - **Done when:** every check in section 6 passes.
 
 ### Task 13: Write the runbook (`rig\RUNBOOK.md`)
@@ -262,18 +263,17 @@ The rig is ready for hackathon day when the dress rehearsal (Task 12) passes eve
 
 - [ ] Alex runs every session by typing /start, /pause, /stop and /process in the OBS Claude Code session, and never opens OBS or any audio app.
 - [ ] Closing that Claude Code window mid-session doesn't stop the recording.
-- [ ] The 5-minute warning and the end alert both fire and can be heard over other audio.
-- [ ] Recording stops on time, and the next session waits for /start.
-- [ ] /pause pauses and resumes recording, backup audio and the timer together, and the pause shows in the manifest.
+- [ ] The next session waits for /start.
+- [ ] /pause pauses and resumes recording, backup audio, the webcam and the elapsed count together, and the pause shows in the manifest.
 - [ ] Every video split plays, and text on the main monitor is readable at 100%.
-- [ ] The mic is clean and alone on track 2. The backup FLAC covers the whole session with no gaps.
-- [ ] OBS stats show under 1% dropped or skipped frames with ComfyUI running.
+- [ ] The Wave:3 is clean and alone on track 2, and is also the audio in the backup and the webcam file. The backup FLAC covers the whole session with no gaps.
+- [ ] OBS stats show under 1% dropped or skipped frames with Comfy Cloud open in Chrome.
 - [ ] The crash drill passed: OBS and ffmpeg were each killed and recovered within 30 seconds, with the gap logged.
-- [ ] After /process, the session's `To process\` folder is empty. The video is on YouTube as unlisted with a matching duration, the local copy is in `Uploaded\`, and `Processed\` holds the transcript, audio, Claude Code logs, markers and manifest, plus updated `segments.jsonl`, `index.json` and `index.md`.
+- [ ] After /process, the session's `To process\` folder is empty. The video is on YouTube as unlisted with a matching duration, the local copy is in `Uploaded\`, and `Processed\` holds the transcript, audio, Claude Code logs and manifest, plus updated `segments.jsonl`, `index.json` and `index.md`.
 - [ ] Running /process a second time changes nothing.
-- [ ] For 5 random quotes from the rehearsal, `find-clip` gives a YouTube link that opens within 1 second of the quote, and a padded local clip that holds the whole quote.
-- [ ] A marker's time lands on the matching moment in the video and the transcript, within 2 seconds.
-- [ ] Preflight shows enough free space on D: for 12 hours at the measured bitrate.
+- [ ] For 5 random quotes from the rehearsal, `find-clip` gives a YouTube link that opens within 1 second of the quote, a padded local clip that holds the whole quote, and the matching webcam clip with its audio.
+- [ ] Every webcam file is on D:, isn't uploaded, and shows `aligned: true` in the manifest. Lip sync looks right in one webcam clip.
+- [ ] Preflight shows enough free space on D: for 16 hours of screen and webcam at the measured bitrate plus 20%.
 - [ ] `rig\RUNBOOK.md` exists, fits on one page, and Alex has read it.
 
 ## 7. Open questions

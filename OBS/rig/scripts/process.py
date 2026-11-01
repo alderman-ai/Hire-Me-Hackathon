@@ -36,6 +36,7 @@ PARAGRAPH_GAP = 2.0
 PARAGRAPH_SECONDS = 60.0
 ALIGN_SECONDS = 60
 ALIGN_SEARCH = 15
+ALIGN_TRIM = 3  # The recorders outlast OBS at both ends, so match on the file's middle.
 ALIGN_RATE = 8000
 ALIGN_MIN_SCORE = 0.15
 MIN_GAP_TO_PATCH = 1.0
@@ -298,7 +299,7 @@ class Job:
         report.append(f"- {self.id}: copied {copied} Claude Code logs.")
 
     def webcam(self) -> None:
-        """R28: pin each webcam file to the wall clock using the BRIO's own mic."""
+        """R28: pin each webcam file to the wall clock using its Wave:3 audio."""
         entries = []
         for path in sorted(self.webcam_dir.glob("webcam_*.mkv")):
             found = re.search(r"(\d{8})_(\d{6})", path.name)
@@ -307,9 +308,9 @@ class Job:
             entry = {"name": path.name, "seconds": round(length, 3), "wall_start": named,
                      "aligned": False, "score": 0.0}
             video_at = clock.wall_to_video(self.timeline, named + ALIGN_SEARCH / 3)
-            if video_at is not None and length > 2:
-                sample = min(ALIGN_SECONDS, length)
-                track = pcm(path, 0, sample, "0:a:0")
+            if video_at is not None and length > 2 * ALIGN_TRIM + 2:
+                sample = min(ALIGN_SECONDS, length - 2 * ALIGN_TRIM)
+                track = pcm(path, ALIGN_TRIM, sample, "0:a:0")
                 reference = pcm(self.video, video_at - ALIGN_SEARCH, sample + 2 * ALIGN_SEARCH,
                                 f"0:a:{MIC_TRACK}")
                 if len(track) and len(reference) > len(track):
@@ -320,7 +321,7 @@ class Job:
                         wall = clock.video_to_wall(
                             self.timeline, reference_start + offset / ALIGN_RATE
                         )
-                        entry.update(wall_start=round(wall, 3), aligned=True)
+                        entry.update(wall_start=round(wall - ALIGN_TRIM, 3), aligned=True)
             entries.append(entry)
         self.session["webcam"] = entries
         rough = sum(not e["aligned"] for e in entries)

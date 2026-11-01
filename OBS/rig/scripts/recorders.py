@@ -6,7 +6,6 @@ import obs_client as oc
 
 NO_WINDOW = 0x08000000
 WEBCAM = "BRIO 4K Stream Edition"
-WEBCAM_MIC = "Mikrofon (BRIO 4K Stream Edition)"
 BACKUP_SEGMENT_SECONDS = 300
 WEBCAM_SEGMENT_SECONDS = 900
 
@@ -38,15 +37,16 @@ def start_backup(folder: Path) -> subprocess.Popen:
 def start_webcam(folder: Path, log_path: Path) -> subprocess.Popen:
     """H.264 in MKV segments, so a crash loses at most the tail of one file.
 
-    The BRIO's mic is recorded too, to align this file with the Wave:3 track later.
-    Its MJPEG decodes to 4:2:2, which h264_nvenc refuses, hence nv12.
+    The Wave:3 is the audio here too, the same mic as OBS track 2 and the backup, which
+    also lets /process line this file up against OBS exactly.
+    The BRIO's MJPEG decodes to 4:2:2, which h264_nvenc refuses, hence nv12.
     """
     folder.mkdir(parents=True, exist_ok=True)
     return _spawn(
         [str(oc.FFMPEG), "-hide_banner", "-loglevel", "warning", "-nostats",
          "-f", "dshow", "-rtbufsize", "512M", "-vcodec", "mjpeg",
          "-video_size", "1920x1080", "-framerate", "30",
-         "-i", f"video={WEBCAM}:audio={WEBCAM_MIC}",
+         "-i", f"video={WEBCAM}:{oc.mic_dshow()}",
          "-pix_fmt", "nv12",
          "-c:v", "h264_nvenc", "-preset", "p4", "-rc", "vbr", "-cq", "28", "-b:v", "0",
          "-g", "60", "-c:a", "aac", "-b:a", "96k",

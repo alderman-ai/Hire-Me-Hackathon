@@ -148,7 +148,10 @@ class Controller:
     # Commands
 
     def start(self) -> None:
-        self.ensure_obs()
+        try:
+            self.ensure_obs()
+        except TimeoutError:
+            self.client = None  # Preflight reports this, so /start blocks and says why.
         ok, lines = preflight.run(self.client)
         self.session["preflight"] = lines
         if not ok:

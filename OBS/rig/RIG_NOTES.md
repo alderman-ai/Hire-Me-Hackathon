@@ -120,7 +120,7 @@ Exact ffmpeg dshow names:
 
 | Option | For | Against | Outcome |
 | --- | --- | --- | --- |
-| OBS screen plus ffmpeg webcam | No third-party code inside OBS. An OBS crash doesn't stop the webcam. Same tool as the audio backup. | A third process to watch. Webcam alignment needs the BRIO mic track. | **Chosen and measured** |
+| OBS screen plus ffmpeg webcam | No third-party code inside OBS. An OBS crash doesn't stop the webcam. Same tool as the audio backup. | A third process to watch. Webcam alignment needs an audio track in the file. | **Chosen and measured** |
 | Source Record plugin | One process, one clock | Third-party plugin in OBS 33. An OBS crash takes both recordings. | Not tested |
 | Second monitor | More footage | Alex's work is on the main monitor, and the webcam is already the one extra load | Dropped |
 
@@ -162,8 +162,8 @@ Set up and read back from OBS: `Wave3 mic` on `Mic In (Elgato Wave:3)` on tracks
 - Comparing track 2 with the raw FLAC at the same moment is the reliable way to measure gain. Room noise alone shifts by several dB between samples.
 - `scripts\audio_test.py` reruns the talk test. It adjusts gain only if the first pass is out of range.
 
-- **ffmpeg can't open the Wave:3 by name.** Its dshow input splits on colons and has no escape, so `Wave:3` is always malformed. `obs_client.mic_dshow()` looks up the device's alternative name each time, because that name can change with the USB port.
-- **The BRIO mic reports 44.1 kHz stereo.** The Wave:3 reports stereo too, despite being one mic.
+- **The Wave:3 is the mic on every recording. The colon only changes how ffmpeg addresses it.** ffmpeg's dshow input splits on colons and has no escape, so it can't take `Wave:3` as a name (retested 1 Nov 2026 with `\:`, `\\:` and quotes, all rejected). ffmpeg added alternative device names for exactly this case, so `obs_client.mic_dshow()` looks up the Wave:3's device ID each time, because the ID can change with the USB port. OBS takes the mic through WASAPI, and the colon never touched it.
+- **The Wave:3 reports 44.1 kHz stereo** in dshow, despite being one mic.
 - **FLAC segments carry no stored length.** ffmpeg's segment writer leaves it out, so `ffprobe` reports N/A. They decode normally. Measure them by decoding.
 
 ## Task 6: controller and skills (1 Nov 2026)
@@ -195,7 +195,7 @@ Also fixed: a stuck OBS blocked recovery of the recorders, /stop failed on a dea
 
 `rig.py process` launches `scripts\process.py` detached and returns at once, so a long upload can't tie up the control session. A voice says when it's done, and the report is in `run\live\process_report.md`. This also covers "the upload carries on in the background": uploads drop to 10 MB/s while a session records.
 
-**Model:** `large-v3-turbo`, float16, chosen on a 169-second spoken clip.
+**Model:** `large-v3-turbo`, float16, chosen on a 169-second clip of Windows text-to-speech written straight to a file. It never went through the mic, so these scores say nothing yet about Alex's voice. The rehearsal rechecks this.
 
 | Model | Speed | Word match | VRAM added |
 | --- | --- | --- | --- |
@@ -211,7 +211,7 @@ Also fixed: a stuck OBS blocked recovery of the recorders, /stop failed on a dea
 **Still unproven:**
 
 - Upload and the YouTube duration check, which need the Google sign-in.
-- Webcam alignment on real speech. It needs sound to work with, so silent files fall back to the nearest second.
+- Webcam alignment on real speech. It now works on a quiet room, because the webcam file carries the Wave:3 (see below).
 - Transcript accuracy on Alex's own voice through the whole pipeline.
 
 **Change from R28:** webcam files aren't joined. Each is kept as recorded, with its wall-clock start in the manifest, because a joined file would need its own map for pauses. `find_clip` cuts across files.
@@ -222,13 +222,57 @@ The mic picks up other voices in the room, and they end up in the unlisted video
 
 `scripts\upload.py` and `scripts\youtube_setup.py` are written. Tokens go in `rig\.env`. With the Google app in "testing" mode, the sign-in lasts about 7 days. That covers the hackathon, but later uploads need `youtube_setup.py` run again.
 
+The first two sign-ins reached an account with no YouTube channel. `youtube_setup.py` used to exit 0 and print nothing in that case. It now reports it and exits 1, and it asks Google to show the account picker every time. The third sign-in reached the channel Alex Alderman.
+
+`status.longUploadsStatus` read `eligible` on 1 Nov 2026. Google's docs say the owner must first enable long uploads at youtube.com/verify, and `allowed` is the value that means it's done.
+
 ## Task 10: find_clip (1 Nov 2026)
 
-`scripts\find_clip.py` found 5 of 5 quotes within a second, each with a deliberately wrong word in it. Tested: padded points, a cut clip of 7.40 s for 7.38 s wanted, a webcam clip stitched across two files, the cross-session refusal, and the deleted-video fallback. Links were tested with a fake id, so the real `?t=` link still needs checking after Task 9.
+`scripts\find_clip.py` found 5 of 5 quotes within a second, each with a deliberately wrong word in it. Tested: padded points, a cut clip of 7.40 s for 7.38 s wanted, a webcam clip stitched across two files, the cross-session refusal, and the deleted-video fallback. Links were tested with a fake id, so the real `?t=` link still needs checking after Task 9. The test sessions held only 91 transcribed words, none of them Alex reading, so this pass is thin until the rehearsal repeats it on real speech.
 
 ## Task 11: preflight (1 Nov 2026)
 
-`scripts\preflight.py` checks OBS, the Wave:3, the webcam, D: and C:, and reports VRAM. It passes in every session so far. The two failure cases, websocket off and mic unplugged, aren't tested yet.
+`scripts\preflight.py` checks OBS, the Wave:3, the webcam, D: and C:, and reports VRAM.
+
+| Case | How it was tested | Result |
+| --- | --- | --- |
+| Websocket off | `server_enabled` really off in OBS, then preflight and a real `rig.py start` | Blocked, with `BLOCKED: OBS isn't reachable over the websocket`. No session number used, no folders left. |
+| Wave:3 unplugged | Simulated with a device name that doesn't exist, against a live OBS | Blocked, with `BLOCKED: the Wave:3 isn't connected` |
+| Everything present | Live | Passes |
+
+Reading the code before that test showed `/start` wouldn't reach preflight with the websocket off. `ensure_obs` raised, the controller died, the voice said "The rig controller has failed", and a session number was lost. `Controller.start` now catches that, so preflight reports it.
+
+## Wave:3 on every recording (1 Nov 2026)
+
+Alex's question: why would one video source use a different audio input? It shouldn't. The webcam file took the BRIO's mic only as a sync guide, a choice made for R28 before the colon came up. The file now records the Wave:3, and `find_clip` keeps that audio in webcam clips. It used to cut them with `-an`, so they were silent.
+
+Measured on S05, 43 s with one pause, in a quiet room:
+
+| Check | Result |
+| --- | --- |
+| OBS track 2 against the backup FLAC | 0.999 |
+| Webcam audio against OBS track 2 | 0.905 |
+| Webcam files aligned | 2 of 2, scores 0.897 and 0.874. With the BRIO mic: 0.59 at best, and most files failed. |
+| Position spot checks, independent of the alignment step | 6 of 7 windows landed within 2 ms. The other was a 2-second window on near-silence (score 0.48). The 5, 8 and 10 s windows at that spot landed within 2 ms at 0.945 to 0.996. |
+
+**The cost:** a Wave:3 failure now also stops the webcam until it's back. That's accepted, because losing the Wave:3 is already the worse failure. **Lip sync in the webcam file isn't measured.** Audio can't show it, so Alex checks one clip after the rehearsal.
+
+**Alignment bug fixed.** A webcam file starts just before OBS resumes and ends just after OBS stops, so it's slightly longer than the matching video. That put the right match outside the search range, which is why files after a pause kept failing. Matching now skips `ALIGN_TRIM`, 3 seconds at each end of the file, and subtracts it back from the result. Files of 8 seconds or less stay at nearest-second alignment.
+
+## What the tests actually heard (audit, 1 Nov 2026)
+
+Alex was right that tests needed sound and didn't ask for it.
+
+| Test | It needed | It used |
+| --- | --- | --- |
+| Task 2 Whisper check | Speech | Windows text-to-speech written to a file, never through the mic |
+| Task 8 model choice | Speech | The same, repeated six times |
+| Task 5 talk test | Alex's voice | **Alex's voice, about 45 s, asked for properly.** Peaks with the boost are still calculated, not recorded. |
+| Task 5 desktop audio | A sound on track 3 | A text-to-speech phrase through the speakers |
+| Tasks 6 to 8 trial sessions | Speech for the transcript and webcam alignment | Nothing asked for. S01 and S02 hold 0 words, S03 and S04 hold 91. |
+| Task 10 `find_clip` | Sentences from a real transcript | Those same 91 words |
+
+The rehearsal is the first real test of Alex's voice through the whole chain. Its read-aloud covers every row above except desktop audio.
 
 ## Task 13: runbook
 
@@ -274,7 +318,7 @@ Alex's answers change the spec. Where this section and the spec disagree, this s
 **Webcam (Q1.2, answer C)**
 
 - **R27.** The BRIO records to its own file for each session, on D:, at 1080p30 unless Task 4 shows it needs less.
-- **R28.** The webcam file shares the R20 timeline and gets its own watchdog check. /process joins it and records its offset in the manifest. Recording the BRIO's mic into that file gives an exact way to align it against the mic track.
+- **R28.** The webcam file shares the R20 timeline and gets its own watchdog check. /process records its offset in the manifest. The Wave:3 is recorded into that file, which aligns it exactly against the mic track.
 - **R29.** Webcam video stays local and isn't uploaded. `find-clip --cut` also cuts the matching webcam clip.
 
 ## YouTube check (1 Nov 2026)

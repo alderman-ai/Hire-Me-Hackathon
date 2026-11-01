@@ -234,8 +234,8 @@ def cut_webcam(manifest: dict, match: dict, target: Path) -> str | None:
         subprocess.run(
             [str(oc.FFMPEG), "-hide_banner", "-loglevel", "error", "-y",
              "-ss", f"{offset:.3f}", "-i", str(path), "-t", f"{length:.3f}",
-             "-map", "0:v:0", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-             "-an", str(piece)],
+             "-map", "0:v:0", "-map", "0:a:0", "-c:v", "libx264", "-preset", "veryfast",
+             "-crf", "20", "-c:a", "aac", "-b:a", "192k", str(piece)],
             check=True, creationflags=oc.NO_WINDOW,
         )
         made.append(piece)
