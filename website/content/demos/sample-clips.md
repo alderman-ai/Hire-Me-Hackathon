@@ -28,7 +28,7 @@ A feature quote may sit in the lede, after its first paragraph, as the one above
 The player below loads only when it comes near the screen, starts at second 62 and stops at second 120.
 
 > [!video] qrBNOsSYGrQ 62 120
-> The S02 explainer, from 1:02 to 2:00
+> The S02 explainer, from 1:02 to 2:00 into the video
 
 The caption sits under the player and is also the player's accessible name.
 

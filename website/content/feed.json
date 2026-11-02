@@ -1,9 +1,9 @@
 {
-  "intro": "Everything that happens in the hackathon lands here, newest on top. Every working session is recorded and numbered: S01, S02 and so on. Times are Prague time.",
+  "intro": "Everything that happens in the hackathon lands here, newest on top. Every working session is recorded and numbered: S01, S02 and so on. All times are Prague (CET).",
   "posts": [
     {
       "id": "status",
-      "at": "2026-11-02T19:10",
+      "at": "2026-11-02T18:03",
       "kind": "Status",
       "title": "What's being built today",
       "blocks": [
@@ -117,7 +117,7 @@
         {
           "type": "quote",
           "text": "I just accidentally ended a bunch of sessions, background sessions, they're all working in parallel. I meant to just delete one I didn't need, and turns out if you do that command on the folder, it deletes all of them.",
-          "source": "S05 at 41:31"
+          "source": "Alex, S05, 13:21"
         },
         {
           "type": "highlight",
@@ -130,7 +130,7 @@
             {
               "type": "quote",
               "text": "Hopefully it can spin up all the sessions that were working and just resume, and this is just a 15-minute setback and not an hour-and-a-half setback.",
-              "source": "S05 at 44:24",
+              "source": "Alex, S05, 13:24",
               "note": "It was about seven minutes."
             }
           ]
@@ -151,7 +151,7 @@
         {
           "type": "quote",
           "text": "Mistakes cascade and they just snowball. You really want to take the time to get it right, because time is no longer the bottleneck, because you can have 20 agents running side by side. The bottleneck is focus. The bottleneck is judgment, discernment.",
-          "source": "S04 at 12:55"
+          "source": "Alex, S04, 12:28"
         }
       ]
     },
@@ -174,7 +174,7 @@
         {
           "type": "quote",
           "text": "The progress of learning AI is not the files you have in your computer. It's the clarity of understanding of how all this stuff works … it's clarity. And then the opposite of that is the ability to clearly share that clarity with the assistant.",
-          "source": "S03 at 18:10"
+          "source": "Alex, S03, 11:43"
         }
       ]
     },
@@ -212,7 +212,7 @@
         {
           "type": "quote",
           "text": "I've never done this screen recording before, but good time to start is when you're under pressure and you've got a 12-hour live project to do.",
-          "source": "S01 at 00:08",
+          "source": "Alex, S01, 10:25",
           "href": "https://youtu.be/mbF291oW_yQ?t=3"
         },
         {
@@ -236,7 +236,7 @@
         {
           "type": "quote",
           "text": "Passing off as much as possible to sub-agents so that its context window stays semantically clustered and highly usable, and with strategic forking to make sure that there's no context rot for long-term automated work.",
-          "source": "S03 at 15:39"
+          "source": "Alex, S03, 11:40"
         }
       ]
     },
@@ -254,7 +254,7 @@
         {
           "type": "quote",
           "text": "Then you have the former devs who got into AI from coding … they know how to read code and write code. Turned out that's pretty useful for this kind of stuff … a little bit less required than them or the academics would believe, but still more required than the marketers out there think.",
-          "source": "S03 at 19:47"
+          "source": "Alex, S03, 11:45"
         }
       ]
     },
@@ -272,7 +272,7 @@
         {
           "type": "quote",
           "text": "If you don't get a response for 10 minutes, let's say 15 minutes, assume the operator is AFK. And then you get to make the decision.",
-          "source": "S03 at 23:32"
+          "source": "Alex, S03, 11:48"
         }
       ]
     },
@@ -290,7 +290,7 @@
         {
           "type": "quote",
           "text": "You realize that basically you can just tell it the what and let it figure out the how, but then you let it do that a couple times and realize that it's a lot worse than if you micromanaged it, and then you just kind of get in this weird pendulum.",
-          "source": "S03 at 28:41"
+          "source": "Alex, S03, 11:53"
         }
       ]
     },
@@ -308,7 +308,7 @@
         {
           "type": "quote",
           "text": "If you don't like the way something starts and you get a bad feeling about it … it's almost always worth starting over … this is one of the key decisions. I don't think it's bad enough that I need to start over and I don't think I have time to start over.",
-          "source": "S04 at 20:01"
+          "source": "Alex, S04, 12:35"
         }
       ]
     },
@@ -326,7 +326,7 @@
         {
           "type": "quote",
           "text": "Maybe … when the rig stops we try to … merge everything to main. Well no … never mind, because those don't correlate, because that's just when I'm taking a break or when I need to be away from the computer. That doesn't mean that the assistants are done working.",
-          "source": "S05 at 01:27"
+          "source": "Alex, S05, 12:41"
         }
       ]
     },
@@ -344,7 +344,7 @@
         {
           "type": "quote",
           "text": "Only one question per session should be in the queue because the answer to the previous question might change the next question … we need to make sure that anything that hits the answer desk is still current by the time that I'm interacting with it.",
-          "source": "S05 at 14:48"
+          "source": "Alex, S05, 12:54"
         }
       ]
     },
@@ -362,7 +362,7 @@
         {
           "type": "quote",
           "text": "Make sure that if there's an easy answer, an obvious answer, converged upon answer, we're using it, or if not that we at least know traps and gotchas that we don't fall into. So that when we design the methodology to go from problem to DoD that we have research to guide that process. We're not just using raw training data.",
-          "source": "S05 at 28:27"
+          "source": "Alex, S05, 13:08"
         }
       ]
     },
@@ -390,7 +390,7 @@
               "text": "It isn't in the plan. It watches every session every few minutes, so that when he's lost it can tell him where things stand and where he's the blocker.",
               "quote": {
                 "text": "That's going to be the session where I go to where I'm like, I'm lost, there's a million things happening, keep me updated.",
-                "source": "S07 at 02:07"
+                "source": "Alex, S07, 13:38"
               }
             },
             {
@@ -398,14 +398,14 @@
               "text": "He asks for the agent that reads these recordings and keeps the site updated, started straight away instead of later in the day. That agent wrote this post.",
               "quote": {
                 "text": "Done equals that I just build and work and the website gets additions … I wanted to proactively keep updating the website to show as much as possible to people following along, without me explicitly saying so.",
-                "source": "S07 at 05:04"
+                "source": "Alex, S07, 13:41"
               }
             },
             {
               "lead": "The 13:20 recovery becomes a skill.",
               "quote": {
                 "text": "Whatever you did to make all this working again was perfect. Please go ahead and codify that as a skill, so that if I need to use it again, it's an instant fix.",
-                "source": "S07 at 08:20"
+                "source": "Alex, S07, 13:44"
               }
             },
             {
@@ -421,7 +421,7 @@
         {
           "type": "quote",
           "text": "I am going to start this research. And I'm not going to start anything else until that's done.",
-          "source": "S07 at 33:29"
+          "source": "Alex, S07, 14:09"
         }
       ]
     },
@@ -443,7 +443,7 @@
         {
           "type": "quote",
           "text": "I'm going to definitely turn off recording while I push, pull all the secret keys over, just in case … Do not move any secret keys if the rig is recording an OBS session. Require it to stop first and alert operator.",
-          "source": "S07 at 35:43"
+          "source": "Alex, S07, 14:12"
         }
       ]
     },
@@ -579,7 +579,7 @@
         {
           "type": "quote",
           "text": "A lot of this stuff that's being built are skills or workflows, and so I could do the same thing tomorrow with a new company.",
-          "source": "Alex, S08 at 4:02 (15:11 Prague)"
+          "source": "Alex, S08, 15:11"
         },
         {
           "type": "p",
@@ -645,7 +645,7 @@
               "text": "When an agent hands over to a fresh one, the old one has to go, so there's never any doubt which session is the real one. Orchestration made this a standing rule at 15:22.",
               "quote": {
                 "text": "The only thing that exists are the sessions with the canonical names in the registry we built, and so the process of restarting one is seamless. Like, I should just always see a session there with plenty of context.",
-                "source": "S09 at 03:06"
+                "source": "Alex, S09, 15:20"
               }
             },
             {
@@ -653,7 +653,7 @@
               "text": "Alex sends the website agent and its helpers to rebuild the site in the company's own branding and structure, from its public website. Only what really fits goes in. That's a big job, so the website is left alone to work on it until 16:30.",
               "quote": {
                 "text": "If what we have so far doesn't naturally fit one of their sections, don't try to just create that section just for kicks.",
-                "source": "S09 at 11:27"
+                "source": "Alex, S09, 15:28"
               }
             },
             {
@@ -661,7 +661,7 @@
               "text": "A single line in red above the top menu says this is an unofficial job application, not affiliated with the company.",
               "quote": {
                 "text": "Just have it in red once at the top of the top menu bar, and then everything else normal. That's enough disclaimer.",
-                "source": "S09 at 18:37"
+                "source": "Alex, S09, 15:36"
               }
             }
           ]
@@ -688,7 +688,7 @@
         {
           "type": "quote",
           "text": "That's not something I wanted to delegate. I really want to do that myself, because it has a bunch of secret tokens and API keys.",
-          "source": "S08 at 05:55",
+          "source": "Alex, S08, 15:13",
           "href": "https://youtu.be/MyYnFOQCagc?t=350"
         },
         {
@@ -723,7 +723,7 @@
         {
           "type": "quote",
           "text": "A lot of things I'm really happy to make judgment calls of, like, look, this doesn't need my attention, this can run without me.",
-          "source": "S08 at 04:31",
+          "source": "Alex, S08, 15:12",
           "href": "https://youtu.be/MyYnFOQCagc?t=268"
         }
       ]
@@ -815,7 +815,7 @@
         {
           "type": "quote",
           "text": "I don't really need to micromanage … them talking to each other, really cool, and I need to build whatever comes next off of that.",
-          "source": "Alex, S11 at 2:19 (17:09 Prague)"
+          "source": "Alex, S11, 17:09"
         },
         {
           "type": "video",
@@ -851,7 +851,7 @@
         {
           "type": "quote",
           "text": "There's too much stuff that's like paused on me, and I read through it and it's dumb. So gently halt anything that's not actively working on something serious.",
-          "source": "Alex, S10 at 20:24 (16:44 Prague)"
+          "source": "Alex, S10, 16:44"
         },
         {
           "type": "p",
@@ -885,7 +885,7 @@
         {
           "type": "quote",
           "text": "Please unstuck everything. If things are an easy judgment, please clear the plate for me. We can just make edits later.",
-          "source": "Alex, S10 at 32:21 (16:56 Prague)"
+          "source": "Alex, S10, 16:56"
         },
         {
           "type": "p",
@@ -913,7 +913,7 @@
         {
           "type": "quote",
           "text": "The bottleneck is always, always, always human. It's not the amount of stuff that the agents can focus on, it's humans, and I'm paying the price for jumping in.",
-          "source": "Alex, S10 at 34:04 (16:58 Prague)"
+          "source": "Alex, S10, 16:58"
         },
         {
           "type": "p",
@@ -922,7 +922,7 @@
         {
           "type": "quote",
           "text": "I should have not executed a single thing to like two o'clock. I should have just been writing specifically what I wanted for each thing.",
-          "source": "Alex, S10 at 34:25 (16:58 Prague)"
+          "source": "Alex, S10, 16:58"
         },
         {
           "type": "p",
@@ -931,7 +931,7 @@
         {
           "type": "quote",
           "text": "Humans have like RAM too … there's a human context window … Either you decide you're offloading to the AI, or you have to keep the velocity at a certain amount. You can get a little bit more leverage if you really take the time to write good guiding documents.",
-          "source": "Alex, S11 at 2:45 (17:09 Prague)",
+          "source": "Alex, S11, 17:09",
           "href": "https://youtu.be/iXr-pKhseB8?t=160"
         },
         {
@@ -1015,7 +1015,7 @@
     },
     {
       "id": "d1-live",
-      "at": "2026-11-02T19:05",
+      "at": "2026-11-02T18:02",
       "kind": "Milestone",
       "title": "Imagine if every pitch started with a briefing like this",
       "deliverable": "d1",

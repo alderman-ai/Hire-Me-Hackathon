@@ -1,6 +1,6 @@
 # Handoff: website (S-D8)
 
-Written 2 Nov at about 19:00 Prague by session 54c2d301 (took over at 17:15 from b25f14b0), at forking gate F3 (context about half full). Read CLAUDE.md first, then this file, then **the reset rules at the top of `..\answer-desk\ASKING.md`** (Alex, 17:00), which override older rules. SPEC.md §9 has every decision since 15:00, the last three rows (17:22, 17:40, 18:00) are this session's.
+Written 2 Nov from about 18:00 Prague (updated through 18:25) by session 54c2d301 (took over at 17:15 from b25f14b0), at forking gate F3 (context about half full). Read CLAUDE.md first, then this file, then **the reset rules at the top of `..\answer-desk\ASKING.md`** (Alex, 17:00), which override older rules. SPEC.md §9 has every decision since 15:00, the rows from 17:19 on are this session's. Check the clock (`date`) before writing any time: this session stamped some by estimate and had to correct them.
 
 ## The rules in one screen
 

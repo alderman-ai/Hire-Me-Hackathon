@@ -195,7 +195,7 @@ function isStatus(post: Post) {
   return post.id === "status" || post.blocks.some((b) => b.type === "status-board");
 }
 
-// The meta line: kind, Prague time, session and the demo it belongs to.
+// The meta line: kind, time of day (Prague, from `at`), session and the demo it belongs to.
 function PostMeta({ post, linkDemo, latest }: { post: Post; linkDemo: boolean; latest?: boolean }) {
   const demo = linkDemo && post.deliverable ? findDemo(post.deliverable) : undefined;
   return (

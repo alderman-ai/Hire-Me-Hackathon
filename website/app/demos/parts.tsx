@@ -100,7 +100,7 @@ export function MadeBox({ made, what }: { made: Made; what: string }) {
         ))}
       </ol>
       <p className="entry-made-details">
-        Dictated {formatDate(d)}, {t} Prague time · {made.pipeline}
+        Dictated {formatDate(d)}, {t} (Prague) · {made.pipeline}
         {made.rig_session && (
           <>
             {" · Filmed in session "}

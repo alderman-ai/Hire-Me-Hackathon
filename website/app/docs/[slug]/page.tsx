@@ -70,7 +70,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
             <h1 className="art-h1">{doc.title}</h1>
           )}
           <p className="art-hero-lead">
-            {doc.label}, shared from the project&rsquo;s working files as of {docsIndex.synced} Prague time. A few
+            {doc.label}, shared from the project&rsquo;s working files as of {docsIndex.synced} (Prague). A few
             private details are redacted.
           </p>
         </Reveal>

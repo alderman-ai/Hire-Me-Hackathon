@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "19:10",
-  "as_of_line": "As of 19:10 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "18:03",
+  "as_of_line": "As of 18:03 (Prague), 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Fourteen pieces of work (one since retired), run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come the demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -44,7 +44,7 @@
       "n": 1,
       "demo": "Scraping and research on the Apify API",
       "what": "Scraping and researching prospects at scale on the Apify API. It goes first, because other demos use what it finds.",
-      "status": "Live since 19:05: the briefing, with the four research boards in a carousel."
+      "status": "Live since 18:02: the briefing, with the four research boards in a carousel."
     },
     {
       "n": 2,
@@ -110,11 +110,11 @@
   "quotes": {
     "after_how_it_runs": {
       "text": "Think of it like the expensive movie actor. They fly him out to the scene, they shoot all of his scenes first, even if it's not in chronological order of the movie, because his time is the most expensive.",
-      "source": "Alex, S03 at 11:11 (11:36 Prague), on why everything that needs him is done first"
+      "source": "Alex, S03, 11:36, on why everything that needs him is done first"
     },
     "after_demos": {
       "text": "Without being prompted, it should see all this stuff being built and say, okay, these are the deliverables. Let's find a way to put the deliverables on the website so people kind of know what to expect.",
-      "source": "Alex, S04 at 08:23 (12:24 Prague), describing the legibility analyzer"
+      "source": "Alex, S04, 12:24, describing the legibility analyzer"
     }
   }
 }
