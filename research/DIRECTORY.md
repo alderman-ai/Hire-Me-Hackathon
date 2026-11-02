@@ -10,13 +10,60 @@ Storage (S1-Q5, Alex: "Just store it locally"): every report lives in `research\
 | --- | --- | --- | --- |
 | [L-01 parent](lists/L-01-parent.md) | every wave-2 spec | done 15:05: 7 reports and the synthesis; on every reader's reading list (S2 change C07) | OT-01, Alex, 14:38 |
 | [L-02 scraping](lists/L-02-scraping.md) | (S-D1 declined) | parked: Alex runs the scraping himself | — |
-| [L-03 blog](lists/L-03-blog.md) | S-D5 (S-D4 retired) | all 10 reports accepted in `research\global\L-03-*.md`; synthesis running since 17:14 (after the 16:47 to 17:13 reset) | OT-04, changes applied (`Operator tasks\Archive\Approve - research for the blog pipeline.md`) |
+| [L-03 blog](lists/L-03-blog.md) | S-D5 (S-D4 retired) | done 17:21: 10 reports and the synthesis | OT-04, changes applied (`Operator tasks\Archive\Approve - research for the blog pipeline.md`) |
 | [L-04 GetSales](lists/L-04-getsales.md), [L-06 website](lists/L-06-website.md) | S-D3; S-D8 | withdrawn 17:03: OT-03 withdrawn unticked on Alex's instruction (research is done); neither list runs. `Operator tasks\Archive\Approve - research for the GetSales demo and website.md` | — |
 | [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | done 16:47: 7 reports and the synthesis | OT-09, ticked with changes, 16:29 (`Operator tasks\Archive\Approve - Canva and LinkedIn demo research.md`) |
 
 ## Parent level
 
 Research that two or more specs need, or that shapes the whole project. L-01, L-03 and L-05 are here, in `research\global\`. Every recommendation in these reports is an option for Alex, not a decision. **Start with the synthesis.**
+
+### L-03 synthesis (the two blog articles) · [global/L-03-synthesis.md](global/L-03-synthesis.md)
+- **Strongest findings:** (1) In both articles, the claim the evidence supports least is the one that pays Alex: "no such thing as an AI workflow product" with external building at the top of the slider (R6), and "GTM engineers keep the whole team growing" (R7). That's where a self-interested argument loses readers (W3). One fix serves both: the narrower claim the evidence backs, plus a concession against his own interest said aloud (when a company should hire nobody). (2) The copywriting skill Alex's rule requires is the likeliest thing to make the posts generic (R5, R1); measure a "his words" share against the cleaned transcript to catch flattening, and treat a low share as the trigger for the humanizer skill in the morning. (3) One preview card is being built in three places (post cover, the site's link-preview image, S-D5's mockup); every sub-page currently unfurls as the homepage (W2's live check), so the blog-template build asks for full per-post preview tags and reuses S-D5's measured text budgets.
+- **Corrections it makes:** W1 and W2 are out of date where S-D4's files already did the work (prompts 3 to 6 name a skill; POST-FORMAT §5 asks for a per-post preview image). Still standing: §5 doesn't spell out the post's own URL and title in the tags, and the dictations-folder watch stopped with S-D4.
+- **Has:** five lines for tonight; convergences, insights, conflicts ruled; recommendations for S-D5, tagged; 2 questions that need Alex (do the posts reach the six through anything of his; an optional one-minute LinkedIn Post Inspector check) and 13 calls S-D5 makes itself, each with a default.
+- **Governs:** the S-D5 methodology; DoD-14, DoD-15. **Read this when** preparing a dictation, drafting either article, choosing the skill, or building the post page and its preview card.
+- **Caveats:** written for S-D5 only (S-D4 retired 16:48); inherits every report's caveats, above all R7's "snippet only" figures.
+
+### L-03-R1 Transcript to draft · [global/L-03-R1-transcript-to-draft.md](global/L-03-R1-transcript-to-draft.md)
+- **Verdicts:** staged is converged, now for traceability rather than raw quality (3 to 7 stages). The best guard against a generic draft is reusing Alex's own spoken words, not imitating his style (models imitate informal blog styles poorly; polishing flattens style by 21-50%), plus a no-new-facts rule, an AI-tells list and a cleanup pass that doesn't rewrite. "The last 10%" is his decisions: the specific example, title and opening, confirming each claim, the closing ask; no study measures the share.
+- **Governs:** DoD-14, DoD-15. **Read this when** drafting from a transcript. **Caveats:** mostly vendor and practitioner evidence; no controlled one-pass vs staged study.
+
+### L-03-R2 The Claude design app · [global/L-03-R2-claude-design.md](global/L-03-R2-claude-design.md)
+- **Verdicts:** a post template built into the site is simpler and the only repeatable route; Claude Design fits at most as a one-off design pass. Vercel's import puts one HTML file on a separate protected deployment with a short-lived link and token; it can't run from a file. The site already renders Markdown at /docs/[slug], so /blog/[slug] is close to a copy.
+- **Governs:** DoD-14. **Read this when** deciding where the post page is designed. **Caveats:** no hands-on Claude Design test; Vercel's docs and live tool description disagree.
+
+### L-03-R3 Capture · [global/L-03-R3-capture.md](global/L-03-R3-capture.md)
+- **Verdicts:** 15 minutes fits Wispr Flow's 20-minute cap; the risk is losing the text (one paste after up to 5 minutes; window switching can block it; no crash recovery), so dictate in 2-3 pieces. Light cleanup is safe, Medium rewords. The rig transcript is raw (38% of words in unpunctuated lines in S09; product names mangled) and exists only after /stop then /process. Cleanup: one pass with a glossary file, every fix logged, unclear stretches marked for Alex.
+- **Governs:** DoD-14. **Read this when** setting up a dictation or the cleanup stage. **Caveats:** no side-by-side on one dictation; no independent long-form accuracy figure.
+
+### L-03-R4 What a finished B2B post looks like · [global/L-03-R4-finished-b2b-post.md](global/L-03-R4-finished-b2b-post.md)
+- **Verdicts:** S-D4's POST-FORMAT v1 already meets most of the converged answer (point first, argument-carrying headings, 900-1,400 words, byline, a how-it-was-made note that Google's guidance backs). Gaps: a link-preview image, pull quotes read twice by screen readers, no diagram block (article 1 is a vertical scale), key-points box off by default. Ends with an 8-block smallest template.
+- **Governs:** DoD-14, DoD-15. **Read this when** building the post page. **Caveats:** length and visuals figures are vendor surveys, correlation only.
+
+### L-03-R5 The best skill to write blogs with · [global/L-03-R5-blog-writing-skill.md](global/L-03-R5-blog-writing-skill.md)
+- **Verdicts:** no agreed "best blog skill"; none is built for transcript to post. Anthropic's marketing plugin is already on in every session but is generic and invites made-up statistics. Best-supported for keeping Alex's voice: blader/humanizer (MIT), an editor; the report gives exact turn-on commands for four options. Stage prompts must name the skill or a subagent may not load it.
+- **Governs:** DoD-14, DoD-15; Alex's copywriting-skill rule. **Read this when** choosing or turning on a writing skill. **Caveats:** no skill tested on a real transcript; popularity is GitHub stars.
+
+### L-03-R6 Research base, article 1 · [global/L-03-R6-article-1-base.md](global/L-03-R6-article-1-base.md)
+- **Verdicts:** "models always change" is strongly backed by providers' own retirement schedules (Anthropic's 2024-25 API models lasted about 12-22 months; OpenAI retired its Assistants API and Agent Builder in 2026). Weakest on "no such thing as a product": outcome-priced AI products exist, and most enterprise AI was bought in 2025 (investor data). The slider only partly fits McKinsey's and MIT CISR's frameworks; the EU AI Act's Article 4 literacy duty was softened on 27 Jul 2026.
+- **Governs:** DoD-15. **Read this when** preparing article 1's dictation. **Caveats:** no independent cost figure for maintaining a workflow; several primary pages unopened; facts only, no copy.
+
+### L-03-R7 Research base, article 2 · [global/L-03-R7-article-2-base.md](global/L-03-R7-article-2-base.md)
+- **Verdicts:** the promise and the practice split (AI the most-cited reason for announced US cuts in 2026, yet over 90% of executives in NBER's survey report no headcount change). The revenue side mostly backs Alex (McKinsey, PwC), against MIT's finding that measured returns so far came from back-office cuts. Weakest link: no independent study backs "GTM engineers keep the whole team growing"; vendors often sell GTM engineering as an SDR replacement.
+- **Governs:** DoD-15. **Read this when** preparing article 2's dictation. **Caveats:** several key figures are "snippet only" and must be checked against originals before publishing; layoff data stops at August; no EU or Czech data.
+
+### L-03-W1 Wildcard, can it be executed? · [global/L-03-W1-wildcard-executed.md](global/L-03-W1-wildcard-executed.md)
+- **Question it picked:** can two articles still come from Alex's dictations today, and what is the least he must do? **Verdicts:** two finished and live before 18:00 couldn't be done; the two dictations (about 34 minutes of his time) can, with drafting overnight. Parts are out of date: S-D4's prompts already named a skill and its dictations folder was watched (S-D4, 16:48).
+- **Governs:** DoD-14, DoD-15. **Read this when** scheduling the dictations. **Caveats:** written before the 16:47 reset and S-D4's retirement; the 18:00 cut-off no longer applies.
+
+### L-03-W2 Wildcard, can it be delivered? · [global/L-03-W2-wildcard-delivered.md](global/L-03-W2-wildcard-delivered.md)
+- **Question it picked:** what does a shared post link show before the click, and does anything carry a post to the six? **Verdicts:** as built, every sub-page previews as the homepage (checked live at 16:38); fix with per-page preview tags and a per-post card image drawn from the cover text on a fixed background (Alex's Apify method). LinkedIn caches a preview for about a week, so tags must be right before any link is shared. Nothing takes a post to the six; direct links decide it.
+- **Governs:** DoD-15, DoD-19, DoD-22. **Read this when** building post pages or sharing a post link. **Caveats:** LinkedIn Post Inspector not run (needs Alex's login).
+
+### L-03-W3 Wildcard, will it be received? · [global/L-03-W3-wildcard-received.md](global/L-03-W3-wildcard-received.md)
+- **Question it picked:** will Addvery's leaders read article 1 as insight or as a pitch for hiring Alex? **Verdicts:** on a hire-me site it reads as a pitch whatever he does; what raises credibility is stating the strongest objection fairly and answering it, and conceding against his own interest. These must be dictation prompts, since the drafting adds no claim he didn't say. A sceptical cold read before his last 10% is worth it.
+- **Governs:** DoD-15. **Read this when** preparing either dictation or placing the ask. **Caveats:** no study of this exact case; several sources read at abstract level.
 
 ### L-05 synthesis (Canva templates, LinkedIn posts, Canva video) · [global/L-05-synthesis.md](global/L-05-synthesis.md)
 - **Strongest findings:** (1) The Canva connector can't be today's route for the import or the locks: it can't lock elements or upload fonts, and imports only from a public URL, while the templates are local files held until sign-off (R2, W1). Alex by hand off camera, or the import as the 17:15 scene, after a 2-minute test import of the smallest template. (2) "Anyone can fill them in" isn't true as built: ordinary-design locks are guard rails anyone with edit rights can undo, Brand Templates can't leave a team, and custom fonts and brand kits don't carry to another account. Addvery's people get pictures unless a private template link goes in the hand-over (R3, W2). Canva-library stand-in fonts are right on three grounds. (3) The posts' scores measure rule-following, not whether a post sounds like Addvery: show them rule by rule and treat Alex's sign-off as the real check (R4, overriding W3's guess).
@@ -117,7 +164,7 @@ No reports yet.
 | Every wave-2 spec | L-01 synthesis first (its own section plus the questions that name it), then the reports below |
 | S-D1 Scraping demo | L-01: R1, R3 (what scraped data may show), R2, W3 |
 | S-D3 GetSales outbound | L-01: R3 (notice, opt-out, LinkedIn account risk), W2 (alert link, preview, click timing), W3 (AI-written opening lines), R1 (the clip), R2, R4. L-04 when it runs |
-| S-D4 Blog pipeline, S-D5 Three articles | L-01: R1, W3, R2. L-03 when it runs |
+| S-D5 Blog articles (two now; S-D4 retired) | L-03 synthesis first, then R6 and R7 (each article's base), W3, R1, R5, R3, R4, W2, R2, W1. L-05 R1 (the card method for the visuals). L-01: R1, W3, R2 |
 | S-D6 Canva templates, S-D7 LinkedIn content, S-D10 Canva video | L-05 synthesis first, then: S-D6 R1, R2, R3, W1, W2; S-D7 R4, W3; S-D10 R2, R3, W1, W2. L-01: R1 (AI labels), W3, R2 (Canva matched no GTM post) |
 | S-D8 Website | L-01: all seven, above all R3 section 7, R4, W2 (preview card, hand-over checklist C7), R1. L-06 when it runs |
 | S-D9 Legibility analyser | L-01: R1, R3 (what never to post), W3, W1 |
