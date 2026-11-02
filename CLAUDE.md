@@ -17,6 +17,8 @@ The root session is the parent session, named `orchestration`. It coordinates an
 
 This session watches their context like every other session's.
 
+**Since 19:58: the course change** (Alex, after the crash). Only six sessions run: this one, the three sub-orchestrators, `website` and `rig`. Every other session is paused (`SESSIONS.md`, "Paused"). Design and copy happen only with Alex attending, one item at a time, from the finish list in the root `STATUS.md`. With `watcher` paused, this session commits and pushes. Canva is off for every session (`orchestration\canva_guard.py`, `orchestration\CANVA-ON`). The context watch skips paused sessions.
+
 It is also the S2 project orchestrator: there is no separate S2 session (DI-4, 2 Nov). It stays at the root, runs `orchestration\SPEC.md` itself once S0 is done, and keeps its own file tree in `orchestration\`. Root files that only this session uses live in `orchestration\`: `_templates\` moved to `orchestration\_templates\` (S0-Q1, 13:43). `website\`, `OBS\` and every other working folder stay where they are.
 
 Reading list for this session as S2, after the charter: `answer-desk\qa\S2.md`, `orchestration\SPEC.md`, `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md` (Alex's S2 preflight answers, verbatim), `orchestration\HANDOFF.md` if it exists, then the newest records in `orchestration\changes\`. Two background sessions own the work:

@@ -1,5 +1,18 @@
 # Website session
 
+## Read first: the course change (2 Nov, 19:58, Alex)
+
+At 19:4x the PC crashed: about 20 Canva editor tabs plus the OBS recording maxed out the CPU and GPU. Alex changed course:
+
+- **Attended work only.** "We're getting to the point where we're doing a lot of unattended graphic design, which, in my experience, is just not a real thing. Same thing with unattended copywriting." Design and copy happen only with Alex in the loop. The rest is finished one item at a time, not in parallel.
+- **Six sessions run:** `orchestration` (master: sessions, context, roster, charter, and commit and push now that `watcher` is paused), `orch-site-map`, `orch-alex-prep`, `orch-briefing`, `website` and `rig`. Every other session is paused (`..\SESSIONS.md`, "Paused"). Don't message them; they won't answer. Their folders' files are still there, and you may edit them for the item you're on. Commit path-limited, with that folder's prefix.
+- **Read `..\STATUS.md` first.** It's the index of every folder and the finish list, in order. Each folder has its own `STATUS.md`: what's made, what it was for, what's left for Alex, and where it fits.
+- **Keep the PC light.** One build at a time. No fan-out of heavy work (builds, video, browsers). Graphical work mostly runs with OBS off.
+- **Canva is off for every session.** The MCP connectors are disabled, and a hook (`..\orchestration\canva_guard.py`) blocks Chrome from opening canva.com. Alex switches it on for one folder at a time (`..\orchestration\CANVA-ON`).
+- **Doc comments reach nobody now,** because the sessions that made the Docs are paused. When Alex says he's done with a Doc, read it through the Claude Docs connector and carry his edits into the repo.
+- **Your part now:** build requests come from `orchestration`, `orch-alex-prep` and `orch-site-map`, not from the paused spec sessions. First fix `HANDOFF.md`'s deploy steps, which leave out /about's images and text (`STATUS.md` has the details). Following them as written breaks /about. The clock loop was restarted by `orchestration` at 20:02 (pid 28388): check it's alive, and take the rig's clock lines again.
+
+
 This session owns the website, and nothing else. Every change to the site goes through here. Every spec asks for site work with `BUILD <spec id>-B<n>` (SPEC.md §7).
 
 - **Not my job:** the capture rig (`..\OBS\rig`), its skills, and its handoff. Don't edit anything under `..\OBS`. Reading rig output for the site is fine.

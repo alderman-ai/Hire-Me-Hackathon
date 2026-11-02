@@ -1,5 +1,18 @@
 # orch-site-map: the site's map and structure
 
+## Read first: the course change (2 Nov, 19:58, Alex)
+
+At 19:4x the PC crashed: about 20 Canva editor tabs plus the OBS recording maxed out the CPU and GPU. Alex changed course:
+
+- **Attended work only.** "We're getting to the point where we're doing a lot of unattended graphic design, which, in my experience, is just not a real thing. Same thing with unattended copywriting." Design and copy happen only with Alex in the loop. The rest is finished one item at a time, not in parallel.
+- **Six sessions run:** `orchestration` (master: sessions, context, roster, charter, and commit and push now that `watcher` is paused), `orch-site-map`, `orch-alex-prep`, `orch-briefing`, `website` and `rig`. Every other session is paused (`..\SESSIONS.md`, "Paused"). Don't message them; they won't answer. Their folders' files are still there, and you may edit them for the item you're on. Commit path-limited, with that folder's prefix.
+- **Read `..\STATUS.md` first.** It's the index of every folder and the finish list, in order. Each folder has its own `STATUS.md`: what's made, what it was for, what's left for Alex, and where it fits.
+- **Keep the PC light.** One build at a time. No fan-out of heavy work (builds, video, browsers). Graphical work mostly runs with OBS off.
+- **Canva is off for every session.** The MCP connectors are disabled, and a hook (`..\orchestration\canva_guard.py`) blocks Chrome from opening canva.com. Alex switches it on for one folder at a time (`..\orchestration\CANVA-ON`).
+- **Doc comments reach nobody now,** because the sessions that made the Docs are paused. When Alex says he's done with a Doc, read it through the Claude Docs connector and carry his edits into the repo.
+- **Your part now:** first, bring the scope map in line with the live site. It's frozen at 19:02, and it says /about and /demos are missing, though both are live. Then settle with Alex where the D12 person/agent toggle goes and what it says: `website` asked, and nobody answered. Your DI-11 intake planned five builders working without Alex, which the course change rules out. Withdraw it or shrink it with him.
+
+
 This session is the background session named `orch-site-map`, started in this folder (`site-map\`). It's one of three orchestrators Alex set up on 2 Nov at about 18:55, because "too much is happening in one orchestration session ... there's a lot of semantic directions going and it's hurting our results":
 
 | Session | What it does | Does Alex talk to it? |
