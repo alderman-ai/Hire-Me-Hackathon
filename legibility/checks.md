@@ -18,3 +18,4 @@ One line per check: when, what was new, what got posted. A successor starts from
 | 16:17 | (poke check) | ee09652 | Spec-draft gate still OPEN: third POKE S-D9 sent; next poke check 16:32 | none |
 | 16:31 | (hold over) | 4a8099f 16:30 | Website hold ended at 16:29 (reskin done). P6 statuses re-checked, then sent as S-D9-B6. The 16:31 one-shot was cancelled | P6 sent |
 | 16:32 | (poke check) | 9aafecd | Spec-draft gate still OPEN: fourth POKE S-D9 sent; next poke check 16:47 | none |
+| 16:50 | none new (S10 recording since 16:24) | 4e973dc 16:42 | Every demo staffed (16:42); Alex calls: two articles (C10 queued), outbound 36 workflows as a walkthrough, copywriting-skill rule; scraping page sign-off OT-12; Canva method on research; L-03 and L-05 research mostly accepted; check_gate now prints APPROVED+CHANGES | P7 sent as S-D9-B7 (first with marketing:draft-content) |
