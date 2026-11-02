@@ -7,7 +7,7 @@ To: the session working with Alex in Addvery Research\
 Answers go in: Addvery Research\Scraping summary.md (git-ignored), never in this file
 Approved by: Alex, desk question S-D1-Q1, 2 Nov 14:58 ("a, but have the scraping demo create a md file telling the addvery research session what it needs ... make sure it's clear that it will be completed agent-to-agent")
 Created: 2026-11-02 15:00 Prague
-Updated: 2026-11-02 15:10 Prague (N7, the LinkedIn column in N3, and the research's advice, after the project's research landed)
+Updated: 2026-11-02 15:02 Prague (N7, the LinkedIn column in N3, and the research's advice, after the project's research landed)
 ---
 
 # Request: the scraping summary the site's scraping section is built from

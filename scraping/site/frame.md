@@ -1,6 +1,6 @@
 # D1 section frame: the scraping research demo
 
-Status: **frame, revised after research L-01**, 2 Nov 15:10. Structure and wording only; it holds no material from `..\Addvery Research\`. Every `{slot}` is filled in the git-ignored `draft\d1.md` from Alex's summary (the request's parts N2 to N7), and nothing reaches the site before he approves that draft.
+Status: **frame, revised after research L-01**, 2 Nov 15:02. Structure and wording only; it holds no material from `..\Addvery Research\`. Every `{slot}` is filled in the git-ignored `draft\d1.md` from Alex's summary (the request's parts N2 to N7), and nothing reaches the site before he approves that draft.
 
 The order follows the research (L-01 R1 and the synthesis, item 1.1): the result first, then three or four steps worded as outcomes, then the technical detail behind a fold. R1 found that pages leading with the tool or the process read as toys.
 
