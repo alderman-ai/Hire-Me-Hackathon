@@ -7,7 +7,7 @@ status: final text; Alex's brand sign-off pending, edits follow as a second requ
 
 <!--
 Assembly notes for the website session (not page copy):
-- {{post-N}} markers: insert post N from posts.md (text posts as a post card; carousels as a slide strip from slides/post-N/web/ with the caption under it). Neutral post cards, never LinkedIn's interface or logo.
+- {{post-N}} markers: insert post N from posts.md (text posts as a post card; carousels as a slide strip from slides/post-N/ (alt text in its alt.json) with the caption under it). Neutral post cards, never LinkedIn's interface or logo.
 - {{baseline}}: insert the generic post from baseline.md, beside post 1 if the layout allows.
 - {{voice}}: insert the five rules from voice.md.
 - Every post card carries the label "Meets 21 of 21 voice rules, 0 AI tells". The generic post's label is "Meets 12 of 21 voice rules".

@@ -6,7 +6,7 @@ Status: final text. Alex's brand sign-off is pending on his Claude Doc; any edit
 
 Score label, the same for all five: "Meets 21 of 21 voice rules, 0 AI tells". AI tells are stock AI phrasings, counted by a script, plus the judge's check for a generic AI-essay register. The score shows the posts follow the rules, not proof that they sound like Addvery to Addvery.
 
-Slide images for the two carousels: `slides/post-2/` and `slides/post-4/` in this folder (1080 x 1350 and a 540 x 675 web copy each). They carry Addvery's logo and brand assets, so they're git-ignored like the site's brand kit: read them from disk.
+Slide images for the two carousels: `slides/post-2/` and `slides/post-4/` in this folder, 540 x 675 WebP, with each slide's alt text (its exact copy) in `alt.json` beside them. They carry Addvery's logo and brand assets, so they're git-ignored like the site's brand kit: read them from disk.
 
 ---
 
