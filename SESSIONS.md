@@ -23,6 +23,9 @@ Read this file at startup, and again before you message a session you haven't me
 | `watcher` | `watcher\` | Hourly git sweep and push. | |
 | `s0-bootstrap` | `bootstrap\` | S0 Bootstrap: rolls out the sister folders, their CLAUDE.md files and roster rows. | Launched 13:39 Prague on 2 Nov. |
 | `accidental-session-kill-recovery` | `OBS\` | Temporary: Alex's recovery session from 13:20 on 2 Nov. | |
+| `briefing` | `briefing\` | Alex's own status session: where everything stands, where he's the blocker, how close to done. Answers from the collector's snapshots and asks no one. Not in the charter. | Launched 2 Nov. |
+| `briefing-build` | repo root | Temporary: a fork of `orchestration` that builds `briefing\`. | Stops once `briefing` is running. |
+| `s-d9-legibility` | `legibility\` | S-D9 Legibility analyzer: finds what's worth showing followers in the filed rig sessions and the project, and sends `website` build requests. Runs on an interim brief until its spec exists. | Started early on Alex's instruction, 2 Nov. Checks every 30 minutes. |
 
 ## Planned
 
@@ -36,7 +39,6 @@ Read this file at startup, and again before you message a session you haven't me
 | `s-d5-blog-articles` | `blog-articles\` | S-D5 Three blog articles | After S-D4. |
 | `s-d6-canva-templates` | `canva-templates\` | S-D6 Canva LinkedIn templates | Wave 2, once Alex's brand capture is in `Addvery Research\`. |
 | `s-d7-linkedin-content` | `linkedin-content\` | S-D7 LinkedIn content creation demo | Wave 2, once Alex's brand capture is in `Addvery Research\`. |
-| `s-d9-legibility` | `legibility\` | S-D9 Legibility analyzer | Wave 2. Runs continuously off the rig, while `website` runs. |
 | `s-d10-canva-video` | `canva-video\` | S-D10 Canva design video | After S-D6, near the end of the day. |
 
 ## Not sessions
