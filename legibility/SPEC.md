@@ -22,7 +22,7 @@ The session has run since 13:48 on the interim brief in its CLAUDE.md, and P1 to
 
 | Item | S-D9's answer |
 | --- | --- |
-| 1. Its place | Row S-D9 — Legibility analyzer. It claims four items:<br>• DoD-13: the D3 live-run clip, with S-D3.<br>• DoD-19: the site kept getting clearer through build requests, with S-D8.<br>• DoD-20: every filed session reviewed, and posts at least every two hours while sessions are being filed. `posted.md` is the evidence.<br>• DoD-22: nothing published shows secrets, the Apify proposal or Alex's own GetSales outbound, with S-D8.<br>It also serves two items. DoD-18: moments sorted by stakeholder role. DoD-21: the clips for the D10 video. |
+| 1. Its place | Row S-D9 — Legibility analyzer. It claims five items:<br>• DoD-13: the D3 live-run clip, with S-D3.<br>• DoD-19: the site kept getting clearer through build requests, with S-D8.<br>• DoD-20: every filed session reviewed, and posts at least every two hours while sessions are being filed. `posted.md` is the evidence.<br>• DoD-22: nothing published shows secrets, the Apify proposal or Alex's own GetSales outbound, with S-D8.<br>• DoD-24: a long-form day-one story, built from the transcripts with clips between its sections, is live in the site's GTM demos list (C16).<br>It also serves two items. DoD-18: moments sorted by stakeholder role. DoD-21: the clips for the D10 video. |
 | 2. Its neighbours | It depends on the rig's filed sessions (`rig`, `..\OBS\`) and on the website session (S-D8, `website`). It runs in parallel with every spec. It cuts clips for S-D3 (`s-d3-getsales`) and S-D10 (`s-d10-canva-video`). S-D1 (`s-d1-scraping`) passes on Alex's answer about naming Apify. It feeds S-D8 through build requests. |
 | 3. Operator preflight | §1: none needed. Its one decision is the clip gate. |
 | 4. Decision log | §9. |
@@ -128,6 +128,7 @@ Paths are relative to `legibility\`. Step 1 of the run (§7) confirms each resou
 | Every `CLIP` request got `CLIPPED` or `NO CLIP`, with the reason. | serves DoD-21; DoD-13 |
 | Each post's moments carry role tags in `posted.md`, from the roles RevOps, CSO, CMO, CEO, CTO, CAIO and COO (DI-1 Q1.9). Once the stakeholder sections are live, moments for each role were offered to them by build request. | DoD-19; serves DoD-18 |
 | At each forking gate, a check of every post and clip finds nothing that the never-post rules or `do-not-post.md` forbid. Every takedown Alex asked for was removed, and added to `do-not-post.md` in his words. | DoD-22 |
+| The long-form day-one story, a narrative arc of the day built from the transcripts with video clips between its sections, is live as an entry in the site's GTM demos list. | DoD-24 |
 
 ## 6. Research step
 
