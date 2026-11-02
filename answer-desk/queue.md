@@ -276,3 +276,30 @@ Deadline: 14:33
 **Affects:** only the GitHub repo. The website's copies are already redacted.
 ```
 
+## TASK S-D1: DI-6 S-D1 Scraping preflight.md — open
+From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
+Received: 2026-11-02 14:23 CET (+01:00)
+14:23 CET: alert shown to Alex.
+
+```
+TASK S-D1: DI-6 S-D1 Scraping preflight.md is waiting on you: 5 decisions (Apify token and spend cap, what the demo scrapes, whether the site names Apify, who enriches the six stakeholders, earlier Apify tooling to reuse). Unblocks the S-D1 scraping demo launch, first in wave 2, which S-D3's live run depends on. No camera time; the token goes in with the recording paused.
+```
+
+## TASK S-D3: DI-7 S-D3 GetSales preflight.md — open
+From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
+Received: 2026-11-02 14:24 CET (+01:00)
+14:24 CET: alert shown to Alex.
+
+```
+TASK S-D3: DI-7 S-D3 GetSales preflight.md is waiting on you: 6 decisions (what the ten ICPs are, which GetSales team the demo lives in, Sales Navigator export method, what the live run sends and the second message, Ivana's view-only access, the live-run slot 17:00-17:30). Unblocks the S-D3 GetSales demo launch; it needs you on camera once, for the live run.
+```
+
+## POKE S1 — 14:26
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
+Received: 2026-11-02 14:26 CET (+01:00)
+14:26 CET: about open TASK S1 OT-01; repeated that alert to Alex.
+
+```
+POKE S1: waiting on you for OT-01 Gate approval parent research list.md (tick "I approve" or write changes); orchestration needs the findings by 16:00 Prague.
+```
+
