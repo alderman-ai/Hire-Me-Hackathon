@@ -38,7 +38,7 @@ Write A or B (with B, the 1Password item's name), then "free", "paid" or "no acc
 
 `<operator_answer>`
 ```a-6-1
-
+$10 cap and we can move everything over now because we're currently not recording
 ```
 `</operator_answer>`
 
@@ -70,7 +70,10 @@ Write A, B, C, or D and what you want instead.
 
 `<operator_answer>`
 ```a-6-2
+What are the demos? Look there are a lot of things that we can't conflate:
 
+1. I'm going to scrape Addvery. I'm going to do that one-on-one in the Addvery research subdirectory. That is separate. No spec is going to manage that. However it is a demonstration of scraping and we'll do some kind of summary of all of the outputs. That, again, I'll manage one-on-one.
+2. For GitSales really, the output is basically this: once the research is ready GitSales will pick the top six shareholders/stakeholders here. I need to get one of the first things I'm going to research in Addvery (I'm doing it. Don't execute this): getting the org chart built from scraping. Once we find the top stakeholders (the co-founders), they have a CAIO, RevOps, CEO, CTO, CSO, or any of the directors or equivalents if it's not C-suite. Once we identify those people we're going to send an actual campaign goal by the end of 15:30 Prague time, just letting them know this is happening and that they can follow along if they're interested in this hackathon. Yes I'll jump into that when I can. First I'm going to get the Addvery research started.
 ```
 `</operator_answer>`
 
@@ -98,7 +101,7 @@ Write A, B, C, or D and what you want instead.
 
 `<operator_answer>`
 ```a-6-3
-
+yes
 ```
 `</operator_answer>`
 
@@ -125,7 +128,12 @@ Write A, B, or C and what you want instead.
 
 `<operator_answer>`
 ```a-6-4
+We're not going to have the GitSales subdirectory do any scraping. All the scraping is going to happen in Addvery. GitSales is basically going to use any information already scraped to build the custom first messages or maybe the second message, telling them that this is happening, why I'm doing this, and then another message. Get sales is two separate things:
 
+1. Just sending out an alert to those top shareholders that we identify, that this is happening with the hackathon, preferably by 15:30 prog time.
+2. That's through my sender profile. You can go to all the credentials. Let me know if there's any problem with the tech stack and okay you figure it out.
+
+You can build, just as an example, like it could build 3 ICPs. Again wait till we have the research done. We'll guess or we'll pull from their website their top ICPs and we'll build 20 workflows. Let's label them under a new folder in GetSales so that I can hide them easily. We'll take each of their ICPs and do it in whatever languages make sense. We'll have 3 different approaches per language. If it's 4 ICPs, we'll say 3 languages, that's 12, and then 3 approaches, so that's going to be 36 workflows they can drip into. We'll explain how Jev can be trained to put people into one of those workflows and each of those workflows will start with that custom message, which would be calculated after leads get exported. It depends on what stack they have. That custom message we created through their Claude or agentic LLM account, probably in a CSV if the tooling exists through MCP to their CRM, whatever. I don't know their tech stack but those custom messages would be written before they get imported into GetSales. Message 1 is literally just a variable, like `custom message 1`, right? That gets imported as one of the fields when a lead is imported into GetSales.
 ```
 `</operator_answer>`
 
@@ -150,6 +158,6 @@ Write A, or B and the place.
 
 `<operator_answer>`
 ```a-6-5
-
+Yeah D1. I'm going to be doing all the Apify stuff in the scraping thing. I really don't think this D1 needs any Apify actors or Apify API. It's all going to be happening in the Addvery research subdirectory and this spec or this demo can pull from that research 
 ```
 `</operator_answer>`

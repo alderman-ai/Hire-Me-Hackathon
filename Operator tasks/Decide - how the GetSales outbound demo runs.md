@@ -8,6 +8,8 @@ Build goals: []
 
 # Decision intake 7
 
+> **On hold, don't answer yet.** Your DI-6 answers settle most of this intake (the 15:30 alert to the six, the ICP x language x approach workflows, a hidden GetSales folder). A shorter version replaces this text in about 10 minutes.
+
 This intake holds 6 decisions for S-D3, the GetSales outbound demo. Each question carries its own context, so you can answer them in any order. Question 5 leans on question 2. An empty fence means not answered. The spec draft is at `getsales\SPEC.md` for reference, but you don't need to read it. S-D3 needs you on camera once, for the live run on the six stakeholders, proposed for 17:00–17:30 Prague (question 6). Say "DI-7 is ready" when you're done.
 
 # Q7.1 What the ten ICPs are, and where the six go
