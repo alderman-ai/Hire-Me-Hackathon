@@ -282,6 +282,7 @@ From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:23 CET (+01:00)
 14:23 CET: alert shown to Alex.
 14:33 CET: wave2-specs says Alex has answered DI-6; marked done.
+14:37 CET: TASK DONE S-D1 received (file now named "Decide - how the scraping demo should work.md").
 
 ```
 TASK S-D1: DI-6 S-D1 Scraping preflight.md is waiting on you: 5 decisions (Apify token and spend cap, what the demo scrapes, whether the site names Apify, who enriches the six stakeholders, earlier Apify tooling to reuse). Unblocks the S-D1 scraping demo launch, first in wave 2, which S-D3's live run depends on. No camera time; the token goes in with the recording paused.
@@ -293,6 +294,7 @@ Received: 2026-11-02 14:24 CET (+01:00)
 14:24 CET: alert shown to Alex.
 14:33 CET: wave2-specs put it on hold (Alex's DI-6 answers settle most of it); a shorter version replaces it with a new TASK line. Alex told not to answer it yet.
 14:37 CET: briefing relays Alex (14:38): waits on his Addvery research. Stays on hold.
+14:37 CET: wave2-specs: no pokes while Alex is on the Addvery research; the shorter GetSales intake gets a fresh TASK line once rewritten.
 
 ```
 TASK S-D3: DI-7 S-D3 GetSales preflight.md is waiting on you: 6 decisions (what the ten ICPs are, which GetSales team the demo lives in, Sales Navigator export method, what the live run sends and the second message, Ivana's view-only access, the live-run slot 17:00-17:30). Unblocks the S-D3 GetSales demo launch; it needs you on camera once, for the live run.
@@ -312,6 +314,7 @@ From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:31 CET (+01:00)
 14:31 CET: alert shown to Alex.
 14:37 CET: briefing relays Alex (14:38): low priority, don't push it at him. Kept on list; no alerts or notifications for its pokes.
+14:37 CET: wave2-specs: renamed "Decide - how the blog pipeline should work.md"; being rewritten, a fresh TASK line follows. No pokes while Alex is on the Addvery research.
 
 ```
 TASK S-D4: DI-8 S-D4 Blog pipeline preflight.md is waiting on you: 5 decisions (where the post's look is built, where your dictation lands, whether the test dictation counts as article 1, the test slot 15:15-15:35 and topic, what to do if research runs late). Unblocks the S-D4 blog pipeline launch and your first on-camera dictation, proposed for 15:15.
@@ -326,10 +329,11 @@ Received: 2026-11-02 14:34 CET (+01:00)
 POKE S2: waiting on you for OT-02 Gate approval S2 charter changes C01 C02 (in Operator tasks): tick I approve, or write what to change. It's the last step before the outline sign-off that lets wave 2 start.
 ```
 
-## TASK S1: Approve - research plan for the whole project.md — open
+## TASK S1: Approve - research plan for the whole project.md — done
 From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
 Received: 2026-11-02 14:36 CET (+01:00)
 14:36 CET: alert shown to Alex. Arrived right after TASK DONE for OT-01.
+14:38 CET: TASK DONE S1 received; marked done.
 
 ```
 TASK S1: Approve - research plan for the whole project.md is waiting on you: tick "I approve" or write changes on four research questions (plus three open-ended checks) that every demo reads before its plan is written. About a 3-minute read; approving starts the research now so the findings are ready by 16:00 Prague.
