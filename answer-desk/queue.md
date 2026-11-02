@@ -779,11 +779,12 @@ Deadline: 17:00
 **If unanswered by the deadline:** (a), tomorrow morning, because after 17:00 there isn't time to prepare today's scene.
 ```
 
-## TASK website: Decide - the six stakeholder pages on the site.md — open
+## TASK website: Decide - the six stakeholder pages on the site.md — done
 From: website (uds:\.\pipe\LOCAL\cc-msg-c2cdddc2a6d547bc99d718dc7e58bdd5)
 Received: 2026-11-02 16:46 CET (+01:00)
 16:46 CET: alert shown to Alex; no PushNotification (Alex is at the desk).
 17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
+17:24 CET: TASK DONE website received (orchestration decided it on its defaults at 17:13, applied and archived); replaced by the Doc "Six stakeholder pages: text for your edit".
 
 ```
 TASK website: Decide - the six stakeholder pages on the site.md is waiting on you: six quick choices on Addvery's six key people's pages. Named or role-titled, and how public; whether their text enters the public repo; when you review them; who writes each note; what the site leads with; and what happens on a no. About 12 minutes, each with a default. Nothing about the six goes live until you approve the pages separately.
@@ -861,5 +862,14 @@ TASK s-d5-blog-articles: blog dictation 1 is ready to record: https://claude.ai/
 Topic: AI workflows are never a product, always a managed service, because the models always change; plus his AI-skill slider (train to use, maintain, build in-house, bring in outside builders).
 How: about 15 minutes of talking with Wispr Flow into the bottom of that page, from the eight prompts on it, then a comment on the page saying "done". No file to fill in.
 Next: the draft comes back in its own doc about 25 minutes after, for his last 10%. Dictation 2 (GTM engineers and the AI jobs promise) follows in about 30 minutes, once its brief is refreshed.
+```
+
+## TASK website: Six stakeholder pages: text for your edit (Doc) — open
+From: website (uds:\.\pipe\LOCAL\cc-msg-d8d66fe4960dfd5e95e41dec0736405d)
+Received: 2026-11-02 17:23 CET (+01:00)
+17:23 CET: alert shown to Alex; no PushNotification (sender: nothing is blocked). The older "Decide - the six stakeholder pages on the site.md" is still open with no TASK DONE.
+
+```
+TASK website: Claude Doc "Six stakeholder pages: text for your edit" is waiting on you: https://claude.ai/artifact/Abm1SeTTDwAEV4qBb55YtY. It's the text of the six people's pages, with Ivana's first as prep for Tuesday. Edit inline, then one comment saying it's good to go: that's the sign-off, and the pages update. About 10 minutes. Nothing is blocked on it.
 ```
 
