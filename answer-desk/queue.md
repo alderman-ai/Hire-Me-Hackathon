@@ -866,11 +866,12 @@ How: about 15 minutes of talking with Wispr Flow into the bottom of that page, f
 Next: the draft comes back in its own doc about 25 minutes after, for his last 10%. Dictation 2 (GTM engineers and the AI jobs promise) follows in about 30 minutes, once its brief is refreshed.
 ```
 
-## TASK website: Six stakeholder pages: text for your edit (Doc) — open
+## TASK website: Six stakeholder pages: text for your edit (Doc) — replaced
 From: website (uds:\.\pipe\LOCAL\cc-msg-d8d66fe4960dfd5e95e41dec0736405d)
 Received: 2026-11-02 17:23 CET (+01:00)
 17:23 CET: alert shown to Alex; no PushNotification (sender: nothing is blocked). The older "Decide - the six stakeholder pages on the site.md" is still open with no TASK DONE.
 18:02 CET: orchestration says this Doc is superseded by six rendered page links coming from website; drop it once that TASK line arrives.
+18:51 CET: replaced by website's six rendered page reviews (one TASK line); dropped from Alex's list.
 
 ```
 TASK website: Claude Doc "Six stakeholder pages: text for your edit" is waiting on you: https://claude.ai/artifact/Abm1SeTTDwAEV4qBb55YtY. It's the text of the six people's pages, with Ivana's first as prep for Tuesday. Edit inline, then one comment saying it's good to go: that's the sign-off, and the pages update. About 10 minutes. Nothing is blocked on it.
@@ -1002,5 +1003,14 @@ Received: 2026-11-02 18:50 CET (+01:00)
 ```
 TASK s-d5-blog-articles: blog post 1 is ready for your last 10%: https://claude.ai/artifact/6dbQjnECpGbtQw54cHhJMp
 "AI workflows are always a managed service", written only from what he said on camera and typed today, with five of his own lines as block quotes; aimed at near-final before his meeting with Ivana. About 10 minutes: fill the five bold notes (did his method beat out-of-the-box, one company workflow a model update broke, what one workflow costs to run, the slider's order, signs of which rung a company is on), edit anything inline, then comment "approved" and send it to Claude. A sceptical-reader check sits at the top of the Doc. On his comment it goes live in GTM demos.
+```
+
+## TASK website: six stakeholder page reviews (rendered pages) — open
+From: website (uds:\.\pipe\LOCAL\cc-msg-d8d66fe4960dfd5e95e41dec0736405d)
+Received: 2026-11-02 18:51 CET (+01:00)
+18:51 CET: alert shown to Alex; no PushNotification (sender: nothing else is blocked). Replaces "Six stakeholder pages: text for your edit (Doc)".
+
+```
+TASK website: six page reviews are waiting on you, one per person, each the real page as it will look live, with the text editable in place. Ivana https://claude.ai/artifact/TCk45ox4gttBgNiyYVRA7r · Stepan https://claude.ai/artifact/EWewUdWbqYurU99uH3zM77 · Pavel https://claude.ai/artifact/Y542BkTDNhC4fYNVxeMnwn · Lukáš https://claude.ai/artifact/Uey12LMZ8mTNW2QNHiShx6 · Milos https://claude.ai/artifact/2zQSocRf8xTBxx291oQd3h · David https://claude.ai/artifact/PX2aWLB8ws6QfAGDf3GGmi. Click any outlined text, edit, then "Save edits": your saved edits are the sign-off, and that person's page then goes live with the greeting, concerns and reading list. Ivana's first, about 3 to 5 minutes each. Nothing else is blocked on it.
 ```
 
