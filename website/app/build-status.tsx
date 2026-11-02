@@ -1,7 +1,10 @@
+import Link from "next/link";
 import build from "@/content/build.json";
+import { demoSlug, toolingDocSlug } from "./deliverables";
 
 // "What's being built today": content/build.json. s-d9-legibility sends status updates; the
-// feed post that shows this board moves to the top at each new as_of time.
+// feed post that shows this board moves to the top at each new as_of time. Each demo's name links
+// to its page (/d1 to /d10); each tooling piece links to its spec (content/deliverables.json).
 
 type Quote = { text: string; source: string };
 
@@ -44,13 +47,18 @@ export default function StatusBoard() {
           </tr>
         </thead>
         <tbody>
-          {build.tooling.map((row) => (
-            <tr key={row.piece}>
-              <th scope="row" data-label="Piece">{row.piece}</th>
-              <td data-label="What it does">{row.what}</td>
-              <td data-label={statusLabel} className="status">{row.status}</td>
-            </tr>
-          ))}
+          {build.tooling.map((row) => {
+            const doc = toolingDocSlug(row.piece);
+            return (
+              <tr key={row.piece}>
+                <th scope="row" data-label="Piece">
+                  {doc ? <Link href={`/docs/${doc}`}>{row.piece}</Link> : row.piece}
+                </th>
+                <td data-label="What it does">{row.what}</td>
+                <td data-label={statusLabel} className="status">{row.status}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
 
@@ -68,7 +76,9 @@ export default function StatusBoard() {
           {build.demos.map((row) => (
             <tr key={row.n}>
               <td data-label="#" className="num">{row.n}</td>
-              <th scope="row" data-label="Demo">{row.demo}</th>
+              <th scope="row" data-label="Demo">
+                <Link href={`/${demoSlug(row.n)}`}>{row.demo}</Link>
+              </th>
               <td data-label="What you'll see">{row.what}</td>
               <td data-label={statusLabel} className="status">{row.status}</td>
             </tr>

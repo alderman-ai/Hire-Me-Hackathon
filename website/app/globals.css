@@ -479,8 +479,9 @@ a:hover {
   }
 }
 
-/* The charter and spec pages */
-.doc-page {
+/* The charter and spec pages, and the demo pages */
+.doc-page,
+.deliverable-page {
   max-width: 860px;
   margin: 0 auto;
   padding: 32px 16px 64px;
@@ -570,4 +571,89 @@ a:hover {
   margin: 16px 0;
   padding-left: 16px;
   border-left: 3px solid var(--ink);
+}
+
+/* The demo pages, /d1 to /d10 */
+.deliverable-header {
+  margin: 16px 0 20px;
+}
+
+.deliverable-number {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.deliverable-title {
+  margin: 0;
+  font-size: clamp(28px, 4.4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.deliverable-facts {
+  margin: 0;
+}
+
+.deliverable-facts > div {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.deliverable-facts dt {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.deliverable-facts dd {
+  margin: 2px 0 0;
+}
+
+.deliverable-facts .status {
+  font-weight: 600;
+}
+
+.deliverable-page .as-of {
+  margin: 12px 0 0;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.deliverable-section {
+  margin-top: 36px;
+}
+
+.deliverable-section > h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.deliverable-section > p {
+  margin: 0 0 12px;
+  text-wrap: pretty;
+}
+
+.deliverable-pending {
+  font-style: italic;
+}
+
+.deliverable-nav {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 2px solid var(--ink);
+}
+
+.deliverable-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
 }

@@ -197,6 +197,7 @@
       "id": "s01",
       "at": "2026-11-02T10:25",
       "session": "S01",
+      "deliverable": "d8",
       "kind": "Session",
       "title": "Recording starts",
       "blocks": [

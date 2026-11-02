@@ -3,6 +3,7 @@ import feedJson from "@/content/feed.json";
 import summary from "@/content/summary.json";
 import videos from "@/content/videos.json";
 import StatusBoard from "./build-status";
+import { findDemo } from "./deliverables";
 
 // The live feed: content/feed.json, newest on top (sorted by `at`). s-d9-legibility sends new posts.
 
@@ -11,7 +12,7 @@ type Quote = { text: string; source: string; href?: string; note?: string };
 // A bulleted point with a bold lead, optional text and an optional quote under it.
 type Point = { lead: string; text?: string; quote?: Quote };
 
-type Block = {
+export type Block = {
   type: string; // p, list, points, quote, highlight, video, summary, status-board, doc-link
   text?: string;
   items?: string[];
@@ -32,7 +33,17 @@ type Block = {
 };
 
 // roles: which stakeholders a post is for (from s-d9-legibility), kept for the stakeholder pages.
-type Post = { id: string; at: string; kind: string; session?: string; title: string; roles?: string[]; blocks: Block[] };
+// deliverable: the demo a post clearly belongs to ("d3"); it also shows on that demo's page.
+export type Post = {
+  id: string;
+  at: string;
+  kind: string;
+  session?: string;
+  title: string;
+  roles?: string[];
+  deliverable?: string;
+  blocks: Block[];
+};
 
 const feed: { intro: string; posts: Post[] } = feedJson;
 const youtubeIds: Record<string, string | undefined> = videos;
@@ -79,7 +90,7 @@ function QuoteFigure({ quote }: { quote: Quote }) {
   );
 }
 
-function Blocks({ blocks }: { blocks: Block[] }) {
+export function Blocks({ blocks }: { blocks: Block[] }) {
   return (
     <>
       {blocks.map((block, i) => {
@@ -156,22 +167,44 @@ function Blocks({ blocks }: { blocks: Block[] }) {
   );
 }
 
+// Newest first; with a slug, only the posts tagged with that demo.
+export function feedPosts(deliverable?: string): Post[] {
+  return feed.posts
+    .filter((post) => !deliverable || post.deliverable === deliverable)
+    .sort((a, b) => b.at.localeCompare(a.at));
+}
+
+// One post. On the feed, a tagged post links to its demo's page; on that page, it doesn't.
+export function FeedPost({ post, linkDemo = true }: { post: Post; linkDemo?: boolean }) {
+  const demo = linkDemo && post.deliverable ? findDemo(post.deliverable) : undefined;
+  return (
+    <article id={`post-${post.id}`} className="post">
+      <p className="post-meta">
+        <span className={`post-kind post-kind-${post.kind.toLowerCase()}`}>{post.kind}</span>
+        <time dateTime={post.at}>{post.at.slice(11, 16)}</time>
+        {post.session && <span> · {post.session}</span>}
+        {demo && (
+          <span>
+            {" · "}
+            <Link href={`/${demo.slug}`} className="post-demo-link">
+              Demo {demo.n}: {demo.name}
+            </Link>
+          </span>
+        )}
+      </p>
+      <h3 className="post-title">{post.title}</h3>
+      <Blocks blocks={post.blocks} />
+    </article>
+  );
+}
+
 export default function Feed() {
-  const posts = [...feed.posts].sort((a, b) => b.at.localeCompare(a.at));
   return (
     <section className="feed" aria-labelledby="feed-heading">
       <h2 id="feed-heading">Live feed</h2>
       <p className="feed-intro">{feed.intro}</p>
-      {posts.map((post) => (
-        <article key={post.id} id={`post-${post.id}`} className="post">
-          <p className="post-meta">
-            <span className={`post-kind post-kind-${post.kind.toLowerCase()}`}>{post.kind}</span>
-            <time dateTime={post.at}>{post.at.slice(11, 16)}</time>
-            {post.session && <span> · {post.session}</span>}
-          </p>
-          <h3 className="post-title">{post.title}</h3>
-          <Blocks blocks={post.blocks} />
-        </article>
+      {feedPosts().map((post) => (
+        <FeedPost key={post.id} post={post} />
       ))}
     </section>
   );

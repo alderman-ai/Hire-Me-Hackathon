@@ -1,0 +1,46 @@
+{
+  "about": "Page copy for each demo page at /d1 to /d10, keyed by slug (d + the demo's number in build.json). The demo's name, what you'll see and its status come from build.json, so they never disagree with the status board. what_this_is: the plain-words paragraph. pending: optional, the line shown until the demo has content (default below). blocks: optional, the demo itself in feed blocks (p, list, points, quote, highlight, video, image, doc-link); once present it replaces the pending line. Feed posts with \"deliverable\": \"<slug>\" appear on that demo's page. tooling_docs: the doc page each tooling row on the status board links to.",
+  "default_pending": "This demo is being built today. Its walkthrough lands here when it's ready.",
+  "tooling_docs": {
+    "Bootstrap": "s0-bootstrap",
+    "Research": "s1-research",
+    "Project orchestrator": "s2-orchestrator"
+  },
+  "demos": {
+    "d1": {
+      "what_this_is": "Researching prospects one by one takes hours per company. This demo does it at scale: Alex runs the scraping on the Apify API, and an agent turns what comes back into research that anyone can follow without an explanation. It runs first, because other demos build on what it finds."
+    },
+    "d2": {
+      "what_this_is": "Good outreach starts with knowing the company and who makes the decisions. This demo is deep research on one company and the people likely to be involved in hiring. Alex is running it himself today, and what it finds feeds the outbound demo and this website."
+    },
+    "d3": {
+      "what_this_is": "Outbound that gets the right message to the right person without anyone sorting leads by hand. Every lead is matched to the customer profile it fits, and gets the sequence made for that profile, opening with a first message personalized for that lead.",
+      "pending": "This demo is being built today. Its video lands here when it's ready."
+    },
+    "d4": {
+      "what_this_is": "Most experts don't have time to write. This pipeline turns 15 minutes of Alex talking into a near-finished blog post, and he does the last 10% himself."
+    },
+    "d5": {
+      "what_this_is": "The proof that the blog pipeline works: three articles made with it, on the ideas behind this project. They follow the pipeline, so they come later in the day.",
+      "pending": "The articles land here as each one is finished."
+    },
+    "d6": {
+      "what_this_is": "Visual templates for LinkedIn posts, built in Canva. They're pixel-perfect and on brand, so every post looks as if it came from the same team."
+    },
+    "d7": {
+      "what_this_is": "LinkedIn posts written in the company's own voice: how it talks and what it talks about, so the posts read as the company's own."
+    },
+    "d8": {
+      "what_this_is": "The site you're on. It shows the work as it happens: the countdown of recorded time, the live feed, and a page for each demo. A page for each key stakeholder comes next.",
+      "pending": "You're looking at it. The stakeholder pages land here when they're ready."
+    },
+    "d9": {
+      "what_this_is": "An agent that watches every recording of this hackathon, picks out what's worth showing, and asks the website to add it. Much of the live feed comes from it.",
+      "pending": "It's already running. A walkthrough of how it works lands here when it's ready."
+    },
+    "d10": {
+      "what_this_is": "A recording of Alex designing in Canva, on camera, so you can watch the design work as it happens. It's recorded near the end of the day.",
+      "pending": "The video lands here once it's recorded."
+    }
+  }
+}
