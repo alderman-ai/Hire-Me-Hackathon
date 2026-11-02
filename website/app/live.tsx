@@ -8,6 +8,8 @@ function useStatus(): Status | null {
   useEffect(() => {
     let alive = true;
     const load = async () => {
+      // A tab left open in the background shouldn't spend the Blob store's read allowance.
+      if (document.hidden) return;
       try {
         const res = await fetch(STATUS_URL, { cache: "no-store" });
         if (res.ok && alive) setStatus(await res.json());
@@ -17,9 +19,11 @@ function useStatus(): Status | null {
     };
     load();
     const id = setInterval(load, POLL_MS);
+    document.addEventListener("visibilitychange", load);
     return () => {
       alive = false;
       clearInterval(id);
+      document.removeEventListener("visibilitychange", load);
     };
   }, []);
   return status;
@@ -66,36 +70,35 @@ function Countdown({ status }: { status: Status | null }) {
   );
 }
 
-// The webcam recording of the newest session that's online (scripts/upload_webcam.py).
-function SessionVideo({ status }: { status: Status | null }) {
-  const sessions = status?.sessions ?? [];
-  const online = [...sessions].reverse().find((s) => s.youtube_id);
-  if (online) {
+// startSeconds is where playback begins in the webcam video (skips the setup before the cue).
+export type Featured = { session: string; youtubeId: string | null; startSeconds: number };
+
+// The featured session's webcam recording (scripts/upload_webcam.py). Its id is baked in
+// at build time, so the video stays up even if status.json can't be read.
+function SessionVideo({ status, featured }: { status: Status | null; featured: Featured }) {
+  const youtubeId =
+    featured.youtubeId ?? status?.sessions.find((s) => s.id === featured.session)?.youtube_id ?? null;
+  if (youtubeId) {
     return (
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${online.youtube_id}`}
-        title={`Session ${online.id}, webcam`}
+        src={`https://www.youtube-nocookie.com/embed/${youtubeId}?start=${featured.startSeconds}`}
+        title={`Session ${featured.session}, webcam`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
       />
     );
   }
-  const filed = [...sessions].reverse().find((s) => s.state === "filed");
-  return (
-    <div className="video-empty">
-      {filed ? `The ${filed.id} recording goes up here soon.` : "The first recording goes up here soon."}
-    </div>
-  );
+  return <div className="video-empty">The {featured.session} recording goes up here soon.</div>;
 }
 
-export default function Live() {
+export default function Live({ featured }: { featured: Featured }) {
   const status = useStatus();
   return (
     <>
       <Countdown status={status} />
       <div className="video-frame">
-        <SessionVideo status={status} />
+        <SessionVideo status={status} featured={featured} />
       </div>
     </>
   );

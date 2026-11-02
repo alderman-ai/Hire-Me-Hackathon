@@ -32,12 +32,20 @@ Start-Process C:\Python314\pythonw.exe -ArgumentList '"C:\Users\alder\Desktop\Hi
 
 A second start exits on its own if a loop is already running. Status URL: https://ijofoogwurqmq704.public.blob.vercel-storage.com/status.json
 
+## Hobby plan limits
+
+Hobby can't buy extra usage. Go over a limit and the service stops until the month resets.
+
+- **Blob, the tightest:** 10,000 simple operations a month (reads of `status.json` that miss the 60 s cache, so about one a minute per region while anyone has the page open), 2,000 advanced operations (each `blob put`, `list` or `copy`; the sync's publishes are about 6 an hour while recording), 10 GB transfer, 1 GB storage. If Blob stops, only the clock dies: the video and summary are built into the page. The page skips its poll while the tab is hidden.
+- **Site:** 100 GB Fast Data Transfer and 1M edge requests a month. The page is a few hundred KB.
+- **Never host video on Vercel or Blob.** The page embeds YouTube, which serves the video.
+
 ## Video
 
 **The site shows the webcam, not the screen share.** That's Alex's call, made on 2 Nov.
 
 - Once a session is filed, its webcam files sit in `D:\OBS Outputs\Uploaded\Sxx_webcam\`, listed in that session's `..\OBS\Processed\Sxx_*\manifest.json` (`webcam_folder` and `webcam`). The screen recording is `D:\OBS Outputs\Uploaded\Sxx.mp4`.
 - After each session is filed, upload its webcam with `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_webcam.py Sxx <scratch dir>`. It repackages the MKV to MP4 without re-encoding, uploads it unlisted through the rig's own uploader and sign-in (`..\OBS\rig\.env`), waits for YouTube to finish processing, and writes the id to `content\videos.json`. Rerunning it for a session that's already online does nothing.
-- The sync publishes `content\videos.json` in `status.json`, and the page embeds the newest session that has an id. It never uses the rig's own `youtube_id` in `index.json`, because that's the screen recording. The rig's YouTube upload is off anyway (`UPLOAD_TO_YOUTUBE = False`).
+- The page features one session, the one `content\summary.json` names (S02, the project explainer, since 2 Nov), with its summary under the video. Its YouTube id comes from `content\videos.json` at build time, so after uploading a featured session, redeploy. A newer upload doesn't replace it. The sync also publishes `content\videos.json` in `status.json`, which the page uses only if the build has no id. It never uses the rig's own `youtube_id` in `index.json`, because that's the screen recording. The rig's YouTube upload is off anyway (`UPLOAD_TO_YOUTUBE = False`).
 - YouTube caps unverified channels at 15 minutes. Until Alex switches on long uploads at https://www.youtube.com/verify, any session longer than that won't upload.
 - Lip sync in the webcam file (Wave:3 audio on BRIO video) is unverified. Ask Alex to check it the first time he watches one.
