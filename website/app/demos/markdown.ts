@@ -9,6 +9,7 @@ import { Marked, type Token, type Tokens, type TokensList } from "marked";
 //   > [!summary]        -> the "Key points" box
 //   > [!diagram] scale  -> a vertical scale, item 1 on top, in HTML and CSS
 //   > [!diagram] flow   -> numbered steps with arrows (left to right on wide screens)
+//   > [!slot] <name>     -> an empty <div data-slot="name">, filled by the entry page (the C2 additions)
 //   [Alex: ...]         -> <mark class="entry-note">, yellow, only ever on previews
 //   > [!quote]           -> Alex's own words (POST-FORMAT v1.4 §3.7): a real <blockquote> in a
 //                            <figure>, the attribution as its <figcaption>; read by screen readers.
@@ -187,6 +188,10 @@ export function renderBody(markdown: string, fail: (msg: string) => never): Rend
     const rest = lines.slice(1);
 
     if (head === "[!quote]") return featureQuote(rest);
+
+    // An empty marker the entry page fills with its own parts (app/demos/slots.tsx). Only C2 uses them.
+    const slot = /^\[!slot\] (matrix|why|again)$/.exec(head);
+    if (slot) return `<div data-slot="${slot[1]}"></div>\n`;
 
     const fig = /^\[!figure\](?: (.*))?$/.exec(head);
     if (fig) return figure((fig[1] ?? "").trim(), rest);

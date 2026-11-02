@@ -172,7 +172,7 @@ export function bodyWords(body: string): number {
     // Pull-quote blocks repeat body text.
     .replace(/^> \[!pull\]\n(?:>.*(?:\n|$))*/gm, " ")
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
-    .replace(/\[!summary\]|\[!pull\]|\[!quote\]|\[!diagram\] (?:scale|flow)/g, " ")
+    .replace(/\[!slot\] (?:matrix|why|again)|\[!summary\]|\[!pull\]|\[!quote\]|\[!diagram\] (?:scale|flow)/g, " ")
     // A clip's tag, YouTube id and seconds aren't words; its caption is.
     .replace(/\[!video\] [A-Za-z0-9_-]{11}(?: \d+){0,2}/g, " ")
     // Nor is a figure's tag and path (its alt text and caption are), as blog-pipeline/scripts/counts.py.

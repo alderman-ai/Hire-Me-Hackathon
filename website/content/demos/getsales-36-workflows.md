@@ -4,7 +4,7 @@ slug: "36-outbound-workflows-and-the-one-variable-behind-them"
 description: "Me on camera at 16:36, planning 36 GetSales workflows for Addvery, then what got built: four ICPs, three languages, three tactics and one lead field."
 author: "Alex Alderman"
 date: "2026-11-02"
-status: "draft"
+status: "published"
 kind: "showcase"
 deliverable: "d3"
 library_id: "demo-getsales-36-workflows"
@@ -51,6 +51,8 @@ Below 0.75, or when two answers are too close to call, a person decides. Those d
 
 The workflows sit in their own GetSales folder. The four ICPs come from Addvery's own website: retail loyalty, telco customer value, consumer lending and last-mile logistics. Each runs in Czech, German and English, and Slovak leads get Czech.
 
+> [!slot] matrix
+
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflows-folder.png
 > Six of the 36 workflows in the GetSales demo folder, named Demo, ICP, language and tactic, each switched off with 0 contacts
 > Every toggle off and every count at 0: none of the 36 is running
@@ -85,3 +87,7 @@ The leads are fictional, the same twelve I sort in [the routing run](/demos/sort
 | Tailspin Parcel CZ | Demo · Last-mile logistics · CS · problem | Dobrý den, firma Tailspin Parcel CZ doručuje většinu zásilek až ke dveřím a doručení domů funguje, jen když je někdo doma. Opakované pokusy o doručení pak ukrajují z marže každé trasy. Řešíte teď úspěšnost prvního doručení, nebo to máte pod kontrolou? |
 
 Each row can be checked before it goes anywhere. In this demo it goes nowhere: nothing is imported or sent.
+
+> [!slot] why
+
+> [!slot] again

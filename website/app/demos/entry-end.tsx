@@ -50,7 +50,18 @@ function pickNext(list: RecCard[], current: string, seen: Set<string>): RecCard 
 
 const thumb = (id: string) => `https://i.ytimg.com/vi/${id}/sddefault.jpg`;
 
-export function EntryEnd({ current, lists, people }: { current: string; lists: Record<string, RecCard[]>; people: string[] }) {
+/** `forced` pins the "Next for you" card (the C2 entry points at C1); other entries pick from the visitor's list. */
+export function EntryEnd({
+  current,
+  lists,
+  people,
+  forced,
+}: {
+  current: string;
+  lists: Record<string, RecCard[]>;
+  people: string[];
+  forced?: RecCard;
+}) {
   const [who, setWho] = useState<string | null>(null);
   const [seen, setSeen] = useState<Set<string>>(new Set());
   useEffect(() => {
@@ -60,7 +71,7 @@ export function EntryEnd({ current, lists, people }: { current: string; lists: R
 
   const own = who ? lists[who] : undefined;
   const walk = own ?? lists.capabilities ?? lists.default ?? [];
-  const next = pickNext(walk, current, seen);
+  const next = forced ?? pickNext(walk, current, seen);
   const rail = (own ?? lists.default ?? []).filter((c) => c.href !== current && c.href !== next?.href);
 
   return (

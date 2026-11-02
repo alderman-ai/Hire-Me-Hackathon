@@ -1,0 +1,34 @@
+/* The C2 additions (app/demos/slots.tsx). */
+
+/* The matrix takes the wide column of the entry track and scrolls inside its own box on a phone. */
+.entry-track > .c2-matrix {
+  grid-column: wide;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.entry-prose .c2-io {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: .75rem 1.5rem;
+  margin: 0;
+}
+
+.c2-io dt {
+  margin: 0;
+  color: var(--av-amethyst);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: var(--av-eyebrow-tracking, .08em);
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+.c2-io dd { margin: 0; min-width: 0; overflow-wrap: break-word; }
+
+@media (max-width: 600px) {
+  .entry-prose .c2-io { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+  .c2-io dd { margin-bottom: .75rem; }
+}

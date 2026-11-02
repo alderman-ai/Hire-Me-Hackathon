@@ -1,0 +1,189 @@
+{
+  "groups": [
+    {
+      "title": "skills.group.1",
+      "items": [
+        {
+          "id": "icp-grid-from-client-site",
+          "name": "ICP grid built from the client's own website",
+          "line": "skills.icp-grid-from-client-site.1",
+          "path": "getsales\\icps\\grid.md"
+        },
+        {
+          "id": "account-scrape-apify",
+          "name": "Account research scraper on Apify, with no logins",
+          "line": "skills.account-scrape-apify.1",
+          "moment": {
+            "time": "15:13",
+            "session": "S08",
+            "text": "\"so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run\""
+          }
+        },
+        {
+          "id": "account-briefing-boards",
+          "name": "One-page account briefing (four research boards)",
+          "line": "skills.account-briefing-boards.1",
+          "link": {
+            "href": "/d1",
+            "label": "/d1"
+          }
+        },
+        {
+          "id": "account-people-classifier",
+          "name": "Account mapping: classifying every employee and post at a target company",
+          "line": "skills.account-people-classifier.1",
+          "moment": {
+            "time": "15:40",
+            "session": "S09",
+            "text": "\"set up a JEV classification that determines whether they are someone sending cold outreach, right?\""
+          }
+        },
+        {
+          "id": "research-desk",
+          "name": "Research desk: budgeted research with three wildcards",
+          "line": "skills.research-desk.1",
+          "path": "research\\SPEC.md"
+        }
+      ]
+    },
+    {
+      "title": "skills.group.2",
+      "items": [
+        {
+          "id": "lead-router",
+          "name": "Lead router: sorting leads into ICPs, rules first",
+          "line": "skills.lead-router.1",
+          "path": "getsales\\routing\\route.py"
+        },
+        {
+          "id": "outbound-workflow-factory",
+          "name": "Outbound workflow factory: 36 GetSales sequences from one copy file per ICP",
+          "line": "skills.outbound-workflow-factory.1",
+          "moment": {
+            "time": "16:36",
+            "session": "S10",
+            "text": "\"So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12.\""
+          },
+          "path": "getsales\\icps\\build_workflows.py"
+        },
+        {
+          "id": "stakeholder-landing-pages",
+          "name": "A personal landing page for each decision-maker",
+          "line": "skills.stakeholder-landing-pages.1",
+          "link": {
+            "href": "/for",
+            "label": "For Addvery"
+          },
+          "moment": {
+            "time": "11:17",
+            "session": "S02",
+            "text": "\"you're going to get proof of what i can do you don't need a cv\""
+          }
+        },
+        {
+          "id": "brand-clone-tokens",
+          "name": "Brand clone: a company's live site turned into design tokens",
+          "line": "skills.brand-clone-tokens.1"
+        },
+        {
+          "id": "brand-voice-posts-graded-blind",
+          "name": "LinkedIn posts in a brand's voice, graded blind",
+          "line": "skills.brand-voice-posts-graded-blind.1",
+          "path": "linkedin-content\\PIPELINE.md"
+        },
+        {
+          "id": "linkedin-wall-builder",
+          "name": "LinkedIn wall: a person's best posts as social proof",
+          "line": "skills.linkedin-wall-builder.1",
+          "link": {
+            "href": "/about#linkedin",
+            "label": "About me"
+          },
+          "moment": {
+            "time": "18:02",
+            "session": "S12",
+            "text": "\"just like a wall of linkedin posts like as many as like 20 to 40 of them\""
+          },
+          "path": "scraping\\build_wall.py"
+        }
+      ]
+    },
+    {
+      "title": "skills.group.3",
+      "items": [
+        {
+          "id": "publish-leak-scan",
+          "name": "Pre-publish leak checks",
+          "line": "skills.publish-leak-scan.1",
+          "path": "blog-pipeline\\scripts\\scan.py"
+        },
+        {
+          "id": "onepassword-batch",
+          "name": "One-approval secret handling for scraping and AI keys",
+          "line": "skills.onepassword-batch.1",
+          "moment": {
+            "time": "14:12",
+            "session": "S07",
+            "text": "\"do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator\""
+          }
+        }
+      ]
+    },
+    {
+      "title": "skills.group.4",
+      "items": [
+        {
+          "id": "spec-driven-agent-team",
+          "name": "Charter and executable specs: running a team of AI sessions",
+          "line": "skills.spec-driven-agent-team.1",
+          "moment": {
+            "time": "11:36",
+            "session": "S03",
+            "text": "\"they shoot all of his scenes first even if it's not in chronological order of the movie\""
+          },
+          "path": "CHARTER.md"
+        },
+        {
+          "id": "operator-attention-controls",
+          "name": "Operator controls: answer desk, roster, context watch and recovery",
+          "line": "skills.operator-attention-controls.1",
+          "moment": {
+            "time": "13:44",
+            "session": "S07",
+            "text": "\"Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.\""
+          },
+          "path": "answer-desk\\ASKING.md"
+        },
+        {
+          "id": "capture-rig",
+          "name": "Recording rig: every session filmed, transcribed and searchable",
+          "line": "skills.capture-rig.1"
+        },
+        {
+          "id": "build-in-public-feed",
+          "name": "Build-in-public analyzer: recordings into posts and clips",
+          "line": "skills.build-in-public-feed.1",
+          "path": "legibility\\posted.md"
+        },
+        {
+          "id": "transcript-to-article",
+          "name": "Transcript-to-article kit",
+          "line": "skills.transcript-to-article.1",
+          "path": "blog-pipeline\\PIPELINE.md"
+        },
+        {
+          "id": "taste-grading-booth",
+          "name": "Grading booth: turning one person's taste into a tested rubric",
+          "line": "skills.taste-grading-booth.1",
+          "path": "legibility\\grading\\"
+        },
+        {
+          "id": "agent-view-generator",
+          "name": "Agent view: a whole website as plain Markdown for AI agents",
+          "line": "skills.agent-view-generator.1",
+          "path": "scraping\\agent-view\\generate.py"
+        }
+      ]
+    }
+  ]
+}

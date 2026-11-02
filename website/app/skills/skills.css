@@ -1,0 +1,97 @@
+/* /skills (app/skills/page.tsx). Colours come from the Band (--bx-*); tokens are Addvery's. */
+
+.sk-h1 {
+  max-width: 1000px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.25rem, 4.4vw, 3.75rem);
+  line-height: var(--av-editorial-h1-lh);
+  letter-spacing: var(--av-editorial-h1-tracking);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.sk-hero-lead { max-width: var(--av-measure); }
+
+.sk-group + .sk-group { margin-top: 4.5rem; }
+.sk-group-title { font-weight: 500; }
+
+.sk-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sk-card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  min-width: 0;
+  padding: 1.625rem;
+  border-radius: var(--av-radius-lg);
+  background: var(--bx-surface);
+  border: 1px solid var(--bx-line);
+  scroll-margin-top: 140px;
+}
+
+/* A chip that lands here lights its card. */
+.sk-card:target { border-color: var(--bx-accent); box-shadow: 0 0 0 1px var(--bx-accent); }
+
+.sk-name {
+  margin: 0;
+  color: var(--bx-fg);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+  overflow-wrap: break-word;
+}
+
+.sk-line { margin: 0; color: var(--bx-body); font-size: 1rem; line-height: 1.55; }
+
+.sk-line a {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+  color: var(--bx-link);
+}
+
+.sk-moment {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--bx-accent);
+  color: var(--bx-lead);
+  font-family: var(--av-font-display);
+  font-size: 1rem;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.sk-moment span {
+  display: block;
+  margin-bottom: .25rem;
+  color: var(--bx-accent);
+  font-family: var(--av-font-numeric);
+  font-weight: 600;
+  font-size: .8125rem;
+}
+
+.sk-path {
+  margin: auto 0 0;
+  color: var(--av-mauve-400);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+  .sk-list { grid-template-columns: minmax(0, 1fr); }
+  .sk-group + .sk-group { margin-top: 3rem; }
+  .sk-card { padding: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-card { scroll-behavior: auto; transition: none; }
+}

@@ -15,11 +15,15 @@ import { renderBody } from "../markdown";
 import { CoverGlow, CoverTitle, MadeBox, RingMark } from "../parts";
 import { ClipLoader } from "../clips";
 import { StripEnhancer } from "../strip";
-import { NEW_SITE } from "../../flags";
-import { LIST_SLUGS, recommendAll } from "../../recommend";
+import { NEW_SITE, SKILLS_PAGE } from "../../flags";
+import { C1_SLUG, C2_SLUG } from "../../best/machine";
+import { Slot, SkillsBehind, type SlotName } from "../slots";
+import { LIST_SLUGS, recommendAll, type RecCard } from "../../recommend";
+import { t } from "../../copy";
 import { EntryEnd, MarkSeen } from "../entry-end";
 import "../../article.css";
 import "../demos.css";
+import "../slots.css";
 
 // One GTM demo entry: /demos/<slug>. A written post, a video, or both (the video on top).
 // Static: only the slugs visibleEntries() returns are built, every other slug is a 404. In a production
@@ -122,7 +126,42 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
   const fail = (msg: string): never => {
     throw new Error(`content/demos/${entry.file}: ${msg}`);
   };
-  const body = entry.body.trim() ? renderBody(entry.body, fail).html : "";
+  let body = entry.body.trim() ? renderBody(entry.body, fail).html : "";
+  // C2's additions: markers `> [!slot] ...` in its body (markdown.ts). Split the HTML there and fill them in on
+  // the new site; elsewhere they leave nothing, so the entry reads as before. Entries without markers: one piece.
+  const SLOT = /<div data-slot="(matrix|why|again)"><\/div>\n?/;
+  const hasSlots = SLOT.test(body);
+  const parts: { html?: string; slot?: SlotName }[] = [];
+  if (hasSlots) {
+    const bits = body.split(new RegExp(SLOT.source, "g"));
+    bits.forEach((b, i) => {
+      if (i % 2 === 1) {
+        if (NEW_SITE) parts.push({ slot: b as SlotName });
+      } else if (b.trim()) parts.push({ html: b });
+    });
+    if (NEW_SITE && entry.slug === C2_SLUG) {
+      // The template's "Key points" label, in this entry's own words (entry.summary.1).
+      for (const p of parts) if (p.html) p.html = p.html.replace(">Key points</h2>", `>${t("entry.summary.1")}</h2>`);
+    }
+    body = parts.filter((p) => p.html).map((p) => p.html).join("");
+    if (!NEW_SITE) body = body.trim();
+  }
+  const c2Skills = hasSlots && NEW_SITE && SKILLS_PAGE && entry.slug === C2_SLUG;
+  const c1 = entry.slug === C2_SLUG ? findEntry(C1_SLUG) : undefined;
+  const forcedNext: RecCard | undefined =
+    NEW_SITE && c1
+      ? {
+          key: C1_SLUG,
+          href: entryUrl(C1_SLUG),
+          title: c1.title,
+          why: c1.cover.subtitle,
+          image:
+            c1.poster && !/^https?:/.test(c1.poster)
+              ? { src: c1.poster, width: 1200, height: 630 }
+              : { src: `${entryUrl(C1_SLUG)}/opengraph-image`, width: 1200, height: 630 },
+          placeholder: false,
+        }
+      : undefined;
   const length = lengthLabel(entry);
   const demo = entry.deliverable ? demoName(entry.deliverable) : undefined;
   const what = entry.kind === "video" ? "entry" : "post";
@@ -193,7 +232,15 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
 
       {(body || entry.made) && (
         <div className="entry-body">
-          {body && <article className="entry-track entry-prose" dangerouslySetInnerHTML={{ __html: body }} />}
+          {hasSlots && NEW_SITE
+            ? parts.map((p, i) =>
+                p.slot ? (
+                  <Slot key={i} name={p.slot} />
+                ) : (
+                  <article key={i} className="entry-track entry-prose" dangerouslySetInnerHTML={{ __html: p.html ?? "" }} />
+                ),
+              )
+            : body && <article className="entry-track entry-prose" dangerouslySetInnerHTML={{ __html: body }} />}
           {body.includes("data-strip") && <StripEnhancer />}
           {body.includes("data-clip") && <ClipLoader />}
           {entry.made && (
@@ -204,10 +251,11 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         </div>
       )}
 
+      {c2Skills && <SkillsBehind />}
       {NEW_SITE && (
         <>
           <MarkSeen href={entryUrl(entry.slug)} />
-          <EntryEnd current={entryUrl(entry.slug)} lists={recommendAll()} people={PAGE_SLUGS} />
+          <EntryEnd current={entryUrl(entry.slug)} lists={recommendAll()} people={PAGE_SLUGS} forced={forcedNext} />
         </>
       )}
       {!NEW_SITE && (
