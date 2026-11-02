@@ -12,7 +12,7 @@ cover:
   subtitle: "Four ICPs, three languages, three tactics, and one personal first message per lead."
   accent: "one variable"
 tags: ["outbound", "getsales", "classification"]
-reading_minutes: 3
+reading_minutes: 4
 ---
 <!-- Video slot: when s-d9-legibility sends CLIPPED S-D3-C1, set kind to "video", add video (youtube_id, start) after deliverable, and rewrite this summary against the transcript. Words: Claude Doc e50390db (GetSales demo entries). Figures: getsales/site/assets/36-outbound-workflows-and-the-one-variable-behind-them/. -->
 
@@ -46,7 +46,7 @@ Below 0.75, or when two answers are too close to call, a person decides. Those d
 The workflows sit in their own GetSales folder. The four ICPs come from Addvery's own website: retail loyalty, telco customer value, consumer lending and last-mile logistics. Each runs in Czech, German and English, and Slovak leads get Czech.
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflows-folder.png
-> The GetSales folder Hackathon demo · Addvery, listing workflows named Demo, then the ICP, the language and the tactic
+> Ten of the 36 workflows in the GetSales demo folder, each named Demo, ICP, language and tactic, every one switched off
 > One naming scheme, so the folder sorts itself: Demo · ICP · language · tactic
 
 Each ICP has three tactics. Signal: something just happened at their company. Problem: a known pain, tied to one fact about them. Proof: an Addvery case that looks like them.
@@ -66,6 +66,10 @@ The one I open on camera tells the Rohlík Group story as Addvery's site states 
 ## Where the variable comes from
 
 The first message is written before import, one lead at a time, from the routing decision and the enriched fields. The client's own Claude, or another agentic LLM, writes it into the CRM through MCP or into a CSV column. A person reviews a sample before every import.
+
+> [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/custom-field.png
+> The GetSales custom contact field custom_message_1, with a contacts count of 0
+> An ordinary custom field, filled per lead at import; no contact has one yet
 
 The leads in the video are fictional, with one public fact each and nothing private. Two of them, as the CSV carries them:
 
