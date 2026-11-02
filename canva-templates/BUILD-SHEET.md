@@ -105,6 +105,8 @@ Canva fallback: if Canva can't fill text with a gradient (R1/R3 check), highligh
 
 Lock: **L** locked in full; **P** position-locked, content editable; **O** owner-only (§7). Highlighted words are in bold.
 
+**Sample copy.** The copy in these tables is the neutral fallback. The exports are filled with lines from the LinkedIn posts demo's round-1 drafts (Addvery's voice, not yet signed off), so the templates and the posts show one campaign; the fallback applies if those drafts change or are withdrawn. Either way: no real person, and numbers in stat and chart slots are labelled illustrative.
+
 ### T1 Single-image post, 1080×1350
 
 | # | Slot | Roles | x | y | w × h | Align | Max | Lock | Sample copy |
@@ -258,6 +260,6 @@ The sample date and event are fictional.
 | 8 | Safe zones | Overlay the §2 safe-zone mask | Nothing must-read outside the content box; T4 band y ≥ 1176 empty; T5 text inside 96 / 72 |
 | 9 | Max lines | Render each template with max-length stress copy | No slot exceeds its max lines; no overflow, clipping or collision; no single-word last line in a headline |
 | 10 | Logo | Measure the placed logo | Aspect 3.70:1 (±1px), `logo-white`, on `bg-base` or the gradient, §5 size and clear space |
-| 11 | Content | Read every slot | No real person's name, photo or quote; every stat or chart number says "Illustrative" in its source line |
+| 11 | Content | Read every slot | No real person's name, photo or quote; every number in a stat or chart slot (T2, T4 p5) says "Illustrative" in its source line. Figures inside headline or body copy belong to the post's own copy and are checked at its sign-off |
 | 12 | Names | File and template names | Match §1 and §8 |
 | 13 | Public repo | Search every tracked file this spec touches | No colour values, font family names or Canva links |
