@@ -62,6 +62,8 @@ Paths are relative to `canva-templates\`.
   - `..\research\global\L-01-W3-wildcard-received.md`: whether AI-made work reads as skill or as a shortcut: the penalty bites on personal lines, not on the machinery. Options for Alex, not decisions. Read only; S1 owns it.
 - `..\orchestration\_templates\Gate approval template.md` and `..\orchestration\check_gate.py`: the gate task and its 5-minute check, run from the repo root.
 - `..\Addvery Research\`: Alex's brand capture (S-D6 reads DoD-11). S-D6 needs its visual part: logo, colours, fonts, image style. Local disk only, read only, never from GitHub. Nothing from it is copied or quoted into a tracked file. It may not be ready yet (question 3).
+  - Files in it, as Alex's research session listed them at 15:33 (relayed by S-D1 as an OUTPUT line; added by S2 as C08). Read from disk only, never edit, never copy into a tracked file. A file marked expected doesn't exist yet: check for it, don't wait on it.
+    - `..\Addvery Research\Brand capture.md` (expected): Addvery's voice and visual identity, Alex's own brand capture.
 - Alex's earlier public repos `pixel-perfect-branded-assets-demo`, its twin `automated-branded-assets-demo`, `apify-speaker-linkedin-teasers-demo` and `canva-slide-layouts`: read through L-05's R1 report. Use `gh`, read only, only for a detail the report lacks.
 - Canva, by the route question 1 picks: the Canva connector's tools (load them with ToolSearch), Claude in Chrome (load its skill first, work in a new tab, window on the 4K monitor), or the Connect API with credentials in this folder's git-ignored env file (Outputs). Never list, search, open or change a design the session didn't create.
 

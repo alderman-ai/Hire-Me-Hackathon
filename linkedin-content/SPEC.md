@@ -59,6 +59,8 @@ Paths are relative to `linkedin-content\`.
   - `..\research\global\L-01-W3-wildcard-received.md`: whether AI-made work reads as skill or as a shortcut: the penalty bites on personal lines, not on the machinery. Options for Alex, not decisions. Read only; S1 owns it.
 - `..\orchestration\_templates\Gate approval template.md` and `..\orchestration\check_gate.py`: the gate task and its 5-minute check, run from the repo root.
 - `..\Addvery Research\`: Alex's brand capture (S-D7 reads DoD-11). S-D7 needs its voice part. Local disk only, read only, never from GitHub. Nothing from it is copied or quoted into a tracked file, beyond what question 3 allows. It may not be ready yet (question 2).
+  - Files in it, as Alex's research session listed them at 15:33 (relayed by S-D1 as an OUTPUT line; added by S2 as C08). Read from disk only, never edit, never copy into a tracked file. A file marked expected doesn't exist yet: check for it, don't wait on it.
+    - `..\Addvery Research\Brand capture.md` (expected): Addvery's voice and visual identity, Alex's own brand capture.
 - Alex's public repos `brand-voice-capture-demo-linkedin` and `subjective-taste-capture-demo` (question 1 says which): read through L-05's R1 report. Use `gh`, read only, only for a detail the report lacks.
 - `C:\Users\alder\Desktop\Atlas OS\Projects\PROJ_Client Demo\Research\`: Alex's earlier research on rubric extraction, outside the repo, local disk only (checked: it exists). Read through L-05's R4 report, which reads it first; never copy from it into a tracked file.
 

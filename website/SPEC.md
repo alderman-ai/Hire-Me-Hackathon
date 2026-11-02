@@ -85,6 +85,9 @@ Paths are relative to `website\`. Step 1 of the run (§7) confirms each resource
   - `..\research\global\L-01-W2-wildcard-delivered.md`: what the six actually get from the alert: the link, the preview card, click timing, and the morning hand-over checklist (C7). Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-W3-wildcard-received.md`: whether AI-made work reads as skill or as a shortcut: the penalty bites on personal lines, not on the machinery. Options for Alex, not decisions. Read only; S1 owns it.
 - `..\Addvery Research\`: Alex's own folder, git-ignored. Read it from the local disk only, never from GitHub, and never edit it. Nothing from it goes into a tracked file beyond what DI-XX question 3 allows. His confirmed six (DoD-10) and brand capture (DoD-11) land here when he's done (§7).
+  - Files in it, as Alex's research session listed them at 15:33 (relayed by S-D1 as an OUTPUT line; added by S2 as C08). Read from disk only, never edit, never copy into a tracked file. A file marked expected doesn't exist yet: check for it, don't wait on it.
+    - `..\Addvery Research\GetSales six.json` (expected about 16:00): the six stakeholders, with a `confirmed_by_alex` flag. Only the six marked confirmed go anywhere near the site, and only as far as his gate on the stakeholder pages allows.
+    - `..\Addvery Research\Brand capture.md` (expected): Addvery's voice and visual identity, Alex's own brand capture.
 - `content\feed.json`: the feed, newest first. Its post kinds are Status, Update, Milestone, Insight, Session and Explainer. The post with id `status` is the deliverables view, and a status update moves it back to the top.
 - `content\docs\` and `scripts\sync_docs.py`: the "start here" box's copies of the charter and the S0 to S2 specs. The script redacts them and refuses to write if a deny-listed term survives.
 - `content\videos.json`: YouTube ids for the session videos.
