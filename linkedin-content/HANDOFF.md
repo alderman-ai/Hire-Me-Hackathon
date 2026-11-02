@@ -2,6 +2,10 @@
 
 From session 9e96773b to the fresh `s-d7-linkedin-content`. Read `CLAUDE.md`, then this, then `SPEC.md` §9 (the decision log's rows from 17:15 on are the live state). The reset rules at the top of `..\answer-desk\ASKING.md` override the spec where they differ: no gates for Alex except the brand sign-off, easy calls are yours (decide and log), public sources may be published, written work for outside readers goes in a Claude Doc unless Alex says otherwise, any copy or design work needs its skill invoked first (a subagent gets the skill named in its prompt), no 18:00 cut-off. Private links and ids are in `local\links.md` (git-ignored).
 
+## Routing since 18:56 (Alex)
+
+Orchestration is split in three. `orchestration` is the master: handoffs, roster, context, charter. Send it `HANDOFF ...` lines and status; Alex no longer talks to it. `orch-site-map` (`site-map\`) owns the site's layout and scope map, and copy requests for page sections may now come from it. `orch-alex-prep` (`alex-prep\`) owns everything that needs Alex, the LinkedIn sign-off Doc included: tell it when his comment lands and when the sign-off is done. Questions for Alex still go to `answer-desk`. The `website` session also handed off at 18:58 under the same name; BUILT replies come from its successor.
+
 ## The one thing open: Alex's brand sign-off on the LinkedIn posts
 
 - **The Doc** (link in `local\links.md`) holds the five posts as exact text blocks, both carousels as images plus editable slide text, the scores, the fair baseline, the method, the five voice rules and a reception-check line. The TASK went to `answer-desk` at about 17:22, and the desk showed it. No comment yet.
