@@ -622,3 +622,21 @@ Received: 2026-11-02 16:08 CET (+01:00)
 POKE website: waiting on you for Approve - the plan for the website.md, the website's plan (about 3 minutes, nothing blocked; from 18:00 it runs as written).
 ```
 
+## POKE S-D3 — 16:13
+From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-b31a7431253d97f8dd5f0b7f3b09b8aa)
+Received: 2026-11-02 16:13 CET (+01:00)
+16:13 CET: about open TASK S-D3 "Approve - the six alert messages before they send.md"; repeated that alert to Alex with a PushNotification.
+
+```
+POKE S-D3: waiting on you for Approve - the six alert messages before they send.md (ticking sends the alert to your six; your sender's LinkedIn hours end at 16:30, so a tick from now on relies on call 9, which runs this one flow until 18:00; nothing sends after 18:00)
+```
+
+## POKE S-D1 — 16:16
+From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
+Received: 2026-11-02 16:16 CET (+01:00)
+16:16 CET: about open TASK S-D1 "Approve - the scraping demo plan.md"; repeated that alert to Alex.
+
+```
+POKE S-D1: still waiting on you for Approve - the scraping demo plan.md since 15:03. The quickest answer is to write "crawl: yes" in its box, or just tick it to take the defaults; one line either way.
+```
+
