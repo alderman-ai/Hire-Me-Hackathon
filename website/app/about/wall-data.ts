@@ -32,7 +32,7 @@ export type WallCard = WallPost & { day: string; dayLong: string; label: string;
 
 // Alt text for the posts' images, keyed by file name. The images carry no alt text on LinkedIn, so
 // these describe what each one shows. A new image without an entry gets the generic line.
-const ALT: Record<string, string> = {
+export const ALT: Record<string, string> = {
   "2026-05-11-7459537059708551168-1": "Card: Learn something new in AI. Copy and paste, five minutes. One prompt, one coffee, one sharper instinct.",
   "2026-05-13-7460286492494503936-1": "A LinkedIn profile with three five-star recommendations in its banner.",
   "2026-05-18-7462095364209381376-1": "Claude Code in a terminal: the welcome screen and the /ultraplan command.",
@@ -64,12 +64,12 @@ const prague = new Intl.DateTimeFormat("en-GB", {
   hourCycle: "h23",
   timeZone: "Europe/Prague",
 });
-function ymd(d: Date) {
+export function ymd(d: Date) {
   const parts = Object.fromEntries(prague.formatToParts(d).map((p) => [p.type, p.value]));
   return { d: Number(parts.day), m: Number(parts.month) - 1, y: Number(parts.year), time: `${parts.hour}:${parts.minute}` };
 }
-const day = { format: (date: Date) => { const { d, m, y } = ymd(date); return `${d} ${MONTHS[m].slice(0, 3)} ${y}`; } };
-const dayLong = { format: (date: Date) => { const { d, m, y } = ymd(date); return `${d} ${MONTHS[m]} ${y}`; } };
+export const day = { format: (date: Date) => { const { d, m, y } = ymd(date); return `${d} ${MONTHS[m].slice(0, 3)} ${y}`; } };
+export const dayLong = { format: (date: Date) => { const { d, m, y } = ymd(date); return `${d} ${MONTHS[m]} ${y}`; } };
 const month = { format: (date: Date) => MONTHS[ymd(date).m] };
 const year = { format: (date: Date) => String(ymd(date).y) };
 
@@ -97,7 +97,7 @@ export function wallCards(): WallCard[] {
 }
 
 /** "May to October 2026", from the oldest and newest post. */
-export function wallSpan(cards: WallCard[]): string {
+export function wallSpan(cards: { date: string }[]): string {
   if (!cards.length) return "";
   const newest = new Date(cards[0].date);
   const oldest = new Date(cards[cards.length - 1].date);

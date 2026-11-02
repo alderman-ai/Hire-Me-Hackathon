@@ -7,7 +7,15 @@ import { readAboutCopy, type CopyBlock } from "./copy";
 import { AI_PORTFOLIO_SLUG, FACTS, LINKS, SHOW_ZERO_COUNTS } from "./profile";
 import { LinkedInWall } from "./wall";
 import { wallCards, wallSpan } from "./wall-data";
+import { LinkedInWallFull } from "./wall-full";
+import { fullWallCards } from "./wall-full-data";
 import "./about.css";
+import "./wall-full.css";
+
+// The full wall (all 94 posts, image-led: ./wall-full.tsx) is built only when WALL_FULL=1 is set at
+// build time, which only the preview deploy does (`vercel deploy --build-env WALL_FULL=1`). Every other
+// build, production included, keeps the 34-post wall exactly as it is, until Alex says yes on the preview.
+const WALL_FULL = process.env.WALL_FULL === "1";
 
 // /about: who Alex is. Alex, 2 Nov: "one section of the website should be my background ... from my
 // live website, alderman.ai. It's got my headshot and my background", and "a wall of LinkedIn posts
@@ -80,7 +88,9 @@ export default function AboutPage() {
   const copy = readAboutCopy();
   const story = copy.sections.slice(0, -1);
   const belief = copy.sections[copy.sections.length - 1];
-  const posts = wallCards();
+  const cards = WALL_FULL ? [] : wallCards();
+  const fullPosts = WALL_FULL ? fullWallCards() : [];
+  const posts: { date: string }[] = WALL_FULL ? fullPosts : cards;
 
   return (
     <main className="about">
@@ -172,7 +182,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-wall" aria-labelledby="linkedin">
+      <section className={WALL_FULL ? "about-wall about-wall-full" : "about-wall"} aria-labelledby="linkedin">
         <div className="about-container about-wall-inner">
           <header className="about-wall-head">
             <h2 id="linkedin" className="about-h2">
@@ -188,8 +198,13 @@ export default function AboutPage() {
               </a>
             </p>
           </header>
-          <LinkedInWall posts={posts} showZeroCounts={SHOW_ZERO_COUNTS} />
+          {!WALL_FULL && <LinkedInWall posts={cards} showZeroCounts={SHOW_ZERO_COUNTS} />}
         </div>
+        {WALL_FULL && (
+          <div className="wf-wide">
+            <LinkedInWallFull posts={fullPosts} showZeroCounts={SHOW_ZERO_COUNTS} />
+          </div>
+        )}
       </section>
     </main>
   );
