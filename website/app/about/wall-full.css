@@ -302,8 +302,12 @@
   background: var(--av-lilac-100);
 }
 
+/* 13 px type, 18 px tall: the block padding takes the target to 24 px (WCAG 2.5.8), and the negative
+   margin keeps the quote box's spacing as it was. */
 .wf-quote-label {
   align-self: flex-start;
+  margin: -0.1875rem 0;
+  padding: 0.1875rem 0;
   color: var(--av-plum);
   font-size: 0.8125rem;
   font-weight: 500;
