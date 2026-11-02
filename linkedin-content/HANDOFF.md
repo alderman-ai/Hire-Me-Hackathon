@@ -43,7 +43,7 @@ marketing:draft-content, marketing:brand-review, anthropic-skills:docs, frontend
 
 F1 (sign-off approved) and F3 (context half full) still apply (§8). This session forked at F3. `orchestration` removes the old id 6a355ef8.
 
-## Since the fork (session 9e96773b, live state at 17:40)
+## Since the fork (session 9e96773b, live state at 17:35)
 
 - **Sign-off Doc:** link and ids in `local/links.md` (git-ignored). Complete: the five posts as exact text blocks, both carousels as contact-sheet images plus editable slide text, scores, the fair baseline, the method, the five rules, and a reception-check line (L-05 Q11). TASK sent to `answer-desk` at 17:22; the desk showed it. Alex's comment reaches this session.
 - **Slides:** rendered by a design subagent (frontend-design read from its SKILL.md, then design-critique and accessibility-review), in `local\slides\` (source `src\`, rerun `node build.mjs` then `python post.py` there). Web copies and alt text copied to `demo\slides\` (git-ignored).
@@ -51,9 +51,9 @@ F1 (sign-off approved) and F3 (context half full) still apply (§8). This sessio
 - **Next:** on BUILT, the leak check (step 4 above), then DONE to `orchestration` (sign-off pending or approved). On Alex's comment, step 3 above; if the site already shows old text, `BUILD S-D7-B2`.
 - **Personal-brand part:** shelved until everything else is finished (Alex, Q10.8).
 
-## Live state at 19:15 (session 9e96773b)
+## Live state at 18:30 (session 9e96773b)
 
 - **LinkedIn demo:** BUILT S-D7-B1, live at https://hire-me-hackathon.vercel.app/demos/linkedin-posts-in-addverys-voice-graded-blind. Leak check done and fixed. `DONE S-D7` sent to `orchestration` (sign-off pending). Waiting only on Alex's comment on the sign-off Doc; on it, apply his edits and send `BUILD S-D7-B2`. B2 also carries the entry summary cut to 144 characters (already committed in `demo\entry.md`).
-- **Alex's own voice (new jobs from 18:05):** the guide is in `local\alex-voice\` (guide and excerpts). About-me is in `local\about\` (sent as COPY to `website`). Six stakeholder landing pages are in `local\landing\new\`, blind-checked against `local\landing\current\` (`scores.md`, `judge.md`) and sent as COPY to `website` at 19:12. All git-ignored. `s1-research` reads the guide for a portfolio story.
+- **Alex's own voice (new jobs from 18:05):** the guide is in `local\alex-voice\` (guide and excerpts). About-me is in `local\about\` (sent as COPY to `website`). Six stakeholder landing pages are in `local\landing\new\`, blind-checked against `local\landing\current\` (`scores.md`, `judge.md`) and sent as COPY to `website` at 18:28. All git-ignored. `s1-research` reads the guide for a portfolio story.
 - **Stray:** a writer subagent published a private claude.ai artifact with a mid-edit copy of landing page 1 (link in `local/links.md`). It stays until Alex says delete.
 - **Personal-brand part:** still shelved.
