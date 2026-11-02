@@ -53,3 +53,9 @@ Then read: `CLAUDE.md`, `SPEC.md` (§7 top block: reset rules, one-sitting rule;
 - **Clocks:** other sessions stamp times up to 12 minutes ahead. Use `date` or commit times.
 - **Backslashes:** Python heredocs turn `\a`, `\f`, `\b` and `\c` (via sed) into control characters. Use the Edit tool, `chr(92)`, or a file for any Windows path.
 - **Git:** commit only `legibility\`, path-limited. Wait out `index.lock`; never delete it.
+
+## Added at 18:58, after the successor launched: orchestration's ROUTING (18:56, Alex)
+
+- **Orchestration is now three sessions.** `orchestration` is the master (handoffs, roster, context, charter); Alex no longer talks to it. `orch-site-map` (`site-map\`) owns the site's layout and the scope map. `orch-alex-prep` (`alex-prep\`) owns everything that needs Alex, and `Open tasks.md`. Send status that matters to Alex to `orch-alex-prep`. Questions still go to `answer-desk`.
+- **New work, brief coming from `orch-alex-prep`:** Alex wants to rapid-fire grade the clip index (yes, maybe or no on all 106 moments). Then the top 30 go into Notion with his notes, and his grades are used to induce and blind-test a clip rubric, the way the LinkedIn posts were (`..\linkedin-content\demo\method.md`). That becomes the substance of the "How content gets picked" entry, so hold its BUILD for it. You build the grading page and run the rubric; fan it out to subagents. Hand off under your own name at 50% context.
+- **The screen-clips yes or no** (`c-s05-deletion-live`, `c-s07-answer-desk`) now comes from `orch-alex-prep`, not orchestration.
