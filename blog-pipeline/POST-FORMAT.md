@@ -147,6 +147,10 @@ The callouts use the GitHub alert form, so they degrade gracefully: Obsidian, wh
 - An optional third line is the caption shown under it, at most 140 characters.
 - 0 to 8 per entry, never the entry's last block. Use one only where a picture shows something words can't; a diagram from text (§3.5) comes first where it can do the job.
 
+### 3.9 Site-defined blocks: `[!post]` and `[!carousel]`
+
+The site also accepts `> [!post] <title>` and `> [!carousel] <title>` (lines `format:`, `label:`, `slides: /demos/<folder>`, `variant: contrast`, then a blank line, then the post text), defined by `website` for the LinkedIn-content entries. The blog pipeline never writes them; `validate.py` lets them through unchecked, and the site's build checks them.
+
 ### 3.3 Key-points box (on by default, at most one)
 
 ```markdown
@@ -260,7 +264,7 @@ A script or a stage checks every post against this list. **F** fails the file; *
 2. **F** Every required key present, in order, with the right type; no unknown keys; `cover.title_lines` and `cover.accent` may be absent.
 3. **F** `author` is `Alex Alderman`; `status` is one of the four values.
 4. **F** `slug` matches `^[a-z0-9]+(-[a-z0-9]+)*$` and is at most 60 characters.
-5. **F** `description` is 140 to 160 characters; `title` at most 70; `cover.kicker` at most 32; `cover.subtitle` at most 120. None holds a note for Alex or Markdown.
+5. **F** `description` is 140 to 160 characters; `title` at most 64; `cover.kicker` at most 28; `cover.subtitle` at most 120. None holds a note for Alex or Markdown.
 6. **F** `date` is a real `YYYY-MM-DD` date; `made.dictated` is `YYYY-MM-DDTHH:MM`.
 7. **F** `cover.title_lines`, if present, joins with single spaces to `title`; `cover.accent`, if present, occurs once in `title` and inside one line.
 8. **F** `tags` holds 1 to 3 lowercase kebab-case strings.

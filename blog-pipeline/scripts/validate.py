@@ -497,6 +497,8 @@ def validate(raw: bytes):
                 summaries.append(k)
             elif DIAGRAM.fullmatch(first):
                 diagrams.append(k)
+            elif first.startswith(("> [!post] ", "> [!carousel] ")):
+                pass  # site-defined (POST-FORMAT §3.9); the site's build checks them
             elif FIGURE.fullmatch(first):
                 fl = [re.sub(r"^\s*>\s?", "", line).strip() for line in b["lines"][1:]]
                 fl = [f for f in fl if f]
@@ -522,7 +524,7 @@ def validate(raw: bytes):
             elif "[!diagram]" in first:
                 P.append(("F", 15, f"line {b['start']}: a diagram's first line must be exactly '> [!diagram] scale' or '> [!diagram] flow'"))
             else:
-                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!quote], [!summary], [!diagram] scale|flow, [!video] or [!figure]"))
+                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!quote], [!summary], [!diagram] scale|flow, [!video], [!figure], [!post] or [!carousel]"))
             if "[Alex" in "\n".join(b["lines"]):
                 P.append(("F", 17, f"line {b['start']}: a note for Alex inside a callout"))
 
