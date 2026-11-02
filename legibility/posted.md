@@ -14,6 +14,7 @@ Every post sent to the website, and every item deliberately left out.
 | P6 (S-D9-B6) | Session post for S09 (one name per agent, the company's look, one red disclaimer); Update "Alex's research lands, and the demos move" (S08 quotes linked; brand pass, 33 workflows, scraping input, a page per demo, blog rehearsal); roles on s08; status to 16:30 | S09 03:06, 11:27, 18:37; S08 04:31, 05:55; commits 440912f, 6e30e6d, db84e4c, 4a8099f, be97c53, 1b29ac2, 50f7c49, 32d0dd1, 0a05cec, 5235bb5 | Three judgment calls in Alex's words, and the moment his own research unblocked four demos at once. | 16:39 (website dd61531); sent 16:31 after the hold from 15:30 to 16:30 for the website reskin |
 | P7 (S-D9-B7) | Milestone "Every demo now has an agent on it" (16:42); Update "Three calls from the last hour" (two articles and their topics, the outbound demo cut to 36 workflows as a walkthrough, no copywriting without a skill); status to 16:45. First post written with marketing:draft-content | c921740, d0f7f30, 4e973dc, b420938, 2d4ec69, c1507b6, d8835c0, 6b1013f; Alex's notes in the approval files | Three scope and quality calls in Alex's own words, and every demo now staffed. | 16:49 (website 9a86a97) |
 | P8 (S-D9-B8) | Update "Alex stops everything for a reset" (16:44 halt, the 17:00 rules, 17:13 restart); Insight "The bottleneck is always human" (S10 lesson, S11 human context window, callback to S04); status to 17:25 (7 rows on website's 17:20 board); roles on s11. First post drafted in the Claude Doc "Feed posts from the build" | S10 20:24, 32:21, 34:04, 34:25; S11 2:45 (linked); commits 1dc71fc, 55d81e5, dac3000, b5cb6fd, 25c2b8a, b676ffa, 0bb061d, 87b5acb, 39b269f, b77b869, be9b1f6 | The day's biggest change of course, made by Alex live, and the lesson he drew from it in his own words. | 17:25 (website 4107ed0); sent 17:22, corrected 17:23 |
+| P9 (S-D9-B9) | Update "Alex settles the site's shape, and adds a demo" (17:23: site structure, scraping page live, GetSales as two entries, new brand-motion demo); Milestone "The outbound demo's 36 workflows are built" (17:34); status to 17:45 (GetSales, Canva templates) | DI-10 Q10.6, Q10.7, Q10.10, Q10.11 (b979ed6); e58af12, 1ecc738; getsales HANDOFF 1ce9d07, 8840749; desk 252da1a | Alex's calls on what the site becomes and a new demo in his own words, and the first demo built end to end in the tool. | sent 17:45; waiting for BUILT |
 
 ## Working rules from research (L-01, read 15:00)
 
@@ -73,6 +74,8 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | P8 | (update) | Alex stops everything for a reset; the new rules | COO, CEO, CAIO, CTO |
 | P8 | (insight) | The bottleneck is always human; the human context window | CEO, COO, CAIO, CTO |
 | P8 | s11 (website's post) | Evening check-in: what worked, and what didn't | CEO, COO, CAIO |
+| P9 | (update) | The site's shape, the scraping page live, two outbound entries, a brand-motion demo | CEO, CMO, CSO, RevOps |
+| P9 | (milestone) | The outbound demo's 36 workflows built | RevOps, CSO, CMO |
 
 ## Left out
 
@@ -101,3 +104,6 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | 17:20 | S10 08:45 to 08:50: "the same way we did the Apify one" | Points at the Apify proposal (DoD-22). |
 | 17:20 | S10 17:36 to 17:56 (the routing model in the GetSales demo) and 18:30 to 18:45 (power settings) | The routing belongs on the GetSales demo's own page; the power settings aren't interesting. |
 | 17:20 | S10 03:50 to 04:24 ("I don't want another approval") and 11:16 (approval includes the feedback) | Good moments, but the reset post carries the same point more strongly. Kept for a later post on how Alex approves work. |
+| 17:45 | DI-10 Q10.2 to Q10.5 (Alex's Czech level, where he can work and invoice, the kind of role, the meeting at the company tomorrow) | Personal, and about the relationship with the company. Not this session's to write. |
+| 17:45 | DI-10 Q10.9 ("something very similar to the Appify thing") and the sender attached to the 36 workflows | Could point at the Apify proposal; the sender is Alex's own account (DoD-22). |
+| 17:45 | What waits on Alex now: eight open desk tasks, all his alone (three sign-offs, four recordings, one pick) | Saved for P10, so the floor has fresh material and the count can be re-checked then. |
