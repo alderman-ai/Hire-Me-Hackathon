@@ -6,7 +6,7 @@ This spec builds a set of LinkedIn visual templates in Canva, in Addvery's brand
 
 ## 1. Operator preflight (P3)
 
-The intake is DI-XX (`..\Operator tasks\DI-XX S-D6 Canva templates preflight.md`).
+The intake is DI-XX: `..\Operator tasks\Decide - how the Canva templates get made.md`.
 
 | Question (DI-XX) | Question | Default |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ The intake is DI-XX (`..\Operator tasks\DI-XX S-D6 Canva templates preflight.md`
 
 **Launch gate.** The session launches once DI-XX is answered and its answers are applied. From 18:00 Prague, an unanswered question takes its default, logged in §9.
 
-**Operator scene.** The brand sign-off, proposed for 16:45–17:00, on camera, together with S-D7's sign-off (question 4). It takes about 10 minutes. Alex reviews a gate-approval operator task that embeds the exported templates, so Canva needn't be open on camera.
+**Operator scene.** The brand sign-off, proposed for 16:45–17:00, on camera, together with S-D7's sign-off (question 4). It takes about 10 minutes. It stays there although the GetSales live run moved to before 15:30 (Alex, 14:30): research and about 45 minutes of building come first. S-D10's Canva recording follows at 17:15. Alex reviews a gate-approval operator task that embeds the exported templates, so Canva needn't be open on camera.
 
 **Off camera, with the recording paused.** Only the route question 1 picks applies:
 - Connector: add Canva under Connectors in his Claude settings and sign in, before the session launches, so its tools load.
@@ -67,7 +67,7 @@ Step 1 of the run confirms every resource is reachable and turns anything ambigu
 - `.env`: git-ignored; only for the Connect API route.
 - `.gitignore`: covers `.env` and `local/`.
 - In Canva: one folder of Addvery templates, and one brand kit if the plan has room.
-- In `..\Operator tasks\`: the spec-draft and brand sign-off gate tasks.
+- In `..\Operator tasks\`: the two gate tasks, `Approve - the plan for the Canva templates.md` and `Approve - the LinkedIn templates in Canva.md`.
 
 ## 4. Problem and scope
 
@@ -93,7 +93,7 @@ Step 1 of the run confirms every resource is reachable and turns anything ambigu
 | About five LinkedIn templates, at the sizes the build sheet sets, exist in one Canva folder in Addvery's brand, built from Alex's capture | DoD-16 (reads DoD-11) |
 | Each is pixel-perfect: exact dimensions, the build sheet's grid and margins, brand fonts with no substitution, clean PNG and PDF exports; brand elements locked where the plan allows | DoD-16 |
 | Alex's brand sign-off is recorded: the sign-off gate task is approved and archived | DoD-16 |
-| S-D10 has the link to the template it designs with, before 17:30 | serves DoD-21 |
+| S-D10 has the link to the template it designs with, by 17:05 | serves DoD-21 |
 | The site's D6 section shows the exports and how they were made (`BUILT S-D6-B1` received) | serves DoD-19 |
 | Nothing committed or published shows another client's Canva design, a Canva login, a secret, or brand values copied from the capture | serves DoD-22 |
 
@@ -123,21 +123,21 @@ Approving the list is S1's gate, not this session's.
 
 **Coherency check:** "if we execute this methodology, will that DoD be satisfied?" Templates in Canva in the brand: steps 2 to 4. Pixel-perfect: steps 1 and 6. Sign-off: run step 9. S-D10's link: run step 8. The site: run step 10. Screen care: the rules below and run step 11. Run it again after the synthesis; any gap becomes a change before the spec-draft gate.
 
-**How a gate runs** (`..\answer-desk\ASKING.md`). Freeze the document into `..\Operator tasks\OT-<nn> Gate approval S-D6 <gate>.md`, written from the gate approval template, with the next free OT number (check `Operator tasks\` and `Operator tasks\Archive\` just before writing), and the whole document copied in. Commit that file first, on its own and path-limited, so the snapshot names a commit. Send `answer-desk` `TASK S-D6: <file name> is waiting on you: <what it decides and unblocks>`. While blocked, wait with the Monitor tool running `python -I orchestration\check_gate.py "Operator tasks\<file>"` from the repo root every 300 seconds until it exits 0. Poke after 15 minutes. On `CHANGES`, apply them, refresh the snapshot and wait again. Then send `TASK DONE S-D6: <file name>` to `answer-desk` and `ARCHIVE <file name>: readers <spec ids>` to `orchestration`.
+**How a gate runs** (`..\answer-desk\ASKING.md`, Alex's readability rule of 2 Nov). Freeze the document into `..\Operator tasks\Approve - <what, in plain words>.md`, written from the gate approval template. Each gate's plain name is in its step below. The next free OT number (check `Operator tasks\` and `Operator tasks\Archive\` just before writing) goes in the front matter only. The file opens with `## What this is`: in plain words, with no codes (no spec, DoD or OT ids, no session names), what the templates are for in the job application, what he's approving, what happens next, what's waiting on it, about how long it takes him, and the deadline. The frozen document follows, copied in whole. Commit that file first, on its own and path-limited, so the snapshot names a commit. Send `answer-desk` `TASK S-D6: <plain file name> is waiting on you: <what it decides and unblocks>`. While blocked, wait with the Monitor tool running `python -I orchestration\check_gate.py "Operator tasks\<plain file name>"` from the repo root every 300 seconds until it exits 0. Poke after 15 minutes. On `CHANGES`, apply them, refresh the snapshot and wait again. Then send `TASK DONE S-D6: <plain file name>` to `answer-desk` and `ARCHIVE <plain file name>: readers <spec ids>` to `orchestration`.
 
 **Run steps.** Commit after every finished step, path-limited: `git commit -m "[canva-templates] <message>" -- canva-templates/...`.
 1. Read the reading list, and `HANDOFF.md` if it exists. Confirm every resource is reachable. Create `.gitignore` (`.env`, `local/`) and `local\`. Apply DI-XX's answers. Commit.
 2. Send the RESEARCH line (§6). Probe Canva access read-only through the chosen route. If it fails, ask `S-D6-Q1`.
 3. Groundwork, delegated (P7): a subagent drafts the build sheet skeleton. When the capture lands, the session reads its visual part from the local disk and writes the values to `local\brand.md`. Commit.
 4. When the synthesis lands, or at the question 4 cutoff: confirm or revise the methodology, run the coherency check, and finish `BUILD-SHEET.md`. Commit.
-5. **Gate: spec draft.** Freeze the whole SPEC.md (problem, scope, its own DoD, the research verdicts, the methodology) into `OT-<nn> Gate approval S-D6 spec draft.md`, as above. Under question 4's A, the build goes ahead on the frozen methodology while the gate is open, and changes from the gate are applied to the templates they touch. From 18:00, an open spec-draft gate means proceed on the checked methodology and log it.
+5. **Gate: spec draft.** Freeze the whole SPEC.md (problem, scope, its own DoD, the research verdicts, the methodology) into `Approve - the plan for the Canva templates.md`, as above, with a five-line plain summary first. Under question 4's A, the build goes ahead on the frozen methodology while the gate is open, and changes from the gate are applied to the templates they touch. From 18:00, an open spec-draft gate means proceed on the checked methodology and log it.
 6. Build, delegated (P1, P7). The session sets up the brand kit itself, then hands one subagent each template or pair, with `BUILD-SHEET.md`, `local\brand.md`, the route's tool notes and the screen-care rules. Commit the build notes.
 7. Fill, export and check (methodology steps 5 and 6), with a separate checking subagent. The sample copy is S-D7's posts, read only from `..\linkedin-content\demo\posts.md` once S-D7's `COPY S-D7` message says they exist; otherwise neutral copy. Commit `exports\`.
-8. Send `s-d10-canva-video` `READY S-D6: templates in Canva, folder <name>, link <link>; for the scene, use <template>`. If the templates aren't done by 17:15, send what exists and say so.
-9. **Gate: brand sign-off** (DoD-16), in the question 4 slot. `OT-<nn> Gate approval S-D6 brand sign-off.md` embeds every export (linked from `..\canva-templates\exports\`), the build sheet and the check results, with no Canva link. Tell `s-d7-linkedin-content` when its TASK line is sent, so both arrive together. Wait as above. On `CHANGES`, fix, re-export and refresh. Then TASK DONE, and `ARCHIVE <file name>: readers S-D6, S-D10`. From 18:00, an open sign-off stays open for the morning cleanup session while the rest carries on.
-10. **Site request.** Write `site\d6.md`: the exports and a three-line note on how they were made. Send `website`: `BUILD S-D6-B1: add a D6 section, LinkedIn templates in Canva, in the deliverables area: a gallery of the template previews and a short how-it-was-made note. Content: canva-templates\site\d6.md. Source: S-D6's own templates in Canva, signed off by Alex in OT-<nn>; nothing from Addvery Research.` Wait for `BUILT S-D6-B1` or `REFUSED S-D6-B1` before any next request.
+8. Send `s-d10-canva-video` `READY S-D6: templates in Canva, folder <name>, link <link>; for the scene, use <template>`. Send it by 17:05 at the latest, ahead of the 17:15 recording. If the templates aren't done by then, send what exists and say so.
+9. **Gate: brand sign-off** (DoD-16), in the question 4 slot. `Approve - the LinkedIn templates in Canva.md` embeds every export (linked from `..\canva-templates\exports\`), the build sheet and the check results, with no Canva link. Tell `s-d7-linkedin-content` when its TASK line is sent, so both arrive together. Wait as above. On `CHANGES`, fix, re-export and refresh. Then `TASK DONE S-D6: Approve - the LinkedIn templates in Canva.md`, and `ARCHIVE Approve - the LinkedIn templates in Canva.md: readers S-D6, S-D10`. From 18:00, an open sign-off stays open for the morning cleanup session while the rest carries on.
+10. **Site request.** Write `site\d6.md`: the exports and a three-line note on how they were made. Send `website`: `BUILD S-D6-B1: add a D6 section, LinkedIn templates in Canva, in the deliverables area: a gallery of the template previews and a short how-it-was-made note. Content: canva-templates\site\d6.md. Source: S-D6's own templates in Canva, signed off by Alex in Approve - the LinkedIn templates in Canva.md; nothing from Addvery Research.` Wait for `BUILT S-D6-B1` or `REFUSED S-D6-B1` before any next request.
 11. A subagent checks every committed file and export for other designs, logins, links to Alex's account, secrets and brand values copied from the capture. Fix and commit.
-12. When §5 is met, send `orchestration` `DONE S-D6: <templates in Canva, OT-<nn> approved, BUILT S-D6-B1>`.
+12. When §5 is met, send `orchestration` `DONE S-D6: <templates in Canva, their brand sign-off approved, BUILT S-D6-B1>`.
 
 **Screen care (every step).** Assume anything on screen can be published. Canva goes on the recorded left monitor only as the Addvery folder or one template, opened by link. Claude in Chrome works on the 4K monitor. The session never lists or searches Alex's designs. No Canva links or brand values go in tracked files. Credentials go only in `.env`, entered with the recording paused. Never open the Apify proposal or Alex's own GetSales outbound.
 
