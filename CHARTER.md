@@ -90,7 +90,7 @@ The project has eleven client-facing deliverables (one of them, D4, retired on 2
 | D6 | Canva LinkedIn templates | LinkedIn visual asset templates in Canva, in Addvery's brand. A redo of an earlier pixel-perfect branded-assets demo (reference on the operator's GitHub). |
 | D7 | LinkedIn content creation demo | Shows LinkedIn content creation in Addvery's voice. References the operator's subjective brand capture repo on GitHub. |
 | D8 | Website | The live site, with a section per key stakeholder. A website subdirectory already exists, and this builds it out with more functionality. Without being prompted, it keeps getting clearer about what is being built, for example by showing the deliverables so visitors know what to expect. |
-| D9 | Legibility analyzer | A subdirectory that takes each processed clip from the OBS capture rig, finds and keeps the most valuable content, and sends build requests to the website session ("add this, add that"). Checks run every hour or two. |
+| D9 | Legibility analyzer | A subdirectory that takes each processed clip from the OBS capture rig, finds and keeps the most valuable content, and sends build requests to the website session ("add this, add that"). Checks run every hour or two. It also turns the day's transcripts and rig recordings into a long-form "day one" story, with video clips between the sections, published as an entry in the site's GTM demos list. |
 | D10 | Canva design video | A recording of the operator designing in Canva, done near the end. |
 | D11 | Brand motion demo with Comfy | Shows that video generation can add energy to the brand: a 5-second animation of one Addvery LinkedIn graphic (a light shimmer, a 3D texture, the graphic building itself) and a one-minute brand video like the operator's Gauss Hero Animation. He runs the Comfy work himself; the project brainstorms the ideas and puts the result on the site. |
 
@@ -131,6 +131,7 @@ Signed off by Alex in DI-5 on 2 Nov, with DoD-4 loosened at his request, and wri
 | DoD-21 | A recording of the operator designing in Canva, made near the end, is on the site. | The video is live on the site. | D10, D8 | S-D10 | live |
 | DoD-22 | Nothing published (the site, its videos, the public repo) shows secrets, the Apify proposal, or the operator's own GetSales outbound outside the demo folder. | A check of the site, the published videos and the repo finds none of them displayed; the charter and specs may name them. Material from public sources, the six stakeholders' public profiles included, may be shown. | D1 to D11 | S-D8, S-D9 | live |
 | DoD-23 | The chosen animation of one Addvery LinkedIn graphic (about 5 seconds) and a one-minute brand video, both made with Comfy, are on the site as a GTM demo entry. | The site's GTM demos list has the entry, with both videos. | D11, D8 | S-D11 | live |
+| DoD-24 | A long-form day-one story, built from the transcripts with clips between its sections, is on the site. | The entry is live in the GTM demos list. | D9, D8 | S-D9 | live |
 
 ## Spec outline
 
