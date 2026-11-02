@@ -29,7 +29,8 @@ markers are the ones change-outline writes, matched exactly: a row is
 operator-owned when its Spec cell ends `(operator-owned)`, and retired when its
 Spec cell ends `(retired)` or its Outline cell starts `Merged into` or `Retired`.
 A DoD item is retired when its Status cell says retired, and a deliverable
-when its Name cell ends `(retired)`. Change records:
+when its Name cell ends `(retired)`. A roster row whose Role cell says `Also runs S-D<n>`
+counts for that row too (one session running two rows, as C15 does). Change records:
 `Status:` other than applied or dropped is open; `- HELD <spec id> ...` is held.
 Placeholders (DoD-S0-a ...) are notes until the DoD is signed off, which this
 script takes to be once the charter holds an item numbered DoD-<n>. Test items
@@ -221,6 +222,7 @@ def parse_roster(root: Path) -> dict:
                 m = SPEC_ID.search(clean(r[cr]))
                 if m:
                     ids.add(m.group(1))
+                ids.update(re.findall(r"[Aa]lso runs (S-D\d+[a-z]?|S\d+)\b", clean(r[cr])))
             m = re.match(r"^s-d(\d+[a-z]?)-", session) or re.match(r"^s(\d+)-", session)
             if m:
                 ids.add(("S-D" if session.startswith("s-d") else "S") + m.group(1))

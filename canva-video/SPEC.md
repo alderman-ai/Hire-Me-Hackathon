@@ -309,3 +309,9 @@ Write A, B, C, or D and what you want instead.
 ```
 `</operator_answer>`
 ~~~~
+
+## S-D11 Brand motion demo with Comfy (run by this session; added by S2 as C15)
+
+Row S-D11, deliverable D11, claims `DoD-23`: the chosen animation of one Addvery LinkedIn graphic (about 5 seconds) and a one-minute brand video, both made with Comfy, are on the site as a GTM demo entry. Depends on S-D6 (the graphics) and on Alex's pick from the ideas Doc. His scenes: picking the ideas, and running the Comfy work himself.
+
+His words (DI-10 A10.11, `..\Operator tasks\Archive\Decide - everything left that needs you.md`): "I just need some brainstorming of what ideas I can do ... a little 5-second animation. Instead of just having a static image on LinkedIn, we can have a light shimmer. We can have the brand getting some kind of 3D texture to it. It kind of builds itself ... And then I want to create a one-minute video similar to the Gauss rocket thing." The reference is `C:\Users\alder\Desktop\Gauss Hero Animation\`, outside the repo; the Comfy skills listed in this session (comfy, comfy-director and the others) are the ones to name. Write the ideas in a Claude Doc (reset rule 4) and plan the rest of this section yourself, logged in your decision log.
