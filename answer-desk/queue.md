@@ -398,12 +398,13 @@ Received: 2026-11-02 14:42 CET (+01:00)
 TASK S-D4: Decide - how the blog pipeline should work.md is waiting on you: rewritten in plain words, same 5 decisions, about 5 minutes (where the post's look is built, how you dictate, whether the test dictation counts as the first article, the test slot and topic, what to do if research runs late). Unblocks the blog pipeline and your test dictation. Low priority, as you said: no pokes.
 ```
 
-## TASK S2: Approve - Addvery research is yours, reading lists per demo — open
+## TASK S2: Approve - Addvery research is yours, reading lists per demo — done
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
 Received: 2026-11-02 14:42 CET (+01:00)
 14:42 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing is blocked on it).
 14:44 CET: orchestration handed off to a fresh session under the same name (new address uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de); it watches this task silently. Nothing from the desk was awaiting its reply.
 17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
+17:07 CET: TASK DONE S2 received (Alex approved it at 16:29; applied in 82070b8 and archived); marked done.
 
 ```
 TASK S2: Approve - Addvery research is yours, reading lists per demo is waiting on you: two updates to the project plan (the Addvery research and brand capture are your own work, and each demo gets its own reading list). It's low priority now: nothing is blocked on it, so no pokes.
