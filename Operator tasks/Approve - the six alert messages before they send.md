@@ -63,7 +63,7 @@ Below, the same messages use role labels instead of names.
 
 ### The six, with role labels and the shared text
 
-The six are, in order: the CEO, the Chief Growth Officer (labelled Director of Growth), both co-founders (now advisors), the Chief Delivery Officer and the Head of BI. Their names and their exact lines are in the file above. **Changed at 15:55, at your word:** the Chief Growth Officer is in, the engagement manager is out. If you ticked before this change, tick again. **Changed at 16:16:** the Chief Growth Officer's opening line now rests on her 31 October post about the AI agents she runs, a better fit than the earlier one.
+The six are, in order: the CEO, the Chief Growth Officer (labelled Director of Growth), both co-founders (now advisors), the Chief Delivery Officer and the Head of BI. Their names and their exact lines are in the file above. **Changed at 15:55, at your word:** the Chief Growth Officer is in, the engagement manager is out. If you ticked before this change, tick again. **Changed at 16:16:** the Chief Growth Officer's opening line now rests on their own 31 October post about the AI agents they run as Chief Growth Officer, a better fit than the earlier one.
 
 | # | Who | Opening line (characters) | What the line rests on |
 | --- | --- | --- | --- |
