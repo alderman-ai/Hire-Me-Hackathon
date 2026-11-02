@@ -387,11 +387,12 @@ Recommend (a): it costs you one letter and a time, and your own research session
 **If unanswered by the deadline:** I watch `Addvery Research\Scraping summary.md` anyway and keep building the section's frame; before 18:00 I poke you, and if no summary exists by 18:00 the section stays open for tomorrow morning's cleanup session.
 ```
 
-## TASK S-D4: Decide - how the blog pipeline should work.md — open
+## TASK S-D4: Decide - how the blog pipeline should work.md — done
 From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:42 CET (+01:00)
 14:42 CET: alert shown to Alex as low priority; no PushNotification (Alex, 14:38: low priority, don't push it at him).
 16:36 CET: s-d4-blog-pipeline owns this task now (took it over from wave2-specs; new address uds:\.\pipe\LOCAL\cc-msg-9801305620995dd86fbfeb00f490020a). It confirms the feedback-section rule is in blog-pipeline\SPEC.md and its runbook.
+16:47 CET: TASK DONE S-D4 received from s-d4-blog-pipeline; marked done.
 
 ```
 TASK S-D4: Decide - how the blog pipeline should work.md is waiting on you: rewritten in plain words, same 5 decisions, about 5 minutes (where the post's look is built, how you dictate, whether the test dictation counts as the first article, the test slot and topic, what to do if research runs late). Unblocks the blog pipeline and your test dictation. Low priority, as you said: no pokes.
@@ -781,5 +782,23 @@ Received: 2026-11-02 16:46 CET (+01:00)
 
 ```
 POKE S1: one research approval still waits on you: "Approve - research for the GetSales demo and website.md" (since 14:54). One tick, about 2 minutes. The GetSales and website sessions are working from drafts meanwhile; the findings would land about 25 minutes after your tick.
+```
+
+## POKE S-D9 — 16:47
+From: s-d9-legibility (uds:\.\pipe\LOCAL\cc-msg-1604f017e0f4acd39e77fbf8793e2008)
+Received: 2026-11-02 16:47 CET (+01:00)
+16:47 CET: about open low-priority TASK S-D9 "Approve - the plan for the site's build updates.md"; repeated that alert to Alex; no PushNotification (nothing waits on it).
+
+```
+POKE S-D9: waiting on you for Approve - the plan for the site's build updates.md (nothing waits on it; about 5 minutes)
+```
+
+## HOLD from orchestration — 16:47
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
+Received: 2026-11-02 16:47 CET (+01:00)
+16:47 CET: desk on hold until orchestration sends RESTART. Nothing new shown to Alex (no questions, pokes, TASK alerts or reminders); everything stays queued, nothing dropped or answered. Whole queue sent to orchestration.
+
+```
+HOLD from orchestration, 16:47, on Alex's direct instruction: the project pauses for a reset, and everything restarts together once he and I have been through every open item. Until I send RESTART: put nothing new in front of Alex. No new questions shown, no pokes, no TASK alerts, no reminders. Keep everything you've queued; don't drop or answer anything. Reply to orchestration with your whole queue in one message: every question id on the desk or waiting behind it (asker, id, one-line title, its deadline), and every TASK alert you've raised that hasn't had a TASK DONE (asker, file name). I'm putting it all in front of Alex myself as one list.
 ```
 
