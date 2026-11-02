@@ -3,3 +3,10 @@ clips/
 
 # Working notes for the day-one article (research, transcripts excerpts). Never published as-is.
 local/
+
+# Local grading set: low-res clips for Alex to grade, and his grades. Never in git.
+grading/clips/
+grading/grades.jsonl
+
+# Scratch frame-check stills (one is a screen frame). Never in git.
+grading/_check/
