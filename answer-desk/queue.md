@@ -1014,3 +1014,12 @@ Received: 2026-11-02 18:51 CET (+01:00)
 TASK website: six page reviews are waiting on you, one per person, each the real page as it will look live, with the text editable in place. Ivana https://claude.ai/artifact/TCk45ox4gttBgNiyYVRA7r · Stepan https://claude.ai/artifact/EWewUdWbqYurU99uH3zM77 · Pavel https://claude.ai/artifact/Y542BkTDNhC4fYNVxeMnwn · Lukáš https://claude.ai/artifact/Uey12LMZ8mTNW2QNHiShx6 · Milos https://claude.ai/artifact/2zQSocRf8xTBxx291oQd3h · David https://claude.ai/artifact/PX2aWLB8ws6QfAGDf3GGmi. Click any outlined text, edit, then "Save edits": your saved edits are the sign-off, and that person's page then goes live with the greeting, concerns and reading list. Ivana's first, about 3 to 5 minutes each. Nothing else is blocked on it.
 ```
 
+## TASK S1: AI portfolio entry (private page) — open
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
+Received: 2026-11-02 18:52 CET (+01:00)
+18:52 CET: alert shown to Alex; no PushNotification (Alex is active at the desk). If Alex answers it at the desk, relay his words to s1-research.
+
+```
+TASK S1: your AI portfolio entry is waiting on you: https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J (a private page). It's the first-person story you asked for: your AI sabbatical and the executable-spec work, with the public repo under each claim. About a 10-minute read. Comment on the page to sign it off or ask for changes; the five yellow marks are the points only you can settle (sabbatical length, the CB6 repo link and two others). Your sign-off unblocks placing it on the site, linked from About me. If you'd rather answer here, a line to the desk reaches me too.
+```
+
