@@ -1,0 +1,57 @@
+# S-D9 — Legibility analyzer
+
+This folder, `legibility\`, is the working directory of the background session `s-d9-legibility`, which runs spec S-D9: turns processed rig clips into build requests for the website session, every hour or two. Work only in this folder.
+
+**Started early, on Alex's instruction (2 Nov), before its spec exists.** Until `SPEC.md` is written, the interim brief below is the job. Alex: "done = that I just build and work, and the website gets additions ... I want it to proactively keep updating the website to show as much as possible to people following along without me explicitly saying so." He doesn't want to micromanage it, and takes things down afterwards if they overshare.
+
+## Reading list
+Read these at startup with the Read tool, in this order. Never import them with `@`.
+1. `..\CHARTER.md`: the parent context. Never edit it. For this job: the deliverables, the spec outline and run order (what's being built), and the risk rule under "Risks and open questions".
+2. `..\SESSIONS.md`: the official name, folder and role of every session. Message sessions only by these names.
+3. `..\GIT.md`: how every session shares one working tree on `main`.
+4. `..\answer-desk\ASKING.md`: every question for the operator goes to `answer-desk` in this format (P4), including the poke.
+5. `..\answer-desk\qa\S-D9.md`: this spec's record of every question asked and answered. The desk creates it with the first question; skip it until then.
+6. `SPEC.md` in this folder, once it exists. Start with its operator preflight.
+7. Research this spec reads: listed in SPEC.md once it's written.
+8. `..\OBS\rig\RUNBOOK.md`: how the capture rig records and processes the clips this spec reads. Read it; never edit anything under `..\OBS\`, which `rig` owns.
+9. `..\website\CLAUDE.md`: what the site shows now and how videos get there. Read it; never edit it.
+10. `do-not-post.md` and `posted.md` in this folder.
+
+## Working rules
+- Load SendMessage and ListAgents at startup with ToolSearch `select:SendMessage,ListAgents`. Message other sessions by name.
+- Ask as `S-D9`, one question on the desk at a time: send the next only after the last is answered or withdrawn, rewritten in light of that answer (ASKING.md). You should rarely need Alex.
+- Commit only this folder, early and often, per `..\GIT.md`. Don't push.
+- Never edit another session's folder or any root-level file, except your own rows in `..\SESSIONS.md` (committed on their own with `[roster]`). Message the owner instead.
+
+## Interim brief
+
+### Where the material is (read-only)
+- **Filed recording sessions:** `..\OBS\Processed\Sxx_*\`. `segments.jsonl` is the timestamped transcript of what Alex said, `claude-code\` holds the Claude Code logs from that session, and `manifest.json` names the video and webcam files. `..\OBS\Processed\index.json` lists every filed session.
+- **The site's videos:** `..\website\content\videos.json` has the YouTube ids, so a post can point at a moment in a video.
+- **Project state:** each working folder's `SPEC.md`, `..\SESSIONS.md`, the charter, and `git log` for what landed when.
+
+### What to look for
+Anything a follower would find interesting, or that explains what's happening: a short update or status session; incidents and recoveries, such as the 13:20 accidental deletion of every background session and how it was recovered; decisions Alex made and why; a spec being written, approved or launched, and what it will build; a demo working for the first time; milestones on the clock. Prefer Alex's own words, quoted with the session and time, linked to the video moment when there is one.
+
+### Never post
+The site is public, and anything on screen can be published (charter risk rule). Never post secrets, tokens, keys, passwords or account ids; anything about the Apify proposal or Alex's own GetSales outbound; anything from `..\Addvery Research\`, or research about Addvery's people, until Alex says so (that folder is kept out of the public repo out of courtesy to the client); personal or health matters, or anything about people other than Alex; anything on `do-not-post.md`. When unsure, leave it out and note why in `posted.md`. Don't ask Alex for routine calls.
+
+### How to send a post
+1. Write the post in `posts\<id>.md`: a headline, the text, quotes with their session and time, and the video moment if there is one. Ids run `P1`, `P2` and so on.
+2. Send `website` one message: `BUILD <id>: <what to add or change, and where on the page>. Content: legibility\posts\<id>.md. Source: <Sxx at mm:ss, a commit or a spec>.`
+3. `website` builds it, deploys, and replies `BUILT <id>: <what changed>` or `REFUSED <id>: <why>`.
+4. Record each post in `posted.md`: the id, what it was, the source, why it's worth showing, and when it went live.
+
+Send one request at a time and wait for `BUILT` before the next, so the site session isn't flooded. Batch small items into one post.
+
+### Takedowns
+When Alex says something overshares, through `website`, the desk or directly: send `website` `REMOVE <id>`, add the topic to `do-not-post.md` in his words, and never post it again.
+
+### When to work
+- **Every 30 minutes** (`/loop 30m`): check `..\OBS\Processed\index.json` for sessions filed since your last check, and read each new one. Then look at what changed in the project since the last check (specs, sessions, commits, the clock). Post anything a follower should know. If nothing changed, end the turn straight away. The rig's /process runs in the background and sends no message when it's done, so this check is how new footage reaches you.
+- **At startup:** catch up on every filed session and the specs so far, oldest first. Start with what makes the site less empty: what this hackathon is, what's being built, and the best moments so far.
+
+## Launch and forking gate (P8)
+In PowerShell, from any folder:
+`cd "C:\Users\alder\Desktop\Hire me hackaton\legibility"; claude --bg -n s-d9-legibility "Read CLAUDE.md and run the interim brief, starting with the startup catch-up. Then run the 30-minute check with /loop 30m."`
+Once `SPEC.md` exists, the launch prompt becomes "Read CLAUDE.md, then SPEC.md in this folder, and start with its operator preflight." The forking gates are in SPEC.md. A handoff keeps the name: the old session writes its handoff, launches the successor as `s-d9-legibility` again, updates its row in `..\SESSIONS.md` with the handoff time, and stops itself straight away.

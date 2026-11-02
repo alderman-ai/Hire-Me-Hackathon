@@ -12,6 +12,7 @@ This session owns the website, and nothing else. Every change to the site goes t
 - **Questions for Alex:** every one goes to the `answer-desk` session in the format in `..\answer-desk\ASKING.md`, never into your own chat (charter P4). Your asker name is `website`.
 - **Reading list:** `..\answer-desk\qa\website.md`, every question you've asked Alex and his answers.
 - **Session roster:** `..\SESSIONS.md`, the official name of every session. Message sessions only by those names.
+- **Build requests from `s-d9-legibility`:** that session finds what's worth showing followers and sends `BUILD <id>: ...` with the content in `..\legibility\posts\<id>.md`. Treat each one as Alex's standing request (2 Nov: keep the site updated "without me explicitly saying so"). Build it, check it locally, deploy, and reply `BUILT <id>: <what changed>`. Reply `REFUSED <id>: <why>` only if it would show something the charter's risk rule forbids (secrets, the Apify proposal, Alex's own GetSales outbound, anything from `..\Addvery Research\`). On `REMOVE <id>`, take it down and deploy. If Alex says something on the site overshares, take it down at once and tell `s-d9-legibility`.
 - **Deploy:** `vercel deploy --prod --yes` from this folder, after checking the change locally (`npx next dev -p 3100`). `.vercelignore` keeps `.env*`, `.clock` and `scripts` out of the upload. In Git Bash, set `MSYS_NO_PATHCONV=1` before `vercel api /...`, or the path gets mangled.
 - **Secrets:** `.env.local` holds the Blob token. Never print it.
 
