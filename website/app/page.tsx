@@ -4,18 +4,16 @@ import Feed from "./feed";
 import Countdown from "./live";
 import { Reveal, RotateIn } from "./motion";
 import { ArrowSwap } from "./site-chrome";
-import { RecommendCarousel } from "./recommend-carousel";
-import { LIST_SLUGS, RECOMMEND_ON, recommendFor } from "./recommend";
 import { NEW_SITE } from "./flags";
-
-const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");
+import { BestHome } from "./home/best-home";
 
 // The home page, after addvery.com: their hero (the H1 slides in from the left, and the countdown
 // and the "start here" box take the place of their two photo cards, rotating in from opposite
 // corners on load), then the live feed.
 
 export default function Home() {
-  if (NEW_SITE) return <InterimHome />;
+  // The restacked home (BUILD.md 3), new site only; without NEW_SITE this is today's live home.
+  if (NEW_SITE) return <BestHome />;
   return (
     <main className="home">
       <section className="hero on-dark" aria-labelledby="hero-title">
@@ -76,20 +74,6 @@ export default function Home() {
         </div>
       </section>
       <Feed />
-    </main>
-  );
-}
-
-/**
- * The interim home on the new site (VERDICT.md W7), until the restack (W11): no countdown, no "Begins",
- * no start-here box and no status board; the default recommend list on top of the feed.
- */
-function InterimHome() {
-  return (
-    <main className="home">
-      <h1 className="sr-only">Hire Me Hackathon</h1>
-      {RECOMMEND_ON && <RecommendCarousel heading="Recommended for you" cards={recommendFor("default")} people={PAGE_SLUGS} />}
-      <Feed hideStatus />
     </main>
   );
 }

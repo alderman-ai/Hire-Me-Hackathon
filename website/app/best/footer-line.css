@@ -1,0 +1,12 @@
+/* The footer's line above the columns (BUILD.md 1), new site only. */
+.footer-line {
+  max-width: 34rem;
+  margin: 2.5rem 0 0;
+  color: var(--av-white);
+  font-family: var(--av-font-display);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.footer-line + .footer-columns { margin-top: 2rem; }

@@ -59,6 +59,14 @@ function pageFor(id: string): Target | undefined {
   return { href, title: e.title, dek, image: { src: `${href}/opengraph-image`, width: 1200, height: 630 } };
 }
 
+/**
+ * The site path of a library id's page, or undefined while the id has no page (so a link to it should not
+ * render: `data-needs` in the best-of mockups). Ids without a page tonight include "art-pipeline-promise".
+ */
+export function pageHref(id: string): string | undefined {
+  return pageFor(id)?.href;
+}
+
 /** The cards for one list, in its order: each item's page, else its fallback's; duplicates and misses skipped. */
 export function recommendFor(list: ListSlug): RecCard[] {
   if (!RECOMMEND_ON) return [];
