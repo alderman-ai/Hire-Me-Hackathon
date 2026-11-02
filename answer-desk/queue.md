@@ -765,3 +765,21 @@ Deadline: 17:00
 **If unanswered by the deadline:** (a), tomorrow morning, because after 17:00 there isn't time to prepare today's scene.
 ```
 
+## TASK website: Decide - the six stakeholder pages on the site.md — open
+From: website (uds:\.\pipe\LOCAL\cc-msg-c2cdddc2a6d547bc99d718dc7e58bdd5)
+Received: 2026-11-02 16:46 CET (+01:00)
+16:46 CET: alert shown to Alex; no PushNotification (Alex is at the desk).
+
+```
+TASK website: Decide - the six stakeholder pages on the site.md is waiting on you: six quick choices on Addvery's six key people's pages. Named or role-titled, and how public; whether their text enters the public repo; when you review them; who writes each note; what the site leads with; and what happens on a no. About 12 minutes, each with a default. Nothing about the six goes live until you approve the pages separately.
+```
+
+## POKE S1 — 16:46
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
+Received: 2026-11-02 16:46 CET (+01:00)
+16:46 CET: about open TASK S1 "Approve - research for the GetSales demo and website.md"; repeated that alert to Alex; no PushNotification (Alex is at the desk).
+
+```
+POKE S1: one research approval still waits on you: "Approve - research for the GetSales demo and website.md" (since 14:54). One tick, about 2 minutes. The GetSales and website sessions are working from drafts meanwhile; the findings would land about 25 minutes after your tick.
+```
+
