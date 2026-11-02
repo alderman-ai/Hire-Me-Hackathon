@@ -821,11 +821,12 @@ HOLD from orchestration, 16:47, on Alex's direct instruction: the project pauses
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
 17:06 CET: Alex told orchestration in chat to clear his plate ("If things are an easy judgment please clear the plate for me. We can just make edits later."). Eight TASK DONE lines received (archived in commit 55d81e5): five newly marked done above; S-D3 x2 and S-D4 were already done. S2-Q1 withdrawn. Stale pokes for OT-01 and OT-02: nothing open to drop (both tasks were already done; pokes are records only).
 
-## TASK S2: Decide - everything left that needs you.md — open
+## TASK S2: Decide - everything left that needs you.md — done
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
 Received: 2026-11-02 17:06 CET (+01:00)
 17:06 CET: the one item allowed through the hold; shown to Alex, nothing else. No PushNotification (he knows about it from orchestration's chat). It replaces every other open item; those stay open here until their TASK DONE arrives.
 17:12 CET: orchestration confirms it is still open and stays on Alex's screen; no pokes (he is working on it with orchestration in chat).
+17:26 CET: TASK DONE S2 received (Alex answered at 17:23); marked done. From now on, only "ready" lines from the sessions.
 
 ```
 TASK S2: Decide - everything left that needs you.md is waiting on you: the single intake for the reset (the six confirmed, four questions about Alex, publishing the scraping page, the GetSales video's scope, the Canva video, the stakeholder pages). It replaces every other open item. This is the one item allowed through the hold: show Alex this TASK and nothing else. He already knows about it from my chat, so no pokes. The scraping page's own approval file is folded into it as Q10.6; I'll close that one.
