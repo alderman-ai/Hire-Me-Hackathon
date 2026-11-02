@@ -32,3 +32,6 @@ __pycache__/
 
 # Alex's verbatim wants, kept by orchestration (candid chat lines; like site-map/local/)
 /orchestration/local/
+
+# alex-voice skill: run logs, calibration copies and any private voice material (third parties, drafts)
+/.claude/skills/alex-voice/local/
