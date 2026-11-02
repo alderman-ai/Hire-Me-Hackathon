@@ -1,14 +1,14 @@
 # S-D4 Blog pipeline: executable spec
 
-Status: draft; preflight DI-XX waiting on Alex · Row: S-D4 — Blog pipeline · Folder: `blog-pipeline\` · Session: `s-d4-blog-pipeline`
+Status: draft; preflight DI-8 waiting on Alex · Row: S-D4 — Blog pipeline · Folder: `blog-pipeline\` · Session: `s-d4-blog-pipeline`
 
 S-D4 builds the pipeline that turns about 15 minutes of Alex talking into a good-looking, near-final blog post, with only the last 10% left to him (DoD-14). It's proved once, on one test dictation that Alex accepts as near-final. The pipeline is a runbook with its prompts and a few scripts, which S-D5 then runs on its three articles. On the site it shows up as the blog: a post page in the site's Addvery look, built by `website`, with a "How this post was made" box on every post, and D4's entry on the deliverables view.
 
 ## 1. Operator preflight (P3)
 
-The preflight is decision intake DI-XX (`..\Operator tasks\DI-XX S-D4 Blog pipeline preflight.md`).
+The preflight is decision intake DI-8 (`..\Operator tasks\DI-8 S-D4 Blog pipeline preflight.md`).
 
-| DI-XX question | Question | Default |
+| DI-8 question | Question | Default |
 | --- | --- | --- |
 | 1 | Where the post's look is built: a template in the site, Claude Design today, or the template now and Claude Design in the morning | The site template (A) |
 | 2 | Where the dictation lands: Wispr Flow into a dictation task with the rig as backup, or the rig transcript only | Wispr Flow into the task, rig as backup (A) |
@@ -16,7 +16,7 @@ The preflight is decision intake DI-XX (`..\Operator tasks\DI-XX S-D4 Blog pipel
 | 4 | The test dictation scene: slot and topic | 15:15–15:35, topic 1; the morning cleanup session if still empty at 18:00 |
 | 5 | If research runs late: may the test post be drafted before L-03's findings land? | Draft without waiting; findings revise it before the near-final review (A) |
 
-**Launch gate.** The session launches once DI-XX is answered and its answers are applied. From 18:00 Prague an unanswered question takes its default, logged in §9.
+**Launch gate.** The session launches once DI-8 is answered and its answers are applied. From 18:00 Prague an unanswered question takes its default, logged in §9.
 
 **Operator scenes.**
 - **The test dictation**, about 15 minutes of talking on camera, proposed for 15:15–15:35 (question 4). It's shot before the pipeline exists (P3, the movie-actor rule): a dictation is raw input, and drafting comes later. If the session isn't running yet at his slot, he dictates into a new note in `blog-pipeline\dictations\` and the session picks it up.
@@ -33,7 +33,7 @@ The preflight is decision intake DI-XX (`..\Operator tasks\DI-XX S-D4 Blog pipel
 | --- | --- |
 | 1. Its place | Row S-D4 — Blog pipeline (deliverable D4). Claims DoD-14. Serves DoD-15 (S-D5's posts run through it, and the test post may be article 1) and DoD-19 (D4's entry on the deliverables view). Serves DoD-22 (everything it hands the site passes the scan). Reads the L-03 and L-01 findings. |
 | 2. Its neighbours | Depends on S1 (L-03, L-01). Uses `website` (S-D8) for every site change. Runs in parallel with S-D1, S-D3, S-D6, S-D7 and S-D9. Feeds S-D5 (the runbook, and possibly article 1), S-D8 (build requests) and S-D9 (the dictation's clock times, as a clip candidate). |
-| 3. Operator preflight | §1 (DI-XX). |
+| 3. Operator preflight | §1 (DI-8). |
 | 4. Decision log | §9. |
 | 5. Forking gates | §8. |
 | 6. Working directory | `blog-pipeline\`; its reading list is §3. |
@@ -48,7 +48,7 @@ Paths are relative to `blog-pipeline\`. Step 1 of the run confirms every resourc
 - `..\answer-desk\ASKING.md`: the desk format, TASK lines, gate approvals, the poke and the 18:00 rule.
 - `..\answer-desk\qa\S-D4.md`: S-D4's own Q&A record, once the desk creates it.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers; never re-ask them. DI-1 settles two things S-D4 leans on: dictation is Wispr Flow, and `/process` runs only when he types it.
-- `..\Operator tasks\DI-XX S-D4 Blog pipeline preflight.md` (in `..\Operator tasks\Archive\` once filed): this spec's preflight answers, verbatim.
+- `..\Operator tasks\DI-8 S-D4 Blog pipeline preflight.md` (in `..\Operator tasks\Archive\` once filed): this spec's preflight answers, verbatim.
 - `SPEC.md`: this file. `HANDOFF.md`: the state after a fork, if it exists.
 - `..\research\DIRECTORY.md`: the index of every research report. Read only.
 - `..\research\lists\L-03-blog.md` and `..\research\lists\L-01-parent.md`: S1's lists for this spec. Read only; S1 owns them.
@@ -118,7 +118,7 @@ Approving L-03 is S1's gate, not this session's.
 
 **Waits for FINDINGS:** the confirmed methodology, its coherency check and the spec-draft gate, plus any template refinement R4 calls for.
 
-**If findings are late.** The test dictation doesn't depend on research, so it's shot on time. The near-final review does, and DI-XX question 5 decides. Under A (the default), the session drafts the test post on the v0 prompts once the dictation is in, and reruns it on the revised method when findings land, before Alex's review if the rerun is ready in time. Under B, nothing is drafted before L-03's synthesis lands. Under C, the method is confirmed on L-01 alone.
+**If findings are late.** The test dictation doesn't depend on research, so it's shot on time. The near-final review does, and DI-8 question 5 decides. Under A (the default), the session drafts the test post on the v0 prompts once the dictation is in, and reruns it on the revised method when findings land, before Alex's review if the rerun is ready in time. Under B, nothing is drafted before L-03's synthesis lands. Under C, the method is confirmed on L-01 alone.
 
 ## 7. Methodology and steps
 
@@ -133,14 +133,14 @@ Approving L-03 is S1's gate, not this session's.
 6. **Format.** Front matter per `POST-FORMAT.md`, a meta description, the slug, pull quotes, and the numbers for the "How this post was made" box: minutes talked, words spoken, words drafted.
 7. **Scan.** The DoD-22 scan (secrets, the Apify proposal, Alex's own GetSales outbound) and a check for names that shouldn't be published. A hit is cut and logged. Nothing is committed before the scan passes.
 
-**Where the look is built** follows DI-XX question 1. Under A, `website` builds the post template from `POST-FORMAT.md`. Under B, Alex designs the look in Claude Design in the scene he names, and `website` brings it in (the Vercel connector lists a Claude Design import tool, which `website` runs) or rebuilds it as the template, whichever R2's findings favour. Under C, A now, and a Claude Design pass in the morning cleanup session.
+**Where the look is built** follows DI-8 question 1. Under A, `website` builds the post template from `POST-FORMAT.md`. Under B, Alex designs the look in Claude Design in the scene he names, and `website` brings it in (the Vercel connector lists a Claude Design import tool, which `website` runs) or rebuilds it as the template, whichever R2's findings favour. Under C, A now, and a Claude Design pass in the morning cleanup session.
 
 **Coherency check:** "If we execute this methodology, will DoD-14 be satisfied?" Run it once the synthesis is applied, criterion by criterion against §5: the runbook and format (steps 3, 7), the template (step 3), one dictation end to end with no hand edits (steps 4, 6), Alex's acceptance (step 9), D4's entry (step 10), the scan (stage 7, every commit). A criterion with no step is a gap, fixed before the spec-draft gate.
 
 **Run steps.** Commit after every finished step, path-limited: `git commit -m "[blog-pipeline] <message>" -- blog-pipeline/...`, and S-D4's operator tasks with `-- "Operator tasks/<file>"`.
 
 1. Read §3 and confirm each resource is reachable. Resume from `HANDOFF.md` if it exists. Anything ambiguous becomes `S-D4-Q1`.
-2. Apply DI-XX's answers to §1 and §9. Send the RESEARCH line (§6). Under question 3 A, send `orchestration` `S2 REQUEST s-d4-blog-pipeline: the charter's operator scenes count the S-D4 test dictation as S-D5's article 1 (approved: DI-XX question 3: <his answer>)`.
+2. Apply DI-8's answers to §1 and §9. Send the RESEARCH line (§6). Under question 3 A, send `orchestration` `S2 REQUEST s-d4-blog-pipeline: the charter's operator scenes count the S-D4 test dictation as S-D5's article 1 (approved: DI-8 question 3: <his answer>)`.
 3. **Groundwork, in parallel (P1).**
    - The session writes the dictation task `..\Operator tasks\OT-<nn> S-D4 test dictation.md` from the Operator task template, with the next free OT number (check `Operator tasks\` and `Archive\` just before writing): the slot, the topic, the five talking prompts, a "Dictate below this line" section, and a `- [ ] Done` box. Commit it, then send `answer-desk` `TASK S-D4: <file name> is waiting on you: your 15-minute test dictation at <slot> on <topic>; it feeds the blog pipeline`.
    - A subagent writes `POST-FORMAT.md` and `samples\sample-post.md`, handed §4, §5, this methodology and `..\website\CLAUDE.md`.
