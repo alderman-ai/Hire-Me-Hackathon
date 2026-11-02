@@ -451,6 +451,7 @@ def validate(raw: bytes):
     first_h2 = next((k for k, b in enumerate(content) if b["kind"] == "heading" and b["level"] == 2), None)
     section, para_seen, h3_count, h2s = 0, False, 0, 0
     pulls, summaries, diagrams = [], [], []
+    quotes_v14: list = []
     for k, b in enumerate(content):
         b["section"] = section
         if b["kind"] == "heading":
@@ -484,6 +485,10 @@ def validate(raw: bytes):
             first = b["lines"][0].strip()
             if first == "> [!pull]":
                 pulls.append(k)
+            elif first == "> [!quote]":
+                ql = [re.sub(r"^\s*>\s?", "", line).strip() for line in b["lines"][1:]]
+                ql = [q for q in ql if q]
+                quotes_v14.append((k, b, ql))
             elif first == "> [!summary]":
                 summaries.append(k)
             elif DIAGRAM.fullmatch(first):
@@ -503,7 +508,7 @@ def validate(raw: bytes):
             elif "[!diagram]" in first:
                 P.append(("F", 15, f"line {b['start']}: a diagram's first line must be exactly '> [!diagram] scale' or '> [!diagram] flow'"))
             else:
-                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!summary], [!diagram] scale|flow or [!video]"))
+                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!quote], [!summary], [!diagram] scale|flow or [!video]"))
             if "[Alex" in "\n".join(b["lines"]):
                 P.append(("F", 17, f"line {b['start']}: a note for Alex inside a callout"))
 
@@ -518,8 +523,30 @@ def validate(raw: bytes):
     outside = [b for k, b in enumerate(content) if k not in pulls and b["kind"] not in ("code", "heading")]
     body_plain = norm_quote(plain(" ".join(" ".join(b["lines"]) for b in outside)))
     per_section: dict = {}
-    if not 1 <= len(pulls) <= 3:
-        P.append(("F", 15, f"{len(pulls)} pull quotes (1 to 3)"))
+    if not 0 <= len(pulls) <= 3:
+        P.append(("F", 15, f"{len(pulls)} pull quotes (0 to 3)"))
+    # v1.4 block quotes of Alex's own words
+    if len(quotes_v14) > 5:
+        P.append(("F", 15, f"{len(quotes_v14)} block quotes (0 to 5)"))
+    q_per: dict = {}
+    for k, b, ql in quotes_v14:
+        where = f"line {b['start']}"
+        if len(ql) != 2:
+            P.append(("F", 15, f"{where}: a block quote is '> [!quote]', one quotation line and one attribution line"))
+            continue
+        text, attr = ql
+        n = len(text.split())
+        if not 8 <= n <= 60:
+            P.append(("F", 15, f"{where}: a block quote's quotation is {n} words (8 to 60)"))
+        if not attr.startswith("Alex Alderman, ") or len(attr) > 80 or attr.endswith("."):
+            P.append(("F", 15, f"{where}: a block quote's attribution starts 'Alex Alderman, ', at most 80 characters, no end period"))
+        if "[Alex" in text or LINK.search(text) or "*" in text or text[:1] in "\"\u201c" :
+            P.append(("F", 16, f"{where}: a block quote holds a note, link, emphasis or quotation marks"))
+        q_per[b["section"]] = q_per.get(b["section"], 0) + 1
+        if q_per[b["section"]] == 3:
+            P.append(("F", 15, f"{where}: more than two block quotes in one section"))
+        if k == len(content) - 1:
+            P.append(("F", 15, f"{where}: a block quote is the post's last block"))
     for k in pulls:
         b = content[k]
         qlines = [re.sub(r"^\s*>\s?", "", line) for line in b["lines"][1:]]

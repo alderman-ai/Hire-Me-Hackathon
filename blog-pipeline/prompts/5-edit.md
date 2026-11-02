@@ -1,7 +1,7 @@
 ---
 stage: 5
 name: edit
-version: v0.3
+version: v0.4
 reads: "{DIR}\\4-draft.md, {DIR}\\1-clean.md"
 writes: "{DIR}\\5-edit.md, {DIR}\\5-edit-notes.md"
 ---
@@ -22,6 +22,7 @@ Alex's rule: no copywriting without a copywriting skill. Before you write a word
 ## Passes, in order
 
 1. **Trace.** For every sentence in the draft that claims something (a point, a number, a result, a story detail), find where he said it in `1-clean.md`. Record each in the notes as `<draft sentence, short> ← "<his words>"`. A claim you can't trace is cut, or turned into a marker if the post needs it (`[Alex: is this true? <claim>]`).
+1b. **Block quotes.** Every `> [!quote]` block must be his words exactly as `1-clean.md` has them (fillers removed, nothing reworded) and must not repeat the prose beside it. Fix a drifted word back to his; cut a quote you can't find. Keep 2 to 5 if the draft has them, and say in the notes which source line each comes from.
 2. **Cut the generic.** Strike every line that could appear in anyone's post on this topic and isn't his point. Apply the banned list below. Replace a generic phrase with his own words from the transcript where one fits; otherwise cut it. Shorter is fine; the floor is about 900 words.
 3. **Restore his voice, not his fillers.** Where the draft smoothed something he said better, put his phrasing back (lightly tidied for reading). Then make it read as writing: cut "et cetera", "whatever", "yeah", "right?", "you know", "I mean" and filler "like"; keep "so", "basically", "really" and "just" only where they carry meaning; no more than two paragraphs opening with "So"; asides to the camera become lines for a reader or go. Write events of the day in the past tense unless the post is about the live moment. Check the opening and the close twice: they're what readers remember.
 4. **Keep off.** Remove anything that names a client, a company he worked with, a person other than him, a private number, a proposal, or his own outreach. Describe by role instead ("a founder I worked with"). Where the post touches a real company's market, it offers ideas, never a verdict on how that company runs its business.

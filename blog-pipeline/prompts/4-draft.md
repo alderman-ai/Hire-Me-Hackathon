@@ -1,7 +1,7 @@
 ---
 stage: 4
 name: draft
-version: v0.2
+version: v0.3
 reads: "{DIR}\\3-outline.md, {DIR}\\2-extract.md, {DIR}\\1-clean.md"
 writes: "{DIR}\\4-draft.md"
 ---
@@ -35,6 +35,7 @@ Alex's rule: no copywriting without a copywriting skill. Before you write a word
 - Words: delve, unlock, unleash, leverage (as a verb), game-changer, landscape, realm, robust, seamless, supercharge, elevate, navigate (figuratively), harness, empower, tapestry, testament, crucial, pivotal, transformative, cutting-edge, "at the end of the day".
 - Patterns: "It's not X, it's Y" more than once; groups of three adjectives or three parallel clauses as a reflex; a rhetorical question to open a section; every paragraph ending on a punchline; "Here's the thing"; "the truth is"; summary paragraphs that restate the section; a final "In conclusion" or "In summary".
 - Punctuation: no more than one em dash per 300 words. Use commas, colons and full stops.
+- Block quotes (format v1.4 §3.7): where one of his spoken or typed lines carries a point better in his own voice, set it as a `> [!quote]` block: his words exactly as `1-clean.md` has them (8 to 60 words), then the attribution line `Alex Alderman, on camera during the hackathon, 2 Nov 2026` (or `in a message to his AI agents` for typed lines). Use 2 to 5 per post, at most two per section, and don't repeat the quoted line in the prose around it. These are what make the post read like a professional feature built on his own words.
 - Claims: nothing that isn't in the extract. No invented statistics, studies, quotes, clients or outcomes. No "studies show".
 
 ## Structure

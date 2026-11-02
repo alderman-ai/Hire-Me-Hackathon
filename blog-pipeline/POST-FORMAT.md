@@ -1,6 +1,6 @@
 # Blog post format
 
-Post format v1.3, 2 Nov 2026 (v1.3: video clips inline between sections, `[!video]`, for the site's shared entries; v1.2: the site's shared entry fields `kind`, `deliverable`, `video` and `poster`, titles at most 64 characters and kickers at most 28, from `website`'s BUILT S-D5-B1; v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D5 (`blog-pipeline\`, since S-D4 retired) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
+Post format v1.4, 2 Nov 2026 (v1.4: block quotes of Alex's own recorded words, `[!quote]`, and pull quotes optional, from Alex at about 18:15: "pull lots of quotes ... the way people insert block quotes"; v1.3: video clips inline between sections, `[!video]`, for the site's shared entries; v1.2: the site's shared entry fields `kind`, `deliverable`, `video` and `poster`, titles at most 64 characters and kickers at most 28, from `website`'s BUILT S-D5-B1; v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D5 (`blog-pipeline\`, since S-D4 retired) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
 
 Every blog post is one Markdown file: a block of front matter that says what the post is, then the post itself in plain Markdown with four small additions: pull quotes, a key-points box, an optional diagram and notes left for Alex. The pipeline writes the file, Alex finishes it, and the site renders it as it is. This document is the contract between them. A file that passes the checklist in §6 must render; anything this document doesn't define is a validation failure, not something to guess at. The posts are Alex Alderman's, in his name and voice. The site styles them in its own look, but they are never written as a company's posts.
 
@@ -117,8 +117,22 @@ The callouts use the GitHub alert form, so they degrade gracefully: Obsidian, wh
 
 - The first line is exactly `> [!pull]`, lowercase, nothing else on it. Then one line `> ` plus the quote: one paragraph, 8 to 30 words, plain text (no links, no notes for Alex, no emphasis).
 - It repeats one or two whole consecutive sentences from a body paragraph, word for word. Checked after removing `*` emphasis, straightening curly quotes and collapsing whitespace.
-- 1 to 3 per post, at most one per section. No attribution: the post is Alex's.
+- 0 to 3 per post (optional since v1.4, when block quotes carry his voice), at most one per section. No attribution: the post is Alex's.
 - Placement: between two blocks, inside the section that holds its sentence or the next one, never directly before or after the paragraph it quotes, never in the lede, never as the post's last block.
+
+### 3.7 Block quote: Alex's own words (0 to 5)
+
+```markdown
+> [!quote]
+> The models always change, so somebody has to keep the thing running.
+> Alex Alderman, on camera during the hackathon, 2 Nov 2026
+```
+
+- The first line is exactly `> [!quote]`. The second is the quotation: one paragraph of 8 to 60 words that Alex said aloud on the recordings or typed himself, word for word as the cleaned source has it (fillers such as "um" and "like" removed, nothing reworded). No quotation marks, links, emphasis or notes for Alex.
+- The third and last line is the attribution: `Alex Alderman, ` then where and when, at most 80 characters, no end period: "on camera during the hackathon, 2 Nov 2026", "in a message to his AI agents, 2 Nov 2026", "in his notes, 2 Nov 2026".
+- Unlike a pull quote it adds words rather than repeating them: the quoted line isn't also in the prose next to it. The template sets it as a real `blockquote` with its attribution as a caption, larger than body text and read by screen readers.
+- 0 to 5 per post, at most two per section, never the post's last block. One may sit in the lede, after its first paragraph.
+- Pick lines that carry a point better in his own voice than in prose: a vivid claim, a turn of phrase, a hard-won lesson. Never a line that names a client, a private number or anything the scan keeps off.
 
 ### 3.3 Key-points box (on by default, at most one)
 
