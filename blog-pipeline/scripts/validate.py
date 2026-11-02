@@ -36,6 +36,9 @@ STATUSES = ("draft", "near-final", "published", "sample")
 SCHEMA = [  # key, type, required ("str", "int", "int|null", "str|null", "list", map)
     ("title", "str", True), ("slug", "str", True), ("description", "str", True),
     ("author", "str", True), ("date", "str", True), ("status", "str", True),
+    # the site's shared entry fields (website, BUILT S-D5-B1, 2 Nov): optional, right after status
+    ("kind", "str", False), ("deliverable", "str", False),
+    ("video", [("youtube_id", "str", True), ("start", "int", False)], False), ("poster", "str", False),
     ("cover", [("kicker", "str", True), ("title_lines", "list", False),
                ("subtitle", "str", True), ("accent", "str", False)], True),
     ("tags", "list", True), ("reading_minutes", "int", True),
@@ -330,14 +333,28 @@ def validate(raw: bytes):
             P.append(("F", 3, f"author is {fm['author']!r}, must be 'Alex Alderman'"))
         if s(status) is not None and status not in STATUSES:
             P.append(("F", 3, f"status {status!r} isn't one of {', '.join(STATUSES)}"))
+        # 3b: the site's entry fields (website's schema, BUILT S-D5-B1)
+        kind = s(fm.get("kind"))
+        if "kind" in fm and kind not in ("article", "video", "showcase"):
+            P.append(("F", 3, f"kind {fm.get('kind')!r} isn't one of article, video, showcase"))
+        dl = s(fm.get("deliverable"))
+        if "deliverable" in fm and (dl is None or not re.fullmatch(r"d([1-9]|1[01])", dl)):
+            P.append(("F", 3, f"deliverable {fm.get('deliverable')!r} must be d1 to d11"))
+        video = fm.get("video")
+        if kind == "video" and not video:
+            P.append(("F", 3, "kind is video but there's no video map"))
+        if isinstance(video, dict):
+            yid = s(video.get("youtube_id"))
+            if yid is not None and not re.fullmatch(r"[A-Za-z0-9_-]{11}", yid):
+                P.append(("F", 3, f"video.youtube_id {yid!r} must be 11 characters"))
         # 4
         slug = s(fm.get("slug"))
         if slug is not None and (not SLUG.match(slug) or len(slug) > 60):
             P.append(("F", 4, f"slug {slug!r} must match ^[a-z0-9]+(-[a-z0-9]+)*$ and be at most 60 characters"))
         # 5
         for label, value, lo, hi in (("description", fm.get("description"), 140, 160),
-                                     ("title", fm.get("title"), 0, 70),
-                                     ("cover.kicker", cover.get("kicker"), 0, 32),
+                                     ("title", fm.get("title"), 0, 64),
+                                     ("cover.kicker", cover.get("kicker"), 0, 28),
                                      ("cover.subtitle", cover.get("subtitle"), 0, 120)):
             v = s(value)
             if v is None:

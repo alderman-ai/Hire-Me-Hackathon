@@ -1,6 +1,6 @@
 # Blog post format
 
-Post format v1.1, 2 Nov 2026 (v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D4 (`blog-pipeline\`) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
+Post format v1.2, 2 Nov 2026 (v1.2: the site's shared entry fields `kind`, `deliverable`, `video` and `poster`, titles at most 64 characters and kickers at most 28, from `website`'s BUILT S-D5-B1; v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D5 (`blog-pipeline\`, since S-D4 retired) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
 
 Every blog post is one Markdown file: a block of front matter that says what the post is, then the post itself in plain Markdown with four small additions: pull quotes, a key-points box, an optional diagram and notes left for Alex. The pipeline writes the file, Alex finishes it, and the site renders it as it is. This document is the contract between them. A file that passes the checklist in §6 must render; anything this document doesn't define is a validation failure, not something to guess at. The posts are Alex Alderman's, in his name and voice. The site styles them in its own look, but they are never written as a company's posts.
 
@@ -33,6 +33,8 @@ description: "A weekly review only lasts if it fits a bad week. Here is a fiftee
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "near-final"
+kind: "article"
+deliverable: "d5"
 cover:
   kicker: "Everyday systems"
   title_lines: ["How to run a fifteen-minute", "weekly review"]
@@ -57,13 +59,17 @@ made:
 
 | Field | Type | Req. | Rule |
 | --- | --- | --- | --- |
-| `title` | string | yes | Plain text, sentence case, at most 70 characters, no end period, no Markdown, no note for Alex. |
+| `title` | string | yes | Plain text, sentence case, at most 64 characters (the site's link-preview image fails its build when a title needs four lines), no end period, no Markdown, no note for Alex. |
 | `slug` | string | yes | From the title: lowercase, accents to ASCII, `&` to `and`, apostrophes dropped, every other run of characters outside `a-z0-9` becomes `-`, ends trimmed. Over 60 characters, cut at the last `-` before character 61. Must match `^[a-z0-9]+(-[a-z0-9]+)*$`, be unique on the site, and never change once published. |
 | `description` | string | yes | The meta description: 140 to 160 characters (counted after YAML parsing), one or two plain sentences ending in a period, no Markdown, no note for Alex, not a copy of `cover.subtitle`. |
 | `author` | string | yes | Always exactly `Alex Alderman`. |
 | `date` | string | yes | `YYYY-MM-DD`. The dictation's date until the publish step sets the publish day. |
 | `status` | string | yes | One of `draft` (the Format stage wrote it; the scan hasn't passed), `near-final` (the scan passed; what Alex reviews), `published` (set only by the publish step), `sample` (a template test file, never published). |
-| `cover.kicker` | string | yes | The cover's eyebrow line: 1 to 4 words, at most 32 characters, no end punctuation. |
+| `kind` | string | no | The site's entry kind: `article` (the default, and every blog post), `video` or `showcase`. The site keeps one template for every entry in its GTM demos section (`/demos`). |
+| `deliverable` | string | no | The project deliverable the entry belongs to, `d1` to `d11`; the site links it at the end and shows it in the index row. Blog posts use `d5`. |
+| `video.youtube_id`, `video.start` | map | no | Only for `kind: "video"`, where it's required: the 11-character YouTube id and an optional start in seconds. Never on a blog post. |
+| `poster` | string | no | An image path under the site's `public\` or an https URL. Video entries default to the YouTube thumbnail; blog posts leave it out. |
+| `cover.kicker` | string | yes | The cover's eyebrow line: 1 to 4 words, at most 28 characters, no end punctuation. The site's preview image prefixes it with "GTM demos · " when that fits. |
 | `cover.title_lines` | list of strings | no | Manual line breaks for the cover title, 2 to 4 lines. Joined with single spaces they must equal `title` exactly. Leave the key out to let the renderer balance the lines. |
 | `cover.subtitle` | string | yes | The one-line promise from the Outline stage: one sentence, at most 120 characters, ending in a period. |
 | `cover.accent` | string | no | A word or phrase that occurs exactly once in `title` (case-sensitive) and inside a single `title_lines` entry. The cover sets it in the site's accent colour. |

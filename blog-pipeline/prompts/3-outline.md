@@ -1,7 +1,7 @@
 ---
 stage: 3
 name: outline
-version: v0.3
+version: v0.4
 reads: "{DIR}\\2-extract.md; {DIR}\\1-clean.md for reference"
 writes: "{DIR}\\3-outline.md"
 ---
@@ -25,7 +25,7 @@ A busy B2B reader (a founder, a head of sales or marketing, an operator) who ski
 
 ## What to produce
 
-1. **Three title options,** each under 70 characters, built from his words where possible (a phrase from P is ideal). Plain and specific beats clever. No colon-subtitle formula unless his phrase needs it. Mark your pick.
+1. **Three title options,** each at most 64 characters (POST-FORMAT v1.2), built from his words where possible (a phrase from P is ideal). Plain and specific beats clever. No colon-subtitle formula unless his phrase needs it. Mark your pick.
 2. **The promise:** one line, what the reader gets. It becomes the cover subtitle and seeds the meta description.
 3. **The opening:** which story or claim opens the post. Then two alternative openings (another story or claim from the extract, each in one line), so Alex can choose at his review. The pick: (his strongest concrete moment, not a definition or a scene-setter), and which line states the thesis within the first 120 words.
 4. **Four to six sections,** each with:
