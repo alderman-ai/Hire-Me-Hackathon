@@ -2,12 +2,13 @@
 
 Every question received, in arrival order. Statuses: open, checking, answered, skipped, withdrawn, replaced, returned.
 
-## website-Q1 — open
+## website-Q1 — answered
 From: website (uds:\.\pipe\LOCAL\cc-msg-a20244c812745d4843b7f744587f9bdb)
 Received: 2026-11-02 12:52 CET (+01:00)
 Desk takeover 13:00 CET: CHECK website-Q1 sent to website.
 13:01 CET: CURRENT website-Q1 received; shown to Alex.
 13:02 CET: new desk took over; shown again (confirmed current at 13:01).
+13:04 CET: answered; recorded in qa\website.md and sent to website.
 
 ```
 ASK website-Q1
