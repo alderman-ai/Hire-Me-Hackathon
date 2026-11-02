@@ -10,7 +10,7 @@ This charter is the operator's visible outline of the whole project. The executa
 
 **This phase is done when the charter holds two things:**
 
-1. **A research reading list:** a place for every spec's research, with its contents decided on the Claude Code side.
+1. **A research reading list:** a pointer to where every spec's research is listed (in each spec) and stored (in `research\`), with its contents decided on the Claude Code side.
 2. **The parameters for the three meta specs**, Bootstrap (S0), Research (S1) and Project orchestrator (S2): what each one is and what it must do. A new session must be able to write all three from this document alone. They run before any other spec, and the operator is in the loop while each one is written.
 
 **What stays out:** the specs themselves, including S0 to S2, and any instruction for how to build a deliverable. Those belong in the executable specs.
@@ -68,7 +68,7 @@ Every spec uses these terms with exactly these meanings.
 
 ## Deliverables
 
-The project has ten client-facing deliverables plus three meta deliverables, in two waves. Every client-facing deliverable is a demonstration in the Addvery brand: legibility matters more than function, and no real data runs through it except where noted. Each one becomes its own spec.
+The project has ten client-facing deliverables plus three meta deliverables, in two waves. Every client-facing deliverable is a demonstration in the Addvery brand: legibility matters more than function, and no real data runs through it except where noted. Each one becomes its own spec, except D2, which the operator runs himself.
 
 **Wave 1: meta (runs first).**
 
@@ -99,7 +99,7 @@ The project-level definition of done is written in Claude Code, not in this phas
 
 - Every item gets an ID (DoD-1, DoD-2, and so on) and traces to at least one deliverable above.
 - Every spec's own definition of done links to items by those IDs (spec contract, item 1).
-- The spec outline is complete only when every item is claimed by at least one spec.
+- The spec outline is complete only when every item is claimed by at least one spec or operator-owned row.
 
 Once M2 exists, its skills add and change items here and update everything that depends on them.
 
@@ -132,22 +132,22 @@ Signed off by Alex in DI-5 on 2 Nov, with DoD-4 loosened at his request, and wri
 
 ## Spec outline
 
-This is the decomposition, not the specs themselves. Each row is one future executable spec. Once the definition of done exists, every item in it must be claimed by at least one row.
+This is the decomposition, not the specs themselves. Each row is one future executable spec, except a row marked operator-owned, which the operator runs himself with no spec. Once the definition of done exists, every item in it must be claimed by at least one row.
 
 Spec IDs mirror deliverable IDs: S0 to S2 for M0 to M2, and S-D1 to S-D10 for D1 to D10. This whole outline is a rough draft. S2 (Project orchestrator) can still edit every row, and it owns the final sign-off on when the list of executable specs is fully decomposed and ready to run.
 
 | Spec | Outline | Depends on | Needs the operator for |
 | --- | --- | --- | --- |
 | S0 — Bootstrap (meta) | Rolls out every sister working directory with its file tree and CLAUDE.md reading list, sets up the sessions, and ports the answer desk. | Charter handed to Claude Code | Approving the directory plan |
-| S1 — Research (meta) | Owns the research subdirectory. Sets the methodology and fills the research reading list with the operator, within the usage budget. | S0 | Research details (he gives these in Claude Code) |
+| S1 — Research (meta) | Owns the research subdirectory. Sets the methodology and, with the operator, produces the findings that each spec's reading list points to, within the usage budget. | S0 | Research details (he gives these in Claude Code) |
 | S2 — Project orchestrator (meta) | Owns the skills that change this charter and propagate each change to everything dependent on it. | S0 | Nothing beyond review |
-| S-D1 — Scraping research demo | Demonstrates scraping and research on the Apify API. Early, because others consume its output. | S1 | Screen care around the recent proposal |
-| S-D2 — Company and stakeholder research | Researches Addvery and finds its top six stakeholders. | S1; may use S-D1's scrapers | Confirming the six stakeholders |
+| S-D1 — Scraping research demo | Demonstrates scraping and research on the Apify API. Early, because others consume its output. | S1; S-D2 (the operator's own scraping and summary, in `Addvery Research\`) | Screen care around the recent proposal |
+| S-D2 — Company and stakeholder research (operator-owned) | Operator-owned, with no spec or session (DI-2 Q2.2, DI-3 Q3.3): the operator researches Addvery, finds its top six stakeholders and captures its brand himself, one-on-one, in `Addvery Research\`, which is local and git-ignored. He runs the scraping for it there too, and S-D1 presents his scraping summary (DI-6). | — | All of it: he runs it himself, one-on-one |
 | S-D3 — GetSales outbound demo | 10 ICPs and sequences, a lead classifier, and the full Sales Navigator to GetSales pipeline, run live on the six stakeholders. Delivered as a video. | S-D2; rig recordings; S-D9 for the clip | Running the live setup on camera |
 | S-D4 — Blog pipeline | Turns 15 minutes of dictation into a near-final blog post. | S1 | One test dictation |
 | S-D5 — Three blog articles | Three posts through the S-D4 pipeline. | S-D4 | Three 15-minute dictations and the last 10% of each post |
-| S-D6 — Canva LinkedIn templates | Addvery-branded LinkedIn templates in Canva, redoing the earlier pixel-perfect assets demo. | Addvery brand capture | Brand sign-off |
-| S-D7 — LinkedIn content creation demo | LinkedIn content in Addvery's voice, built on the subjective brand capture repo. | Addvery brand capture | Brand sign-off |
+| S-D6 — Canva LinkedIn templates | Addvery-branded LinkedIn templates in Canva, redoing the earlier pixel-perfect assets demo. | Addvery brand capture, from S-D2 (the operator's own, in `Addvery Research\`) | Brand sign-off |
+| S-D7 — LinkedIn content creation demo | LinkedIn content in Addvery's voice, built on the subjective brand capture repo. | Addvery brand capture, from S-D2 (the operator's own, in `Addvery Research\`) | Brand sign-off |
 | S-D8 — Website | Builds out the existing website subdirectory: stakeholder sections, and a growing, legible picture of the project. | S0; S-D2; requests from S-D9 | Periodic review |
 | S-D9 — Legibility analyzer | Turns processed rig clips into build requests for the website session, every hour or two. | OBS rig output; S-D8 session | Nothing |
 | S-D10 — Canva design video | The operator designing in Canva, on camera. | S-D6 | The recording, near the end |
@@ -158,9 +158,7 @@ Wave 2 starts once S0, S1 and S2 are in place.
 
 [do not attempt to do this without the operator in the loop -- he will override and micromanage the research part once the meta specs/tooling is set up. ]
 
-This section is the project's research reading list: the findings each spec reads before it starts. Filling it is one of the first tasks on the Claude Code side, done with the operator. That pass decides what gets researched, how deep each topic goes, and where findings are stored.
-
-Reading list: empty until that pass fills it.
+This section is a pointer, not a list (DI-4 Q4.2). Each executable spec carries its own research reading list, the findings it reads before it starts, in its "Routing and resources" section. What gets researched, and how deep, is decided with the operator through S1, which indexes every finding in `research\DIRECTORY.md`. Reports stay in `research\` (S1-Q5): `research\global\` for research the whole project or several specs need, `research\<spec folder>\` for one spec's own. S2 adds each report, and each spec output other specs read, to the reading list of every spec that needs it.
 
 ## S0 Bootstrap: parameters
 
@@ -178,16 +176,16 @@ S0 turns this charter into a project where every other spec can launch in parall
 
 ## S1 Research: parameters
 
-S1 owns the research subdirectory and fills the research reading list through delegated research tasks, within a usage budget that rules out deep research on every topic.
+S1 owns the research subdirectory and produces the findings that each spec's reading list points to, through delegated research tasks, within a usage budget that rules out deep research on every topic.
 
 - **Inputs.** The research details the operator gives in Claude Code; he stays in the loop and steers this part closely.
 - **It produces:**
   - A short methodology: depth tiers, what each tier costs, and when a topic earns deep research.
   - One task per research topic, with its depth, delegated to subagents or sessions.
-  - Findings stored in one place with an index, so specs' CLAUDE.md reading lists can point at them.
-- **Priority.** S-D1 (scraping) and S-D2 (Addvery and stakeholders) come first, because other specs consume them. Shared topics such as brand capture are researched once, never per spec.
+  - Findings stored in one place, `research\`, with an index, so each spec's own reading list (its "Routing and resources" section) can point at them.
+- **Priority.** S-D1 (scraping) comes first, because other specs consume it. Addvery, its six stakeholders and brand capture are the operator's own (S-D2), so S1 has no Addvery topics. Shared topics are researched once, never per spec.
 - **Operator preflight.** His research details and any judgment calls on depth, collected at the start through the answer desk.
-- **Done when** every topic agreed with the operator has findings at its chosen depth, linked from the reading list.
+- **Done when** every topic agreed with the operator has findings at its chosen depth, linked from the reading list of every spec that needs them.
 
 ## S2 Project orchestrator: parameters
 
@@ -198,7 +196,7 @@ S2 owns the skills that keep this charter and everything built from it consisten
   - Add a deliverable.
   - Add or change a definition-of-done item.
   - Add, merge or split a row in the spec outline.
-  - Propagate each change to everything that depends on it: the spec outline, the research reading list, CLAUDE.md reading lists, and specs' links to DoD items.
+  - Propagate each change to everything that depends on it: the spec outline, specs' research reading lists, CLAUDE.md reading lists, and specs' links to DoD items.
 - **Likely home of the orchestration session (P2),** since it already owns the dependency map. Confirm in Claude Code.
 - **Done when** a new deliverable can be added in one step and every dependent place shows it.
 
@@ -208,14 +206,14 @@ S0 runs alone; after it, everything with its inputs ready runs at once. Work tha
 
 1. **S0 Bootstrap**, alone.
 2. **S1 Research and S2 Project orchestrator**, in parallel.
-3. **S-D1 Scraping and S-D2 Addvery research**, first in wave 2, because others consume them.
+3. **S-D1 Scraping and S-D2 Addvery research**, first in wave 2, because others consume them. S-D2 has no session: the operator runs it himself in `Addvery Research\`.
 4. **Everything else as its inputs arrive:**
-   - S-D2 feeds S-D3 (GetSales) and S-D8 (website).
+   - S-D2, from `Addvery Research\`, feeds S-D1 (his scraping summary), S-D3 (GetSales) and S-D8 (website).
    - S-D4 (blog pipeline) feeds S-D5 (three articles).
-   - Brand capture feeds S-D6 (Canva templates) and S-D7 (LinkedIn content). S-D6 feeds S-D10 (Canva video).
+   - Brand capture, part of S-D2 and also in `Addvery Research\`, feeds S-D6 (Canva templates) and S-D7 (LinkedIn content). S-D6 feeds S-D10 (Canva video).
    - S-D9 (legibility analyzer) runs continuously off the rig and feeds S-D8.
 
-**Operator scenes to shoot today:** the S0 directory approval, S1 research details, confirming the six stakeholders, the S-D3 live run, the S-D4 test dictation and the three S-D5 dictations, brand sign-off, and the S-D10 Canva recording.
+**Operator scenes to shoot today:** the S0 directory approval, S1 research details, his own S-D2 work in `Addvery Research\` (Addvery, the six stakeholders and brand capture), the S-D3 live run, the S-D4 test dictation and the three S-D5 dictations, brand sign-off, and the S-D10 Canva recording.
 
 ## Standing decisions and constraints
 
@@ -249,7 +247,7 @@ The biggest risk is something sensitive showing up in a recording that gets publ
 
 - [ ] Does Ivana still get a view-only GetSales account, or does the D3 video replace it?
 - [ ] What is D3's second custom message? The first carries the variable computed before import.
-- [ ] Who owns Addvery brand capture: S1 as shared research, or S-D2?
+- [x] Who owns Addvery brand capture: S1 as shared research, or S-D2? Answered: the operator, as part of S-D2, which he runs himself in `Addvery Research\` with no spec (DI-2 Q2.2, DI-3 Q3.3).
 - [ ] What are the exact hours of today's operator window?
 - [ ] Is "Addvery" the right spelling, and "GetSales" the tool meant by "GitSales"?
 
