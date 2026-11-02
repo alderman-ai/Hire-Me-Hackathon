@@ -10,9 +10,13 @@ Unblocks: <what starts once it's approved, one line>
 Created: <YYYY-MM-DD HH:MM Prague>
 ---
 
-# OT-<nn> Gate approval: <spec id> <gate>
+<!-- File name: "Approve - <what it's about, in everyday words>.md", meaning in the first 35 characters. No ids or codes in the name or the text. -->
 
-<One paragraph: what this gate is, what's being approved, and what happens once it's approved. Say whether anything is blocked on it right now.>
+# Approve: <what it's about, in plain words>
+
+## What this is
+
+<In plain words, so Alex needs no other file: what this part of the project is and what it's for; what he's being asked; what happens once he answers; what's waiting on it right now; about how long it takes him; the deadline. No internal codes (no D2, S1, S-D3, DoD-13, C01, P4): say what the thing is. Ids stay in the frontmatter.>
 
 ## What's being approved
 
