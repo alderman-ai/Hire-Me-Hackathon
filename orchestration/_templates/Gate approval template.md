@@ -28,7 +28,7 @@ Created: <YYYY-MM-DD HH:MM Prague>
 
 - [ ] I approve
 
-Tick the box to approve as it stands. If something has to change first, leave the box empty and write what to change below. Either way, the requesting session checks this file every 5 minutes while it's blocked.
+Tick the box to approve. Anything you write below is approved along with it and gets applied, even when you tick the box. If you'd rather it isn't approved until those changes are made, leave the box empty and write them below. Either way, the requesting session checks this file every 5 minutes while it's blocked.
 
 `<operator_answer>`
 ```ot-<nn>-changes
