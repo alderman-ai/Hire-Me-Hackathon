@@ -26,13 +26,13 @@ Read this file at startup, and again before you message a session you haven't me
 | `s-d9-legibility` | `legibility\` | S-D9 Legibility analyzer: finds what's worth showing followers in the filed rig sessions and the project, and sends `website` build requests. Runs on an interim brief until its spec exists. | Started early on Alex's instruction, 2 Nov. Checks every 30 minutes. |
 | `s1-research` | `research\` | S1 Research: sets the research method and fills the research reading list with Alex, within the usage budget. | Launched by `orchestration` after S0, 2 Nov. |
 | `wave2-specs` | repo root | Temporary: writes the wave-2 specs (S-D1, S-D3 to S-D10), gets each one's preflight intake answered, and hands each to `orchestration` for launch. Then stops. | Started by `orchestration`, 2 Nov 14:00. |
+| `s-d1-scraping` | `scraping\` | S-D1 Scraping research demo: presents Alex's own scraping and research on the site, behind his gate on what the section shows. | Launched by `orchestration`, 2 Nov, after its preflight (DI-6) was answered. |
 
 ## Planned
 
 | Session | Folder it starts in | Spec | When |
 | --- | --- | --- | --- |
 | none | `orchestration\` | S2 Project orchestrator | Run by `orchestration` after S0. There's no separate S2 session (DI-4). |
-| `s-d1-scraping` | `scraping\` | S-D1 Scraping research demo | Wave 2, first, because others consume its output. After S1. |
 | `s-d3-getsales` | `getsales\` | S-D3 GetSales outbound demo | Wave 2, once Alex's Addvery research (the six stakeholders) is in `Addvery Research\`. Needs the rig recordings, and S-D9 for the clip. |
 | `s-d4-blog-pipeline` | `blog-pipeline\` | S-D4 Blog pipeline | Wave 2, after S1. |
 | `s-d5-blog-articles` | `blog-articles\` | S-D5 Three blog articles | After S-D4. |
