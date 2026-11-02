@@ -53,7 +53,7 @@ About 5 minutes. Type `/pause` first (or do all of this before `/start`).
    - the **Share** panel (it lists who has access);
    - your profile menu at the top right (it lists your teams);
    - any file picker or Explorer window.
-5. **Need an image, a logo or anything from those panels?** Type `/pause`, do it, then type `/pause` again. Paused time never reaches the video. Otherwise use only the logo and images already in the template.
+5. **Need an image, a logo or anything from those panels?** Type `/pause`, do it, then type `/pause` again. Paused time never reaches the video. Otherwise use only the logo and images already in the template. Don't crop an image to hide part of it: in a PDF export, the cropped-out part can be recovered by anyone who downloads it.
 6. **No real person** in the design: no name and no photo of anyone. The copy is chosen so it names no one.
 7. **Canva AI** won't fill the locked slots. Try it off camera first if you want it in the scene.
 8. **Export** through the File menu: Download, then <PNG, quality High, size 1x | for a carousel: PDF Standard, with Flatten PDF on>. If Canva shows an upgrade prompt when you change the quality, keep the defaults. Don't open the downloaded file on camera. Finish on the design in Canva: zoom out so every page is in view.
@@ -96,6 +96,8 @@ Say "OT-<nn> done". The assistant waits for the session to be filed, asks for th
 - Export line: one of the two, by template. PNG High 1x, or PDF Standard with Flatten on (L-05-R3 Q5, Q6, Q8).
 - `<nn>`: the next free OT number, in the front matter and the two fences only.
 - Length: "never over 15" holds unless the held intake's question 2 comes back "verify". The rig records screen and webcam either way, so question 3 (screen or webcam) doesn't change the brief, only the cut.
+
+**Which scene: fill a template, or build one on camera.** L-05 synthesis 10.2 prefers the build (import, lock, fill, export) once the off-camera probe has passed, with filling a ready template as the fallback. That's Alex's call (synthesis Q2, through `orchestration` and S-D6), not this session's: the brief takes whichever one `READY S-D6` reports. The body above is written for filling; the build version swaps in the paragraph below.
 
 **If the templates aren't in Canva by the slot** (S-D6 says what exists in its `READY S-D6`, or doesn't send one)
 - Preferred: build one template on camera from its backdrop. With the recording paused, upload that template's backdrop image into a new design of the right size and place it; resume. On camera: lock the backdrop, add native text boxes at the slots, fill, export. This uses S-D6's own route (backdrop plus native text) and keeps the Uploads panel and the file picker off camera (L-05-W1 C2 option B and C6). The brief's Step 1 item 7 then reads "open the new design" and Step 2 item 3 gains the locking.
