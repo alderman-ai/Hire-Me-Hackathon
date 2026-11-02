@@ -10,13 +10,13 @@ Not on this list: anything about Addvery itself (company, stakeholders, brand, m
 
 Flagged, as the method requires: R2 and R4 serve the project's outcome rather than one DoD item. The closest items are DoD-18 and DoD-19, the site and its framing.
 
-- [ ] R1 Making the work legible. How do the strongest GTM-engineer portfolios, hackathon demos and "job application as outreach" sites make the work legible to a non-technical decision maker in under a minute? Is there a converged pattern (short video, live build log, before/after, a "how it works" panel)? What makes such demos read as toys, or as noise? · serves: DoD-8 ("a visitor can follow without explanation"), DoD-13, DoD-17, DoD-19 · tools: WebSearch, web-fetch · deep: no
-- [ ] R2 What a GTM engineer is hired to show. What do agencies and B2B companies hiring GTM engineers in 2026 look for: skills, tool stacks, proof of work? Which of the ten deliverables map to that, and what does a hiring manager expect that none of them shows? · serves: the outcome; closest DoD-18, DoD-19 (flagged) · tools: WebSearch, web-fetch (job posts and practitioner writing, not Addvery's) · deep: no
+- [x] R1 Making the work legible. How do the strongest GTM-engineer portfolios, hackathon demos and "job application as outreach" sites make the work legible to a non-technical decision maker in under a minute? Is there a converged pattern (short video, live build log, before/after, a "how it works" panel)? What makes such demos read as toys, or as noise? · serves: DoD-8 ("a visitor can follow without explanation"), DoD-13, DoD-17, DoD-19 · tools: WebSearch, web-fetch · deep: no · report: `global\L-01-R1-legibility.md` (accepted 14:55)
+- [x] R2 What a GTM engineer is hired to show. What do agencies and B2B companies hiring GTM engineers in 2026 look for: skills, tool stacks, proof of work? Which of the ten deliverables map to that, and what does a hiring manager expect that none of them shows? · serves: the outcome; closest DoD-18, DoD-19 (flagged) · tools: WebSearch, web-fetch (job posts and practitioner writing, not Addvery's) · deep: no · report: `global\L-01-R2-gtm-engineer-hiring.md` (accepted 14:55)
 - [ ] R3 Personal data on a public site. What do GDPR and LinkedIn's terms allow when a project scrapes public information about six named people, publishes a section about each on a public website, and runs them through a live outbound sequence from the operator's own account? What's the converged safe practice for personalised outreach of this kind, and what should stay off the site? · serves: DoD-13 (the live run), DoD-18 (six stakeholder sections), DoD-22 (what's published) · tools: WebSearch, web-fetch (regulator guidance, case law, LinkedIn's published terms) · deep: no
 - [ ] R4 Does the format land? Is there evidence (case studies, recruiter and founder accounts) on how recipients react to a personalised website built as a job application? What tips it from impressive to creepy or self-indulgent, and what makes the recipient act on it? · serves: the outcome; closest DoD-18 (flagged) · tools: WebSearch, web-fetch · deep: no
-- [ ] W1 Wildcard: can it be executed?
-- [ ] W2 Wildcard: can it be delivered?
-- [ ] W3 Wildcard: will it be received?
+- [x] W1 Wildcard: can it be executed? · report: `global\L-01-W1-wildcard-executed.md` (accepted 14:55)
+- [x] W2 Wildcard: can it be delivered? · report: `global\L-01-W2-wildcard-delivered.md` (accepted 14:55)
+- [x] W3 Wildcard: will it be received? · report: `global\L-01-W3-wildcard-received.md` (accepted 14:55)
 <!-- after every item above is ticked -->
 - [ ] Synthesis: cross-document insights and recommendations for every spec's methodology
 - [ ] DIRECTORY.md entries for every report above
