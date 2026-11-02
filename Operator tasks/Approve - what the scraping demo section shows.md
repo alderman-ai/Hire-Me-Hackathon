@@ -5,9 +5,10 @@ Task id: OT-12
 Task State: Open
 Gate: S-D1 D1 section sign-off (folds in OT-06, the spec-draft gate, which was still open)
 Requested by: s-d1-scraping
-Snapshot of: scraping\draft\d1.md (git-ignored) at SHA-256 ba90188843d5
+Snapshot of: scraping\draft\d1.md (git-ignored) at SHA-256 0961c7fe33df
 Unblocks: the site's scraping page going live (BUILD S-D1-B1 to the website session)
 Created: 2026-11-02 16:38 Prague
+Updated: 2026-11-02 16:45 Prague (Alex's 16:41 changes applied; copy pass with the copywriting skill; snapshot refreshed)
 ---
 
 # Approve: what the scraping page on the site shows
@@ -32,12 +33,12 @@ Created: 2026-11-02 16:38 Prague
 2. Three steps on how it worked. They say truthfully that agents read the website, the register and the press directly, and that the Apify scrapers read YouTube and public LinkedIn pages.
 3. A folded "Show me how" part, with the Apify scrapers named and linked, their results, time and cost, the totals against your $10 cap, the cleaning, and what broke and how it was handled.
 4. No person is named. No LinkedIn data is shown, only that LinkedIn was read and why. Nothing is near the Apify proposal, and there's no raw data.
-5. Two closing lines in your voice: that this is part of your application, and that you directed the work.
+5. A link to your research page (/d2), and two closing lines in your voice: that this is part of your application, and that you directed the work.
 
 ## Points to check, each with what's in the page now
 
 - **LinkedIn, the most sensitive line.** The page has one combined row naming the three LinkedIn scrapers, with their total results, time and cost. It says, by role and with no names, whose public pages they read, and that the results were used only to choose whom to write to. A fresh agent reading the page cold flagged that an itemised version, one row per scraper with what each read, could feel creepy to Addvery's staff, so it's combined. To change it, write "LinkedIn: itemise" for one row per scraper, or "LinkedIn: hide" to drop the LinkedIn row (the totals then cover only the YouTube scrapers, and the page says LinkedIn research was done for the outreach demo).
-- **The title.** It's "What scraping public sources told me about Addvery". To switch, write "title 2" for "How I researched Addvery before writing to you".
+- **The title.** It's now "How I researched Addvery before writing to you", addressed to the reader you named. To switch back, write "title 2" for "What scraping public sources told me about Addvery".
 - **Your two closing lines** are written in your voice. Rewrite them in the feedback section if they aren't how you'd say it.
 - **The plan's other choices, with their defaults applied:**
   - No new Apify run. Write "crawl: yes" to have your research session crawl Addvery's website on Apify for cents; the page then gains one row and you see that change before it goes live.
@@ -46,9 +47,22 @@ Created: 2026-11-02 16:38 Prague
 - **Left out:** the line on the separate labelling model your research session used. It isn't an Apify scraper, and naming the company behind it is your call. Write "labelling: add" to put one line back in the folded part.
 - **Before it went to you:** a fresh agent that knew nothing about the project read the page cold. It got the point, the findings and the next step. Its problems are fixed: unclear authorship, jargon, a total that looked double-counted, and a line that seemed to contradict "no personal data". That's a stand-in for a test with real readers, not the test itself.
 
+## Your changes at 16:41, and what was done
+
+Your words, moved here from the feedback section so it's empty for your next answer:
+
+> Look talk to the website. I gave it a screenshot of a conversation between me and one of the decision holders. This is meant for their eyes.
+>
+> I want the assets that were built in the research subdirectory, these artifacts and stuff, to be displayed somewhere. This is proof. They should be doing this for other companies too, right? Go ahead and display those things as it is. It's fine Tell the website that one of the sections of the website should be my research on the company, right?
+
+- **The conversation:** the website session told me who it's for: Addvery's growth lead, warm and informal, and building the sales and marketing system from scratch. The page now speaks to that reader. The title addresses them, a one-line subheadline says why the research comes first, and the closing lines are plainer. It names nobody, because names appear only on the stakeholder pages you approve.
+- **Your research artifacts on the site, as proof:** the research section is live at /d2 ("Company and stakeholder research"). Your research session and the website session are putting the company-level artifacts there now: positioning, industries and customer types, case studies, org charts. Anything that profiles a named person (the dossiers, team notes, the six, their posts) goes through your stakeholder-page approval, where you see exactly what's shown about each person and can tick it "as it is".
+- **This page links to it:** "See the research itself" points to /d2.
+- **Copy:** under your 16:40 rule, the page had a pass with the copywriting skill (marketing:draft-content). Every fact and number is unchanged.
+
 ## What's being approved
 
-The page exactly as it stands, at SHA-256 `ba90188843d5`. It lives in `scraping\draft\d1.md`, which the repo ignores, so it never enters the public repo before you approve it. The notes in angle brackets are layout hints for the website; they don't show on the page.
+The page exactly as it stands, at SHA-256 `0961c7fe33df`. It lives in `scraping\draft\d1.md`, which the repo ignores, so it never enters the public repo before you approve it. The notes in angle brackets are layout hints for the website; they don't show on the page.
 
 ![[scraping/draft/d1.md]]
 
