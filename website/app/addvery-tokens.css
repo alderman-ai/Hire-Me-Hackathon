@@ -1,0 +1,225 @@
+/* Addvery brand tokens (--av-*), adapted from local/addvery/brand/tokens.css (extracted 2 Nov 2026
+   from https://www.addvery.com/; BRAND.md has the roles and sources).
+
+   Fonts come from next/font/google in app/layout.tsx, which sets --font-inter-tight, --font-inter,
+   --font-outfit and --font-jakarta on <html>. Inter Tight 500 stands in for Addvery's commercial
+   Neue Haas Grotesk Display, Inter for Haas Grot Disp Roman; Outfit and Plus Jakarta Sans are exact. */
+
+:root {
+  /* ---------- Colour: core neutrals ---------- */
+  --av-black: #000000;            /* hero, contact section, nav backdrop */
+  --av-ink: #151515;              /* alternating dark sections, footer, mobile nav bar, podcast/case heroes, dark text on light pages */
+  --av-white: #ffffff;            /* light sections, text on dark */
+  --av-text: #333333;             /* Webflow body default; icon colour on card hover */
+  --av-text-on-dark: #bcbcbc;     /* body copy, captions, footer links on dark (site var --light-body-font) */
+  --av-text-on-light: #5e6873;    /* body copy on white (site var --drak-body-font) */
+  --av-placeholder: #686868;      /* form placeholders */
+  --av-input-bg: #fdfdfd;         /* form field fill */
+  --av-border-photo: #7b7b7b;     /* team picture-card outline */
+  --av-border-bullet: #333333;    /* slider dots outline */
+
+  /* ---------- Colour: brand accents (gradient era, homepage + industries) ---------- */
+  --av-violet: #6645eb;           /* gradient start (cards, rows, text gradient, icons) */
+  --av-violet-deep: #642df0;      /* gradient start on buttons and team overlay */
+  --av-orchid: #d445eb;           /* gradient end */
+  --av-violet-mid: #b445eb;       /* mid stop seen in the decorative stroke-glow SVG */
+
+  /* ---------- Colour: accents (newer podcast + case-study pages) ---------- */
+  --av-amethyst: #8b3fcf;         /* stat numbers, eyebrows, pills, list rules, CTA band */
+  --av-lavender: #d3c3ff;         /* eyebrows and hover text on dark */
+  --av-plum: #4a1d73;             /* text on white pill buttons, play icon */
+  --av-lilac-100: #f5f2fa;        /* light CTA band */
+  --av-lilac-200: #ebdcff;        /* lead text on dark / on amethyst */
+  --av-lilac-300: #e3dfea;        /* hairlines and borders on white */
+  --av-mauve-400: #b4aebf;        /* lead text on dark (case-study hero) */
+  --av-mauve-500: #9c94a8;        /* rich text on dark */
+  --av-plum-800: #333038;         /* hairlines on dark */
+  --av-plum-900: #26222c;         /* media placeholder behind thumbnails */
+
+  /* ---------- Colour: translucent surfaces and lines ---------- */
+  --av-surface-dark-card: rgba(255, 255, 255, 0.06);   /* service + industry cards on #151515 */
+  --av-border-dark-card: rgba(255, 255, 255, 0.1);     /* their 1px outline */
+  --av-surface-light-card: rgba(0, 0, 0, 0.07);        /* case-study cards on white (renders ~#ededed) */
+  --av-line-on-dark: rgba(255, 255, 255, 0.2);
+  --av-line-on-light: rgba(0, 0, 0, 0.2);
+  --av-outline-on-dark: rgba(255, 255, 255, 0.4);      /* podcast "listen on" pills */
+  --av-outline-on-dark-strong: rgba(255, 255, 255, 0.5);
+  --av-badge-bg: rgba(0, 0, 0, 0.7);
+  --av-image-overlay: rgba(0, 0, 0, 0.45);             /* industry hero photo dimmer */
+  --av-menu-overlay: rgba(0, 0, 0, 0.77);              /* mobile menu sheet (#000000c4) */
+  --av-logo-tile-bg: rgba(7, 7, 7, 0.2);
+
+  /* ---------- Gradients ---------- */
+  --av-gradient-button: linear-gradient(25deg, #642df0 35%, #d445eb);
+  --av-gradient-row: linear-gradient(90deg, #6645eb, #d445eb);          /* hover fill on service + industry rows */
+  --av-gradient-card: linear-gradient(56deg, #6645eb 36%, #d445eb);     /* case-card hover fill (rises from bottom) */
+  --av-gradient-submit: linear-gradient(5deg, #6645eb 24%, #d445eb);
+  --av-gradient-text: linear-gradient(25deg, #6645eb 35%, #d445eb);     /* clip to text on link hover */
+  --av-gradient-stat-plus: linear-gradient(50deg, #6645eb, #d445eb);    /* gradient "+" after stat numbers (clip to text) */
+  --av-gradient-team-overlay: linear-gradient(0deg, #642df0, rgba(255, 255, 255, 0) 64%);
+  --av-gradient-logo-tile: radial-gradient(circle at 0 100%, rgba(88, 88, 88, 0.64), rgba(160, 160, 160, 0.31));
+  /* Approximation of the purple glow AVIFs (use /addvery/glow-*.avif for the real thing) */
+  --av-glow: radial-gradient(closest-side, rgba(102, 69, 235, 0.55), rgba(102, 69, 235, 0));
+
+  /* ---------- Typography: families ---------- */
+  --av-font-display: var(--font-inter-tight), "Inter Tight", "Helvetica Neue", Arial, sans-serif;   /* stands in for Neue Haas Grotesk Display Pro 65 Md */
+  --av-font-body-haas: var(--font-inter), "Inter", "Helvetica Neue", Arial, sans-serif;       /* stands in for Haas Grot Disp 55 Roman */
+  --av-font-sans: var(--font-outfit), "Outfit", system-ui, sans-serif;                                    /* exact: paragraphs, buttons, nav, forms, footer */
+  --av-font-numeric: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;                      /* exact: stat counters, h4-h6 base */
+
+  --av-weight-light: 300;
+  --av-weight-regular: 400;
+  --av-weight-medium: 500;   /* every display heading */
+  --av-weight-semibold: 600; /* Plus Jakarta numbers */
+  --av-weight-bold: 700;
+
+  /* ---------- Typography: scale (desktop; 991 px is identical unless noted) ---------- */
+  --av-h1-size: 60px;      --av-h1-lh: 68px;      /* hero h1 (tag rule) */
+  --av-display-size: 3.75rem; --av-display-lh: 1.1;  /* .heading-style-h1 section titles (60/66) */
+  --av-h2-size: 2.625rem;  --av-h2-lh: 1.2;       /* .heading-style-h2 (42/50.4) */
+  --av-h3-size: 1.4rem;    --av-h3-lh: 1.24;      /* .heading-style-h3 card titles (22.4/27.8) */
+  --av-h4-size: 1.5rem;    --av-h4-lh: 1.2;       /* .heading-style-h4 (24) */
+  --av-h5-size: 22px;      --av-h5-lh: 32px;      /* .heading-five */
+  --av-h6-size: 20px;      --av-h6-lh: 30px;      /* .heading-six: names, row labels, stat labels */
+  --av-heading-transform: capitalize;             /* homepage/template headings; newer pages use none */
+
+  --av-body-size: 18px;    --av-body-lh: 28px;    /* p (Outfit) and .body-text (Haas) */
+  --av-lead-size: 1.375rem; --av-lead-lh: 1.55;   /* case-study / podcast lead (22px) */
+  --av-rich-size: 1.125rem; --av-rich-lh: 1.67;   /* case-study article body (18/30) */
+  --av-small-size: 1rem;   --av-small-lh: 1.2;    /* footer links, .text-size-small */
+  --av-meta-size: 15px;                            /* podcast meta, listen label */
+  --av-caption-size: 14px;
+  --av-micro-size: 12px;                           /* pills, badges, card tags */
+
+  --av-button-size: 15px;  --av-button-lh: 28px;  --av-button-tracking: 0.45px;  /* Outfit 500 uppercase */
+  --av-nav-size: 14px;     --av-nav-lh: 28px;     --av-nav-tracking: 0.28px;     /* Outfit 500 uppercase */
+  --av-eyebrow-size: 13px; --av-eyebrow-tracking: 0.12em;                         /* display face, uppercase */
+  --av-pill-tracking: 0.06em;                                                      /* pill buttons, uppercase */
+
+  --av-stat-size: 60px;    --av-stat-lh: 68px;    --av-stat-tracking: -1px;       /* Plus Jakarta 600 (>=1440 px) */
+
+  /* Newer editorial pages (podcast, case study) */
+  --av-editorial-h1-size: 4.125rem; --av-editorial-h1-lh: 1.09; --av-editorial-h1-tracking: -0.03em;  /* 66px */
+  --av-editorial-h2-size: 2.75rem;  --av-editorial-h2-lh: 1.18; --av-editorial-tracking: -0.02em;     /* 44px */
+  --av-editorial-h3-size: 1.5rem;   --av-editorial-h3-lh: 1.33;
+  --av-feature-title-size: 38px;    --av-feature-title-lh: 1.21;
+  --av-cta-title-size: 2.375rem;    --av-cta-title-lh: 1.21;
+  --av-card-title-size: 21px;       --av-card-title-lh: 1.38;
+  --av-stat-editorial-size: 4rem;   /* amethyst stat numbers, line-height 1, -0.03em */
+
+  /* ---------- Spacing ---------- */
+  --av-space-1: 4px;
+  --av-space-2: 8px;
+  --av-space-3: 10px;
+  --av-space-4: 15px;
+  --av-space-5: 20px;
+  --av-space-6: 30px;
+  --av-space-7: 40px;
+  --av-space-8: 60px;
+  --av-space-9: 80px;
+  --av-space-10: 120px;
+
+  --av-section-pad-y: 120px;     /* every homepage section, unchanged down to 390 px */
+  --av-section-pad-x: 40px;
+  --av-footer-pad-y: 80px;
+  --av-hero-pad-top: 142px;      /* clears the fixed 92 px nav */
+  --av-editorial-pad-y: 6.875rem; /* 110px, case-study chapters */
+
+  --av-container: 1290px;        /* .container */
+  --av-container-narrow: 1230px; /* .container-large, footer, contact, case study */
+  --av-container-podcast: 1200px;
+  --av-measure: 760px;           /* article column */
+  --av-gutter: 30px;             /* most common grid gap */
+  --av-gutter-sm: 20px;
+
+  /* ---------- Shape ---------- */
+  --av-radius-xs: 4px;     /* badges */
+  --av-radius-sm: 6px;     /* buttons, industry photo */
+  --av-radius-md: 8px;     /* logo tiles */
+  --av-radius-lg: 10px;    /* cards, inputs, photos: the default */
+  --av-radius-xl: 15px;    /* team picture cards */
+  --av-radius-2xl: 16px;   /* case-study meta box, featured podcast media */
+  --av-radius-form: 30px;  /* contact form wrapper */
+  --av-radius-pill: 999px;
+
+  --av-border-hair: 1px;
+  --av-border-rule: 2px;   /* article list rule, h3 top rule, nav underline height */
+
+  /* ---------- Shadow, blur, layers ---------- */
+  --av-shadow-button: 0 2px 40px rgba(0, 0, 0, 0.1);
+  --av-shadow-card: 0 2px 40px rgba(0, 0, 0, 0.08);
+  --av-shadow-soft: 0 4px 60px rgba(0, 0, 0, 0.1);
+  --av-blur-nav: blur(12px);
+  --av-blur-menu: blur(20px);
+  --av-blur-tile: blur(9px);
+
+  --av-z-nav: 999;
+  --av-z-contact: 99;
+  --av-z-section: 10;
+  --av-z-raised: 1;
+
+  /* ---------- Motion ---------- */
+  --av-ease: ease;
+  --av-dur-fast: 0.2s;     /* team hover opacity/scale */
+  --av-dur-base: 0.3s;     /* link colour, photo saturation */
+  --av-dur-nav: 0.4s;      /* Webflow nav open */
+  --av-dur-ix: 0.5s;       /* IX2 hover in */
+  --av-dur-ix-out: 0.6s;   /* IX2 hover out */
+  --av-dur-marquee: 40s;   /* client-logo marquee, linear infinite, translateX(0 -> -50%) */
+
+  --av-nav-height: 92px;
+}
+
+/* ---------- Responsive overrides (Webflow breakpoints) ---------- */
+@media screen and (min-width: 1440px) {
+  :root { --av-stat-tracking: -1px; }
+}
+
+@media screen and (max-width: 1439px) {
+  :root { --av-stat-size: 60px; --av-stat-tracking: -0.42px; }
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --av-stat-size: 45px; --av-stat-lh: 50px;
+    --av-editorial-h1-size: 3.25rem;
+    --av-editorial-h2-size: 2.25rem;
+    --av-stat-editorial-size: 3.25rem;
+    --av-editorial-pad-y: 5rem;
+    --av-nav-height: 72px;               /* 4.5rem bar, hamburger shown */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --av-h1-size: 45px; --av-h1-lh: 50px;
+    --av-display-size: 2.8125rem;        /* 45px */
+    --av-h2-size: 2rem;                  /* 32px */
+    --av-stat-size: 45px;                /* home counter keeps 45 (generic counter drops to 35px) */
+    --av-editorial-h1-size: 2.5rem; --av-editorial-h1-tracking: -0.02em;
+    --av-editorial-h2-size: 1.875rem;
+    --av-editorial-h3-size: 1.25rem;
+    --av-feature-title-size: 28px;
+    --av-stat-editorial-size: 3rem;
+    --av-lead-size: 1.125rem;
+    --av-nav-height: 64px;               /* 4rem */
+  }
+}
+
+@media screen and (max-width: 479px) {
+  :root {
+    --av-h1-size: 36px; --av-h1-lh: 40px;
+    --av-display-size: 2.1875rem;        /* 35px */
+    --av-h2-size: 1.825rem;              /* 29.2px */
+    --av-editorial-h1-size: 2.125rem;
+    --av-button-size: 14px; --av-button-lh: 24px;
+  }
+}
+
+/* ---------- Optional helpers (prefixed, safe to delete) ---------- */
+.av-text-gradient {
+  background-image: var(--av-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

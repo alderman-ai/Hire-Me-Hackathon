@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { POLL_MS, STATUS_URL, Status, hms, remaining } from "@/lib/status";
 
 function useStatus(): Status | null {
@@ -38,6 +38,33 @@ function useNow(): number {
   return now;
 }
 
+// Addvery's odometer digits: the hours and minutes roll (600 ms) when they change; the seconds
+// just tick, since a roll on every second would never settle.
+function Digits({ text }: { text: string }) {
+  return (
+    <span className="clock-digits" aria-hidden="true">
+      {[...text].map((ch, i) =>
+        /\d/.test(ch) ? (
+          <span key={i} className="clock-mask">
+            <span
+              className={i < 5 ? "clock-train clock-train-roll" : "clock-train"}
+              style={{ "--digit": Number(ch) } as CSSProperties}
+            >
+              {"0123456789".split("").map((d) => (
+                <span key={d}>{d}</span>
+              ))}
+            </span>
+          </span>
+        ) : (
+          <span key={i} className="clock-sep">
+            {ch}
+          </span>
+        ),
+      )}
+    </span>
+  );
+}
+
 // The countdown of recorded time left, from status.json (scripts/clock_sync.py).
 export default function Countdown() {
   const status = useStatus();
@@ -58,10 +85,11 @@ export default function Countdown() {
       : status.status === "paused"
         ? `${status.session} paused`
         : "Between sessions";
+  const time = hms(left.seconds);
   return (
     <div className="clock">
-      <span className="clock-time" role="timer">
-        {hms(left.seconds)}
+      <span className="clock-time" role="timer" aria-label={time}>
+        <Digits text={time} />
       </span>
       <span className="clock-label">left of the 12 hours</span>
       <span className="clock-state">
