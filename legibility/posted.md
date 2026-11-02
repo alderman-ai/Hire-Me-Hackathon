@@ -38,6 +38,7 @@ Every filed rig session, and the post that carries its best moments.
 | S07 | 14:42 | P4 | Briefing session, this feed, recovery skill, keys off camera; not on YouTube (38 min) |
 | S08 | 15:16 | website's own post `s08` ("Back from lunch: what runs without him"), at Alex's request through rig, with the full webcam (MyYnFOQCagc) | Read by S-D9 at 15:20: nothing further worth a separate post. Role tags to add in the next build: COO, CEO, CSO, RevOps ("I could do the same thing tomorrow with a new company"). |
 | S09 | 16:00 | P6 (feed post s09, live 16:39) | One session per name, the site takes on the company's look, one red disclaimer; not on YouTube (26 min) |
+| S11 | 17:13 | website's own post `s11` ("Evening check-in: what worked, and what didn't"), at Alex's request through rig, with the full webcam (iXr-pKhseB8) | Read by S-D9 at 17:30 against the feed: the post already carries its best line (2:19). Nothing further worth a separate post. Role tags for the next build: CEO, COO, CAIO. |
 
 ## Role tags (DI-1 Q1.9)
 
