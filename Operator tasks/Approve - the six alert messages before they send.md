@@ -2,7 +2,7 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-08
-Task State: Open
+Task State: Withdrawn
 Gate: S-D3 pre-send (the alert to the six)
 Requested by: s-d3-getsales
 Snapshot of: getsales/live/pre-send.md (git-ignored) and getsales/alert/copy.json at commit f5184f1
@@ -13,6 +13,8 @@ Created: 2026-11-02 15:42 Prague (six changed 15:55)
 <!-- File name: "Approve - the six alert messages before they send.md". No ids or codes in the name or the text. -->
 
 # Approve: the six alert messages before they send
+
+> **Withdrawn at 16:45.** You answered in the GetSales intake that you'll send the alert by hand, not through automation ("You can kill this"). Nothing was sent and nothing needs your tick here. The six drafted messages stay in the git-ignored file below if you want to use them for your own sends.
 
 ## What this is
 
