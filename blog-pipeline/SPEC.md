@@ -1,6 +1,6 @@
 # S-D4 Blog pipeline: executable spec
 
-Status: draft; preflight DI-8 waiting on Alex · Row: S-D4 — Blog pipeline · Folder: `blog-pipeline\` · Session: `s-d4-blog-pipeline`
+Status: ready for groundwork (part 1); the rest waits for preflight DI-8, with Alex, low priority · Row: S-D4 — Blog pipeline · Folder: `blog-pipeline\` · Session: `s-d4-blog-pipeline`
 
 S-D4 builds the pipeline that turns about 15 minutes of Alex talking into a good-looking, near-final blog post, with only the last 10% left to him (DoD-14). It's proved once, on one test dictation that Alex accepts as near-final. The pipeline is a runbook with its prompts and a few scripts, which S-D5 then runs on its three articles. On the site it shows up as the blog: a post page in the site's Addvery look, built by `website`, with a "How this post was made" box on every post, and D4's entry on the deliverables view.
 
@@ -16,7 +16,9 @@ The preflight is decision intake DI-8 (`..\Operator tasks\Decide - how the blog 
 | 4 | The test dictation scene: slot and topic | 15:15–15:35, topic 1; the morning cleanup session if still empty at 18:00 |
 | 5 | If research runs late: may the test post be drafted before L-03's findings land? | Draft without waiting; findings revise it before the near-final review (A) |
 
-**Launch gate.** The session launches once DI-8 is answered and its answers are applied. From 18:00 Prague an unanswered question takes its default, logged in §9.
+**Launch gate, in two parts** (Alex, 14:38: "i'm swamped we need to remove blockers ... d1-8 is low priority").
+- **Part 1, now: groundwork that needs nothing from him.** The session launches before DI-8 is answered and builds what every answer needs: the draft method, the prompts, the scripts, the post format, the `dictations\` folder (operator scenes, above), and its research request (§6). It sends no BUILD request and writes no operator task for Alex yet.
+- **Part 2, once DI-8 is answered and applied:** the dictation task, the site template's BUILD request (question 1), the test post and the near-final gate. The session owns DI-8: it watches the file every 300 seconds with the Monitor tool, applies each answer here, sets its Intake State to Answered, commits, then sends `answer-desk` `TASK DONE S-D4: Decide - how the blog pipeline should work.md` and `orchestration` `ARCHIVE Decide - how the blog pipeline should work.md: readers S-D4, S-D5`. No pokes for DI-8 while it's open (Alex, 14:38). From 18:00 Prague an unanswered question takes its default, logged in §9.
 
 **Operator scenes.**
 - **The test dictation**, about 15 minutes of talking on camera, proposed for 15:15–15:35 (question 4). It's shot before the pipeline exists (P3, the movie-actor rule): a dictation is raw input, and drafting comes later. If the session isn't running yet at his slot, he dictates into a new note in `blog-pipeline\dictations\` and the session picks it up.
@@ -188,3 +190,4 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov, drafting (wave2-specs): Alex reviews the test post on a Vercel preview deployment, not production. | DoD-14's "good-looking" is judged as the post renders; what goes live is S-D5's call. | Nothing unfinished reaches the live site. | One BUILD request. If `website` won't deploy previews, it sends a screenshot from its local check instead. |
 | 2 Nov, drafting (wave2-specs): each post's "How this post was made" box shows minutes talked, words spoken, words drafted and, from S-D5, the share of words Alex changed. | Otherwise "the last 10%" is only a claim. | A visitor can check it without explanation (serves DoD-19). | `POST-FORMAT.md`, the template, and S-D5's publish step. |
 | 2 Nov, drafting (wave2-specs): the test post is drafted while the spec-draft gate is open, and rerun if Alex changes the method. | Drafting uses none of his time and publishes nothing; waiting would push his review out of today's gaps. | It keeps the review inside his window (P6). | Repeated subagent work only. |
+| 2 Nov 15:02 (wave2-specs, on Alex's 14:38 "remove blockers" and "low priority"): the launch gate is split; the session launches for groundwork before DI-8 is answered, owns DI-8 itself, and doesn't poke for it. | Alex is on his Addvery research and called this intake low priority; nothing in part 1 depends on his answers. | The pipeline gets built in parallel (P1) without taking any of his attention (P4). | Part 1 work only. If question 1 comes back B (Claude Design), the post format stays and only the template step changes. |
