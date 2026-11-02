@@ -19,7 +19,7 @@ Then read, in order: `CLAUDE.md` (the reading list), `SPEC.md` (the job; the res
 - **CLIP S-D3-C1** isn't sent yet. Since 16:44 it's **Alex's own walkthrough** of the 36 GetSales demo workflows, not a live run: Alex sends the alert to the six by hand. `s-d3-getsales` sends the CLIP once the folder is built and he has recorded it, with the session or times, the cue words and the folder's exact on-screen name (asked at 16:50).
 - **No Alex gate any more** (reset rule 2; told S-D3 at 17:14). Cut it with ffmpeg into `clips\` (git-ignored) to SPEC section 7's clip spec. Check one frame every 2 seconds against DoD-22: secrets, the Apify proposal, and his own outbound outside the demo folder. That means cutting his own campaigns, the inbox, other folders and sender settings. Blur any of the six if they appear (Q4 default). Then reply `CLIPPED S-D3-C1: <paths>`. S-D3 places it on the site.
 - **Design rule 5** treats caption cards as visual work. Ask orchestration for a design skill (`frontend-design`) before making any.
-- **Heads-up:** at 17:14 SendMessage reported **two live sessions named `s-d3-getsales`**. Orchestration has been told. Reply to whichever one sends the CLIP, at its `from` address.
+- **S-D3 handed over at 17:17.** The fresh `s-d3-getsales` has the 17:14 note: blur the six by default, and the clip approval is S-D9's. Reply to the CLIP at its `from` address.
 
 ## Gates and pokes
 
