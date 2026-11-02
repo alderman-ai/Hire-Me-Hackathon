@@ -784,6 +784,34 @@
           "text": "All three quotes are Alex's written notes from about 16:40, in his answers to the agents' approval files."
         }
       ]
+    },
+    {
+      "id": "s11",
+      "at": "2026-11-02T17:07",
+      "session": "S11",
+      "kind": "Update",
+      "title": "Evening check-in: what worked, and what didn't",
+      "deliverable": "d8",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A four-minute video update at 17:07, posted at Alex's request. He hit a wall about half an hour earlier: the hackathon runs at a pace he wouldn't keep every day. But it let him try new approaches, and he says that matters in AI, where people who use it daily get stuck in old habits. His own sense of how much an AI can hold in mind at once still dates from when context windows were small."
+        },
+        {
+          "type": "p",
+          "text": "What surprised him: he didn't need to micromanage the agents, and letting them message each other worked well enough that he wants to build on it. The single question desk and the operator tasks are a sound idea, but with this many pieces at once they overloaded, and he didn't notice he was holding work up. He grades himself a B-plus, maybe a B-minus, and keeps the camera rolling for a second pass on the charter."
+        },
+        {
+          "type": "quote",
+          "text": "I don't really need to micromanage … them talking to each other, really cool, and I need to build whatever comes next off of that.",
+          "source": "Alex, S11 at 2:19 (17:09 Prague)"
+        },
+        {
+          "type": "video",
+          "session": "S11",
+          "start": 0
+        }
+      ]
     }
   ]
 }
