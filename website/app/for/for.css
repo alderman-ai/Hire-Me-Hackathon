@@ -1026,3 +1026,44 @@
     transform: none;
   }
 }
+
+/* ---------- The best-of build: the S02 clip beside the intro, and a lens line under each title ---------- */
+.for-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  column-gap: 4rem;
+  align-items: start;
+}
+
+.for-intro-grid > * {
+  min-width: 0;
+}
+
+.for-clip {
+  --bx-fg: var(--av-white, #fff);
+  --bx-body: var(--av-text-on-dark, #bcbcbc);
+  --bx-accent: var(--av-lavender, #d3c3ff);
+  --bx-focus: var(--av-lavender, #d3c3ff);
+  padding-top: 0.5rem;
+}
+
+.for-clip :focus-visible {
+  outline: 2px solid var(--av-lavender, #d3c3ff);
+  outline-offset: 3px;
+}
+
+.for-card-lens {
+  max-width: 22rem;
+  margin: 0.75rem 0 0;
+  color: var(--av-lilac-200, #ebdcff);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+@media screen and (max-width: 991px) {
+  .for-intro-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2.5rem;
+  }
+}

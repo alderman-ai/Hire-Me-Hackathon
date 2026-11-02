@@ -1,0 +1,481 @@
+{
+ "lists": {
+  "growth": [
+   {
+    "card": "S02-c",
+    "time": "11:09",
+    "session": "S02",
+    "text": "\"it was two things that you had to balance, personalization and volume.\"",
+    "youtube": "qrBNOsSYGrQ",
+    "start": 179,
+    "end": 255,
+    "still": "/videos/S02-c.webp",
+    "len": "1:15"
+   },
+   {
+    "card": "S02-d",
+    "time": "11:11",
+    "session": "S02",
+    "text": "\"this is costly right i cannot do this to 30 companies a day yet right\"",
+    "youtube": "qrBNOsSYGrQ",
+    "start": 270,
+    "end": 318,
+    "still": "/videos/S02-d.webp",
+    "len": "0:48"
+   },
+   {
+    "card": "S02-h",
+    "time": "11:15",
+    "session": "S02",
+    "text": "\"So good that they think you spent three days building it just for them when an agent was running in the background for a couple hours.\"",
+    "youtube": "qrBNOsSYGrQ",
+    "start": 515,
+    "end": 550,
+    "still": "/videos/S02-h.webp",
+    "len": "0:34"
+   },
+   {
+    "card": "S08-b",
+    "time": "15:09",
+    "session": "S08",
+    "text": "\"if you're like on month four and I have your 90-day goals from your job advert that's like gold for crafting like custom messaging\"",
+    "youtube": "MyYnFOQCagc",
+    "start": 142,
+    "end": 205,
+    "still": "/videos/S08-b.webp",
+    "len": "1:04"
+   },
+   {
+    "card": "S09-f",
+    "time": "15:34",
+    "session": "S09",
+    "text": "\"it's all public information so it's fine\"",
+    "youtube": "cNI9EgxHUbk",
+    "start": 1047
+   },
+   {
+    "card": "S09-i",
+    "time": "15:39",
+    "session": "S09",
+    "text": "\"basically see if you can rebuild their sales team\"",
+    "youtube": "cNI9EgxHUbk",
+    "start": 1347,
+    "end": 1420,
+    "still": "/videos/S09-i.webp",
+    "len": "1:13"
+   },
+   {
+    "card": "S10-e",
+    "time": "16:36",
+    "session": "S10",
+    "text": "\"the video is basically just going to be scrolling through those 36 and explaining how the classifier could add leads to there.\"",
+    "youtube": "9vLcPuSVmLo"
+   },
+   {
+    "post_id": "li-2026-10-12-jev-outbound",
+    "date": "12 Oct",
+    "text": "\"I will die on the hill that reaching out to DACH in EN is far more effective than in DE for exactly this reason\"",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7515401179389009920/"
+   },
+   {
+    "post_id": "li-2026-10-24-recording-calls-gdpr",
+    "date": "24 Oct",
+    "text": "\"a lot of standard business practice of how videocalls are recorded and transcribed in the EU never met GDPR regulations.\"",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7519700853683998720/"
+   }
+  ],
+  "ceo": [
+   {
+    "card": "S01-e",
+    "time": "10:30",
+    "session": "S01",
+    "text": "\"i have my uh terminal off to the side because i don't want to accidentally have any of my credentials show up\"",
+    "youtube": "mbF291oW_yQ",
+    "start": 306
+   },
+   {
+    "card": "S02-i",
+    "time": "11:16",
+    "session": "S02",
+    "text": "\"you might ask, okay, you build all this in the first month, why do we even need you? Because we need to make it work better. We need to make it cheaper, right?\"",
+    "youtube": "qrBNOsSYGrQ",
+    "start": 583,
+    "end": 642,
+    "still": "/videos/S02-i.webp",
+    "len": "0:58"
+   },
+   {
+    "card": "S04-i",
+    "time": "12:28",
+    "session": "S04",
+    "text": "\"time is no longer the bottleneck because you can have 20 agents running side by side\"",
+    "youtube": "VaFD-Hm_Phs",
+    "start": 746,
+    "end": 804,
+    "still": "/videos/S04-i.webp",
+    "len": "0:57"
+   },
+   {
+    "card": "S07-n",
+    "time": "14:11",
+    "session": "S07",
+    "text": "\"do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator\"",
+    "youtube": "NULD_WteCRM",
+    "start": 2126,
+    "end": 2180,
+    "still": "/videos/S07-n.webp",
+    "len": "0:53"
+   },
+   {
+    "card": "S08-a",
+    "time": "15:07",
+    "session": "S08",
+    "text": "\"I'm really glad I made that decision earlier to take the extra time to put a really good charter document together because that allows the assistants to work pretty competently without me\"",
+    "youtube": "MyYnFOQCagc",
+    "start": 1
+   },
+   {
+    "card": "S10-b",
+    "time": "16:31",
+    "session": "S10",
+    "text": "\"there's no such thing as building something like an AI workflow as a product it's always a managed service because the models always change\"",
+    "youtube": "PQIZoQ-Ic2w",
+    "still": "/videos/S10-b.webp",
+    "len": "1:12"
+   }
+  ],
+  "cofounder-1": [
+   {
+    "card": "S01-c",
+    "time": "10:28",
+    "session": "S01",
+    "text": "\"I'm going to probably be a little bit ambitious at the beginning. And if I get 75% done, it'll still be pretty good.\"",
+    "youtube": "mbF291oW_yQ",
+    "start": 200
+   },
+   {
+    "card": "S03-h",
+    "time": "11:43",
+    "session": "S03",
+    "text": "\"so it's not the cluster of markdown files on your computer it's clarity\"",
+    "youtube": "M38hI3M3Heo",
+    "start": 1065,
+    "end": 1129,
+    "still": "/videos/S03-h.webp",
+    "len": "1:03"
+   },
+   {
+    "card": "S03-i",
+    "time": "11:44",
+    "session": "S03",
+    "text": "\"the third tribe is really it's entrepreneurs but a lot of entrepreneurs are marketers\"",
+    "youtube": "M38hI3M3Heo",
+    "start": 1128,
+    "end": 1229,
+    "still": "/videos/S03-i.webp",
+    "len": "1:40"
+   },
+   {
+    "card": "S03-j",
+    "time": "11:46",
+    "session": "S03",
+    "text": "\"my cv i from experience i can tell you it doesn't really get looked at\"",
+    "youtube": "M38hI3M3Heo",
+    "start": 1296
+   },
+   {
+    "card": "S10-c",
+    "time": "16:33",
+    "session": "S10",
+    "text": "\"GTM engineers who focus the AI on their pipeline are actually the ones that are helping companies keep their promise\"",
+    "youtube": "XVqOE_-COOQ",
+    "still": "/videos/S10-c.webp",
+    "len": "0:59"
+   },
+   {
+    "post_id": "li-2026-06-03-adoption-bottleneck-people",
+    "date": "3 Jun",
+    "text": "\"The bottleneck for ai adoption was never the technology.\"",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7467844871718854656/",
+    "also": "\"Because someone still has to get real people to actually use it.\""
+   }
+  ],
+  "cofounder-2": [
+   {
+    "card": "S01-f",
+    "time": "10:31",
+    "session": "S01",
+    "text": "\"i spent six months building my own methodology for this i still think it's a little bit better than what you get out of the box here\"",
+    "youtube": "mbF291oW_yQ",
+    "start": 391
+   },
+   {
+    "card": "S02-d",
+    "time": "11:11",
+    "session": "S02",
+    "text": "\"so it's kind of cheating to be honest but i'm actually literally building from scratch today\"",
+    "youtube": "qrBNOsSYGrQ",
+    "start": 270,
+    "end": 318,
+    "still": "/videos/S02-d.webp",
+    "len": "0:48"
+   },
+   {
+    "card": "S10-i",
+    "time": "16:45",
+    "session": "S10",
+    "text": "\"don't let them do copywriting and design work without an actual skill enabled please, for the love of God.\""
+   },
+   {
+    "card": "S12-e",
+    "time": "17:43",
+    "session": "S12",
+    "text": "\"i'm a bit of a rambly talker so like it's okay if there's a little bit of that in there\"",
+    "youtube": "lo486cSVBcM",
+    "start": 534,
+    "end": 554,
+    "still": "/videos/S12-e.webp",
+    "len": "0:19"
+   },
+   {
+    "card": "S12-n",
+    "time": "18:02",
+    "session": "S12",
+    "text": "\"just like a wall of linkedin posts like as many as like 20 to 40 of them\"",
+    "youtube": "lo486cSVBcM",
+    "start": 1694
+   },
+   {
+    "post_id": "li-2026-08-06-copywriting-2",
+    "date": "6 Aug",
+    "text": "\"Pro copywriting skillset is counterintuitively harder to automate and rarer in the field.\"",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7491026529338966017/"
+   },
+   {
+    "post_id": "li-2026-10-12-jev-outbound",
+    "date": "12 Oct",
+    "text": "\"But it breaks my top tactic of less formal register as differentiator.\"",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7515401179389009920/"
+   }
+  ],
+  "delivery": [
+   {
+    "card": "S01-e",
+    "time": "10:30",
+    "session": "S01",
+    "text": "\"i have my uh terminal off to the side because i don't want to accidentally have any of my credentials show up\"",
+    "youtube": "mbF291oW_yQ",
+    "start": 306
+   },
+   {
+    "card": "S03-e",
+    "time": "11:36",
+    "session": "S03",
+    "text": "\"think of it like a movie actor like the expensive movie actor they fly him out to the scene they shoot all of his scenes first even if it's not in chronological order of the movie\"",
+    "youtube": "6Ynpp621fmY",
+    "still": "/videos/S03-e.webp",
+    "len": "0:50"
+   },
+   {
+    "card": "S03-f",
+    "time": "11:37",
+    "session": "S03",
+    "text": "\"if operator time is the bottleneck, what's even tighter bottleneck is operator focus.\"",
+    "youtube": "M38hI3M3Heo",
+    "start": 725,
+    "end": 804,
+    "still": "/videos/S03-f.webp",
+    "len": "1:18"
+   },
+   {
+    "card": "S04-k",
+    "time": "12:35",
+    "session": "S04",
+    "text": "\"if you don't like the way something starts and you get like a bad feeling about it, like I got kind of a bad feeling about this now, it's almost always worth starting over\"",
+    "youtube": "U7j50NbM29U",
+    "still": "/videos/S04-k.webp",
+    "len": "0:53"
+   },
+   {
+    "card": "day1-3",
+    "time": "13:20",
+    "session": "S05",
+    "text": "\"So I was trying to end, uh, one session I didn't need anymore. I ended all sessions, including all the ones that handle the recording.\"",
+    "youtube": "S2NTaJHUmTM",
+    "still": "/videos/day1-3.webp",
+    "len": "0:33"
+   },
+   {
+    "card": "S07-d",
+    "time": "13:44",
+    "session": "S07",
+    "text": "\"Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.\"",
+    "youtube": "NULD_WteCRM",
+    "start": 474,
+    "end": 510,
+    "still": "/videos/S07-d.webp",
+    "len": "0:35"
+   },
+   {
+    "card": "S07-n",
+    "time": "14:11",
+    "session": "S07",
+    "text": "\"do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator\"",
+    "youtube": "NULD_WteCRM",
+    "start": 2126,
+    "end": 2180,
+    "still": "/videos/S07-n.webp",
+    "len": "0:53"
+   },
+   {
+    "card": "S10-h",
+    "time": "16:43",
+    "session": "S10",
+    "text": "\"everything's a little bit off the rails and we need to get everything back on the rails\"",
+    "youtube": "enaeHqxjeCc",
+    "still": "/videos/S10-h.webp",
+    "len": "1:36"
+   },
+   {
+    "card": "day1-5",
+    "time": "16:58",
+    "session": "S10",
+    "text": "\"the bottleneck is always always always human it's not the amount of stuff that the agents can focus on it's humans and I'm paying the price for jumping in\"",
+    "also": "\"i should have not executed a single thing to like two o'clock i should have just been writing specifically what i wanted for each thing\"",
+    "youtube": "0_OKP-0C6Xk",
+    "still": "/videos/day1-5.webp",
+    "len": "0:53"
+   }
+  ],
+  "bi": [
+   {
+    "card": "S07-n",
+    "time": "14:11",
+    "session": "S07",
+    "text": "\"So I'm gonna definitely turn off recording while I push pull all the secret keys over just in case\"",
+    "youtube": "NULD_WteCRM",
+    "start": 2126,
+    "end": 2180,
+    "still": "/videos/S07-n.webp",
+    "len": "0:53"
+   },
+   {
+    "card": "S08-d",
+    "time": "15:13",
+    "session": "S08",
+    "text": "\"i wanted to make sure a those got set up off camera\"",
+    "also": "\"so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run\"",
+    "youtube": "MyYnFOQCagc",
+    "start": 345
+   },
+   {
+    "card": "S09-i",
+    "time": "15:39",
+    "session": "S09",
+    "text": "\"set up a JEV classification that determines whether they are someone sending cold outreach, right?\"",
+    "youtube": "cNI9EgxHUbk",
+    "start": 1347
+   },
+   {
+    "card": "S12-g",
+    "time": "17:45",
+    "session": "S12",
+    "text": "\"That way there's no issue with like posting images of them online without their permission.\"",
+    "youtube": "lo486cSVBcM",
+    "start": 702
+   },
+   {
+    "post_id": "li-2026-10-24-recording-calls-gdpr",
+    "date": "24 Oct",
+    "text": "\"If you're having a video call, this still falls under GDPR.\"",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7519700853683998720/"
+   },
+   {
+    "post_id": "li-2026-10-28-legibility-bottleneck",
+    "date": "28 Oct",
+    "text": "\"I want intake contracts that accept a wide variety of inputs. I want frontmatter schema that determine a wide variety of outputs.\"",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7521198890952572928/"
+   }
+  ]
+ },
+ "lens": {
+  "ceo": [
+   {
+    "card": "S02-f",
+    "time": "11:13",
+    "session": "S02",
+    "text": "\"it only saves you money if it reduces some costs right and the cost that most people it's going to reduce is the labor costs\"",
+    "youtube": "qrBNOsSYGrQ",
+    "start": 412
+   },
+   {
+    "card": "S10-c",
+    "time": "16:33",
+    "session": "S10",
+    "text": "\"if it's not lowering their labor costs, then it has to be increasing their revenue.\"",
+    "youtube": "XVqOE_-COOQ"
+   },
+   {
+    "card": "S12-m",
+    "time": "18:01",
+    "session": "S12",
+    "text": "\"because the only way to get the leverage of AI and not need to drop half your team is if you're also leveraging the amount of new work you're getting.\"",
+    "youtube": "lo486cSVBcM",
+    "start": 1653
+   }
+  ]
+ },
+ "clips": {
+  "S02-j": {
+   "card": "S02-j",
+   "time": "11:17",
+   "session": "S02",
+   "youtube": "qrBNOsSYGrQ",
+   "start": 668,
+   "end": 739,
+   "still": "/videos/S02-j.webp",
+   "len": "1:11",
+   "text": "\"you're going to get proof of what i can do you don't need a cv\""
+  },
+  "S10-c": {
+   "card": "S10-c",
+   "time": "16:33",
+   "session": "S10",
+   "youtube": "XVqOE_-COOQ",
+   "still": "/videos/S10-c.webp",
+   "len": "0:59",
+   "text": "\"GTM engineers who focus the AI on their pipeline are actually the ones that are helping companies keep their promise\""
+  },
+  "S10-b": {
+   "card": "S10-b",
+   "time": "16:31",
+   "session": "S10",
+   "youtube": "PQIZoQ-Ic2w",
+   "still": "/videos/S10-b.webp",
+   "len": "1:12",
+   "text": "\"there's no such thing as building something like an AI workflow as a product it's always a managed service because the models always change\""
+  },
+  "S02-h": {
+   "card": "S02-h",
+   "time": "11:15",
+   "session": "S02",
+   "youtube": "qrBNOsSYGrQ",
+   "start": 515,
+   "end": 550,
+   "still": "/videos/S02-h.webp",
+   "len": "0:34",
+   "text": "\"So good that they think you spent three days building it just for them when an agent was running in the background for a couple hours.\""
+  },
+  "S09-i": {
+   "card": "S09-i",
+   "time": "15:39",
+   "session": "S09",
+   "youtube": "cNI9EgxHUbk",
+   "start": 1347,
+   "end": 1420,
+   "still": "/videos/S09-i.webp",
+   "len": "1:13",
+   "text": "\"maybe let's decide before we execute the scraping, like what all the outputs we want for it are so that it can define what we actually scraped for.\""
+  }
+ }
+}

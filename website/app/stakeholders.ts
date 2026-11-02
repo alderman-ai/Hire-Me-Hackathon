@@ -51,6 +51,10 @@ export type StakeholderPage = {
   title: string;
   /** One line: what this page is. */
   framing: string;
+  /** The line under the title on /for. Literal words (growth: from her note)... */
+  lens?: string;
+  /** ...or a key into content/site-copy.json (app/copy.ts), for the five whose words alex-voice writes. */
+  lens_key?: string;
   /** The growth lead's page only: the opening, with her reply as a short quote. */
   opening?: { before: string; quote: string; quote_source?: string; after?: string };
   /** The growth lead's page only: the "why now" (amounts come from local/org-diagrams.json). */

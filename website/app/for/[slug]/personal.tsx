@@ -1,35 +1,60 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import raw from "@/content/stakeholders.json";
-import { IS_PRODUCTION_BUILD } from "../../flags";
+import { t, type CopyKey } from "../../copy";
+import { IS_PRODUCTION_BUILD, SKILLS_PAGE } from "../../flags";
+import { Band, type BandTone } from "../../best/parts";
 import { RotateIn } from "../../motion";
 import { RecommendCarousel } from "../../recommend-carousel";
 import { LIST_SLUGS, recommendFor, type ListSlug } from "../../recommend";
-import { RememberYourPage, withFor } from "../../your-page";
+import { RememberYourPage } from "../../your-page";
+import { forHref } from "./for-href";
 import type { StakeholderNotice, StakeholderPage } from "../../stakeholders";
+import { AfterQuotes, Chips, Lens, P4_CHIPS } from "./lens";
+import { QuoteCollection, quotesFor } from "./quotes";
 import "./personal.css";
 
-// A personal page on the new site (VERDICT.md 2.3, P1 to P7), built only when NEW_SITE=1:
-//   P1  the portrait, the name and the title (no "what Alex Alderman would build" line: rule 3)
-//   P2  "Hi <name>." and a note from Alex, 80 to 150 words, signed with his photo
-//   P3  Recommended for you: their list from content/recommend.json
-//   P4  at most three questions, each a one-line answer linking a piece (none on the growth page)
-//   P5  one line on how this page was made
-//   P6  the one ask: the stop point
-//   P7  about me, about this page, the takedown offer (the shared blocks, as live)
+// A personal page on the new site (BUILD.md 5 and 6, the best-of build), built only when NEW_SITE=1:
+//   P1  "Hi <name>,", the lead (landing.lead_key + landing.lead), Alex's byline and the portrait card
+//   P2  the note band (landing.note), bold as real markup, signed; none on cofounder-2
+//   P3  the lens block (lens.tsx), one per page; delivery has none (its P3 and P4 are one collection)
+//   P4  the quote collection, in clock order (quotes.tsx, content/quotes.json)
+//   P5  the made line (landing.made_line) and its button to /skills#stakeholder-landing-pages
+//   P6  Recommended for you: the slug's list from content/recommend.json
+//   P7  the notice: why this page exists (not on the growth page), the sources line, the takedown offer
+// No questions, no ask, no "reply to my LinkedIn message" (Alex, 22:05: pages only give).
 //
-// The gate (VERDICT.md 2.3): a production build shows P2's note and P4 to P6 only once
-// `landing.approved` is true; before that, only the hello, the carousel and P7. A preview build shows
-// the unapproved words too, marked as a draft, so Alex can approve or edit them on the real page, and
-// a clearly marked placeholder where K2's words haven't arrived yet. No placeholder reaches production.
+// The gate: a production build shows the lead, P2 to P5 only once `landing.approved` is true; before that,
+// only the hello, the carousel and P7. A preview build shows the unapproved words too, marked as a draft,
+// so Alex can approve or edit them on the real page. No placeholder reaches production.
 //
-// K2 writes these into content/stakeholders.json, under each page's `landing` (Markdown links
-// [words](/path) allowed in all four; paragraphs in `note` are separated by a blank line):
-//   note: string    questions: { q: string, a: string }[]    made_line: string    ask_line: string
+// Words per page live in content/stakeholders.json, under each page's `landing`:
+//   lead: string        the sentence(s) under "Hi <name>,"
+//   lead_key?: string   a site-copy key (app/copy.ts) rendered in front of `lead` (growth's first words)
+//   note: string        paragraphs separated by a blank line; **bold**; [words](/path) links
+//   made_line: string   sign?: string (the name under the note, default "Alex Alderman")
+// The five notes are replaced later from a notes.json {slug: note}; a note stays one plain string per page.
 
-type K2 = { approved?: boolean; note?: string; questions?: { q: string; a: string }[]; made_line?: string; ask_line?: string };
+type K2 = {
+  approved?: boolean;
+  lead?: string;
+  lead_key?: string;
+  note?: string;
+  made_line?: string;
+  sign?: string;
+};
 
 const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");
+
+/** Each page's P4 band colour and heading key. */
+const P4: Record<string, { tone: BandTone; title: CopyKey }> = {
+  growth: { tone: "light", title: "for-growth.quotes.1" },
+  ceo: { tone: "ink", title: "for-ceo.quotes.1" },
+  "cofounder-1": { tone: "ink", title: "for-cofounder-1.quotes.1" },
+  "cofounder-2": { tone: "light", title: "for-cofounder-2.quotes.1" },
+  delivery: { tone: "ink", title: "for-delivery.quotes.1" },
+  bi: { tone: "light", title: "for-bi.quotes.1" },
+};
 
 function rawLanding(slug: string): K2 {
   const p = (raw.pages as { slug: string; landing?: K2 }[]).find((x) => x.slug === slug);
@@ -47,7 +72,7 @@ function Inline({ text, slug }: { text: string; slug: string }) {
     const [, words, href] = m;
     out.push(
       href.startsWith("/") ? (
-        <Link key={m.index} href={withFor(href, slug)}>
+        <Link key={m.index} href={forHref(href, slug)}>
           {words}
         </Link>
       ) : (
@@ -62,7 +87,24 @@ function Inline({ text, slug }: { text: string; slug: string }) {
   return <>{out}</>;
 }
 
-/** Preview only: where K2's words haven't arrived. Never rendered by a production build. */
+/** Text with **bold** and Markdown links. */
+function Rich({ text, slug }: { text: string; slug: string }) {
+  return (
+    <>
+      {text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+        i % 2 === 1 ? (
+          <strong key={i}>
+            <Inline text={part} slug={slug} />
+          </strong>
+        ) : (
+          <Inline key={i} text={part} slug={slug} />
+        ),
+      )}
+    </>
+  );
+}
+
+/** Preview only: where Alex's words haven't arrived. Never rendered by a production build. */
 function Placeholder({ what }: { what: string }) {
   if (IS_PRODUCTION_BUILD) return null;
   return <p className="pp-placeholder">Placeholder (preview only): {what}</p>;
@@ -77,7 +119,6 @@ export function PersonalPage({
   portrait,
   approved,
   notice,
-  aboutMe,
   sources,
 }: {
   page: StakeholderPage;
@@ -85,6 +126,7 @@ export function PersonalPage({
   /** The site-wide `approved` from content/stakeholders.json. */
   approved: boolean;
   notice: StakeholderNotice;
+  /** Not shown on the new site (P7 is the notice alone); kept so the caller's props stay the same. */
   aboutMe?: { heading: string; text: string } | null;
   sources: string;
 }) {
@@ -94,14 +136,18 @@ export function PersonalPage({
   // Words not yet approved show on previews (as a draft), never in production.
   const showWords = isApproved || !IS_PRODUCTION_BUILD;
   const first = page.name.split(" ")[0];
-  const questions = slug === "growth" ? [] : (k2.questions ?? []).slice(0, 3);
   const cards = recommendFor(slug as ListSlug);
+  const hasLead = Boolean(k2.lead || k2.lead_key);
+  const p4 = P4[slug];
+  const quotes = quotesFor(slug);
+  const chips = P4_CHIPS[slug];
+  const skills = SKILLS_PAGE ? "/skills#stakeholder-landing-pages" : null;
 
   return (
     <main className="art art-for for-landing pp">
       <RememberYourPage slug={slug} />
 
-      {/* ---------- P1 and P2: who it's for, and the note from Alex ---------- */}
+      {/* ---------- P1: who it's for ---------- */}
       <section className="art-hero for-person-hero for-land-hero" aria-labelledby="for-hello">
         <div className="art-container">
           <p className="art-back">
@@ -113,20 +159,17 @@ export function PersonalPage({
                 <p className="sh-draft-strip">Draft for Alex&apos;s review: preview only, not on the live site</p>
               )}
               <h1 id="for-hello" className="for-hello">
-                Hi {first}.
+                Hi {first},
               </h1>
-              {showWords && k2.note ? (
-                <div className="pp-note">
-                  {k2.note.split(/\n\s*\n/).map((para, i) => (
-                    <p key={i} className="for-land-lead">
-                      <Inline text={para.trim()} slug={slug} />
-                    </p>
-                  ))}
-                </div>
+              {showWords && hasLead ? (
+                <p className="for-land-lead pp-lead">
+                  {k2.lead_key && <>{t(k2.lead_key as CopyKey)} </>}
+                  {k2.lead && <Rich text={k2.lead} slug={slug} />}
+                </p>
               ) : (
-                <Placeholder what="K2 brings the note from Alex (80 to 150 words)." />
+                <Placeholder what="the lead under the hello." />
               )}
-              {(showWords && k2.note) || !IS_PRODUCTION_BUILD ? (
+              {(showWords && hasLead) || !IS_PRODUCTION_BUILD ? (
                 <div className="for-land-from pp-sign">
                   <span className="pp-sign-photo" aria-hidden="true">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -171,93 +214,76 @@ export function PersonalPage({
         </div>
       </section>
 
-      {/* ---------- P3: recommended for you (the heading is a working label until alex-voice) ---------- */}
+      {/* ---------- P2: the note ---------- */}
+      {showWords && k2.note && (
+        <Band tone="light" pad="sm" label="A note from Alex">
+          <div className="pp-note">
+            {k2.note.split(/\n\s*\n/).map((para, i) => (
+              <p key={i}>
+                <Rich text={para.trim()} slug={slug} />
+              </p>
+            ))}
+            <div className="pp-note-sign">
+              <span className="pp-note-photo" aria-hidden="true">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/about/alex-headshot-480.webp" width={480} height={729} alt="" loading="lazy" decoding="async" />
+              </span>
+              <span>{k2.sign ?? "Alex Alderman"}</span>
+            </div>
+          </div>
+        </Band>
+      )}
+
+      {/* ---------- P3: the lens block ---------- */}
+      {showWords && <Lens slug={slug} />}
+
+      {/* ---------- P4: Alex's own lines, in clock order ---------- */}
+      {showWords && p4 && quotes.length > 0 && (
+        <Band tone={p4.tone} labelledBy="pp-quotes">
+          <h2 id="pp-quotes" className="bx-h2">
+            {t(p4.title)}
+          </h2>
+          <QuoteCollection items={quotes} />
+          {chips && SKILLS_PAGE && (
+            <div className="bx-mt-3">
+              {chips.label && <p className="bx-eyebrow pp-chips-label">{chips.label}</p>}
+              <Chips items={chips.items} />
+            </div>
+          )}
+        </Band>
+      )}
+      {showWords && <AfterQuotes slug={slug} />}
+
+      {/* ---------- P5: how this page was made ---------- */}
+      {showWords && k2.made_line && (
+        <Band tone="lilac" pad="sm" label="How this page was made">
+          <div className="pp-made">
+            <p>
+              <Rich text={k2.made_line} slug={slug} />
+            </p>
+            {skills && (
+              <Link href={skills} className="pp-pill">
+                {t("shared.made.1")}
+              </Link>
+            )}
+          </div>
+        </Band>
+      )}
+
+      {/* ---------- P6: recommended for you (the heading is a working label until alex-voice) ---------- */}
       <RecommendCarousel heading="Recommended for you" cards={cards} forSlug={slug} people={PAGE_SLUGS} />
 
-      {/* ---------- P4: at most three questions (none on the growth page) ---------- */}
-      {slug !== "growth" &&
-        (showWords && questions.length > 0 ? (
-          <section className="for-qa" aria-labelledby="for-questions">
-            <div className="art-container for-split">
-              <div className="for-split-head">
-                <h2 id="for-questions" className="for-h2">
-                  Questions you might have
-                </h2>
-              </div>
-              <ul className="for-qa-list">
-                {questions.map((c) => (
-                  <li key={c.q} className="for-qa-item">
-                    <h3 className="for-qa-q">{c.q}</h3>
-                    <p className="for-qa-a">
-                      <Inline text={c.a} slug={slug} />
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        ) : (
-          !IS_PRODUCTION_BUILD && (
-            <section className="pp-band" aria-label="Questions (placeholder)">
-              <div className="art-container">
-                <Placeholder what="K2 brings at most three questions, each with a one-line answer that links a piece." />
-              </div>
-            </section>
-          )
-        ))}
-
-      {/* ---------- P5 and P6: how this page was made, and the one ask ---------- */}
-      {(showWords && (k2.made_line || k2.ask_line)) || !IS_PRODUCTION_BUILD ? (
-        <section className="pp-band pp-close" aria-label="How this page was made, and one ask">
-          <div className="art-container">
-          <div className="pp-close-inner">
-            {showWords && k2.made_line ? (
-              <p className="pp-made">
-                <Inline text={k2.made_line} slug={slug} />
-              </p>
-            ) : (
-              <Placeholder what="K2 brings one line on how this page was made, linking /skills and the ICP piece." />
-            )}
-            {showWords && k2.ask_line ? (
-              <p className="pp-ask">
-                <Inline text={k2.ask_line} slug={slug} />
-              </p>
-            ) : (
-              <Placeholder what="K2 brings the one ask (call 5)." />
-            )}
-          </div>
-          </div>
-        </section>
-      ) : null}
-
-      {/* ---------- P7: about me, about this page, the takedown offer (as live) ---------- */}
-      {aboutMe && (
-        <section className="art-chapter sh-chapter for-about" aria-labelledby="for-about-me">
-          <div className="art-container">
-            <div className="art-chapter-grid">
-              <div className="art-rail">
-                <h2 id="for-about-me" className="art-eyebrow">
-                  {aboutMe.heading}
-                </h2>
-              </div>
-              <div className="art-chapter-body">
-                <p className="for-about-text">{aboutMe.text}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ---------- P7: the notice ---------- */}
       <aside className="sh-notice" aria-labelledby="for-notice">
         <div className="art-container">
           <div className="sh-notice-box">
             <h2 id="for-notice" className="art-eyebrow is-amethyst">
               {notice.heading}
             </h2>
+            {slug !== "growth" && <p>{notice.why}</p>}
+            <p>{sources}</p>
             <p>
-              {notice.why} {sources}
-            </p>
-            <p>
-              <strong>{notice.removal}</strong> <Link href="/privacy">{notice.privacy_label}</Link>.
+              {t("shared.takedown.2")} <Link href="/privacy">{notice.privacy_label}</Link>.
             </p>
           </div>
         </div>

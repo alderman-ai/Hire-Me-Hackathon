@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { t, type CopyKey } from "../copy";
 import { Reveal } from "../motion";
 import { gridIntro, portraitFor, stakeholderGate, titleLines } from "../stakeholders";
+import { ClipFrame, clipFor } from "./[slug]/quotes";
 import "../article.css";
 import "./for.css";
 
@@ -19,6 +21,11 @@ export const metadata: Metadata = {
   description: "One page for each of six people at Addvery: what Alex Alderman would build for their part of the business.",
   robots: ROBOTS,
 };
+
+/** The line under a title: growth's is her own words, the other five a site-copy key. */
+function lens(page: { lens?: string; lens_key?: string }): string | undefined {
+  return page.lens ?? (page.lens_key ? t(page.lens_key as CopyKey) : undefined);
+}
 
 function ArrowIcon() {
   return (
@@ -39,6 +46,8 @@ export default function ForIndex() {
   // The intro is s-d7's copy from content/stakeholders.json (`grid_intro`); the old one-line lead is
   // only the fallback.
   const intro = gridIntro();
+  // His S02 line beside the intro ("you don't need a cv"): content/quotes.json, clip S02-j.
+  const clip = clipFor("S02-j");
 
   return (
     <main className="art art-for for-index">
@@ -47,29 +56,35 @@ export default function ForIndex() {
           {!approved && (
             <p className="sh-draft-strip">Draft for Alex&apos;s review · local only, not on the live site</p>
           )}
-          {intro ? (
-            <div className="for-head for-intro">
-              <h1 id="for-title" className="art-h1">
-                {intro.heading}
-              </h1>
-              {intro.paragraphs.map((p, i) => (
-                <p key={i} className="art-hero-lead">
-                  {withBold(p)}
+          <div className={clip ? "for-intro-grid" : undefined}>
+            {intro ? (
+              <div className="for-head for-intro">
+                <h1 id="for-title" className="art-h1">
+                  {intro.heading}
+                </h1>
+                {intro.paragraphs.map((p, i) => (
+                  <p key={i} className="art-hero-lead">
+                    {withBold(p)}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <div className="for-head">
+                <h1 id="for-title" className="art-h1">
+                  Six people at Addvery, one page each
+                </h1>
+                <p className="art-hero-lead">
+                  I&apos;m Alex Alderman, and I&apos;m applying to Addvery as a GTM engineer. Each page is written for
+                  one person: what I&apos;d build for their part of the business. Pick a portrait to open it.
                 </p>
-              ))}
-            </div>
-          ) : (
-            <div className="for-head">
-              <h1 id="for-title" className="art-h1">
-                Six people at Addvery, one page each
-              </h1>
-              <p className="art-hero-lead">
-                I&apos;m Alex Alderman, and I&apos;m applying to Addvery as a GTM engineer. Each page is written for
-                one person: what I&apos;d build for their part of the business, and the one thing I&apos;d ask them.
-                Pick a portrait to open it.
-              </p>
-            </div>
-          )}
+              </div>
+            )}
+            {clip && (
+              <div className="for-clip">
+                <ClipFrame item={clip} caption />
+              </div>
+            )}
+          </div>
 
           <h2 className="sr-only">The six pages</h2>
           <ul className="for-grid">
@@ -105,14 +120,14 @@ export default function ForIndex() {
                       </span>
                     ))}
                   </p>
+                  {lens(page) && <p className="for-card-lens">{lens(page)}</p>}
                 </Reveal>
               );
             })}
           </ul>
 
           <p className="for-note">
-            Every page draws only on public sources, and each one says which. If you&apos;re one of the six and want
-            your page taken down, reply to my LinkedIn message and it&apos;s removed.{" "}
+            Every page draws only on public sources, and each one says which. {t("shared.takedown.1")}{" "}
             <Link href="/privacy">{notice.privacy_label}</Link>.
           </p>
           <p className="for-note is-credit">

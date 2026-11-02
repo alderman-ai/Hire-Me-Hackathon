@@ -1,0 +1,231 @@
+/* P3 lens blocks, P4 quote cards and the trailing blocks of /for/<slug> (lens.tsx, quotes.tsx). Colours
+   come from the Band each block sits in (--bx-* variables, app/best/best.css); nothing here sets a
+   band colour. Grid columns are minmax(0, 1fr) so nothing pushes a phone sideways. */
+
+/* ---------- Two columns that stack on a tablet ---------- */
+.pl-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.pl-two > * { min-width: 0; }
+.pl-two .pq-list { grid-template-columns: minmax(0, 1fr); }
+
+@media (max-width: 991px) {
+  .pl-two { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+}
+
+.pl-walk { max-width: 1060px; margin-top: 3rem; }
+
+/* ---------- Quote cards (P4) ---------- */
+.pq-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pq-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.75rem;
+  border: 1px solid var(--bx-line);
+  border-radius: var(--av-radius-lg);
+  background: var(--bx-surface);
+}
+
+.pq-card blockquote { margin: 0; }
+
+.pq-card blockquote p {
+  margin: 0;
+  color: var(--bx-fg);
+  font-family: var(--av-font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.pq-time {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 44px;
+  margin: -0.75rem 0 -0.75rem;
+  color: var(--bx-accent);
+  font-family: var(--av-font-numeric);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+a.pq-time:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.pq-tag {
+  margin-left: 0.5rem;
+  padding: 1px 9px;
+  border: 1px solid var(--bx-line);
+  border-radius: var(--av-radius-pill);
+  color: var(--bx-link);
+  font-family: var(--av-font-display);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pq-src {
+  margin: 0;
+  color: var(--bx-body);
+  font-family: var(--av-font-body-haas);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.pq-clip { margin-top: auto; }
+
+@media (max-width: 991px) {
+  .pq-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .pq-list { grid-template-columns: minmax(0, 1fr); }
+  .pq-card { padding: 1.5rem; }
+}
+
+/* ---------- The six faces on the last step card ---------- */
+.pl-faces {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  background: var(--av-ink);
+}
+
+.pl-faces img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; filter: grayscale(1); }
+
+/* ---------- Co-founder 1: the slider of AI skill ---------- */
+.pl-slider-head { margin-bottom: 1rem; }
+
+.pl-slider {
+  display: grid;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pl-slider li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid var(--av-lilac-300);
+  border-radius: var(--av-radius-md);
+  background: #fff;
+  color: var(--av-ink);
+}
+
+.pl-slider b { color: var(--av-amethyst); font-family: var(--av-font-numeric); font-size: 1.25rem; font-weight: 600; }
+.pl-slider li:first-child { border-color: transparent; background: var(--av-gradient-row); color: #fff; }
+.pl-slider li:first-child b { color: #fff; }
+
+/* ---------- Co-founder 2: the entry card ---------- */
+.pl-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: 2.5rem;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.pl-entry img { width: 100%; height: auto; border: 1px solid var(--bx-line); border-radius: var(--av-radius-lg); }
+.pl-entry-body { display: flex; min-width: 0; flex-direction: column; gap: 0.5rem; }
+.pl-entry-title { margin: 0; }
+.pl-entry-body .bx-lead { margin-top: 0.5rem; }
+.pl-entry-go { margin-top: 1.5rem; }
+.pl-entry:hover .pl-entry-go { text-decoration: underline; text-underline-offset: 4px; }
+.pl-entry:focus-visible { outline: 2px solid var(--bx-focus); outline-offset: 6px; border-radius: var(--av-radius-lg); }
+
+@media (max-width: 767px) {
+  .pl-entry { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .pl-entry img { max-width: 20rem; }
+}
+
+/* ---------- BI: the rows table ---------- */
+.pl-join { padding-top: 0; }
+.pl-rows-h { margin-bottom: 2rem; }
+
+.pl-tbl-wrap {
+  position: relative; /* the caption's hidden text sits inside this scroller */
+  overflow-x: auto;
+}
+
+.pl-tbl-wrap:focus-visible { outline: 2px solid var(--bx-focus); outline-offset: 2px; }
+
+.pl-tbl { width: 100%; border-collapse: collapse; font-size: 0.9375rem; line-height: 1.5; }
+
+.pl-tbl th,
+.pl-tbl td {
+  padding: 0.75rem;
+  border-top: 1px solid var(--bx-line);
+  text-align: left;
+  vertical-align: top;
+  color: var(--bx-body);
+}
+
+.pl-tbl th { border-top: 2px solid var(--av-amethyst); color: var(--bx-fg); font-family: var(--av-font-display); font-weight: 500; }
+.pl-tbl td:nth-child(2) { min-width: 18rem; }
+.pl-tbl .pl-num { color: var(--bx-fg); font-family: var(--av-font-numeric); font-weight: 600; white-space: nowrap; }
+.pl-tbl a { display: inline-flex; align-items: center; min-height: 44px; color: var(--bx-link); }
+
+/* ---------- Delivery: what I'd keep ---------- */
+.pl-keep { max-width: var(--av-measure, 44rem); }
+
+.pl-lifecycle {
+  counter-reset: lc;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pl-keep:has(.pl-lifecycle) { max-width: none; }
+.pl-keep .bx-h2 { max-width: var(--av-measure, 44rem); }
+
+.pl-lifecycle li {
+  counter-increment: lc;
+  padding: 1rem;
+  border-radius: var(--av-radius-md);
+  background: #fff;
+  color: var(--av-ink);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.pl-lifecycle li::before {
+  content: counter(lc, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--av-amethyst);
+  font-family: var(--av-font-display);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 767px) {
+  .pl-lifecycle { grid-template-columns: minmax(0, 1fr); }
+}

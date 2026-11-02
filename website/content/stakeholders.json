@@ -12,8 +12,8 @@
     "heading": "A page for each of you",
     "paragraphs": [
       "As part of my research into Addvery, I tried to work out who a hire like me would actually need a yes from. I stuck to what's public: Addvery's website and the team's own LinkedIn profiles and posts. I landed on six people.",
-      "Each of you would judge a GTM engineer on something different. My guess: growth cares about pipeline, delivery about whether what I build still runs after handover, BI about where the numbers come from, and leadership about whether it pays for itself. So instead of one pitch for everyone, **each of you gets your own page**: what I think you'd ask, answered in your terms, plus a short reading list. (Old marketer habit: one reader per page.)",
-      "Honestly, **these are guesses from public information**. If I've read your role wrong, tell me -- I'd rather be corrected than right.",
+      "Each of you would judge a GTM engineer on something different. My guess: growth cares about pipeline, delivery about whether what I build still runs after handover, BI about where the numbers come from, and leadership about whether it pays for itself. So instead of one pitch for everyone, **each of you gets your own page**. (Old marketer habit: one reader per page.)",
+      "Honestly, **these are guesses from public information**.",
       "Find your page below."
     ]
   },
@@ -122,8 +122,16 @@
             "title": "The plan the agents worked from",
             "href": "/docs/charter"
           }
-        ]
-      }
+        ],
+        "lead_key": "for-growth.note.history",
+        "sign": "Alex",
+        "lead": "**sending you a CV felt wrong.**",
+        "note": "So when you answered my comment on the road to 1 billion CZK with \"let's find out how to make it possible\", I took you literally and spent 12 hours on camera building my application to Addvery. It's in your branding, not mine, for a reason: I don't want there to be a next company.\n\nYou're hiring salespeople now. The first place you need to put AI is in your pipeline, so they start with one that already runs. That's the core of this page: **36 workflows, and how each lead finds the right one.** Four ICPs from your own website, in English, Czech and German, three tactics each.\n\nStart with the 3-minute video below. (Honest rough edge: nothing has sent, and the Czech and German still need a native read.)\n\nSee you soon.",
+        "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
+        "questions": [],
+        "ask_line": ""
+      },
+      "lens": "36 workflows, and how each lead finds the right one."
     },
     {
       "slug": "ceo",
@@ -207,9 +215,15 @@
             "title": "The plan the agents worked from",
             "href": "/docs/charter"
           }
-        ]
+        ],
+        "lead": "I could have sent you a CV. Instead I spent one recorded day doing the job in public, since a role like this would need your yes.",
+        "note": "You decide whether a GTM engineer earns a seat at Addvery, so here are the economics in two lines. AI pays for itself by cutting labour costs or by growing revenue. **I'd point it at revenue, so the whole team grows with it.**",
+        "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
+        "questions": [],
+        "ask_line": ""
       },
-      "sources": "Its facts come only from Addvery's public website, your public job title, and your public LinkedIn post of 21 September 2026 on hiring an AI Strategy Consultant."
+      "sources": "Its facts come only from Addvery's public website, your public job title, and your public LinkedIn post of 21 September 2026 on hiring an AI Strategy Consultant.",
+      "lens_key": "for.lens.ceo"
     },
     {
       "slug": "cofounder-1",
@@ -289,8 +303,14 @@
             "title": "The day in short: the summary videos at the top of the live feed",
             "href": "/"
           }
-        ]
-      }
+        ],
+        "lead": "From a co-founder's seat, the question is whether something pays off across the group.",
+        "note": "The pipeline below doesn't have to stop at Addvery: the same profiles and routing could send each lead to the group company that fits it, whether that's consulting, IT, media or production AI. **One research layer feeding several pipelines is where the cost starts to make sense,** and it's the version I'd build if the group wanted one.",
+        "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
+        "questions": [],
+        "ask_line": ""
+      },
+      "lens_key": "for.lens.cofounder-1"
     },
     {
       "slug": "cofounder-2",
@@ -378,8 +398,14 @@
             "title": "Why this hackathon exists: my explainer video",
             "href": "/#post-s02"
           }
-        ]
-      }
+        ],
+        "lead": "iMEDIATIC is the group's media agency, so I looked at what an agency makes for client after client: articles from an expert's own words, posts in a company's own voice. **I built each one for Addvery, in a way that could be pointed at another brand.**",
+        "note": "",
+        "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
+        "questions": [],
+        "ask_line": ""
+      },
+      "lens_key": "for.lens.cofounder-2"
     },
     {
       "slug": "delivery",
@@ -458,8 +484,14 @@
             "title": "The day in short: the summary videos at the top of the live feed",
             "href": "/"
           }
-        ]
-      }
+        ],
+        "lead": "I'd expect you to judge this the way you'd judge any engagement: what got delivered, by when, and who answered for it. That's what this page tries to show.",
+        "note": "Whatever a GTM system sells, delivery has to carry. So I ran this hackathon like a small engagement: a written charter, one spec per piece of work. (Twelve hours, one very demanding client: me.) **The same setup could run beside a client project.**",
+        "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
+        "questions": [],
+        "ask_line": ""
+      },
+      "lens_key": "for.lens.delivery"
     },
     {
       "slug": "bi",
@@ -551,8 +583,14 @@
             "title": "Why this hackathon exists: my explainer video",
             "href": "/#post-s02"
           }
-        ]
-      }
+        ],
+        "lead": "Every GTM system I'd build ends up as rows in a report, and at Addvery those rows would feed the data your team owns.",
+        "note": "The report is what says whether a pipeline was worth paying for, right? Addvery connects client funnels from first click to signed contract; the demos below are the first steps of that funnel, pointed at Addvery's own new business. **I'd want their numbers landing where your team already works.**",
+        "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
+        "questions": [],
+        "ask_line": ""
+      },
+      "lens_key": "for.lens.bi"
     }
   ],
   "about_me": {
