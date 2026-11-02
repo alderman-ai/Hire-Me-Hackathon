@@ -99,10 +99,11 @@ def under_root(cwd):
     return c == r or c.startswith(r + os.sep)
 
 
-def live_sessions():
+def live_sessions(include_stopped=False):
     exe = shutil.which("claude") or "claude"
+    cmd = [exe, "agents", "--json"] + (["--all"] if include_stopped else [])
     try:
-        p = subprocess.run([exe, "agents", "--json"], cwd=ROOT, capture_output=True, text=True,
+        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
                            encoding="utf-8", errors="replace", timeout=60)
     except Exception as e:
         raise AgentsError(f"could not run `claude agents --json`: {e}")
@@ -336,6 +337,22 @@ def build(args):
     for name, ids in sorted(names.items()):
         if len(ids) > 1:  # sessions are messaged by name, so two live ones under one name is worth seeing
             flags.append({"level": "SAMENAME", "name": name, "ids": ids, "percent": None})
+    # Rows agent view still shows but that aren't live (SESSIONS.md: one session per roster name, always).
+    live_ids = {r["id"] for r in rows}
+    try:
+        listed = live_sessions(include_stopped=True)
+    except AgentsError:
+        listed = []
+    for a in listed:
+        if a.get("id") in live_ids:
+            continue
+        name = a.get("name") or "(unnamed)"
+        if name in names:  # a live session carries the name: this one is a leftover from a handoff
+            flags.append({"level": "STALE", "name": name, "id": a.get("id"), "percent": None,
+                          "note": f"stopped but still in agent view next to live {', '.join(names[name])}: claude rm {a.get('id')}"})
+        else:  # nothing live carries the name: a session that went down (idle stop, limit, crash)
+            flags.append({"level": "STOPPED", "name": name, "id": a.get("id"), "percent": None,
+                          "note": f"state {a.get('state') or '?'}, no live session under this name: resume it (reply to it, or claude --resume <session id> --bg), or claude rm it if its job is done"})
     nowp = prague(now)
     return {"generated_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
             "generated_prague": nowp.strftime("%d %b %H:%M:%S") + f" Prague ({nowp.tzname()})",
@@ -399,6 +416,8 @@ def print_table(rep):
             print(f"NODATA {f['name']} ({f['id']})  {f.get('note')}")
         elif f["level"] == "SAMENAME":
             print(f"SAMENAME {f['name']}  {len(f['ids'])} live sessions: {', '.join(f['ids'])}")
+        elif f["level"] in ("STALE", "STOPPED"):
+            print(f"{f['level']} {f['name']} ({f['id']})  {f.get('note')}")
         else:
             print(f"{f['level']} {f['name']}  {f['percent']:.1f}% of {fmt_window(r['window'])} "
                   f"({r['context_tokens']:,} tokens), last turn {r['last_turn_prague']}, "
