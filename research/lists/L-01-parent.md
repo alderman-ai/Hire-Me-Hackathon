@@ -1,5 +1,5 @@
 # L-01 Research list: parent level (every wave-2 spec)
-Status: with Alex (OT-01)
+Status: with Alex (OT-01, `Operator tasksApprove - research plan for the whole project.md`)
 Approved by: (not yet)
 Requested by: orchestration, `RESEARCH S2: L-01, it feeds every wave-2 spec, needed by 16:00 Prague` (2 Nov)
 Level: parent (`research\global\`)

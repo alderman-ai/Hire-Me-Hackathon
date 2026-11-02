@@ -138,7 +138,10 @@ Readers: <spec ids>      Drawn from: <problem, scope, DoD ids>
 ```
 
 **How a list goes to Alex (S1-Q6, then `orchestration`'s gate format, ASKING.md).**
-1. Commit the list. Then freeze it into `..\Operator tasks\OT-<nn> Gate approval <spec id> research list.md`, written from `..\orchestration\_templates\Gate approval template.md`, with the next free `OT-<nn>` (check the folder and `Archive\INDEX.md` just before writing, because other sessions write there too). Copy the whole list in, with a five-line summary first. `Snapshot of` names the list and the commit hash. The file carries the `I approve` box and a changes fence.
+1. Commit the list. Then freeze it into an operator task written from `..\orchestration\_templates\Gate approval template.md`, with the next free `OT-<nn>` in the frontmatter (check the folder and `Archive\INDEX.md` just before writing, because other sessions write there too). `Snapshot of` names the list and the commit hash. The file carries the `I approve` box and a changes fence. Alex's legibility rule (2 Nov: "no d2 s1 type references, I need all context in front of my eyes without checking other docs"):
+   - **The file name is plain, with its meaning in the first 35 characters,** e.g. `Approve - research plan for the scraping demo.md`. No ids in the name.
+   - **A "What this is" section comes first:** what the research is for, what he's approving, what happens once he ticks the box, when it's due and why, and how long it takes to read.
+   - **No internal codes in the body.** Spell out what each one means: "the scraping demo", not S-D1; "the site has a section for each of the six stakeholders", not DoD-18. Ids stay in the frontmatter. The list's questions are kept word for word.
 2. Commit it on its own, path-limited: `git commit -m "[research] ..." -- "Operator tasks/<file>"`. Send `answer-desk` the line `TASK S1: <file name> is waiting on you: <what it decides and unblocks>`.
 3. Wait with Monitor, running `python -I orchestration\check_gate.py "<file>"` from the repo root every 300 seconds. It exits 0 on `APPROVED` or `CHANGES` and 1 while `OPEN`. Poke after 15 minutes, and again every 15 minutes.
 4. On `APPROVED`, run the list. On `CHANGES`, apply them to the list, commit, update the snapshot and its hash, and wait again.
