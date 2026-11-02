@@ -10,3 +10,4 @@ Wall-clock Prague time of each stage of the alert, for the clip. No names: the s
 | 15:43:16 | Pre-send approval file sent to Alex through the desk | recording (S09_2026-11-02_1517) |
 | 15:56:03 | Alex confirms the six, with one swap; approval file updated | not recording |
 | 16:41:19 | GetSales folder created for the demo (empty) | recording (S10_2026-11-02_1624) |
+| 16:43:44 | Automated alert called off by Alex: he sends to the six by hand; drafted messages handed to him | recording (S10_2026-11-02_1624) |
