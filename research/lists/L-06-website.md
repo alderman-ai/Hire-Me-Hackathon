@@ -1,6 +1,6 @@
 # L-06 Research list: S-D8 Website
-Status: with Alex (OT-03, `Operator tasks\Archive\Approve - research for the GetSales demo and website.md`)
-Approved by: (not yet)
+Status: withdrawn (17:03): OT-03 withdrawn unticked and archived on Alex's instruction ("All the research scraping is done and assets are being created"; "If things are an easy judgment please clear the plate for me"), so this list doesn't run. `Operator tasks\Archive\Approve - research for the GetSales demo and website.md`
+Approved by: never approved (withdrawn)
 Requested by: website, `RESEARCH S-D8: a new S-D8 list (none drafted yet), plus L-01, for the site's structure, the stakeholder sections and the brand pass, needed by 16:30` (2 Nov, about 14:53)
 Level: child (`research\website\`)
 Readers: S-D8 (it also reads all of L-01, already done)

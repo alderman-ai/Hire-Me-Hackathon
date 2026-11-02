@@ -1,6 +1,6 @@
 # L-04 Research list: S-D3 GetSales outbound demo
-Status: with Alex (OT-03, `Operator tasks\Archive\Approve - research for the GetSales demo and website.md`)
-Approved by: (not yet)
+Status: withdrawn (17:03): OT-03 withdrawn unticked and archived on Alex's instruction ("All the research scraping is done and assets are being created"; "If things are an easy judgment please clear the plate for me"), so this list doesn't run. `Operator tasks\Archive\Approve - research for the GetSales demo and website.md`
+Approved by: never approved (withdrawn)
 Requested by: s-d3-getsales, `RESEARCH S-D3: L-04 (R2 and R3 superseded by DI-6 A6.4: no Sales Navigator export, ICP × language × approach model; R1 and R4 still needed), plus L-01 ... needed by 16:30` (2 Nov, about 14:52)
 Level: child (`research\getsales\`)
 Readers: S-D3 (it also reads all of L-01, already done)

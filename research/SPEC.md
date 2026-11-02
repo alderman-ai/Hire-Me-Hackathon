@@ -149,6 +149,8 @@ Readers: <spec ids>      Drawn from: <problem, scope, DoD ids>
 
 `Approved by` reads `OT-<nn>`, or `Alex, direct`.
 
+**Superseded at 17:00 by Alex's reset rules** (`..\answer-desk\ASKING.md`, top): no research list goes to Alex as a gate any more, easy calls are S1's own (decided and logged in section 8), and there's no 18:00 cut-off ("We're working all night"). `orchestration`'s RESTART at 17:13 adds: after L-03, start no new research unless Alex asks for it. So the steps above apply only if Alex himself asks for a new list. L-04 and L-06 were withdrawn unticked at 17:03 and don't run.
+
 **The feedback section counts** (Alex at the desk, 16:36: "Even if I approve something that doesn't include what I mentioned in the feedback section, it's approved along with whatever's in the feedback section"). An approval includes whatever he wrote in the changes fence, so a ticked box with a note runs with the note applied, with no second freeze. An unticked box with a note that tells S1 to start runs the same way, logged in section 8. Non-research parts of a note go to `orchestration` and the owning spec verbatim, never acted on by S1.
 
 ## 6. Findings store and index

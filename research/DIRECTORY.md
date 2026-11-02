@@ -10,8 +10,8 @@ Storage (S1-Q5, Alex: "Just store it locally"): every report lives in `research\
 | --- | --- | --- | --- |
 | [L-01 parent](lists/L-01-parent.md) | every wave-2 spec | done 15:05: 7 reports and the synthesis; on every reader's reading list (S2 change C07) | OT-01, Alex, 14:38 |
 | [L-02 scraping](lists/L-02-scraping.md) | (S-D1 declined) | parked: Alex runs the scraping himself | — |
-| [L-03 blog](lists/L-03-blog.md) | S-D5 (S-D4 retired) | on hold since 16:47 (orchestration's reset): all 10 reports accepted in `research\global\L-03-*.md`, entries and synthesis to follow on RESTART | OT-04, changes applied (`Operator tasks\Archive\Approve - research for the blog pipeline.md`) |
-| [L-04 GetSales](lists/L-04-getsales.md), [L-06 website](lists/L-06-website.md) | S-D3; S-D8 | with Alex, one gate: `Operator tasks\Archive\Approve - research for the GetSales demo and website.md` (OT-03) | — |
+| [L-03 blog](lists/L-03-blog.md) | S-D5 (S-D4 retired) | all 10 reports accepted in `research\global\L-03-*.md`; synthesis running since 17:14 (after the 16:47 to 17:13 reset) | OT-04, changes applied (`Operator tasks\Archive\Approve - research for the blog pipeline.md`) |
+| [L-04 GetSales](lists/L-04-getsales.md), [L-06 website](lists/L-06-website.md) | S-D3; S-D8 | withdrawn 17:03: OT-03 withdrawn unticked on Alex's instruction (research is done); neither list runs. `Operator tasks\Archive\Approve - research for the GetSales demo and website.md` | — |
 | [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | done 16:47: 7 reports and the synthesis | OT-09, ticked with changes, 16:29 (`Operator tasks\Archive\Approve - Canva and LinkedIn demo research.md`) |
 
 ## Parent level
