@@ -11,7 +11,7 @@ library_id: "demo-getsales-routing"
 group: "How I'd reach your accounts"
 poster: "/demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png"
 cover:
-  kicker: "GetSales demo 2"
+  kicker: "How I'd reach your accounts"
   subtitle: "Every lead lands in exactly one workflow, and every decision shows what settled it."
   accent: "rules first"
 tags: ["outbound", "classification"]
@@ -20,7 +20,7 @@ reading_minutes: 3
 <!-- W5 (website, 2 Nov): placed from getsales/site/demo-2.md as is (words: Claude Doc e50390db). Front matter added for the new site: library_id, group, the router's first figure as its card image. K4 brings the rest (VERDICT.md 2.3). Status stays draft: previews only. -->
 <!-- Video slot: when s-d9-legibility sends CLIPPED S-D3-C2, set kind to "video", add video (youtube_id, start) after deliverable, and rewrite this summary against the transcript. Words: Claude Doc e50390db (GetSales demo entries). Figures: getsales/site/assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/. -->
 
-This is the classifying itself. One terminal run sorts twelve fictional, already enriched leads into the 36 GetSales workflows from the first demo, and prints what settled each decision.
+One terminal run sorts twelve fictional, already enriched leads into [the 36 GetSales workflows I built for Addvery](/demos/36-outbound-workflows-and-the-one-variable-behind-them), and prints the reason behind every decision.
 
 It ends on one line: 12 leads, 4 placed by rules alone, 7 that needed a model's answer for at least one decision, 1 no fit.
 
@@ -29,6 +29,7 @@ It ends on one line: 12 leads, 4 placed by rules alone, 7 that needed a model's 
 > - Rules settle most of them, from industry, headcount, country, profile language and signal age.
 > - Jev answers one narrow question when an industry label is too vague.
 > - A lead that fits nothing is logged with its reason, and nothing is imported or sent.
+> - The same model already ran on Addvery's 57 real people. Counts only, at the end.
 
 ## The input
 
@@ -66,8 +67,18 @@ An answer counts only at 0.75 or above and 0.25 ahead of the next; otherwise a p
 > Terminal output for L06 and L11, whose industry labels are too broad for a rule: each shows its Jev question and the answer a person labelled
 > The two hard cases, where a rule can't decide the ICP
 
-Jev isn't called in this recording. The answers on screen are labels a person gave, and that's how a model like this starts: the labels are what tune it.
+The router has never called Jev. These two hard cases show hand labels, not a live model answer: this demo needs to be legible more than it needs to be functional. The same model did run on real people, though.
 
 ## No fit is an answer too
 
 The software company is logged with its reason, and that log shows which search was too wide. Next, the client's LLM writes each lead's `custom_message_1`, a person checks a sample, and the CSV is imported. Nothing in this demo is imported or sent.
+
+## The same model, on Addvery's 57 real people
+
+This part is real. At 15:39 on build day I asked for a Jev classification of everyone at Addvery, to see if I could rebuild its sales team from public data. (Maybe that's over-engineering.)
+
+At 16:04 it ran on all 57 people who list Addvery on LinkedIn: public profiles and posts, no login. Narrow questions again: what does this person do, and do they send outreach? Jev labelled 55 of them. For the other 2 it wasn't sure enough, and job-title rules decided.
+
+**Nobody at Addvery holds a sales, business development or RevOps title, and Jev rates 10 people as likely doing outreach anyway.** A signal, not a fact. But it's the first thing I want to know about any account: who actually sells?
+
+107 model calls, $0.003. The next account is a new input file. The charts are on [my research on Addvery](/d2), counts only, no names.

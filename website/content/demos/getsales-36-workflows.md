@@ -1,7 +1,7 @@
 ---
 title: "36 outbound workflows and the one variable behind them"
 slug: "36-outbound-workflows-and-the-one-variable-behind-them"
-description: "A three-minute walkthrough: how rules and a decision model sort leads, 36 GetSales workflows built on Addvery's ICPs, and the one field that personalises them."
+description: "Me on camera at 16:36, planning 36 GetSales workflows for Addvery, then what got built: four ICPs, three languages, three tactics and one lead field."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "draft"
@@ -13,7 +13,7 @@ video:
   youtube_id: "9vLcPuSVmLo"
   start: 0
 cover:
-  kicker: "GetSales demo 1"
+  kicker: "How I'd reach your accounts"
   subtitle: "Four ICPs, three languages, three tactics, and one personal first message per lead."
   accent: "one variable"
 tags: ["outbound", "getsales", "classification"]
@@ -24,7 +24,7 @@ reading_minutes: 4
 
 Outbound at Addvery's size isn't one campaign. It's buyer types times languages times angles, and every lead has to land in exactly one of them.
 
-In three minutes I show how leads get sorted, the 36 GetSales workflows they land in, and the one field that makes each first message personal. Nothing here sends.
+The video is me at 16:36 on build day, planning it out loud: four main ICPs, three languages, three tactics, so 36 workflows, in a different folder that's not going to be confused with mine. Fifty minutes later a script built all 36 in seven minutes. Below is what got built, how a lead finds its one workflow, and the field that makes each first message personal. Nothing here sends.
 
 > [!summary]
 > - Rules sort most leads for free; a decision model answers only what rules can't settle.
@@ -67,7 +67,7 @@ Every workflow opens the same way: message 1 is `{{custom_message_1}}` and nothi
 > The workflow Demo · Retail loyalty · EN · proof in the GetSales builder, its first message set to the single variable custom_message_1
 > Message 1 is one lead field; everything after it is fixed text
 
-The one I open on camera tells the Rohlík Group story as Addvery's site states it: four countries on one CRM model, +17% revenue per customer. Any reply stops the sequence, and there are no automatic likes.
+The English retail loyalty proof workflow tells the Rohlík Group story as Addvery's site states it: four countries on one CRM model, +17% revenue per customer. Any reply stops the sequence, and there are no automatic likes.
 
 ## Where the variable comes from
 
@@ -77,7 +77,7 @@ The first message is written before import, one lead at a time, from the routing
 > The GetSales custom contact field custom_message_1, with a contacts count of 0
 > Filled per lead before import by the client's own LLM, then a person checks a sample
 
-The leads in the video are fictional, with one public fact each and nothing private. Two of them, as the CSV carries them:
+The leads are fictional, the same twelve I sort in [the routing run](/demos/sorting-twelve-leads-into-36-workflows-rules-first-then-jev), with one public fact each and nothing private. Two of them, as the CSV carries them:
 
 | Lead (fictional) | Workflow | custom_message_1 |
 | --- | --- | --- |
