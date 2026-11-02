@@ -1,0 +1,118 @@
+{
+  "about": "The /d1 page (BUILD S-D1-B1), word for word from scraping\\site\\d1.md at commit f2fc07d (SHA-256 1a16011be7b0...). Rendered by app/d1.tsx and app/carousel.tsx in place of the shared demo layout. Inline text takes **bold** and [links](/path). A link whose path is in unlinked_until_live renders as plain text: take /d3 out of that list once the outreach demo's page is live. Carousel images are public/d1/<image>-{800,1280,2880}.webp, made by scripts/d1_images.py from scraping\\site\\carousel\\.",
+  "meta": {
+    "title": "Imagine if every pitch started with a briefing like this | Alex Alderman",
+    "description": "The briefing I built on Addvery before writing to you: public sources, 6 Apify scrapers, one afternoon and $1.24 of scraping."
+  },
+  "unlinked_until_live": ["/d3"],
+  "eyebrow": "Demo 1 · Scraping and research",
+  "title": "Imagine if every pitch started with a briefing like this",
+  "intro": "Before writing to you, I researched Addvery from public sources: one afternoon, 6 scrapers on Apify, $1.24 of scraping. These four boards are what came out. The same pipeline could brief every pitch you make.",
+  "carousel": {
+    "label": "Research boards",
+    "slides": [
+      {
+        "title": "Addvery, as scraped.",
+        "text": "56 people on LinkedIn, no sales titles, and new business that runs on leaders and consultants posting and speaking.",
+        "image": "01-overview",
+        "width": 2880,
+        "height": 1920,
+        "alt": "Overview board: 56 staff on LinkedIn, no sales, business development or RevOps titles, 11 of 56 posted in the last 90 days, no vendors naming Addvery as a client, headcount by function, and a short read of what it means."
+      },
+      {
+        "title": "The org chart, as scraped.",
+        "text": "Shown by role. The lines come from job titles, because LinkedIn doesn't publish who reports to whom.",
+        "image": "02-org-chart",
+        "width": 2880,
+        "height": 2160,
+        "alt": "Org chart by role: the CEO, five leaders for delivery, growth, Asia and Africa, BI and finance, their teams with headcounts, and the sister companies in the Addvery group, Skygena and iMEDIATIC among them."
+      },
+      {
+        "title": "Who posts, and who sells.",
+        "text": "11 of 56 staff posted in the last 90 days, and only 4 people posted the 8 invitations for clients to get in touch.",
+        "image": "03-linkedin-activity",
+        "width": 2880,
+        "height": 1920,
+        "alt": "LinkedIn activity board: how many in each function posted in the last 90 days, what the 50 posts were about, and three counts: 0 sales titles, 10 people likely doing outreach, 4 who posted a call to action for clients."
+      },
+      {
+        "title": "Marketing and AI: what's there, what's missing.",
+        "text": "Plus what I'd set up first.",
+        "image": "04-marketing-and-ai",
+        "width": 2880,
+        "height": 1920,
+        "alt": "Three columns: marketing and AI inside Addvery, in the group (iMEDIATIC and Skygena), and what Alex would set up first, then three places a GTM engineer fits."
+      },
+      {
+        "title": "The research behind the boards.",
+        "text": "Seven documents: positioning, industries, case studies, brand, vendors, and how it was done.",
+        "href": "/d2",
+        "link": "See the research itself"
+      }
+    ],
+    "note": "Jev, named on two boards, is TypeSafe's classification model. It sorted each post and profile into types, and code applied the thresholds."
+  },
+  "highlight": "Public sources only: Addvery's website, the business register and the press, plus 6 ready-made scrapers on Apify (279 results in about 17 minutes, for $1.24).",
+  "learned": {
+    "lead": "What I learned:",
+    "items": [
+      "AI is its public bet: its own AI tool, a podcast and an AI consultant opening (company website)",
+      "AI engineering sits in sister company Skygena, marketing in iMEDIATIC (press)",
+      "CRM, loyalty and data work for large consumer brands in Central and Eastern Europe and the German-speaking countries (company website)"
+    ]
+  },
+  "steps": [
+    "**I decided what to find out:** how Addvery wins work and what it's betting on next. A first message only works when it's about you.",
+    "**Public sources were read:** AI agents read the website, register and press. On Apify, a cloud scraping service, 6 scrapers read YouTube interviews, the company podcast and public LinkedIn pages, and a classification model sorted the posts and profiles. LinkedIn shows up here only as counts, like the ones on the boards, with no one named.",
+    "**It feeds the next demo:** the [outreach demo](/d3), built in GetSales, uses it to pick whom to write to and to write each personal first line."
+  ],
+  "cta": "**See the research itself:** [the company research page](/d2).",
+  "fold": {
+    "summary": "Show me how",
+    "intro": "Addvery's website, its employer profile, the business register and the press were read directly by agents and a web search before any actor ran, with no scraper, so they aren't in this table. Only the rows below ran on Apify, which calls its ready-made scrapers \"actors\".",
+    "table": {
+      "label": "The Apify runs",
+      "head": ["What it read", "Apify actor (linked to its public Store page)", "Results", "Time", "Cost"],
+      "rows": [
+        [
+          "Public LinkedIn pages of Addvery's leadership, its team and its company page (profiles and recent posts), used for the company-level counts on the boards and to choose whom to write to",
+          "[LinkedIn Profile Scraper](https://apify.com/supreme_coder/linkedin-profile-scraper), [LinkedIn Company Employees](https://apify.com/harvestapi/linkedin-company-employees), [LinkedIn Profile Posts](https://apify.com/harvestapi/linkedin-profile-posts)",
+          "273",
+          "5.8 min",
+          "$1.06"
+        ],
+        [
+          "YouTube transcripts of interviews and the company podcast (first choice)",
+          "[YouTube Transcript Scraper](https://apify.com/supreme_coder/youtube-transcript-scraper)",
+          "none (blocked; see what broke, below)",
+          "0.5 min",
+          "$0.12"
+        ],
+        [
+          "The same YouTube transcripts, second try",
+          "[YouTube Transcript Scraper](https://apify.com/pintostudio/youtube-transcript-scraper) (fallback)",
+          "6 transcripts, about 4.3 hours of video",
+          "1 min",
+          "$0.05"
+        ],
+        [
+          "A 74-minute talk with no captions, sent to AI transcription",
+          "[YouTube Transcript Scraper Pro](https://apify.com/codepoetry/youtube-transcript-ai-scraper)",
+          "none (see what broke, below)",
+          "9.6 min",
+          "$0.01"
+        ]
+      ]
+    },
+    "items": [
+      "**Totals:** 6 actors in 30 runs, 279 results, about 17 minutes, $1.24 of the $10 spending cap I set. Then Jev, TypeSafe's classification model, labelled 50 posts and 57 profiles in 107 calls, for $0.003. The figures are as Apify and TypeSafe reported them for the runs on 2 Nov 2026.",
+      "**Cleaning:** each output was cut to the fields actually used and the raw files deleted, reposts were tagged so nobody is credited with someone else's post, one \"employee\" turned out to be an outside English teacher and was taken out (57 became 56), and LinkedIn claims were checked against the register and the press.",
+      "**What broke, and how it was handled:** the free plan caps a run at 25 items, so the employee list took page-by-page runs, and one of three pages started in the same second was rejected and rerun alone. The first transcript actor ran out of its network allowance on every video, so the fallback did all the transcripts; one 74-minute talk had no captions, and AI transcription gave up."
+    ]
+  },
+  "closing": [
+    "No one at Addvery is named on this page, by design: LinkedIn appears only as counts by function, with groups smaller than three merged, next to public, company-level facts.",
+    "I'm Alex Alderman, and this is part of my application to Addvery. I picked the questions and the sources; AI agents and scrapers did the reading, under my direction. What you see is a stored result, not a live run.",
+    "Built from my own summary of the run's outputs. Public information only."
+  ]
+}

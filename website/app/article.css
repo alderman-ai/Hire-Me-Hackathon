@@ -644,7 +644,8 @@
 
 .art-cta-copy .art-eyebrow {
   margin-bottom: 0.5rem;
-  color: var(--av-lilac-200, #ebdcff);
+  /* White, not lilac: lilac on amethyst is 4.37:1, below AA (white is 5.7:1). */
+  color: var(--av-white, #fff);
 }
 
 .art-cta-heading {
@@ -662,7 +663,7 @@
 .art-cta-body {
   max-width: 520px;
   margin: 0;
-  color: var(--av-lilac-200, #ebdcff);
+  color: var(--av-white, #fff);
   font-family: var(--av-font-sans, "Outfit", sans-serif);
   font-size: 1.125rem;
   line-height: 1.55;

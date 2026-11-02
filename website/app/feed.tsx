@@ -170,7 +170,7 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
           case "doc-link":
             return (
               <p key={i} className="post-doc-link">
-                <Link href={`/docs/${block.slug}`} className="view-more">
+                <Link href={block.href ?? `/docs/${block.slug}`} className="view-more">
                   <span>{block.text}</span>
                   <ArrowSwap />
                 </Link>

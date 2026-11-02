@@ -1,0 +1,476 @@
+/* The /d1 research boards (app/carousel.tsx). Sits on the dark /d1 stage; the boards are 1440 px
+   designs on #151515, shown whole (contain) in a 3:2 frame of the same colour, so the taller org
+   chart letterboxes invisibly. Full width of the page container on desktop; on phones the track
+   runs to the screen edges with a peek of the next board. Tokens from addvery-tokens.css. */
+
+.cz {
+  --cz-gap: 24px;
+  --cz-bleed: 0px;
+  position: relative;
+  container-type: inline-size;
+  margin-top: 4rem;
+}
+
+/* The track: native horizontal scrolling, snapped one board at a time. The block padding keeps the
+   frame's focus ring inside the scroll box, which clips. */
+.cz-track {
+  position: relative;
+  display: flex;
+  gap: var(--cz-gap);
+  margin: -8px calc(-1 * var(--cz-bleed));
+  padding: 8px var(--cz-bleed);
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--cz-bleed);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cz-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cz-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.cz-figure {
+  margin: 0;
+}
+
+.cz-frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: 1px solid var(--av-border-dark-card, rgba(255, 255, 255, 0.1));
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-ink, #151515);
+  color: var(--av-white, #fff);
+  text-decoration: none;
+  cursor: zoom-in;
+  transition: border-color var(--av-dur-base, 0.3s) ease;
+}
+
+.cz-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cz-frame:focus-visible {
+  outline: 2px solid var(--av-lavender, #d3c3ff);
+  outline-offset: 4px;
+  border-radius: var(--av-radius-2xl, 16px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cz-frame:hover {
+    border-color: var(--av-outline-on-dark-strong, rgba(255, 255, 255, 0.5));
+  }
+}
+
+/* "Full size": Addvery's thumbnail badge, top right, where every board is empty. */
+.cz-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: var(--av-radius-xs, 4px);
+  background: var(--av-badge-bg, rgba(0, 0, 0, 0.7));
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-body-haas, "Inter", Arial, sans-serif);
+  font-size: var(--av-micro-size, 12px);
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+/* The fifth slide: a text card that opens the research page, on Addvery's purple glow. */
+.cz-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 5cqw, 4rem);
+  background:
+    radial-gradient(60% 80% at 85% 15%, rgba(102, 69, 235, 0.45), rgba(102, 69, 235, 0) 70%),
+    radial-gradient(50% 60% at 10% 100%, rgba(212, 69, 235, 0.22), rgba(212, 69, 235, 0) 70%),
+    var(--av-ink, #151515);
+  cursor: pointer;
+}
+
+.cz-card-text {
+  max-width: 14ch;
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: clamp(1.625rem, 6cqw, 4.125rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.cz-card-arrow {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--av-radius-pill, 999px);
+  background: var(--av-white, #fff);
+  color: var(--av-plum, #4a1d73);
+  transition: transform 0.2s ease;
+}
+
+@container (min-width: 720px) {
+  .cz-card-arrow {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cz-card-arrow svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cz-card:hover .cz-card-arrow {
+    transform: translateX(4px);
+  }
+}
+
+.cz-caption {
+  max-width: min(760px, 100%);
+  margin: 1.25rem 0 0;
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1.125rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.cz-caption strong {
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-weight: 500;
+}
+
+/* Prev, the counter, next. Under the captions on phones; level with them, on the right, from a
+   720 px wide carousel up (the frame is 3:2, so its height is 100cqw / 1.5). */
+.cz-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@container (min-width: 720px) {
+  .cz-caption {
+    max-width: min(760px, calc(100% - 15rem));
+    min-height: 48px;
+  }
+
+  .cz-bar {
+    position: absolute;
+    top: calc(100cqw / 1.5 + 1.25rem);
+    right: 0;
+    margin: 0;
+  }
+}
+
+.cz-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--av-outline-on-dark-strong, rgba(255, 255, 255, 0.5));
+  border-radius: var(--av-radius-pill, 999px);
+  background: transparent;
+  color: var(--av-white, #fff);
+  cursor: pointer;
+  transition:
+    border-color var(--av-dur-base, 0.3s) ease,
+    background-color var(--av-dur-base, 0.3s) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cz-btn:not([aria-disabled="true"]):hover {
+    border-color: var(--av-lavender, #d3c3ff);
+    background: var(--av-surface-dark-card, rgba(255, 255, 255, 0.06));
+  }
+}
+
+.cz-btn:focus-visible {
+  outline: 2px solid var(--av-lavender, #d3c3ff);
+  outline-offset: 3px;
+  border-radius: var(--av-radius-pill, 999px);
+}
+
+.cz-btn[aria-disabled="true"] {
+  border-color: var(--av-plum-800, #333038);
+  color: #6f6a78;
+  cursor: default;
+}
+
+.cz-count {
+  min-width: 4.25rem;
+  margin: 0;
+  font-family: var(--av-font-numeric, "Plus Jakarta Sans", system-ui, sans-serif);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-align: center;
+}
+
+.cz-count-now {
+  color: var(--av-white, #fff);
+}
+
+.cz-count-of {
+  color: var(--av-text-on-dark, #bcbcbc);
+}
+
+/* Phones: the track runs to the screen edges, and the next board peeks in. */
+@media screen and (max-width: 767px) {
+  .cz {
+    --cz-gap: 12px;
+    --cz-bleed: 1.5rem;
+    margin-top: 2.75rem;
+  }
+
+  .cz-slide {
+    flex-basis: calc(100% - 40px);
+  }
+
+  .cz-caption {
+    margin-top: 1rem;
+    font-size: 1.0625rem;
+  }
+
+  .cz-bar {
+    justify-content: space-between;
+    margin-top: 1.25rem;
+  }
+
+  .cz-badge {
+    top: 8px;
+    right: 8px;
+    padding: 5px 8px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .cz {
+    --cz-bleed: 1.25rem;
+  }
+}
+
+/* ---------- Full size (a modal dialog over everything) ---------- */
+
+html.cz-lock {
+  overflow: hidden;
+}
+
+.czd {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--av-black, #000);
+  color: var(--av-white, #fff);
+}
+
+.czd::backdrop {
+  background: var(--av-black, #000);
+}
+
+.czd[open] {
+  animation: czd-in 0.18s ease-out;
+}
+
+@keyframes czd-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.czd-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 12px 8px 20px;
+  background: rgba(0, 0, 0, 0.78);
+  -webkit-backdrop-filter: var(--av-blur-nav, blur(12px));
+  backdrop-filter: var(--av-blur-nav, blur(12px));
+}
+
+.czd-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.czd-count {
+  margin-right: 0.5rem;
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-numeric, "Plus Jakarta Sans", system-ui, sans-serif);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.czd-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  min-width: 48px;
+  height: 48px;
+  padding: 0 1.125rem;
+  border: 1px solid var(--av-outline-on-dark-strong, rgba(255, 255, 255, 0.5));
+  border-radius: var(--av-radius-pill, 999px);
+  background: transparent;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.czd-zoom {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.czd-close {
+  padding: 0;
+}
+
+/* Small phones: the zoom button keeps its name for screen readers but shows only its icon, so the
+   board's title fits in the bar. */
+@media screen and (max-width: 479px) {
+  .czd-zoom {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .czd-btn-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+.czd-btn:focus-visible {
+  outline: 2px solid var(--av-lavender, #d3c3ff);
+  outline-offset: 2px;
+  border-radius: var(--av-radius-pill, 999px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .czd-btn:hover {
+    border-color: var(--av-lavender, #d3c3ff);
+    background: var(--av-surface-dark-card, rgba(255, 255, 255, 0.06));
+  }
+}
+
+/* Fit: the whole board in the window. Zoomed: at least its 1440 px design size, pannable. */
+.czd-stage {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  padding: 72px 16px 16px;
+}
+
+.czd-stage img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 88px);
+  cursor: zoom-in;
+}
+
+.czd.is-zoomed .czd-stage {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+}
+
+.czd.is-zoomed .czd-stage img {
+  width: min(2880px, max(1440px, 160vw));
+  max-width: none;
+  max-height: none;
+  margin: 0 auto;
+  cursor: zoom-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cz-track {
+    scroll-behavior: auto;
+  }
+
+  .cz-frame,
+  .cz-btn,
+  .cz-card-arrow,
+  .czd-btn {
+    transition: none;
+  }
+
+  .czd[open] {
+    animation: none;
+  }
+
+  .cz-card:hover .cz-card-arrow {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .cz-frame,
+  .cz-btn,
+  .czd-btn {
+    border-color: CanvasText;
+  }
+
+  .cz-btn[aria-disabled="true"] {
+    border-color: GrayText;
+    color: GrayText;
+  }
+}

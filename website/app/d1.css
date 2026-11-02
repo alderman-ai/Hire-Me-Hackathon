@@ -1,0 +1,248 @@
+/* /d1 (app/d1.tsx): one framed page. A black stage carries the headline and the research boards
+   (Addvery's black hero, so the #151515 boards read as framed panels), then one white editorial
+   column in their case-study type (article.css's .art-rich). Everything here is scoped to .d1-*,
+   so the other demo pages are untouched. Tokens from addvery-tokens.css. */
+
+/* Two classes, because article.css loads after this file and sets the same properties. */
+.art-hero.d1-stage {
+  background: var(--av-black, #000);
+}
+
+/* The headline is a sentence (Addvery's editorial layer sets these in sentence case). */
+.art-h1.d1-h1 {
+  text-transform: none;
+}
+
+.d1-note {
+  max-width: 760px;
+  margin: 2rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--av-plum-800, #333038);
+  color: var(--av-mauve-400, #b4aebf);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+/* ---------- The white column ---------- */
+
+.d1-body {
+  /* The site's focus ring is lavender, made for dark bands; on white it's amethyst (5.7:1). */
+  --focus: var(--av-amethyst, #8b3fcf);
+  padding: 5.5rem 0 6.875rem;
+  background: var(--av-white, #fff);
+}
+
+.d1-rich {
+  position: relative;
+}
+
+/* The result, boxed: Addvery's "at a glance" card, with the line set as a statement. */
+.art-rich .d1-highlight {
+  margin: 0 0 2.75rem;
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-2xl, 16px);
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.art-rich .d1-lead-in {
+  margin-bottom: 0.5rem;
+}
+
+.art-rich .d1-steps {
+  margin-top: 3rem;
+}
+
+.art-rich .d1-steps > li {
+  margin-bottom: 1.25rem;
+}
+
+.art-rich .d1-cta {
+  margin: 2.25rem 0 0;
+  font-size: 1.1875rem;
+}
+
+/* External links (the Apify Store pages) open in a new tab and say so. */
+.d1-ext-end {
+  white-space: nowrap;
+}
+
+.art-rich .d1-ext svg {
+  display: inline-block;
+  margin-left: 0.15em;
+  vertical-align: -0.1em;
+}
+
+/* ---------- "Show me how": closed until asked ---------- */
+
+.d1-fold {
+  margin: 3.5rem 0 0;
+  border-top: 1px solid var(--av-lilac-300, #e3dfea);
+  border-bottom: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+.d1-fold-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 72px;
+  padding: 1rem 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  list-style: none;
+  cursor: pointer;
+  transition: color var(--av-dur-base, 0.3s) ease;
+}
+
+.d1-fold-summary::-webkit-details-marker {
+  display: none;
+}
+
+.d1-fold-summary:focus-visible {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.d1-fold-marker {
+  position: relative;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--av-amethyst, #8b3fcf);
+  border-radius: var(--av-radius-pill, 999px);
+  color: var(--av-amethyst, #8b3fcf);
+  transition:
+    background-color var(--av-dur-base, 0.3s) ease,
+    color var(--av-dur-base, 0.3s) ease;
+}
+
+.d1-fold-marker::before,
+.d1-fold-marker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+}
+
+.d1-fold-marker::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.d1-fold[open] .d1-fold-marker::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .d1-fold-summary:hover {
+    color: var(--av-amethyst, #8b3fcf);
+  }
+
+  .d1-fold-summary:hover .d1-fold-marker {
+    background: var(--av-amethyst, #8b3fcf);
+    color: var(--av-white, #fff);
+  }
+}
+
+.d1-fold-body {
+  padding: 0.75rem 0 2.25rem;
+}
+
+.d1-fold-body > p {
+  margin-bottom: 1.75rem;
+}
+
+.d1-fold-body .art-table td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Room for the long first column; time and cost take only what they need. */
+.d1-fold-body .art-table th:first-child,
+.d1-fold-body .art-table td:first-child {
+  min-width: 15rem;
+}
+
+.d1-fold-body .art-table th:nth-child(2),
+.d1-fold-body .art-table td:nth-child(2) {
+  min-width: 11rem;
+}
+
+.d1-fold-body .art-table th:nth-child(3),
+.d1-fold-body .art-table td:nth-child(3) {
+  min-width: 8.5rem;
+}
+
+.d1-fold-body .art-table th:nth-child(n + 4),
+.d1-fold-body .art-table td:nth-child(n + 4) {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.d1-fold-body > ul {
+  margin-bottom: 0;
+}
+
+/* ---------- The closing lines, last ---------- */
+
+.d1-closing {
+  margin-top: 3.5rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.art-rich .d1-closing p {
+  margin: 0 0 1rem;
+}
+
+.art-rich .d1-closing p:last-child {
+  margin: 1.5rem 0 0;
+  font-size: 0.875rem;
+}
+
+@media screen and (max-width: 767px) {
+  .d1-body {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .art-rich .d1-highlight {
+    padding: 1.25rem 1.25rem;
+    font-size: 1.1875rem;
+  }
+
+  .d1-fold-summary {
+    font-size: 1.3125rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .d1-fold-summary,
+  .d1-fold-marker,
+  .d1-fold-marker::before,
+  .d1-fold-marker::after {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .d1-fold-marker {
+    border-color: CanvasText;
+  }
+}

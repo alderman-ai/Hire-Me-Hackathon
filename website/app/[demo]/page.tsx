@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import build from "@/content/build.json";
+import { D1Article, d1Metadata } from "../d1";
 import { allDemos, findDemo } from "../deliverables";
 import { Blocks, FeedPost, feedPosts, type Block } from "../feed";
 import { Reveal, RotateIn } from "../motion";
@@ -17,6 +18,9 @@ import "../article.css";
 // only what we have: the dark hero, the client grid with its "at a glance" card, one numbered chapter,
 // the purple next-step band, and the related cards. Their stats row is left out until a demo has
 // honest numbers.
+//
+// D1 (BUILD S-D1-B1) is one framed page of its own (app/d1.tsx) in place of the hero, client grid
+// and chapters; the next-step band and the related posts follow it as on every demo page.
 
 export const dynamicParams = false;
 
@@ -26,6 +30,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ demo: string }> }): Promise<Metadata> {
   const { demo: slug } = await params;
+  if (slug === "d1") return d1Metadata;
   const demo = findDemo(slug);
   return demo
     ? { title: `${demo.name} · Hire Me Hackathon`, description: demo.what }
@@ -65,111 +70,117 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
   const researchDocs = demo.slug === "d2" ? readResearchDocs() : [];
 
   return (
-    <main className="art art-demo">
-      <section className="art-hero" aria-labelledby="demo-title">
-        <RotateIn
-          from="bottom-right"
-          angle={8}
-          delay={500}
-          duration={800}
-          fade={600}
-          onLoad
-          className="art-hero-ring"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/addvery/hero-circle.webp" alt="" width={472} height={460} />
-        </RotateIn>
-        <div className="art-container">
-          <p className="art-back">
-            <Link href="/">← Back to the live feed</Link>
-          </p>
-          <div className="art-eyebrow-row">
-            <span className="art-eyebrow-line" aria-hidden="true" />
-            <p className="art-eyebrow is-lavender">Demo {demo.n}</p>
-          </div>
-          <h1 id="demo-title" className="art-h1">
-            {demo.name}
-          </h1>
-          <p className="art-hero-lead">{demo.what}</p>
-        </div>
-      </section>
-
-      <section className="art-client" aria-label="About this demo">
-        <div className="art-container art-client-grid">
-          <div className="art-client-copy">
-            {demo.whatThisIs && (
-              <div className="art-block">
-                <h2 id="what-this-is" className="art-eyebrow is-amethyst">
-                  What this is
-                </h2>
-                <p className="art-lead">{demo.whatThisIs}</p>
+    <main className={demo.slug === "d1" ? "art art-demo art-d1" : "art art-demo"}>
+      {demo.slug === "d1" ? (
+        <D1Article />
+      ) : (
+        <>
+          <section className="art-hero" aria-labelledby="demo-title">
+            <RotateIn
+              from="bottom-right"
+              angle={8}
+              delay={500}
+              duration={800}
+              fade={600}
+              onLoad
+              className="art-hero-ring"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/addvery/hero-circle.webp" alt="" width={472} height={460} />
+            </RotateIn>
+            <div className="art-container">
+              <p className="art-back">
+                <Link href="/">← Back to the live feed</Link>
+              </p>
+              <div className="art-eyebrow-row">
+                <span className="art-eyebrow-line" aria-hidden="true" />
+                <p className="art-eyebrow is-lavender">Demo {demo.n}</p>
               </div>
-            )}
-          </div>
-          <aside className="art-meta" aria-labelledby="at-a-glance">
-            <h2 id="at-a-glance" className="art-eyebrow">
-              At a glance
-            </h2>
-            <dl>
-              <div className="art-meta-row">
-                <dt>What it is</dt>
-                <dd>Demo {demo.n}</dd>
-              </div>
-              <div className="art-meta-row">
-                <dt>Status</dt>
-                <dd>{demo.status}</dd>
-              </div>
-            </dl>
-            <p className="art-meta-note">{build.as_of_line}</p>
-          </aside>
-        </div>
-      </section>
-
-      <section className="art-chapter" aria-labelledby="the-demo">
-        <div className="art-container">
-          <Reveal delay={100} className="art-chapter-grid">
-            <div className="art-rail">
-              <span className="art-rail-num" aria-hidden="true">
-                01
-              </span>
-              <h2 id="the-demo" className="art-eyebrow">
-                The demo
-              </h2>
+              <h1 id="demo-title" className="art-h1">
+                {demo.name}
+              </h1>
+              <p className="art-hero-lead">{demo.what}</p>
             </div>
-            <div className="art-chapter-body">
-              {demo.blocks.length > 0 ? (
-                <div className="art-rich">
-                  <DemoBlocks blocks={demo.blocks} />
+          </section>
+
+          <section className="art-client" aria-label="About this demo">
+            <div className="art-container art-client-grid">
+              <div className="art-client-copy">
+                {demo.whatThisIs && (
+                  <div className="art-block">
+                    <h2 id="what-this-is" className="art-eyebrow is-amethyst">
+                      What this is
+                    </h2>
+                    <p className="art-lead">{demo.whatThisIs}</p>
+                  </div>
+                )}
+              </div>
+              <aside className="art-meta" aria-labelledby="at-a-glance">
+                <h2 id="at-a-glance" className="art-eyebrow">
+                  At a glance
+                </h2>
+                <dl>
+                  <div className="art-meta-row">
+                    <dt>What it is</dt>
+                    <dd>Demo {demo.n}</dd>
+                  </div>
+                  <div className="art-meta-row">
+                    <dt>Status</dt>
+                    <dd>{demo.status}</dd>
+                  </div>
+                </dl>
+                <p className="art-meta-note">{build.as_of_line}</p>
+              </aside>
+            </div>
+          </section>
+
+          <section className="art-chapter" aria-labelledby="the-demo">
+            <div className="art-container">
+              <Reveal delay={100} className="art-chapter-grid">
+                <div className="art-rail">
+                  <span className="art-rail-num" aria-hidden="true">
+                    01
+                  </span>
+                  <h2 id="the-demo" className="art-eyebrow">
+                    The demo
+                  </h2>
                 </div>
-              ) : orgData ? (
-                <OrgCharts data={orgData} />
-              ) : (
-                <p className="art-statement">{demo.pending}</p>
-              )}
+                <div className="art-chapter-body">
+                  {demo.blocks.length > 0 ? (
+                    <div className="art-rich">
+                      <DemoBlocks blocks={demo.blocks} />
+                    </div>
+                  ) : orgData ? (
+                    <OrgCharts data={orgData} />
+                  ) : (
+                    <p className="art-statement">{demo.pending}</p>
+                  )}
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
-        </div>
-      </section>
+          </section>
 
-      {researchDocs.length > 0 ? (
-        <section className="art-chapter" aria-labelledby="the-research">
-          <div className="art-container">
-            <Reveal delay={100} className="art-chapter-grid">
-              <div className="art-rail">
-                <span className="art-rail-num" aria-hidden="true">
-                  02
-                </span>
-                <h2 id="the-research" className="art-eyebrow">
-                  The research itself
-                </h2>
+          {researchDocs.length > 0 ? (
+            <section className="art-chapter" aria-labelledby="the-research">
+              <div className="art-container">
+                <Reveal delay={100} className="art-chapter-grid">
+                  <div className="art-rail">
+                    <span className="art-rail-num" aria-hidden="true">
+                      02
+                    </span>
+                    <h2 id="the-research" className="art-eyebrow">
+                      The research itself
+                    </h2>
+                  </div>
+                  <div className="art-chapter-body">
+                    <ResearchDocs docs={researchDocs} />
+                  </div>
+                </Reveal>
               </div>
-              <div className="art-chapter-body">
-                <ResearchDocs docs={researchDocs} />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-      ) : null}
+            </section>
+          ) : null}
+        </>
+      )}
 
       <nav className="art-cta" aria-label="Other demos">
         <div className="art-container art-cta-grid">

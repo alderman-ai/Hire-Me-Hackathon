@@ -1012,6 +1012,34 @@
           "text": "Between 17:27 and 17:34, the agent built all 36 workflows of the outbound demo in GetSales, in a folder of their own: four customer profiles, in English, Czech and German, with three tactics each. Every workflow opens with a first message written for the lead before import. None is switched on, and none has a lead in it. Next, Alex records the walkthrough."
         }
       ]
+    },
+    {
+      "id": "d1-live",
+      "at": "2026-11-02T19:05",
+      "kind": "Milestone",
+      "title": "Imagine if every pitch started with a briefing like this",
+      "deliverable": "d1",
+      "roles": [
+        "CEO",
+        "CSO",
+        "RevOps",
+        "CMO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Before writing to Addvery, Alex researched the company from public sources: one afternoon, 6 scrapers on Apify, $1.24 of scraping. Four boards came out of it: Addvery as scraped, the org chart by role, who posts and who sells, and marketing and AI, what's there and what's missing."
+        },
+        {
+          "type": "p",
+          "text": "No one at Addvery is named, by design: LinkedIn appears only as counts by function. The same pipeline could brief every pitch."
+        },
+        {
+          "type": "doc-link",
+          "href": "/d1",
+          "text": "See the briefing"
+        }
+      ]
     }
   ]
 }
