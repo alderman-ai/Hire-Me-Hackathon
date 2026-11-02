@@ -25,8 +25,9 @@ You are the last check before anything from this post is committed to the public
    - In the dictation or a stage file: replace the hit with `[removed: <category>]`. Don't change anything else in those files.
 3. **For each `NAME` warning:** decide. A public tool, product or place stays. A person other than Alex Alderman, a client, or a company he worked with goes, as in step 2, replaced by a role ("a founder I worked with").
 4. **Read the post yourself** for anything the script can't catch: a client described so closely they're identifiable, a private number, a price, a deal, an internal project name, someone's job title plus company. Treat it like a hit.
-5. **Run the scan again** until it exits 0.
-6. **Clock times:** if anything was cut from the dictation, note the nearest words around it, so the running session can find the clock time in the rig transcript and keep that stretch of video off the site.
+5. **Run the scan again** until it exits 0. If you changed `post.md`, rerun `python -I blog-pipeline\scripts\counts.py {DIR}\post.md` and `python -I blog-pipeline\scripts\validate.py {DIR}\post.md` and bring `made.words_drafted` and `reading_minutes` back in line.
+6. **Mark it near-final.** Once the scan exits 0, set `status: "near-final"` in `post.md`'s front matter and change nothing else (the post format, §1). This is the version Alex reviews.
+7. **Clock times:** if anything was cut from the dictation, note the nearest words around it, so the running session can find the clock time in the rig transcript and keep that stretch of video off the site.
 
 ## Output: `{DIR}\7-scan.md`
 
