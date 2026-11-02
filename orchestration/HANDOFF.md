@@ -1,6 +1,6 @@
 # Orchestration handover
 
-Written 2 Nov, 16:46 Prague, by the outgoing `orchestration` session (id `edd8f64b`), at forking gate F2 (context at 50.2%). F1 (build done) and F3 (window closes) are merged into this fork: see SPEC.md section 9, the 16:33 row. Read this, then `orchestration\SPEC.md`. You are the parent session and the S2 project orchestrator. Every time you write comes from the clock (`Get-Date`); never guess one.
+Written 2 Nov, 16:44 Prague, by the outgoing `orchestration` session (id `edd8f64b`), at forking gate F2 (context at 50.2%). F1 (build done) and F3 (window closes) are merged into this fork: see SPEC.md section 9, the 16:33 row. Read this, then `orchestration\SPEC.md`. You are the parent session and the S2 project orchestrator. Every time you write comes from the clock (`Get-Date`); never guess one.
 
 ## First, in this order
 
@@ -39,7 +39,7 @@ He is at the computer until 18:00 Prague, swamped, filling in operator tasks as 
   2. `s-d6-canva-templates` brand sign-off gate, with its two intake questions and the spec draft folded in: READY expected about 17:05. Give it the go once Alex has ticked the GetSales pre-send gate (`Operator tasks\Approve - the six alert messages before they send.md`).
   3. `s-d7-linkedin-content` sign-off gate, its intake folded in the same way: go on READY, same condition. Its Ivana part (a personal-brand proposal Alex asked for at lower priority) is built in `local\` only and held from the site and from every tracked file. Her name is on the website's deny list.
   4. `s-d5-blog-articles`: its intake stays held. Alex at about 16:40: "I really don't want to talk any more about articles right now." It works on the two articles' base and visuals.
-  5. `s-d10-canva-video`: waits on S2-Q1.
+  5. `s-d10-canva-video`: waits on S2-Q1. Its groundwork is done (commit 92c62be): `canva-video\SCENE.md` is the brief, with placeholders. On (b) it sends Alex the brief by 17:20; on (a) the scene goes to the morning. Its held intake still has two unasked questions (a 15-minute cap; screen or webcam): put them to Alex with the brief, or in the morning, because question 3's 18:00 default (webcam only) would show none of the design.
 - **website** is at 53%: it was asked at 16:43 to hand off at its next natural stop, after your announcement. When its HANDOFF comes, stop and remove its predecessor.
 - **Held from earlier:** DI-7 (GetSales, owned by s-d3-getsales) and DI-8 (blog, owned by s-d4-blog-pipeline) are with Alex; no pokes from us.
 
