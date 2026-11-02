@@ -1,6 +1,6 @@
 # C06: D3, the S-D3 row and DoD-12 follow Alex's model (the alert, then ICP by language by approach workflows)
 
-Status: in preview (OT-11)
+Status: in preview (OT-11), revised 16:42 on Alex's change note
 Asked by: `s-d3-getsales`, S2 REQUEST 14:51
 Approval: A6.4 (DI-6 Q6.4, `Operator tasks\Archive\Decide - how the scraping demo should work.md`): "we'll build 20 workflows. Let's label them under a new folder in GetSales so that I can hide them easily. We'll take each of their ICPs and do it in whatever languages make sense. We'll have 3 different approaches per language ... each of those workflows will start with that custom message"
 Preview: `Operator tasks\Approve - three small charter fixes.md` (OT-11), with the other queued changes
@@ -15,7 +15,7 @@ Before:
 ```
 After:
 ```
-| D3 | GetSales outbound demo | Two parts. First, an alert: a short campaign from the operator's own LinkedIn account tells the six stakeholders from D2 that the hackathon is happening and they can follow along. Second, the demo: workflows for each of Addvery's ICPs by language and by three approaches, in one GetSales folder he can hide, each opening with a custom first message computed before import and imported as a lead field, with an explanation of how leads are routed into the right one. Pipeline: the six from D2, enrichment, the computed first-message variable, import into GetSales. The output is a video clipped from the rig recordings. |
+| D3 | GetSales outbound demo | Two parts. First, an alert: a short campaign from the operator's own LinkedIn account tells the six stakeholders from D2 that the hackathon is happening and they can follow along. Second, the demo: 36 workflows (four ICPs, by English, Czech and German, by three tactics) in a GetSales folder apart from his own, each opening with a custom first message, a variable imported as a field of the lead CSV. Nothing is tooled to run and no classifier is trained: the operator screen-records himself scrolling through the 36, explaining how a classifier could route leads into them, and opening the top one to show its first messages. Pipeline: the six from D2, enrichment, the computed first-message variable, import into GetSales. The output is a video clipped from the rig recordings. |
 ```
 
 ### 2. CHARTER.md, "Spec outline", the S-D3 row
@@ -26,7 +26,7 @@ Before:
 ```
 After:
 ```
-| S-D3 — GetSales outbound demo | The alert to the six stakeholders from the operator's own LinkedIn account, then ICP by language by approach workflows in one GetSales folder, each opening with a custom first message, with how leads are routed. Delivered as a video. | S-D2; rig recordings; S-D9 for the clip | Running the live setup on camera |
+| S-D3 — GetSales outbound demo | The alert to the six stakeholders from the operator's own LinkedIn account, then 36 workflows (four ICPs, three languages, three tactics) in a GetSales folder apart from his own, each opening with a custom first message, explained in his screen-recorded walkthrough. Delivered as a video. | S-D2; rig recordings; S-D9 for the clip | Running the live setup on camera |
 ```
 
 ### 3. CHARTER.md, "Definition of done", the DoD-12 row
@@ -37,7 +37,7 @@ Before:
 ```
 After:
 ```
-| DoD-12 | Workflows for each of Addvery's ICPs, by language and by three approaches, each opening with a custom first message, sit in one GetSales folder, with an explanation of how leads are routed into the right one, and no automation sends except the alert to the six. | GetSales shows the folder and its workflows; the routing explanation is on the site; no send outside the alert. | D3 | S-D3 | live |
+| DoD-12 | 36 workflows (four ICPs, by English, Czech and German, by three tactics), each opening with a custom first message, sit in a GetSales folder apart from the operator's own, with no automation sending except the alert to the six. Nothing is tooled to run and no classifier is trained. | GetSales shows the folder and the 36 workflows, the top one with its first messages; the walkthrough explaining how a classifier could route leads is on the site; no send outside the alert. | D3 | S-D3 | live |
 ```
 
 DoD-13 is unchanged, as the request asks: its pipeline stages stay, and the live run is the alert to the six.
@@ -47,3 +47,7 @@ Claimant S-D3 already follows this model (getsales\SPEC.md, A6.4 rows in its dec
 ## Verify
 
 Not applied yet.
+
+## Revised 16:42 on Alex's change note in OT-11
+
+He left the box unticked and wrote: "What I want is to create, again in a different folder that's not going to be confused with mine, 36 workflows. ... There are 4 main ICPs, 3 different languages (let's say English, Czech, German), and that's 12. Then let's do tactic 1, tactic 2, tactic 3 ... We're not tooling it up to run. We're not training the classifier agent. We're explaining what all the pieces are and clipping that into a video to explain it". The D3, S-D3 and DoD-12 After texts above now say that. DoD-13 is still unchanged. The OT-11 snapshot was updated to match, and it waits again: a tick applies it, and at 18:00 it applies on the default.
