@@ -20,3 +20,4 @@ Flagged, as the method requires: R2 and R4 serve the project's outcome rather th
 <!-- after every item above is ticked -->
 - [x] Synthesis: cross-document insights and recommendations for every spec's methodology · report: `global\L-01-synthesis.md` (accepted 15:04)
 - [x] DIRECTORY.md entries for every report above (15:05)
+- [x] On every reader's reading list: S2 change C07 (commit 6d3edb6, `orchestration\changes\C07-findings-L-01.md`), confirmed by `orchestration` 15:02
