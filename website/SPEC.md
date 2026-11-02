@@ -307,3 +307,161 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, the a
 | 2 Nov, drafting (wave2-specs): the stakeholder sections never go live on a default, even after 18:00. | They name six real people, and CLAUDE.md says they "follow Alex's say on what goes live". | The brief keeps any sign-off the DoD requires open for the morning session. | DoD-18 may close in the morning. |
 | 2 Nov, drafting (wave2-specs): the repo scan prints file names only, and new decisions go here, with `DECISIONS.md` kept as history. | The user's rule is never to print secrets. The spec contract puts the decision log in the spec. | It finds files without exposing secrets, and keeps one log from now on. | None. |
 | 2 Nov, drafting (wave2-specs): the session asks S1 for its own list, though L-01 may cover most of it. | S1 hasn't drafted an S-D8 list, and the brief has every spec ask. | S1 decides whether a list is worth the usage. | One list more or less. |
+
+## Appendix A. Held preflight intake
+
+This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** Alex's Addvery research has his six confirmed stakeholders (DoD-10) or his brand capture (DoD-11) in `..\Addvery Research\`, or Alex says he's done with that research for now, whichever comes first. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - branding and stakeholder pages on the site.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D8: Decide - branding and stakeholder pages on the site.md is waiting on you: <what it decides and unblocks>`.
+
+~~~~markdown
+---
+System Primitive: Intake file
+Intake State: Waiting on operator
+Intake id: DI-XX
+Created: 2026-11-02
+Build goals: []
+---
+
+<!-- File name: "Decide - branding and stakeholder pages on the site.md" -->
+
+# Decide: Addvery's branding and the six stakeholder pages on the site
+
+## What this is
+
+The website is the end result of today's hackathon: a personalised job application to Addvery, built live over a 12-hour recorded session. Right now it's a build-in-public page. It has the countdown, a "start here" box with your explainer video and the project's plan, and a live feed of updates with the newest on top. Two things will turn it into an application to Addvery: Addvery's look, and a page for each of Addvery's six key stakeholders. Both come from your own Addvery research, which is why you're only seeing this now that your research is in.
+
+You're asked four things: how the branding is applied, what each stakeholder page shows, what may go into the public code repository, and when you review the six pages.
+
+Once you answer, the website session applies Addvery's look across the site and builds the six pages on a private preview. Nothing about the six people goes live until you've approved it in a separate check of about 10 minutes, and that check happens off camera by default.
+
+The rest of the site doesn't wait on this: the feed, the blog, the demo pages and the videos keep going. Only the branding and the six pages wait. Answering takes about 10 minutes, and nothing here needs you on camera. Please answer before 18:00 Prague; from then, any empty answer takes its default.
+
+This intake holds 4 decisions. Each one carries its own context, so you can answer them in any order. An empty fence means not answered. Say "DI-XX is ready" when you're done.
+
+# QXX.1 Addvery's branding: what to take from your brand capture
+
+The project's charter describes the goal as "one live website, in Addvery's branding, that works as a highly personalized outreach job application". The finish line you signed off this morning says: "The live site, in Addvery's branding, has a section for each of the six stakeholders". Today the site has its own look, not Addvery's. Your brand capture, covering Addvery's voice and visual identity, is in your Addvery Research folder.
+
+Your options:
+
+- **A. Visual identity only.** Colours, type, logo use and spacing go onto every page in one pass, which takes the website session about an hour. The words stay in your voice, because this is your application to them, not their site.
+- **B. Visual identity and voice.** The same as A, plus the headings and copy are rewritten in Addvery's voice. The site reads more like their own, but it may read as if Addvery wrote it.
+- **C. Something else.** Say what.
+
+I recommend A. An application in their look but in your words reads as you talking to them.
+
+Whichever you pick, the brand pass goes live without its own approval step. You'll see it on the live site and can ask for changes through the question desk. The site will also carry one plain line saying it's your job application, not Addvery's own site.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
+
+This answer affects the look of every page, and every section added later.
+
+Write A, B, or C and what you want instead.
+
+## AXX.1
+
+`<operator_answer>`
+```a-XX-1
+
+```
+`</operator_answer>`
+
+# QXX.2 What each stakeholder page shows
+
+The site gets a page for each of the six stakeholders you confirmed in your Addvery Research folder. The site is public, so anyone with the link can read it, and the six are real people. Yesterday you named the roles, "RevOps, CSO, CMO, CEO, CTO, CAIO, COO", and said "finds and sorting clips and messaging by stakeholder is the assistants job".
+
+The project-wide research list includes a question on what GDPR and LinkedIn's terms allow when a site publishes a page about named people. Its answer may not be in yet. Whatever you pick here, you approve each page's actual content before it goes live, and nothing goes live on a default.
+
+Your options:
+
+- **A. Role-led, light on personal data.** Each page shows:
+  - the person's name and public job title;
+  - a short note in your words on what this project means for their role;
+  - the demos that matter most to that role;
+  - moments from the recordings sorted to that role, added as they come in.
+
+  No photo, and nothing about them beyond their name and title.
+- **B. Person-led.** Everything in A, plus their photo, a link to their public profile, and what your research found about their priorities, with a pitch tailored to each. It's the most personal option, and it puts the most personal data on a public page.
+- **C. Roles only, no names.** Each page is titled by role, for example "For the CMO", with A's content, and no names appear anywhere on the site. It's the safest option, and it still gives six pages that match your list by role.
+- **D. Something else.** Say what.
+
+I recommend A. Each page is addressed to its reader by name, which is the point of a personalised application, and it publishes nothing about them beyond name and title.
+
+In every option, the pages never show the messages sent to the six in the GetSales outreach. Those stay in a folder that's kept out of the repository, and nothing from it reaches the site. The pages also never show anything you mark private in your folder.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it. The pages still wait for your approval of their content.
+
+This answer affects the six pages, and which recording moments get sorted to them.
+
+Write A, B, C, or D and what you want instead.
+
+## AXX.2
+
+`<operator_answer>`
+```a-XX-2
+
+```
+`</operator_answer>`
+
+# QXX.3 What may go into the public code repository
+
+When you kept your Addvery Research folder out of the repository, you said: "it'll be getting ignored from the public repo so we're not posting, even though it's public information inside". The site draws on that folder in two ways. The branding puts Addvery's colours, fonts and logo into the site's code, and the stakeholder pages put text drawn from your research into the site's content.
+
+This isn't the question you answered at 14:20, about the charter's mentions already in the repository. You said leave those. This one is about new files the site will add.
+
+The site deploys straight from your computer, not from GitHub, so a file can be on the live site without being in the repository. The repository is public, and its history keeps anything ever committed, even after it's deleted. The live site is public either way.
+
+Your options:
+
+- **A. Whatever goes live may be committed.** The brand values go in the code and the approved page text goes in content files. This is the simplest option, and the repository alone can rebuild the site. Your research notes themselves never go in.
+- **B. Nothing drawn from your folder is committed.** The brand values and the page text sit in a local folder that's kept out of the repository but still deploys. The repository alone can't rebuild the site in Addvery's look.
+- **C. The brand values are committed, the page text is not.** The look is what Addvery shows on its own public site anyway. The text about the six people is the personal part, so it stays local.
+- **D. Something else.** Say what.
+
+I recommend C. It keeps the people out of the repository, which is what your answer about the folder was about, without hiding a colour palette.
+
+In every option, the approval file for the six pages shows you the full draft in place, through an embed of a local file, without copying the people's details into the repository.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes B, the closest to your answer about the folder, and logs it.
+
+This answer affects where the brand and page files live, and what the public repository shows tomorrow.
+
+Write A, B, C, or D and what you want instead.
+
+## AXX.3
+
+`<operator_answer>`
+```a-XX-3
+
+```
+`</operator_answer>`
+
+# QXX.4 When you review the six stakeholder pages
+
+The website session builds the six pages on a private preview, not on the live site. It then puts an approval file in your Operator tasks folder and alerts you through the question desk. The file shows a short summary first, then the full draft in place. The review takes about 10 minutes.
+
+The charter's risk rule says to "assume anything on screen can be published". The draft may hold things you strike, and the screen recording keeps whatever was on screen.
+
+Your options:
+
+- **A. As soon as the draft is ready, with the recording paused.** Type /pause, review, then type /pause again to resume. About 10 minutes, off camera.
+- **B. As soon as the draft is ready, on camera.** The review becomes part of the build story. Nothing about the six gets posted from it, but the raw recording keeps whatever was on screen.
+- **C. Together with the brand review at 16:45 to 17:00**, if the draft is ready by then. If not, the same as A.
+- **D. Tomorrow morning, with the cleanup session.** The pages stay off the live site until then.
+- **E. Something else.** Say what.
+
+I recommend A. A draft about six real people is exactly what the risk rule is about, and 10 paused minutes take nothing away from the build story.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it. From 18:00, a review you haven't done stays open for the morning, and the pages stay off the live site.
+
+This answer affects when the six pages can go live, and whether the review is on camera.
+
+Write A, B, C, D, or E and what you want instead.
+
+## AXX.4
+
+`<operator_answer>`
+```a-XX-4
+
+```
+`</operator_answer>`
+~~~~
