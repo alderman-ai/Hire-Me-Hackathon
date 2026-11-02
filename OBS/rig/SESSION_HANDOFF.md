@@ -1,5 +1,7 @@
 # Rig session handoff
 
+**Draft, not used.** Orchestration cancelled this handoff at 20:12, because sessions are now refreshed only past about 300k to 400k tokens, at a natural stop. Successor cd0c2b0d was already launched; it was stopped and removed at once, and 1a1ba6cb carries on. Bring this note up to date before the next real handoff.
+
 Written at 20:11 Prague on 2 Nov by the outgoing `rig` session (1a1ba6cb), on orchestration's request for a full refresh. Read this, then `OBS\CLAUDE.md` and its boot reading. `rig\HANDOFF.md` is the older build handoff from 1 Nov. Read it only before changing rig code, and ignore its "commit only when he asks" line, because `..\GIT.md` replaces it.
 
 ## Right now
