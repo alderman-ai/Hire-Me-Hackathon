@@ -21,7 +21,7 @@
 | Decision | Why | Blast radius if changed |
 | --- | --- | --- |
 | Drafted in `research\portfolio\`; `website` places the file by BUILD. | GIT.md: a session writes only its own folder. | One file move. |
-| Reviewed in a Claude Doc, not an artifact. | Reset rule 4: written work for outside readers goes in a Claude Doc, and his comment is the sign-off. | None to the text. |
+| Reviewed on a private artifact page, not a Claude Doc: https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J (built from `ai-portfolio.md` by a script, `preview.html`). | Reset rule 4 asks for a Claude Doc, but no Claude Docs connector is attached to this session (19:00); the artifact is what `orchestration` first asked for, and Alex can comment on it. His comment is the sign-off. | If he wants a Doc, a session with the Docs connector imports `ai-portfolio.md`; the text doesn't change. |
 | The email's recipient, its job application and its feedback ask stay out entirely; only the four listed repos and his own words about them are used. | It's a private note; DoD-22 and the charter keep job applications and the Apify proposal off the site. | None. |
 | No figures from the pixel-perfect demo. | Every one carries Apify's card design and logo; `website`'s own asset list excludes Apify images; it's an application to Addvery. | Add figures later if Alex wants them. |
 | Link only the specific CB6 and Factor-AI files he already shares, and flag their repos' history to him. | CB6's git history still holds a client contact's details, GPS data and a Drive link; Factor-AI holds 18 raw session transcripts with his email and private folder names. Reported to `orchestration` for Alex. | Drop or keep those links at his word. |
