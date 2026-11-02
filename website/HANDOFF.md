@@ -111,7 +111,7 @@ Written 2 Nov at about 17:25 Prague at orchestration's RESTART (17:13), by the s
 
 - Nothing in flight.
 - Expected:
-  - S-D3's three BUILDs (to-do 4);
+  - S-D3 (its fresh session from 17:17): B3, B4 and B5 are BUILT, and nothing is pending. Its next request is `BUILD S-D3-B1`, the GetSales section, after Alex records his walkthrough. The footer, panel and "How this was made" BUILDs (to-do 4) may come later or fold into B1;
   - `S-D1-B1`, the scraping page;
   - `addvery-research` per-person material, which goes into the stakeholder Doc, not as BUILDs;
   - S-D9 posts and status updates.
