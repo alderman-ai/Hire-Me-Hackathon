@@ -42,3 +42,11 @@ marketing:draft-content, marketing:brand-review, anthropic-skills:docs, frontend
 ## Forking
 
 F1 (sign-off approved) and F3 (context half full) still apply (§8). This session forked at F3. `orchestration` removes the old id 6a355ef8.
+
+## Since the fork (session 9e96773b, live state at 17:40)
+
+- **Sign-off Doc:** https://claude.ai/artifact/A8cmvTCoTfMwd9CQz8u7kj (doc id 49f2804b-b296-4f67-9440-da7f81ab2030, tab body 4b6c9ae1-43d0). Complete: the five posts as exact text blocks, both carousels as contact-sheet images plus editable slide text, scores, the fair baseline, the method, the five rules, and a reception-check line (L-05 Q11). TASK sent to `answer-desk` at 17:22; the desk showed it. Alex's comment reaches this session.
+- **Slides:** rendered by a design subagent (frontend-design read from its SKILL.md, then design-critique and accessibility-review), in `local\slides\` (source `src\`, rerun `node build.mjs` then `python post.py` there). Web copies and alt text copied to `demo\slides\` (git-ignored).
+- **Site:** Alex at 17:23 (DI-10, relayed): the demo is one blog-style entry in the GTM demos section. `demo\entry.md` is that entry, with markers filled from `posts.md`, `baseline.md`, `voice.md`. `BUILD S-D7-B1` sent to `website` at 17:40; waiting for BUILT or REFUSED.
+- **Next:** on BUILT, the leak check (step 4 above), then DONE to `orchestration` (sign-off pending or approved). On Alex's comment, step 3 above; if the site already shows old text, `BUILD S-D7-B2`.
+- **Personal-brand part:** shelved until everything else is finished (Alex, Q10.8).
