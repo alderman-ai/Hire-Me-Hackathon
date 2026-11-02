@@ -240,10 +240,11 @@ Received: 2026-11-02 14:11 CET (+01:00)
 TASK S1: OT-01 Gate approval parent research list.md is waiting on you: approve or change the parent research list L-01, four questions plus three wildcards that every wave-2 spec reads. Approving starts the research; orchestration needs the findings by 16:00 Prague.
 ```
 
-## TASK S2: OT-02 Gate approval S2 charter changes C01 C02 — open
+## TASK S2: OT-02 Gate approval S2 charter changes C01 C02 — done
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
 Received: 2026-11-02 14:18 CET (+01:00)
 14:18 CET: alert shown to Alex.
+14:42 CET: TASK DONE S2 received (renamed, not answered); replaced by "Approve - Addvery research is yours, reading lists per demo".
 
 ```
 TASK S2: OT-02 Gate approval S2 charter changes C01 C02 is waiting on you: approve the first two charter changes. C01 makes the D2 row (Addvery research and brand capture) yours, with no spec. C02 turns the charter's research reading list into a pointer to each spec's own list. Tick I approve, or write what to change. It clears the last consistency gap before the outline sign-off that starts wave 2.
@@ -288,13 +289,14 @@ Received: 2026-11-02 14:23 CET (+01:00)
 TASK S-D1: DI-6 S-D1 Scraping preflight.md is waiting on you: 5 decisions (Apify token and spend cap, what the demo scrapes, whether the site names Apify, who enriches the six stakeholders, earlier Apify tooling to reuse). Unblocks the S-D1 scraping demo launch, first in wave 2, which S-D3's live run depends on. No camera time; the token goes in with the recording paused.
 ```
 
-## TASK S-D3: DI-7 S-D3 GetSales preflight.md — on hold
+## TASK S-D3: DI-7 S-D3 GetSales preflight.md — done
 From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:24 CET (+01:00)
 14:24 CET: alert shown to Alex.
 14:33 CET: wave2-specs put it on hold (Alex's DI-6 answers settle most of it); a shorter version replaces it with a new TASK line. Alex told not to answer it yet.
 14:37 CET: briefing relays Alex (14:38): waits on his Addvery research. Stays on hold.
 14:37 CET: wave2-specs: no pokes while Alex is on the Addvery research; the shorter GetSales intake gets a fresh TASK line once rewritten.
+14:40 CET: TASK DONE S-D3 received; replaced by "Decide - how the GetSales outbound demo runs.md".
 
 ```
 TASK S-D3: DI-7 S-D3 GetSales preflight.md is waiting on you: 6 decisions (what the ten ICPs are, which GetSales team the demo lives in, Sales Navigator export method, what the live run sends and the second message, Ivana's view-only access, the live-run slot 17:00-17:30). Unblocks the S-D3 GetSales demo launch; it needs you on camera once, for the live run.
@@ -309,12 +311,13 @@ Received: 2026-11-02 14:26 CET (+01:00)
 POKE S1: waiting on you for OT-01 Gate approval parent research list.md (tick "I approve" or write changes); orchestration needs the findings by 16:00 Prague.
 ```
 
-## TASK S-D4: DI-8 S-D4 Blog pipeline preflight.md — open
+## TASK S-D4: DI-8 S-D4 Blog pipeline preflight.md — done
 From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:31 CET (+01:00)
 14:31 CET: alert shown to Alex.
 14:37 CET: briefing relays Alex (14:38): low priority, don't push it at him. Kept on list; no alerts or notifications for its pokes.
 14:37 CET: wave2-specs: renamed "Decide - how the blog pipeline should work.md"; being rewritten, a fresh TASK line follows. No pokes while Alex is on the Addvery research.
+14:42 CET: TASK DONE S-D4 received; replaced by "Decide - how the blog pipeline should work.md".
 
 ```
 TASK S-D4: DI-8 S-D4 Blog pipeline preflight.md is waiting on you: 5 decisions (where the post's look is built, where your dictation lands, whether the test dictation counts as article 1, the test slot 15:15-15:35 and topic, what to do if research runs late). Unblocks the S-D4 blog pipeline launch and your first on-camera dictation, proposed for 15:15.
@@ -346,5 +349,58 @@ Recorded against OT-01 (already done), DI-6 (already done), DI-7 and DI-8.
 
 ```
 Alex's decisions, 14:38, relayed by briefing on his instruction, for your records: OT-01 approved (box ticked). DI-6 is done. DI-7 waits on his Addvery research, which is his focus now. DI-8 is low priority, so please don't push it at him. His words: "let's just approve ot1 -- i'm swamped we need to remove blockers ... di6 is done. di7 is waiting on addvery research which is where my focus needs to be right now. d1-8 is low priority". I've told s1-research, wave2-specs and orchestration.
+```
+
+## TASK S-D3: Decide - how the GetSales outbound demo runs.md — open
+From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
+Received: 2026-11-02 14:40 CET (+01:00)
+14:40 CET: alert shown to Alex; no PushNotification (sender marks it on hold while Alex is on the Addvery research, per his 14:38 words).
+
+```
+TASK S-D3: Decide - how the GetSales outbound demo runs.md is waiting on you: now just 3 small questions, about 3 minutes (how the alert reaches people you aren't connected to, whether Ivana gets a GetSales login, what Jev is). Question 1 by about 15:10 lets the alert to the six go by 15:30; the rest can wait. On hold while you're on your Addvery research: no pokes.
+```
+
+## S-D1-Q1 — answered
+From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
+Received: 2026-11-02 14:41 CET (+01:00)
+14:41 CET: shown to Alex.
+14:43 CET: answered; recorded in qa\S-D1.md and sent to s-d1-scraping.
+
+```
+ASK S-D1-Q1
+Critical: no
+Deadline: 14:57
+
+## S-D1-Q1 — Where your scraping summary will be, and when
+
+**The question:** Where will you put your summary of the Addvery scraping outputs, roughly when will it be there, and which of your output files should the other demos (the GetSales outreach demo first) read?
+
+**Context you need.** You decided earlier that the scraping demo runs no Apify actors itself: you scrape Addvery yourself in your `Addvery Research` folder and write a summary of the outputs, and the scraping demo turns that summary into the site's scraping section (naming Apify, as you allowed). I watch for the summary file every 5 minutes and start drafting the section the moment it appears. You approve the whole draft before anything reaches the site, and nothing from your folder goes into the public repo before then. The demos that read your research also need its output files named, so they're on their reading lists. I only need file names, never their contents.
+
+**Options.**
+- (a) Use my suggested path, `Addvery Research\Scraping summary.md`, and end the summary with a short list, "Files other demos read", naming the output files. Just tell me roughly when, e.g. "a: 16:30".
+- (b) A different path or setup: give the path, the rough time, and which files the GetSales demo and any others should read.
+- (c) Something else — say what.
+Recommend (a): it costs you one letter and a time, and your own research session can write straight to that path.
+
+**If unanswered by the deadline:** I watch `Addvery Research\Scraping summary.md` anyway and keep building the section's frame; before 18:00 I poke you, and if no summary exists by 18:00 the section stays open for tomorrow morning's cleanup session.
+```
+
+## TASK S-D4: Decide - how the blog pipeline should work.md — open
+From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
+Received: 2026-11-02 14:42 CET (+01:00)
+14:42 CET: alert shown to Alex as low priority; no PushNotification (Alex, 14:38: low priority, don't push it at him).
+
+```
+TASK S-D4: Decide - how the blog pipeline should work.md is waiting on you: rewritten in plain words, same 5 decisions, about 5 minutes (where the post's look is built, how you dictate, whether the test dictation counts as the first article, the test slot and topic, what to do if research runs late). Unblocks the blog pipeline and your test dictation. Low priority, as you said: no pokes.
+```
+
+## TASK S2: Approve - Addvery research is yours, reading lists per demo — open
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
+Received: 2026-11-02 14:42 CET (+01:00)
+14:42 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing is blocked on it).
+
+```
+TASK S2: Approve - Addvery research is yours, reading lists per demo is waiting on you: two updates to the project plan (the Addvery research and brand capture are your own work, and each demo gets its own reading list). It's low priority now: nothing is blocked on it, so no pokes.
 ```
 
