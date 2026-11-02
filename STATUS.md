@@ -1,4 +1,4 @@
-﻿# Status: every folder, and the order to finish
+# Status: every folder, and the order to finish
 
 As of 20:08, 2 Nov (Prague). Written by `orchestration` from the twelve folder `STATUS.md` files below, after the crash at 19:4x.
 
