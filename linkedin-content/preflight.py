@@ -68,6 +68,8 @@ def main():
         print(__doc__)
         sys.exit(2)
     text = open(sys.argv[1], encoding="utf-8").read().strip()
+    # Carousel files label each slide "SLIDE n:"; the labels are format, not copy.
+    text = re.sub(r"(?m)^SLIDE \d+:[ \t]*", "", text).strip()
     n = len(text)
     print(f"characters: {n} ({'long-form' if n > LONG_FORM else 'short: hook rules pass vacuously'})")
     style, lines = classify(text)
