@@ -62,3 +62,7 @@ Interplay with C01 (still waiting on Alex): C01 replaces the folder-level line i
 ## Verify
 
 Read back: the four blocks sit under each spec's Addvery Research line. propagate check: no new gap; four notes for the bare file names and the expected files, as planned. Told: s-d3-getsales and s-d1-scraping at 15:36; website after 16:30 (Alex's hold on its fan-out, 15:30 to 16:30); S-D6 and S-D7 have no running session, so the lines wait in their files.
+
+## Follow-on, 15:41
+
+Update from `s-d1-scraping` (from addvery-research at 15:40, checked on disk): `Brand capture.md` and `GetSales six.json` now exist (Alex's confirmation of the six still pending); new `brand\raw\logo.png` for S-D6, S-D7 and S-D8; `GetSales ICPs.md` still expected; `apify\README.md` is S-D1's own, no reader line. Mechanical follow-on, no preview: dropped "expected" from those two lines and added the logo line beside each Brand capture line.
