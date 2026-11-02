@@ -11,6 +11,15 @@ Every post sent to the website, and every item deliberately left out.
 | P3 | Two milestones on the timeline: the definition of done signed off at 14:02 with S2's tools built, and the first five research lists with the wildcards; P1 statuses to 14:15 | DOD-DRAFT.md; commits 40f5f45, 0f83fe4, bb71f33, aaa69a4, f2ecd10, 81333db, c7558a0; OT-01 | The plan now has a checkable finish line, and research is about to fan out. These are the first signs of the parallel phase S06 promised. | 14:20 (website, same build that turned the site into a feed) |
 | P4 | S07 session post (briefing session, this feed, recovery skill, approval checkboxes), Insight on API keys never moving on camera, Milestone "Every demo has a plan" (spec drafts, research running, scraping launched, plain-names rule), status to 14:45 with Apify named | S07 02:07, 05:04, 08:20, 33:29, 35:43; commits 96fa0bb, cb05028, a3f9451, 1ca60d9, spec drafts 14:22 to 14:34 | How Alex steers a dozen agents, a trust signal for a tech team (keys off camera), and the jump from one plan to a plan per demo. Roles: post 1 CEO/COO/CTO, post 2 CTO/CAIO, post 3 all. | 14:55 (website 9314fec). Role tags stored as a roles field on each feed post. |
 
+## Working rules from research (L-01, read 15:00)
+
+Applied now. The full methodology revision waits for the L-01 synthesis (about 16:00, SPEC step 6). Reports: `..esearch\global\L-01-R1-legibility.md`, `L-01-R3-personal-data.md`, `L-01-W3-wildcard-received.md`.
+
+- **Curated, not raw (R1).** Each post is a dated "what changed" item in plain words that can be scanned: done items first, and one point per post. No commit dumps and no long unedited footage. Raw build logs carry the weakest evidence and the highest noise risk.
+- **Alex decides, the agents carry out (W3, option B; R1).** Write so the judgment calls are visibly his, in a talent frame, not "agents take over". Past posts stay as they are unless Alex picks otherwise.
+- **Say what the AI did (R1, W3).** When a post is drafted by an agent from Alex's words, say so plainly. Disclosing it costs less than being found out.
+- **Keep off, about the six (R3 section 8 and the keep-off table):** their reactions, replies or inbox; photos; verbatim LinkedIn posts or profile screenshots; career history; any personality profiling. The names stay off as before.
+
 ## Sessions covered (DoD-20)
 
 Every filed rig session, and the post that carries its best moments.
