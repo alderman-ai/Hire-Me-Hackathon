@@ -929,6 +929,7 @@ TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick: http
 From: s-d6-canva-templates (uds:\.\pipe\LOCAL\cc-msg-25f0dd64a465fb0250b238bab03124d4)
 Received: 2026-11-02 17:42 CET (+01:00)
 17:42 CET: alert shown to Alex; no PushNotification (sender: nothing else waits on it).
+18:03 CET: s-d6-canva-templates handed off to a fresh session (335b2144) under the same name; task stands, the new session watches the Doc.
 
 ```
 TASK s-d6-canva-templates: the five Addvery LinkedIn templates are ready for your brand sign-off: https://claude.ai/artifact/CFuMcU2Qpxfp1ciRVhJoxX. Comment approve, or the changes you want, on the Doc. About 5 minutes. Nothing else waits on it: the Canva build and your on-camera asset pack go ahead meanwhile.
@@ -946,4 +947,13 @@ POKE s-d5-blog-articles: waiting on you for blog dictation 1 (https://claude.ai/
 ## NOTE from orchestration — 18:02
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
 18:02 CET: ASKING.md changed for Alex's 18:05 note (d9f0998): page copy inside a designed page is reviewed as a rendered artifact, one per page, not as a Doc; articles and posts stay in Docs. The six stakeholder pages will come from website as six links in one TASK line; when it arrives, mark "Six stakeholder pages: text for your edit (Doc)" replaced and drop it from Alex's list.
+
+## TASK s-d10-canva-video: Canva video ready to record — open
+From: s-d10-canva-video (uds:\.\pipe\LOCAL\cc-msg-77dec7d7da6455d67c8bf7e27ffc2eda)
+Received: 2026-11-02 18:05 CET (+01:00)
+18:05 CET: alert shown to Alex; no PushNotification (Alex is active at the desk).
+
+```
+TASK s-d10-canva-video: the Canva video is ready to record: https://claude.ai/artifact/PDEnN7CTEGG94QVXkWohCW, about 20 minutes with the off-camera list
+```
 
