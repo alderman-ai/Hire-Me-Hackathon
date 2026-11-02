@@ -1,0 +1,7 @@
+# Design links and copy drafts (Canva links point into Alex's account)
+local/
+# Cuts and stills; video is never committed
+out/
+*.mp4
+*.mkv
+*.mov
