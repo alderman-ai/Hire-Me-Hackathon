@@ -9,7 +9,8 @@ Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting
 - **Done and committed:** `SCENE.md` is the full brief, with the off-camera list (Step 1, 14 items) and the on-camera rules (Step 2: the Projects, Uploads, Brand and Share panels, the profile menu and file pickers kept off camera). L-05 (all reports and the synthesis) and L-01 are applied. SPEC.md is updated for the reset, with §9 rows from 16:45 and 17:20. `.gitignore` covers `local/`, `out/` and video files. Latest commit: 5eca0ab.
 - **Messages sent at 17:19:**
   - `s-d6-canva-templates`: send `READY S-D6` with the folder, the link and the scene's template. No edits to that template and no Claude in Chrome from then until S-D10 says the scene is done. Say which templates made it in if not all five.
-  - `s-d9-legibility`: heads-up, one clip tonight by the two cues, screen and webcam.
+  - `s-d9-legibility`: heads-up, one clip tonight by the two cues, screen and webcam. It confirmed: it will cut from the last start cue before "done", with 3 s padding, frame-checked. Its `CLIPPED` reply gives both paths in `legibility\clips\`.
+  - `s-d6-canva-templates` confirmed at about 17:22 (new session a841934d, same name). Nothing is in Canva yet. Its order: switch the templates to the website's brand kit, then three queued fixes, then a test import, then all five. It sends `READY S-D6` the moment they're in, then leaves the scene's template alone and stays off Chrome until told the scene is done.
 - **Open with nobody:** no desk question, no operator task, no pokes running.
 
 ## What the successor does (SPEC run steps 3 to 5)
