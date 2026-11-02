@@ -39,3 +39,6 @@ __pycache__/
 # Site-structure proposals and verdict: they quote private context on the six
 /orchestration/assembly/proposal-*.md
 /orchestration/assembly/VERDICT.md
+/orchestration/assembly/compile-x.md
+/orchestration/assembly/compile-y.md
+/orchestration/assembly/COMPILED.md
