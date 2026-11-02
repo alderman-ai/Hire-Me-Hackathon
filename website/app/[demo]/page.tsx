@@ -8,6 +8,8 @@ import { Reveal, RotateIn } from "../motion";
 import { OrgCharts, readOrgData } from "../org-charts";
 import { ResearchDocs, readResearchDocs } from "../research-docs";
 import { ArrowSwap } from "../site-chrome";
+import { redirect } from "next/navigation";
+import { movedTo } from "../redirects";
 import "../article.css";
 
 // One page per demo, /d1 to /d10. The name, "what you'll see" and status come from content/build.json
@@ -56,6 +58,8 @@ function DemoBlocks({ blocks }: { blocks: Block[] }) {
 
 export default async function DemoPage({ params }: { params: Promise<{ demo: string }> }) {
   const { demo: slug } = await params;
+  const moved = movedTo(slug);
+  if (moved) redirect(moved);
   const demos = allDemos();
   const i = demos.findIndex((d) => d.slug === slug);
   const demo = demos[i];
