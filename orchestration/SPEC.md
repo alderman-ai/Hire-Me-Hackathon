@@ -102,6 +102,7 @@ C04, C05 and C06 went out together as `Operator tasks\Approve - three small char
 
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
+| C10 | Alex, in his OT-04 note, about 16:40: "we'll do two articles" (archived: `Operator tasks\Archive\Approve - research for the blog pipeline.md`) | 2 Nov 16:49 | D5 and DoD-15 say three blog posts; he set two, with both topics. S-D5's row and DoD-15 change from three to two. Goes out in the next preview after OT-11. |
 
 **Dependent places.**
 
