@@ -20,8 +20,11 @@ import stakeholdersJson from "@/content/stakeholders.json";
 
 export type StakeholderDemo = { n: number; why: string };
 
-/** One likely question, in the person's voice (`q`), and Alex's plain answer (`a`). */
-export type LandingConcern = { q: string; a: string };
+/**
+ * One likely question, as Alex guesses it (`q`), and his answer (`a`). `lead` is the answer's short
+ * position ("Not yet."), set bold before the rest.
+ */
+export type LandingConcern = { q: string; lead?: string; a: string };
 
 /** One reading-list link: a site path ("/d3", "/#post-s02", "/docs/charter", "/") or a full URL. */
 export type LandingLink = { title: string; href: string };
@@ -80,9 +83,13 @@ export type StakeholderNotice = {
 
 export type AboutMe = { heading: string; text: string };
 
+/** The /for grid's intro: a heading and short paragraphs, with **bold** marked as in Markdown. */
+export type GridIntro = { heading: string; paragraphs: string[] };
+
 type StakeholdersFile = {
   approved?: unknown;
   notice?: Partial<StakeholderNotice>;
+  grid_intro?: { heading?: unknown; paragraphs?: unknown };
   pages?: unknown;
   about_me?: Partial<AboutMe>;
 };
@@ -139,7 +146,7 @@ function cleanLanding(raw: unknown): StakeholderLanding | undefined {
   if (!(approved || isDev()) || !isText(l.greeting)) return undefined;
   const concerns = (Array.isArray(l.concerns) ? l.concerns : [])
     .filter((c): c is LandingConcern => !!c && typeof c === "object" && isText(c.q) && isText(c.a))
-    .map((c) => ({ q: c.q.trim(), a: c.a.trim() }));
+    .map((c) => ({ q: c.q.trim(), ...(isText(c.lead) ? { lead: c.lead.trim() } : {}), a: c.a.trim() }));
   const reading_list = (Array.isArray(l.reading_list) ? l.reading_list : [])
     .filter((x): x is LandingLink => !!x && typeof x === "object" && isText(x.title) && isHref(x.href))
     .map((x) => ({ title: x.title.trim(), href: x.href.trim() }));
@@ -165,6 +172,14 @@ export function stakeholderGate(): {
   const about = file.about_me;
   const aboutMe = about && isText(about.heading) && isText(about.text) ? { heading: about.heading, text: about.text } : null;
   return { approved, pages, notice: { ...DEFAULT_NOTICE, ...file.notice }, aboutMe };
+}
+
+/** The grid page's intro from the file, or null when it's missing or empty. */
+export function gridIntro(): GridIntro | null {
+  const raw = (stakeholdersJson as unknown as StakeholdersFile).grid_intro;
+  if (!raw || !isText(raw.heading) || !Array.isArray(raw.paragraphs)) return null;
+  const paragraphs = raw.paragraphs.filter(isText).map((p) => p.trim());
+  return paragraphs.length > 0 ? { heading: raw.heading.trim(), paragraphs } : null;
 }
 
 export function stakeholderSlugs(): string[] {

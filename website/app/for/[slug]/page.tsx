@@ -332,10 +332,12 @@ function Concerns({ concerns }: { concerns: LandingConcern[] }) {
         <ul className="for-qa-list">
           {concerns.map((c) => (
             <li key={c.q} className="for-qa-item">
-              <h3 className="for-qa-q">
-                <q>{c.q}</q>
-              </h3>
-              <p className="for-qa-a">{c.a}</p>
+              <h3 className="for-qa-q">{c.q}</h3>
+              <p className="for-qa-a">
+                {c.lead && <strong className="for-qa-lead">{c.lead}</strong>}
+                {c.lead && " "}
+                {c.a}
+              </p>
             </li>
           ))}
         </ul>

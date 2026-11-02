@@ -8,6 +8,15 @@
     "removal": "Ask and it's removed: reply to my LinkedIn message.",
     "privacy_label": "Read the privacy notice"
   },
+  "grid_intro": {
+    "heading": "A page for each of you",
+    "paragraphs": [
+      "As part of my research into Addvery, I tried to work out who a hire like me would actually need a yes from. I stuck to what's public: Addvery's website and the team's own LinkedIn profiles and posts. I landed on six people.",
+      "Each of you would judge a GTM engineer on something different. My guess: growth cares about pipeline, delivery about whether what I build still runs after handover, BI about where the numbers come from, and leadership about whether it pays for itself. So instead of one pitch for everyone, **each of you gets your own page**: what I think you'd ask, answered in your terms, plus a short reading list. (Old marketer habit: one reader per page.)",
+      "Honestly, **these are guesses from public information**. If I've read your role wrong, tell me -- I'd rather be corrected than right.",
+      "Find your page below."
+    ]
+  },
   "pages": [
     {
       "slug": "growth",
@@ -24,27 +33,27 @@
       },
       "why_now": {
         "heading": "The road to 1 billion CZK",
-        "how": "You're building the sales and marketing team from scratch, and the system under it, with AI agents from day one: CRM upkeep, contact capture, buying signals from job ads and news, and content. Salespeople are being hired. That makes now the time to build the system, before the team that runs on it arrives.",
+        "how": "You're building the sales and marketing team from scratch, and the system under it, with AI agents from day one: CRM upkeep, contact capture, buying signals from job ads and news, and content. The salespeople are being hired now. So now is when the system gets built, before the team that runs on it arrives.",
         "source": "your public LinkedIn posts of 18 and 30 to 31 October 2026, paraphrased."
       },
-      "note": "Five times the revenue means a pipeline that holds at five times the deals. That pipeline is what a GTM engineer builds, and I'd like to build it with you, so the salespeople you hire start with one that already runs. Each demo below is a first version of one piece of it.",
+      "note": "Five times the revenue means a pipeline that holds at five times the deals. Building that is a GTM engineer's job, and I'd like it to be mine, so the salespeople you hire walk into a system that already runs instead of building one between calls. Each demo below is a first version of one piece of it.",
       "note_is_draft": false,
       "demos": [
         {
           "n": 3,
-          "why": "36 outbound workflows built from Addvery's own industry pages, in English, Czech and German, each opening with a first message written for its lead."
+          "why": "36 workflows built from Addvery's own industry pages, in English, Czech and German, each opening with a first message written for its lead."
         },
         {
           "n": 1,
-          "why": "Prospect research at scale, the feed that buying signals from job ads and news run on."
+          "why": "Prospect research at scale, the feed your job-ad and news signals would run on."
         },
         {
           "n": 5,
-          "why": "Each starts as 15 minutes of talking and ends near-final, so a consultant's expertise becomes content without taking their week."
+          "why": "Each starts as 15 minutes of a consultant talking and ends near-final, so their expertise becomes content without eating their week."
         },
         {
           "n": 7,
-          "why": "Posts in Addvery's own voice, with checks built in, ready for a person to approve and post."
+          "why": "Posts in Addvery's own voice, checked and waiting for a person to approve. (I've written hundreds of LinkedIn posts myself, so I have opinions here.)"
         }
       ],
       "feed_roles": [
@@ -58,30 +67,34 @@
         "research-in"
       ],
       "ask": {
-        "short": "What to build first, on Tuesday",
-        "heading": "When we meet on Tuesday, could we start with which piece you'd want working first?",
-        "body": "If one stands out before then, a demo number in reply to my message is plenty."
+        "short": "What to build first, when we meet",
+        "heading": "When we meet, could we start with the piece you'd want working first?",
+        "body": "If one jumps out before then, send me its number and I'll have that one ready to walk through."
       },
       "sources": "Its facts come only from Addvery's public website, your public job title, and your public posts on the 1 billion CZK goal, including your reply to my comment.",
       "landing": {
         "approved": false,
-        "greeting": "Hi Ivana. Before we meet on Tuesday, I did some research on Addvery and on who would want a say in a role like this. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "greeting": "Hi Ivana. The short version before we meet: you're building a sales and marketing team and the system under it at once, and the system is the part I'd like to build with you. So I guessed your questions and answered them here, with the work behind each one.",
         "concerns": [
           {
-            "q": "I already run 14 agents. What would you add?",
-            "a": "I'd extend them, not replace them: from your agents' flag to a drafted first touch in your approval queue, then the booked meeting, the CRM stage and the attribution report."
+            "q": "You already run 14 agents. What would I add?",
+            "lead": "The links between them.",
+            "a": "Your agents flag a company; I'd build what happens next: a drafted first touch in your approval queue, the booked meeting, the CRM stage, the attribution report."
           },
           {
             "q": "Can it prove pipeline, or is it theatre?",
-            "a": "Nothing here sends, so it can't show pipeline yet. I'd propose a pilot measured in your terms: accounts enriched, replies, meetings, MQL to SQL."
+            "lead": "Not yet.",
+            "a": "Nothing here sends. I'd propose a pilot scored in your numbers -- accounts enriched, replies, meetings, MQL to SQL -- and if they don't move, we'll both see it."
           },
           {
             "q": "Who answers for each agent, and what does it cost?",
-            "a": "Every agent in this build has a written spec, one owner and a human approval step. Cost per agent gets logged from day one."
+            "lead": "One owner each, costs logged.",
+            "a": "Every agent in this build has a written spec, an owner and a human approval step. Cost per agent gets logged from day one, so each one earns its keep."
           },
           {
             "q": "A lot of this runs in Czech.",
-            "a": "My Czech is B1 to B2. I'd start with the English lanes (DACH, Asia, group-level buyers), and Czech copy goes through your review step."
+            "lead": "English lanes first.",
+            "a": "My Czech is B1 to B2, so I'd start with DACH, Asia and group-level buyers, and Czech copy goes through your review step."
           }
         ],
         "reading_list": [
@@ -98,7 +111,7 @@
             "href": "/d2"
           },
           {
-            "title": "Why this hackathon exists: my explainer video",
+            "title": "Why this hackathon exists: my explainer video, or why anyone would do this on camera",
             "href": "/#post-s02"
           },
           {
@@ -119,7 +132,7 @@
       "label": "Addvery's CEO",
       "title": "CEO & Business Consultant, Addvery",
       "framing": "What Alex Alderman would build for Addvery, seen from the CEO's chair, and what he'd need from you to make it real.",
-      "note": "You decide whether a GTM engineer earns a seat at Addvery, so this page shows the work instead of arguing for it. I built it in public in one day, with AI agents doing the legwork and me making the calls. Every piece is open to inspect, and all I'd need from you is which one to make real first.",
+      "note": "You decide whether a GTM engineer earns a seat at Addvery, so here are the economics in two lines. AI pays for itself by cutting labour costs or by growing revenue. I'd point it at revenue, so the whole team grows with it. All I'd need from you is which piece to make real first.",
       "note_is_draft": false,
       "demos": [
         {
@@ -132,7 +145,7 @@
         },
         {
           "n": 1,
-          "why": "Research on prospects at scale, so outreach starts from facts about the account, not guesses."
+          "why": "Research on prospects at scale, so outreach starts from facts about the account."
         }
       ],
       "feed_roles": [
@@ -146,32 +159,36 @@
       "ask": {
         "short": "The demo you'd want first",
         "heading": "Which of these would you want working at Addvery first?",
-        "body": "A demo number in reply to my LinkedIn message is enough. No reply is a fine answer too."
+        "body": "One demo number in reply to my LinkedIn message. That's the whole ask."
       },
       "landing": {
         "approved": false,
-        "greeting": "Hi Stepan. I've done some research on Addvery, and I know a role like this would need your yes. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "greeting": "Hi Stepan. I could have sent you a CV. Instead I spent one recorded day doing the job in public, since a role like this would need your yes. Here are my guesses at your questions, with the proof linked.",
         "concerns": [
           {
             "q": "Is this another AI-buzz hire?",
-            "a": "You've said a role at Addvery isn't a ride on the AI buzz. This site is the work itself, built in one recorded day, not a CV."
+            "lead": "I'd hold myself to your line.",
+            "a": "You've said a role at Addvery isn't a ride on the AI buzz. I've spent nine months doing nothing but building with Claude Code, and this site is the result. (Technically still a CV. A very long one, with a live feed.)"
           },
           {
             "q": "Where's something running that others can see?",
-            "a": "The site runs live: a dozen agents working from one written plan, with every decision logged in the open."
+            "lead": "Right here.",
+            "a": "A dozen agents built this site from one written plan, and every decision is logged in the open."
           },
           {
-            "q": "Can he swim without a lifeguard?",
-            "a": "The day ran on agents making the easy calls and me making the hard ones, and the log shows which was which."
+            "q": "Can I swim without a lifeguard?",
+            "lead": "That was the whole day.",
+            "a": "Agents made the easy calls, I made the hard ones, and the log shows which was which. The slowest part was decisions waiting on me."
           },
           {
             "q": "Czech and work authorisation.",
-            "a": "Ten years in the Czech Republic, long-term residency and a trade licence. My Czech is B1 to B2."
+            "lead": "Both covered.",
+            "a": "Over a decade in the Czech Republic, long-term residency and a trade licence. My Czech is B1 to B2."
           }
         ],
         "reading_list": [
           {
-            "title": "Seven hours in: my evening check-in, on video",
+            "title": "Seven hours in: my evening check-in, on video. Start here if you open one thing.",
             "href": "/#post-s11"
           },
           {
@@ -179,11 +196,11 @@
             "href": "/d3"
           },
           {
-            "title": "“The bottleneck is always human”: what the day taught me about running agents",
+            "title": "“The bottleneck is always human”: what the day taught me about running agents. Spoiler: the title gives it away.",
             "href": "/#post-insight-bottleneck"
           },
           {
-            "title": "The legibility analyzer: an agent that reports what changed",
+            "title": "The legibility analyzer: an agent that reports what changed, so nobody has to ask",
             "href": "/d9"
           },
           {
@@ -191,7 +208,8 @@
             "href": "/docs/charter"
           }
         ]
-      }
+      },
+      "sources": "Its facts come only from Addvery's public website, your public job title, and your public LinkedIn post of 21 September 2026 on hiring an AI Strategy Consultant."
     },
     {
       "slug": "cofounder-1",
@@ -200,7 +218,7 @@
       "label": "Addvery co-founder, Skygena CEO",
       "title": "Co-Founder & Advisor, Addvery · Co-Founder & CEO, Skygena",
       "framing": "What Alex Alderman would build for the Addvery group, and what he'd need from you to make it real.",
-      "note": "From a co-founder's seat, the question is whether something pays off across the whole group, not one team. The pipeline below doesn't have to stop at Addvery: the same profiles and routing could send each lead to the group company that fits it, whether that's consulting, IT, media or production AI. That's the version I'd want to build, if the group wanted one.",
+      "note": "From a co-founder's seat, the question is whether something pays off across the group. The pipeline below doesn't have to stop at Addvery: the same profiles and routing could send each lead to the group company that fits it, whether that's consulting, IT, media or production AI. One research layer feeding several pipelines is where the cost starts to make sense, and it's the version I'd build if the group wanted one.",
       "note_is_draft": false,
       "demos": [
         {
@@ -209,7 +227,7 @@
         },
         {
           "n": 9,
-          "why": "An agent that runs all day on the real recordings and tells the site what to add: a small, working case of AI past the pilot stage."
+          "why": "An agent that ran all day on the real build recordings and told the site what to add. Small, but working, and past the pilot stage."
         },
         {
           "n": 1,
@@ -228,23 +246,26 @@
       "ask": {
         "short": "Whether one fits the group",
         "heading": "Is one of these worth a look for the group?",
-        "body": "If so, reply to my LinkedIn message with its number. If none is, that's useful to know too."
+        "body": "If so, its number is all I need. If none is, that's a useful answer too, and it saves us both a meeting."
       },
       "landing": {
         "approved": false,
-        "greeting": "Hi Pavel. I've done some research on Addvery, and as a co-founder you'd want a say in a hire like this. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "greeting": "Hi Pavel. What goes into the model? It's the first thing I'd ask anyone doing AI work inside a company, so it's the first thing this page answers. The rest are my guesses at what a co-founder would want settled.",
         "concerns": [
           {
             "q": "What goes into the model?",
-            "a": "Public prospect data only. No client data in GTM tools, and no secrets in prompts or on screen. This whole build ran that way, on camera."
+            "lead": "Public prospect data only.",
+            "a": "No client data in GTM tools, no secrets in prompts or on screen, and this whole build ran that way on camera. (Less thrilling to watch. That's fine.)"
           },
           {
             "q": "Process first, then tools.",
+            "lead": "Same order here.",
             "a": "Every piece of this build started as a written spec before any agent ran."
           },
           {
-            "q": "Do AI builders belong at Skygena, not Addvery?",
-            "a": "I'm open to either. The same pipeline could route each lead to whichever group company fits it."
+            "q": "Does an AI builder belong at Skygena or at Addvery?",
+            "lead": "Either works for me.",
+            "a": "I don't know which it should be, and that's the group's call. The same pipeline could route each lead to whichever group company fits it."
           }
         ],
         "reading_list": [
@@ -278,7 +299,7 @@
       "label": "Addvery co-founder, iMEDIATIC CEO",
       "title": "Advisor & Co-founder, Addvery · Co-Founder & CEO, iMEDIATIC",
       "framing": "What Alex Alderman would build for the group's marketing work, and what he'd need from you to make it real.",
-      "note": "iMEDIATIC is the group's media agency, so this page looks at what I could make for an agency's clients, not only for Addvery. Brand templates, articles from an expert's own words and posts in a company's own voice get made for client after client. I built each one here for Addvery, in a way that could be pointed at another brand.",
+      "note": "iMEDIATIC is the group's media agency, so I looked at what an agency makes for client after client: brand templates, articles from an expert's own words, posts in a company's own voice. I built each one for Addvery, in a way that could be pointed at another brand. I've freelanced for ten years and haven't yet built this inside a company with a real CRM and real IT restrictions. A fixed-scope pilot is the cheapest way for both of us to find out how it holds up there.",
       "note_is_draft": false,
       "demos": [
         {
@@ -306,23 +327,26 @@
       "ask": {
         "short": "The demo that would suit a client",
         "heading": "Which of these would you want to see working for an iMEDIATIC client?",
-        "body": "One line in reply to my LinkedIn message is plenty."
+        "body": "Name the one, and the pilot gets built around it."
       },
       "landing": {
         "approved": false,
-        "greeting": "Hi Lukáš. I've done some research on Addvery and iMEDIATIC, and as a co-founder you'd want a say in a hire like this. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "greeting": "Hi Lukáš. Nobody should pay for a seat on faith, mine included, so I'm open to starting with a fixed-scope, paid pilot. I've looked at Addvery and iMEDIATIC, and your likely questions are next, with plain answers.",
         "concerns": [
           {
-            "q": "We don't pay for a seat that sits idle.",
-            "a": "I'm open to a fixed-scope, paid pilot first, shaped like iMEDIATIC's own Health Check, with the deliverables named up front."
+            "q": "A seat that sits idle is a cost.",
+            "lead": "Fixed scope, named deliverables.",
+            "a": "I'd shape the pilot like iMEDIATIC's own Health Check, with every deliverable named before it starts. (Ten years of freelancing taught me that one.)"
           },
           {
             "q": "What pipeline has this generated?",
-            "a": "None yet: nothing here sends. A pilot would be measured in meetings and pipeline."
+            "lead": "None yet.",
+            "a": "Nothing here sends. A pilot would be measured in meetings and pipeline, not in how clever the workflows look."
           },
           {
             "q": "Czech clients, Czech team.",
-            "a": "My Czech is B1 to B2. I'd start where English works, and Czech copy goes through a native reviewer."
+            "lead": "B1 to B2, with a native reviewer.",
+            "a": "I'd start where English works, and Czech copy gets checked by a native speaker before it goes anywhere."
           }
         ],
         "reading_list": [
@@ -364,7 +388,7 @@
       "label": "Addvery's Chief Delivery Officer",
       "title": "Chief Delivery Officer, Addvery",
       "framing": "What Alex Alderman would build for delivery at Addvery, and what he'd need from you to make it real.",
-      "note": "Whatever a GTM system sells, delivery has to carry, so I ran this hackathon like a small engagement: a written charter, one spec per piece of work, and a live page showing where everything stands. The same setup could run beside a client project. Your read on where it would hold up is what I'd need to make it real.",
+      "note": "Whatever a GTM system sells, delivery has to carry. So I ran this hackathon like a small engagement: a written charter, one spec per piece of work, a live page showing where everything stands. (Twelve hours, one very demanding client: me.) The same setup could run beside a client project, and you'd know better than me where it would hold up.",
       "note_is_draft": false,
       "demos": [
         {
@@ -373,11 +397,11 @@
         },
         {
           "n": 8,
-          "why": "A live picture of a project: every piece of work, its status and what changed, updated as it moves."
+          "why": "A live picture of a project: every piece of work, its status and what changed, updated as it moves. You're looking at it."
         },
         {
           "n": 5,
-          "why": "Each starts as 15 minutes of talking. The same route turns an end-of-project debrief into a near-final case study."
+          "why": "Each starts as 15 minutes of talking. Same route, different input: an end-of-project debrief in, a near-final case study out."
         }
       ],
       "feed_roles": [
@@ -391,23 +415,26 @@
       "ask": {
         "short": "Where a live project page helps",
         "heading": "Where would a live project page like this help on a client project, and where would it get in the way?",
-        "body": "A couple of lines in reply to my LinkedIn message would shape what I build next."
+        "body": "The “get in the way” half is the more useful one."
       },
       "landing": {
         "approved": false,
-        "greeting": "Hi Milos. I've done some research on Addvery, and anything like this would pass your bar for delivery. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "greeting": "Hi Milos. I'd expect you to judge this the way you'd judge any engagement: what got delivered, by when, and who answered for it. That's what this page tries to show.",
         "concerns": [
           {
             "q": "Native Czech or Slovak, and Czech work authorisation.",
-            "a": "Ten years in the Czech Republic, long-term residency and a trade licence. My Czech is B1 to B2, and the role I'd do builds systems rather than Czech client deliverables."
+            "lead": "Authorisation yes, native Czech no.",
+            "a": "Over a decade in the Czech Republic, long-term residency and a trade licence; my Czech is B1 to B2. The work I'd do is building systems, which doesn't need native Czech."
           },
           {
             "q": "Has it run in production?",
-            "a": "This site has run live all day, built by a dozen agents from one written plan. A pilot would have one stated deliverable within weeks, your own bar."
+            "lead": "This site has, since the build day.",
+            "a": "A dozen agents built it from one written plan. A pilot would have one stated deliverable within weeks, your own bar."
           },
           {
             "q": "Who's accountable for agent output?",
-            "a": "Every agent here has a written spec, one owner and a human approval step, and every decision it took is logged."
+            "lead": "A named person.",
+            "a": "Every agent here has a written spec, one owner and a human approval step, and its decisions are logged. (So far the name next to every one of them is mine.)"
           }
         ],
         "reading_list": [
@@ -424,7 +451,7 @@
             "href": "/#post-handovers"
           },
           {
-            "title": "The plan the agents worked from",
+            "title": "The plan the agents worked from: basically the statement of work",
             "href": "/docs/charter"
           },
           {
@@ -441,7 +468,7 @@
       "label": "Addvery's Head of BI",
       "title": "Head of Business Intelligence, Addvery",
       "framing": "What Alex Alderman would build for business intelligence at Addvery, and what he'd need from you to make it real.",
-      "note": "Every pipeline ends in a report, and the report is what says whether the rest worked. Addvery connects client funnels from first click to signed contract; the demos below are the first steps of that funnel for Addvery's own new business. I'd want their numbers to land wherever your team already works, not in a new tool.",
+      "note": "The report is what says whether a pipeline was worth paying for, right? Addvery connects client funnels from first click to signed contract; the demos below are the first steps of that funnel, pointed at Addvery's own new business. I'd want their numbers landing where your team already works.",
       "note_is_draft": false,
       "demos": [
         {
@@ -450,11 +477,11 @@
         },
         {
           "n": 3,
-          "why": "36 workflows, one per customer profile, language and approach: the segments a pipeline report would break down by."
+          "why": "36 workflows: four customer profiles × three languages × three approaches, the segments a pipeline report would break down by."
         },
         {
           "n": 9,
-          "why": "An agent that turns hours of raw recordings into short, structured updates: unstructured data in, something countable out."
+          "why": "An agent that turns hours of raw recordings into short, structured updates. (Given how much I ramble on camera, that's a real data-cleaning job.)"
         }
       ],
       "feed_roles": [
@@ -469,23 +496,26 @@
       "ask": {
         "short": "Where the numbers should land",
         "heading": "Where would you want the pipeline's numbers to land?",
-        "body": "Name the tool or the report in reply to my LinkedIn message, and I'll build toward it."
+        "body": "Name the tool or the report, and I'll build to fit it, not the other way round."
       },
       "landing": {
         "approved": false,
-        "greeting": "Hi David. I've done some research on Addvery, and any GTM system would feed the data your team owns. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "greeting": "Hi David. Every GTM system I'd build ends up as rows in a report, and at Addvery those rows would feed the data your team owns. So you'd be the one to tell me whether they can be trusted.",
         "concerns": [
           {
             "q": "Where does the data come from, and is it GDPR-safe?",
-            "a": "Public sources only, and every number on the research pages names its source. Minimum data, with opt-outs handled."
+            "lead": "Public sources only.",
+            "a": "Every number on the research pages names its source. Minimum data, opt-outs handled. No source, no field."
           },
           {
-            "q": "Is he a data person?",
-            "a": "I'm a GTM engineer, not a data scientist. I'd want the pipeline's numbers to land in the tools your team already uses, not in a new one."
+            "q": "Am I a data person?",
+            "lead": "No.",
+            "a": "I'm a GTM engineer who came up through B2B marketing. I'd want the pipeline's numbers in the tools your team already uses, built to your standards."
           },
           {
             "q": "Brno works in Czech.",
-            "a": "My Czech is B1 to B2. I'm in Prague and can travel."
+            "lead": "I'd come to you.",
+            "a": "My Czech is B1 to B2. I'm in Prague, and Brno is a train ride away."
           }
         ],
         "reading_list": [
@@ -494,7 +524,7 @@
             "href": "/d1"
           },
           {
-            "title": "How I read Addvery: org charts as counts, never names",
+            "title": "How I read Addvery: org charts as counts, with no names",
             "href": "/d2"
           },
           {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Reveal } from "../motion";
-import { portraitFor, stakeholderGate, titleLines } from "../stakeholders";
+import { gridIntro, portraitFor, stakeholderGate, titleLines } from "../stakeholders";
 import "../article.css";
 import "./for.css";
 
@@ -28,9 +28,17 @@ function ArrowIcon() {
   );
 }
 
+/** "one **two** three" -> one <strong>two</strong> three. */
+function withBold(text: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
+
 export default function ForIndex() {
   const { approved, pages, notice } = stakeholderGate();
   if (pages.length === 0) notFound();
+  // The intro is s-d7's copy from content/stakeholders.json (`grid_intro`); the old one-line lead is
+  // only the fallback.
+  const intro = gridIntro();
 
   return (
     <main className="art art-for for-index">
@@ -39,16 +47,29 @@ export default function ForIndex() {
           {!approved && (
             <p className="sh-draft-strip">Draft for Alex&apos;s review · local only, not on the live site</p>
           )}
-          <div className="for-head">
-            <h1 id="for-title" className="art-h1">
-              Six people at Addvery, one page each
-            </h1>
-            <p className="art-hero-lead">
-              I&apos;m Alex Alderman, and I&apos;m applying to Addvery as a GTM engineer. Each page is written for one
-              person: what I&apos;d build for their part of the business, and the one thing I&apos;d ask them. Pick a
-              portrait to open it.
-            </p>
-          </div>
+          {intro ? (
+            <div className="for-head for-intro">
+              <h1 id="for-title" className="art-h1">
+                {intro.heading}
+              </h1>
+              {intro.paragraphs.map((p, i) => (
+                <p key={i} className="art-hero-lead">
+                  {withBold(p)}
+                </p>
+              ))}
+            </div>
+          ) : (
+            <div className="for-head">
+              <h1 id="for-title" className="art-h1">
+                Six people at Addvery, one page each
+              </h1>
+              <p className="art-hero-lead">
+                I&apos;m Alex Alderman, and I&apos;m applying to Addvery as a GTM engineer. Each page is written for
+                one person: what I&apos;d build for their part of the business, and the one thing I&apos;d ask them.
+                Pick a portrait to open it.
+              </p>
+            </div>
+          )}
 
           <h2 className="sr-only">The six pages</h2>
           <ul className="for-grid">

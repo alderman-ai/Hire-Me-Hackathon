@@ -39,6 +39,16 @@
   text-transform: none;
 }
 
+/* s-d7's intro: four short paragraphs under the heading, the bold phrases in white. */
+.for-intro .art-hero-lead + .art-hero-lead {
+  margin-top: 1rem;
+}
+
+.for-intro strong {
+  color: var(--av-white, #fff);
+  font-weight: 500;
+}
+
 /* ---------- /for: the grid of six (Addvery's team cards) ---------- */
 
 .for-grid {
@@ -547,7 +557,7 @@
   border-bottom: 1px solid var(--av-lilac-300, #e3dfea);
 }
 
-/* Their question, in their voice: quoted, with the opening mark hung in the margin. */
+/* The question as Alex guesses it: bold, unquoted. */
 .for-qa-q {
   max-width: 40rem;
   margin: 0;
@@ -557,12 +567,13 @@
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  text-indent: -0.42em;
   text-wrap: balance;
 }
 
-.for-qa-q q {
-  quotes: "\201C" "\201D";
+/* His position, two to six words, so a skimmer gets the answer. */
+.for-qa-lead {
+  color: var(--av-ink, #151515);
+  font-weight: 600;
 }
 
 /* Alex's answer, on the article list rule. */
