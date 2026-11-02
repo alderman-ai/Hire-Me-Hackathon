@@ -94,7 +94,7 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
 
-C01 and C02 went out together as `Operator tasks\OT-02 Gate approval S2 charter changes C01 C02.md` (2 Nov); their records are in `changes\`.
+C01 and C02 went out together as `Operator tasks\Approve - Addvery research is yours, reading lists per demo.md` (OT-02, 2 Nov); their records are in `changes\`.
 
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |

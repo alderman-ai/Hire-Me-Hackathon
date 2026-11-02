@@ -3,7 +3,7 @@
 Status: planned
 Skill: `propagate`, from S2's own work on an operator answer (no outline-row operation: the S1 row is reworded in place)
 Asked by: the operator, through his intake answer (SPEC section 4, "What S2 accepts", item 1)
-Planned: 2 Nov · Preview: `Operator tasks\OT-02 Gate approval S2 charter changes C01 C02.md`, together with C01 · New ids: none
+Planned: 2 Nov · Preview: `Operator tasks\Approve - Addvery research is yours, reading lists per demo.md` (OT-02), together with C01 · New ids: none
 
 **Approval, verbatim:**
 - A4.2 (DI-4 Q4.2, `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md`): "Reading lists go into the executable specs, which are not written yet, or at least to my knowledge. Again consult the knowledge work executable spec in my GitHub. Look how it handles research and specs and everything, and go ahead and model the research section after that,"

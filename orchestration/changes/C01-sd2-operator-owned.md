@@ -3,7 +3,7 @@
 Status: planned
 Skill: `change-outline`, operator-owned
 Asked by: the operator, through his intake answers (SPEC section 4, "What S2 accepts", item 1)
-Planned: 2 Nov · Preview: `Operator tasks\OT-02 Gate approval S2 charter changes C01 C02.md`, together with C02 · New ids: none
+Planned: 2 Nov · Preview: `Operator tasks\Approve - Addvery research is yours, reading lists per demo.md` (OT-02), together with C02 · New ids: none
 
 **Approval, verbatim:**
 - A2.2 (DI-2 Q2.2, `Operator tasks\Archive\DI-2 S0 Bootstrap preflight.md`): "I own this subdirectory. I'm going to be heavily involved in this and we don't need any spec from the project orchestrator from the charter. I'm going to handle this one-on-one and it's also going to be ignored just so we're not posting, even though it's public information inside. I'm handling this so the project orchestrator subdirectory can ignore this for now. I'll let it know or it can check just by the contents. Important: it'll be getting ignored from the public repo so the orchestrator needs that information. It needs to get it from the local machine not the GitHub repo"
