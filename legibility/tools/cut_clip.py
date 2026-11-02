@@ -10,7 +10,8 @@ Usage (from anywhere):
   frames for the frame check in legibility\\clips\\<name>_frames\\ (one every 2 s),
   and the transcript for the clip's range in legibility\\clip-transcripts\\<name>.md.
 - --pad: seconds added before and after (default 3, DI-1 Q1.10).
-- --screen: cut the screen recording instead of the webcam (DoD-13 and DoD-21 clips only).
+- --screen: cut the screen recording instead of the webcam (DoD-13 and DoD-21 clips, or held cuts).
+- --blur FROM:TO: with --screen, blur the whole frame over that range (screen seconds); repeatable.
 
 The webcam is a set of ~15-minute MKV chunks, each with a wall-clock start in the
 session's manifest.json. A screen time maps to wall time through the manifest's
@@ -67,9 +68,10 @@ def run(cmd: list[str]) -> None:
         sys.exit("ffmpeg failed:\n" + r.stderr[-2000:])
 
 
-def encode(src: Path, offset: float, length: float, out: Path) -> None:
+def encode(src: Path, offset: float, length: float, out: Path, vf_extra: str = "") -> None:
+    vf = "scale=-2:720" + (("," + vf_extra) if vf_extra else "")
     run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{offset:.3f}", "-i", str(src),
-         "-t", f"{length:.3f}", "-vf", "scale=-2:720", "-c:v", "libx264", "-preset", "veryfast",
+         "-t", f"{length:.3f}", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
          "-crf", "22", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
          "-movflags", "+faststart", str(out)])
 
@@ -98,6 +100,8 @@ def main() -> None:
     ap.add_argument("name")
     ap.add_argument("--pad", type=float, default=3.0)
     ap.add_argument("--screen", action="store_true")
+    ap.add_argument("--blur", action="append", default=[],
+                    help="screen cuts only: FROM:TO in screen seconds, blurred over the whole frame")
     args = ap.parse_args()
     if args.end <= args.start:
         sys.exit("end must be after start")
@@ -109,7 +113,11 @@ def main() -> None:
     out = CLIPS / f"{args.name}.mp4"
 
     if args.screen:
-        encode(Path(manifest["video"]), a, b - a, out)
+        blurs = []
+        for spec in args.blur:
+            f, t = (float(x) for x in spec.split(":"))
+            blurs.append(f"boxblur=24:6:enable='between(t,{max(0.0, f - a):.2f},{max(0.0, t - a):.2f})'")
+        encode(Path(manifest["video"]), a, b - a, out, ",".join(blurs))
     else:
         pieces = webcam_pieces(manifest, screen_to_wall(manifest, a), screen_to_wall(manifest, b))
         if len(pieces) == 1:
