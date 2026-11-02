@@ -403,6 +403,7 @@ From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
 Received: 2026-11-02 14:42 CET (+01:00)
 14:42 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing is blocked on it).
 14:44 CET: orchestration handed off to a fresh session under the same name (new address uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de); it watches this task silently. Nothing from the desk was awaiting its reply.
+17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
 
 ```
 TASK S2: Approve - Addvery research is yours, reading lists per demo is waiting on you: two updates to the project plan (the Addvery research and brand capture are your own work, and each demo gets its own reading list). It's low priority now: nothing is blocked on it, so no pokes.
@@ -448,11 +449,12 @@ Deadline: 15:07
 **Affects:** one script on every page, and whether anyone can later see who visited and when.
 ```
 
-## TASK S1: Approve - research for the GetSales demo and website.md — open
+## TASK S1: Approve - research for the GetSales demo and website.md — done
 From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
 Received: 2026-11-02 14:53 CET (+01:00)
 14:53 CET: alert shown to Alex.
 15:00 CET: s1-research handed off to a fresh session under the same name; it watches this task and sends TASK DONE.
+17:06 CET: TASK DONE from orchestration (Alex in chat: "If things are an easy judgment please clear the plate for me. We can just make edits later."; archived in commit 55d81e5); marked done.
 
 ```
 TASK S1: Approve - research for the GetSales demo and website.md is waiting on you: one tick approves five research questions for the GetSales demo and the website (plus wildcards). About a 3-minute read; answer by about 15:20 so both sessions get findings by 16:30.
@@ -469,30 +471,33 @@ Received: 2026-11-02 14:54 CET (+01:00)
 TASK S1: Approve - research for the blog pipeline.md is waiting on you: four research questions (plus wildcards) for the blog pipeline and the three articles. About a 2-minute read; not blocking, because the blog session drafts the test post anyway, but findings by 16:00 would shape it.
 ```
 
-## TASK S-D9: Approve - the plan for the site's build updates.md — open
+## TASK S-D9: Approve - the plan for the site's build updates.md — done
 From: s-d9-legibility (uds:\.\pipe\LOCAL\cc-msg-1604f017e0f4acd39e77fbf8793e2008)
 Received: 2026-11-02 15:01 CET (+01:00)
 15:01 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing waits on it).
+17:06 CET: TASK DONE from orchestration (Alex in chat: "If things are an easy judgment please clear the plate for me. We can just make edits later."; archived in commit 55d81e5); marked done.
 
 ```
 TASK S-D9: Approve - the plan for the site's build updates.md is waiting on you: how the site's build updates are chosen, and their definition of done. Nothing waits on it, about 5 minutes. It also holds three optional one-line questions with defaults: how the GetSales clip hides the six, whether the site shows how it runs itself, and how the site talks about the AI.
 ```
 
-## TASK S-D1: Approve - the scraping demo plan.md — replaced
+## TASK S-D1: Approve - the scraping demo plan.md — done
 From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
 Received: 2026-11-02 15:04 CET (+01:00)
 15:04 CET: alert shown to Alex.
 15:43 CET: s-d1-scraping: file updated at 15:43 (choice 1 now reflects the two LinkedIn scrapers run so far; recommends "crawl: yes", a cents-cheap Apify crawl of Addvery's website run by Alex's research session; ticking still takes the defaults, no new run). Repeated alert in the window; no PushNotification during the break.
 16:38 CET: replaced by "Approve - what the scraping demo section shows.md"; ticking that one approves this plan too, so Alex can skip this one.
+17:06 CET: TASK DONE from orchestration (Alex in chat: "If things are an easy judgment please clear the plate for me. We can just make edits later."; archived in commit 55d81e5); marked done.
 
 ```
 TASK S-D1: Approve - the scraping demo plan.md is waiting on you: the plan for the site's scraping page (what done means, result-first layout, and three choices with defaults: LinkedIn, a Clay line, a video); about 3 minutes, and ticking the box takes all defaults; unblocks drafting the page the moment your summary is ready.
 ```
 
-## TASK website: Approve - the plan for the website.md — open
+## TASK website: Approve - the plan for the website.md — done
 From: website (uds:\.\pipe\LOCAL\cc-msg-c2cdddc2a6d547bc99d718dc7e58bdd5)
 Received: 2026-11-02 15:08 CET (+01:00)
 15:08 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing is blocked).
+17:06 CET: TASK DONE from orchestration (Alex in chat: "If things are an easy judgment please clear the plate for me. We can just make edits later."; archived in commit 55d81e5); marked done.
 
 ```
 TASK website: Approve - the plan for the website.md is waiting on you: the website's plan and its definition of done, with four small choices on defaults (stay on the free Vercel plan, no outside cold read, one layout for demo pages, the rule for the six stakeholder pages). About 3 minutes. Nothing is blocked, and from 18:00 the plan runs as written.
@@ -702,10 +707,11 @@ Received: 2026-11-02 16:32 CET (+01:00)
 POKE S1: thanks for the Canva and LinkedIn research, it's running. Two research approvals still wait on you, one tick each: "Approve - research for the GetSales demo and website.md" (since 14:54; the sessions are carrying on with drafts) and "Approve - research for the blog pipeline.md" (since 14:57; non-blocking).
 ```
 
-## TASK S2: Do - get the computer ready for tonight.md — open
+## TASK S2: Do - get the computer ready for tonight.md — done
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
 Received: 2026-11-02 16:34 CET (+01:00)
 16:34 CET: alert shown to Alex with a PushNotification.
+17:06 CET: TASK DONE from orchestration (Alex in chat: "If things are an easy judgment please clear the plate for me. We can just make edits later."; archived in commit 55d81e5); marked done.
 
 ```
 TASK S2: Do - get the computer ready for tonight.md is waiting on you: five quick steps, about 5 minutes, ideally by 17:45 (keep the PC awake, pause Windows updates for a week, check /usage and decide on usage credits, pin four sessions, a yes or no on one retry setting). It keeps the background sessions working overnight instead of stopping.
@@ -726,6 +732,7 @@ I'm filling in all of the operator tasks now and they just keep coming in. Make 
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
 Received: 2026-11-02 16:37 CET (+01:00)
 16:37 CET: alert shown to Alex as low priority; no PushNotification (sender: low priority, no pokes).
+17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
 
 ```
 TASK S2: Approve - three small charter fixes.md is waiting on you: three wording fixes so the project plan matches your answers (what "nothing sensitive is published" means, and the GetSales demo in your model). Low priority, about 2 minutes, no pokes; if it's still open at 18:00 all three are applied and logged.
@@ -736,16 +743,18 @@ From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
 Received: 2026-11-02 16:38 CET (+01:00)
 16:38 CET: alert shown to Alex with a PushNotification. Replaces "Approve - the scraping demo plan.md".
 16:44 CET: s-d1-scraping: updated at 16:45 with Alex's 16:41 changes (speaks to the reader he named; links to his research page /d2; named people go through the stakeholder-page approval; copywriting pass). Waiting on his tick again, deadline 18:00. Alert repeated; no PushNotification (Alex is at the desk).
+17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
 
 ```
 TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: the whole scraping page, exactly as it would go live (about 5 minutes; tick to publish, and anything in the feedback section applies too). It replaces "Approve - the scraping demo plan" too: ticking this one approves that plan as well, so he can skip it. Deadline 18:00 to go live today.
 ```
 
-## S2-Q1 — open
+## S2-Q1 — withdrawn
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
 Received: 2026-11-02 16:39 CET (+01:00)
 16:39 CET: shown to Alex.
 16:46 CET: orchestration handed off to a fresh session under the same name (new address uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678); S2-Q1 stays open, answer goes to orchestration as usual. Nothing to re-send.
+17:06 CET: WITHDRAW S2-Q1 from orchestration (Alex said in chat they work all night; the Canva video is filmed tonight once the templates are in Canva); noted in qa\S2.md.
 
 ```
 ASK S2-Q1
@@ -770,6 +779,7 @@ Deadline: 17:00
 From: website (uds:\.\pipe\LOCAL\cc-msg-c2cdddc2a6d547bc99d718dc7e58bdd5)
 Received: 2026-11-02 16:46 CET (+01:00)
 16:46 CET: alert shown to Alex; no PushNotification (Alex is at the desk).
+17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
 
 ```
 TASK website: Decide - the six stakeholder pages on the site.md is waiting on you: six quick choices on Addvery's six key people's pages. Named or role-titled, and how public; whether their text enters the public repo; when you review them; who writes each note; what the site leads with; and what happens on a no. About 12 minutes, each with a default. Nothing about the six goes live until you approve the pages separately.
@@ -800,5 +810,18 @@ Received: 2026-11-02 16:47 CET (+01:00)
 
 ```
 HOLD from orchestration, 16:47, on Alex's direct instruction: the project pauses for a reset, and everything restarts together once he and I have been through every open item. Until I send RESTART: put nothing new in front of Alex. No new questions shown, no pokes, no TASK alerts, no reminders. Keep everything you've queued; don't drop or answer anything. Reply to orchestration with your whole queue in one message: every question id on the desk or waiting behind it (asker, id, one-line title, its deadline), and every TASK alert you've raised that hasn't had a TASK DONE (asker, file name). I'm putting it all in front of Alex myself as one list.
+```
+
+## NOTE from orchestration — 17:06
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
+17:06 CET: Alex told orchestration in chat to clear his plate ("If things are an easy judgment please clear the plate for me. We can just make edits later."). Eight TASK DONE lines received (archived in commit 55d81e5): five newly marked done above; S-D3 x2 and S-D4 were already done. S2-Q1 withdrawn. Stale pokes for OT-01 and OT-02: nothing open to drop (both tasks were already done; pokes are records only).
+
+## TASK S2: Decide - everything left that needs you.md — open
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
+Received: 2026-11-02 17:06 CET (+01:00)
+17:06 CET: the one item allowed through the hold; shown to Alex, nothing else. No PushNotification (he knows about it from orchestration's chat). It replaces every other open item; those stay open here until their TASK DONE arrives.
+
+```
+TASK S2: Decide - everything left that needs you.md is waiting on you: the single intake for the reset (the six confirmed, four questions about Alex, publishing the scraping page, the GetSales video's scope, the Canva video, the stakeholder pages). It replaces every other open item. This is the one item allowed through the hold: show Alex this TASK and nothing else. He already knows about it from my chat, so no pokes. The scraping page's own approval file is folded into it as Q10.6; I'll close that one.
 ```
 
