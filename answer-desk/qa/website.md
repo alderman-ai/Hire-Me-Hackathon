@@ -53,3 +53,30 @@ Deadline: 13:19
 ```
 
 **Answer:** Okay yeah. From the live site, yes, the lip syncing is fine
+
+## website-Q3 — The public GitHub repo shows the Apify proposal and a contact's name
+Asked 2026-11-02 14:19 CET · answered at 2026-11-02 14:20 CET
+
+```
+ASK website-Q3
+Critical: no
+Deadline: 14:33
+
+## website-Q3 — The public GitHub repo shows the Apify proposal and a contact's name
+
+**The question:** The project's public GitHub repo has the charter and specs unredacted. Do you want anything done about it?
+
+**Context you need.** The repo github.com/alderman-ai/Hire-Me-Hackathon is public, and the charter has been in it since 12:46. The charter's own risk rule says: "keep the Apify proposal and the operator's own GetSales outbound off screen". The public charter still mentions "the Apify proposal", "Screen care around the recent proposal", that the D3 live run goes "through the operator's own sender profile" to the six stakeholders, and asks "Does Ivana still get a view-only GetSales account". The S1 research spec says "Never open the Apify proposal or Alex's own GetSales outbound." On the website I publish the charter and the S0 to S2 specs as you asked, with exactly those lines redacted, and I don't link to GitHub. Anyone who finds the repo can still read the originals.
+
+**Options.**
+- (a) Leave it: they're only mentions, not the proposal or the outbound itself. (Recommended: lowest cost, and the site doesn't point anyone to the repo.)
+- (b) Ask orchestration to reword those lines in CHARTER.md and research\SPEC.md. Future readers won't see them, but git history keeps the old text.
+- (c) Make the repo private. Fully hidden, but it ends "public repo from the first commit", which the S01 story mentions.
+- (d) Something else — say what.
+
+**If unanswered by the deadline:** before 18:00 I keep waiting and poke; from 18:00 I take (a) and change nothing.
+
+**Affects:** only the GitHub repo. The website's copies are already redacted.
+```
+
+**Answer:** a

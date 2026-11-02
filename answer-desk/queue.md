@@ -230,3 +230,49 @@ Received: 2026-11-02 14:02 CET (+01:00)
 TASK S2: DI-5 S2 DoD sign-off is waiting on you: sign off the project definition of done (22 items, DoD-1 to DoD-22). Answer A, B or C in Operator tasks in Obsidian, then say DI-5 is ready. Signing it off lets wave 2 start.
 ```
 
+## TASK S1: OT-01 Gate approval parent research list.md — open
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
+Received: 2026-11-02 14:11 CET (+01:00)
+14:11 CET: alert shown to Alex.
+
+```
+TASK S1: OT-01 Gate approval parent research list.md is waiting on you: approve or change the parent research list L-01, four questions plus three wildcards that every wave-2 spec reads. Approving starts the research; orchestration needs the findings by 16:00 Prague.
+```
+
+## TASK S2: OT-02 Gate approval S2 charter changes C01 C02 — open
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
+Received: 2026-11-02 14:18 CET (+01:00)
+14:18 CET: alert shown to Alex.
+
+```
+TASK S2: OT-02 Gate approval S2 charter changes C01 C02 is waiting on you: approve the first two charter changes. C01 makes the D2 row (Addvery research and brand capture) yours, with no spec. C02 turns the charter's research reading list into a pointer to each spec's own list. Tick I approve, or write what to change. It clears the last consistency gap before the outline sign-off that starts wave 2.
+```
+
+## website-Q3 — answered
+From: website (uds:\.\pipe\LOCAL\cc-msg-a51a96108d1ef1c1345765adb1f2c425)
+Received: 2026-11-02 14:19 CET (+01:00)
+14:19 CET: shown to Alex.
+14:20 CET: answered; recorded in qa\website.md and sent to website.
+
+```
+ASK website-Q3
+Critical: no
+Deadline: 14:33
+
+## website-Q3 — The public GitHub repo shows the Apify proposal and a contact's name
+
+**The question:** The project's public GitHub repo has the charter and specs unredacted. Do you want anything done about it?
+
+**Context you need.** The repo github.com/alderman-ai/Hire-Me-Hackathon is public, and the charter has been in it since 12:46. The charter's own risk rule says: "keep the Apify proposal and the operator's own GetSales outbound off screen". The public charter still mentions "the Apify proposal", "Screen care around the recent proposal", that the D3 live run goes "through the operator's own sender profile" to the six stakeholders, and asks "Does Ivana still get a view-only GetSales account". The S1 research spec says "Never open the Apify proposal or Alex's own GetSales outbound." On the website I publish the charter and the S0 to S2 specs as you asked, with exactly those lines redacted, and I don't link to GitHub. Anyone who finds the repo can still read the originals.
+
+**Options.**
+- (a) Leave it: they're only mentions, not the proposal or the outbound itself. (Recommended: lowest cost, and the site doesn't point anyone to the repo.)
+- (b) Ask orchestration to reword those lines in CHARTER.md and research\SPEC.md. Future readers won't see them, but git history keeps the old text.
+- (c) Make the repo private. Fully hidden, but it ends "public repo from the first commit", which the S01 story mentions.
+- (d) Something else — say what.
+
+**If unanswered by the deadline:** before 18:00 I keep waiting and poke; from 18:00 I take (a) and change nothing.
+
+**Affects:** only the GitHub repo. The website's copies are already redacted.
+```
+
