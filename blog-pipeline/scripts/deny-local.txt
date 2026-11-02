@@ -1,0 +1,15 @@
+# Blog pipeline deny list, read by scan.py on top of the website's own DENY list
+# (the DENY = [...] list in website\scripts\sync_docs.py, read but never run).
+#
+# Format: one term per line, matched case-insensitively anywhere in the text,
+# including inside longer words; the spaces in a term match any run of
+# whitespace, line breaks included. Lines starting with # are comments; blank
+# lines are ignored. A hit is a fail: the editor rewords or cuts it.
+#
+# Keep terms that mustn't reach a published post: anything of the Apify
+# proposal, and the operator's own GetSales outbound (his sender profile, his
+# own outreach messages, who the live run targets).
+apify proposal
+getsales outbound
+sender profile
+connection note

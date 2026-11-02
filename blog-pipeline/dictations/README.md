@@ -8,4 +8,4 @@ What lives here:
 - `T-01.md`: the test dictation, copied in from your dictation task (or your note) and scanned before it's committed. Every later dictation gets the next number.
 - `README.md`: this file.
 
-Everything in this folder is committed to the public repo after the safety scan (no secrets, nothing of the Apify proposal, nothing of your own GetSales outreach). If you say something that mustn't be published, the scan cuts it from the post and the session keeps that stretch of the recording off the site.
+Everything in this folder is committed to the public repo after the safety scan (no secrets, no names of clients or people, nothing confidential from your client work or your own outreach). If you say something that mustn't be published, the scan cuts it from the post and the session keeps that stretch of the recording off the site.
