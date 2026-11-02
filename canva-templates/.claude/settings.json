@@ -1,8 +1,6 @@
 {
   "claudeMdExcludes": [
     "**/Hire me hackaton/CLAUDE.md",
-    "**/Hire me hackaton/_templates/**/CLAUDE.md",
-    "**/Hire me hackaton/_templates/**/AGENTS.md",
     "**/Hire me hackaton/Addvery Research/**/CLAUDE.md",
     "**/Hire me hackaton/Addvery Research/**/AGENTS.md",
     "**/Hire me hackaton/answer-desk/**/CLAUDE.md",
