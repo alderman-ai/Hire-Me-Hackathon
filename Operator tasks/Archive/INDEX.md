@@ -22,6 +22,7 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | OT-08 | Approve - the six alert messages before they send | s-d3-getsales (S-D3) | 2026-11-02 | OT-08 Withdrawn unticked at 16:43: he sends the alert to the six by hand (Q7.1), so nothing sends from GetSales. | S-D3 (`getsales\SPEC.md`) |
 | OT-09 | Approve - Canva and LinkedIn demo research | s1-research (S1), for S-D6 and S-D7 | 2026-11-02 | OT-09 Approved with changes: of his earlier repos, read only the one closest to the pixel-perfect branded-assets demo, by cloning it and going through it. For the LinkedIn demo he'd like, at lower priority, a possible personal branding strategy for one of Addvery's people rather than for the company. "Take whatever you need from this and just run. Go, go, go". | S-D6 (`canva-templates\SPEC.md`), S-D7 (`linkedin-content\SPEC.md`), S-D10 (`canva-video\SPEC.md`) |
 | OT-10 | Do - get the computer ready for tonight | S2 (orchestration) | 2026-11-02 | OT-10 His power settings are set for overnight runs. Windows Update pause not confirmed: the registry showed none at 16:49, and he was told. The rest took the defaults: no usage credits, no pins, no retry watchdog. | S2 (`orchestration\SPEC.md`) |
+| OT-11 | Approve - three small charter fixes | S2 (orchestration) | 2026-11-02 | OT-11 Box unticked, with a change note that orchestration took as approval (feedback-box rule): 36 workflows, four ICPs by English, Czech and German by three tactics, in a folder apart from his own; nothing tooled to run and no classifier trained; a screen-recorded walkthrough. Closed at 17:10 on his "clear the plate" instruction, with C04 to C06 applied (DoD-22 narrowed to secrets, the Apify proposal and his own outbound; D3 per his model, with the alert to the six sent by hand). | S2 (`orchestration\SPEC.md`), S-D3 (`getsales\SPEC.md`) |
 
 ## By topic
 
@@ -31,10 +32,10 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | `Addvery Research\` ownership | Q2.2, Q3.3, OT-02 |
 | Research method and budget | Q3.1, Q3.2, OT-01, OT-09, OT-04, OT-03 |
 | Scraping demo and Apify | Q6.1, Q6.3, Q6.5 |
-| GetSales outbound and the six | Q6.2, Q6.4, Q7.1, Q7.2, Q7.3, OT-08 |
+| GetSales outbound and the six | Q6.2, Q6.4, Q7.1, Q7.2, Q7.3, OT-08, OT-11 |
 | Orchestration and reading lists | Q4.1, Q4.2, OT-02 |
 | Desk, pokes and Alex's hours | Q3.4 |
-| Definition of done | Q5.1 |
+| Definition of done | Q5.1, OT-11 |
 | Rig: storage and capture | Q1.1, Q1.2, Q1.5, Q1.8 |
 | Rig: sessions, processing and clips | Q1.3, Q1.4, Q1.6, Q1.7, Q1.10 |
 | Stakeholders and clip sorting | Q1.9 |

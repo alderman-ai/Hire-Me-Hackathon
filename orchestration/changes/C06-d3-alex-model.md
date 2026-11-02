@@ -3,7 +3,7 @@
 Status: applied 2026-11-02 17:10, without the gate, on Alex's instruction in chat
 Asked by: `s-d3-getsales`, S2 REQUEST 14:51; revised on its S2 REQUEST of 16:45
 Approval: A6.4 (DI-6 Q6.4, `Operator tasks\Archive\Decide - how the scraping demo should work.md`): "we'll build 20 workflows. Let's label them under a new folder in GetSales so that I can hide them easily. We'll take each of their ICPs and do it in whatever languages make sense. We'll have 3 different approaches per language ... each of those workflows will start with that custom message". His change note in OT-11 (about 16:40): "What I want is to create, again in a different folder that's not going to be confused with mine, 36 workflows. ... There are 4 main ICPs, 3 different languages (let's say English, Czech, German), and that's 12. Then let's do tactic 1, tactic 2, tactic 3 ... We're not tooling it up to run. We're not training the classifier agent. We're explaining what all the pieces are and clipping that into a video to explain it". A7.1 (DI-7, `Operator tasks\Archive\Decide - how the GetSales outbound demo runs.md`, verified 17:05): "I'm going to do this manually. This is not going to happen through automation. Don't worry about it. You can kill this". A7.2 (same file): "We killed this. The deliverable is just going to be a video recorded through OBS, through the rig, with it being set up and then scrolling through it and explaining things".
-Gate: OT-11 (`Operator tasks\Approve - three small charter fixes.md`) was closed unticked at 17:10: Alex told orchestration in chat, about 17:00, "If things are an easy judgment please clear the plate for me. We can just make edits later."
+Gate: OT-11 (`Operator tasks\Archive\Approve - three small charter fixes.md`) was closed unticked at 17:10: Alex told orchestration in chat, about 17:00, "If things are an easy judgment please clear the plate for me. We can just make edits later."
 
 ## Places
 
@@ -81,4 +81,4 @@ Untouched: the spec outline's other rows, every SPEC.md (S-D3 already follows th
 
 ## Verify
 
-Every place read back at 17:12: each After text is in CHARTER.md exactly once, and no Before text is left (commit b5cb6fd). `propagate check` after the change: CLEAN, no new gaps; the new notes are citations of the retired DoD-14 in blog-pipeline, blog-articles and the L-03 reports, which are history and stay. No misses.
+Every place read back at 17:10: each After text is in CHARTER.md exactly once, and no Before text is left (commit b5cb6fd). `propagate check` after the change: CLEAN, no new gaps; the new notes are citations of the retired DoD-14 in blog-pipeline, blog-articles and the L-03 reports, which are history and stay. No misses.

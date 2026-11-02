@@ -2,12 +2,14 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-11
-Task State: Open
+Task State: Archived
 Gate: S2 charter change preview (C04, C05, C06)
 Requested by: orchestration
 Snapshot of: orchestration\changes\C04-C05-dod22-wording.md and C06-d3-alex-model.md at the commit that adds this task
 Unblocks: nothing waits on it; the specs already follow these answers. It brings the charter's wording in line with them.
 Created: 2026-11-02 16:36 Prague
+Archived: 2026-11-02
+Closed: 2026-11-02 17:10 Prague by orchestration on Alex's instruction in chat ("If things are an easy judgment please clear the plate for me. We can just make edits later."): box unticked; his change note (36 workflows) is applied, and C04 to C06 went into the charter without the tick, with later fold-ins (commit b5cb6fd).
 ---
 
 # Approve: three small fixes to the project plan's wording
