@@ -550,6 +550,37 @@
           "text": "The first three happened this hour: orchestration at 14:48, the website at 14:53 and research at 15:00. Each one picked up mid-task from its note. On Alex's standing instruction, orchestration also now measures how full every live session's memory is, so a session that's filling up gets handed over in time."
         }
       ]
+    },
+    {
+      "id": "s08",
+      "at": "2026-11-02T15:07",
+      "session": "S08",
+      "kind": "Update",
+      "title": "Back from lunch: what runs without him",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "An eight-minute video update at 15:07, straight after lunch, posted in full at Alex's request. He set the day up to be high pressure, and he says it delivered: he needed a few minutes away before coming back on camera. Everything kept running while he was gone, which he puts down to the time he spent this morning on the charter."
+        },
+        {
+          "type": "p",
+          "text": "He walks through what runs without him now: the answer desk that puts every agent's question in front of him one at a time, a session that watches for anything blocked on him, the recording rig, and the pipeline that turns each recording's transcript into posts on this site. What's left on him is the research on the company and its key people, which he's doing himself, partly because it involves API keys he set up off camera."
+        },
+        {
+          "type": "quote",
+          "text": "A lot of this stuff that's being built are skills or workflows, and so I could do the same thing tomorrow with a new company.",
+          "source": "Alex, S08 at 4:02 (15:11 Prague)"
+        },
+        {
+          "type": "p",
+          "text": "Two things are slower than he'd like. YouTube takes videos over 15 minutes only from a verified channel, so the longer sessions stay offline for now. And the site is still plain grey, with branding to come."
+        },
+        {
+          "type": "video",
+          "session": "S08",
+          "start": 0
+        }
+      ]
     }
   ]
 }
