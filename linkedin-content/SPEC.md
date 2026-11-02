@@ -163,3 +163,147 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov, drafting (wave2-specs): writer and judge are separate subagents, with at most three rewrite rounds. | A writer marking its own work is weak evidence. | The scores on the site mean something. | None beyond the pipeline's time. |
 | 2 Nov, drafting (wave2-specs): the rubric stays in `local\`, git-ignored; only question 3 can put a voice summary on the site. | The brief: nothing from `Addvery Research\` goes into a tracked file. The website session refuses builds that publish that research. | It keeps Alex's capture out of the public repo while the posts still show it working. | Allowing a summary adds one file and one line in the BUILD request. |
 | 2 Nov, drafting (wave2-specs): the posts are offered to S-D6 and S-D10 as sample copy, with no dependency. | Copy and visuals together make a complete LinkedIn post. | It links the three demos without one waiting on another (P1). | None: either spec can ignore the offer. |
+
+## Appendix A. Held preflight intake
+
+This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** Alex's Addvery research has a brand capture in `..\Addvery Research\` (DoD-11), or Alex says he's done with that research for now, whichever comes first. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - how the LinkedIn content demo works.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D7: Decide - how the LinkedIn content demo works.md is waiting on you: <what it decides and unblocks>`.
+
+~~~~markdown
+---
+System Primitive: Intake file
+Intake State: Waiting on operator
+Intake id: DI-XX
+Created: 2026-11-02
+Build goals: []
+---
+
+<!-- File name: "Decide - how the LinkedIn content demo works.md" -->
+
+# Decide: how the LinkedIn content demo works
+
+## What this is
+
+The site you're building today is a personalised job application to Addvery, made live during a 12-hour recorded hackathon. One part of it is a demo of LinkedIn posts written in Addvery's voice. About five posts are shown next to a generic AI-written post on the same topic, with a short panel on how they were made. It's built on the method from your own public brand capture repo, applied to your capture of Addvery. It shows Addvery's marketing side and leadership that you can make AI writing sound like their brand, and prove it with scores. Nothing is ever posted to LinkedIn; the demo lives on the site.
+
+You're asked four things: which of your repos it's built on, when the voice part of your Addvery brand capture will be ready, what the site may show from that capture, and when you sign the posts off. Once you answer, the assistant that writes the posts starts. Nothing has started yet, and it's waiting on this.
+
+It needs you on camera once, for about 10 minutes: the brand sign-off, proposed for 16:45–17:00, together with the sign-off of the Canva templates. This intake takes you about 5 minutes. Answer by 15:15 if you can: research comes first, and the posts need about 45 minutes of writing and scoring before the sign-off.
+
+This intake holds 4 decisions. Each carries its own context, so you can answer them in any order. An empty fence means not answered. The spec draft is at `linkedin-content\SPEC.md` for reference, but you needn't read it. Say "DI-XX is ready" when you're done.
+
+# QXX.1 Which of your repos the demo is built on
+
+The charter says this demo "References the operator's subjective brand capture repo on GitHub", and the project's definition of done says it is "built on the operator's brand capture repo". Two of your public repos fit that description: `brand-voice-capture-demo-linkedin` and `subjective-taste-capture-demo`. The research for the three brand demos reads both before anything is built, so the assistant learns what each does first. The demo on the site will say which repo it's built with.
+
+Your options:
+
+- **A.** `brand-voice-capture-demo-linkedin`.
+- **B.** `subjective-taste-capture-demo`.
+- **C. Both,** taking whichever parts fit, for example the voice rules from one and the scoring from the other. You see what it took from each when the plan comes to you for approval.
+- **D. Another repo.** Name it.
+
+I recommend C, because both names match the charter's words, and it commits to nothing before research has read them. If you meant one of them, A or B saves a step.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes C and logs it.
+
+This answer decides the method the posts are written and scored with, and what the site credits.
+
+Write A, B, C, or D and the repo.
+
+## AXX.1
+
+`<operator_answer>`
+```a-XX-1
+
+```
+`</operator_answer>`
+
+# QXX.2 When the voice part of your brand capture lands
+
+The posts are written from the voice part of your Addvery brand capture: how Addvery writes, the words it uses and avoids, how its posts are built. The capture is yours, in the Addvery Research folder, worked one-on-one. Earlier today, asked who researches Addvery, you said: "I'm on this. I'm going to be doing it in the subdirectory Addvery Research." The assistant reads it from the local disk only and never copies it into the public repo.
+
+For the 16:45 sign-off, the assistant needs the voice part by about 16:00: turning it into voice rules, writing about five posts and scoring each takes about 45 minutes (estimate). Until it lands, the assistant builds everything that doesn't need your capture: the writing and scoring set-up, and the generic post the demo contrasts against.
+
+Your options:
+
+- **A. It will be there by a time you name.** If that's after 16:00, the sign-off moves by the same amount, or covers fewer posts first, and the assistant says which.
+- **B. A stopgap.** The assistant builds a voice sample from Addvery's public website and blog copy (never LinkedIn), for the demo alone, and swaps in your capture when it lands. That bends your call that Addvery research is yours, so it happens only on your say-so.
+- **C. Wait.** The posts wait for your capture, whenever it lands, and the sign-off moves with it, to the morning cleanup session if need be.
+
+I recommend A with a time, because the project's definition of done names your capture as the source for both brand demos, these posts and the Canva templates. If 16:00 isn't realistic, B keeps the 16:45 slot.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes C, keeps building what doesn't need the capture, and logs it.
+
+This answer decides when the posts can be written and whether the 16:45 slot holds. The Canva templates intake asks the same about the visual part of your capture.
+
+Write A and the time, B or C.
+
+## AXX.2
+
+`<operator_answer>`
+```a-XX-2
+
+```
+`</operator_answer>`
+
+# QXX.3 What the site may show from your brand capture
+
+The posts are new writing, not your capture. But the demo reads best when it shows its work: the voice rules the posts were written to, next to the posts that meet them. The charter puts it as "legibility matters more than function".
+
+Your capture sits in the Addvery Research folder, which you keep out of the public repo. Earlier today you said of that folder: "it'll be getting ignored from the public repo". The website assistant's rules have it refuse any build that "would publish research from" that folder, so it needs your answer here before it shows anything drawn from the capture.
+
+Your options:
+
+- **A. The posts only,** plus a general description of the method (capture, voice rules, writing, scoring). Nothing from your folder is published.
+- **B. The posts, plus a short summary of the voice:** about five traits, freshly written in the assistant's own words, with no quotes from your capture. You see the exact words at the brand sign-off before anything goes live, and the build request quotes your answer here.
+- **C. The posts, plus quoted excerpts from your capture.**
+- **D. Something else.** Say what.
+
+I recommend B. It shows the work, which is what makes the demo legible, and you approve every word at the sign-off.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
+
+This answer decides what the demo's section on the site shows, and what goes into the public repo.
+
+Write A, B, C, or D and what you want instead.
+
+## AXX.3
+
+`<operator_answer>`
+```a-XX-3
+
+```
+`</operator_answer>`
+
+# QXX.4 When you sign off the posts, and what happens if research is late
+
+The project's definition of done needs your brand sign-off: "A demo of LinkedIn content created in Addvery's voice, built on the operator's brand capture repo, has his brand sign-off and is shown on the site." The assistant sends it to you as an approval file in Operator tasks holding the posts, their scores, the generic post and how they were made. You tick "I approve" or write changes: about 10 minutes (estimate).
+
+The proposed slot is 16:45–17:00, on camera, together with the Canva templates sign-off, so you review the brand once for both. It comes after the third blog dictation (16:20–16:40). The GetSales live run has moved to before 15:30, so 17:00–17:15 is free if the review runs over. The slot can't come much earlier, because research and about 45 minutes of writing come first.
+
+The research reads your brand capture repos and checks what's current in writing LinkedIn posts in a brand's voice. It may not be finished by 16:00.
+
+Your options:
+
+- **A. 16:45–17:00, and write on the draft method if research is late.** If the findings aren't in by 16:00, the assistant writes on its draft methodology so the slot holds. It waits only for the reading of your repos. Findings that land later are applied after your sign-off, as changes you see.
+- **B. 16:45–17:00, but only on finished research.** If the findings are late, the sign-off slips to 17:40–18:00 or to the morning cleanup session.
+- **C. Another time.** Write it.
+
+I recommend A. It keeps your brand review in one sitting with the Canva templates. Signing off the definition of done earlier today, you said the research rules may soften when time is short: "I might soften that and change the research rules especially if we're running low on time."
+
+If you've already answered this in the Canva templates intake, "same as the templates" is enough.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it leaves the sign-off open for the morning cleanup session while the rest of the work carries on, and logs it.
+
+This answer sets when you're on camera for the posts, and whether the writing may start before research is complete.
+
+Write A, B, C and the time, or "same as the templates".
+
+## AXX.4
+
+`<operator_answer>`
+```a-XX-4
+
+```
+`</operator_answer>`
+~~~~
