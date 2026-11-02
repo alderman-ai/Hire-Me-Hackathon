@@ -139,10 +139,7 @@ Approving the list is S1's gate, not this session's.
 9. **Site request.** Send `website`: `BUILD S-D10-B1: upload canva-video\out\d10.mp4 to YouTube, unlisted, through your upload flow, and add a D10 section, titled as in site\d10.md, in the deliverables area, with the video and a still of the finished design. Content: canva-video\site\d10.md. Source: Alex designing in Canva, cut from rig session S<nn>, checked for screen care; a screen recording with a webcam inset.` Wait for `BUILT S-D10-B1` or `REFUSED S-D10-B1`.
 10. When §5 is met, send `orchestration` `DONE S-D10: <D10 video live on the site, BUILT S-D10-B1, YouTube id>`.
 
-**Brainstorm steps (D11, Alex's Q10.11, 17:23).** A Claude Doc of 6 to 10 ideas for a brand-motion demo with Comfy, two lines each (what it shows; roughly how it's made). It covers both of Alex's asks: a 5-second animation of one LinkedIn graphic (a light shimmer, a 3D texture, the graphic building itself), and a one-minute video like his Gauss piece. He picks from the Doc and runs Comfy himself, by hand. This session generates nothing and spends no credits.
-- B1. A subagent drafts `comfy-motion\IDEAS.md` from read-only references: `C:\Users\alder\Desktop\Gauss Hero Animation\`, `C:\Users\alder\Desktop\Comfy UI\` (its own work-order rules, read first), the skills `comfy-director`, `comfy-first-last-storyboarding`, `comfy` and `comfy-relay` (their SKILL.md files, read, not invoked), the website's brand kit (reset rule 6) and S-D6's build sheet. Commit.
-- B2. Forking gate F0. The successor invokes `anthropic-skills:docs`, puts `IDEAS.md` in a Claude Doc, saves its link in `local\comfy-doc.md`, and sends `answer-desk` `TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick: <Doc link>`.
-- B3. Alex's pick arrives as a comment on the Doc. Record it in `comfy-motion\PICK.md` and tell `orchestration`. Anything beyond that (prompts, storyboards) waits for `orchestration` to say so.
+**Brainstorm and the rest of D11:** the S-D11 section at the end of this spec.
 
 **Screen care (every step).** Assume anything on screen can be published. The session never opens Canva itself. Design links stay in `local\`. Video goes on YouTube only, never Vercel or the repo. Nothing in the cut may show another client's design, a secret, the Apify proposal or Alex's own GetSales outbound.
 
@@ -192,6 +189,10 @@ Since the 17:13 reset (`..\answer-desk\ASKING.md`, Alex's reset rules), easy cal
 | 2 Nov 17:35, Q10.9: he builds a one-page mockup (a single-image or square post, or a quote card), not the carousel, unless S-D6 recommends otherwise. | A build from parts takes longer than filling slots, and the cap is 15 minutes. | It fits the cap with room for a retake. | A carousel means trimming more in the cut, or two scenes. |
 | 2 Nov 17:35, DI-10 Q10.11 (`orchestration`, 17:23): this session runs the Comfy brand-motion brainstorm (D11). A subagent drafts `comfy-motion\IDEAS.md` from read-only references, with no generation and no credits. The F0 successor puts it in a Claude Doc. | Assigned by `orchestration`. Reading the Gauss and Comfy folders is context-heavy, so a subagent keeps this session's context for the video (P7). | Alex asked for brainstorming only. He runs Comfy himself and picks from the Doc. | If `orchestration` moves D11 to its own session, `comfy-motion\` moves with it, and nothing else here changes. |
 | 2 Nov 17:35: forking gate F0 moves forward from `READY S-D6` to "the brainstorm draft is in". | Both the brainstorm Doc and the scene brief Doc need the Claude Docs connector, which this session lacks, and the brainstorm is ready first. | One fork serves both Docs, and Alex gets the ideas without waiting on the pack. | None. The successor waits for `READY S-D6` exactly as this session would have. |
+| 2 Nov 17:45, from S-D6's pack details: the scene is the quote card, 1080 × 1080, built in the mockup's order. He adds text boxes with `T` and the hairline with `L`, so the Elements panel stays shut. Inter with the sheet's letter-spacing; PNG High 1x. | S-D6, 17:44: only Inter of the brand's faces is in Canva's library, and Canva text takes linear gradients. The Elements panel's recently-used row can show other work (inference). | One page fits 15 minutes, and the shortcuts cost nothing. | If the shortcuts differ on the day, he pauses to add the line. |
+| 2 Nov 17:45: the brief's "no real person in the design" line is replaced by "use the pack's copy as given". The quote card has a name-and-role box. | Reset rule 3: public sources are fine, and the copy is S-D6's and S-D7's to write. L-01 synthesis 6.5 was an option, not a rule. | It keeps the brief out of other sessions' copy decisions. | If Alex wants no name on it, only the quote card's copy changes. |
+| 2 Nov 17:45: S-D6 gets `SCENE START` when Alex comments "filming now" on the brief Doc (a new Step 1 item), and `SCENE DONE` on his Step 4 comment. | S-D6 needs Chrome until the scene (17:44), and Alex's Doc comments reach this session (reset rule 4). | One comment, about 5 seconds of his time, keeps a Claude-driven Chrome out of the take. | If a comment arrives late, the frame check is the backstop for a stray tab. |
+| 2 Nov 17:45, C15: the S-D11 section is planned (B1 to B7). The ideas go in a Claude Doc. His pick, his own Comfy work, then a frame check and design review, `site\d11.md` through `design:ux-copy`, and `BUILD S-D11-B1`. This session generates nothing and spends no credits. | S2's C15 asks for the plan and a log. Alex: "I just need some brainstorming ... pretty manual". | It leaves the making to him and the checking and publishing to the sessions that do that already. | If he wants generation done for him, B4 grows into a build under `C:\Users\alder\Desktop\Comfy UI\`'s own rules, with a credit estimate first. |
 
 ## Appendix A. Held preflight intake (dropped at the 17:13 reset)
 
@@ -315,3 +316,29 @@ Write A, B, C, or D and what you want instead.
 Row S-D11, deliverable D11, claims `DoD-23`: the chosen animation of one Addvery LinkedIn graphic (about 5 seconds) and a one-minute brand video, both made with Comfy, are on the site as a GTM demo entry. Depends on S-D6 (the graphics) and on Alex's pick from the ideas Doc. His scenes: picking the ideas, and running the Comfy work himself.
 
 His words (DI-10 A10.11, `..\Operator tasks\Archive\Decide - everything left that needs you.md`): "I just need some brainstorming of what ideas I can do ... a little 5-second animation. Instead of just having a static image on LinkedIn, we can have a light shimmer. We can have the brand getting some kind of 3D texture to it. It kind of builds itself ... And then I want to create a one-minute video similar to the Gauss rocket thing." The reference is `C:\Users\alder\Desktop\Gauss Hero Animation\`, outside the repo; the Comfy skills listed in this session (comfy, comfy-director and the others) are the ones to name. Write the ideas in a Claude Doc (reset rule 4) and plan the rest of this section yourself, logged in your decision log.
+
+### S-D11 plan (this session, 17:45)
+
+**Operator scenes.** (1) Picking one idea for the 5-second post and one for the minute, as a comment on the ideas Doc. (2) Running the Comfy work himself, by hand, whenever suits him. (3) Saying where the finished files are, as another comment on that Doc. Nothing else needs him.
+
+**Definition of done (S-D11).**
+
+| Criterion | Traces to |
+| --- | --- |
+| Alex picked from a Claude Doc of 6 to 10 ideas covering both asks | DoD-23 |
+| The 5-second animation of one Addvery LinkedIn graphic and the one-minute brand video exist, made by Alex with Comfy | DoD-23 |
+| Both passed a design review and the screen-care check before upload | DoD-23; serves DoD-22 |
+| Both are on YouTube, unlisted, and in the site's D11 entry (`BUILT S-D11-B1` received) | DoD-23 |
+
+**Steps.**
+- B1. A subagent drafts `comfy-motion\IDEAS.md` from read-only references: `C:\Users\alder\Desktop\Gauss Hero Animation\`, `C:\Users\alder\Desktop\Comfy UI\` (its own work-order rules, read first), the SKILL.md files of `comfy-director`, `comfy-first-last-storyboarding`, `comfy` and `comfy-relay` (read, not invoked), the website's brand kit (reset rule 6) and S-D6's build sheet. No generation, no credits. **Done 17:43:** 7 ideas (4 for the 5-second post, 3 for the minute), with picks and gaps.
+- B2. At forking gate F0, the successor invokes `anthropic-skills:docs`, makes a Claude Doc from `IDEAS.md`, and saves its link in `local\comfy-doc.md`. It sends `answer-desk` `TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick: <Doc link>`.
+- B3. His pick arrives as a comment on the Doc. Record it, verbatim, in `comfy-motion\PICK.md`, tell `orchestration`, and commit.
+- B4. If he asks for more help on the picked ideas (a still list, prompts, a beat sheet), write it in `comfy-motion\` and add it to the same Doc. Comfy work runs from `C:\Users\alder\Desktop\Comfy UI\` under its own rules, by Alex. This session runs no `comfy` command, generates nothing and spends no credits.
+- B5. When his comment says where the two videos are, a subagent that didn't make them looks at a frame at least every second of the 5-second clip and at least every 5 seconds of the minute. It checks for smeared or invented lettering, a wrong logo, and anything from DoD-22. Then run `design:design-critique` and `design:accessibility-review` on both (reset rule 5). Fixes go back to Alex as a Doc comment. He makes them; this session doesn't regenerate.
+- B6. `site\d11.md`: a title and two lines per video, written only after invoking `design:ux-copy`. Send `website` `BUILD S-D11-B1: upload <the two files> to YouTube, unlisted, through your upload flow, and add a D11 entry, titled as in site\d11.md, in the deliverables area, with both videos. Content: canva-video\site\d11.md. Source: Alex, made with Comfy from the Addvery LinkedIn templates.` Wait for `BUILT S-D11-B1` or `REFUSED S-D11-B1`.
+- B7. Send `orchestration` `DONE S-D11: <both videos live, BUILT S-D11-B1, YouTube ids>`.
+
+**Files.** `comfy-motion\IDEAS.md` (the draft), `comfy-motion\PICK.md` (his pick), `site\d11.md`, and the Doc's link in `local\comfy-doc.md`. Videos are never committed; they stay where Alex made them until YouTube.
+
+**Forking gates.** S-D11 shares S-D10's gates (§8). A fork's `HANDOFF.md` covers both.
