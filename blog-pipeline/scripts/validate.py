@@ -45,7 +45,7 @@ SCHEMA = [  # key, type, required ("str", "int", "int|null", "str|null", "list",
     ("made", [("minutes_talked", "int", True), ("words_spoken", "int", True),
               ("words_drafted", "int", True), ("share_changed_by_alex", "int|null", True),
               ("dictated", "str", True), ("rig_session", "str|null", True),
-              ("pipeline", "str", True), ("stages", "list", True), ("checks", "list", True)], True),
+              ("pipeline", "str", True), ("stages", "list", True), ("checks", "list", True)], False),  # required for articles (3b)
 ]
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 NOTE = re.compile(r"\[Alex: [^\[\]\n]+\]")
@@ -57,6 +57,7 @@ SETEXT = re.compile(r"^ {0,3}(=+|-+)[ \t]*$")
 LINK = re.compile(r"\[((?:[^\[\]\n]|\[[^\[\]\n]*\])*)\]\(([^)\s]*)[^)]*\)")
 INLINE_CODE = re.compile(r"`[^`\n]*`")
 DIAGRAM = re.compile(r"> \[!diagram\] (?:scale|flow)")
+FIGURE = re.compile(r"> \[!figure\] /demos-assets/[a-z0-9]+(?:-[a-z0-9]+)*/[A-Za-z0-9._-]+\.(?:svg|png|webp)")
 VIDEO = re.compile(r"> \[!video\] ([A-Za-z0-9_-]{11})(?: (\d+)(?: (\d+))?)?")
 DIAGRAM_ITEM = re.compile(r"^(\d+)\.\s+(\S.*)$")
 
@@ -341,6 +342,8 @@ def validate(raw: bytes):
         dl = s(fm.get("deliverable"))
         if "deliverable" in fm and (dl is None or not re.fullmatch(r"d([1-9]|1[01])", dl)):
             P.append(("F", 3, f"deliverable {fm.get('deliverable')!r} must be d1 to d11"))
+        if kind in (None, "article") and "made" not in fm:
+            P.append(("F", 2, "missing key made (required when kind is article)"))
         video = fm.get("video")
         if kind == "video" and not video:
             P.append(("F", 3, "kind is video but there's no video map"))
@@ -452,6 +455,7 @@ def validate(raw: bytes):
     section, para_seen, h3_count, h2s = 0, False, 0, 0
     pulls, summaries, diagrams = [], [], []
     quotes_v14: list = []
+    figures_v15: list = []
     for k, b in enumerate(content):
         b["section"] = section
         if b["kind"] == "heading":
@@ -493,6 +497,16 @@ def validate(raw: bytes):
                 summaries.append(k)
             elif DIAGRAM.fullmatch(first):
                 diagrams.append(k)
+            elif FIGURE.fullmatch(first):
+                fl = [re.sub(r"^\s*>\s?", "", line).strip() for line in b["lines"][1:]]
+                fl = [f for f in fl if f]
+                figures_v15.append(k)
+                if not 1 <= len(fl) <= 2 or not 10 <= len(fl[0]) <= 160 or (len(fl) == 2 and len(fl[1]) > 140):
+                    P.append(("F", 15, f"line {b['start']}: a figure has one alt-text line (10 to 160 characters) and an optional caption (at most 140)"))
+                if k == len(content) - 1:
+                    P.append(("F", 15, f"line {b['start']}: a figure is the entry's last block"))
+            elif "[!figure]" in first:
+                P.append(("F", 15, f"line {b['start']}: a figure's first line is '> [!figure] /demos-assets/<slug>/<file>.svg|png|webp'"))
             elif VIDEO.fullmatch(first):
                 m = VIDEO.fullmatch(first)
                 cap = [re.sub(r"^\s*>\s?", "", line).strip() for line in b["lines"][1:]]
@@ -508,7 +522,7 @@ def validate(raw: bytes):
             elif "[!diagram]" in first:
                 P.append(("F", 15, f"line {b['start']}: a diagram's first line must be exactly '> [!diagram] scale' or '> [!diagram] flow'"))
             else:
-                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!quote], [!summary], [!diagram] scale|flow or [!video]"))
+                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!quote], [!summary], [!diagram] scale|flow, [!video] or [!figure]"))
             if "[Alex" in "\n".join(b["lines"]):
                 P.append(("F", 17, f"line {b['start']}: a note for Alex inside a callout"))
 
@@ -526,6 +540,8 @@ def validate(raw: bytes):
     if not 0 <= len(pulls) <= 3:
         P.append(("F", 15, f"{len(pulls)} pull quotes (0 to 3)"))
     # v1.4 block quotes of Alex's own words
+    if len(figures_v15) > 8:
+        P.append(("F", 15, f"{len(figures_v15)} figures (0 to 8)"))
     if len(quotes_v14) > 5:
         P.append(("F", 15, f"{len(quotes_v14)} block quotes (0 to 5)"))
     q_per: dict = {}

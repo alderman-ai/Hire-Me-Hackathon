@@ -1,6 +1,6 @@
 # Blog post format
 
-Post format v1.4, 2 Nov 2026 (v1.4: block quotes of Alex's own recorded words, `[!quote]`, and pull quotes optional, from Alex at about 18:15: "pull lots of quotes ... the way people insert block quotes"; v1.3: video clips inline between sections, `[!video]`, for the site's shared entries; v1.2: the site's shared entry fields `kind`, `deliverable`, `video` and `poster`, titles at most 64 characters and kickers at most 28, from `website`'s BUILT S-D5-B1; v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D5 (`blog-pipeline\`, since S-D4 retired) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
+Post format v1.5, 2 Nov 2026 (v1.5: figures, `[!figure]`, and the `made` box required only for articles; v1.4: block quotes of Alex's own recorded words, `[!quote]`, and pull quotes optional, from Alex at about 18:15: "pull lots of quotes ... the way people insert block quotes"; v1.3: video clips inline between sections, `[!video]`, for the site's shared entries; v1.2: the site's shared entry fields `kind`, `deliverable`, `video` and `poster`, titles at most 64 characters and kickers at most 28, from `website`'s BUILT S-D5-B1; v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D5 (`blog-pipeline\`, since S-D4 retired) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
 
 Every blog post is one Markdown file: a block of front matter that says what the post is, then the post itself in plain Markdown with four small additions: pull quotes, a key-points box, an optional diagram and notes left for Alex. The pipeline writes the file, Alex finishes it, and the site renders it as it is. This document is the contract between them. A file that passes the checklist in §6 must render; anything this document doesn't define is a validation failure, not something to guess at. The posts are Alex Alderman's, in his name and voice. The site styles them in its own look, but they are never written as a company's posts.
 
@@ -65,7 +65,7 @@ made:
 | `author` | string | yes | Always exactly `Alex Alderman`. |
 | `date` | string | yes | `YYYY-MM-DD`. The dictation's date until the publish step sets the publish day. |
 | `status` | string | yes | One of `draft` (the Format stage wrote it; the scan hasn't passed), `near-final` (the scan passed; what Alex reviews), `published` (set only by the publish step), `sample` (a template test file, never published). |
-| `kind` | string | no | The site's entry kind: `article` (the default, and every blog post), `video` or `showcase`. The site keeps one template for every entry in its GTM demos section (`/demos`). |
+| `kind` | string | no | The site's entry kind: `article` (the default, and every blog post from a dictation), `video` or `showcase` (a piece built from existing work rather than a dictation; it may leave out `made`). The site keeps one template for every entry in its GTM demos section (`/demos`). |
 | `deliverable` | string | no | The project deliverable the entry belongs to, `d1` to `d11`; the site links it at the end and shows it in the index row. Blog posts use `d5`. |
 | `video.youtube_id`, `video.start` | map | no | Only for `kind: "video"`, where it's required: the 11-character YouTube id and an optional start in seconds. Never on a blog post. |
 | `poster` | string | no | An image path under the site's `public\` or an https URL. Video entries default to the YouTube thumbnail; blog posts leave it out. |
@@ -133,6 +133,19 @@ The callouts use the GitHub alert form, so they degrade gracefully: Obsidian, wh
 - Unlike a pull quote it adds words rather than repeating them: the quoted line isn't also in the prose next to it. The template sets it as a real `blockquote` with its attribution as a caption, larger than body text and read by screen readers.
 - 0 to 5 per post, at most two per section, never the post's last block. One may sit in the lede, after its first paragraph.
 - Pick lines that carry a point better in his own voice than in prose: a vivid claim, a turn of phrase, a hard-won lesson. Never a line that names a client, a private number or anything the scan keeps off.
+
+### 3.8 Figure (0 to 8)
+
+```markdown
+> [!figure] /demos-assets/how-taste-gets-captured/silhouettes-pair-1.svg
+> Two post shapes side by side: A has a short hook and air below it, B is a wall of full-width lines
+> Pair 1: the eye picks A before reading a word
+```
+
+- The first line is `> [!figure] ` and the image's site path: `/demos-assets/<slug>/<file>`, a `.svg`, `.png` or `.webp`. Until publishing, the file sits in `blog-articles\posts\assets\<slug>\<file>`; the publish request asks `website` to copy that folder to `website\public\demos-assets\<slug>\`.
+- The second line is the alt text: what the image shows, 10 to 160 characters, plain text. Required.
+- An optional third line is the caption shown under it, at most 140 characters.
+- 0 to 8 per entry, never the entry's last block. Use one only where a picture shows something words can't; a diagram from text (§3.5) comes first where it can do the job.
 
 ### 3.3 Key-points box (on by default, at most one)
 
