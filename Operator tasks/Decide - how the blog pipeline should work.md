@@ -1,6 +1,6 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
 Intake id: DI-8
 Created: 2026-11-02
 Build goals: []
@@ -9,6 +9,8 @@ Build goals: []
 <!-- File name: "Decide - how the blog pipeline should work.md" -->
 
 # Decide: how the blog pipeline should work
+
+> **Closed, 2 Nov 16:47.** You answered in question 1 that the blog pipeline isn't a deliverable ("Anything about blog pipelines is dead. The only deliverable is blogs."). Questions 2 to 5 no longer apply: you don't need to answer them. The blog posts carry on with the blog articles session.
 
 ## What this is
 
@@ -55,7 +57,7 @@ Write A, B with a time, or C.
 
 `<operator_answer>`
 ```a-8-1
-
+There is no blog pipeline separate from the deliverable of the blogs. That was answered somewhere else. This secondary deliverable of a blog pipeline, as opposed to a blog: just kill that. That's dead so kill this. Anything about blog pipelines is dead. The only deliverable is blogs. I've answered that in a different place 
 ```
 `</operator_answer>`
 
