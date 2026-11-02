@@ -31,7 +31,7 @@ Message 1 names clients by type only; the follow-ups name them. Leads at Vodafon
 
 ## Czech (CS)
 
-### D3 · Telco CVM · CS · signal
+### Demo · Telco CVM · CS · signal
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -63,7 +63,7 @@ ozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím.
 {{sender_first_name}}
 ```
 
-### D3 · Telco CVM · CS · problem
+### Demo · Telco CVM · CS · problem
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -95,7 +95,7 @@ ozývám se naposledy, tak jen jedna otázka na zamyšlení: kolik objednávek, 
 {{sender_first_name}}
 ```
 
-### D3 · Telco CVM · CS · proof
+### Demo · Telco CVM · CS · proof
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -129,7 +129,7 @@ ještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupi
 
 ## Slovak (SK)
 
-### D3 · Telco CVM · SK · signal
+### Demo · Telco CVM · SK · signal
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -161,7 +161,7 @@ ozývam sa naposledy. Po veľkej zmene býva kalendár plný, tomu rozumiem. Len
 {{sender_first_name}}
 ```
 
-### D3 · Telco CVM · SK · problem
+### Demo · Telco CVM · SK · problem
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -193,7 +193,7 @@ ozývam sa naposledy, tak len jedna otázka na zamyslenie: koľko objednávok, k
 {{sender_first_name}}
 ```
 
-### D3 · Telco CVM · SK · proof
+### Demo · Telco CVM · SK · proof
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -227,7 +227,7 @@ ešte jeden príbeh, tentoraz zo streamingu. Dve české mediálne skupiny spoji
 
 ## English (EN)
 
-### D3 · Telco CVM · EN · signal
+### Demo · Telco CVM · EN · signal
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -259,7 +259,7 @@ last note from me. After a big change the calendar fills up, I get that. One tho
 {{sender_first_name}}
 ```
 
-### D3 · Telco CVM · EN · problem
+### Demo · Telco CVM · EN · problem
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -291,7 +291,7 @@ last note, so just one question to sit with: how many orders that start on your 
 {{sender_first_name}}
 ```
 
-### D3 · Telco CVM · EN · proof
+### Demo · Telco CVM · EN · proof
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 

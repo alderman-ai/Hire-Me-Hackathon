@@ -37,7 +37,7 @@ Any reply stops the sequence.
 - **Light ask:** a 20-minute conversation, or "worth a look?", never "book a call" or a calendar link. Follow-up 2 always gives them an easy no ("if it's not a priority, just say so and I'll stop").
 - **Languages:** native-sounding Czech, Slovak, German or English. Formal address in Czech, Slovak and German (vykání, vykanie, Sie). Avoid gendered first-person past-tense verbs in Czech and Slovak where you can, since the sender's gender isn't known. Mark the file "needs a native read" at the top.
 - **Honesty:** no invented numbers, clients or promises. Proof only as Addvery's site states it.
-- No internal project codes in the text, except the workflow names, which start `D3 ·`.
+- No internal project codes in the text, except the workflow names, which start `Demo ·`.
 
 ## Output
 

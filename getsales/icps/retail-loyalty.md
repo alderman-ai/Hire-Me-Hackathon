@@ -37,7 +37,7 @@ Example leads are fictional: the routing sample's companies (Northwind Grocery C
 
 ## Czech (CS)
 
-### D3 · Retail loyalty · CS · signal
+### Demo · Retail loyalty · CS · signal
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -75,7 +75,7 @@ Pokud to teď není priorita, stačí napsat a přestanu se ozývat.
 {{sender_first_name}}
 ```
 
-### D3 · Retail loyalty · CS · problem
+### Demo · Retail loyalty · CS · problem
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -113,7 +113,7 @@ A pokud to teď není priorita, stačí napsat a přestanu se ozývat.
 {{sender_first_name}}
 ```
 
-### D3 · Retail loyalty · CS · proof
+### Demo · Retail loyalty · CS · proof
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -151,7 +151,7 @@ Pokud je to pro vás téma, dejte vědět. Pokud to teď není priorita, stačí
 
 ## German (DE)
 
-### D3 · Retail loyalty · DE · signal
+### Demo · Retail loyalty · DE · signal
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -189,7 +189,7 @@ Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich 
 {{sender_first_name}}
 ```
 
-### D3 · Retail loyalty · DE · problem
+### Demo · Retail loyalty · DE · problem
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -227,7 +227,7 @@ Und wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich m
 {{sender_first_name}}
 ```
 
-### D3 · Retail loyalty · DE · proof
+### Demo · Retail loyalty · DE · proof
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -265,7 +265,7 @@ Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich 
 
 ## English (EN)
 
-### D3 · Retail loyalty · EN · signal
+### Demo · Retail loyalty · EN · signal
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -303,7 +303,7 @@ If it's not a priority, just say so and I'll stop.
 {{sender_first_name}}
 ```
 
-### D3 · Retail loyalty · EN · problem
+### Demo · Retail loyalty · EN · problem
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
@@ -341,7 +341,7 @@ And if it's not a priority, just say so and I'll stop.
 {{sender_first_name}}
 ```
 
-### D3 · Retail loyalty · EN · proof
+### Demo · Retail loyalty · EN · proof
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 

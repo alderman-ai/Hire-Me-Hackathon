@@ -17,7 +17,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 
 ## Czech (CS)
 
-### D3 · Consumer lending · CS · signal
+### Demo · Consumer lending · CS · signal
 
 **Message 1 brief:** Rest the line on one dated, public trigger at the lead's company from the last 90 days: a new credit product or buy-now-pay-later launch, a loan origination system (LOS) selection or tender, a CRM or marketing-automation rollout, a new CRO, CMO or Head of Retail Lending, or hiring for scoring or CRM roles. Name the trigger plainly with its month, say in one clause why it reopens either the path from lead to signed contract or the approval rules across products, and end with one light question. Do not congratulate, guess at internal problems or numbers, cite any client or result (the follow-ups carry the proof), use private or personal data, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Czech with vykání. Open with 'Dobrý den,' and no name, since a name in the vocative is easy to get wrong. The sender's gender is unknown, so use the present tense ('vidím', 'čtu') or 'we' ('jsme'), never 'všiml jsem si'.
 
@@ -35,7 +35,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 >
 > {{sender_first_name}}
 
-### D3 · Consumer lending · CS · problem
+### Demo · Consumer lending · CS · problem
 
 **Message 1 brief:** No fresh trigger, so rest the line on one problem this ICP has, in the buyer's own words, tied to one public fact about the lead's company (how many credit products it sells, an online application or app, several brands, a point-of-sale or buy-now-pay-later offer). Pick the side that fits the role. CRM, marketing, digital or sales roles: several products talking to the same customers, or online leads that can't be traced through to a contract. Risk, credit or lending-operations roles: two identical applicants should always get the same answer, whatever the product. Put it as an observation about lenders like them or as a question, never as a diagnosis of their company. Do not claim to know internal numbers, cite clients or results, flatter, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Czech with vykání. Open with 'Dobrý den,' and no name, since a name in the vocative is easy to get wrong. The sender's gender is unknown, so use the present tense ('vidím', 'čtu') or 'we' ('jsme'), never 'všiml jsem si'.
 
@@ -51,7 +51,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 
 > Dobrý den, ještě poslední věc. Stejná mezera bývá i na straně úvěrů: každý produkt si časem vytvoří vlastní schvalovací pravidla a dva stejní žadatelé pak dostanou různé odpovědi. To umíme zmapovat jednou, napříč produkty i datovými zdroji, dřív než se kupuje nový systém. Jestli ve společnosti {{company_name}} řešíte jedno nebo druhé, za 20 minut zjistíme, zda můžeme pomoct. Pokud to není priorita, stačí napsat a už se neozvu.
 
-### D3 · Consumer lending · CS · proof
+### Demo · Consumer lending · CS · proof
 
 **Message 1 brief:** Rest the line on the one Addvery case that fits the lead's role, stated only as Addvery's website states it, and always say it was in the Philippines. CRM, marketing, digital or sales roles: Home Credit Philippines, lifecycle CRM redesigned on tools it already had, 'up to +30% projected increase in submitted leads', 'no new platform was needed'. Risk, credit or lending-operations roles: Security Bank in the Philippines, one approval design for five credit products, 23 data sources reviewed, a 40+ page requirements blueprint for LOS vendors; these are outputs, so claim no outcome. Tie the case to one public fact that makes the lead's company a look-alike (similar products, an online funnel, several credit products), then ask one light question. Do not drop 'up to' or 'projected', add any number, present either case as Central European, tell the whole story (the follow-ups do), add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Czech with vykání; render 'projected' as 'projekce' or 'projektovaný'. Open with 'Dobrý den,' and no name, since a name in the vocative is easy to get wrong. The sender's gender is unknown, so use the present tense ('vidím', 'čtu') or 'we' ('jsme'), never 'všiml jsem si'.
 
@@ -69,7 +69,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 
 ## Slovak (SK)
 
-### D3 · Consumer lending · SK · signal
+### Demo · Consumer lending · SK · signal
 
 **Message 1 brief:** Rest the line on one dated, public trigger at the lead's company from the last 90 days: a new credit product or buy-now-pay-later launch, a loan origination system (LOS) selection or tender, a CRM or marketing-automation rollout, a new CRO, CMO or Head of Retail Lending, or hiring for scoring or CRM roles. Name the trigger plainly with its month, say in one clause why it reopens either the path from lead to signed contract or the approval rules across products, and end with one light question. Do not congratulate, guess at internal problems or numbers, cite any client or result (the follow-ups carry the proof), use private or personal data, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Slovak with vykanie. Open with 'Dobrý deň, <first name>,' using the lead's real first name. The sender's gender is unknown, so use the present tense ('vidím', 'čítam') or 'we' ('sme'), never 'všimol som si'.
 
@@ -87,7 +87,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 >
 > {{sender_first_name}}
 
-### D3 · Consumer lending · SK · problem
+### Demo · Consumer lending · SK · problem
 
 **Message 1 brief:** No fresh trigger, so rest the line on one problem this ICP has, in the buyer's own words, tied to one public fact about the lead's company (how many credit products it sells, an online application or app, several brands, a point-of-sale or buy-now-pay-later offer). Pick the side that fits the role. CRM, marketing, digital or sales roles: several products talking to the same customers, or online leads that can't be traced through to a contract. Risk, credit or lending-operations roles: two identical applicants should always get the same answer, whatever the product. Put it as an observation about lenders like them or as a question, never as a diagnosis of their company. Do not claim to know internal numbers, cite clients or results, flatter, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Slovak with vykanie. Open with 'Dobrý deň, <first name>,' using the lead's real first name. The sender's gender is unknown, so use the present tense ('vidím', 'čítam') or 'we' ('sme'), never 'všimol som si'.
 
@@ -103,7 +103,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 
 > Dobrý deň, {{first_name}}, ešte posledná vec. Rovnaká medzera býva aj na strane úverov: každý produkt si časom vytvorí vlastné schvaľovacie pravidlá a dvaja rovnakí žiadatelia potom dostanú rôzne odpovede. To vieme zmapovať raz, naprieč produktmi aj dátovými zdrojmi, skôr než sa kupuje nový systém. Ak v spoločnosti {{company_name}} riešite jedno alebo druhé, za 20 minút zistíme, či vieme pomôcť. Ak to nie je priorita, stačí napísať a už sa neozvem.
 
-### D3 · Consumer lending · SK · proof
+### Demo · Consumer lending · SK · proof
 
 **Message 1 brief:** Rest the line on the one Addvery case that fits the lead's role, stated only as Addvery's website states it, and always say it was in the Philippines. CRM, marketing, digital or sales roles: Home Credit Philippines, lifecycle CRM redesigned on tools it already had, 'up to +30% projected increase in submitted leads', 'no new platform was needed'. Risk, credit or lending-operations roles: Security Bank in the Philippines, one approval design for five credit products, 23 data sources reviewed, a 40+ page requirements blueprint for LOS vendors; these are outputs, so claim no outcome. Tie the case to one public fact that makes the lead's company a look-alike (similar products, an online funnel, several credit products), then ask one light question. Do not drop 'up to' or 'projected', add any number, present either case as Central European, tell the whole story (the follow-ups do), add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Slovak with vykanie; render 'projected' as 'projekcia' or 'projektovaný'. Open with 'Dobrý deň, <first name>,' using the lead's real first name. The sender's gender is unknown, so use the present tense ('vidím', 'čítam') or 'we' ('sme'), never 'všimol som si'.
 
@@ -121,7 +121,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 
 ## English (EN)
 
-### D3 · Consumer lending · EN · signal
+### Demo · Consumer lending · EN · signal
 
 **Message 1 brief:** Rest the line on one dated, public trigger at the lead's company from the last 90 days: a new credit product or buy-now-pay-later launch, a loan origination system (LOS) selection or tender, a CRM or marketing-automation rollout, a new CRO, CMO or Head of Retail Lending, or hiring for scoring or CRM roles. Name the trigger plainly with its month, say in one clause why it reopens either the path from lead to signed contract or the approval rules across products, and end with one light question. Do not congratulate, guess at internal problems or numbers, cite any client or result (the follow-ups carry the proof), use private or personal data, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in plain English. Open with 'Hi <first name>,' using the lead's real first name.
 
@@ -139,7 +139,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 >
 > {{sender_first_name}}
 
-### D3 · Consumer lending · EN · problem
+### Demo · Consumer lending · EN · problem
 
 **Message 1 brief:** No fresh trigger, so rest the line on one problem this ICP has, in the buyer's own words, tied to one public fact about the lead's company (how many credit products it sells, an online application or app, several brands, a point-of-sale or buy-now-pay-later offer). Pick the side that fits the role. CRM, marketing, digital or sales roles: several products talking to the same customers, or online leads that can't be traced through to a contract. Risk, credit or lending-operations roles: two identical applicants should always get the same answer, whatever the product. Put it as an observation about lenders like them or as a question, never as a diagnosis of their company. Do not claim to know internal numbers, cite clients or results, flatter, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in plain English. Open with 'Hi <first name>,' using the lead's real first name.
 
@@ -155,7 +155,7 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 
 > Hi {{first_name}}, one last thing. The same gap often shows up on the credit side: each product grows its own approval rules, and two identical applicants can get different answers. We map that once, across products and data sources, before anyone buys a new system. If either side is live at {{company_name}}, 20 minutes is enough to see if we can help. If it's not a priority, just say so and I'll stop.
 
-### D3 · Consumer lending · EN · proof
+### Demo · Consumer lending · EN · proof
 
 **Message 1 brief:** Rest the line on the one Addvery case that fits the lead's role, stated only as Addvery's website states it, and always say it was in the Philippines. CRM, marketing, digital or sales roles: Home Credit Philippines, lifecycle CRM redesigned on tools it already had, 'up to +30% projected increase in submitted leads', 'no new platform was needed'. Risk, credit or lending-operations roles: Security Bank in the Philippines, one approval design for five credit products, 23 data sources reviewed, a 40+ page requirements blueprint for LOS vendors; these are outputs, so claim no outcome. Tie the case to one public fact that makes the lead's company a look-alike (similar products, an online funnel, several credit products), then ask one light question. Do not drop 'up to' or 'projected', add any number, present either case as Central European, tell the whole story (the follow-ups do), add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in plain English. Open with 'Hi <first name>,' using the lead's real first name.
 

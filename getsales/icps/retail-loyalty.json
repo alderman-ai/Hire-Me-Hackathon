@@ -1,6 +1,6 @@
 [
   {
-    "workflow": "D3 · Retail loyalty · CS · signal",
+    "workflow": "Demo · Retail loyalty · CS · signal",
     "icp": "Retail loyalty",
     "language": "CS",
     "approach": "signal",
@@ -10,7 +10,7 @@
     "followup_2": "Dobrý den,\n\ntohle je moje poslední zpráva. Pokud se váš CRM tým teprve skládá, věrnostní program nemusí čekat: CRM můžeme na přechodnou dobu převzít, spustit první segmenty a kampaně a pak ho předat vašim lidem.\n\nPokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · CS · problem",
+    "workflow": "Demo · Retail loyalty · CS · problem",
     "icp": "Retail loyalty",
     "language": "CS",
     "approach": "problem",
@@ -20,7 +20,7 @@
     "followup_2": "Dobrý den,\n\nposlední zpráva ode mě a jedna otázka: dostane u vás zákazník, který dělá velký týdenní nákup, jinou nabídku než ten, kdo se cestou z práce staví pro jednu věc? Pokud ano, jste na tom dobře a nebudu vás zdržovat. Pokud ne, právě tam se dá začít.\n\nA pokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · CS · proof",
+    "workflow": "Demo · Retail loyalty · CS · proof",
     "icp": "Retail loyalty",
     "language": "CS",
     "approach": "proof",
@@ -30,7 +30,7 @@
     "followup_2": "Dobrý den,\n\nještě jeden příklad a končím. Rohlík Group je jeden z nejrychleji rostoucích online prodejců potravin v Evropě a zákazníci tam přibývali rychleji, než šlo nabrat CRM tým. CRM jsme proto na přechodnou dobu převzali, postavili jeden CRM model pro čtyři země a pak ho předali. Tržby na zákazníka (ARPU) vzrostly o 17 %.\n\nPokud je to pro vás téma, dejte vědět. Pokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · DE · signal",
+    "workflow": "Demo · Retail loyalty · DE · signal",
     "icp": "Retail loyalty",
     "language": "DE",
     "approach": "signal",
@@ -40,7 +40,7 @@
     "followup_2": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht dazu. Wenn Ihr CRM-Team gerade erst wächst, muss das Programm nicht warten: Wir können das CRM übergangsweise übernehmen, die ersten Segmente und Kampagnen umsetzen und es dann an Ihr Team übergeben.\n\nWenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · DE · problem",
+    "workflow": "Demo · Retail loyalty · DE · problem",
     "icp": "Retail loyalty",
     "language": "DE",
     "approach": "problem",
@@ -50,7 +50,7 @@
     "followup_2": "Hallo {{first_name}},\n\nzum Schluss nur eine Frage: Bekommt bei Ihnen jemand, der den großen Wocheneinkauf macht, ein anderes Angebot als jemand, der auf dem Heimweg schnell eine Sache holt? Wenn ja, sind Sie gut aufgestellt, und ich halte Sie nicht länger auf. Wenn nicht, wäre genau das der Anfang.\n\nUnd wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · DE · proof",
+    "workflow": "Demo · Retail loyalty · DE · proof",
     "icp": "Retail loyalty",
     "language": "DE",
     "approach": "proof",
@@ -60,7 +60,7 @@
     "followup_2": "Hallo {{first_name}},\n\nein letztes Beispiel: Bei der Rohlík Group kamen neue Kunden schneller, als sich ein CRM-Team aufbauen ließ. Wir haben das CRM übergangsweise übernommen, vier Länder, darunter Österreich und Deutschland, auf ein CRM-Modell gebracht und es dann übergeben. Der Umsatz pro Kunde (ARPU) stieg um 17 %.\n\nWenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · EN · signal",
+    "workflow": "Demo · Retail loyalty · EN · signal",
     "icp": "Retail loyalty",
     "language": "EN",
     "approach": "signal",
@@ -70,7 +70,7 @@
     "followup_2": "Hi {{first_name}},\n\nlast note from me. If your CRM team is still being built, the programme doesn't have to wait: we can take interim ownership of CRM, get the first segments and journeys live, then hand it over to your people.\n\nIf it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · EN · problem",
+    "workflow": "Demo · Retail loyalty · EN · problem",
     "icp": "Retail loyalty",
     "language": "EN",
     "approach": "problem",
@@ -80,7 +80,7 @@
     "followup_2": "Hi {{first_name}},\n\none last question, then I'll leave it there: if you asked each country team today who your most valuable loyalty members are, would they give the same answer? If yes, you're in good shape and I won't take more of your time. If not, that's usually the place to start.\n\nAnd if it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Retail loyalty · EN · proof",
+    "workflow": "Demo · Retail loyalty · EN · proof",
     "icp": "Retail loyalty",
     "language": "EN",
     "approach": "proof",

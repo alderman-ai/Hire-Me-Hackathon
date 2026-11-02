@@ -1,6 +1,6 @@
 [
  {
-  "name": "D3 · Retail loyalty · CS · signal",
+  "name": "Demo · Retail loyalty · CS · signal",
   "icp": "Retail loyalty",
   "language": "CS",
   "approach": "signal",
@@ -297,7 +297,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · CS · problem",
+  "name": "Demo · Retail loyalty · CS · problem",
   "icp": "Retail loyalty",
   "language": "CS",
   "approach": "problem",
@@ -594,7 +594,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · CS · proof",
+  "name": "Demo · Retail loyalty · CS · proof",
   "icp": "Retail loyalty",
   "language": "CS",
   "approach": "proof",
@@ -891,7 +891,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · DE · signal",
+  "name": "Demo · Retail loyalty · DE · signal",
   "icp": "Retail loyalty",
   "language": "DE",
   "approach": "signal",
@@ -1188,7 +1188,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · DE · problem",
+  "name": "Demo · Retail loyalty · DE · problem",
   "icp": "Retail loyalty",
   "language": "DE",
   "approach": "problem",
@@ -1485,7 +1485,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · DE · proof",
+  "name": "Demo · Retail loyalty · DE · proof",
   "icp": "Retail loyalty",
   "language": "DE",
   "approach": "proof",
@@ -1782,7 +1782,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · EN · signal",
+  "name": "Demo · Retail loyalty · EN · signal",
   "icp": "Retail loyalty",
   "language": "EN",
   "approach": "signal",
@@ -2079,7 +2079,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · EN · problem",
+  "name": "Demo · Retail loyalty · EN · problem",
   "icp": "Retail loyalty",
   "language": "EN",
   "approach": "problem",
@@ -2376,7 +2376,7 @@
   ]
  },
  {
-  "name": "D3 · Retail loyalty · EN · proof",
+  "name": "Demo · Retail loyalty · EN · proof",
   "icp": "Retail loyalty",
   "language": "EN",
   "approach": "proof",
@@ -2673,7 +2673,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · CS · signal",
+  "name": "Demo · Telco CVM · CS · signal",
   "icp": "Telco CVM",
   "language": "CS",
   "approach": "signal",
@@ -2970,7 +2970,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · CS · problem",
+  "name": "Demo · Telco CVM · CS · problem",
   "icp": "Telco CVM",
   "language": "CS",
   "approach": "problem",
@@ -3267,7 +3267,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · CS · proof",
+  "name": "Demo · Telco CVM · CS · proof",
   "icp": "Telco CVM",
   "language": "CS",
   "approach": "proof",
@@ -3564,7 +3564,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · SK · signal",
+  "name": "Demo · Telco CVM · SK · signal",
   "icp": "Telco CVM",
   "language": "SK",
   "approach": "signal",
@@ -3861,7 +3861,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · SK · problem",
+  "name": "Demo · Telco CVM · SK · problem",
   "icp": "Telco CVM",
   "language": "SK",
   "approach": "problem",
@@ -4158,7 +4158,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · SK · proof",
+  "name": "Demo · Telco CVM · SK · proof",
   "icp": "Telco CVM",
   "language": "SK",
   "approach": "proof",
@@ -4455,7 +4455,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · EN · signal",
+  "name": "Demo · Telco CVM · EN · signal",
   "icp": "Telco CVM",
   "language": "EN",
   "approach": "signal",
@@ -4752,7 +4752,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · EN · problem",
+  "name": "Demo · Telco CVM · EN · problem",
   "icp": "Telco CVM",
   "language": "EN",
   "approach": "problem",
@@ -5049,7 +5049,7 @@
   ]
  },
  {
-  "name": "D3 · Telco CVM · EN · proof",
+  "name": "Demo · Telco CVM · EN · proof",
   "icp": "Telco CVM",
   "language": "EN",
   "approach": "proof",
@@ -5346,7 +5346,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · CS · signal",
+  "name": "Demo · Consumer lending · CS · signal",
   "icp": "Consumer lending",
   "language": "CS",
   "approach": "signal",
@@ -5643,7 +5643,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · CS · problem",
+  "name": "Demo · Consumer lending · CS · problem",
   "icp": "Consumer lending",
   "language": "CS",
   "approach": "problem",
@@ -5940,7 +5940,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · CS · proof",
+  "name": "Demo · Consumer lending · CS · proof",
   "icp": "Consumer lending",
   "language": "CS",
   "approach": "proof",
@@ -6237,7 +6237,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · SK · signal",
+  "name": "Demo · Consumer lending · SK · signal",
   "icp": "Consumer lending",
   "language": "SK",
   "approach": "signal",
@@ -6534,7 +6534,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · SK · problem",
+  "name": "Demo · Consumer lending · SK · problem",
   "icp": "Consumer lending",
   "language": "SK",
   "approach": "problem",
@@ -6831,7 +6831,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · SK · proof",
+  "name": "Demo · Consumer lending · SK · proof",
   "icp": "Consumer lending",
   "language": "SK",
   "approach": "proof",
@@ -7128,7 +7128,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · EN · signal",
+  "name": "Demo · Consumer lending · EN · signal",
   "icp": "Consumer lending",
   "language": "EN",
   "approach": "signal",
@@ -7425,7 +7425,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · EN · problem",
+  "name": "Demo · Consumer lending · EN · problem",
   "icp": "Consumer lending",
   "language": "EN",
   "approach": "problem",
@@ -7722,7 +7722,7 @@
   ]
  },
  {
-  "name": "D3 · Consumer lending · EN · proof",
+  "name": "Demo · Consumer lending · EN · proof",
   "icp": "Consumer lending",
   "language": "EN",
   "approach": "proof",
@@ -8019,7 +8019,7 @@
   ]
  },
  {
-  "name": "D3 · Last-mile logistics · CS · signal",
+  "name": "Demo · Last-mile logistics · CS · signal",
   "icp": "Last-mile logistics",
   "language": "CS",
   "approach": "signal",
@@ -8316,7 +8316,7 @@
   ]
  },
  {
-  "name": "D3 · Last-mile logistics · CS · problem",
+  "name": "Demo · Last-mile logistics · CS · problem",
   "icp": "Last-mile logistics",
   "language": "CS",
   "approach": "problem",
@@ -8613,7 +8613,7 @@
   ]
  },
  {
-  "name": "D3 · Last-mile logistics · CS · proof",
+  "name": "Demo · Last-mile logistics · CS · proof",
   "icp": "Last-mile logistics",
   "language": "CS",
   "approach": "proof",
@@ -8910,7 +8910,7 @@
   ]
  },
  {
-  "name": "D3 · Last-mile logistics · EN · signal",
+  "name": "Demo · Last-mile logistics · EN · signal",
   "icp": "Last-mile logistics",
   "language": "EN",
   "approach": "signal",
@@ -9207,7 +9207,7 @@
   ]
  },
  {
-  "name": "D3 · Last-mile logistics · EN · problem",
+  "name": "Demo · Last-mile logistics · EN · problem",
   "icp": "Last-mile logistics",
   "language": "EN",
   "approach": "problem",
@@ -9504,7 +9504,7 @@
   ]
  },
  {
-  "name": "D3 · Last-mile logistics · EN · proof",
+  "name": "Demo · Last-mile logistics · EN · proof",
   "icp": "Last-mile logistics",
   "language": "EN",
   "approach": "proof",

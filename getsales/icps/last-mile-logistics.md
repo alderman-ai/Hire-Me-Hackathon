@@ -26,7 +26,7 @@ Left out: Packeta (a logo on the home page, no stated result), the Děčín bus 
 
 ## Czech (CS)
 
-### D3 · Last-mile logistics · CS · signal
+### Demo · Last-mile logistics · CS · signal
 
 **Message 1 brief** (for the LLM that writes `custom message 1`)
 
@@ -44,7 +44,7 @@ Use when enrichment found a dated trigger in the last 90 days: announced entry i
 
 > Dobrý den, ozývám se naposledy. Pokud firma {{company_name}} právě vstupuje na nový trh nebo rozšiřuje síť, umíme pomoct s tím, co obvykle drhne: kam umístit boxy a výdejní místa, jak nastavit spolupráci s partnery a přeshraniční toky zásilek a jak to celé propojit v systémech. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. A pokud jen nesedí načasování, pošlete jedno slovo: později. {{sender_first_name}}
 
-### D3 · Last-mile logistics · CS · problem
+### Demo · Last-mile logistics · CS · problem
 
 **Message 1 brief** (for the LLM that writes `custom message 1`)
 
@@ -62,7 +62,7 @@ Use when there is no fresh trigger and no close look-alike case. Open with one p
 
 > Dobrý den, ještě jednou a naposledy. Pokud máte na příští rok v plánu zvednout úspěšnost prvního doručení, zpřehlednit přeshraniční toky zásilek nebo dostat síť výdejních míst do zisku, můžeme na datech, která už máte, ukázat, jak by to ve firmě {{company_name}} mohlo vypadat. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}
 
-### D3 · Last-mile logistics · CS · proof
+### Demo · Last-mile logistics · CS · proof
 
 **Message 1 brief** (for the LLM that writes `custom message 1`)
 
@@ -82,7 +82,7 @@ Use when the lead's company looks like Addvery's BOX NOW case: building or growi
 
 ## English (EN)
 
-### D3 · Last-mile logistics · EN · signal
+### Demo · Last-mile logistics · EN · signal
 
 **Message 1 brief** (for the LLM that writes `custom message 1`)
 
@@ -100,7 +100,7 @@ Use when enrichment found a dated trigger in the last 90 days: announced entry i
 
 > Hi {{first_name}}, last note from me. If {{company_name}} is opening a market or growing its network right now, we can help with the parts that tend to slip: where lockers and pickup points go, partners and cross-border flows, and the systems that tie it all together. If it's not a priority, just say so and I'll stop. And if it's just bad timing, a one-word 'later' works too. {{sender_first_name}}
 
-### D3 · Last-mile logistics · EN · problem
+### Demo · Last-mile logistics · EN · problem
 
 **Message 1 brief** (for the LLM that writes `custom message 1`)
 
@@ -118,7 +118,7 @@ Use when there is no fresh trigger and no close look-alike case. Open with one p
 
 > Hi {{first_name}}, closing the loop. If first-attempt success, cross-border flows or a pickup network that pays its way are on the list for next year, we can show how it could look at {{company_name}}, starting from the data you already have. If it's not a priority, just say so and I'll stop. {{sender_first_name}}
 
-### D3 · Last-mile logistics · EN · proof
+### Demo · Last-mile logistics · EN · proof
 
 **Message 1 brief** (for the LLM that writes `custom message 1`)
 

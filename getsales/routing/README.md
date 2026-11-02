@@ -18,7 +18,7 @@ Sales Navigator search ─► CSV export ─► enrichment ─► the router ─
 2. **Enrichment.** Industry, employees, country, title, profile language, and any recent signal with its date (new role, hiring, funding, a launch).
 3. **The router** makes three decisions, in order, and writes its reasons into the CSV.
 4. **`custom message 1`.** Written for that lead in the chosen language and approach, before import.
-5. **Import.** Into the one workflow named `D3 · <ICP> · <LANG> · <approach>`, with `custom_message_1` as a lead field. Codes: CS Czech, SK Slovak, DE German, EN English.
+5. **Import.** Into the one workflow named `Demo · <ICP> · <LANG> · <approach>`, with `custom_message_1` as a lead field. Codes: CS Czech, SK Slovak, DE German, EN English.
 
 ## The three decisions
 

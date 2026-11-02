@@ -1,6 +1,6 @@
 [
   {
-    "workflow": "D3 · Last-mile logistics · CS · signal",
+    "workflow": "Demo · Last-mile logistics · CS · signal",
     "icp": "Last-mile logistics",
     "language": "CS",
     "approach": "signal",
@@ -10,7 +10,7 @@
     "followup_2": "Dobrý den, ozývám se naposledy. Pokud firma {{company_name}} právě vstupuje na nový trh nebo rozšiřuje síť, umíme pomoct s tím, co obvykle drhne: kam umístit boxy a výdejní místa, jak nastavit spolupráci s partnery a přeshraniční toky zásilek a jak to celé propojit v systémech. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. A pokud jen nesedí načasování, pošlete jedno slovo: později. {{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Last-mile logistics · CS · problem",
+    "workflow": "Demo · Last-mile logistics · CS · problem",
     "icp": "Last-mile logistics",
     "language": "CS",
     "approach": "problem",
@@ -20,7 +20,7 @@
     "followup_2": "Dobrý den, ještě jednou a naposledy. Pokud máte na příští rok v plánu zvednout úspěšnost prvního doručení, zpřehlednit přeshraniční toky zásilek nebo dostat síť výdejních míst do zisku, můžeme na datech, která už máte, ukázat, jak by to ve firmě {{company_name}} mohlo vypadat. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Last-mile logistics · CS · proof",
+    "workflow": "Demo · Last-mile logistics · CS · proof",
     "icp": "Last-mile logistics",
     "language": "CS",
     "approach": "proof",
@@ -30,7 +30,7 @@
     "followup_2": "Dobrý den, tohle je poslední zpráva ode mě. Pokud ve firmě {{company_name}} řešíte síť výdejních boxů, vstup na nový trh nebo nové nastavení poslední míle, můžeme za 20 minut projít, jak se BOX NOW dostal od nuly na více než 700 boxů a co by se z toho dalo použít u vás. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Last-mile logistics · EN · signal",
+    "workflow": "Demo · Last-mile logistics · EN · signal",
     "icp": "Last-mile logistics",
     "language": "EN",
     "approach": "signal",
@@ -40,7 +40,7 @@
     "followup_2": "Hi {{first_name}}, last note from me. If {{company_name}} is opening a market or growing its network right now, we can help with the parts that tend to slip: where lockers and pickup points go, partners and cross-border flows, and the systems that tie it all together. If it's not a priority, just say so and I'll stop. And if it's just bad timing, a one-word 'later' works too. {{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Last-mile logistics · EN · problem",
+    "workflow": "Demo · Last-mile logistics · EN · problem",
     "icp": "Last-mile logistics",
     "language": "EN",
     "approach": "problem",
@@ -50,7 +50,7 @@
     "followup_2": "Hi {{first_name}}, closing the loop. If first-attempt success, cross-border flows or a pickup network that pays its way are on the list for next year, we can show how it could look at {{company_name}}, starting from the data you already have. If it's not a priority, just say so and I'll stop. {{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Last-mile logistics · EN · proof",
+    "workflow": "Demo · Last-mile logistics · EN · proof",
     "icp": "Last-mile logistics",
     "language": "EN",
     "approach": "proof",

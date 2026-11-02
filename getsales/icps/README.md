@@ -14,7 +14,7 @@ Status: skeleton. The ICPs and languages wait for Alex's Addvery research (fallb
 
 Workflows = ICPs × languages × 3. Four ICPs in three languages make 36. A cell is left out only where an ICP doesn't buy in that language, and the grid says so.
 
-Naming, so the folder sorts itself: `D3 · <ICP short name> · <LANG> · <approach>`, for example `D3 · Mid-market SaaS · EN · signal`.
+Naming, so the folder sorts itself: `Demo · <ICP short name> · <LANG> · <approach>`, for example `Demo · Mid-market SaaS · EN · signal`.
 
 ## The three approaches
 

@@ -1,6 +1,6 @@
 [
   {
-    "workflow": "D3 · Consumer lending · CS · signal",
+    "workflow": "Demo · Consumer lending · CS · signal",
     "icp": "Consumer lending",
     "language": "CS",
     "approach": "signal",
@@ -10,7 +10,7 @@
     "followup_2": "Dobrý den, tohle je ode mě poslední zpráva. Takové chvíle rychle pomíjejí: jakmile nové nastavení naběhne, jeho pravidla obvykle vydrží roky. Když budete chtít, za 20 minut probereme, kde se ve společnosti {{company_name}} dnes ztrácejí leady a kde se zasekává schvalování. Pokud to teď není priorita, stačí napsat a už se neozvu.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Consumer lending · CS · problem",
+    "workflow": "Demo · Consumer lending · CS · problem",
     "icp": "Consumer lending",
     "language": "CS",
     "approach": "problem",
@@ -20,7 +20,7 @@
     "followup_2": "Dobrý den, ještě poslední věc. Stejná mezera bývá i na straně úvěrů: každý produkt si časem vytvoří vlastní schvalovací pravidla a dva stejní žadatelé pak dostanou různé odpovědi. To umíme zmapovat jednou, napříč produkty i datovými zdroji, dřív než se kupuje nový systém. Jestli ve společnosti {{company_name}} řešíte jedno nebo druhé, za 20 minut zjistíme, zda můžeme pomoct. Pokud to není priorita, stačí napsat a už se neozvu."
   },
   {
-    "workflow": "D3 · Consumer lending · CS · proof",
+    "workflow": "Demo · Consumer lending · CS · proof",
     "icp": "Consumer lending",
     "language": "CS",
     "approach": "proof",
@@ -30,7 +30,7 @@
     "followup_2": "Dobrý den, poslední zpráva ode mě. Oba úvěrové projekty, které máme na webu, jsou z Filipín, ne ze střední Evropy, a nebudu předstírat opak. Problémy se ale podobají: pro Security Bank jsme prověřili 23 datových zdrojů a navrhli jeden schvalovací proces pro pět úvěrových produktů. Ve společnosti {{company_name}} by to mohlo znamenat jeden pohled od kliknutí ke smlouvě a jednu odpověď pro každého žadatele. Pokud to není priorita, stačí napsat a už se neozvu."
   },
   {
-    "workflow": "D3 · Consumer lending · SK · signal",
+    "workflow": "Demo · Consumer lending · SK · signal",
     "icp": "Consumer lending",
     "language": "SK",
     "approach": "signal",
@@ -40,7 +40,7 @@
     "followup_2": "Dobrý deň, {{first_name}}, toto je odo mňa posledná správa. Takéto chvíle rýchlo pominú: keď nové nastavenie nabehne, jeho pravidlá zvyčajne vydržia roky. Ak budete chcieť, za 20 minút prejdeme, kde sa v spoločnosti {{company_name}} dnes strácajú leady a kde sa zasekáva schvaľovanie. Ak to teraz nie je priorita, stačí napísať a už sa neozvem.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Consumer lending · SK · problem",
+    "workflow": "Demo · Consumer lending · SK · problem",
     "icp": "Consumer lending",
     "language": "SK",
     "approach": "problem",
@@ -50,7 +50,7 @@
     "followup_2": "Dobrý deň, {{first_name}}, ešte posledná vec. Rovnaká medzera býva aj na strane úverov: každý produkt si časom vytvorí vlastné schvaľovacie pravidlá a dvaja rovnakí žiadatelia potom dostanú rôzne odpovede. To vieme zmapovať raz, naprieč produktmi aj dátovými zdrojmi, skôr než sa kupuje nový systém. Ak v spoločnosti {{company_name}} riešite jedno alebo druhé, za 20 minút zistíme, či vieme pomôcť. Ak to nie je priorita, stačí napísať a už sa neozvem."
   },
   {
-    "workflow": "D3 · Consumer lending · SK · proof",
+    "workflow": "Demo · Consumer lending · SK · proof",
     "icp": "Consumer lending",
     "language": "SK",
     "approach": "proof",
@@ -60,7 +60,7 @@
     "followup_2": "Dobrý deň, {{first_name}}, posledná správa odo mňa. Oba úverové projekty, ktoré máme na webe, sú z Filipín, nie zo strednej Európy, a nebudem predstierať opak. Problémy sa však podobajú: pre Security Bank sme preverili 23 dátových zdrojov a navrhli jeden schvaľovací proces pre päť úverových produktov. V spoločnosti {{company_name}} by to mohlo znamenať jeden pohľad od kliknutia po zmluvu a jednu odpoveď pre každého žiadateľa. Ak to nie je priorita, stačí napísať a už sa neozvem."
   },
   {
-    "workflow": "D3 · Consumer lending · EN · signal",
+    "workflow": "Demo · Consumer lending · EN · signal",
     "icp": "Consumer lending",
     "language": "EN",
     "approach": "signal",
@@ -70,7 +70,7 @@
     "followup_2": "Hi {{first_name}}, last note from me. Moments like this close fast: once the new setup goes live, its rules tend to stay for years. If it helps, 20 minutes is enough to talk through where leads and approvals get stuck at {{company_name}} today. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}"
   },
   {
-    "workflow": "D3 · Consumer lending · EN · problem",
+    "workflow": "Demo · Consumer lending · EN · problem",
     "icp": "Consumer lending",
     "language": "EN",
     "approach": "problem",
@@ -80,7 +80,7 @@
     "followup_2": "Hi {{first_name}}, one last thing. The same gap often shows up on the credit side: each product grows its own approval rules, and two identical applicants can get different answers. We map that once, across products and data sources, before anyone buys a new system. If either side is live at {{company_name}}, 20 minutes is enough to see if we can help. If it's not a priority, just say so and I'll stop."
   },
   {
-    "workflow": "D3 · Consumer lending · EN · proof",
+    "workflow": "Demo · Consumer lending · EN · proof",
     "icp": "Consumer lending",
     "language": "EN",
     "approach": "proof",
