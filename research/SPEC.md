@@ -1,135 +1,182 @@
 # S1 Research: executable spec
 
-Status: draft, waiting on preflight answers · Row: S1 — Research (meta) · Folder: `s1-research\` · Session: `s1-research` (both as proposed; S0's directory plan confirms them)
+Status: ready to launch after S0 (DI-3 answered; launch gate met) · Row: S1 — Research (meta) · Folder: `research\` · Session: `s1-research`
 
-This spec sets how research is chosen, sized, run, stored and indexed. It does not choose topics, depths or budgets. Alex does, through the preflight below, because the charter's research reading list says: "do not attempt to do this without the operator in the loop -- he will override and micromanage the research part." Anything Alex tells the research session directly overrides this spec and every default in it.
+This spec sets how research is chosen, run, stored and indexed. Alex decides what gets researched. Every research list goes to him before it runs, because the charter's research reading list says "do not attempt to do this without the operator in the loop", and DI-3 Q3.4 says "all this research part is the part that should involve me." Anything Alex tells the research session directly overrides this spec.
+
+**Where the method comes from.** DI-3 asked for it to follow Alex's own earlier work, so it draws on two sources:
+- **The spec lifecycle** in `alderman-ai/knowledge-work-executable-spec-research`: the DoD is written before the methodology, and a coherency check runs between them.
+- **The research section of his Client Demo charter**, with its research directory and wildcard report. These are on local disk only, in `Desktop\Atlas OS\Projects\PROJ_Client Demo\` and `Desktop\Atlas OS\Isolated methodology review\`. They're in his `atlas-os` repo but haven't been pushed to GitHub.
+
+The public repo has no research section of its own.
 
 ## 1. Operator preflight (P3)
 
-The preflight is decision intake DI-3 (`Operator tasks\DI-3 S1 Research preflight.md`), which Alex answers in Obsidian. It holds all four questions, as Q3.1 to Q3.4 for S1-Q1 to S1-Q4, and none of them goes through the answer desk. **Launch gate:** the S1 session isn't launched until Alex says "DI-3 is ready". Recordings needed: none. No research task runs before S1-Q1 is answered, except as S1-Q4 allows.
+The preflight was decision intake DI-3 (`Operator tasks\DI-3 S1 Research preflight.md`), which Alex answered in Obsidian. **Launch gate: met.** He said "DI-3 is ready" on 2 Nov, and S1 launches after S0, per the run order. Recordings needed: none.
 
-| ID | Question | Critical | Default if unanswered | Answer |
-| --- | --- | --- | --- | --- |
-| S1-Q1 | Which topics go on the reading list, at which tier, with which research details? | yes | Nothing is researched. Machinery only; the question stays open in DI-3 and is raised at Alex's next block. | — |
-| S1-Q2 | What may research spend, and in what unit? | no | No deep run starts. Light and standard topics run as approved. | — |
-| S1-Q3 | Which Addvery research is S1's (shared, done once) and which stays with S-D2? | no | S1 owns brand capture. Company research follows DI-2 Q2.2 (owner of the `Addvery Research` folder), otherwise it stays with S-D2. | — |
-| S1-Q4 | Charter conflict: may research start on a default when Alex is away (P5 against the reading-list rule)? | no | No. Nothing unapproved starts. | — |
+| DI-3 | What Alex decided | Applied in |
+| --- | --- | --- |
+| Q3.1 (S1-Q1) | Research comes before methodology: "if there's an easy answer, an obvious answer, or a converged-upon answer, we're using it. If not, we at least know traps and gotchas." Findings are stored at the parent or child level and go on the reading list of every spec that needs them. Every research list carries three wildcards. | sections 4 to 6 |
+| Q3.2 (S1-Q2) | No budget number. Each run is scoped to the size of the Client Demo research, "a list of questions", using the tools available here. | section 4 |
+| Q3.3 (S1-Q3) | All Addvery research (company, stakeholders, brand capture) is Alex's own, done one-on-one in `..\Addvery Research\`, which is git-ignored. No spec covers it, and S1 has no Addvery topics. The brand-capture ownership question is dropped. | sections 2, 4 |
+| Q3.4 (S1-Q4) | Research is part of the preflight and always involves Alex. It never runs on a default. He's at the computer until at least 18:00 Prague. | sections 1, 8 |
 
-Answers are read from DI-3's fences into the Answer column above. An empty fence means that question's default, which is logged in section 8. After this round, S1 interrupts Alex only for something critical (P5). Questions that come up while S1 runs, such as topic requests from other specs, go through the answer desk (section 6).
+**Questions at runtime** go to the answer desk, one at a time (`..\answer-desk\ASKING.md`). Ids continue from S1-Q5.
+- **S1-Q5, the first question:** confirm the storage reading in section 6. The options are A (as written there), B (S1 writes reports straight to their homes, which needs a GIT.md exception from `orchestration`) and C (every report stays in `research\`, split into `global\` and per-spec subfolders). I recommend A, because it leaves GIT.md untouched. Nothing moves home before Alex answers.
+- **Then one question per research list,** to approve it (section 5).
+
+**Waiting on Alex.** After 15 minutes waiting on him for anything (a desk question, an operator task or a decision intake), S1 sends `answer-desk` the line `POKE <asker>: waiting on you for <what>` (`answer-desk\ASKING.md`; S1's asker is `S1`). It sends the poke again every 15 minutes while it's still waiting. Before 18:00 Prague, it keeps waiting and works on anything that doesn't depend on the answer, such as drafting the next list or indexing. From 18:00, non-research decisions follow P5 (section 8). Research still waits for Alex.
 
 ## 2. Place, neighbours and folder (spec contract items 1, 2 and 6)
 
-- **Place.** Row S1 of the spec outline. It claims the DoD items in section 9, which are placeholders until S2 writes the project-level definition of done.
+- **Place.** Row S1 of the spec outline. It claims the DoD items in section 9, which stay placeholders until S2 assigns real ids.
 - **Depends on** S0. **Runs in parallel with** S2.
-- **Feeds** S-D1, S-D2 and S-D4 directly (spec outline), and every spec that reads findings through the research reading list. If S1-Q3 gives S1 brand capture, it also feeds S-D6, S-D7 and S-D8.
-- **Works with S2.** S1 never edits the charter or another folder (GIT.md, ownership). When an index row is added or changes, S1 messages the S2 session (name per S0's plan), whose skills update the charter's research reading list and the readers' CLAUDE.md lists.
-- **One session, one role (P2).** `s1-research` orchestrates and reviews; it does not research itself (P7). Each worker session runs exactly one task.
+- **Feeds** every wave-2 spec. Each one gets a research list before its methodology is written: S-D1 and S-D4 first (spec outline), then the rest. S-D2 is out of scope, because Addvery research is Alex's own (Q3.3). A spec that needs Addvery material reads it from local disk in `..\Addvery Research\`, never from GitHub.
+- **Works with S2.** S1 never edits the charter or another folder (GIT.md). The one root file it edits is `..\SESSIONS.md`, and only its own rows. S2, which the `orchestration` session runs, moves accepted reports to their homes and writes the reading-list lines in each spec that needs them (DI-4 Q4.2: "Reading lists go into the executable specs").
+- **One session, one role (P2).** `s1-research` drafts lists, dispatches research and reviews it; it doesn't research anything itself (P7).
 
 Folder tree:
 
 ```
-s1-research\
-  CLAUDE.md                 written by S0; contents below
-  SPEC.md                   this file
-  HANDOFF.md                written at each fork (section 10)
-  tasks\T-<nn>-<slug>.md    one per topic (section 5)
-  findings\INDEX.md         the index (section 6)
-  findings\<slug>.md        one per topic
+research\
+  CLAUDE.md                  written by S0; reading list below
+  SPEC.md                    this file
+  HANDOFF.md                 written at each fork (section 10)
+  DIRECTORY.md               the one index of every report, at both levels (section 6)
+  lists\L-<nn>-<scope>.md    one research list per spec or merged group (section 5)
+  staging\<report>.md        reports while being written and reviewed, before they move home
 ```
 
-The CLAUDE.md that S0 writes for this folder must hold this reading list, in order: `..\CHARTER.md`, `..\GIT.md`, `..\answer-desk\ASKING.md`, `..\answer-desk\qa\S1.md` (S1's running Q&A record at the desk), `SPEC.md`, `HANDOFF.md` if it exists, `findings\INDEX.md`. It must also hold two role lines:
-- A session named `s1-research` or `s1-research-<n>` is the S1 spec orchestrator and follows this spec.
-- A session named `rw-T<nn>` is a worker. It reads only CLAUDE.md, section 4 of this spec and its own task file. It writes only its task's output path, never commits, and sends questions to the active research session, never to the desk.
+The CLAUDE.md that S0 writes for this folder must hold this reading list, in order: `..\CHARTER.md`, `..\SESSIONS.md` (the roster of official session names), `..\GIT.md`, `..\answer-desk\ASKING.md`, `..\answer-desk\qa\S1.md` (S1's running Q&A record at the desk), `SPEC.md`, `HANDOFF.md` if it exists, `DIRECTORY.md`. It must also hold two role lines:
+- The session named `s1-research` is the S1 spec orchestrator and follows this spec. A successor after a handoff keeps that name.
+- A session named `rw-L<nn>-<item>` is a worker running one deep-research item, with its own roster row while it runs. It reads only CLAUDE.md, section 4 and its list. It writes only that item's staging file, never commits, and sends questions to the active S1 session, never to the desk.
 
 ## 3. How the session runs
 
 1. Read the reading list. If `HANDOFF.md` exists, resume from it.
-2. Read DI-3's answers and apply them; log any default taken.
-3. While waiting, build the machinery only: the `tasks\` and `findings\` folders and an empty `INDEX.md`. Commit (P1, GIT.md).
-4. When S1-Q1 is answered, write one task file per approved topic. Its `Approved by` field carries Alex's answer id. No task exists without one, except under S1-Q4's answer.
-5. Start tasks in priority order (section 7), as many at once as the budget allows (P1). Subagents run Light and Standard tasks. A worker session runs Deep tasks, and any task long enough to crowd the orchestrator's context (P7). Launch a worker from `s1-research\`: `claude --bg -n rw-T<nn> "Read CLAUDE.md, then tasks\T-<nn>-<slug>.md. Do only that task."`
-6. Review each output against its task's questions. Accept it, or send it back once with the gap named. Then index it, commit, and send `FINDINGS T-<nn> ready: <path>` to the S2 session and to each session in its Feeds.
-7. Approvals and re-tiering happen in Alex's window. Approved runs that need nothing from him continue overnight (P6).
+2. Apply DI-3's answers as recorded in section 1, and build the empty `lists\`, `staging\` and `DIRECTORY.md`. Commit (P1, GIT.md).
+3. Send S1-Q5 (section 1). While it's open, draft the first research lists (section 7).
+4. Put each drafted list to Alex as its own desk question. A list runs only after he approves it, and its `Approved by` line carries his answer id.
+5. Run an approved list's items in parallel, one subagent per item (P1). An item Alex marks for deep research runs as the deep-research skill in a worker session, launched from `research\` with `claude --bg -n rw-L<nn>-<item> "Read CLAUDE.md, then lists\L-<nn>-<scope>.md. Do only item <item>."` In the same step, S1 adds the worker's row to `..\SESSIONS.md` and commits that file on its own, path-limited: `git commit -m "[roster] ..." -- SESSIONS.md`. When the worker stops, S1 updates its row the same way.
+6. Review each report against section 4. Accept it, or send it back once with the gap named. Tick its box and commit.
+7. When every item is ticked, run the synthesis, write the directory entries and commit. Then send `orchestration`, which runs S2, `FINDINGS <list id> ready: <staging paths>; home: <path>; readers: <spec ids>`, and tell each reader's session.
+8. Approved lists that need nothing more from Alex may keep running overnight (P6).
 
 ## 4. Methodology
 
-Three depth tiers. The relative cost is fixed; the actual caps are Alex's (S1-Q2).
+**Where research sits.** Each spec runs in this order, and S1 owns only step 3:
+1. The problem and scope.
+2. The DoD. Each item states an outcome and names the evidence that proves it, written before any method is chosen.
+3. Research.
+4. Post-research questions to Alex.
+5. A methodology written to satisfy the fixed DoD.
+6. A coherency check: "if we execute this Methodology, will that DoD be satisfied?"
+7. Execution.
 
-| Tier | Runner | Shape of the work | Output | Relative cost |
-| --- | --- | --- | --- | --- |
-| T1 Light | one subagent | answers the task's questions from a few sources; no fan-out | answer-first brief, about a page | lowest |
-| T2 Standard | one subagent, or a worker if long | more sources, claims cross-checked, gaps named | brief plus source list | middle |
-| T3 Deep | a worker running a multi-agent deep-research run | splits into sub-questions, fans out, synthesises | full report with answer-first summary | highest by far |
+**What a research list is.** One list per spec, or per group of specs Alex merges. It is drafted from the spec's problem, scope and DoD. Where the spec's own DoD doesn't exist yet, it's drafted from the charter row and the project DoD items the spec claims, and the list says so. Its size follows the Client Demo research:
+- **About four regular items.** Each is one to four plain questions, written verbatim into the list. Each asks:
+  - Is there an easy, obvious or converged answer for this step from problem to DoD? Cite it.
+  - If not, what are the traps and gotchas?
+  - What would change the planned approach?
 
-**Budget** (filled in from S1-Q2; blank until then):
-- Unit: ___ · Total cap: ___ · Deep runs allowed: ___ · Cap per run, by tier: ___
-- Each task file records what it spent. The session stops starting new runs at the cap and asks before going over.
+  Each names the DoD item or items it serves. One the session can't tie to a DoD item is flagged to Alex in the approval question.
+- **Exactly three wildcards.** Each is told every other item on the list, including the other wildcards' lenses, and reads the spec and the charter. It then researches "the biggest open question NOT being researched" within its lens. The lenses come from the Client Demo wildcard's own finding that its list never asked whether the project can be "executed, delivered, or received":
+  - W1: can it be executed?
+  - W2: can it be delivered?
+  - W3: will it be received?
 
-**What earns T3.** This guides the tiers S1 suggests; Alex's tier always wins.
-- Two or more specs read it, or it feeds something Addvery will see under Alex's name (stakeholder sections, the S-D3 live run).
-- A thin answer would show as a visible error on the published site or in outreach.
-- A T2 run left a gap that blocks a spec.
-- Not deep: tool how-tos a spec session will read anyway while it builds.
+  Alex can change the lenses when he approves the list. Each wildcard report has three parts: (a) a gap analysis, covering what the other items cover, everything left open, a ranked shortlist, and why it picked its question and what it passed over; (b) research on that question; (c) recommendations.
+- **One synthesis,** after every item is done. A subagent reads every report on the list and finds the convergences and cross-document insights. It adjudicates conflicts and tags each recommendation as assistant-actionable, operator decision or verify first. It also lists what the research didn't settle. Those open points become the spec's post-research questions.
 
-**Rules for every tier.**
-- Answer first: each findings file opens with what a reader needs, in five lines or fewer.
-- Every claim that matters carries its source and the date it was read. Gaps are named, not papered over.
-- Screen care: assume anything on screen can be published. Never open the Apify proposal or Alex's own GetSales outbound. No real data beyond what the charter's scope allows.
-- One topic, one task, one findings file. A topic is keyed by its subject, not by the spec that asked for it.
+**What a report looks like.** One Markdown file per item:
+- **Header:** the question verbatim, then the date, session and "item k of n".
+- **Method:** what was searched and when. Every substantive claim is cited, and inference is marked as inference.
+- **Body:** the verdict up front, then the evidence.
+- **Evidence gaps:** what it couldn't establish, stated plainly.
+- **Recommendations:** "evidence plus options". Every call in them is Alex's.
+- **Sources.**
 
-## 5. Task format
+For scale, the earlier reports ran about 275 to 480 lines for literature research, about 100 for a live probe of a connected tool, and about 300 for the synthesis.
 
-One file per topic, `s1-research\tasks\T-<nn>-<slug>.md`:
+**Tools.** These were seen in the meta-spec session on 2 Nov; S1 checks its own set at launch.
+- WebSearch and WebFetch, or the `web-fetch` agent where a session lacks WebFetch.
+- Subagents (general-purpose for research, Explore for sweeps of local files).
+- The deep-research skill, only where Alex marks an item for it.
+- `gh`, read-only, for Alex's own repos.
+- Claude in Chrome, only for pages that need his logged-in browser, and with his go-ahead.
+- Read-only live probes of connected tools (the GetSales and Vercel MCPs). No Apify connector is attached; Apify comes from its public docs.
+
+**Rules for every item.**
+- Screen care: assume anything on screen can be published. Never open the Apify proposal or Alex's own GetSales outbound. No real data beyond the charter's scope.
+- `..\Addvery Research\` is read from disk only where an approved item needs it. Nothing from it is copied into a tracked file.
+- Each topic is researched once. A second spec that needs it is added to the readers, not given a new item.
+
+## 5. Research list format
+
+`research\lists\L-<nn>-<scope>.md`, ticked as reports land:
 
 ```
-# T-<nn> <topic>
-Status: queued | approved | running | review | done | stale
-Approved by: <A S1-Qn> | Alex, direct | default under S1-Q4 (logged)
-Tier: T1 | T2 | T3        Budget: <from section 4>        Spent: <so far>
-Runner: subagent | rw-T<nn>
-Feeds: <spec ids that read it>
-Questions to answer: <Alex's first, then S1's>
-Sources to use / avoid: <from Alex's details>
-Out of bounds: <screen-care items; anything Alex excluded>
-Output: s1-research\findings\<slug>.md
+# L-<nn> Research list: <spec ids>
+Status: draft | on the desk (S1-Q<n>) | approved | running | synthesised | done
+Approved by: A S1-Q<n> | Alex, direct
+Level: child (<spec folder>\research\) | parent (orchestration\research\)
+Readers: <spec ids>      Drawn from: <problem, scope, DoD ids>
+- [ ] R1 <questions, verbatim as approved> · serves <DoD ids> · tools: <...> · deep: no | yes
+- [ ] R2 … R4 (about four in all)
+- [ ] W1 Wildcard: can it be executed?
+- [ ] W2 Wildcard: can it be delivered?
+- [ ] W3 Wildcard: will it be received?
+<!-- after every item above is ticked -->
+- [ ] Synthesis: cross-document insights and recommendations for the methodology
+- [ ] DIRECTORY.md entries for every report above
 ```
+
+The approval question shows Alex the whole list and offers three options: approve it, edit it, or merge or skip it.
 
 ## 6. Findings store and index
 
-- **One place.** Every finding lives in `s1-research\findings\`, one file per topic. Findings that another spec owns (for example S-D2's stakeholder profiles) get a pointer row, so the index stays the one place to look. The charter leaves the storage location to the pass with Alex, so S1-Q1 asks him to confirm this one.
-- **The index.** `findings\INDEX.md` is one table: ID | Topic | Tier | Status | Feeds | File | Updated | Approved by.
-- **Readers.** Other specs' reading lists point at `s1-research\findings\INDEX.md` and at the files whose Feeds name them. S1 notifies; S2 and the folder owners edit.
+- **Storage reading** (to be confirmed as S1-Q5):
+  - **Parent level** is research that two or more specs need, or that shapes the project as a whole. Its home is `..\orchestration\research\`, the parent session's file tree.
+  - **Child level** is research only one spec needs. Its home is `..\<spec folder>\research\`.
+  - S1 writes and reviews every report in `research\staging\`. S2 moves accepted reports to their homes and adds each one to the reading list of every spec in its readers. That keeps GIT.md as it is.
+- **The index.** `research\DIRECTORY.md` is the one place to look, covering both levels and written for retrieval, as in the Client Demo directory. Each report gets an entry with its verdicts, what it governs (specs and DoD ids), "read this when…" and its caveats. A reverse index lists the reports by spec.
+- **Precedence** goes at the foot of the directory:
+  1. The synthesis adjudicates between reports.
+  2. A live probe outranks literature on a tool's behaviour, within what it tested.
+  3. Otherwise the disagreement is live and goes to Alex.
+  4. Alex's directives outrank everything.
 - **Overrides.** A finding Alex overrides is edited in place, marked `Overridden by Alex, <time>`, and its readers are told.
-- **New requests.** A session asks for research with a message to the active research session: `RESEARCH <spec id>: <topic>, <why>, <needed by>`. If the topic exists, S1 adds the spec to its Feeds. If not, it is queued, and queued topics go to the desk together as one non-critical ASK (P4, P5). Nothing new runs before Alex approves it, except as S1-Q4 allows.
-- **One question on the desk at a time** (`answer-desk\ASKING.md`). S1 never sends a second ASK while one is open. Topic requests, budget calls and worker questions that arrive meanwhile wait in the queue. The next ASK goes out only once the open one is answered or withdrawn, rewritten in light of that answer, and folds in everything queued. If something queued can't wait, S1 sends `REPLACE <id>` with a block that folds it in, never a new ASK.
+- **New requests.** A session asks for research with a message to the active S1 session: `RESEARCH <spec id>: <topic>, <why>, <needed by>`. If the topic exists, S1 adds the spec to its readers. If not, it's queued for that spec's next list. Nothing new runs before Alex approves it.
+- **One question on the desk at a time** (`answer-desk\ASKING.md`). S1 never sends a second ASK while one is open. Lists, topic requests and worker questions that arrive meanwhile wait in the queue. The next ASK goes out only once the open one is answered or withdrawn. It is rewritten in light of that answer and folds in everything queued. If something queued can't wait, S1 sends `REPLACE <id>` with a block that folds it in, never a new ASK.
 
 ## 7. Priority order
 
-1. What S-D1 (scraping) and S-D2 (Addvery and stakeholders) need to start, because other specs consume their output. Then S-D4, which also waits on S1.
-2. Shared topics, read by two or more specs, researched once. Brand capture sits here if S1-Q3 gives it to S1.
-3. Everything else, in run order: S-D3, S-D6 and S-D7, S-D5, S-D8.
+1. S1-Q5, the storage reading.
+2. A parent-level list, if Alex wants one: research that shapes how every spec goes from problem to DoD.
+3. S-D1's list, because its output feeds several specs. Then S-D4's, which also waits on S1.
+4. The rest in run order: S-D3, S-D6 and S-D7 (offered as one merged list), S-D5 (may merge with S-D4), S-D8, S-D9, S-D10 (may merge with S-D6).
 
-Within a band, Alex's order wins. Tasks that wait on nothing run in parallel (P1).
+Alex's order wins. Approved lists run in parallel (P1).
 
 ## 8. Decision log (P5)
 
-When Alex hasn't answered within the deadline, the active research session decides, logs it here, and sends the desk `WITHDRAW <id>`, which frees S1's one desk slot (section 6). If his answer arrives later, it reconciles and logs that too. Start each Decision with the time and the ASK id it closes.
+Research never runs on a default (DI-3 Q3.4): an unapproved list waits for Alex, even overnight. Before 18:00 Prague, a passed deadline on any question means poke, not decide. From 18:00, a non-research question past its deadline is decided by the active S1 session, which logs it here and sends `WITHDRAW <id>`, freeing S1's one desk slot. If Alex's answer arrives later, the session reconciles and logs that too. Start each Decision with the time and the ASK id it closes.
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
 
 ## 9. Definition of done
 
-The project-level definition of done doesn't exist yet. S2 writes it and assigns the real ids; these are placeholders. The charter's done line for S1: "every topic agreed with the operator has findings at its chosen depth, linked from the reading list."
+S2 assigns the real ids; these are placeholders. The charter's done line for S1 is "every topic agreed with the operator has findings at its chosen depth, linked from the reading list". Following DI-4 Q4.2, that reading list is each spec's own.
 
 | Criterion | Traces to |
 | --- | --- |
-| Tiers and budget are set from S1-Q2, or the default is logged | DoD-S1-a (to be assigned by S2) |
-| Every topic Alex approved has a task file with tier, runner and approval | DoD-S1-b (to be assigned by S2) |
-| Every approved topic has findings at its tier, with an index row | DoD-S1-c (to be assigned by S2) |
-| Each shared topic appears once in the index, with all its readers in Feeds | DoD-S1-d (to be assigned by S2) |
-| Every index row is linked from the charter's research reading list (through S2) and from each reader's CLAUDE.md | DoD-S1-e (to be assigned by S2) |
-| Brand capture ownership is settled (S1-Q3) and the charter's open question is closed through S2 | DoD-S1-f (to be assigned by S2) |
+| Alex has confirmed the storage reading (S1-Q5) | DoD-S1-a (to be assigned by S2) |
+| Every wave-2 spec has a research list that Alex approved, merged or skipped before its methodology was written | DoD-S1-b (to be assigned by S2) |
+| Every approved list has a report for each item (about four regular items and exactly three wildcards) plus a synthesis | DoD-S1-c (to be assigned by S2) |
+| Every report sits at its level and has a DIRECTORY.md entry | DoD-S1-d (to be assigned by S2) |
+| Every report is on the reading list of each spec that needs it (through S2) | DoD-S1-e (to be assigned by S2) |
+| No research ran without Alex's approval, and the decision log shows no research decided by default | DoD-S1-f (to be assigned by S2) |
 
 ## 10. Forking gates (P8)
 
@@ -137,15 +184,19 @@ The active session forks at the first of these:
 
 | Gate | When |
 | --- | --- |
-| G1 | The preflight answers are in and the task queue is written. |
-| G2 | Every band-1 topic (section 7) is indexed. |
-| G3 | Shortly before Alex's window closes, so the overnight queue starts clean (P6). |
+| G1 | S1-Q5 is answered and the first list is approved. |
+| G2 | The first list's synthesis is in DIRECTORY.md. |
+| G3 | Shortly before 18:00 Prague, or when Alex says he's leaving, so the overnight queue starts clean (P6). |
 | G4 | The session's context is about half full, whatever else is happening. |
 
 How it forks (unless S0 sets a project-wide format; then use that):
 
-1. Write `HANDOFF.md`: task states, running workers, the open ASK id and its deadline if there is one, the queue waiting behind it, answers not yet applied, decisions since the last fork, and budget spent. Commit the folder (GIT.md).
-2. From `s1-research\`, launch the next generation: `claude --bg -n s1-research-<n+1> "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."` The first session is `s1-research`; the next is `s1-research-2`.
-3. Wait for its reply that it has read the handoff.
-4. Announce `ACTIVE S1: <old> -> <new>. Send S1 messages, answers to S1-Q*, FINDINGS replies and RESEARCH requests to <new>.` to `answer-desk`, `orchestration`, the S2 session, every running `rw-` worker, and every session with an open request. The new session takes over the open ASK as it stands and sends nothing new until it is answered or withdrawn.
-5. The old session stops.
+1. Write `HANDOFF.md`, then commit the folder (GIT.md). It holds:
+   - the state of each list and the running workers;
+   - the open ASK id with the time it was sent and the last poke;
+   - the queue waiting behind it;
+   - answers not yet applied;
+   - decisions since the last fork.
+2. From `research\`, launch the successor under the same name: `claude --bg -n s1-research "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."` A handoff keeps the name (`..\SESSIONS.md`), so nobody's address changes.
+3. Update S1's row in `..\SESSIONS.md` with the handoff time, and commit it on its own: `git commit -m "[roster] ..." -- SESSIONS.md`. That row is the announcement.
+4. The old session stops itself straight away. The successor takes over the open ASK as it stands, and sends nothing new until that ASK is answered or withdrawn.
