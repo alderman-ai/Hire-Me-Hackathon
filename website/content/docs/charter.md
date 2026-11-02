@@ -44,9 +44,9 @@ The stakeholders come from D2. Still open: the exact hours of today's operator w
 
 ## Scope
 
-The project covers the three meta deliverables and eleven client-facing deliverables listed below, and nothing else unless M2 adds it.
+The project covers the three meta deliverables and twelve client-facing deliverables listed below, and nothing else unless M2 adds it.
 
-- **In:** M0 to M2 and D1 to D11.
+- **In:** M0 to M2 and D1 to D12.
 - **Out:** real data running through the demos (the one exception: D3 may show its first-message variable computed for the six stakeholders), automations actually sending, and connecting anyone else's LinkedIn account.
 - **Deferred to Claude Code:** the definition of done, the operator's research details, and the wave-2 specs themselves.
 
@@ -68,7 +68,7 @@ Every spec uses these terms with exactly these meanings.
 
 ## Deliverables
 
-The project has eleven client-facing deliverables (one of them, D4, retired on 2 Nov) plus three meta deliverables, in two waves. Every client-facing deliverable is a demonstration in the Addvery brand: legibility matters more than function, and no real data runs through it except where noted. Each one becomes its own spec, except D2, which the operator runs himself.
+The project has twelve client-facing deliverables (one of them, D4, retired on 2 Nov) plus three meta deliverables, in two waves. Every client-facing deliverable is a demonstration in the Addvery brand: legibility matters more than function, and no real data runs through it except where noted. Each one becomes its own spec, except D2, which the operator runs himself.
 
 **Wave 1: meta (runs first).**
 
@@ -93,6 +93,7 @@ The project has eleven client-facing deliverables (one of them, D4, retired on 2
 | D9 | Legibility analyzer | A subdirectory that takes each processed clip from the OBS capture rig, finds and keeps the most valuable content, and sends build requests to the website session ("add this, add that"). Checks run every hour or two. It also turns the day's transcripts and rig recordings into a long-form "day one" story, with video clips between the sections, published as an entry in the site's GTM demos list. |
 | D10 | Canva design video | A recording of the operator designing in Canva, done near the end. |
 | D11 | Brand motion demo with Comfy | Shows that video generation can add energy to the brand: a 5-second animation of one Addvery LinkedIn graphic (a light shimmer, a 3D texture, the graphic building itself) and a one-minute brand video like the operator's Gauss Hero Animation. He runs the Comfy work himself; the project brainstorms the ideas and puts the result on the site. |
+| D12 | Agent view | The whole site as a track an agentic LLM can navigate: a toggle on the site between "I want to view this as a person" and "I want my agentic LLM to view this" leads to unlisted pages in pure Markdown, with no buttons, plus /llms.txt. All of it is generated from the site's own content files, so it can't drift from what a person sees. A visitor copies the track into their own LLM, which navigates it. A mirror in a GitHub repo comes later, only if the operator asks. |
 
 ## Definition of done
 
@@ -129,15 +130,16 @@ Signed off by Alex in DI-5 on 2 Nov, with DoD-4 loosened at his request, and wri
 | DoD-19 | The site shows every deliverable and its status, so visitors know what to expect, and kept getting clearer through the day without the operator asking. | The site has a deliverables view; the site's history shows additions made from build requests, not only from Alex's instructions. | D8, D9 | S-D8, S-D9 | live |
 | DoD-20 | Every processed rig session was reviewed, and its most valuable moments reached the site through build requests to the website session, at least every two hours while sessions were being filed. | `legibility\posted.md` covers every filed session; the gaps between posts while filing never exceed two hours. | D9 | S-D9 | live |
 | DoD-21 | A recording of the operator designing in Canva, made near the end, is on the site. | The video is live on the site. | D10, D8 | S-D10 | live |
-| DoD-22 | Nothing published (the site, its videos, the public repo) shows secrets, the Apify proposal, or the operator's own GetSales outbound outside the demo folder. | A check of the site, the published videos and the repo finds none of them displayed; the charter and specs may name them. Material from public sources, the six stakeholders' public profiles included, may be shown. | D1 to D11 | S-D8, S-D9 | live |
+| DoD-22 | Nothing published (the site, its videos, the public repo) shows secrets, the Apify proposal, or the operator's own GetSales outbound outside the demo folder. | A check of the site, the published videos and the repo finds none of them displayed; the charter and specs may name them. Material from public sources, the six stakeholders' public profiles included, may be shown. | D1 to D12 | S-D8, S-D9 | live |
 | DoD-23 | The chosen animation of one Addvery LinkedIn graphic (about 5 seconds) and a one-minute brand video, both made with Comfy, are on the site as a GTM demo entry. | The site's GTM demos list has the entry, with both videos. | D11, D8 | S-D11 | live |
 | DoD-24 | A long-form day-one story, built from the transcripts with clips between its sections, is on the site. | The entry is live in the GTM demos list. | D9, D8 | S-D9 | live |
+| DoD-25 | An agent-readable Markdown track of the whole site, generated from the site's content, is reachable from a person/agent toggle and from /llms.txt. | The site has the toggle; /llms.txt and the unlisted Markdown pages it links are live, with no buttons, and come from the generator run over the content files, not from hand-written copies. | D12, D8 | S-D12 | live |
 
 ## Spec outline
 
 This is the decomposition, not the specs themselves. Each row is one future executable spec, except a row marked operator-owned, which the operator runs himself with no spec. Once the definition of done exists, every item in it must be claimed by at least one row.
 
-Spec IDs mirror deliverable IDs: S0 to S2 for M0 to M2, and S-D1 to S-D11 for D1 to D11. This whole outline is a rough draft. S2 (Project orchestrator) can still edit every row, and it owns the final sign-off on when the list of executable specs is fully decomposed and ready to run.
+Spec IDs mirror deliverable IDs: S0 to S2 for M0 to M2, and S-D1 to S-D12 for D1 to D12. This whole outline is a rough draft. S2 (Project orchestrator) can still edit every row, and it owns the final sign-off on when the list of executable specs is fully decomposed and ready to run.
 
 **Signed off by S2, 2 Nov 16:32 Prague:** the outline is fully decomposed. `propagate check` is clean (0 gaps), and every live DoD item is claimed by a spec or by the operator-owned S-D2 row. Wave 2 had already started spec by spec as each preflight was answered, on Alex's 14:38 "we need to remove blockers" (S2's decision log).
 
@@ -157,6 +159,7 @@ Spec IDs mirror deliverable IDs: S0 to S2 for M0 to M2, and S-D1 to S-D11 for D1
 | S-D9 — Legibility analyzer | Turns processed rig clips into build requests for the website session, every hour or two. | OBS rig output; S-D8 session | Nothing |
 | S-D10 — Canva design video | The operator designing in Canva, on camera. | S-D6 | The recording, near the end |
 | S-D11 — Brand motion demo with Comfy | An ideas Doc for the operator to pick from, then the chosen 5-second animation of one LinkedIn graphic and a one-minute brand video, made by him with Comfy, on the site as a GTM demo entry. Run by the `s-d10-canva-video` session in `canva-video\`, with no folder or session of its own. | S-D6 (the graphics); the operator's pick from the ideas Doc | Picking the ideas, and running the Comfy work himself |
+| S-D12 — Agent view | A generator that builds the agent track (unlisted pure-Markdown pages and /llms.txt) from the site's content files, so it can't drift; `website` adds the person/agent toggle and serves the pages. Run by the `s-d1-scraping` session in `scraping\`, with no folder or session of its own. | S-D8 (the site's content files) | Nothing |
 
 Wave 2 starts once S0, S1 and S2 are in place.
 
@@ -218,6 +221,7 @@ S0 runs alone; after it, everything with its inputs ready runs at once. Work tha
    - S-D5 (two articles) runs on the operator's two dictations, with the retired blog pipeline's tooling.
    - Brand capture, part of S-D2 and also in `Addvery Research\`, feeds S-D6 (Canva templates) and S-D7 (LinkedIn content). S-D6 feeds S-D10 (Canva video) and S-D11 (brand motion with Comfy), which also waits on the operator's pick of its ideas.
    - S-D9 (legibility analyzer) runs continuously off the rig and feeds S-D8.
+   - S-D12 (agent view) is built from S-D8's content files and gives S-D8 the agent track behind its person/agent toggle.
 
 **Operator scenes to shoot today:** the S0 directory approval, S1 research details, his own S-D2 work in `Addvery Research\` (Addvery, the six stakeholders and brand capture), the two S-D3 recordings (the walkthrough of the 36 workflows and the ICP-classification capture), the two S-D5 dictations, brand sign-off, the S-D10 Canva recording, and picking the S-D11 ideas and running its Comfy work.
 

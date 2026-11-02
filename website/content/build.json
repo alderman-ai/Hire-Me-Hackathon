@@ -1,9 +1,9 @@
 {
   "post": "P1",
-  "as_of": "18:03",
-  "as_of_line": "As of 18:03 (Prague), 2 November. The statuses update as the work moves.",
+  "as_of": "18:45",
+  "as_of_line": "As of 18:45 (Prague), 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
-  "intro": "Fourteen pieces of work (one since retired), run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come the demos of what a GTM engineer builds, and they all end up on this site.",
+  "intro": "Fifteen pieces of work (one since retired), run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come the demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
     {
       "lead": "One plan at the top.",
@@ -105,6 +105,12 @@
       "demo": "Brand motion with Comfy",
       "what": "Video generation giving the brand some energy: a 5-second animation of one Addvery LinkedIn graphic, and a one-minute brand video. Alex makes both with Comfy.",
       "status": "Added at 17:30. Ideas first, for Alex to pick from."
+    },
+    {
+      "n": 12,
+      "demo": "Agent view",
+      "what": "The whole site as a track your own AI can read: switch from “view this as a person” to “let my LLM view this”, and get plain Markdown pages with no buttons, plus /llms.txt. Generated from the same content files, so it never drifts.",
+      "status": "Added at 18:40. Being built."
     }
   ],
   "quotes": {

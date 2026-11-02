@@ -19,7 +19,7 @@ OUT = SITE / "content" / "docs"
 
 DOCS = [
     {"slug": "charter", "source": "CHARTER.md", "label": "Project charter",
-     "blurb": "Why the project exists, the 13 deliverables, and the rules every agent follows. Start here."},
+     "blurb": "Why the project exists, the 15 deliverables, and the rules every agent follows. Start here."},
     {"slug": "s0-bootstrap", "source": "bootstrap/SPEC.md", "label": "S0 Bootstrap spec",
      "blurb": "Sets up a working folder, instructions and a background session for every piece of work."},
     {"slug": "s1-research", "source": "research/SPEC.md", "label": "S1 Research spec",

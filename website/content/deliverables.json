@@ -46,6 +46,10 @@
     "d11": {
       "what_this_is": "Generated video can give a brand's graphics energy without a production budget. This demo animates one of Addvery's LinkedIn graphics for about five seconds and adds a one-minute brand video, both made by Alex with Comfy.",
       "pending": "The animation and the brand video land here once Alex has made them."
+    },
+    "d12": {
+      "what_this_is": "More of the people reading a site like this will send their own AI to read it first. This demo gives that AI its own track: the same content as the pages, in plain Markdown, generated from the site's own files so it can't drift from what a person sees.",
+      "pending": "The switch and the Markdown track land here when they're built."
     }
   }
 }
