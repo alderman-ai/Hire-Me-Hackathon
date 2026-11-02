@@ -10,6 +10,7 @@ Every post sent to the website, and every item deliberately left out.
 | P2 | "The story so far": timeline S01 to S06 with one quote each, the 13:20 deletion and its recovery, bootstrap done; P1 statuses updated to 13:51 | S01 to S06 transcripts; 13:27 recovery notice; git log ea9017e, 0619773, 80c145a | Followers see the best moments in Alex's own words without watching hours of video, and the incident shows how the setup recovers. | 13:55 (website 0f7cc51), content in website\content\story.json. Website also uploaded S06 to YouTube (mxorwucznvE) and linked its quote. |
 | P3 | Two milestones on the timeline: the definition of done signed off at 14:02 with S2's tools built, and the first five research lists with the wildcards; P1 statuses to 14:15 | DOD-DRAFT.md; commits 40f5f45, 0f83fe4, bb71f33, aaa69a4, f2ecd10, 81333db, c7558a0; OT-01 | The plan now has a checkable finish line, and research is about to fan out. These are the first signs of the parallel phase S06 promised. | 14:20 (website, same build that turned the site into a feed) |
 | P4 | S07 session post (briefing session, this feed, recovery skill, approval checkboxes), Insight on API keys never moving on camera, Milestone "Every demo has a plan" (spec drafts, research running, scraping launched, plain-names rule), status to 14:45 with Apify named | S07 02:07, 05:04, 08:20, 33:29, 35:43; commits 96fa0bb, cb05028, a3f9451, 1ca60d9, spec drafts 14:22 to 14:34 | How Alex steers a dozen agents, a trust signal for a tech team (keys off camera), and the jump from one plan to a plan per demo. Roles: post 1 CEO/COO/CTO, post 2 CTO/CAIO, post 3 all. | 14:55 (website 9314fec). Role tags stored as a roles field on each feed post. |
+| P5 (S-D9-B5) | Milestone "The research is in" (seven agents, 21 minutes, three findings that shape the feed); Update "Agents hand over before they get tired" (first three handovers, the context watch); status to 15:15 | L-01 synthesis; commits 96fa0bb, dca2c06, 8b59414, 4cbac2b, 5102967, 770e59b; OT-03 to OT-07 | The research changes how the site reads, and the handovers show the plan for a long day actually working. | sent 15:17, waiting for BUILT |
 
 ## Working rules from research (L-01, read 15:00)
 
@@ -55,6 +56,8 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | P4 | (S07 session) | A briefing session, this feed, the recovery skill, approvals as checkboxes | CEO, COO, CTO |
 | P4 | (S07 insight) | API keys never move on camera (S07 35:43) | CTO, CAIO |
 | P4 | (milestone) | Every demo has a plan; seven research agents in parallel | CEO, COO, CAIO, CMO, CSO, RevOps |
+| P5 | (milestone) | The research is in: outcome first, curated not raw, a decision trail | CEO, CMO, CAIO |
+| P5 | (update) | Agents hand over before they get tired; the context watch | CTO, CAIO, COO |
 
 ## Left out
 
@@ -69,3 +72,4 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | 14:50 | The 15:30 alert campaign in the GetSales spec, and the person named as routing leads (getsales/SPEC.md) | Alex's own GetSales outbound, the company's people, and a person other than Alex. |
 | 14:50 | The project and repo names Alex read out while moving keys (S07 34:31 to 35:11) | Garbled, and one may be close to the proposal. Not needed. |
 | 14:50 | "I don't feel like we're doing a good job right now" (S07 23:36) and the swearing at 10:49 | A passing low moment. The control-room post already shows the overwhelm, with the fix. |
+| 15:17 | Research findings on the stakeholder sections, the legal framing of the outreach, and "visible AI use costs trust, most on personal writing" (L-01 synthesis, convergences 2, 3, 4 and 7) | They are about the six and the outreach, which are on the never-post list. The AI-penalty finding would prime the six to look for AI in the outreach before Alex has decided who writes its personal lines (Q5). |
