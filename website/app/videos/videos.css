@@ -22,6 +22,7 @@
 
 .vw-head-inner {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
 }
 
@@ -70,12 +71,15 @@
 /* ---------- A row ---------- */
 .vw-rows {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 3.5rem;
   padding: 2.5rem var(--av-section-pad-x) 0;
 }
 
+/* minmax(0, 1fr): a track's tiles must never widen the page (nested grids size to content otherwise). */
 .vw-row-inner {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
 }
 
@@ -164,6 +168,7 @@
    tiles' focus rings inside the scroll box, which clips. */
 .vw-track {
   display: flex;
+  min-width: 0;
   gap: var(--vw-gap);
   margin: -8px -8px;
   padding: 8px;
@@ -216,7 +221,9 @@
 }
 
 /* ---------- A tile ---------- */
+/* position: relative keeps the tile's visually hidden text inside the track's scroll box. */
 .vw-tile {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
