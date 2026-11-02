@@ -13,6 +13,7 @@ This session runs the OBS capture rig, and nothing else. It is the background se
 - `rig\RUNBOOK.md`: the four commands and what the voice alerts mean. Read it at startup.
 - `rig\HANDOFF.md` and `rig\RIG_NOTES.md`: read them before changing rig code, not before.
 - Before your first commit, read `..\GIT.md`; it's how all sessions share one working tree.
+- `..\answer-desk\ASKING.md`: every question for Alex goes to the `answer-desk` session in this format, never into your own chat (charter P4).
 
 ## The website clock
 

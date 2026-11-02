@@ -9,6 +9,7 @@ This session owns the website, and nothing else. Every change to the site goes t
 - **Sessions are numbered in order with no total.** Never show or say "of 6".
 - **Repo:** public, all work on `main`. Commit your own folder after every finished step, per `..\GIT.md`; don't push, the watcher does.
 - Before your first commit, read `..\GIT.md`; it's how all sessions share one working tree.
+- **Questions for Alex:** every one goes to the `answer-desk` session in the format in `..\answer-desk\ASKING.md`, never into your own chat (charter P4).
 - **Deploy:** `vercel deploy --prod --yes` from this folder, after checking the change locally (`npx next dev -p 3100`). `.vercelignore` keeps `.env*`, `.clock` and `scripts` out of the upload. In Git Bash, set `MSYS_NO_PATHCONV=1` before `vercel api /...`, or the path gets mangled.
 - **Secrets:** `.env.local` holds the Blob token. Never print it.
 
