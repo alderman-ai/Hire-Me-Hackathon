@@ -1,0 +1,509 @@
+/* /videos (app/videos): the video wall on Addvery's ink. Rows of 16:9 tiles on a scroll-snap track,
+   and the player in a native <dialog> styled like the /about wall's. Tokens from addvery-tokens.css. */
+
+.vw {
+  --vw-gap: 20px;
+  background: var(--av-ink);
+  color: var(--av-text-on-dark);
+  font-family: var(--av-font-sans);
+  overflow-x: clip;
+  padding-bottom: 6rem;
+}
+
+/* ---------- Head ---------- */
+.vw-head {
+  margin-top: calc(-1 * var(--av-nav-height));
+  padding: calc(var(--av-nav-height) + 4.5rem) var(--av-section-pad-x) 2.5rem;
+  background:
+    radial-gradient(50% 90% at 88% 0%, rgba(102, 69, 235, 0.32), rgba(102, 69, 235, 0) 70%),
+    radial-gradient(40% 70% at 0% 100%, rgba(212, 69, 235, 0.14), rgba(212, 69, 235, 0) 70%),
+    var(--av-black, #000);
+}
+
+.vw-head-inner {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.vw-title {
+  color: var(--av-white);
+  font-family: var(--av-font-display);
+  font-weight: 500;
+  font-size: var(--av-h1-size);
+  line-height: var(--av-h1-lh);
+  letter-spacing: -0.02em;
+}
+
+.vw-intro {
+  max-width: 44rem;
+  font-size: var(--av-body-size);
+  line-height: var(--av-body-lh);
+}
+
+.vw-flag {
+  max-width: 52rem;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--av-line-on-dark);
+  border-radius: var(--av-radius-md);
+  color: var(--av-lilac-200);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.vw-flag strong {
+  color: var(--av-white);
+}
+
+.vw-placeholder {
+  max-width: 40rem;
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  border: 1px dashed var(--av-lilac-200);
+  border-radius: var(--av-radius-md);
+  color: var(--av-lilac-200);
+  background: rgba(235, 220, 255, 0.08);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* ---------- A row ---------- */
+.vw-rows {
+  display: grid;
+  gap: 3.5rem;
+  padding: 2.5rem var(--av-section-pad-x) 0;
+}
+
+.vw-row-inner {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.vw-row-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--av-plum-800);
+}
+
+.vw-row-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  color: var(--av-white);
+  font-family: var(--av-font-display);
+  font-weight: 500;
+  font-size: var(--av-h4-size);
+  line-height: var(--av-h4-lh);
+  letter-spacing: -0.01em;
+}
+
+.vw-row-count {
+  color: var(--av-text-on-dark);
+  font-family: var(--av-font-numeric);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.vw-bar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.vw-bar[hidden] {
+  display: none;
+}
+
+.vw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--av-line-on-dark);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--av-white);
+  cursor: pointer;
+  transition: border-color var(--av-dur-base) ease, background-color var(--av-dur-base) ease;
+}
+
+@media (hover: hover) {
+  .vw-btn:not([aria-disabled="true"]):hover {
+    border-color: var(--av-lavender);
+    background: rgba(211, 195, 255, 0.1);
+  }
+}
+
+.vw-btn[aria-disabled="true"] {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.vw-count {
+  min-width: 4.5ch;
+  color: var(--av-white);
+  font-family: var(--av-font-numeric);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.vw-count-of {
+  color: var(--av-text-on-dark);
+}
+
+/* The track: native horizontal scrolling, snapped tile by tile. 8 px of padding all round keeps the
+   tiles' focus rings inside the scroll box, which clips. */
+.vw-track {
+  display: flex;
+  gap: var(--vw-gap);
+  margin: -8px -8px;
+  padding: 8px;
+  list-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 8px;
+  scrollbar-width: none;
+}
+
+.vw-track::-webkit-scrollbar {
+  display: none;
+}
+
+.vw-slide {
+  display: flex;
+  flex: 0 0 calc((100% - 3 * var(--vw-gap)) / 4);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 1199px) {
+  .vw-slide {
+    flex-basis: calc((100% - 2 * var(--vw-gap)) / 3);
+  }
+}
+
+@media (max-width: 991px) {
+  .vw-slide {
+    flex-basis: calc((100% - var(--vw-gap)) / 2);
+  }
+}
+
+/* A phone: one tile and a peek of the next. */
+@media (max-width: 599px) {
+  .vw {
+    --vw-gap: 14px;
+  }
+  .vw-rows {
+    gap: 2.75rem;
+  }
+  .vw-slide {
+    flex-basis: 82%;
+  }
+  .vw-row-head {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- A tile ---------- */
+.vw-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0 0 0.25rem;
+  border: 0;
+  border-radius: var(--av-radius-lg);
+  background: none;
+  color: var(--av-white);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.vw-tile:focus-visible {
+  outline: 2px solid var(--av-lavender);
+  outline-offset: 4px;
+}
+
+.vw-cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--av-radius-lg);
+  background: var(--av-plum-900);
+}
+
+.vw-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--av-dur-ix) var(--ease-out-quart);
+}
+
+.vw-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(21, 21, 21, 0.72);
+  transform: translate(-50%, -50%);
+  transition: background-color var(--av-dur-base) ease;
+}
+
+.vw-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  border-style: solid;
+  border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent var(--av-white);
+  transform: translate(-50%, -50%);
+}
+
+.vw-badge {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 8px;
+  border-radius: var(--av-radius-xs);
+  background: var(--av-badge-bg);
+  color: var(--av-white);
+  font-family: var(--av-font-body-haas);
+  font-size: var(--av-micro-size);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (hover: hover) {
+  .vw-tile:hover .vw-cover img {
+    transform: scale(1.03);
+  }
+  .vw-tile:hover .vw-play {
+    background: var(--av-amethyst);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vw-cover img,
+  .vw-play {
+    transition: none;
+  }
+  .vw-tile:hover .vw-cover img {
+    transform: none;
+  }
+}
+
+.vw-tile-title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.vw-tile-meta {
+  color: var(--av-text-on-dark);
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- The player, in a native modal dialog ---------- */
+html.vw-dialog-open {
+  overflow: hidden;
+}
+
+html.vw-dialog-open body {
+  padding-right: var(--wall-scrollbar, 0px);
+}
+
+.vw-dialog {
+  width: min(960px, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 3rem);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: var(--av-radius-2xl);
+  background: var(--av-white);
+  color: var(--av-ink);
+  font-family: var(--av-font-sans);
+  box-shadow: var(--av-shadow-soft);
+  overflow: hidden;
+  overscroll-behavior: contain;
+  --focus: var(--av-amethyst);
+}
+
+.vw-dialog::backdrop {
+  background: rgba(21, 21, 21, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.vw-dialog[open] {
+  animation: vw-dialog-in 220ms var(--ease-out-quart);
+}
+
+@keyframes vw-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vw-dialog[open] {
+    animation: none;
+  }
+}
+
+.vw-dialog-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 3rem);
+}
+
+.vw-dialog-head {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 1rem 1.75rem;
+  border-bottom: 1px solid var(--av-lilac-300);
+}
+
+.vw-dialog-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.vw-dialog-title {
+  color: var(--av-ink);
+  font-family: var(--av-font-display);
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* The heading takes focus when the dialog opens (for screen readers); it isn't a control. */
+.vw-dialog-title:focus {
+  outline: none;
+}
+
+.vw-dialog-meta {
+  margin-top: 0.25rem;
+  color: var(--av-text-on-light);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.vw-close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--av-lilac-300);
+  border-radius: 50%;
+  background: var(--av-white);
+  color: var(--av-ink);
+  cursor: pointer;
+  transition: border-color var(--av-dur-base) ease, background-color var(--av-dur-base) ease;
+}
+
+.vw-close:hover {
+  border-color: var(--av-amethyst);
+  background: var(--av-lilac-100);
+}
+
+.vw-close:focus-visible,
+.vw-article:focus-visible {
+  outline: 2px solid var(--av-amethyst);
+  outline-offset: 3px;
+}
+
+.vw-dialog-body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1.25rem 1.75rem 1.75rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.vw-player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--av-radius-lg);
+  background: var(--av-ink);
+}
+
+.vw-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vw-summary {
+  max-width: 44rem;
+  color: var(--av-text-on-light);
+  font-size: var(--av-body-size);
+  line-height: var(--av-body-lh);
+}
+
+.vw-dialog .vw-placeholder {
+  color: var(--av-plum);
+  background: var(--av-lilac-100);
+  border-color: var(--av-amethyst);
+}
+
+.vw-article {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--av-plum);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.vw-article:hover {
+  color: var(--av-amethyst);
+}
+
+@media (max-width: 599px) {
+  .vw-dialog-head {
+    padding: 1rem 1rem 0.875rem 1.25rem;
+  }
+  .vw-dialog-body {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+  .vw-dialog-title {
+    font-size: 1.1875rem;
+  }
+}

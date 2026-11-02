@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { allDemos } from "./deliverables";
-import { NAV_LINKS, NEW_FOOTER_LINKS, NEW_NAV_LINKS } from "./site-links";
-import { NEW_SITE } from "./flags";
+import { NAV_LINKS, NEW_FOOTER_LINKS, newNavLinks } from "./site-links";
+import { NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "./flags";
 
 // Addvery's footer (#151515, logo first, then columns of links that turn into gradient text on
 // hover), with our links only.
@@ -11,7 +11,7 @@ export function SiteFooter() {
   const demos = NEW_SITE ? [] : allDemos();
   const half = Math.ceil(demos.length / 2);
   const columns = NEW_SITE ? [] : [demos.slice(0, half), demos.slice(half)];
-  const links = NEW_SITE ? [...NEW_NAV_LINKS, ...NEW_FOOTER_LINKS] : NAV_LINKS;
+  const links = NEW_SITE ? [...newNavLinks({ videos: VIDEO_WALL, skills: SKILLS_PAGE }), ...NEW_FOOTER_LINKS] : NAV_LINKS;
   return (
     <footer className="site-footer on-dark">
       <div className="footer-inner">

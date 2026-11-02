@@ -1,0 +1,6 @@
+{
+  "note": "The words for /videos, written through alex-voice (RULES.md rule 2). intro: the line under the page title. rows: a row's heading by its key (ideas, icps, how-i-work, the-day, sessions). items: by library id, an optional title (replaces the library's working title) and summary (shown under the player). Anything missing shows a marked placeholder on previews and nothing in production.",
+  "intro": null,
+  "rows": {},
+  "items": {}
+}

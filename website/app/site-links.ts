@@ -12,12 +12,17 @@ export const NAV_LINKS = [
 export const CTA = { href: "/#s02", label: "Watch the explainer" };
 
 // The new site's menu (VERDICT.md 2.2): working labels until alex-voice words them. Videos and Skills
-// join when /videos and /skills exist (W13, W14), so the menu never links to a placeholder.
-export const NEW_NAV_LINKS = [
-  { href: "/demos", label: "Articles" },
-  { href: "/about", label: "About me" },
-  { href: "/for", label: "For Addvery" },
-];
+// join only on a build that has /videos and /skills (W13, W14; app/flags.ts), so the menu never links
+// to a 404. Called on the server: the flags aren't in the browser's bundle.
+export function newNavLinks({ videos, skills }: { videos: boolean; skills: boolean }) {
+  return [
+    { href: "/demos", label: "Articles" },
+    ...(videos ? [{ href: "/videos", label: "Videos" }] : []),
+    ...(skills ? [{ href: "/skills", label: "Skills" }] : []),
+    { href: "/about", label: "About me" },
+    { href: "/for", label: "For Addvery" },
+  ];
+}
 
 /** The new site's footer: the day's log, the plan, privacy and the public repo (working labels). */
 export const NEW_FOOTER_LINKS = [
