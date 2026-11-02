@@ -34,6 +34,7 @@ Every filed rig session, and the post that carries its best moments.
 | S05 | 13:34 | P2 | Handoff to the agents, the 13:20 incident and recovery; not on YouTube (49 min) |
 | S06 | 13:36 | P2 | Status update, linked (website uploaded it as mxorwucznvE) |
 | S07 | 14:42 | P4 | Briefing session, this feed, recovery skill, keys off camera; not on YouTube (38 min) |
+| S08 | 15:16 | website's own post `s08` ("Back from lunch: what runs without him"), at Alex's request through rig, with the full webcam (MyYnFOQCagc) | Read by S-D9 at 15:20: nothing further worth a separate post. Role tags to add in the next build: COO, CEO, CSO, RevOps ("I could do the same thing tomorrow with a new company"). |
 
 ## Role tags (DI-1 Q1.9)
 
@@ -73,3 +74,5 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | 14:50 | The project and repo names Alex read out while moving keys (S07 34:31 to 35:11) | Garbled, and one may be close to the proposal. Not needed. |
 | 14:50 | "I don't feel like we're doing a good job right now" (S07 23:36) and the swearing at 10:49 | A passing low moment. The control-room post already shows the overwhelm, with the fix. |
 | 15:17 | Research findings on the stakeholder sections, the legal framing of the outreach, and "visible AI use costs trust, most on personal writing" (L-01 synthesis, convergences 2, 3, 4 and 7) | They are about the six and the outreach, which are on the never-post list. The AI-penalty finding would prime the six to look for AI in the outreach before Alex has decided who writes its personal lines (Q5). |
+| 15:20 | S08 02:33 to 03:34: how Alex researches the company's people (org chart, job adverts on the Wayback Machine, 90-day goals), and the alert to the stakeholders | Research about the company's people and his own outbound. The full webcam video is on the site at Alex's own request, which is his call. S-D9 doesn't quote or summarise it. |
+| 15:20 | S08 00:29 to 01:33: his take on AI models and usage | Not about the build, and a knock on a product reads badly in an application. |
