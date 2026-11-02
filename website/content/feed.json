@@ -3,7 +3,7 @@
   "posts": [
     {
       "id": "status",
-      "at": "2026-11-02T17:35",
+      "at": "2026-11-02T17:45",
       "kind": "Status",
       "title": "What's being built today",
       "blocks": [
@@ -928,6 +928,75 @@
         {
           "type": "p",
           "text": "Both posts were drafted by the agent that runs this feed, from Alex's own words in the recordings."
+        }
+      ]
+    },
+    {
+      "id": "site-shape",
+      "at": "2026-11-02T17:23",
+      "kind": "Update",
+      "title": "Alex settles the site's shape, and adds a demo",
+      "roles": [
+        "CEO",
+        "CMO",
+        "CSO",
+        "RevOps"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "At 17:23, Alex answered the one list still waiting on him. Four of his answers change what you'll see here."
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "The site gets a clear shape.",
+              "text": "The live feed stays the home page. Below it comes the background research, then the demos as a list of entries: a video with a written summary, or text alone.",
+              "quote": {
+                "text": "A lot of the demos are baked into the website already.",
+                "source": "Alex, written answer, 17:23"
+              }
+            },
+            {
+              "lead": "The scraping page goes live.",
+              "text": "",
+              "quote": {
+                "text": "Yep show it off. It's like they should be doing this to their targets too.",
+                "source": "Alex, written answer, 17:23"
+              }
+            },
+            {
+              "lead": "The outbound demo becomes two entries.",
+              "text": "A three-minute video covers classification tools, the 36 workflows and the one personalized variable. A short screen capture shows leads sorted into customer profiles. Each reads like a blog post, so you can watch it or read it."
+            },
+            {
+              "lead": "A new demo: brand motion.",
+              "text": "One of the company's LinkedIn graphics gets a five-second animation, such as a light shimmer or the graphic building itself, and a one-minute brand video follows. Alex makes both with video generation. An agent brainstorms the ideas for him to pick from.",
+              "quote": {
+                "text": "It's just to show that it's possible to add some energy to the brand through video generation.",
+                "source": "Alex, written answer, 17:23"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflows-built",
+      "at": "2026-11-02T17:34",
+      "kind": "Milestone",
+      "title": "The outbound demo's 36 workflows are built",
+      "roles": [
+        "RevOps",
+        "CSO",
+        "CMO"
+      ],
+      "deliverable": "d3",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Between 17:27 and 17:34, the agent built all 36 workflows of the outbound demo in GetSales, in a folder of their own: four customer profiles, in English, Czech and German, with three tactics each. Every workflow opens with a first message written for the lead before import. None is switched on, and none has a lead in it. Next, Alex records the walkthrough."
         }
       ]
     }

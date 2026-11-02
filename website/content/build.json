@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "17:35",
-  "as_of_line": "As of 17:35 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "17:45",
+  "as_of_line": "As of 17:45 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Fourteen pieces of work (one since retired), run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come the demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -56,7 +56,7 @@
       "n": 3,
       "demo": "Outbound automation in GetSales",
       "what": "Two short demos, each a video with a summary to read. First, classification tools and the 36 outbound workflows in GetSales: four customer profiles, in English, Czech and German, with three approaches each, every one opening with a first message written for its lead. Second, a screen capture of sorting people into customer profiles. Nothing sends.",
-      "status": "Being built in a GetSales folder of its own. Alex messages the six himself."
+      "status": "All 36 workflows built by 17:34, switched off, with no leads. Next, Alex records two short demos."
     },
     {
       "n": 4,
@@ -74,7 +74,7 @@
       "n": 6,
       "demo": "LinkedIn templates in Canva",
       "what": "Pixel-perfect, on-brand visual templates for LinkedIn.",
-      "status": "Five templates built, all 16 checks passed. Next they go into Canva, then to Alex for his brand sign-off."
+      "status": "Five templates built and checked. With Alex for his brand sign-off since 17:42, then into Canva."
     },
     {
       "n": 7,
