@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { allDemos } from "../deliverables";
 import { layoutCard, readFontMetrics, type FontMetrics } from "./og-layout";
+import { NEW_SITE } from "../flags";
 
 // The GTM demos section (/demos, /demos/<slug>), to blog-pipeline/POST-FORMAT.md v1.5: one shared content-entry template for written posts
 // and videos (Alex, 2 Nov: "like a CMS, like a list of blog entries").
@@ -45,7 +46,10 @@ export type Entry = {
   /** The old demo page this entry belongs to (d1 to d10), linked at the end. */
   deliverable?: string;
   cover: { kicker: string; title_lines?: string[]; subtitle: string; accent?: string };
-  video?: { youtube_id: string; start: number };
+  /** `end` (seconds) plays a raw moment out of a whole session video, so it needs no cut. */
+  video?: { youtube_id: string; start: number; end?: number };
+  /** The /demos group it sits in on the new site ("How I'd reach your accounts", ...): its crumb. */
+  group?: string;
   /** Site path of an image in public/ (or an https URL), for the index thumbnail. */
   poster?: string;
   /** The content library's id for this piece (orchestration/local/library), for content/recommend.json. */
@@ -65,11 +69,11 @@ export type Entry = {
 // (kind, deliverable, video, poster) are optional. The site checks keys and types, not the order.
 const TOP_KEYS = [
   "title", "slug", "description", "author", "date", "status", "kind", "deliverable",
-  "cover", "video", "poster", "tags", "reading_minutes", "made", "library_id",
+  "cover", "video", "poster", "tags", "reading_minutes", "made", "library_id", "group",
 ] as const;
 const MAP_KEYS: Record<string, readonly string[]> = {
   cover: ["kicker", "title_lines", "subtitle", "accent"],
-  video: ["youtube_id", "start"],
+  video: ["youtube_id", "start", "end"],
   made: [
     "minutes_talked", "words_spoken", "words_drafted", "share_changed_by_alex", "dictated",
     "rig_session", "pipeline", "stages", "checks",
@@ -243,7 +247,9 @@ function validate(file: string, data: Raw, body: string): Entry {
     if (!isStr(v.youtube_id) || !/^[A-Za-z0-9_-]{11}$/.test(v.youtube_id)) fail("video.youtube_id must be an 11-character YouTube id");
     const start = v.start ?? 0;
     if (!isInt(start) || start < 0) fail("video.start must be whole seconds, 0 or more");
-    video = { youtube_id: v.youtube_id, start };
+    const end = v.end;
+    if (end !== undefined && (!isInt(end) || (end as number) <= (start as number))) fail("video.end must be whole seconds, after video.start");
+    video = { youtube_id: v.youtube_id, start, ...(end !== undefined ? { end: end as number } : {}) };
   }
   if (kind === "video" && !video) fail('kind "video" needs a video (youtube_id, start)');
 
@@ -340,6 +346,7 @@ function validate(file: string, data: Raw, body: string): Entry {
     video,
     poster: (poster as string | undefined) ?? undefined,
     library_id: typeof data.library_id === "string" ? data.library_id : undefined,
+    group: typeof data.group === "string" ? data.group : undefined,
     tags,
     reading_minutes: (reading as number | undefined) ?? undefined,
     made,
@@ -427,7 +434,8 @@ export function draftLine(e: Entry): string {
 
 /** What the index and the byline say about length: "5 min read", or "Video". */
 export function lengthLabel(e: Entry): string | undefined {
-  if (e.reading_minutes) return `${e.reading_minutes} min read`;
+  // The new site shows no minute counts anywhere (RULES.md rule 5).
+  if (e.reading_minutes && !NEW_SITE) return `${e.reading_minutes} min read`;
   if (e.video) return "Video";
   return undefined;
 }

@@ -15,6 +15,9 @@ import { renderBody } from "../markdown";
 import { CoverGlow, CoverTitle, MadeBox, RingMark } from "../parts";
 import { ClipLoader } from "../clips";
 import { StripEnhancer } from "../strip";
+import { NEW_SITE } from "../../flags";
+import { LIST_SLUGS, recommendAll } from "../../recommend";
+import { EntryEnd, MarkSeen } from "../entry-end";
 import "../../article.css";
 import "../demos.css";
 
@@ -26,6 +29,18 @@ import "../demos.css";
 // matches the link-preview card in ./opengraph-image.tsx. The long read below is the editorial layer.
 
 export const dynamicParams = false;
+
+const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");
+
+/** The player's address: start and, for a raw moment, end (no cut needed); captions on, on the new site. */
+function embedSrc(v: NonNullable<Entry["video"]>): string {
+  const q = new URLSearchParams();
+  if (v.start) q.set("start", String(v.start));
+  if (NEW_SITE && v.end) q.set("end", String(v.end));
+  if (NEW_SITE) q.set("cc_load_policy", "1");
+  const qs = q.toString();
+  return `https://www.youtube-nocookie.com/embed/${v.youtube_id}${qs ? `?${qs}` : ""}`;
+}
 
 export function generateStaticParams() {
   return visibleEntries().map((e) => ({ slug: e.slug }));
@@ -126,9 +141,24 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
               Only preview builds show this page. The live site never does.
             </p>
           )}
-          <p className="art-back">
-            <Link href="/demos">← All GTM demos</Link>
-          </p>
+          {NEW_SITE ? (
+            // The crumb: Articles, then its group. Both are working labels until alex-voice words them.
+            <nav className="art-back entry-crumb" aria-label="Breadcrumb">
+              <Link href="/demos">Articles</Link>
+              {entry.group && (
+                <>
+                  <span className="entry-crumb-sep" aria-hidden="true">
+                    {" › "}
+                  </span>
+                  <span>{entry.group}</span>
+                </>
+              )}
+            </nav>
+          ) : (
+            <p className="art-back">
+              <Link href="/demos">← All GTM demos</Link>
+            </p>
+          )}
           <div className="entry-kicker-row">
             <span className="entry-kicker-bar" aria-hidden="true" />
             <p className="entry-kicker">{entry.cover.kicker}</p>
@@ -150,7 +180,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         <div className="entry-track entry-video">
           <div className="video-frame">
             <iframe
-              src={`https://www.youtube-nocookie.com/embed/${v.youtube_id}${v.start ? `?start=${v.start}` : ""}`}
+              src={embedSrc(v)}
               title={`Video: ${entry.title}`}
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -174,6 +204,13 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         </div>
       )}
 
+      {NEW_SITE && (
+        <>
+          <MarkSeen href={entryUrl(entry.slug)} />
+          <EntryEnd current={entryUrl(entry.slug)} lists={recommendAll()} people={PAGE_SLUGS} />
+        </>
+      )}
+      {!NEW_SITE && (
       <nav className="art-cta entry-end" aria-label="More GTM demos">
         <div className="art-container art-cta-grid">
           <div className="art-cta-copy">
@@ -202,6 +239,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           </ul>
         </div>
       </nav>
+      )}
     </main>
   );
 }

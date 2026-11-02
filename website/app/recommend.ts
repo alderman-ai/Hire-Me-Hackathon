@@ -70,3 +70,14 @@ export function recommendFor(list: ListSlug): RecCard[] {
   }
   return cards;
 }
+
+/**
+ * Every list in the file, resolved: for the end of an entry, where the visitor's own list is picked in
+ * the browser (app/demos/entry-end.tsx). An optional "capabilities" list is what a cold visitor's
+ * "Next for you" walks; without one, the default list.
+ */
+export function recommendAll(): Record<string, RecCard[]> {
+  if (!RECOMMEND_ON) return {};
+  const names = Object.keys(data.lists as Record<string, unknown>);
+  return Object.fromEntries(names.map((n) => [n, recommendFor(n as ListSlug)]));
+}
