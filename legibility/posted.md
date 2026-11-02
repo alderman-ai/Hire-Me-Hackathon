@@ -15,6 +15,7 @@ Every post sent to the website, and every item deliberately left out.
 | P7 (S-D9-B7) | Milestone "Every demo now has an agent on it" (16:42); Update "Three calls from the last hour" (two articles and their topics, the outbound demo cut to 36 workflows as a walkthrough, no copywriting without a skill); status to 16:45. First post written with marketing:draft-content | c921740, d0f7f30, 4e973dc, b420938, 2d4ec69, c1507b6, d8835c0, 6b1013f; Alex's notes in the approval files | Three scope and quality calls in Alex's own words, and every demo now staffed. | 16:49 (website 9a86a97) |
 | P8 (S-D9-B8) | Update "Alex stops everything for a reset" (16:44 halt, the 17:00 rules, 17:13 restart); Insight "The bottleneck is always human" (S10 lesson, S11 human context window, callback to S04); status to 17:25 (7 rows on website's 17:20 board); roles on s11. First post drafted in the Claude Doc "Feed posts from the build" | S10 20:24, 32:21, 34:04, 34:25; S11 2:45 (linked); commits 1dc71fc, 55d81e5, dac3000, b5cb6fd, 25c2b8a, b676ffa, 0bb061d, 87b5acb, 39b269f, b77b869, be9b1f6 | The day's biggest change of course, made by Alex live, and the lesson he drew from it in his own words. | 17:25 (website 4107ed0); sent 17:22, corrected 17:23 |
 | P9 (S-D9-B9) | Update "Alex settles the site's shape, and adds a demo" (17:23: site structure, scraping page live, GetSales as two entries, new brand-motion demo); Milestone "The outbound demo's 36 workflows are built" (17:34); status to 17:45 (GetSales, Canva templates) | DI-10 Q10.6, Q10.7, Q10.10, Q10.11 (b979ed6); e58af12, 1ecc738; getsales HANDOFF 1ce9d07, 8840749; desk 252da1a | Alex's calls on what the site becomes and a new demo in his own words, and the first demo built end to end in the tool. | 17:46 (website 3306478); sent 17:45. The milestone is tagged d3, so it also shows on /d3 |
+| P10 (S-D9-B10) | Summary "The day so far" (first summary post, "summary": true, opens the carousel): the day in five beats and where things stand at 18:25 | P1 to P9; S04 at 12:28, S10 at 16:58; 983449a, 76b48f9; desk TASKs at 18:24 | A one-sitting reader gets the whole day before the detail (Alex, 17:5x). | sent 18:26; waiting for BUILT |
 
 ## Working rules from research (L-01, read 15:00)
 
@@ -76,6 +77,7 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | P8 | s11 (website's post) | Evening check-in: what worked, and what didn't | CEO, COO, CAIO |
 | P9 | (update) | The site's shape, the scraping page live, two outbound entries, a brand-motion demo | CEO, CMO, CSO, RevOps |
 | P9 | (milestone) | The outbound demo's 36 workflows built | RevOps, CSO, CMO |
+| P10 | (summary) | The day so far: plan, mistake, research, reset, state | CEO, COO, CMO, CSO, RevOps, CTO, CAIO |
 
 ## Left out
 
