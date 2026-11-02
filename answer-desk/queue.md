@@ -976,6 +976,7 @@ TASK S-D9: the day-one story (Doc) is waiting on you for your last 10%: https://
 From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
 Received: 2026-11-02 18:26 CET (+01:00)
 18:26 CET: alert shown to Alex; no PushNotification (Alex is active at the desk). If Alex answers it at the desk, relay his words to s-d5-blog-articles.
+19:02 CET: s-d5-blog-articles handed off to a fresh session (55e56cc0) under the same name; task stands, relay Alex's words to s-d5-blog-articles.
 
 ```
 TASK s-d5-blog-articles: your taste-capture article is ready to review: https://claude.ai/artifact/PkSgwgetjps3sVoNST26ma
@@ -988,6 +989,7 @@ Next: on his OK it goes live at /demos as part of the LinkedIn content demo. The
 From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
 Received: 2026-11-02 18:48 CET (+01:00)
 18:48 CET: alert shown to Alex; no PushNotification (Alex is active at the desk).
+19:02 CET: s-d5-blog-articles handed off to a fresh session (55e56cc0) under the same name; task stands, relay Alex's words to s-d5-blog-articles.
 
 ```
 TASK s-d5-blog-articles: blog post 2 is ready for your last 10%: https://claude.ai/artifact/17rFReWZZesyLe94msLskk
@@ -1001,6 +1003,7 @@ TASK s-d5-blog-articles: blog post 2 is ready for your last 10%: https://claude.
 From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
 Received: 2026-11-02 18:50 CET (+01:00)
 18:50 CET: alert shown to Alex with a PushNotification (aimed at near-final before the Ivana meeting).
+19:02 CET: s-d5-blog-articles handed off to a fresh session (55e56cc0) under the same name; task stands, relay Alex's words to s-d5-blog-articles.
 
 ```
 TASK s-d5-blog-articles: blog post 1 is ready for your last 10%: https://claude.ai/artifact/6dbQjnECpGbtQw54cHhJMp
@@ -1028,4 +1031,7 @@ TASK S1: your AI portfolio entry is waiting on you: https://claude.ai/artifact/M
 ## NOTE from orchestration — ROUTING 18:57
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-f5446a9c2bf6a1cb4ddb200a7efdb352)
 18:57 CET: orchestration split in three (Alex, 18:56). orchestration = master (handoffs, roster, context, charter; Alex no longer talks to it). orch-site-map (site-map\) = site layout and scope map. orch-alex-prep (alex-prep\) = everything that needs Alex (recordings, sign-offs, reviews) and Open tasks.md. Alex talks to both new sessions directly. The desk stays the queue for every other session's questions. If orch-alex-prep asks what's waiting on Alex, give it the queue.
+
+## NOTE from orchestration — ROSTER 19:00
+19:00 CET: briefing is now orch-briefing (same folder, briefing\, session 4edd3638): the third sub-orchestrator, monitoring everything for Alex. Use the new name.
 
