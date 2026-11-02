@@ -7,8 +7,11 @@ transcripts that aren't on the roster, the project's non-Claude processes with
 their owners, the recording state, git health and the answer desk windows.
 It changes nothing.
 
-Usage (from anywhere):  python -I inventory.py [hours]
-  hours: only consider transcripts written in the last N hours (default 24).
+Usage (from anywhere):
+  python -I inventory.py [hours]              hours: only transcripts written in the last N hours (default 24)
+  python -I inventory.py --tail <id> [n]      the last n messages of one session (default 8), Prague times
+  python -I inventory.py --wait <id> [secs]   block until the session finishes the turn its RECOVERY NOTICE
+                                              started (default 600 s), then print its reply. Run it in the background.
 """
 import glob
 import json
@@ -21,7 +24,8 @@ from datetime import datetime, timezone
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 PROJECTS = os.path.join(os.path.expanduser("~"), ".claude", "projects")
-HOURS = float(sys.argv[1]) if len(sys.argv) > 1 else 24.0
+MODE = sys.argv[1] if len(sys.argv) > 2 and sys.argv[1] in ("--tail", "--wait") else None
+HOURS = float(sys.argv[1]) if len(sys.argv) > 1 and not MODE else 24.0
 FIRST_ORDER = ["orchestration", "answer-desk", "rig", "website", "watcher"]
 SKIP_PROCS = r"^(claude|powershell|pwsh|bash|cmd|conhost|WindowsTerminal|OpenConsole|Obsidian|explorer|Code)"
 
@@ -329,5 +333,72 @@ def main():
     print(powershell(ps2).rstrip() or "- no desk window open")
 
 
+def find_transcript(session_id):
+    prefix = re.sub(r"[^A-Za-z0-9]", "-", ROOT)
+    files = [p for d in glob.glob(os.path.join(PROJECTS, prefix + "*"))
+             for p in glob.glob(os.path.join(d, session_id + "*.jsonl"))]
+    if not files:
+        print(f"No transcript starting with {session_id} under {PROJECTS}\\{prefix}*")
+    return files[0] if files else None
+
+
+def wait(session_id, timeout):
+    """Block until the turn started by the RECOVERY NOTICE has ended, then print the reply."""
+    path = find_transcript(session_id)
+    if not path:
+        return
+    start = time.time()
+    while time.time() - start < timeout:
+        notice_at, last = None, None
+        with open(path, encoding="utf-8", errors="replace") as f:
+            for i, line in enumerate(f):
+                try:
+                    d = json.loads(line)
+                except Exception:
+                    continue
+                if d.get("type") not in ("user", "assistant"):
+                    continue
+                msg = d.get("message") or {}
+                if d["type"] == "user" and "RECOVERY NOTICE" in text_of(msg.get("content")):
+                    notice_at = i
+                last = (i, d["type"], msg.get("stop_reason"))
+        if notice_at is not None and last and last[0] > notice_at and last[1] == "assistant" and last[2] == "end_turn":
+            print(f"Turn finished after {time.time() - start:.0f} s.\n")
+            tail(session_id, 1)
+            return
+        time.sleep(3)
+    print(f"Still working after {timeout} s, or no RECOVERY NOTICE in {os.path.basename(path)}. Check with --tail.")
+
+
+def tail(session_id, n):
+    """Print the last n prompts and replies of one session, with Prague times."""
+    path = find_transcript(session_id)
+    if not path:
+        return
+    files = [path]
+    events = []
+    with open(files[0], encoding="utf-8", errors="replace") as f:
+        for line in f:
+            try:
+                d = json.loads(line)
+            except Exception:
+                continue
+            if d.get("type") not in ("user", "assistant") or d.get("isMeta"):
+                continue
+            msg = d.get("message") or {}
+            txt = text_of(msg.get("content")).strip()
+            if not txt or (d["type"] == "user" and txt.lstrip().startswith("<")):
+                continue
+            who = "ALEX/PROMPT" if d["type"] == "user" else "SESSION"
+            events.append(f"{when(d.get('timestamp'))}  {who}: {short(txt, 1200)}")
+    print(f"Last {n} messages of {os.path.basename(files[0])}\n")
+    print("\n\n".join(events[-n:]))
+
+
 if __name__ == "__main__":
-    main()
+    if MODE == "--tail":
+        tail(sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 8)
+    elif MODE == "--wait":
+        wait(sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 600)
+    else:
+        main()
