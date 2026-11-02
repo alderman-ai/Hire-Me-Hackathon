@@ -16,12 +16,12 @@ If the old session ended before they reported, check the working tree: their fil
 
 | Work | Files it touches | Status when written |
 | --- | --- | --- |
-| **S-D1-B1** `/d1` scraping briefing with artifact carousel (from `..\scraping\site\d1.md`) | `app\[demo]\page.tsx`, `app\d1.tsx`, `app\d1.css`, `app\carousel.tsx`, `app\carousel.css`, `content\d1.json`, `public\d1\`, `scripts\d1_images.py` | Running since ~17:50. Reply `BUILT S-D1-B1` to `s-d1-scraping` with the URL. It also asked for one feed post announcing /d1 (the subagent suggests text). |
 | **S-D7-B1** entry "LinkedIn posts in Addvery's voice, graded blind", then **S-D5-B2** inline `[!video]` clips in entries | `app\demos\*`, `content\demos\*`, `public\demos\linkedin-voice\` (git-ignored), `.gitignore` | Running. The `/demos` template itself (S-D5-B1) is built and was BUILT on preview to s-d5; production ships with the first published entry. Reply `BUILT S-D7-B1` to `s-d7-linkedin-content` and `BUILT S-D5-B2` to `s-d5-blog-articles`. |
-| **Inventory** of every page, post, video and entry with honest read/watch times | writes only `content\inventory.json` | Running. Feeds the reading-list times and Alex's time-picker. |
 | **Landing layout** for `/for/<slug>`: greeting on top, "What I'm guessing you're concerned with", a numbered reading list with times and a running total, per-person preview card | `app\for\*`, `app\stakeholders.ts` | Running. Gated: renders only in `next dev` or when that page's `landing.approved === true` in `content\stakeholders.json`. |
 
 `app\demos\_og\glow.jpg` is derived from Addvery's images: git-ignore it (the S-D7 subagent was told to add it to `.gitignore`).
+
+Done since this file was drafted: **S-D1-B1** `/d1` (BUILT, 983449a, live); the **inventory** (`content\inventory.json`, 75 items, ~204 min; 308970e); **C16** synced (c34923a). The purple band's text is white (AA), and the S01 video is embedded.
 
 ## Next, in order
 
