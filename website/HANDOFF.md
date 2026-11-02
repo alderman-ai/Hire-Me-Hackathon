@@ -95,7 +95,9 @@ Written 2 Nov at about 18:35 Prague by session 54c2d301 (took over at 17:15 from
 
 ## Deploying
 
-The tree usually holds a subagent's uncommitted work, so deploy a clean export of HEAD and copy the git-ignored assets in:
+**Warning (20:15): HEAD now contains the unreviewed welcome** (e3e8b9f, `app\page.tsx` and friends, committed at Alex's request after the crash). Alex reads the welcome copy and the four paths before it ships (attended copy, STATUS.md finish list item 2). Until he has, any deploy from HEAD ships it. So either wait for his OK, or deploy with `app\page.tsx` reverted to 9906723's version in the export (`git show 9906723:website/app/page.tsx > "$D/app/page.tsx"`; the welcome files are then unused and harmless).
+
+When the tree holds uncommitted work, deploy a clean export of HEAD and copy **every** git-ignored asset in (fixed 20:15: the earlier recipe missed `/about`'s images and copy):
 
 ```bash
 cd "/c/Users/alder/Desktop/Hire me hackaton"; D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"; rm -rf "$D"; mkdir -p "$D"
@@ -103,9 +105,11 @@ git archive --format=tar HEAD:website > "$D.tar" && tar -xf "$D.tar" -C "$D" && 
 mkdir -p "$D/.vercel" "$D/public/addvery" "$D/public/people" "$D/public/demos" "$D/local"; cp website/.vercel/project.json "$D/.vercel/"
 cp website/public/addvery/* "$D/public/addvery/"; cp website/public/people/* "$D/public/people/"
 cp -r website/public/demos/linkedin-voice "$D/public/demos/"; cp website/app/demos/_og/glow.jpg "$D/app/demos/_og/"
-cp -r website/local/org-diagrams.json website/local/research "$D/local/"
-# once /about ships: cp -r website/public/about "$D/public/"
+cp -r website/public/about "$D/public/"
+cp -r website/local/org-diagrams.json website/local/research website/local/about "$D/local/"
+# once D12 ships: cp -r website/public/agent website/public/llms.txt into "$D/public/"
 cd "$D" && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes
+# then check: /about 200 with "From my LinkedIn", one /about/wall image 200, /for/growth 200, /demos 200
 ```
 
 Git-ignored but deployed: `public\addvery\`, `public\people\` (plus `*-og.jpg`), `public\demos\linkedin-voice\`, `app\demos\_og\glow.jpg`, `public\about\`, `local\org-diagrams.json`, `local\research\`. When the tree is clean, a plain `vercel deploy --prod --yes` from `website\` ships all of them.
