@@ -10,6 +10,7 @@ This session runs the OBS capture rig, and nothing else. It is the background se
 
 ## Boot reading
 
+- `..\CHARTER.md`: the parent context of the whole project. Never edit it.
 - `rig\RUNBOOK.md`: the four commands and what the voice alerts mean. Read it at startup.
 - `rig\HANDOFF.md` and `rig\RIG_NOTES.md`: read them before changing rig code, not before.
 - Before your first commit, read `..\GIT.md`; it's how all sessions share one working tree.
