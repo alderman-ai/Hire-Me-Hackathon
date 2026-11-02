@@ -456,11 +456,12 @@ Received: 2026-11-02 14:53 CET (+01:00)
 TASK S1: Approve - research for the GetSales demo and website.md is waiting on you: one tick approves five research questions for the GetSales demo and the website (plus wildcards). About a 3-minute read; answer by about 15:20 so both sessions get findings by 16:30.
 ```
 
-## TASK S1: Approve - research for the blog pipeline.md — open
+## TASK S1: Approve - research for the blog pipeline.md — done
 From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
 Received: 2026-11-02 14:54 CET (+01:00)
 14:54 CET: alert shown to Alex as low priority; no PushNotification (not blocking; Alex, 14:38: the blog pipeline is low priority).
 15:00 CET: s1-research handed off to a fresh session under the same name; it watches this task and sends TASK DONE.
+16:38 CET: TASK DONE S1 received; marked done. S1 applied the feedback rule: the run follows Alex's note "you can start researching for the base of the articles".
 
 ```
 TASK S1: Approve - research for the blog pipeline.md is waiting on you: four research questions (plus wildcards) for the blog pipeline and the three articles. About a 2-minute read; not blocking, because the blog session drafts the test post anyway, but findings by 16:00 would shape it.
@@ -475,11 +476,12 @@ Received: 2026-11-02 15:01 CET (+01:00)
 TASK S-D9: Approve - the plan for the site's build updates.md is waiting on you: how the site's build updates are chosen, and their definition of done. Nothing waits on it, about 5 minutes. It also holds three optional one-line questions with defaults: how the GetSales clip hides the six, whether the site shows how it runs itself, and how the site talks about the AI.
 ```
 
-## TASK S-D1: Approve - the scraping demo plan.md — open
+## TASK S-D1: Approve - the scraping demo plan.md — replaced
 From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
 Received: 2026-11-02 15:04 CET (+01:00)
 15:04 CET: alert shown to Alex.
 15:43 CET: s-d1-scraping: file updated at 15:43 (choice 1 now reflects the two LinkedIn scrapers run so far; recommends "crawl: yes", a cents-cheap Apify crawl of Addvery's website run by Alex's research session; ticking still takes the defaults, no new run). Repeated alert in the window; no PushNotification during the break.
+16:38 CET: replaced by "Approve - what the scraping demo section shows.md"; ticking that one approves this plan too, so Alex can skip this one.
 
 ```
 TASK S-D1: Approve - the scraping demo plan.md is waiting on you: the plan for the site's scraping page (what done means, result-first layout, and three choices with defaults: LinkedIn, a Clay line, a video); about 3 minutes, and ticking the box takes all defaults; unblocks drafting the page the moment your summary is ready.
@@ -714,4 +716,24 @@ I'm filling in all of the operator tasks now and they just keep coming in. Make 
 ```
 
 16:36 CET: Alex: "Tell the orchestrator just in case he needs to enforce that". Sent to orchestration with who has the rule; wave2-specs unreachable (its two open tasks didn't get it), so it went to s-d4-blog-pipeline instead.
+
+16:37 CET: orchestration: feedback rule done and enforced (commit 0fdb87d: check_gate.py prints APPROVED+CHANGES; ASKING.md step 4, the gate template and the archive skill updated). It is telling s-d6-canva-templates, s-d7-linkedin-content, rig and briefing; not addvery-research. Its own two open tasks follow the rule ("the Addvery approval's note was folded in at 16:30"; no TASK DONE yet).
+
+## TASK S2: Approve - three small charter fixes.md — open
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
+Received: 2026-11-02 16:37 CET (+01:00)
+16:37 CET: alert shown to Alex as low priority; no PushNotification (sender: low priority, no pokes).
+
+```
+TASK S2: Approve - three small charter fixes.md is waiting on you: three wording fixes so the project plan matches your answers (what "nothing sensitive is published" means, and the GetSales demo in your model). Low priority, about 2 minutes, no pokes; if it's still open at 18:00 all three are applied and logged.
+```
+
+## TASK S-D1: Approve - what the scraping demo section shows.md — open
+From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
+Received: 2026-11-02 16:38 CET (+01:00)
+16:38 CET: alert shown to Alex with a PushNotification. Replaces "Approve - the scraping demo plan.md".
+
+```
+TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: the whole scraping page, exactly as it would go live (about 5 minutes; tick to publish, and anything in the feedback section applies too). It replaces "Approve - the scraping demo plan" too: ticking this one approves that plan as well, so he can skip it. Deadline 18:00 to go live today.
+```
 
