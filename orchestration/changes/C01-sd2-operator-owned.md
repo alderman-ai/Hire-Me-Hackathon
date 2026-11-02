@@ -1,9 +1,9 @@
 # C01: S-D2 becomes operator-owned, with brand capture
 
-Status: planned
+Status: applied 16:30, commit 82070b8 (approved OT-02, 16:29, with fold-in)
 Skill: `change-outline`, operator-owned
 Asked by: the operator, through his intake answers (SPEC section 4, "What S2 accepts", item 1)
-Planned: 2 Nov · Preview: `Operator tasks\Approve - Addvery research is yours, reading lists per demo.md` (OT-02), together with C02 · New ids: none
+Planned: 2 Nov · Preview: `Operator tasks\Archive\Approve - Addvery research is yours, reading lists per demo.md` (OT-02), together with C02 · New ids: none
 
 **Approval, verbatim:**
 - A2.2 (DI-2 Q2.2, `Operator tasks\Archive\DI-2 S0 Bootstrap preflight.md`): "I own this subdirectory. I'm going to be heavily involved in this and we don't need any spec from the project orchestrator from the charter. I'm going to handle this one-on-one and it's also going to be ignored just so we're not posting, even though it's public information inside. I'm handling this so the project orchestrator subdirectory can ignore this for now. I'll let it know or it can check just by the contents. Important: it'll be getting ignored from the public repo so the orchestrator needs that information. It needs to get it from the local machine not the GitHub repo"
@@ -165,9 +165,9 @@ None of S-D3, S-D6, S-D7 or S-D8 has a SPEC.md yet (`getsales\`, `canva-template
 One line per spec, as `- HELD <spec id> <file>: <resource line>`, the form `propagate` check mode reads. Once delivered, the line becomes `- DELIVERED ...` with the commit.
 
 - DELIVERED (into getsales\SPEC.md §3 by wave2-specs, 2 Nov; commit 30d2ce5. Checked by orchestration 14:50: it is the only Addvery Research line in that file, so nothing to replace) S-D3 `getsales\SPEC.md`: - `C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\`: the operator's own S-D2 work: Addvery and its six stakeholders, the input to enrichment and the live run. Local and git-ignored: read it from the local disk, never from GitHub, and never edit it.
-- HELD S-D6 `canva-templates\SPEC.md`: - `C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\`: the operator's own S-D2 work, including Addvery's brand capture (voice and visual identity), the input to the templates. Local and git-ignored: read it from the local disk, never from GitHub, and never edit it.
-- HELD S-D7 `linkedin-content\SPEC.md`: - `C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\`: the operator's own S-D2 work, including Addvery's brand capture, the voice this demo writes in. Local and git-ignored: read it from the local disk, never from GitHub, and never edit it.
-- HELD S-D8 `website\SPEC.md`: - `C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\`: the operator's own S-D2 work: the six stakeholders for the stakeholder sections, and Addvery's brand capture. Local and git-ignored: read it from the local disk, never from GitHub, and never edit it. What goes live from it follows Alex's say.
+- DELIVERED (16:30, as the line already there: canva-templates\SPEC.md's `..\Addvery Research\` line says the same and more, with C08 and C09's file lines under it, so it isn't replaced) S-D6 `canva-templates\SPEC.md`: - `C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\`: the operator's own S-D2 work, including Addvery's brand capture (voice and visual identity), the input to the templates. Local and git-ignored: read it from the local disk, never from GitHub, and never edit it.
+- DELIVERED (16:30, as the line already there: linkedin-content\SPEC.md's `..\Addvery Research\` line says the same and more, with C08 and C09's file lines under it, so it isn't replaced) S-D7 `linkedin-content\SPEC.md`: - `C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\`: the operator's own S-D2 work, including Addvery's brand capture, the voice this demo writes in. Local and git-ignored: read it from the local disk, never from GitHub, and never edit it.
+- DELIVERED (16:30, as the line already there: website\SPEC.md's `..\Addvery Research\` line says the same, including that nothing goes into a tracked file beyond Alex's say, with C08's file lines under it, so it isn't replaced) S-D8 `website\SPEC.md`: - `C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\`: the operator's own S-D2 work: the six stakeholders for the stakeholder sections, and Addvery's brand capture. Local and git-ignored: read it from the local disk, never from GitHub, and never edit it. What goes live from it follows Alex's say.
 
 ## Commits and notices (on apply)
 - would commit: `git commit -m "[orchestration] C01: S-D2 becomes operator-owned, with brand capture" -- CHARTER.md`
@@ -183,3 +183,19 @@ One line per spec, as `- HELD <spec id> <file>: <resource line>`, the form `prop
 - `python orchestration\sync_claude_excludes.py --check`: no changes (scratch, with an empty `Addvery Research\` placeholder so the sister patterns match; the real repo also reports no changes).
 - `python -I orchestration\propagate_check.py --root <scratch>`, with this record copied in: 1 gap, `[roster] S0 has no roster row in SESSIONS.md`. That gap is already in the real repo and isn't C01's. The same check on the unmodified real repo gives 2 gaps: that one, plus `[roster] S-D2 has no roster row`, which C01 closes (S-D2 is now `skipped: operator-owned`). C01 also clears the baseline notes "S-D6 depends on no outline row" and the same for S-D7. The four HELD lines are listed as notes, and the record shows as open.
 - First pass caught a wording clash. The check counts a row as operator-owned if the phrase appears anywhere in it, so the first wording of places 2 and 3, "from S-D2 (operator-owned, ...)", made it skip S-D6 and S-D7. Both now say "the operator's own". Keep "operator-owned" only in the S-D2 row. (`propagate_check.py` now reads the marker only at the end of the Spec cell, so prose like places 10 and 12 is safe.)
+
+## Applied, with Alex's fold-in (16:30, commit 82070b8)
+
+Alex approved OT-02 at 16:29, writing in its fence: "A lot has happened since then so also look at the actual outputs created from that session and fold them into your plan if needed. This is approved, assuming that nothing is superseded by what happened in that research session. Check that before you write this in stone but I don't want another approval so fold that in. Do whatever you need to it and let's clear this out"
+
+Checked against what his Addvery research session produced (C08's file list, DI-6, the specs as they stand):
+- Place 1, the S-D2 row: superseded in part. He runs the scraping himself in `Addvery Research\` and S-D1 presents his summary (DI-6 A6.2, A6.5), so "May use S-D1's scrapers" is no longer true. Applied instead: Depends on `—`, and the Outline cell adds "He runs the scraping for it there too, and S-D1 presents his scraping summary (DI-6)."
+- Place 5, the run-order bullet: S-D2 also feeds S-D1 now. Applied: "S-D2, from `Addvery Research\`, feeds S-D1 (his scraping summary), S-D3 (GetSales) and S-D8 (website)."
+- New place 16, the S-D1 row's Depends on: `S1` became `S1; S-D2 (the operator's own scraping and summary, in `Addvery Research\`)`.
+- Places 2 to 4 and 6 to 12: still true; applied as planned. Place 12's Before was found in the DoD section that C03 wrote in.
+- Held lines: the four specs exist now, and each already has an `Addvery Research\` line written by wave2-specs that carries the held line's substance and more, with C08 and C09's file lines under it. Replacing them would drop each spec's own detail, so each is marked DELIVERED as the existing line.
+- Not folded in, left for the next preview: DoD-9's "research output ... other specs read" now mostly means Alex's own files relayed by S-D1 (C08). That is a DoD wording change, outside OT-02.
+
+## Verify (apply)
+
+Every Before text (places 1 to 12 and 16) was found exactly once in `CHARTER.md` and replaced; none of the After texts adds a term on the website's deny list. propagate check after the apply: see the outline sign-off commit.

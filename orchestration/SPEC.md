@@ -96,7 +96,7 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
 
-C01 and C02 went out together as `Operator tasks\Approve - Addvery research is yours, reading lists per demo.md` (OT-02, 2 Nov); their records are in `changes\`.
+C01 and C02 went out together as `Operator tasks\Archive\Approve - Addvery research is yours, reading lists per demo.md` (OT-02, 2 Nov); their records are in `changes\`. Alex approved it at 16:29, asking S2 to fold in whatever his research session had since superseded, with no second approval. Both were applied at 16:30 (commit 82070b8) with three fold-ins, recorded in the C01 record, and the outline was signed off at 16:32 (commit a97de2e).
 
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
@@ -210,6 +210,7 @@ When a default is taken (a passed deadline after 18:00 Prague, or an empty or un
 | 2 Nov, DI-4 Q4.2, reading 4: a split row keeps its id plus a letter (S-D3a, S-D3b); a row with no deliverable of its own gets the id shown in its preview. | As above: unaddressed, so the default (accepted). | It keeps every row traceable to its deliverable, as "Spec IDs mirror deliverable IDs" intends. | None until a row is split. A rename later touches the outline, "Depends on" cells and one folder name. |
 | 2 Nov: the skills go in `orchestration\.claude\skills\`, not the root's `.claude\skills\`. | The Claude Code docs (section 5): root skills load in every session below the root, and nested ones load in the root session once it reads a file in that folder. DI-4 Q4.1 puts the parent's own file tree in `orchestration\`. | It keeps the charter-changing skills out of every other session, as "A spec never edits the charter" asks, and puts them where the operator put the parent's files. | If they fail to load, move the four skill folders to the root's `.claude\skills\`, where the guard step still stops other sessions. Only this spec changes. |
 | 2 Nov 14:40: wave 2 starts spec by spec as each spec's preflight is answered, not after the outline sign-off. | Alex, 14:38: "we need to remove blockers". OT-02 only rewords the plan, and his DI answers already settled its substance. | No demo depends on C01 or C02. | The outline is signed off after the first demos start; no files at risk. |
+| 2 Nov 16:33: forking gate F1 (build done: DoD and outline signed off, C01 and C02 applied, skills dry-run) is merged into F3, taken at about 17:40. | F1's conditions were met at 16:32, about 70 minutes before F3 is due. This session's context is under 40%, and the context watch shows no rot. | One fork instead of two in 70 minutes: the overnight session starts clean either way, and Alex sees fewer changing rows in agent view. | None. If context climbs past 50% first, the context watch takes F2 earlier. |
 
 ## 10. The DoD sign-off intake
 

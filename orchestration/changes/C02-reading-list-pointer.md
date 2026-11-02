@@ -1,9 +1,9 @@
 # C02: The charter's research reading list becomes a pointer to each spec's own
 
-Status: planned
+Status: applied 16:30, commit 82070b8 (approved OT-02, 16:29, with fold-in)
 Skill: `propagate`, from S2's own work on an operator answer (no outline-row operation: the S1 row is reworded in place)
 Asked by: the operator, through his intake answer (SPEC section 4, "What S2 accepts", item 1)
-Planned: 2 Nov · Preview: `Operator tasks\Approve - Addvery research is yours, reading lists per demo.md` (OT-02), together with C01 · New ids: none
+Planned: 2 Nov · Preview: `Operator tasks\Archive\Approve - Addvery research is yours, reading lists per demo.md` (OT-02), together with C01 · New ids: none
 
 **Approval, verbatim:**
 - A4.2 (DI-4 Q4.2, `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md`): "Reading lists go into the executable specs, which are not written yet, or at least to my knowledge. Again consult the knowledge work executable spec in my GitHub. Look how it handles research and specs and everything, and go ahead and model the research section after that,"
@@ -127,4 +127,12 @@ None.
 - would send `website`: `S2 C02: the charter's "Research reading list" section is now a pointer to each spec's own list, and the S1 and S2 parameters are reworded to match. Re-run scripts\sync_docs.py so the site's charter copy (content\docs\charter.md) matches.`
 
 ## Verify
-Not applied yet.
+Applied 16:30: places 1 to 7, each Before text found exactly once and replaced.
+
+## Applied, with Alex's fold-in (16:30, commit 82070b8)
+
+Alex approved OT-02 at 16:29, writing in its fence: "A lot has happened since then so also look at the actual outputs created from that session and fold them into your plan if needed. This is approved, assuming that nothing is superseded by what happened in that research session. Check that before you write this in stone but I don't want another approval so fold that in. Do whatever you need to it and let's clear this out"
+
+Checked against what his Addvery research session produced (C08's file list, DI-6, the specs as they stand):
+- Nothing superseded: each spec now carries its own research reading list (C07), as the pointer says.
+- Place 3 folded in one addition: "S2 adds each report, and each spec output other specs read, to the reading list of every spec that needs it" (OUTPUT lines, C08 and C09).

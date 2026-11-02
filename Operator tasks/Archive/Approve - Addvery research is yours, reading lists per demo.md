@@ -2,12 +2,13 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-02
-Task State: Open
+Task State: Archived
 Gate: S2 charter change preview (C01, C02)
 Requested by: orchestration
 Snapshot of: orchestration\changes\C01-sd2-operator-owned.md and C02-reading-list-pointer.md at the commit that adds this task
 Unblocks: applying C01 and C02 to the charter, which clears the last consistency gap before the outline sign-off and wave 2
 Created: 2026-11-02 14:18 Prague
+Archived: 2026-11-02
 ---
 
 # Approve: two updates to the project plan
@@ -183,12 +184,12 @@ This is the plan's text before and after, exactly as it will be written. Whereve
 
 ## Approval
 
-- [ ] I approve
+- [x] I approve
 
 Tick the box to approve as it stands. If something has to change first, leave the box empty and write what to change below. Either way, the requesting session checks this file every 5 minutes while it's blocked.
 
 `<operator_answer>`
 ```ot-02-changes
-
+A lot has happened since then so also look at the actual outputs created from that session and fold them into your plan if needed. This is approved, assuming that nothing is superseded by what happened in that research session. Check that before you write this in stone but I don't want another approval so fold that in. Do whatever you need to it and let's clear this out 
 ```
 `</operator_answer>`

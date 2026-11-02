@@ -11,17 +11,18 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | DI-5 | S2 DoD sign-off | S2 | 2026-11-02 | Q5.1 DoD signed off with one change: soften the "research doesn't run without me" wording (DoD-4), since he may relax the research rules if time runs short. | S2 (`orchestration\SPEC.md`) |
 | DI-6 | Decide - how the scraping demo should work | S-D1 | 2026-11-02 | Q6.1 A $10 spending cap on Apify; the setup could happen at once, since he wasn't recording.<br>Q6.2 He scrapes Addvery himself, one-on-one in `Addvery Research\`, with no spec, and summarises the outputs; that is the scraping demonstration. From that research come the top six stakeholders (co-founders, CAIO, RevOps, CEO, CTO, CSO, or directors or equivalents), who get a GetSales alert by 15:30 Prague that the hackathon is happening and they can follow along.<br>Q6.3 Yes, the public site may name Apify.<br>Q6.4 The GetSales demo does no scraping and uses what is already scraped. Two parts: the alert to the six through his own sender profile; then, once the research is done, workflows for each of their ICPs by language by three approaches, in a new GetSales folder he can hide, each opening with a custom message computed before import and imported as a lead field.<br>Q6.5 The scraping demo needs no Apify actors or API of its own: all Apify work happens in `Addvery Research\`, and the demo draws on that research. | S-D1 (`scraping\SPEC.md`), S-D3 (`getsales\SPEC.md`) |
 | OT-01 | Approve - research plan for the whole project | s1-research (S1) | 2026-11-02 | OT-01 Approved the parent research list (four questions plus three wildcards) as it stood, with no changes; ticked at 14:38 on his instruction, relayed by `briefing`: "let's just approve ot1 -- i'm swamped we need to remove blockers". | S1 (`research\CLAUDE.md`, `research\lists\L-01-parent.md`), S2 (`orchestration\SPEC.md`), S-D1 (`scraping\SPEC.md`) |
+| OT-02 | Approve - Addvery research is yours, reading lists per demo | S2 (orchestration) | 2026-11-02 | OT-02 Approved both charter changes: the company and stakeholder research, brand capture included, is his own, run one-on-one in `Addvery Research\` with no spec; and the charter's research reading list becomes a pointer to each spec's own. His condition: fold in whatever his research session had since superseded, with no second approval ("Do whatever you need to it and let's clear this out"). Applied 16:30 with the fold-ins: he runs the scraping in his own folder, so his research depends on nothing and feeds the scraping demo. | S2 (`orchestration\SPEC.md`) |
 
 ## By topic
 
 | Topic | Questions |
 | --- | --- |
 | Folders and naming | Q2.1, Q4.1 |
-| `Addvery Research\` ownership | Q2.2, Q3.3 |
+| `Addvery Research\` ownership | Q2.2, Q3.3, OT-02 |
 | Research method and budget | Q3.1, Q3.2, OT-01 |
 | Scraping demo and Apify | Q6.1, Q6.3, Q6.5 |
 | GetSales outbound and the six | Q6.2, Q6.4 |
-| Orchestration and reading lists | Q4.1, Q4.2 |
+| Orchestration and reading lists | Q4.1, Q4.2, OT-02 |
 | Desk, pokes and Alex's hours | Q3.4 |
 | Definition of done | Q5.1 |
 | Rig: storage and capture | Q1.1, Q1.2, Q1.5, Q1.8 |
