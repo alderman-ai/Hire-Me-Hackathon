@@ -37,14 +37,14 @@ Read this file at startup, and again before you message a session you haven't me
 | `s-d4-blog-pipeline` | `blog-pipeline\` | S-D4 Blog pipeline: turns 15 minutes of Alex's dictation into a near-final blog post. Part 1 (method, prompts, scripts, post format) runs now; part 2 waits for its own intake, which it watches with no pokes. | Launched by `orchestration`, 2 Nov 14:52, on SPEC READY. |
 | `s-d6-canva-templates` | `canva-templates\` | S-D6 Canva LinkedIn templates: part 1 groundwork on Alex's brand capture (template grid and branded layouts as files ready to import, no Canva login). Its intake stays held in its SPEC.md Appendix A until `orchestration` says go. | Launched by `orchestration`, 2 Nov 15:48, on SPEC READY (session e692a845). |
 | `s-d7-linkedin-content` | `linkedin-content\` | S-D7 LinkedIn content creation demo: part 1 voice rules, writing and scoring set-up and draft posts, nothing published. Its intake stays held in its SPEC.md Appendix A until `orchestration` says go. | Launched by `orchestration`, 2 Nov 15:48, on SPEC READY (session 6a355ef8). |
+| `s-d5-blog-articles` | `blog-articles\` | S-D5 Blog articles: two articles, not three (Alex's note in the blog research approval, 16:40), their base and their visuals, groundwork only; its intake stays held and no article questions go to Alex. | Launched by `orchestration`, 2 Nov 16:41 (session 1bffb92f). |
+| `s-d10-canva-video` | `canva-video\` | S-D10 Canva design video: groundwork only (scene brief, off-camera screen-care list with Canva's side panels); filming waits on Alex's answer to S2-Q1, today 17:30 or tomorrow morning. | Launched by `orchestration`, 2 Nov 16:39 (session acc0550f). |
 
 ## Planned
 
 | Session | Folder it starts in | Spec | When |
 | --- | --- | --- | --- |
 | none | `orchestration\` | S2 Project orchestrator | Run by `orchestration` after S0. There's no separate S2 session (DI-4). |
-| `s-d5-blog-articles` | `blog-articles\` | S-D5 Three blog articles | After S-D4. |
-| `s-d10-canva-video` | `canva-video\` | S-D10 Canva design video | After S-D6, near the end of the day. |
 
 ## Finished
 
