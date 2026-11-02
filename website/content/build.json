@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "13:50",
-  "as_of_line": "As of 13:50 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "13:51",
+  "as_of_line": "As of 13:51 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Thirteen pieces of work, run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come ten demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -26,12 +26,12 @@
     {
       "piece": "Bootstrap",
       "what": "Sets up a working folder, instructions and a background session for every other piece.",
-      "status": "Running. Folders for every demo created at 13:45."
+      "status": "Done at 13:49."
     },
     {
       "piece": "Research",
       "what": "Decides with Alex what gets researched and how deep, so the agents work from findings instead of guesses.",
-      "status": "Spec written, Alex's answers in. Starts after bootstrap."
+      "status": "Running since 13:50. Working out with Alex what gets researched."
     },
     {
       "piece": "Project orchestrator",
