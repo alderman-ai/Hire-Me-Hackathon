@@ -2,6 +2,13 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
+## Update, 22:35: start here in the morning
+
+The session that took over at 21:52 (e0e1d9d2) changed the plan on Alex's word at about 22:05 (W36 to W54 in `ALEX-WANTS.md`). The structure verdict below is now one input, not the plan. **Read `orchestration\local\overnight\MORNING.md` first** (git-ignored): what's ready, and Alex's morning in order.
+- Alex's answers to the five calls: he knows only Ivana; no asks on any page (`RULES.md` rule 11); the time picker is retired; the live router run is approved; where the CRM line sits is ours to decide.
+- Overnight, by his usage limit (69% at 22:00, keep 15 to 20% for tomorrow; usage can't be read here), only these ran: side cards for every Great, Yes and Maybe clip (74, in `legibility\cards\`), a catalog of every piece (`orchestration\local\catalog\`), and **three alternative mockups** for him to pick from (`orchestration\local\mockups\index.html`: promise, machine, day, each with a RATIONALE). Also done: K4 (e3b1ec8), wall alt text (uncommitted, like the images), Ivana's note and message drafts (`orchestration\local\notes\ivana.md`).
+- Stopped or dropped: K1 (`recommend.json` waits for his pick), the compilation step (the mockups replace it), the context-watch cron (re-create it when work resumes). `website` is parked at W13 on preview and builds the pick in the morning. The three sub-orchestrators stay on HOLD.
+
 ## The big change since 20:13: Alex talks to orchestration now
 
 At about 20:15 Alex came to this session directly ("This isn't working ... everything is disjointed ... nothing is synced"), and he has worked here since. He's exhausted, he has promised Addvery the site is built, and he meets **Ivana at 4 pm on Tuesday 3 Nov** (his words at 17:45; never written down until 20:40). He sends the six their notes in the morning. He won't sleep: "I can't just get some sleep dude ... If it's halfway built it looks terrible." Talk to him plainly and briefly. Give him one thing at a time and make the easy calls for him.
