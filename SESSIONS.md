@@ -30,7 +30,14 @@ Read this file at startup, and again before you message a session you haven't me
 | --- | --- | --- | --- |
 | `s1-research` | `research\` | S1 Research | After S0. |
 | none | `orchestration\` | S2 Project orchestrator | Run by `orchestration` after S0. There's no separate S2 session (DI-4). |
-| one per wave-2 spec | one folder each | S-D1, S-D3 to S-D10 | S0 adds a row for each when it creates the folders. |
+| `s-d1-scraping` | `scraping\` | S-D1 Scraping research demo | Wave 2, first, because others consume its output. After S1. |
+| `s-d3-getsales` | `getsales\` | S-D3 GetSales outbound demo | Wave 2, once Alex's Addvery research (the six stakeholders) is in `Addvery Research\`. Needs the rig recordings, and S-D9 for the clip. |
+| `s-d4-blog-pipeline` | `blog-pipeline\` | S-D4 Blog pipeline | Wave 2, after S1. |
+| `s-d5-blog-articles` | `blog-articles\` | S-D5 Three blog articles | After S-D4. |
+| `s-d6-canva-templates` | `canva-templates\` | S-D6 Canva LinkedIn templates | Wave 2, once Alex's brand capture is in `Addvery Research\`. |
+| `s-d7-linkedin-content` | `linkedin-content\` | S-D7 LinkedIn content creation demo | Wave 2, once Alex's brand capture is in `Addvery Research\`. |
+| `s-d9-legibility` | `legibility\` | S-D9 Legibility analyzer | Wave 2. Runs continuously off the rig, while `website` runs. |
+| `s-d10-canva-video` | `canva-video\` | S-D10 Canva design video | After S-D6, near the end of the day. |
 
 ## Not sessions
 
