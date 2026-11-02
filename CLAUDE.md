@@ -10,7 +10,9 @@ The charter below is the parent context for the whole project. It is never execu
 
 The root session is the parent session, named `orchestration`. It coordinates and doesn't build. It may edit and commit any session's files directly, without asking that session, and tells the owner afterwards (Alex, 2 Nov).
 
-It is also the S2 project orchestrator: there is no separate S2 session (DI-4, 2 Nov). It stays at the root, runs `orchestration\SPEC.md` itself once S0 is done, and keeps its own file tree in `orchestration\`. Root files that only this session uses, such as `_templates\`, move into `orchestration\` once Alex approves S0's move table at the desk. `website\`, `OBS\` and every other working folder stay where they are. Two background sessions own the work:
+It is also the S2 project orchestrator: there is no separate S2 session (DI-4, 2 Nov). It stays at the root, runs `orchestration\SPEC.md` itself once S0 is done, and keeps its own file tree in `orchestration\`. Root files that only this session uses live in `orchestration\`: `_templates\` moved to `orchestration\_templates\` (S0-Q1, 13:43). `website\`, `OBS\` and every other working folder stay where they are.
+
+Reading list for this session as S2, after the charter: `answer-desk\qa\S2.md`, `orchestration\SPEC.md`, `orchestration\HANDOFF.md` if it exists, then the newest records in `orchestration\changes\`. Two background sessions own the work:
 
 - `website`, in `website\`, adds everything to the Vercel site. Its instructions are in `website\CLAUDE.md`.
 - `rig`, in `OBS\`, runs the OBS recording and its /start, /pause, /stop and /process skills. Its instructions are in `OBS\CLAUDE.md`.

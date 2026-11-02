@@ -44,4 +44,4 @@ Read this file at startup, and again before you message a session you haven't me
 ## Not sessions
 
 - `Addvery Research\`: Alex's own folder, worked one-on-one, with no spec. It's git-ignored, so read it from the local disk. It has no roster name unless Alex starts a session there.
-- `Operator tasks\` and `_templates\`: files, not sessions.
+- `Operator tasks\` and `orchestration\_templates\`: files, not sessions.
