@@ -33,6 +33,8 @@ WORK = SITE / ".clock"
 LAST = WORK / "last_published.json"
 LOG = WORK / "sync.log"
 PID = WORK / "sync.pid"
+# Manual corrections, counted as time already used: [{"seconds": 3600, "reason": "...", "at": "..."}].
+ADJUST = WORK / "adjustments.json"
 
 
 def log(text: str) -> None:
@@ -101,10 +103,13 @@ def build_status() -> dict:
             "state": state,
             "youtube_id": videos.get(sid),
         })
+    adjust = sum(float(a.get("seconds") or 0) for a in (read_json(ADJUST, []) or []))
+    banked += adjust
     clock = read_json(CLOCK_FILE, {}) or {}
     return {
         "budget_seconds": BUDGET_SECONDS,
         "banked_seconds": round(banked, 1),
+        "adjust_seconds": round(adjust, 1),
         "running_since": running_since,
         "status": status,
         "session": current,

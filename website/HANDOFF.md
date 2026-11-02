@@ -103,7 +103,7 @@ Once the tree is clean (nothing uncommitted except git-ignored files), a plain `
 
 ## Processes
 
-- **Clock loop:** pid 27164 (`pythonw`), alive. S10 started recording at about 16:24 ("recording S10, 8.53 h left").
+- **Clock loop:** pid 39924 (`pythonw`), restarted at 17:07 for a clock fix. At Alex's word (via rig, about 17:05) a full hour came off: `.clockdjustments.json` (git-ignored) holds `{"seconds": 3600, ...}`, and `clock_sync.py` adds every entry there to the banked time. S11 has been recording since about 17:06, with 6.93 h left. S10 started recording at about 16:24 ("recording S10, 8.53 h left").
 - **Dev server** on :3100: restarted by a subagent at about 15:45, logging to `C:\Users\alder\.claude\jobs\b25f14b0\tmp\dev-c.log`. If it dies, start it hidden: `Start-Process cmd.exe -ArgumentList '/c','npx next dev -p 3100' -WorkingDirectory <website> -WindowStyle Hidden`.
 - **Monitors:** all stopped for the HOLD at 16:47. Re-arm after the RESTART:
   - the OT-07 `check_gate` loop;
