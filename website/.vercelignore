@@ -5,5 +5,3 @@ node_modules
 scripts
 .addvery-scrape
 local/addvery
-local/stakeholders.json
-local/stakeholders-draft.md

@@ -1,16 +1,17 @@
-import { existsSync, readFileSync } from "node:fs";
-import path from "node:path";
+import stakeholdersJson from "@/content/stakeholders.json";
 
-// The stakeholder pages (/for/<slug>): one page per key person at Addvery, addressed to their role.
+// The stakeholder pages: one page per key person at Addvery, addressed to their role (/for/<slug>),
+// and the grid of all six that opens them (/for).
 //
-// Their content lives in local/stakeholders.json, which is git-ignored, so neither the public repo nor
-// this code holds anything about the people. Nothing renders unless:
-//   - the file exists, and
+// Their content lives in content/stakeholders.json (tracked; Alex's text, copied back from his edit
+// surface). Nothing renders unless:
 //   - its `approved` is exactly `true`, or this is `next dev` (NODE_ENV "development").
-// `next build` (and every Vercel build) runs with NODE_ENV "production", so until Alex sets
-// `approved: true` a production build gets no slugs, generates no pages, and every /for/... is a 404.
+// `next build` (and every Vercel build) runs with NODE_ENV "production", so with `approved` anything
+// but true a production build gets no slugs, generates no pages, and every /for/... is a 404.
 // A page whose note is still marked as Alex's draft (`note_is_draft: true`) is also left out of a
 // production build, even after approval, so a draft note can't go live by accident.
+//
+// The portraits are public/people/<slug>.webp (800x1000) and <slug>-400.webp: git-ignored, deployed.
 
 export type StakeholderDemo = { n: number; why: string };
 
@@ -22,7 +23,7 @@ export type StakeholderPage = {
   /** The role, short and without the name ("Addvery's CEO"), for the tab title and the "at a glance" card. */
   label: string;
   name: string;
-  /** The public job title as it shows in the hero. */
+  /** The public job title as it shows in the hero. " · " separates two jobs. */
   title: string;
   /** One line: what this page is. */
   framing: string;
@@ -51,16 +52,14 @@ export type StakeholderNotice = {
   privacy_label: string;
 };
 
+export type AboutMe = { heading: string; text: string };
+
 type StakeholdersFile = {
   approved?: unknown;
   notice?: Partial<StakeholderNotice>;
   pages?: unknown;
+  about_me?: Partial<AboutMe>;
 };
-
-// The comment keeps Turbopack's file tracing from copying this file (names and all) into the route's
-// server bundle on Vercel. The pages are static, so nothing reads it at request time: it's only read
-// while `next build` runs, and by `next dev`.
-const FILE = path.join(/* turbopackIgnore: true */ process.cwd(), "local", "stakeholders.json");
 
 const DEFAULT_NOTICE: StakeholderNotice = {
   heading: "About this page",
@@ -73,16 +72,6 @@ const DEFAULT_NOTICE: StakeholderNotice = {
 /** True only under `next dev`. `next build` and Vercel builds are always "production". */
 function isDev(): boolean {
   return process.env.NODE_ENV === "development";
-}
-
-function readFileOrNull(): StakeholdersFile | null {
-  if (!existsSync(FILE)) return null;
-  try {
-    const data: unknown = JSON.parse(readFileSync(FILE, "utf8"));
-    return data && typeof data === "object" ? (data as StakeholdersFile) : null;
-  } catch {
-    return null;
-  }
 }
 
 const isText = (v: unknown): v is string => typeof v === "string" && v.trim().length > 0;
@@ -109,18 +98,25 @@ function isPage(p: unknown): p is StakeholderPage {
   );
 }
 
-/** The gate. Returns no pages unless the file exists and is approved, or this is `next dev`. */
-export function stakeholderGate(): { approved: boolean; pages: StakeholderPage[]; notice: StakeholderNotice } {
-  const file = readFileOrNull();
+/** The gate. Returns no pages unless the file is approved, or this is `next dev`. */
+export function stakeholderGate(): {
+  approved: boolean;
+  pages: StakeholderPage[];
+  notice: StakeholderNotice;
+  aboutMe: AboutMe | null;
+} {
+  const file = stakeholdersJson as unknown as StakeholdersFile;
   const approved = file?.approved === true;
   if (!file || !(approved || isDev()) || !Array.isArray(file.pages)) {
-    return { approved, pages: [], notice: DEFAULT_NOTICE };
+    return { approved, pages: [], notice: DEFAULT_NOTICE, aboutMe: null };
   }
   const pages = file.pages
     .filter(isPage)
     .filter((p) => isDev() || !p.note_is_draft)
     .map((p) => ({ ...p, moments: (p.moments ?? []).slice(0, 3) }));
-  return { approved, pages, notice: { ...DEFAULT_NOTICE, ...file.notice } };
+  const about = file.about_me;
+  const aboutMe = about && isText(about.heading) && isText(about.text) ? { heading: about.heading, text: about.text } : null;
+  return { approved, pages, notice: { ...DEFAULT_NOTICE, ...file.notice }, aboutMe };
 }
 
 export function stakeholderSlugs(): string[] {
@@ -129,4 +125,35 @@ export function stakeholderSlugs(): string[] {
 
 export function findStakeholder(slug: string): StakeholderPage | undefined {
   return stakeholderGate().pages.find((p) => p.slug === slug);
+}
+
+/**
+ * Where each portrait came from, credited under it on the person's page (Alex, 2 Nov: cite every
+ * public image, and prefer the person's own website). Addvery's team pages for five; Ivana Karhanová
+ * isn't on them, so hers is from her own website. The photos are cropped to one 4:5 frame and made
+ * greyscale (one of the six exists only in black and white); nothing else about them is changed.
+ */
+const PORTRAIT_SOURCES: Record<string, { label: string; href: string }> = {
+  growth: { label: "ivanakarhanova.cz", href: "https://ivanakarhanova.cz/cs" },
+  ceo: { label: "addvery.com", href: "https://www.addvery.com/team-details/stepan-hyks" },
+  "cofounder-1": { label: "addvery.com", href: "https://www.addvery.com/team-details/pavel-novak" },
+  "cofounder-2": { label: "addvery.com", href: "https://www.addvery.com/team-details/lukas-marek" },
+  delivery: { label: "addvery.com", href: "https://www.addvery.com/team-details/milos-cerovsky" },
+  bi: { label: "addvery.com", href: "https://www.addvery.com/team-details/david-srenk" },
+};
+
+/** The portrait files for a slug (the 800 px original and the 400 px copy, both 4:5 greyscale WebP) and its source. */
+export function portraitFor(slug: string) {
+  return {
+    src: `/people/${slug}.webp`,
+    srcSet: `/people/${slug}-400.webp 400w, /people/${slug}.webp 800w`,
+    width: 800,
+    height: 1000,
+    source: PORTRAIT_SOURCES[slug] as { label: string; href: string } | undefined,
+  };
+}
+
+/** "Job A, Co · Job B, Co2" -> ["Job A, Co", "Job B, Co2"]: one line per job. */
+export function titleLines(title: string): string[] {
+  return title.split(/\s+·\s+/).filter(Boolean);
 }

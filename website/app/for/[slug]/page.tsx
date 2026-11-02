@@ -5,17 +5,28 @@ import { allDemos } from "../../deliverables";
 import { feedPosts, type Post } from "../../feed";
 import { Reveal, RotateIn } from "../../motion";
 import { readOrgData } from "../../org-charts";
-import { findStakeholder, stakeholderGate, stakeholderSlugs, type StakeholderPage } from "../../stakeholders";
+import {
+  findStakeholder,
+  portraitFor,
+  stakeholderGate,
+  stakeholderSlugs,
+  titleLines,
+  type StakeholderPage,
+} from "../../stakeholders";
 import "../../article.css";
+import "../for.css";
 
-// One page per key person at Addvery, addressed to their role: /for/<slug>.
+// One page per key person at Addvery, addressed to their role: /for/<slug>. The grid at /for opens it.
 //
-// Everything about the people comes from the git-ignored local/stakeholders.json, through the gate in
-// app/stakeholders.ts: no file, or `approved` not true outside `next dev`, means no slugs here, so a
-// production build generates no page and `dynamicParams = false` turns every /for/... into a 404.
-// The page also calls notFound() itself if the gate says no. Never indexed, never linked from the site.
+// Everything about the people comes from content/stakeholders.json, through the gate in
+// app/stakeholders.ts: `approved` not true outside `next dev` means no slugs here, so a production
+// build generates no page and `dynamicParams = false` turns every /for/... into a 404.
+// The page also calls notFound() itself if the gate says no. Never indexed: Alex sends each link.
 //
-// Laid out in the demo pages' article dress (article.css `.art-*`), with its own pieces under `.sh-*`.
+// Top to bottom, as Alex asked (2 Nov, 17:26): the portrait and who it's for, then the explaining part
+// (the growth lead's opening and "why now", the note, the one ask), then the details (the demos, the
+// moments from the build, about me, about this page). Laid out in the demo pages' article dress
+// (article.css `.art-*` and `.sh-*`), with the portrait hero in for.css.
 
 export const dynamicParams = false;
 
@@ -129,7 +140,7 @@ function WhyNow({ page }: { page: StakeholderPage }) {
 
 export default async function StakeholderPageView({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { approved, pages, notice } = stakeholderGate();
+  const { approved, pages, notice, aboutMe } = stakeholderGate();
   const page = pages.find((p) => p.slug === slug);
   if (!page) notFound();
 
@@ -155,37 +166,67 @@ export default async function StakeholderPageView({ params }: { params: Promise<
           .join(", ")} and ${picked[picked.length - 1].n}`
       : String(picked[0]?.n ?? "");
 
+  // The detail chapters are numbered in the order they appear.
+  let chapter = 0;
+  const nextNum = () => String(++chapter).padStart(2, "0");
+  const demosNum = nextNum();
+  const momentsNum = moments.length > 0 ? nextNum() : "";
+  const aboutNum = aboutMe ? nextNum() : "";
+
+  const img = portraitFor(page.slug);
+
   return (
     <main className="art art-for">
-      <section className="art-hero" aria-labelledby="for-name">
-        <RotateIn
-          from="bottom-right"
-          angle={8}
-          delay={500}
-          duration={800}
-          fade={600}
-          onLoad
-          className="art-hero-ring"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/addvery/hero-circle.webp" alt="" width={472} height={460} />
-        </RotateIn>
+      {/* ---------- Who it's for: the portrait, the name, the title, the framing ---------- */}
+      <section className="art-hero for-person-hero" aria-labelledby="for-name">
         <div className="art-container">
-          {!approved && (
-            <p className="sh-draft-strip">Draft for Alex&apos;s review · local only, not on the live site</p>
-          )}
-          <div className="art-eyebrow-row">
-            <span className="art-eyebrow-line" aria-hidden="true" />
-            <p className="art-eyebrow is-lavender">A page for you</p>
+          <p className="art-back">
+            <Link href="/for">← All six pages</Link>
+          </p>
+          <div className="for-person-grid">
+            <RotateIn as="figure" from="bottom-left" angle={-10} delay={150} duration={800} fade={600} onLoad className="for-portrait">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={img.src}
+                srcSet={img.srcSet}
+                sizes="(min-width: 992px) 420px, (min-width: 768px) 300px, 240px"
+                width={img.width}
+                height={img.height}
+                alt={page.name}
+                fetchPriority="high"
+              />
+              {img.source && (
+                <figcaption className="for-credit">
+                  Photo: <a href={img.source.href}>{img.source.label}</a>
+                </figcaption>
+              )}
+            </RotateIn>
+            <div className="for-person-copy">
+              {!approved && (
+                <p className="sh-draft-strip">Draft for Alex&apos;s review · local only, not on the live site</p>
+              )}
+              <div className="art-eyebrow-row">
+                <span className="art-eyebrow-line" aria-hidden="true" />
+                <p className="art-eyebrow is-lavender">A page for you</p>
+              </div>
+              <h1 id="for-name" className="art-h1">
+                {page.name}
+              </h1>
+              <p className="sh-title">
+                {titleLines(page.title).map((line, n) => (
+                  <span key={line}>
+                    {n > 0 && <span className="sr-only">, and </span>}
+                    {line}
+                  </span>
+                ))}
+              </p>
+              <p className="art-hero-lead">{page.framing}</p>
+            </div>
           </div>
-          <h1 id="for-name" className="art-h1">
-            {page.name}
-          </h1>
-          <p className="sh-title">{page.title}</p>
-          <p className="art-hero-lead">{page.framing}</p>
         </div>
       </section>
 
+      {/* ---------- The explaining part ---------- */}
       <Opening page={page} />
       <WhyNow page={page} />
 
@@ -223,12 +264,37 @@ export default async function StakeholderPageView({ params }: { params: Promise<
         </div>
       </section>
 
+      <section className="art-cta sh-ask" aria-labelledby="for-ask">
+        <div className="art-container art-cta-grid">
+          <div className="art-cta-copy">
+            <p className="art-eyebrow">One ask</p>
+            <h2 id="for-ask" className="art-cta-heading">
+              {page.ask.heading}
+            </h2>
+            <p className="art-cta-body">{page.ask.body}</p>
+          </div>
+          <ul className="art-cta-actions">
+            <li>
+              <a href="#for-demos" className="art-button">
+                See the demos for you
+              </a>
+            </li>
+            <li>
+              <Link href="/#post-status" className="art-cta-link">
+                See all ten demos
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* ---------- The details ---------- */}
       <section className="art-chapter sh-chapter" aria-labelledby="for-demos">
         <div className="art-container">
           <Reveal delay={100} className="art-chapter-grid">
             <div className="art-rail">
               <span className="art-rail-num" aria-hidden="true">
-                01
+                {demosNum}
               </span>
               <h2 id="for-demos" className="art-eyebrow">
                 The demos that matter most for you
@@ -264,7 +330,7 @@ export default async function StakeholderPageView({ params }: { params: Promise<
             <Reveal delay={100} className="art-chapter-grid">
               <div className="art-rail">
                 <span className="art-rail-num" aria-hidden="true">
-                  02
+                  {momentsNum}
                 </span>
                 <h2 id="for-moments" className="art-eyebrow">
                   Moments from the build
@@ -294,29 +360,25 @@ export default async function StakeholderPageView({ params }: { params: Promise<
         </section>
       )}
 
-      <section className="art-cta sh-ask" aria-labelledby="for-ask">
-        <div className="art-container art-cta-grid">
-          <div className="art-cta-copy">
-            <p className="art-eyebrow">One ask</p>
-            <h2 id="for-ask" className="art-cta-heading">
-              {page.ask.heading}
-            </h2>
-            <p className="art-cta-body">{page.ask.body}</p>
+      {aboutMe && (
+        <section className="art-chapter sh-chapter for-about" aria-labelledby="for-about-me">
+          <div className="art-container">
+            <Reveal delay={100} className="art-chapter-grid">
+              <div className="art-rail">
+                <span className="art-rail-num" aria-hidden="true">
+                  {aboutNum}
+                </span>
+                <h2 id="for-about-me" className="art-eyebrow">
+                  {aboutMe.heading}
+                </h2>
+              </div>
+              <div className="art-chapter-body">
+                <p className="for-about-text">{aboutMe.text}</p>
+              </div>
+            </Reveal>
           </div>
-          <ul className="art-cta-actions">
-            <li>
-              <Link href="/#post-status" className="art-button">
-                See all ten demos
-              </Link>
-            </li>
-            <li>
-              <Link href="/docs/charter" className="art-cta-link">
-                Read the plan
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </section>
+      )}
 
       <aside className="sh-notice" aria-labelledby="for-notice">
         <div className="art-container">

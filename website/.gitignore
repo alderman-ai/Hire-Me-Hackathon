@@ -18,3 +18,6 @@ local/
 
 # Addvery's own logo, icon and image files: deploy from the working tree, kept out of the public repo
 public/addvery/
+
+# Portraits of the six people on /for (from addvery.com and ivanakarhanova.cz): deploy from the working tree, kept out of the public repo
+public/people/
