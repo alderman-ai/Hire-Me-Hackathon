@@ -15,3 +15,4 @@ One line per check: when, what was new, what got posted. A successor starts from
 | 15:47 | (poke check) | 7dc7e55 | Spec-draft gate still OPEN: POKE S-D9 sent to answer-desk; next poke check 16:02 | none |
 | 16:02 | (poke check) | 51be09f | Spec-draft gate still OPEN: second POKE S-D9 sent; next poke check 16:17 | none |
 | 16:15 | S09 (15:17 to 15:43) | 4541304 16:10 | S09 read and folded into the queued P6 (3 calls); S-D6 and S-D7 running (groundwork) since 15:48; wave2-specs done; website posted a dog-walk break update itself; outreach: Alex confirmed the six at 15:56, OFF camera (no live session now), approval OT-08 open | P6 still queued until 16:30 |
+| 16:17 | (poke check) | ee09652 | Spec-draft gate still OPEN: third POKE S-D9 sent; next poke check 16:32 | none |
