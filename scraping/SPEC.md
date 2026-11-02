@@ -1,6 +1,6 @@
 # S-D1 Scraping research demo: executable spec
 
-Status: ready to launch (DI-6 answered and applied) · Row: S-D1 — Scraping research demo · Folder: `scraping\` · Session: `s-d1-scraping`
+Status: running since 14:39 (steps 1 to 4 done; waiting on Alex's summary through S-D1-R1, and on L-01 around 16:00) · Row: S-D1 — Scraping research demo · Folder: `scraping\` · Session: `s-d1-scraping`
 
 S-D1 is the demo layer for D1. Alex does all the scraping on the Apify API himself, one-on-one in `..\Addvery Research\`, and writes a summary of its outputs there (DI-6 A6.2, A6.5). S-D1 runs no actors, calls no API and holds no token. Once his summary exists, it turns it into the site's D1 section: a short story a visitor follows without explanation, naming Apify (A6.3). Alex approves the draft section first, then `website` builds it. S-D1 also tells `orchestration` which of his output files other specs read, S-D3 first (DoD-9).
 
@@ -62,7 +62,9 @@ scraping\
   SPEC.md              this file
   HANDOFF.md           written at each fork (§8)
   .gitignore           draft/
-  check_summary.py     FOUND or MISSING, exit 0 or 1
+  check_summary.py     FOUND or MISSING, exit 0 or 1; honours the summary's "Status:" line
+  Agent request - scraping summary for the site.md
+                       S-D1-R1: what the summary must hold, for the session working in Addvery Research (S-D1-Q1)
   site\frame.md        the D1 section's structure and wording, with no Addvery material
   draft\d1.md          the full draft, drawn from his summary (git-ignored)
   site\d1.md           the approved section, committed only after his approval
@@ -167,3 +169,7 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov, drafting (wave2-specs): the section gate task names the git-ignored draft and its hash instead of copying the draft in. | Operator tasks are tracked and the repo is public. Nothing from `Addvery Research\` goes into a tracked file before he approves it. | The approval still covers one fixed version, nothing leaks before he has seen it, and the Obsidian embed keeps the whole draft in front of him (his readability rule). | One step (8). If S2 prefers the copy-in, the task is committed only after he ticks it. |
 | 2 Nov, drafting (wave2-specs): his output files reach S-D3's reading list through an `OUTPUT S-D1 ready: <paths>; readers: <spec ids>` line to `orchestration`, shaped like S1's `FINDINGS`. | DoD-9 needs them on readers' reading lists, and S2 writes specs' reading lists. | It uses S2's resource-line path and keeps the dependency map in one place. | If S2 prefers otherwise, `s-d3-getsales` adds the lines itself. Only step 5 changes. |
 | 2 Nov, drafting (wave2-specs): while the summary is outstanding, poke only 15 minutes after the time Alex gave, not every 15 minutes from the start. | He is doing that work himself, one-on-one. | It keeps the desk quiet while he works (P4). | None. |
+| 2 Nov 14:58, S-D1-Q1 applied: the summary goes at `..\Addvery Research\Scraping summary.md` (option a). As he asked, S-D1 wrote a request in decision-intake style, completed agent-to-agent: `Agent request - scraping summary for the site.md` (S-D1-R1), in `scraping\`. | A S-D1-Q1: "a, but have the scraping demo create a md file telling the addvery research session what it needs, basically in the decision intake style from templates, but make sure it's clear that it will be completed agent-to-agent". | The request sits in S-D1's own folder, because S-D1 never writes in his folder. It's tracked but holds no Addvery material, and its answers go only into his git-ignored summary. Questions come back by message to `s-d1-scraping`, not through the desk. | If he wants it inside `Addvery Research\`, one file moves and nothing else changes. |
+| 2 Nov 15:00, S-D1-Q1 follow-on: the `OUTPUT` line (step 5) waits for the summary's part N5, its list of files the other demos read, because Alex named no files in Q1 and handed that to his research session. It's sent as soon as N5 is filled, even while the rest of the summary is still draft. | DoD-9 needs the files named, and only his research session knows them. | It keeps one source for the names, and an early N5 unblocks readers before the page is done. | Step 5's timing only. |
+| 2 Nov 15:00, S-D1-Q1 follow-on: Alex gave no time, so the summary's `Ready by:` line sets it. Poke once at 16:30 if the summary file still doesn't exist, then 15 minutes after its `Ready by:` time, then every 15 minutes. The request asks for it by 17:00, so the section gate fits before 18:00. | Step 5: "Poke only 15 minutes after the time he gave has passed." Without a time, 16:30 matches §6's late-research point. | It keeps the desk quiet while he and his session work (P4), but still catches a request that never reached that session. | None. |
+| 2 Nov 15:00: `check_summary.py` reports `FOUND` only when the summary's `Status:` line says ready and the file is 2 minutes unchanged, or after 15 unchanged minutes when it has no `Status:` line. It still prints one word and never the contents. | A file that merely exists may be half-written. The request asks for the status line. | No draft starts on a partial summary, and a forgotten status line can't block it forever. | None. |
