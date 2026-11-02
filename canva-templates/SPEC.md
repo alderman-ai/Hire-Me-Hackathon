@@ -168,3 +168,145 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov, drafting (wave2-specs): the sign-off gate embeds the exports, so Alex reviews them in Obsidian, not in Canva. | His Canva account may show other clients' designs, and the sign-off is on camera. | The review is complete without opening Canva on screen. | None beyond the gate file's contents. |
 | 2 Nov, drafting (wave2-specs): sample copy is S-D7's posts when ready, otherwise neutral copy in no one's name; no real person appears. | Charter Scope: no real data through the demos. | Keeps the templates publishable and the specs independent (P1). | Swapping the copy later is a re-export. |
 | 2 Nov, drafting (wave2-specs): if a brand font isn't in Canva and the capture has no font file, the closest Canva font is used and flagged at the sign-off. | Uploading a licensed font Alex doesn't hold isn't the session's call. | It keeps the build moving and puts the trade-off in front of Alex at the sign-off. | One font swap across the templates if he supplies the file. |
+
+## Appendix A. Held preflight intake
+
+This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** Alex's Addvery research has a brand capture in `..\Addvery Research\` (DoD-11), or Alex says he's done with that research for now, whichever comes first. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - how the Canva templates get made.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D6: Decide - how the Canva templates get made.md is waiting on you: <what it decides and unblocks>`.
+
+~~~~markdown
+---
+System Primitive: Intake file
+Intake State: Waiting on operator
+Intake id: DI-XX
+Created: 2026-11-02
+Build goals: []
+---
+
+<!-- File name: "Decide - how the Canva templates get made.md" -->
+
+# Decide: how the Canva templates get made
+
+## What this is
+
+The site you're building today is a personalised job application to Addvery, made live during a 12-hour recorded hackathon. One part of it is a set of about five LinkedIn image templates in Canva, in Addvery's brand (logo, colours, fonts). It's a redo of your earlier pixel-perfect branded-assets demo, this time for Addvery. It shows Addvery's marketing side that you can give a brand team locked, on-brand templates anyone can fill in, rather than one-off images. The templates get their own section on the site, and near the end of the day you design with them on camera for the Canva design video.
+
+You're asked four things: how the assistant gets into your Canva account, which account and plan it uses, when the visual part of your Addvery brand capture will be ready, and when you sign the templates off. Once you answer, the assistant that builds the templates starts. Nothing has started yet, and it's waiting on this.
+
+It needs you on camera once, for about 10 minutes: the brand sign-off, proposed for 16:45–17:00, together with the sign-off of the LinkedIn posts demo. This intake takes you about 5 minutes. Answer by 15:15 if you can: research comes first, and the templates need about 45 minutes of building before the sign-off.
+
+This intake holds 4 decisions. Each carries its own context, so you can answer them in any order. An empty fence means not answered. The spec draft is at `canva-templates\SPEC.md` for reference, but you needn't read it. Say "DI-XX is ready" when you're done.
+
+# QXX.1 How the assistant gets into Canva
+
+The assistant builds the templates in your Canva account. No Canva connector is attached to this project's assistants today, so it has no way in yet. Every route below works on your logged-in account, which may hold other clients' designs. Whichever you pick, the assistant never lists, searches, opens or changes a design it didn't create. The charter's screen rule applies: "assume anything on screen can be published".
+
+Your options:
+
+- **A. The Canva connector, with Claude in Chrome as the fallback.** You add Canva once under Connectors in your Claude settings and sign in to Canva, with the recording paused: about 2 minutes (estimate). It then reaches every assistant started after that, the way the GetSales and Vercel connectors do now. It works in the background, so nothing shows on screen. How fine its layout control is, the research for the three brand demos checks. For anything it can't do, such as locking elements, the assistant uses Claude in Chrome as in B.
+- **B. Claude in Chrome only.** The assistant drives your real, logged-in Chrome in its own tab, so it can do anything you can do in Canva's editor. It's slower and more brittle than a connector. You allow it on canva.com once, and that Chrome window has to sit on your 4K monitor, which isn't recorded, because Canva's home page shows your recent designs.
+- **C. The Canva Connect API.** You create a developer integration in Canva's developer portal and paste its credentials into a git-ignored file in the templates folder, with the recording paused: about 15 to 20 minutes (estimate). Some of its template features (brand templates, autofill) may need Canva Enterprise; research checks.
+- **D. You build them by hand** from a build sheet the assistant writes: sizes, grid, fonts and layouts. About 45 to 60 minutes of your time (estimate). The charter treats your time as the project's main bottleneck.
+- **E. Something else.** Say what.
+
+I recommend A. It costs you about 2 minutes, runs off screen, and the Chrome fallback covers whatever the connector can't do. Connect it before the assistant starts, so its tools load.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes a stopgap and logs it: it builds the templates as pixel-perfect files ready to import into Canva, and the Canva work and your brand sign-off wait for the morning cleanup session.
+
+This answer decides how every template is built, what you do off camera, and whether the 16:45 sign-off can hold.
+
+Write A, B, C, D, or E and what you want instead.
+
+## AXX.1
+
+`<operator_answer>`
+```a-XX-1
+
+```
+`</operator_answer>`
+
+# QXX.2 Which Canva account, and what the assistant may create in it
+
+The templates go in one Canva account. Brand kits, custom font uploads and brand templates may need a paid plan (Pro, Teams or Enterprise); research checks which features your plan has. If your plan has room for only one brand kit and it holds your own brand, the assistant leaves it alone and applies Addvery's colours and fonts to each template instead. The Canva design video is filmed in the same account at about 17:15, so whatever the editor shows can end up on camera.
+
+What the assistant would create: one folder for the Addvery templates, the templates in it, and one brand kit for Addvery if the plan has room. It never edits, moves or deletes anything else.
+
+Your options:
+
+- **A. Your main account.** No setup. Write your plan (Free, Pro, Teams or Enterprise), or "don't know", and the assistant checks it read-only. On camera, you open only the Addvery folder or template, by its link.
+- **B. A separate account or team just for the hackathon.** No other client's work can ever show on camera. It takes you a few minutes to set up, and a free account may lack brand kits and font uploads, so it may need a paid trial. You'd sign it into the route from the question before.
+- **C. Something else.** Say what.
+
+I recommend A. It costs you nothing now, and the assistant's rules plus opening by link keep other designs off screen. Pick B if your Canva home page is full of client work you'd rather not risk.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A with the plan unknown, checks the plan read-only, uses only what the plan has, and logs it.
+
+This answer decides where the templates live, whether they use a brand kit, and what the Canva design video might show.
+
+Write A and your plan, B and which account or team, or C and what you want instead.
+
+## AXX.2
+
+`<operator_answer>`
+```a-XX-2
+
+```
+`</operator_answer>`
+
+# QXX.3 When the visual part of your brand capture lands
+
+The templates are built from the visual part of your Addvery brand capture: logo files, colours, fonts and image style. The capture is yours, in the Addvery Research folder, worked one-on-one. Earlier today, asked who researches Addvery, you said: "I'm on this. I'm going to be doing it in the subdirectory Addvery Research." The assistant reads it from the local disk only and never copies it into the public repo. The project's definition of done expects the capture to be in that folder and named as the source by both brand demos, these templates and the LinkedIn posts.
+
+For the 16:45 sign-off, the assistant needs the visual part by about 16:00: building, exporting and checking about five templates takes about 45 minutes (estimate). Until it lands, the assistant builds the grids and layouts in neutral placeholders and swaps the brand in later.
+
+Your options:
+
+- **A. It will be there by a time you name.** If that's after 16:00, the sign-off moves by the same amount, or covers fewer templates first, and the assistant says which.
+- **B. A stopgap for the visuals only.** The assistant takes Addvery's logo, colours and fonts from Addvery's public website, for the templates alone, and swaps in your capture when it lands. That bends your call that Addvery research is yours, so it happens only on your say-so.
+- **C. Wait.** The build waits for your capture, whenever it lands, and the sign-off moves with it, to the morning cleanup session if need be.
+
+I recommend A with a time, because your capture is the source the definition of done names. If 16:00 isn't realistic, B keeps the 16:45 slot.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes C, keeps building in placeholders, and logs it.
+
+This answer decides when the brand goes into the templates and whether the 16:45 slot holds. The LinkedIn posts demo asks the same about the voice part of your capture.
+
+Write A and the time, B or C.
+
+## AXX.3
+
+`<operator_answer>`
+```a-XX-3
+
+```
+`</operator_answer>`
+
+# QXX.4 When you sign off the templates, and what happens if research is late
+
+The project's definition of done needs your brand sign-off: "LinkedIn visual asset templates in Canva, in Addvery's brand, have the operator's brand sign-off." The assistant sends it to you as an approval file in Operator tasks holding the exported templates as images, the build sheet and the check results, so you review them without opening Canva on camera. You tick "I approve" or write changes: about 10 minutes (estimate).
+
+The proposed slot is 16:45–17:00, on camera, together with the LinkedIn posts sign-off, so you review the brand once for both. It comes after the third blog dictation (16:20–16:40). The GetSales live run has moved to before 15:30, so the Canva design video, which uses these templates, can follow at 17:15. The slot can't come much earlier, because research and about 45 minutes of building come first.
+
+The research reads your earlier demos and checks what Canva can do today. It may not be finished by 16:00.
+
+Your options:
+
+- **A. 16:45–17:00, and build on the draft method if research is late.** If the findings aren't in by 16:00, the assistant builds on its draft methodology so the slot holds. It waits only for the reading of your earlier demos. Findings that land later are applied after your sign-off, as changes you see.
+- **B. 16:45–17:00, but only on finished research.** If the findings are late, the sign-off slips to 17:40–18:00 or to the morning cleanup session, and the Canva design video uses templates you haven't approved.
+- **C. Another time.** Write it. Before 17:15 keeps the Canva design video on approved templates.
+
+I recommend A. It keeps your brand review in one sitting with the LinkedIn posts, before the video that uses the templates. Signing off the definition of done earlier today, you said the research rules may soften when time is short: "I might soften that and change the research rules especially if we're running low on time."
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it leaves the sign-off open for the morning cleanup session while the rest of the work carries on, and logs it.
+
+This answer sets when you're on camera for the templates, and whether the build may start before research is complete. The LinkedIn posts intake asks for the same slot.
+
+Write A, B, or C and the time.
+
+## AXX.4
+
+`<operator_answer>`
+```a-XX-4
+
+```
+`</operator_answer>`
+~~~~
