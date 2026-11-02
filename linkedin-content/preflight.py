@@ -28,6 +28,14 @@ FLAG_RE = re.compile("[\U0001F1E6-\U0001F1FF]{2}")
 BOLD_RE = re.compile("[\U0001D400-\U0001D7FF]+(?:[  '’,.:;!?-]+[\U0001D400-\U0001D7FF]+)*")
 MARKDOWN_RE = re.compile(r"(\*\*[^*]+\*\*|(?<!\w)\*[^*\s][^*]*\*(?!\w)|^#{1,6} |\[[^\]]+\]\([^)]+\)|↳)", re.M)
 UNSPACED_EM = re.compile(r"\w—\w")
+# Stock phrasings that read as AI on LinkedIn (L-05 R4: vendor data; LinkedIn's "Seems like AI slop" flag, 30 Jul 2026).
+STOCK = [
+    r"\bhere'?s (what|why|how|the thing)\b", r"\bthe (result|kicker|catch|twist)\?", r"\blet that sink in\b",
+    r"\bin today'?s (fast-paced|digital|ever)", r"\bgame[- ]changer\b", r"\bhot take:", r"\bspoiler:",
+    r"\b(?:it|this|these|they)(?:'s| is| are|'re)?(?: not|n't) (?:just |only )?(?:about )?[\w -]{1,30}[,;:—–.-]+ ?(?:it|this|these|they)(?:'s| is| are|'re)\b",
+    r"\bunlock(?:s|ing)? the\b", r"\bnavigat(?:e|ing) the (?:complex|ever)",
+]
+STOCK_RE = re.compile("|".join(STOCK), re.I)
 
 
 def hook_blocks(text):
@@ -92,6 +100,8 @@ def main():
     caps = [w for w in re.findall(r"\b[A-Z]{4,}\b", text)]
     print(f"all-caps words (4+ letters): {len(caps)} {caps[:5] if caps else ''}")
     print(f"hashtags: {len(re.findall(r'(?<!\w)#\w+', text))}")
+    stock = [m.group(0) for m in STOCK_RE.finditer(text)]
+    print(f"stock AI phrasings: {len(stock)} {stock[:4] if stock else ''}")
     s = sentences(text)
     if s:
         lens = [k for k, _ in s]
