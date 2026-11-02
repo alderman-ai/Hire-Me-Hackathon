@@ -42,7 +42,7 @@ The number is how many hours of transcripts to scan. Read every section:
 - **ROSTER:** each row is LIVE (leave it alone), DEAD (resume it) or temporary. For each dead session it shows when it last acted, whether it was idle or cut off mid-turn, its last prompt, its last words, its uncommitted files, and whether it ran a `/loop` or cron.
 - **NOT ON THE ROSTER:** for the report only.
 - **SUGGESTED RESUME ORDER:** the order and the exact `-Folder` and `-SessionId` values.
-- **NON-CLAUDE PROCESSES:** what survived, and which session owns each process.
+- **NON-CLAUDE PROCESSES:** what survived, and which session owns each process. Its last lines show the briefing collector and the website clock_sync loop as RUNNING or DOWN.
 - **RECORDING:** the latest `session.json`. "STALE" means the record says recording but nothing is updating it.
 - **GIT:** the branch, a leftover `index.lock`, unpushed commits.
 - **ANSWER DESK WINDOWS:** which desk windows are attached and which are dead.
@@ -82,7 +82,9 @@ Save each notice as a plain text file in `$CLAUDE_JOB_DIR\tmp`, for example `not
 - **`rig`:** give the recording facts from the inventory.
   - **If the recording survived:** check its health per the runbook, restart nothing that's working, and send `website` no clock message, because the state didn't change.
   - **If it died** (stale record, dead controller, no OBS): say so plainly. It follows its runbook, sends anything Alex must type (/stop, /start) to him through the answer desk, and tells `website` when the clock state changes.
-- **`website`:** say whether its clock sync loop and dev server survived.
+- **`website`:** say whether its clock sync loop and dev server survived. If clock_sync is DOWN, tell it to restart it hidden, in its own session, with the `Start-Process` command under The countdown in its CLAUDE.md.
+- **`briefing`:** say whether its collector survived. If it's DOWN, tell it to restart it hidden, in its own session, with the `Start-Process` command under The collector in its CLAUDE.md, then check it with `python collect.py --alive`.
+- **Restart commands:** point to the command in the owner's CLAUDE.md, don't paste it. Both contain double quotes, which the launcher swaps for single ones and so would break.
 - **Any session launched fresh** (no transcript): give it the preamble, then: Read your CLAUDE.md and its reading list, `git log -10 -- <your folder>` and your folder's files, then take up your role from where they leave off.
 
 ### 4. Resume, orchestration first
@@ -133,6 +135,8 @@ If the diff shows edits you didn't make, someone else is mid-edit. Wait a minute
 python -I "C:/Users/alder/Desktop/Hire me hackaton/.claude/skills/session-recovery/inventory.py" --wait <session-id> 600
 ```
 
+- Once `briefing` and `website` have finished their notice turns, run the inventory again. Both loops at the end of NON-CLAUDE PROCESSES should show RUNNING. One that's still DOWN gets one corrective SendMessage to its owner, by roster name, to restart it with the command in its CLAUDE.md. Don't start it yourself.
+
 ### 8. Report to Alex
 
 Lead with the verdict: how bad it was, in one or two sentences. Then:
@@ -154,6 +158,7 @@ Lead with the verdict: how bad it was, in one or two sentences. Then:
 - **Power cut or reboot:**
   - The Claude daemon starts by itself with the first `claude --bg`.
   - OBS, the rig controller, the recorders, the clock sync, the collector and the dev server are all down.
+  - The notices tell `briefing` and `website` to restart the collector and clock_sync in their own sessions, and step 7 checks both are RUNNING.
   - The latest `session.json` may still say recording.
   - Files on disk survive, but the last seconds before the cut may not.
   - Check for a stale `index.lock` before anyone commits.

@@ -4,7 +4,8 @@ Prints, for every roster session in SESSIONS.md: whether it is live, its newest
 transcript, when it last acted (Prague and UTC), whether it was idle or cut off
 mid-turn, whether it ran a /loop or cron, and its uncommitted files. Then:
 transcripts that aren't on the roster, the project's non-Claude processes with
-their owners, the recording state, git health and the answer desk windows.
+their owners (and whether the briefing collector and the website clock_sync loop
+are RUNNING or DOWN), the recording state, git health and the answer desk windows.
 It changes nothing.
 
 Usage (from anywhere):
@@ -28,6 +29,13 @@ MODE = sys.argv[1] if len(sys.argv) > 2 and sys.argv[1] in ("--tail", "--wait") 
 HOURS = float(sys.argv[1]) if len(sys.argv) > 1 and not MODE else 24.0
 FIRST_ORDER = ["orchestration", "answer-desk", "rig", "website", "watcher"]
 SKIP_PROCS = r"^(claude|powershell|pwsh|bash|cmd|conhost|WindowsTerminal|OpenConsole|Obsidian|explorer|Code)"
+# Long-running loops a reboot or logoff kills. The recovery notices tell each owner to restart its own.
+# (label, owner folder, loop script, pid file the loop writes, flags that mean a one-shot run, not the loop)
+LOOPS = [
+    ("briefing collector", "briefing", r"briefing\collect.py", r"briefing\data\collector.pid", ("--once", "--alive")),
+    ("website clock_sync loop", "website", r"website\scripts\clock_sync.py", r"website\.clock\sync.pid",
+     ("--once", "--status")),
+]
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -174,6 +182,43 @@ def live_sessions():
     return [a for a in data if (a.get("cwd") or "").lower().startswith(root_l)], None
 
 
+def print_loops(owners):
+    """RUNNING or DOWN for each loop in LOOPS. A loop is a python process whose command line names its
+    script by full path (how both CLAUDE.md files start it), or the live pid in its pid file, never a one-shot run."""
+    ps = ("@(Get-CimInstance Win32_Process | Where-Object { $_.Name -match '^pythonw?' } | "
+          "Select-Object ProcessId, @{n='Start';e={$_.CreationDate.ToString('HH:mm:ss')}}, CommandLine) | ConvertTo-Json -Compress")
+    raw = powershell(ps).strip()
+    try:
+        py = json.loads(raw) if raw else []
+        py = py if isinstance(py, list) else [py]
+    except Exception:
+        print(f"- couldn't list python processes, so the loops below are unknown: {short(raw, 200)}")
+        return
+    print("Loops a reboot kills (each owner restarts its own, with the command in its CLAUDE.md):")
+    for label, folder, script, pidfile, one_shot in LOOPS:
+        owner = owners.get(folder.lower(), f"? ({folder})")
+        full = os.path.join(ROOT, script).lower()
+        try:
+            with open(os.path.join(ROOT, pidfile), encoding="utf-8") as f:
+                pid = int(f.read().strip())
+        except Exception:
+            pid = None
+        hits = []
+        for p in py:
+            cmd = (p.get("CommandLine") or "").lower().replace("/", "\\")
+            if os.path.basename(script).lower() not in cmd or any(flag in cmd for flag in one_shot):
+                continue
+            if full in cmd or p.get("ProcessId") == pid:
+                hits.append(p)
+        if hits:
+            pids = ", ".join(f"pid {p.get('ProcessId')} since {p.get('Start')}" for p in hits)
+            extra = f"  ({len(hits)} copies)" if len(hits) > 1 else ""
+            print(f"- {label:<24} RUNNING  owner {owner:<10} {pids}{extra}")
+        else:
+            why = "no pid file" if pid is None else f"pid file says {pid}, not a live loop"
+            print(f"- {label:<24} DOWN     owner {owner:<10} {script} ({why}): its notice says restart it")
+
+
 def main():
     now = datetime.now().astimezone()
     print(f"Session recovery inventory  ·  {now:%d %b %H:%M:%S} Prague (UTC{now:%z})  ·  root {ROOT}")
@@ -289,6 +334,8 @@ def main():
         print(f"{pr.get('ProcessId'):<6} {name:<13} since {pr.get('Start')}  owner {owner:<16} {short(cmd, 120)}")
     if not procs:
         print("- none running. After a power cut that's expected: OBS, the rig controller, the recorders and the sync loops are all down.")
+    print()
+    print_loops(owners)
 
     print("\n=== RECORDING (OBS\\Live)")
     sess = sorted(glob.glob(os.path.join(ROOT, "OBS", "Live", "*", "session.json")), key=os.path.getmtime)
