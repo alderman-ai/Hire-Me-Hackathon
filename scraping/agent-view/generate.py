@@ -73,14 +73,16 @@ PRIORITY = [
 ]
 TRACKS = [5, 10, 20, 60]
 
-# Docs redactions (DoD-22). The site's charter and specs name two things the agent view never
-# carries, and the scan below fails on them, so their names are redacted here, phrase by phrase.
-# Only the docs and the privacy notice pass through this; everything else is verbatim.
-REDACTIONS = [
-    re.compile(r"\bthe (?:Apify|recent) proposal\b", re.I),
-    re.compile(r"\b(?:the operator[’']s|Alex[’']s|his) own GetSales outbound(?: outside the demo folder)?", re.I),
-]
+# Docs redactions: none (orchestration's ruling, 2 Nov 19:0x). The agent copies carry the live
+# docs' words exactly, so the track can't drift from what a person sees; DoD-22 lets the charter
+# and specs name the Apify proposal and Alex's own outbound. If a phrase must go, it goes from the
+# live docs first (website's sync_docs.py deny-list) and this copy follows on the next run.
+# The hook stays so a future rule can be added in one line.
+REDACTIONS: list = []
 REDACTED = "[redacted]"
+# Files that may name the proposal and his own outbound (DoD-22: "the charter and specs may name
+# them"): the project docs only. Every other check still runs on them.
+DOCS_PREFIX = "agent/docs/"
 
 # ---------- The safety scan (DoD-22), run on every output file ----------
 
@@ -117,13 +119,15 @@ def scan(name: str, text: str) -> list[str]:
     def line_of(pos: int) -> int:
         return text.count("\n", 0, pos) + 1
 
-    for label, pat in SECRET_PATTERNS + BANNED_PATTERNS:
+    is_doc = name.replace("\\", "/").startswith(DOCS_PREFIX)
+    banned = [b for b in BANNED_PATTERNS if not (is_doc and b[0] == "Alex's own GetSales outbound")]
+    for label, pat in SECRET_PATTERNS + banned:
         for m in pat.finditer(text):
             problems.append(f"{name}:{line_of(m.start())}: {label}")
     for m in re.finditer(r"[A-Za-z0-9]+(?:[-_][A-Za-z0-9]+)+", text):
         if hashlib.sha256(m.group(0).lower().replace("_", "-").encode()).hexdigest() in PRIVATE_REPO_SHA256:
             problems.append(f"{name}:{line_of(m.start())}: the private repo's name")
-    for m in re.finditer(r"proposal", text, re.I):
+    for m in ([] if is_doc else re.finditer(r"proposal", text, re.I)):
         window = text[max(0, m.start() - PROPOSAL_NEAR_APIFY): m.end() + PROPOSAL_NEAR_APIFY]
         if re.search(r"apify", window, re.I):
             problems.append(f"{name}:{line_of(m.start())}: 'proposal' near 'Apify'")

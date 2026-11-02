@@ -18,7 +18,7 @@ python -I scraping\agent-view\generate.py [--out DIR]
 - It wipes and rewrites only its own out dir. It refuses to wipe a folder that holds anything except `llms.txt` and `agent\`, so pointing `--out` at the wrong folder can't delete anything.
 - Exit codes: 0 means written, 1 means a check failed and nothing was written, 2 means a content file couldn't be read.
 
-It prints the file count, the total words, what the gates held back and any redactions.
+It prints the file count, the total words, what the gates held back and any redactions (none since 19:0x).
 
 ## What it writes
 
@@ -86,7 +86,7 @@ Every output file is checked in memory before anything is written, and the files
 
 The same pass also fails on any HTML tag outside code, any relative link to a missing file, and any live URL that doesn't match a real route, a confirmed anchor or a file in `public\`.
 
-The site's charter and specs name two of these exclusions. Their names are redacted, phrase by phrase, in the agent view's copies of the docs only, and the run reports each redaction. Everything else is verbatim.
+The site's charter and specs name two of these exclusions, as DoD-22 allows ("the charter and specs may name them"). The agent copies carry the live docs' words exactly, so the track never drifts from what a person sees (orchestration, 2 Nov 19:0x). The "proposal near Apify" and "own outbound" checks therefore skip `agent/docs/`, and every other check runs on every file. If a phrase has to go, remove it from the live docs first (website's `sync_docs.py` deny-list), and the agent copy follows on the next run. Everything is verbatim.
 
 ## How website should serve it
 
