@@ -13,6 +13,7 @@ Every post sent to the website, and every item deliberately left out.
 | P5 (S-D9-B5) | Milestone "The research is in" (seven agents, 21 minutes, three findings that shape the feed); Update "Agents hand over before they get tired" (first three handovers, the context watch); status to 15:15 | L-01 synthesis; commits 96fa0bb, dca2c06, 8b59414, 4cbac2b, 5102967, 770e59b; OT-03 to OT-07 | The research changes how the site reads, and the handovers show the plan for a long day actually working. | 15:14 (website 52bdee5) |
 | P6 (S-D9-B6) | Session post for S09 (one name per agent, the company's look, one red disclaimer); Update "Alex's research lands, and the demos move" (S08 quotes linked; brand pass, 33 workflows, scraping input, a page per demo, blog rehearsal); roles on s08; status to 16:30 | S09 03:06, 11:27, 18:37; S08 04:31, 05:55; commits 440912f, 6e30e6d, db84e4c, 4a8099f, be97c53, 1b29ac2, 50f7c49, 32d0dd1, 0a05cec, 5235bb5 | Three judgment calls in Alex's words, and the moment his own research unblocked four demos at once. | 16:39 (website dd61531); sent 16:31 after the hold from 15:30 to 16:30 for the website reskin |
 | P7 (S-D9-B7) | Milestone "Every demo now has an agent on it" (16:42); Update "Three calls from the last hour" (two articles and their topics, the outbound demo cut to 36 workflows as a walkthrough, no copywriting without a skill); status to 16:45. First post written with marketing:draft-content | c921740, d0f7f30, 4e973dc, b420938, 2d4ec69, c1507b6, d8835c0, 6b1013f; Alex's notes in the approval files | Three scope and quality calls in Alex's own words, and every demo now staffed. | 16:49 (website 9a86a97) |
+| P8 (S-D9-B8) | Update "Alex stops everything for a reset" (16:44 halt, the 17:00 rules, 17:13 restart); Insight "The bottleneck is always human" (S10 lesson, S11 human context window, callback to S04); status to 17:25 (7 rows on website's 17:20 board); roles on s11. First post drafted in the Claude Doc "Feed posts from the build" | S10 20:24, 32:21, 34:04, 34:25; S11 2:45 (linked); commits 1dc71fc, 55d81e5, dac3000, b5cb6fd, 25c2b8a, b676ffa, 0bb061d, 87b5acb, 39b269f, b77b869, be9b1f6 | The day's biggest change of course, made by Alex live, and the lesson he drew from it in his own words. | sent 17:22 (corrected 17:23); waiting for BUILT |
 
 ## Working rules from research (L-01, read 15:00)
 
@@ -38,7 +39,8 @@ Every filed rig session, and the post that carries its best moments.
 | S07 | 14:42 | P4 | Briefing session, this feed, recovery skill, keys off camera; not on YouTube (38 min) |
 | S08 | 15:16 | website's own post `s08` ("Back from lunch: what runs without him"), at Alex's request through rig, with the full webcam (MyYnFOQCagc) | Read by S-D9 at 15:20: nothing further worth a separate post. Role tags to add in the next build: COO, CEO, CSO, RevOps ("I could do the same thing tomorrow with a new company"). |
 | S09 | 16:00 | P6 (feed post s09, live 16:39) | One session per name, the site takes on the company's look, one red disclaimer; not on YouTube (26 min) |
-| S11 | 17:13 | website's own post `s11` ("Evening check-in: what worked, and what didn't"), at Alex's request through rig, with the full webcam (iXr-pKhseB8) | Read by S-D9 at 17:20 against the feed: the post already carries its best line (2:19). Nothing further worth a separate post. Role tags for the next build: CEO, COO, CAIO. |
+| S10 | 17:02 | P8 | The reset at 16:44 and its rules, "the bottleneck is always human" (16:58). Read by a subagent at 17:20, quotes checked against segments.jsonl. Not on YouTube (36 min). The spoken originals of P7's three calls are at 06:20, 07:06 and 13:51. |
+| S11 | 17:12 | website's own post `s11` ("Evening check-in: what worked, and what didn't"), at Alex's request through rig, with the full webcam (iXr-pKhseB8) | Read by S-D9 at 17:20 against the feed: the post already carries its best line (2:19). Nothing further worth a separate post. Role tags for the next build: CEO, COO, CAIO. |
 
 ## Role tags (DI-1 Q1.9)
 
@@ -68,6 +70,9 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | P6 | s08 (website's post) | Back from lunch: what runs without him | COO, CEO, CSO, RevOps |
 | P7 | (milestone) | Every demo now has an agent on it | CEO, COO |
 | P7 | (update) | Two articles and their topics; 36 workflows as a walkthrough; copywriting needs a skill | CEO, CAIO, CMO, CSO, RevOps |
+| P8 | (update) | Alex stops everything for a reset; the new rules | COO, CEO, CAIO, CTO |
+| P8 | (insight) | The bottleneck is always human; the human context window | CEO, COO, CAIO, CTO |
+| P8 | s11 (website's post) | Evening check-in: what worked, and what didn't | CEO, COO, CAIO |
 
 ## Left out
 
@@ -90,3 +95,9 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | 16:15 | S09 03:49: "that's probably how a lot of the attacks happened" | Vague, and easy to misread out of context. |
 | 16:15 | The swap in the six (getsales commit 3c5ed6f) and the outreach approval (OT-08) | The company's people and Alex's own outbound. |
 | 16:50 | Which GetSales folder the 36 workflows sit in, and the sender attached to them (getsales/SPEC.md, 16:42) | Close to Alex's own outbound. |
+| 17:20 | S10 01:35 to 03:47, and 02:47 | Garbled reading aloud; one line may be health-related. |
+| 17:20 | S10 swearing and low moments (04:32, 11:52, 18:12 to 18:55, 27:11, 28:11), and "I'm hitting a wall" (26:06) | No point for followers. The wall is already in the website's s11 post. |
+| 17:20 | S10 05:44 to 05:53, 15:20 to 16:11, 32:42 to 32:57: a named person at the company, a screenshot of a conversation with one, the "my research on you" section | Allowed since the reset (public sources), but taste: the work over the people. The stakeholder pages are the website's job. |
+| 17:20 | S10 08:45 to 08:50: "the same way we did the Apify one" | Points at the Apify proposal (DoD-22). |
+| 17:20 | S10 17:36 to 17:56 (the routing model in the GetSales demo) and 18:30 to 18:45 (power settings) | The routing belongs on the GetSales demo's own page; the power settings aren't interesting. |
+| 17:20 | S10 03:50 to 04:24 ("I don't want another approval") and 11:16 (approval includes the feedback) | Good moments, but the reset post carries the same point more strongly. Kept for a later post on how Alex approves work. |
