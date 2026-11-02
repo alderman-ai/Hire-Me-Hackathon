@@ -1,6 +1,6 @@
 # Build sheet: five Addvery LinkedIn image templates (S-D6), built code-first as HTML rendered to PNG/PDF, then brought into Canva
 Written by role only: every colour, type, shape and logo role is named as in the git-ignored `local\brand.md`, which holds the values; no brand value appears in this file.
-Sizes, safe zones and crops are draft until the research (L-05) lands: change §1 first, since every table below is written against it.
+Sizes checked against the research (L-05, 2 Nov 16:38): LinkedIn publishes no feed-image size and accepts ratios from 3:1 to 4:5, cropping anything taller; 1080×1080 and 1080×1350 are the common third-party specs, 1200×627 the link-share size, so the set stands. Change §1 first if a size moves, since every table below is written against it.
 
 ## 1. Template set and canvas sizes (the single place to change a size)
 
@@ -230,6 +230,10 @@ The sample date and event are fictional.
 
 ## 7. Locked vs editable in Canva
 
+**How it goes into Canva (research R1–R3, option for Alex at the sign-off):** each template (each carousel page) goes in as a **locked backdrop image** holding the brand art, with every text slot hidden, plus **native Canva text boxes** at this sheet's slot positions in Canva's own library fonts (no uploads, so the fonts also survive in a copy). Whole-page PDF import is the fallback only: Canva documents font substitution and layout shift on PDF import. Try one template first and check it (§9 checks 1, 4, 5, 3) before the other four.
+
+**How binding the locks are:** in an ordinary design anyone with edit access can unlock, so locks prevent accidents, not edits. They bind only in Brand Templates (admins and brand designers set them, any paid plan). For a filler outside the account, a Template link hands over a copy and the original stays untouched (Pro and up).
+
 | Level | Canva setting (R1/R3 confirm availability on the plan) | Elements |
 | --- | --- | --- |
 | Locked (L) | Lock | Backgrounds, accent bars, T3 accent mark, T5 gradient panel, hairlines, logos, T4 progress track, list markers, swipe cue, clear band |
@@ -240,7 +244,9 @@ The sample date and event are fictional.
 
 | Item | Spec |
 | --- | --- |
-| PNG | Exact canvas px at 1× (device scale factor 1; Canva size ×1), sRGB, 8-bit RGB, no alpha (flattened on `bg-base`), no transparent background |
+| PNG | Exact canvas px at 1× (device scale factor 1; Canva size ×1), sRGB, 8-bit RGB, no alpha (flattened on `bg-base`), no transparent background; ≤ 5 MB (LinkedIn image posts) |
+| Backdrop PNG (for Canva) | Same size and settings, every text slot hidden: the locked layer under native Canva text. One per template, one per carousel page |
+| Carousel for LinkedIn | A **flattened** PDF (one image per page, RGB, every page the same size, no bleed or marks, no metadata naming an account or person): LinkedIn asks for flattened documents, and any viewer can download it |
 | Single-page PDFs | Every template also exports a one-page PDF at its canvas size: the import-ready file for Canva, with live, editable text (a PNG imports as a flat picture) |
 | Carousel PDF | 6 pages, each page = canvas: 1080×1350 px (810×1012.5 pt), no bleed, no crop marks, fonts embedded and subset, text live (not outlined), `printBackground` on, zero page margin |
 | File names | `addvery-linkedin-<type>-<w>x<h>.png`: `addvery-linkedin-post-1080x1350.png`, `-stat-1080x1080`, `-quote-1080x1080`, `-event-1200x627`; carousel `addvery-linkedin-carousel-1080x1350-p1.png` to `-p6.png` plus `addvery-linkedin-carousel-1080x1350.pdf` |
@@ -263,3 +269,7 @@ The sample date and event are fictional.
 | 11 | Content | Read every slot | No real person's name, photo or quote; every number in a stat or chart slot (T2, T4 p5) says "Illustrative" in its source line. Figures inside headline or body copy belong to the post's own copy and are checked at its sign-off |
 | 12 | Names | File and template names | Match §1 and §8 |
 | 13 | Public repo | Search every tracked file this spec touches | No colour values, font family names or Canva links |
+| 14 | Ratio and file size | Width ÷ height; bytes | Between 3:1 and 4:5; PNG ≤ 5 MB; PDF ≤ 100 MB and ≤ 300 pages |
+| 15 | Simulated LinkedIn recompression | Re-encode as JPEG at quality 75–80, then repeat check 7 | Still legible at phone width (LinkedIn's real setting is undocumented, so this stands in for it) |
+| 16 | PDF structure and metadata | pypdf: layers, page boxes, images vs their crops; title, author, creator | Flattened LinkedIn PDF; no optional-content layers; no image larger than its visible crop; metadata names no account, client or person |
+| 17 | In Canva (once per template, part 2) | Canva's lock icons; a Canva export compared with the signed-off preview at the same size | Brand art on Lock, slots on Lock position only; text in the slot fonts with no substitution; positions within 1px; colours within a small delta |
