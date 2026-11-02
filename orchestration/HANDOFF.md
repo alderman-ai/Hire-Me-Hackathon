@@ -9,6 +9,8 @@ Written 2 Nov, 18:47 Prague, by the outgoing `orchestration` session (id `ab58b0
 3. Re-create the context-watch cron with CronCreate: cron `13,43 * * * *`, recurring, the CONTEXT WATCH prompt in SPEC section 8. **The hold ended at 17:13 (RESTART), so act on every flag; don't just report.**
 4. No Monitors are needed. Every gate now comes back as a message or a Doc comment, and Alex talks to you directly in chat.
 
+**Context watch at 18:48:** website was at 54.8% (ROT). It was asked at 18:48 to hand off at its next natural stop; when "HANDOFF website" arrives, stop and remove the old id `54c2d301`. The sessions on WATCH, all between 43% and 48%: s-d6-canva-templates, addvery-research, s-d9-legibility, s-d5-blog-articles and s1-research. Ask each one for a same-name handoff when it crosses 50%.
+
 ## Alex right now
 
 He's at the computer and **working through the night**: the 18:00 cut-off no longer applies. **He has a meeting with Ivana Karhanová (Addvery's Chief Growth Officer) tomorrow, 3 Nov, and the site is prep for it.** He'll send the six stakeholders their links by hand in the morning. I asked him twice for the meeting time and got no answer: ask again once, briefly.
