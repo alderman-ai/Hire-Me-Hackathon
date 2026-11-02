@@ -740,13 +740,14 @@ Received: 2026-11-02 16:37 CET (+01:00)
 TASK S2: Approve - three small charter fixes.md is waiting on you: three wording fixes so the project plan matches your answers (what "nothing sensitive is published" means, and the GetSales demo in your model). Low priority, about 2 minutes, no pokes; if it's still open at 18:00 all three are applied and logged.
 ```
 
-## TASK S-D1: Approve - what the scraping demo section shows.md — open
+## TASK S-D1: Approve - what the scraping demo section shows.md — done
 From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
 Received: 2026-11-02 16:38 CET (+01:00)
 16:38 CET: alert shown to Alex with a PushNotification. Replaces "Approve - the scraping demo plan.md".
 16:44 CET: s-d1-scraping: updated at 16:45 with Alex's 16:41 changes (speaks to the reader he named; links to his research page /d2; named people go through the stakeholder-page approval; copywriting pass). Waiting on his tick again, deadline 18:00. Alert repeated; no PushNotification (Alex is at the desk).
 17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
 17:18 CET: s-d1-scraping handed off to a fresh session under the same name; told it this TASK is still open on the desk (folded into the reset intake as Q10.6).
+17:19 CET: TASK DONE S-D1 received from the new s-d1-scraping session (uds:\.\pipe\LOCAL\cc-msg-e11fd920faeccb76b7d7032d43a0a080); marked done.
 
 ```
 TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: the whole scraping page, exactly as it would go live (about 5 minutes; tick to publish, and anything in the feedback section applies too). It replaces "Approve - the scraping demo plan" too: ticking this one approves that plan as well, so he can skip it. Deadline 18:00 to go live today.
