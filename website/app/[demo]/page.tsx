@@ -5,6 +5,7 @@ import { allDemos, findDemo } from "../deliverables";
 import { Blocks, FeedPost, feedPosts, type Block } from "../feed";
 import { Reveal, RotateIn } from "../motion";
 import { OrgCharts, readOrgData } from "../org-charts";
+import { ResearchDocs, readResearchDocs } from "../research-docs";
 import { ArrowSwap } from "../site-chrome";
 import "../article.css";
 
@@ -61,6 +62,7 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
   // D2 (company and stakeholder research) shows its org charts in place of the pending line, when the
   // git-ignored data file is there (local/org-diagrams.json; see org-charts.tsx).
   const orgData = demo.slug === "d2" ? readOrgData() : null;
+  const researchDocs = demo.slug === "d2" ? readResearchDocs() : [];
 
   return (
     <main className="art art-demo">
@@ -148,6 +150,26 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
           </Reveal>
         </div>
       </section>
+
+      {researchDocs.length > 0 ? (
+        <section className="art-chapter" aria-labelledby="the-research">
+          <div className="art-container">
+            <Reveal delay={100} className="art-chapter-grid">
+              <div className="art-rail">
+                <span className="art-rail-num" aria-hidden="true">
+                  02
+                </span>
+                <h2 id="the-research" className="art-eyebrow">
+                  The research itself
+                </h2>
+              </div>
+              <div className="art-chapter-body">
+                <ResearchDocs docs={researchDocs} />
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
 
       <nav className="art-cta" aria-label="Other demos">
         <div className="art-container art-cta-grid">
