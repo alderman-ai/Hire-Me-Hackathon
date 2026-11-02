@@ -1,5 +1,5 @@
 # L-01 Research list: parent level (every wave-2 spec)
-Status: running (started 14:40)
+Status: done (15:05): 7 reports and the synthesis accepted, indexed, FINDINGS sent
 Approved by: OT-01, ticked 14:38 (`Operator tasks\Archive\Approve - research plan for the whole project.md`; relayed by `briefing`, Alex: "let's just approve ot1 -- i'm swamped we need to remove blockers")
 Requested by: orchestration, `RESEARCH S2: L-01, it feeds every wave-2 spec, needed by 16:00 Prague` (2 Nov)
 Level: parent (`research\global\`)
@@ -18,5 +18,5 @@ Flagged, as the method requires: R2 and R4 serve the project's outcome rather th
 - [x] W2 Wildcard: can it be delivered? · report: `global\L-01-W2-wildcard-delivered.md` (accepted 14:55)
 - [x] W3 Wildcard: will it be received? · report: `global\L-01-W3-wildcard-received.md` (accepted 14:55)
 <!-- after every item above is ticked -->
-- [ ] Synthesis: cross-document insights and recommendations for every spec's methodology
-- [ ] DIRECTORY.md entries for every report above
+- [x] Synthesis: cross-document insights and recommendations for every spec's methodology · report: `global\L-01-synthesis.md` (accepted 15:04)
+- [x] DIRECTORY.md entries for every report above (15:05)

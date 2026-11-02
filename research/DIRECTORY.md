@@ -8,13 +8,28 @@ Storage (S1-Q5, Alex: "Just store it locally"): every report lives in `research\
 
 | List | Readers | Status | Approved by |
 | --- | --- | --- | --- |
-| [L-01 parent](lists/L-01-parent.md) | every wave-2 spec | running: 6 of 7 accepted, synthesis next | OT-01, Alex, 14:38 |
+| [L-01 parent](lists/L-01-parent.md) | every wave-2 spec | done 15:05: 7 reports and the synthesis | OT-01, Alex, 14:38 |
 | [L-02 scraping](lists/L-02-scraping.md) | (S-D1 declined) | parked: Alex runs the scraping himself | — |
-| [L-03 blog](lists/L-03-blog.md), [L-04 GetSales](lists/L-04-getsales.md), [L-05 brand assets](lists/L-05-brand-assets.md) | S-D4/S-D5, S-D3, S-D6/S-D7/S-D10 | drafts, waiting for a `RESEARCH` request | — |
+| [L-03 blog](lists/L-03-blog.md) | S-D4, S-D5 | with Alex: `Operator tasks\Approve - research for the blog pipeline.md` (OT-04) | — |
+| [L-04 GetSales](lists/L-04-getsales.md), [L-06 website](lists/L-06-website.md) | S-D3; S-D8 | with Alex, one gate: `Operator tasks\Approve - research for the GetSales demo and website.md` (OT-03) | — |
+| [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | draft, waiting for a `RESEARCH` request | — |
 
 ## Parent level
 
-Research that two or more specs need, or that shapes the whole project. All of L-01 is here, in `research\global\`. Every recommendation in these reports is an option for Alex, not a decision.
+Research that two or more specs need, or that shapes the whole project. All of L-01 is here, in `research\global\`. Every recommendation in these reports is an option for Alex, not a decision. **Start with the synthesis.**
+
+### L-01 synthesis · [global/L-01-synthesis.md](global/L-01-synthesis.md)
+- **Strongest findings:** (1) The stakeholder sections are the most exposed part of the plan. The law (R3) and the creepiness research (R4) independently give the same rule: write about the role, not the person; show sources; notice before publishing; a way out. The "alert today, sections tomorrow" order is what GDPR requires, so the fix for tonight's visitors is an orientation panel plus a second "it's finished" message after the hand-over, not rushing the sections live. (2) Visible AI use costs trust on the personal writing (the opening lines, the stakeholder notes), not on the machinery (scraping, ICPs, classifier), where it reads as skill. Hiding it is impossible once the clip shows every stage, so frame it as "Alex directs and decides, the agents build", with the personal parts in his words. (3) Lead with the outcome and the reader's problem, not the tool or the process. Also: R3's compliance steps are the "sending safety and guardrails" proof R2 says nothing shows; a guardrails note on the GetSales section turns them into portfolio evidence.
+- **Conflicts settled:** "no real data" stands, and generic-looking data is fixed by labelling and realism. The live-run clip shows stages with names blurred and never replies. The live feed isn't noise because the legibility analyser curates it. W3's AI-label finding governs over R1's for a job application.
+- **Has:** recommendations per spec, each tagged assistant-actionable / operator decision / verify first; 24 one-line questions for Alex, each naming the spec it blocks; six "verify first" checks.
+- **Governs:** every wave-2 spec's methodology. **Read this when** writing any wave-2 spec's methodology or post-research questions: take your spec's section and the questions that name it.
+- **Caveats:** inherits every report's caveats. Several questions (the alert URL, the opening lines, the overnight setup) were already routed to `orchestration` at about 14:50.
+
+### L-01-R4 Does the format land? · [global/L-01-R4-format-reception.md](global/L-01-R4-format-reception.md)
+- **Verdicts:** a site or campaign aimed at one employer almost always gets a senior reply, but becomes a job there far less often: of seven well-documented cases, four were hired by the target and three weren't, and the steadiest payoff is offers from others who saw the work in public (an upper bound, given survivorship bias). It turns creepy with personal, inferred or unexpected information about named people, unsourced, with no way out (advertising research agrees). It turns self-indulgent when the stunt is about the applicant, or claims to fix their business without knowing its constraints. Recipients act on one specific small ask they can read in seconds, from someone who clearly fits, best from a person who can say yes without a hiring process.
+- **Bears on the plan:** the six stakeholder sections and building in public are the most exposed parts. The covering message matters as much as the site; an executive spends about nine seconds on an opened email.
+- **Governs:** the outcome; closest DoD-18. **Read this when** writing a stakeholder section, the ask on the site, or the message that carries the link.
+- **Caveats:** no precedent for a public site with sections on several named employees; no GTM-engineering case; all cases from the US or Canada; four figures unverified against originals.
 
 ### L-01-R1 Making the work legible · [global/L-01-R1-legibility.md](global/L-01-R1-legibility.md)
 - **Verdicts:** there's a converged *order*, not a format: outcome first, then a short demo (about 2 minutes or less), then a 3–4 step "how it works", detail on request, each framed around the reader's problem rather than the tool. A raw live build log has the weakest evidence and the highest noise risk; a short dated "what changed" list is supported. Toy signals: generic or fake-looking data, demos that claim more than they show, breadth over one working path, the tool as the headline, unlabelled AI work. Noise: equal weight on everything, unscannable text, long raw logs or videos.
@@ -64,6 +79,14 @@ No reports yet.
 
 | Spec | Reports to read before writing its methodology |
 | --- | --- |
+| Every wave-2 spec | L-01 synthesis first (its own section plus the questions that name it), then the reports below |
+| S-D1 Scraping demo | L-01: R1, R3 (what scraped data may show), R2, W3 |
+| S-D3 GetSales outbound | L-01: R3 (notice, opt-out, LinkedIn account risk), W2 (alert link, preview, click timing), W3 (AI-written opening lines), R1 (the clip), R2, R4. L-04 when it runs |
+| S-D4 Blog pipeline, S-D5 Three articles | L-01: R1, W3, R2. L-03 when it runs |
+| S-D6 Canva templates, S-D7 LinkedIn content, S-D10 Canva video | L-01: R1 (AI labels), W3, R2 (Canva matched no GTM post) |
+| S-D8 Website | L-01: all seven, above all R3 section 7, R4, W2 (preview card, hand-over checklist C7), R1. L-06 when it runs |
+| S-D9 Legibility analyser | L-01: R1, R3 (what never to post), W3, W1 |
+| Overnight run and the morning cleanup (orchestration) | L-01: W1, W2 (C7 hand-over checklist), synthesis "Overnight" section |
 
 ## Precedence
 
