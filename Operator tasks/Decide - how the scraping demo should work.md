@@ -1,12 +1,20 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
 Intake id: DI-6
 Created: 2026-11-02
 Build goals: []
 ---
 
-# Decision intake 6
+# Decide: how the scraping demo should work
+
+## What this is
+
+The site is a personalised job application to Addvery, built live during a 12-hour recorded hackathon. The scraping demo is the part of the site that shows you turning the open web into useful research about a company with Apify, and the outbound demo draws on that research.
+
+This intake asked you five things: how the Apify token and spending would be handled, what the demo should scrape, whether the site may name Apify, who would gather the details on Addvery's six stakeholders, and whether earlier tooling of yours could be reused. You answered all five on 2 Nov.
+
+Your answers reshaped the demo. You run all the scraping yourself, one-on-one in your own Addvery research folder, under a $10 spending cap, and you write a summary of what it found. The session behind this demo runs no scraping, holds no token and spends nothing. Once your summary exists, it turns it into the scraping section of the site, naming Apify, and shows you the whole draft section for approval before anything goes live. Nothing more is needed from you here, and nothing is waiting on this file.
 
 This intake holds 5 decisions for S-D1 Scraping research demo, the first wave-2 spec, because S-D3 needs its output before the GetSales live run. Each question carries its own context, so you can answer them in any order. An empty fence means not answered. The spec draft is at `scraping\SPEC.md` for reference, but you needn't read it. S-D1 needs you on camera for nothing: its one task for you is about 2 minutes off camera, with the recording paused, to give it the Apify token (the first question), and you can do that as soon as you've answered. Say "DI-6 is ready" when you're done.
 
