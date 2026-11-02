@@ -6,7 +6,7 @@ The page only ever sees order, id, prague, group and clip for each moment.
     python -I server.py [--port 8765] [--open] [--grades PATH] [--moments PATH] [--clips DIR]
 
 grades.jsonl is append-only, one JSON object per line:
-    {"action": "grade", "id", "grade": "Y"|"M"|"N", "note", "watched", "speed", "ts", "cid"}
+    {"action": "grade", "id", "grade": "G"|"Y"|"M"|"N", "note", "watched", "speed", "ts", "cid"}
     {"action": "undo", "ts", "cid", "undid"}
 An undo removes the most recent grade still standing; a later grade of the same id replaces
 an earlier one (the same replay as grades_lib.py). "cid" is the page's id for the action, so a
@@ -28,7 +28,7 @@ from urllib.parse import unquote, urlsplit
 
 HERE = Path(__file__).resolve().parent
 BLIND_FIELDS = ("order", "id", "prague", "group", "clip")
-GRADES_OK = ("Y", "M", "N")
+GRADES_OK = ("G", "Y", "M", "N")
 CLIP_RE = re.compile(r"^/clips/([A-Za-z0-9][A-Za-z0-9_.-]{0,80})\.mp4$")
 FRESH_SECONDS = 3.0      # a clip modified this recently is still being written: report it missing
 CHUNK = 256 * 1024
@@ -132,7 +132,7 @@ class Store:
             raise ValueError("unknown moment id")
         grade = body.get("grade")
         if grade not in GRADES_OK:
-            raise ValueError("grade must be Y, M or N")
+            raise ValueError("grade must be G, Y, M or N")
         note = body.get("note") or ""
         if not isinstance(note, str):
             raise ValueError("note must be a string")

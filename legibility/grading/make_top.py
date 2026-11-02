@@ -26,7 +26,8 @@ def main() -> None:
     if not grades:
         sys.exit("No grades yet in grades.jsonl")
     order = {m["id"]: i for i, m in enumerate(moments)}
-    yes = [m for m in moments if grades.get(m["id"], {}).get("grade") == "Y"]
+    great = [m for m in moments if grades.get(m["id"], {}).get("grade") == "G"]
+    yes = great + [m for m in moments if grades.get(m["id"], {}).get("grade") == "Y"]
     maybe = sorted(
         (m for m in moments if grades.get(m["id"], {}).get("grade") == "M"),
         key=lambda m: (-int(m.get("score", 0)), order[m["id"]]),

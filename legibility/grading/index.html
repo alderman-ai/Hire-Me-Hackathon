@@ -25,6 +25,7 @@
   --glow: radial-gradient(closest-side, rgba(102, 69, 235, 0.42), rgba(102, 69, 235, 0));
 
   /* Grade colours: each grade also carries its letter and word, never colour alone */
+  --great: #b9a4ff;
   --yes: #5fe3a1;
   --maybe: #f6c453;
   --no: #ff7b8a;
@@ -223,6 +224,7 @@ video {
   cursor: pointer;
   transition: transform 120ms var(--ease), filter 120ms var(--ease);
 }
+.g[data-grade="G"] { --c: var(--great); }
 .g[data-grade="M"] { --c: var(--maybe); }
 .g[data-grade="N"] { --c: var(--no); }
 .g kbd {
@@ -301,6 +303,7 @@ video {
   border-radius: 2px;
   background: var(--pending);
 }
+.tick[data-g="G"] { background: var(--great); }
 .tick[data-g="Y"] { background: var(--yes); }
 .tick[data-g="M"] { background: var(--maybe); }
 .tick[data-g="N"] { background: var(--no); }
@@ -421,6 +424,7 @@ video {
     </div>
 
     <div class="grades" role="group" aria-label="Grade this moment">
+      <button class="g" type="button" data-grade="G"><kbd>G</kbd><span>Great</span></button>
       <button class="g" type="button" data-grade="Y"><kbd>Y</kbd><span>Yes</span></button>
       <button class="g" type="button" data-grade="M"><kbd>M</kbd><span>Maybe</span></button>
       <button class="g" type="button" data-grade="N"><kbd>N</kbd><span>No</span></button>
@@ -476,6 +480,7 @@ video {
   <div class="card-body">
     <h1 id="endTitle" tabindex="-1">Done, your grades are saved</h1>
     <div class="counts">
+      <div class="count" style="--c: var(--great)"><div class="n" id="endG">0</div><div class="w">Great</div></div>
       <div class="count" style="--c: var(--yes)"><div class="n" id="endY">0</div><div class="w">Yes</div></div>
       <div class="count" style="--c: var(--maybe)"><div class="n" id="endM">0</div><div class="w">Maybe</div></div>
       <div class="count" style="--c: var(--no)"><div class="n" id="endN">0</div><div class="w">No</div></div>
@@ -497,8 +502,8 @@ video {
   const LS_SPEED = "grading.speed";
   const LS_QUEUE = "grading.queue";
   const LS_REJECTED = "grading.rejected";
-  const GRADE_WORD = { Y: "Yes", M: "Maybe", N: "No" };
-  const GRADE_COLOR = { Y: "var(--yes)", M: "var(--maybe)", N: "var(--no)" };
+  const GRADE_WORD = { G: "Great", Y: "Yes", M: "Maybe", N: "No" };
+  const GRADE_COLOR = { G: "var(--great)", Y: "var(--yes)", M: "var(--maybe)", N: "var(--no)" };
   const ADVANCE_GUARD_MS = 300;
 
   const store = {
@@ -541,7 +546,7 @@ video {
   }
 
   function counts() {
-    const c = { Y: 0, M: 0, N: 0 };
+    const c = { G: 0, Y: 0, M: 0, N: 0 };
     for (const id in grades) c[grades[id].grade]++;
     return c;
   }
@@ -672,12 +677,12 @@ video {
       t.classList.toggle("now", i === idx && mode !== "end");
     }
     const c = counts();
-    const done = c.Y + c.M + c.N;
+    const done = c.G + c.Y + c.M + c.N;
     $("tape").setAttribute("aria-label",
-      "Graded " + done + " of " + moments.length + ": " + c.Y + " yes, " + c.M + " maybe, " + c.N + " no");
+      "Graded " + done + " of " + moments.length + ": " + c.G + " great, " + c.Y + " yes, " + c.M + " maybe, " + c.N + " no");
     const tally = $("tally");
     tally.textContent = "";
-    for (const k of ["Y", "M", "N"]) {
+    for (const k of ["G", "Y", "M", "N"]) {
       const s = document.createElement("span");
       const sw = document.createElement("i");
       sw.style.background = GRADE_COLOR[k];
@@ -848,12 +853,12 @@ video {
     $("missing").hidden = true;
     $("soundHint").hidden = true;
     const c = counts();
-    $("endY").textContent = c.Y; $("endM").textContent = c.M; $("endN").textContent = c.N;
+    $("endG").textContent = c.G; $("endY").textContent = c.Y; $("endM").textContent = c.M; $("endN").textContent = c.N;
     $("endText").textContent = "All " + moments.length + " moments graded.";
     setCard("end");
     renderAll(); setPlayPill();
     $("endTitle").focus();
-    announce("Done, your grades are saved. " + c.Y + " yes, " + c.M + " maybe, " + c.N + " no.");
+    announce("Done, your grades are saved. " + c.G + " great, " + c.Y + " yes, " + c.M + " maybe, " + c.N + " no.");
   }
 
   // ---------- actions ----------
@@ -1045,7 +1050,7 @@ video {
     }
 
     switch (lower) {
-      case "y": case "m": case "n":
+      case "g": case "y": case "m": case "n":
         e.preventDefault();
         if (!e.repeat) grade(lower.toUpperCase());
         return;
