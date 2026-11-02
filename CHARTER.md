@@ -259,7 +259,7 @@ The biggest risk is something sensitive showing up in a recording that gets publ
 - [ ] What is D3's second custom message? The first carries the variable computed before import.
 - [x] Who owns Addvery brand capture: S1 as shared research, or S-D2? Answered: the operator, as part of S-D2, which he runs himself in `Addvery Research\` with no spec (DI-2 Q2.2, DI-3 Q3.3).
 - [ ] What are the exact hours of today's operator window?
-- [ ] Is "Addvery" the right spelling, and "GetSales" the tool meant by "GitSales"?
+- [x] Is "Addvery" the right spelling, and "GetSales" the tool meant by "GitSales"?
 
 ## Handoff to Claude Code
 
