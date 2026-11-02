@@ -235,6 +235,7 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
    - Commit the task file first, path-limited. Then send `answer-desk` the line `TASK S-D9: Approve - the GetSales outreach clip.md is waiting on you: the GetSales outreach clip, before it goes on the site`.
    - Wait with Monitor, running `python -I orchestration\check_gate.py "Operator tasks\Approve - the GetSales outreach clip.md"` from the repo root every 300 seconds, until it exits 0. Poke after 15 minutes, and every 15 minutes after that.
    - On CHANGES, recut the clip, refresh the snapshot and wait again.
+   - **On APPROVED, read the changes fence and every answer fence too.** Alex's rule for every operator task (16:36, through the desk): "even if I approve something, the feedback section gets considered as well ... it's approved along with whatever's in the feedback section." `check_gate.py` reports APPROVED without reading them, so apply whatever is written there as part of the approval.
    - On APPROVED, send:
      - `CLIPPED S-D3-C1` to `s-d3-getsales`;
      - `TASK DONE S-D9: Approve - the GetSales outreach clip.md` to `answer-desk`;
@@ -245,7 +246,7 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
    - Freeze this whole SPEC.md into `..\Operator tasks\Approve - the plan for the site's build updates.md`. It opens with `## What this is` in plain words, with its OT id in the front matter only.
    - Handle it the same way as the clip gate, with this file name in every line:
      - commit, then send `TASK S-D9: Approve - the plan for the site's build updates.md is waiting on you: how the site's build updates are chosen, and their definition of done`;
-     - run `check_gate.py` on it every 300 seconds, poke after 15 minutes, and apply any CHANGES;
+     - run `check_gate.py` on it every 300 seconds, poke after 15 minutes, and apply any CHANGES. On APPROVED, also apply whatever the changes fence and the three question fences hold (Alex, 16:36), and pass the answers to Q4, Q8 and Q18 to `s-d3-getsales` and `website`;
      - then send `TASK DONE S-D9: Approve - the plan for the site's build updates.md` and `ARCHIVE Approve - the plan for the site's build updates.md: readers S-D9`.
    - Alex approves the spec's own DoD here.
    - The loop keeps running, because nothing waits on this gate. From 18:00, proceed and log that in §9.
