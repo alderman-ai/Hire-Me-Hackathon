@@ -1,60 +1,44 @@
-# S-D6 handoff: 2 Nov, about 18:00 Prague
+# S-D6 handoff: 2 Nov, about 19:05 Prague
 
-From session a841934d to the fresh `s-d6-canva-templates`, at forking gate F3 (context past half). This file replaces the 17:16 handoff, and its to-do list replaces SPEC.md run steps 7 to 13.
+From session 335b2144 to the fresh `s-d6-canva-templates`, at forking gate F3 (context at 57%, flagged by `orchestration`). This file replaces the 18:00 handoff; its to-do list still replaces SPEC.md run steps 7 to 13.
 
-**Read first:** `..\answer-desk\ASKING.md` (the reset rules at the top), then SPEC.md §9 from the 17:15 rows down, then this file. Links (the sign-off Doc, the Canva test design) are in `local\handoff-links.md`: git-ignored, never copied into a tracked file.
+**Read first:** `..\answer-desk\ASKING.md` (reset rules), SPEC.md §9 from the 18:25 rows down, this file, then `local\canva-build-log.md` (the Canva state per template and every method that works or fails). Links (the sign-off Doc, all four Canva designs) are in `local\handoff-links.md`: git-ignored, never copied into a tracked file.
 
-## Done since 17:16
-1. **One brand source** (item 1): the templates follow the website's Addvery kit. Every colour already matched. The display and label roles take the kit's stand-in face; a new `font-numeric` role (the kit's stat-counter face) sets the T2 number; pills and the T5 panel take the kit's button and card gradients. Static font files are in `local\fonts\`. Each role in `local\import\_shared\tokens.css` names its kit token. §9, 17:25.
-2. **Item 2:**
-   - Copy is refreshed from S-D7's final posts (`..\linkedin-content\demo\posts.md`); sources in `local\sample-copy.md`.
-   - The three queued fixes are done (p2/p3 titles bottom-aligned, the T1 caption, the p6 CTA).
-   - N1 is done: the backdrops leave out the pills, p4 markers and T1 image slot; positions are in `local\canva\native-shapes.json` and the BUILD-NOTES "Native Canva shapes (N1)" table.
-   - The design critique and accessibility review ran; what was fixed and what was skipped is in `local\next-fixes.md`.
-   - Every check passes: `render.mjs`, then the new `local\tools\slot_check.mjs` (every slot inside its box, no orphans), then `canva_assets.mjs`.
-3. **Canva test import**, off camera on the 4K monitor (`local\canva-notes.md`; §9, 17:30):
-   - The plan is paid, with Brand Templates.
-   - Of the brand's faces, Canva's library has only the kit's body-face stand-in, and nothing may be uploaded. "Create new Brand Kit" was refused by the permission check. Don't retry it; `orchestration` has told Alex he can create the kit himself.
-   - Canva builds use that one face with measured letter spacing: display −64, labels +76, body −33, number −50.
-   - Canva text takes linear gradients.
-4. **The L-05 synthesis questions** for this spec are decided and logged (§9, 17:28).
-5. **Brand sign-off Doc**: written, with all five templates (the carousel as six pages) and the two open points. The TASK line went to `answer-desk` at about 17:50, and the desk says "task shown". **Nothing else waits on Alex.**
-6. **DI-10 (Alex 17:23, with the 17:26 correction):**
-   - No stakeholder cards.
-   - Ground everything in his pixel-perfect assets repo (L-05 R1 covers it).
-   - Templates usable in Canva out of the gate, coded where Canva can't (the coded exports stay exact).
-   - Give him an asset pack for his on-camera build.
-   - The archived answers are in `..\Operator tasks\Archive\Decide - everything left that needs you.md`.
-7. **Skills:** `frontend-design` didn't load in a841934d; its SKILL.md was read from the plugin cache and followed, and both subagents were told to do the same. `orchestration` has since installed it for this folder: invoke `frontend-design:frontend-design`.
+## First, before anything else
+1. **Watch the sign-off Doc.** Load `anthropic-skills:docs`, then query its comments (call in `local\handoff-links.md`). No comment from Alex as of 18:46. Arm `ArtifactComments` watch on its link and a CronCreate reminder every 30 minutes (the old session's cron died with it). Since 18:56, everything that needs Alex goes through `orch-alex-prep` (see the routing note below).
+2. **Chrome is yours until `s-d10-canva-video` sends SCENE START**, and again after SCENE DONE. Neither had arrived at 19:05.
 
-8. **Asset pack** (`local\asset-pack\`), done and checked:
-   - Contents: mockups (plus a Canva-fonts preview of the quote card), images (logo, quote mark, image slot, swipe arrow, CTA pills and the T5 panel as PNGs, because Canva can't set angled gradients), backdrops, `BUILD-quote-card.md` (12 steps), `BUILD-all-templates.md` (every slot, shape and image for the Canva build of all five, highlight overlay positions included) and `copy.md` (explicit line breaks where Canva wouldn't balance).
-   - Its notes: subhead letter spacing would match better at −48 than −33, and the T2 number at −22 than −50. The brief's values were kept. Revisit them in the Canva build if widths look off.
-   - **READY S-D6 went to `s-d10-canva-video` at about 18:10** with every path.
+## Done since 18:00
+1. **Canva's font-size box is in points:** the number typed draws 4/3 as many px, and Canva floors each line height to a whole px. Measured in the DOM. The asset pack's two sheets now give each role's Canva size and a line spacing that lands on the mockup's line heights (`local\asset-pack\BUILD-quote-card.md`, `BUILD-all-templates.md`, Shared values). `s-d10-canva-video` was told at 18:25 and corrected its scene brief (quote 42/1.15, name 30/1.2, role 24/1.25, Shift+Enter before "real").
+2. **Lock model, settled by test (18:55):** an element "Lock" blocks text editing too, so it's wrong for slots. What works: the **page lock "Only allow replacing content"** (layout and styles locked for everyone, words and the photo slot replaceable) + text elements left unlocked + brand art (backdrop, pills) element-locked so it can't be replaced. Verified by script on each finished template: a text slot enters edit mode; the backdrop offers no Replace.
+3. **Gradient highlight Plan A works:** a selected phrase takes the linear gradient on its own.
+4. **Built in Canva, named, locked and verified by DOM** (sizes, line heights, tracking, weights per run, colours, alignment, positions):
+   - Quote card 1080×1080 (the reused test design)
+   - Stat card 1080×1080
+   - Portrait post 1080×1350 (with the replaceable image slot)
+5. **Event teaser 1200×627: in progress.** Backdrop and CTA pill placed and locked; the date line is done. Remaining boxes, with every value, are in the build log's T5 row.
+6. All 17 pack images are uploaded to Alex's Canva uploads (search by file name).
+7. One slip, fixed at once: a Ctrl+V in the event teaser pasted Alex's system clipboard (his own unrelated text) as a text box. It was deleted within a minute; nothing was exported or shared. The build log now forbids pasting between designs.
 
 ## To-do, in order
-1. **Stay off Claude in Chrome between `s-d10-canva-video`'s SCENE START and SCENE DONE** (two Chrome drivers collide on Windows). Answer any question it sends about the pack.
-2. **Watch the Doc for Alex's sign-off.** His comment reaches the session that made the Doc, which may be the old one, so query the Doc's comments every 30 minutes (call in `local\handoff-links.md`) and reply in the thread with a doc comment.
-   - On "approve": copy `local\exports\` PNGs and the carousel's LinkedIn PDF to `exports\` and commit them (spec Outputs). Send `TASK DONE s-d6-canva-templates: brand sign-off Doc` to `answer-desk` and `ARCHIVE brand sign-off Doc: readers S-D6, S-D10` to `orchestration`.
-   - On changes: apply them, re-render, run the three checks, and swap the Doc's images.
-3. **The five into Canva through Chrome**, using `local\asset-pack\BUILD-all-templates.md`. Load the `claude-in-chrome` skill first and work in a new tab in the window on the 4K monitor (check with `screen.width * devicePixelRatio = 3840`).
-   - Open new designs only by URL (`https://www.canva.com/design?create&width=W&height=H&units=px`). Never show the home page, and never list, search or open a design you didn't create. Canva screenshots often time out, so read the page text by script.
-   - Per template: backdrop as the locked background (Lock), then native text boxes at the sheet's positions (Lock position only), then native shapes (pills, markers), then images.
-   - Name each `Addvery · LinkedIn · <type> · <size>`, in one folder `Addvery · LinkedIn templates`. Make each a Brand Template if the menu offers it without a brand-kit change.
-   - Reuse or rename the test design (see links).
-   - Afterwards, check each Canva export against its coded export (BUILD-SHEET §9, check 17), with a checking subagent that didn't build them. Expect the body face to differ (by design, flagged in the Doc).
-4. **Tell `s-d10-canva-video`** when the templates are in Canva (folder name; the link in the message only).
-5. **`BUILD S-D6-B1` to `website`** (SPEC run step 14). Write `site\d6.md` with `marketing:draft-content` first:
-   - a gallery of the exports, with the carousel as page images and a checked PDF download;
-   - a three-line how-it-was-made note;
-   - the lock wording "guard rails, binding as Brand Templates";
-   - a "coded where Canva can't" line, matching DI-10.
-   Wait for BUILT or REFUSED.
-6. **Final sweep** (run step 15), then `DONE S-D6` to `orchestration` (run step 16).
+1. **Finish the event teaser** (build log T5 row): duplicate the finished date line with Ctrl+D for each remaining box, retype, restyle, place; highlight the title phrase; page lock; verify by script.
+2. **The carousel, 6 pages:** File → Make a copy of the portrait post (same size, so no resize), follow the build log's T4 row and `local\asset-pack\BUILD-all-templates.md` T4. Navigate your own tab group's tab to the copy's URL before closing anything.
+3. **Folder and Brand Templates:** put all five in one Canva folder `Addvery · LinkedIn templates`; make each a Brand Template if the menu offers it without a brand-kit change. Open designs only by the links in `local\handoff-links.md`; never list, search or open a design you didn't create.
+4. **Check the Canva versions against the coded exports** (BUILD-SHEET §9 check 17) with a checking subagent that didn't build them. Exporting downloads our own designs; it's part of the requested check. Expect the body face to differ (flagged in the Doc).
+5. **Tell `s-d10-canva-video`** the folder name, with the link in the message only.
+6. **On Alex's Doc comment:** approve → copy `local\exports\` PNGs and the carousel's LinkedIn PDF to `exports\`, commit, `TASK DONE s-d6-canva-templates: brand sign-off Doc` to `answer-desk`, `ARCHIVE brand sign-off Doc: readers S-D6, S-D10` to `orchestration`; changes → apply, re-render, run the three checks, swap the Doc's images, then rebuild the Canva versions to match.
+7. **`BUILD S-D6-B1` to `website`** (SPEC run step 14). Write `site\d6.md` with `marketing:draft-content` first: a gallery of the exports (carousel as page images, a checked PDF download), a three-line how-it-was-made note, the lock wording "guard rails, binding as Brand Templates", and a "coded where Canva can't" line (DI-10). `orchestration` notes Alex's pixel-perfect demo assets now sit in `..\website\local\alex\pixel-perfect-demo\` (index `local\alex\ASSETS.md`), useful to show where the method comes from. Wait for BUILT or REFUSED.
+8. **Final sweep** (run step 15), then `DONE S-D6` to `orchestration` (run step 16).
+
+## Routing (orchestration, 18:56)
+- `orchestration`: master only (handoffs, roster, context, charter).
+- `orch-alex-prep` (`alex-prep\`): everything that needs Alex, the sign-off Doc included. Send status that matters to Alex there.
+- `orch-site-map` (`site-map\`): the site's layout and scope map.
+- Questions for Alex still go to `answer-desk`.
+- `s-d7-linkedin-content` handed off at 19:00; its COPY S-D7 line comes after Alex signs off the posts. If the final post copy changes, refresh the templates' sample copy.
 
 ## Things to know
-- **Commit only `canva-templates/`, path-limited.** Never commit `local\`. Tracked files carry no hex codes, font names or Canva links (BUILD-SHEET names roles only).
-- **Shell trap (bit again today):** Python heredocs turn `\a \b \f` in Windows paths into control characters. Write scripts with the Write tool into `$CLAUDE_JOB_DIR\tmp\scripts\`. Repair with `fix_ctrl.py` (pattern in a841934d's job dir, or rewrite it) and scan with `grep -nP "[\x00-\x08\x0b\x0c\x0e-\x1f]"`.
-- Run fontTools and Pillow scripts without `-I` (they live in user site-packages), from a clean scripts folder.
-- The CTA label on the button gradient is 4.4:1 at its worst pixels (AA wants 4.5:1). It's logged in `local\next-fixes.md` as a brand-level choice, not fixed.
-- **Forking gates (SPEC §8):** F3 at about half context. On a handoff: write this file again, launch the successor under the same name, and tell `orchestration`, which stops and removes the old id and updates the roster.
+- **Commit only `canva-templates/`, path-limited.** Never commit `local\`. Tracked files carry no hex codes, font names or Canva links.
+- **Shell trap:** Python heredocs turn `\a \b \f` in Windows paths into control characters. Write scripts with the Write tool into `$CLAUDE_JOB_DIR\tmp\scripts\`.
+- The in-page helpers are in `local\tools\canva_helpers.js`: paste them into each new editor tab with the Chrome JavaScript tool.
+- **Forking gates (SPEC §8):** F3 at about half context. On a handoff: write this file again, launch the successor under the same name, and send `orchestration` `HANDOFF s-d6-canva-templates <new id>`; it removes the old id and updates the roster.
