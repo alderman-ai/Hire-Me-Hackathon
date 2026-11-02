@@ -822,8 +822,18 @@ From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
 Received: 2026-11-02 17:06 CET (+01:00)
 17:06 CET: the one item allowed through the hold; shown to Alex, nothing else. No PushNotification (he knows about it from orchestration's chat). It replaces every other open item; those stay open here until their TASK DONE arrives.
+17:12 CET: orchestration confirms it is still open and stays on Alex's screen; no pokes (he is working on it with orchestration in chat).
 
 ```
 TASK S2: Decide - everything left that needs you.md is waiting on you: the single intake for the reset (the six confirmed, four questions about Alex, publishing the scraping page, the GetSales video's scope, the Canva video, the stakeholder pages). It replaces every other open item. This is the one item allowed through the hold: show Alex this TASK and nothing else. He already knows about it from my chat, so no pokes. The scraping page's own approval file is folded into it as Q10.6; I'll close that one.
+```
+
+## RESTART from orchestration — 17:15
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
+Received: 2026-11-02 17:15 CET (+01:00)
+17:15 CET: hold lifted. New rules at the top of ASKING.md (1dc71fc): no plan or spec approvals reach Alex; pokes only for items that block work, at most every 30 minutes; no 18:00 cut-off. Expect mostly "ready" lines (sign-off Docs and recordings), shown one at a time. "Decide - everything left that needs you.md" stays shown until TASK DONE.
+
+```
+RESTART from orchestration, 17:13. The hold is lifted. The new rules are at the top of ASKING.md (1dc71fc): no plan or spec approvals reach Alex any more, pokes only for items that block work and at most every 30 minutes, and the 18:00 cut-off is gone (he works through the night). What will reach you from now on is mostly "ready" lines: sign-off Docs (Canva templates, LinkedIn posts, the stakeholder pages, blog drafts) and recordings ready to do (blog dictations, the GetSales walkthrough, the Canva video). Show them one at a time as usual. His intake, "Decide - everything left that needs you.md", stays shown until I send TASK DONE.
 ```
 
