@@ -1,86 +1,54 @@
 # Orchestration handover
 
-Written 2 Nov, 18:47 Prague, by the outgoing `orchestration` session (id `ab58b0bf`), at forking gate F2 (context about 48%). Read this, then `orchestration\SPEC.md`, then **`Open tasks.md` at the repo root**. You are the parent session and the S2 project orchestrator. Take every time from the clock (`Get-Date`); never guess one.
-
-**Update, 18:59, by the fresh session (cc2ff5a3): orchestration is split in four** (Alex). This session is now the master: sessions only, and Alex doesn't talk to it. The scope map and the scope-map subagent's unfinished brief went to `orch-site-map`. `Open tasks.md`, the open calls and the clip grading went to `orch-alex-prep`. `briefing` became `orch-briefing`. See SPEC section 9, the last row. Where this file says "your duty" for the scope map or `Open tasks.md`, read it as theirs.
+Written 2 Nov, 20:11 Prague, by the outgoing `orchestration` session (id `cc2ff5a3`), at 365k tokens: inside the 300k to 400k band Alex set at 20:12, and after his request for a full refresh following the crash. Read this, then the root `STATUS.md`, then `orchestration\SPEC.md` (sections 4, 8 and 9), then `Open tasks.md` at the repo root. Take every time from the clock (`Get-Date`); never guess one. The 18:47 handover this replaces is in git history (`git show 6ef70ea:orchestration/HANDOFF.md`).
 
 ## First, in this order
 
-1. Wait until `claude agents --json --all` shows your row live. Then run `claude stop ab58b0bf` and `claude rm ab58b0bf`, and check that exactly one `orchestration` row is left. Put your id and the handoff time in the `orchestration` row of `SESSIONS.md` and commit it on its own (`[roster]`).
-2. Send the HANDOFF announcement (SPEC section 8) to every running roster session: `answer-desk`, `rig`, `watcher`, `briefing`, `website`, `s1-research`, `s-d1-scraping`, `s-d3-getsales`, `s-d5-blog-articles`, `s-d6-canva-templates`, `s-d7-linkedin-content`, `s-d9-legibility`, `s-d10-canva-video` and `addvery-research`. `s-d4-blog-pipeline` is finished and removed. If a bare name hits a Remote Control duplicate, address `<name> [ref]` from ListAgents.
-3. Re-create the context-watch cron with CronCreate: cron `13,43 * * * *`, recurring, the CONTEXT WATCH prompt in SPEC section 8. **The hold ended at 17:13 (RESTART), so act on every flag; don't just report.**
-4. No Monitors are needed. Every gate now comes back as a message or a Doc comment, and Alex talks to you directly in chat.
+1. Wait until `claude agents --json --all` shows your row live. Then run `claude stop cc2ff5a3` and `claude rm cc2ff5a3`, and check that exactly one `orchestration` row is left. Put your id and the time in the `orchestration` row of `SESSIONS.md`, and commit it on its own (`[roster]`).
+2. **rig:** at 20:10 it was asked for a refresh, and at 20:13 that was cancelled under Alex's new rule (below). Leave it be.
+3. Send the HANDOFF announcement (SPEC section 8) to the five live sessions only: `rig`, `website`, `orch-site-map`, `orch-alex-prep` and `orch-briefing`. Every other session is paused, so don't message it.
+4. Re-create the context-watch cron with CronCreate: cron `13,43 * * * *`, recurring. Use the prompt in SPEC section 8, run as `python -I orchestration\context_check.py --warn 35 --watch 30`. **Alex, 20:12: refresh a session only when it's over about 300k to 400k tokens, gently, at its next natural stop. Never on a timer, never under 300k, and never all at once.** Make three more changes:
+   - **Skip every session in `SESSIONS.md`'s "Paused" table.** Never resume one unless Alex asks: its STOPPED flag is expected.
+   - Instead of the scope map, check that the clock loop is alive (`website\.clock\sync.pid`).
+   - Run `git push` when `main` is ahead of `origin/main`, because `watcher` is paused.
 
-**Context watch at 18:48:** website was at 54.8% (ROT). It was asked at 18:48 to hand off at its next natural stop; when "HANDOFF website" arrives, stop and remove the old id `54c2d301`. The sessions on WATCH, all between 43% and 48%: s-d6-canva-templates, addvery-research, s-d9-legibility, s-d5-blog-articles and s1-research. Ask each one for a same-name handoff when it crosses 50%.
+## The course change (Alex, 19:58 and 20:0x)
 
-## Alex right now
+- **Why.** At 19:4x the PC crashed: about 20 Canva editor tabs plus the OBS recording maxed out the CPU and GPU. Alex: "we're getting to the point where we're doing a lot of unattended graphic design, which, in my experience, is just not a real thing. Same thing with unattended copywriting." Also: "I don't really want to have each session working in parallel ... I'm hoping that most things are 70% to 80% done and we just systematically go through them and finish them off."
+- **Six sessions run** (Alex: "I mostly just want the main orchestration session, the three sub-orchestration sessions, website, and rig for now"):
 
-He's at the computer and **working through the night**: the 18:00 cut-off no longer applies. **He has a meeting with Ivana Karhanová (Addvery's Chief Growth Officer) tomorrow, 3 Nov, and the site is prep for it.** He'll send the six stakeholders their links by hand in the morning. I asked him twice for the meeting time and got no answer: ask again once, briefly.
+  | Session | Id | Job |
+  | --- | --- | --- |
+  | `orchestration` | you | The master: sessions, context, roster, charter (S2), commit and push. Alex doesn't talk to it. |
+  | `orch-alex-prep` | 759cb6b8 | Runs the finish list with him, item by item, attended. It edits the paused folders' files itself, sends `website` the builds, and keeps `Open tasks.md`. |
+  | `orch-site-map` | 5a971503 | Layout and the scope map. It first brings the map in line with the live site, then settles the D12 toggle with him. |
+  | `orch-briefing` | 8bc2476e | "What should I do next?", answered from the root `STATUS.md`. |
+  | `website` | 2d36e96a | Builds and deploys. It first fixes its HANDOFF's /about deploy steps. |
+  | `rig` | 1a1ba6cb, refresh pending | Recording. |
 
-His standing rules since the 16:47 reset are written in `answer-desk\ASKING.md`, reset rules 1 to 8. In short:
-- easy calls are the session's own: decide, log it, carry on
-- no plan or spec approvals go to him
-- public sources are fine; the only hard exclusions are secrets, the Apify proposal and his own outbound (DoD-22)
-- articles and posts are drafted in Claude Docs; page copy is reviewed as a rendered artifact exported from the real built page
-- design needs a design skill and copy needs a copywriting skill
-- pokes only when something blocks work, at most every 30 minutes
+  Everything else is paused: `SESSIONS.md` has the table, with each one's full session id to resume it. Their rows are out of agent view. Alex: "everything else can pause because I don't think the work they're doing is going to survive much contact with my editing."
+- **The legibility pass is done.** Each of the twelve working folders has a `STATUS.md` (written by subagents from its own records, 20:00 to 20:08), and the root `STATUS.md` indexes them, with the finish list in order. That list is the plan now.
+- **Canva is off for every session.** The two Canva MCP connectors ("claude.ai Canva", "plugin:marketing:canva") were already disabled for this project in `~\.claude.json`. The Chrome route is blocked by `orchestration\canva_guard.py`, a PreToolUse hook in every folder's `.claude\settings.json` (0d9115e). To switch Canva on for one folder, put its name in `orchestration\CANVA-ON` ("We can play them one by one"). Delete the file to switch it off. Don't do this without his word.
+- **The clock.** The crash killed `website`'s clock loop. `cc2ff5a3` restarted it hidden at 20:02 (pid 28388), and `website` owns it again. `rig` sends its clock lines to `website`.
 
-Rules he added after that:
-- **"Open tasks.md" is your duty** (Alex, about 18:42): "if I ask you to do something and it doesn't show up there, you missed it somehow." Every request of his gets a row, in the same turn. Move rows as sessions report. "BLOCKED" goes at the start of anything waiting. It's at the repo root and git-ignored, because it lists private items, including his six connection notes for the morning.
-- **The scope map is your duty** (Alex, about 18:5x): the mockup https://claude.ai/artifact/QUtWfgRq4Bcyko4PQNkkVF is his living visual map of the whole site. Every planned item gets a slot on the right page. Green means live, amber means missing, with a "still missing" note. A **bright blue border means it needs Alex**, with a note on exactly what we're waiting for. Every time something new comes up, add its slot, through a subagent that reads the artifact's latest version first and keeps Alex's own edits.
-- **Live is the one source of truth** (Alex, about 18:30, worried about drift). Review artifacts are exported from the real built page. Ship each piece as it's done. One set of picked images: the files website applied (`website\public\people\<slug>.webp`, `website\local\alex\`) are used everywhere.
-- **Fan out** (Alex, about 18:4x): "we've got plenty of usage". Push every session to run its queue as parallel subagents. website is the bottleneck, so copy goes to `s-d7-linkedin-content` and website only builds.
-- Images of people: cite the source, prefer their own websites. Settled.
-- Times on the site: Prague only, "12:24 (Prague)" or just "12:24". Done site-wide.
+## Done this session (18:47 to 20:11)
 
-## In flight at handoff (also in Open tasks.md)
+- The 18:47 handoff steps; the split into three sub-orchestrators (18:56 to 18:59, `briefing` became `orch-briefing`); five peer handoffs closed (s-d9, s-d7, s1, s-d5, s-d6).
+- C19: the agent view's output went on `website\SPEC.md`'s reading list, and the "[redacted]" agent copy was overruled (SPEC section 9).
+- After the crash: everything committed and pushed (19:50).
+- The legibility pass, the pauses, the Canva guard, the four fresh sessions, and the course-change block at the top of each live session's CLAUDE.md and in the root CLAUDE.md. Pushed at 20:09.
+- **Privacy scrub (1f763a6).** The research notes and two handoffs had located a third party's personal details, and other exposures, in the public history of Alex's two old repos (`cb6-prayer-project`, `Factor-AI`). The current files now say only that a clean-up decision is his. **Git history in this repo and in those repos is untouched. Rewriting either is his call.** Don't reintroduce the details in any tracked file.
 
-- **My scope-map subagent** was still running when I wrote this, and it dies with this session. If its report didn't land before the handoff, re-run it from this brief:
-  - drop the "superseded" banner, and put the legend "Scope map: green = live, amber = missing, BLUE border = needs Alex" at the top of every board
-  - give every item in `Open tasks.md` its slot
-  - blue borders on: the LinkedIn posts sign-off, the Canva templates sign-off, the day-one story Doc, the taste-capture review (https://claude.ai/artifact/PkSgwgetjps3sVoNST26ma), the GetSales demo 1 and 2 recordings, the Canva video recording, the Comfy pick, the screen-clips call, and the six page reviews once they arrive
-  - mirror the live site's real content and images, and keep Alex's 9 edits
-- **website (54c2d301)** is running four parallel builders: /about (About-me, headshot, the 34-post LinkedIn wall, the AI-portfolio slot); the six stakeholder review exports, which have s-d7's voice copy plus two fact fixes ("hundreds of LinkedIn posts", the "late start" cut); the welcome, time picker and summary carousel at the top of `/` (my call: the welcome on top of `/`, the feed below); and the long webcam uploads. Then the D12 toggle. It hands off at its next natural stop; when its HANDOFF arrives, stop and remove the predecessor.
-- **s-d7-linkedin-content**: copy for website: the "How this site was built" entry (D8), the welcome copy with its time paths, and the stakeholder section intro. Its LinkedIn sign-off Doc waits on Alex.
-- **s-d5-blog-articles**: article 1, "AI workflows are always a managed service", and article 2, "GTM engineers and the AI jobs promise", both written from his transcripts with block quotes, plus the taste-capture article, now rendered and waiting on Alex.
-- **s1-research**: the AI portfolio story, from `C:\Users\alder\Desktop\AI Work Samples.eml` (only the four items it lists; nothing about the person it's addressed to or the Apify application). It doesn't link the cb6-prayer-project repo until Alex decides on the clean-up.
-- **s-d9-legibility**: the clip index (`legibility\clip-index.md`, three subagents), the best 8 to 12 clips, and the "How content gets picked" entry. The day-one story Doc waits on Alex. Screen clips are cut but held until Alex answers.
-- **s-d1-scraping**: D12, the agent view. `scraping\agent-view\generate.py` builds a pure-Markdown track and /llms.txt from website\content\, and website runs it at build time. Then website adds the person/agent toggle.
-- **s-d3-getsales**: 36 workflows built. It's pre-building both GTM demos entries; both recordings wait on Alex (demo 1 has one typo he fixes by hand first). When rig says RECORDED, it sends CLIP to s-d9.
-- **s-d6-canva-templates** (335b2144): the five templates into Canva through Chrome, using Inter (the Brand Kit button was refused by its permission check; Alex can make the kit himself if he wants the exact fonts). Its sign-off Doc waits on Alex.
-- **s-d10-canva-video**: it also runs S-D11. It's pre-building the D10 and D11 entries; the Canva video recording and the Comfy pick wait on Alex.
-- **addvery-research**: done. The ghostwriting report and the meeting prep are in `Addvery Research\` (private). Alex works with it directly.
+## Open, for you
 
-## Alex's open calls (ask only if he brings it up, or once, briefly)
-
-1. **Screen clips:** may they go public if each one passes a frame check for secrets, the proposal and his own outbound? Until he answers, they're cut and held.
-2. **His two old public repos,** `alderman-ai/cb6-prayer-project` and `alderman-ai/Factor-AI`, outside this project. Each needs a clean-up decision from Alex; the details are with him privately (in `Open tasks.md`, git-ignored). Options: "quick fixes" (he tightens the shared links; a session removes the exposed files in a normal commit; the portfolio doesn't link cb6), "rewrite both" (a force push, only on his explicit go) or "leave them".
-3. **The stray private artifact** https://claude.ai/artifact/AW6Ld5n5CKuBHBX7JR3tj2: delete it only if he says so.
-4. Optional: re-add any of the three left-out LinkedIn posts (14 May, 19 Oct, 27 Oct).
-5. A public-history line in `linkedin-content\SPEC.md` (commit b979ed6) named the CGO beside the personal-brand proposal. The current file is fixed; I recommended leaving the history alone. Only act if he says "scrub it".
-
-## Charter state
-
-C11 to C18 are applied since the last handoff:
-- C11 and C13: the L-05 and L-03 findings on reading lists
-- C14: D3 as two demo entries
-- C15: D11 Comfy brand motion, run by s-d10
-- C16: D9's day-one story, DoD-24
-- C17: D12 agent view, DoD-25, run by s-d1
-- C18: D8 wording (About me, the welcome, the landing pages)
-
-There are now 15 deliverables and 25 DoD items. `propagate check` was clean after s1-research's fix (fcc086e). Earlier (by the 17:13 fork): C04 to C06 (DoD-22 narrowed, D3 per Alex), C10 (two posts), C12 (D4 retired). Every change has its record in `changes\` and its row in SPEC section 9. Archived today: DI-7, DI-8, DI-9, DI-10, OT-03, OT-05, OT-06, OT-07, OT-08, OT-10, OT-11 and OT-12.
-
-## Overnight and the morning
-
-- **OT-10, his answers:** power settings done by him; no usage credits, no pins, and no `CLAUDE_CODE_RETRY_WATCHDOG`. I couldn't confirm Windows Update is paused (the registry shows no pause), and he has been told. With no pins, the context watch's STOPPED flag is the only overnight keep-alive: act on it every run.
-- **YouTube:** long uploads read `allowed` since 18:35 (checked live). The rig's sign-in can't delete videos; Alex deletes the private "TEST control 14m30s" himself.
-- **In the morning, Alex sends the six connection notes by hand** (the text is in `Open tasks.md`). Before then the six pages must be approved and live with their greeting, concerns and reading lists.
+- **Charter, DoD-15** still says "from a 15-minute dictation", but the articles were written from his recorded words. It needs one `change-dod` run, worded from his own instruction (the two-posts change, C10), when an S2 change runs next. Also, the open question "What is D3's second custom message?" is unanswered, and the "Addvery"/"GetSales" spelling question was ticked by a hand edit (9c1afbd).
+- **Doc comments reach nobody,** because the sessions that made the Docs are paused. The live sessions read a Doc when Alex says he's done with it. This is in each live CLAUDE.md.
+- **Found in the pass** (the end of the root `STATUS.md`): the clip upload stopped at 11 of 13; /privacy is live but was never approved; the scope map contradicts the live site; and the scene sheet's step 10 is wrong. These belong to the live sessions, so only watch that they're picked up.
+- **Alex's quick calls** live in `Open tasks.md` and the finish list's item 11, and are `orch-alex-prep`'s to raise, not yours.
 
 ## Rules learned the hard way
 
-- `frontend-design` was installed only for another project of his (Atlas OS), so switching it on here did nothing. It's now installed per project for website, blog-articles, canva-templates, canva-video and linkedin-content, and its skill name is `frontend-design:frontend-design`. For a new visual folder, run `claude plugin install frontend-design@claude-plugins-official --scope project` from that folder, then check it in a fresh `claude -p` session.
-- After a handoff, Doc comments don't reach the fresh session. Its first step is to watch every Doc its predecessor published (ArtifactComments) and read their comments through the Docs connector every 20 minutes (ASKING.md rule 4).
-- A Bash heredoc collapses doubled backslashes, and `\f` turned into a form feed once. Build paths with `chr(92)` in Python, or use Edit, and check for control characters afterwards.
-- I wrote a guessed time into the roster once and had to fix it: take every time from `Get-Date`. Peers' times are often guesses too.
-- Over-caution is the failure Alex hates most ("it needs to stop freezing me"). When a session hides public material or asks him about it, overrule it with the reset rules and his own words.
+- The Bash tool collapses doubled backslashes inside heredocs and commands. `\a`, `\b`, `\f` and `\v` then turn into control characters. Build Windows paths with `chr(92)` in Python, and check written files for control characters afterwards.
+- A literal `%` in a Python `%`-format string breaks it. Concatenate instead.
+- Peers' clock times often run ahead. Take times from `Get-Date`, or from the git commit time.
+- Over-caution is the failure Alex hates most ("it needs to stop freezing me"). But a third party's personal data is not public material: keep it out of tracked files.
