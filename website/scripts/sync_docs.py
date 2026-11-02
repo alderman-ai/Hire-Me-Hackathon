@@ -43,6 +43,8 @@ REDACTIONS = [
 ]
 REDACT_LINES = [
     re.compile(r"^.*\bIvana\b.*\n?", re.MULTILINE),
+    # Change-log and decision table rows about the risk rule itself (S2's C04/C05, 16:3x).
+    re.compile(r"^\|.*\b(?:proposal|own GetSales outbound)\b.*\n?", re.MULTILINE | re.IGNORECASE),
 ]
 DENY = ["proposal", "ivana", "sender profile", "own getsales outbound", "live run on"]
 
