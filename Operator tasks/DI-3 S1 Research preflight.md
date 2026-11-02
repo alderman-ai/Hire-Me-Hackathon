@@ -1,6 +1,6 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
 Intake id: DI-3
 Created: 2026-11-02
 Build goals: []
@@ -56,7 +56,13 @@ Write A, B or C. With B, add your edits underneath as numbered lines.
 
 `<operator_answer>`
 ```a-3-1
+Okay look up on my GitHub repo, the "Knowledge Work Executable Specs" repo (something like that), and look up the research section there: how it works and how we find the definition of done for each thing.
 
+The research is to figure out, when we figure out the methodology of what to do, what should be researched first before we decide on a methodology: to make sure that if there's an easy answer, an obvious answer, or a converged-upon answer, we're using it. If not, we at least know traps and gotchas that we don't fall into, so that when we design the methodology to go from problem to DOD, we have research to guide that process.
+
+We're not just using raw training data, which also means that the research, when done, should be stored at either the parent or child level (depending on if it's global or local research) and added to the reading list of any specs that need it.
+
+Also from that repo I told you to look up, look up how wildcards work and have three wildcard researches on every research list 
 ```
 `</operator_answer>`
 
@@ -85,7 +91,7 @@ Write A, B, C or D. With A, you can change the number of Deep runs; with B, add 
 
 `<operator_answer>`
 ```a-3-2
-
+Again go to my GitHub Knowledge Work executable specs and look how research is done there and scope it to about that size. There should be a list of questions. I don't know off the top of my head how this works. We should look it up: what tool calls are available to us, stuff like that. You'll get a sense of the scope from that document in the repo
 ```
 `</operator_answer>`
 
@@ -123,7 +129,7 @@ Write A, B, C, D or E.
 
 `<operator_answer>`
 ```a-3-3
-
+I'm on this. I'm going to be doing it in the subdirectory Addvery Research. You do not need to build a spec to handle that. I'm going to handle that one-on-one 
 ```
 `</operator_answer>`
 
@@ -157,6 +163,12 @@ Write A, B, C or D.
 
 `<operator_answer>`
 ```a-3-4
+When we go back to the charter and we talk about the expensive actor, shooting a scene, stuff like that, all this research part is the part that should involve me.
 
+I've been at the computer for a long time now. You can assume, wall clock, that right now it's 13:12. You can assume until at least 18:00 that I'm at the computer.
+
+If I'm idle for more than 20 minutes, send it to the question desk and poke me. Actually not 20 minutes: if you're waiting on me for 15 minutes, tell the question desk to alert me that this session name is waiting on me for this, whether that's an operator task that you're waiting on or what.
+
+There'll be a poke system now where it says, "Hey I need you. Tell me you need me." If it's before 18:00 wall clock, then I'll be here and can handle it. Research is part of the preflight check because we don't want to mess that up 
 ```
 `</operator_answer>`

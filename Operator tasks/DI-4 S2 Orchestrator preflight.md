@@ -1,6 +1,6 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
 Intake id: DI-4
 Created: 2026-11-02
 Build goals: []
@@ -38,7 +38,9 @@ Write A, B, or C and what you want instead.
 
 `<operator_answer>`
 ```a-4-1
+It can stay at root and you can have a slash. We can have an orchestration subdirectory for any files that specifically go just to the orchestration tasks (for example, even the templates and stuff that is currently at root). Basically anything at root now.
 
+The orchestration session is the parent session. Its file tree, instead of having it at root, is in this orchestration subdirectory. Every other working directory has its own directory at root. The parent directory's file tree will be in this orchestration directory at the root of the parent Anything currently existing there that's not part of a working directory, and that includes stuff before the charter. That includes the rig, OBS, the website, all that stuff. Those don't move but any templates or anything else like that
 ```
 `</operator_answer>`
 
@@ -69,6 +71,6 @@ Write A, or B followed by the numbers and what you want instead, or C and what y
 
 `<operator_answer>`
 ```a-4-2
-
+Reading lists go into the executable specs, which are not written yet, or at least to my knowledge. Again consult the knowledge work executable spec in my GitHub. Look how it handles research and specs and everything, and go ahead and model the research section after that, 
 ```
 `</operator_answer>`

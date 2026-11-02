@@ -1,6 +1,6 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
 Intake id: DI-2
 Created: 2026-11-02
 Build goals: []
@@ -61,7 +61,9 @@ Write A, or B followed by the rows to change and their new names or statuses, or
 
 `<operator_answer>`
 ```a-2-1
+The subdirectories are fine. Remove the spec number. I don't love it being part of the name to be honest. You can connect each spec to the subdirectory in the spec itself. I don't want it to be in the actual naming of the subdirectories because it's not the final list and I don't want the numbering to be confusing. We might change some things around. This is just one more thing that would break if we didn't remember that we changed the folder names.
 
+In general I hate changing folder names once they're reposted. Take out all of the prefixes, like the S0, SD1, whatever, from the folder name. For the session name I don't care what you name sessions. Actually in sessions, it might actually be helpful to have it. That's fine. 
 ```
 `</operator_answer>`
 
@@ -94,6 +96,8 @@ Write A, B, C, or D and what you want instead.
 
 `<operator_answer>`
 ```a-2-2
+I own this subdirectory. I'm going to be heavily involved in this and we don't need any spec from the project orchestrator from the charter. I'm going to handle this one-on-one and it's also going to be ignored just so we're not posting, even though it's public information inside. I'm handling this so the project orchestrator subdirectory can ignore this for now. I'll let it know or it can check just by the contents.
 
+Important: it'll be getting ignored from the public repo so the orchestrator needs that information. It needs to get it from the local machine not the GitHub repo 
 ```
 `</operator_answer>`
