@@ -9,6 +9,8 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | DI-3 | S1 Research preflight | S1 | 2026-11-02 | Q3.1 Model the research on his Knowledge Work Executable Specs repo. Research comes before the methodology: use an easy or converged answer if one exists, or at least learn the traps. Store findings at the parent or the child level, and put them on the reading list of every spec that needs them. Three wildcard topics on every research list.<br>Q3.2 No number: size the research like that repo's (a list of questions, the tools available).<br>Q3.3 He researches Addvery himself, one-on-one in `Addvery Research\`. No spec for it.<br>Q3.4 Research is preflight and involves him. He's at the computer until at least 18:00 Prague. After 15 minutes waiting on him, poke him through the desk. | S1 (`research\SPEC.md`), S2 (`orchestration\SPEC.md`) |
 | DI-4 | S2 Orchestrator preflight | S2 | 2026-11-02 | Q4.1 `orchestration` stays at the root as the parent session. Its own files, such as the templates, live in `orchestration\`. `OBS\`, `website\` and the other working folders don't move.<br>Q4.2 Reading lists go into the executable specs, modelled on his Knowledge Work Executable Spec repo. Readings 2 to 4 went unaddressed, so they took their defaults (S2's decision log). | S2 (`orchestration\SPEC.md`, root `CLAUDE.md`) |
 | DI-5 | S2 DoD sign-off | S2 | 2026-11-02 | Q5.1 DoD signed off with one change: soften the "research doesn't run without me" wording (DoD-4), since he may relax the research rules if time runs short. | S2 (`orchestration\SPEC.md`) |
+| DI-6 | Decide - how the scraping demo should work | S-D1 | 2026-11-02 | Q6.1 A $10 spending cap on Apify; the setup could happen at once, since he wasn't recording.<br>Q6.2 He scrapes Addvery himself, one-on-one in `Addvery Research\`, with no spec, and summarises the outputs; that is the scraping demonstration. From that research come the top six stakeholders (co-founders, CAIO, RevOps, CEO, CTO, CSO, or directors or equivalents), who get a GetSales alert by 15:30 Prague that the hackathon is happening and they can follow along.<br>Q6.3 Yes, the public site may name Apify.<br>Q6.4 The GetSales demo does no scraping and uses what is already scraped. Two parts: the alert to the six through his own sender profile; then, once the research is done, workflows for each of their ICPs by language by three approaches, in a new GetSales folder he can hide, each opening with a custom message computed before import and imported as a lead field.<br>Q6.5 The scraping demo needs no Apify actors or API of its own: all Apify work happens in `Addvery Research\`, and the demo draws on that research. | S-D1 (`scraping\SPEC.md`), S-D3 (`getsales\SPEC.md`) |
+| OT-01 | Approve - research plan for the whole project | s1-research (S1) | 2026-11-02 | OT-01 Approved the parent research list (four questions plus three wildcards) as it stood, with no changes; ticked at 14:38 on his instruction, relayed by `briefing`: "let's just approve ot1 -- i'm swamped we need to remove blockers". | S1 (`research\CLAUDE.md`, `research\lists\L-01-parent.md`), S2 (`orchestration\SPEC.md`), S-D1 (`scraping\SPEC.md`) |
 
 ## By topic
 
@@ -16,7 +18,9 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | --- | --- |
 | Folders and naming | Q2.1, Q4.1 |
 | `Addvery Research\` ownership | Q2.2, Q3.3 |
-| Research method and budget | Q3.1, Q3.2 |
+| Research method and budget | Q3.1, Q3.2, OT-01 |
+| Scraping demo and Apify | Q6.1, Q6.3, Q6.5 |
+| GetSales outbound and the six | Q6.2, Q6.4 |
 | Orchestration and reading lists | Q4.1, Q4.2 |
 | Desk, pokes and Alex's hours | Q3.4 |
 | Definition of done | Q5.1 |

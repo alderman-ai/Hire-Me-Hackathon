@@ -1,8 +1,9 @@
 ---
 System Primitive: Intake file
-Intake State: Answered
+Intake State: Archived
 Intake id: DI-6
 Created: 2026-11-02
+Archived: 2026-11-02
 Build goals: []
 ---
 

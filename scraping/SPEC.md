@@ -6,7 +6,7 @@ S-D1 is the demo layer for D1. Alex does all the scraping on the Apify API himse
 
 ## 1. Operator preflight (P3)
 
-The preflight was decision intake DI-6 (`..\Operator tasks\Decide - how the scraping demo should work.md`). **Launch gate: met.** Alex answered it on 2 Nov, and the answers are applied below and in §9.
+The preflight was decision intake DI-6 (`..\Operator tasks\Archive\Decide - how the scraping demo should work.md`). **Launch gate: met.** Alex answered it on 2 Nov, and the answers are applied below and in §9.
 
 | DI-6 question | Question | Alex's answer | Applied |
 | --- | --- | --- | --- |
@@ -106,7 +106,7 @@ At launch the session sends `s1-research` exactly one line:
 
 `RESEARCH S-D1: L-01 only (L-02 isn't needed by S-D1, because Alex runs all the scraping himself in Addvery Research; offer L-02 to him for his own work if useful), L-01 R1 on legibility shapes the D1 section, needed by 16:00`
 
-Approving the list is S1's gate, not this session's. L-01 is already with Alex as `..\Operator tasks\Approve - research plan for the whole project.md`.
+Approving the list is S1's gate, not this session's. L-01 is already with Alex as `..\Operator tasks\Archive\Approve - research plan for the whole project.md`.
 
 **Groundwork while research runs:** the folder tree, `.gitignore` and its check, `check_summary.py`, the frame's structure, the desk question, the `OUTPUT` line, and the note to `s-d9-legibility`.
 

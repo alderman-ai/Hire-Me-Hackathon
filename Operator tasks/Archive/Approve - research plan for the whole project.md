@@ -2,12 +2,13 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-01
-Task State: Open
+Task State: Archived
 Gate: wave-2 (parent level) research list L-01
 Requested by: s1-research (for orchestration: "RESEARCH S2: L-01, it feeds every wave-2 spec, needed by 16:00 Prague")
 Snapshot of: research\lists\L-01-parent.md at commit 966d1b6
 Unblocks: the parent-level research every wave-2 spec reads before its methodology: 4 items and 3 wildcards in parallel, then a synthesis
 Created: 2026-11-02 14:11 Prague
+Archived: 2026-11-02
 ---
 
 # Approve the research plan for the whole project
@@ -59,7 +60,7 @@ Nothing about Addvery itself is on it, because you're doing that research yourse
 
 ## Approval
 
-- [ ] I approve
+- [x] I approve
 
 Tick the box to approve as it stands. If something has to change first, leave the box empty and write what to change below. Either way, the requesting session checks this file every 5 minutes while it's blocked.
 

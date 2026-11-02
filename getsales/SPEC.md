@@ -11,7 +11,7 @@ No scraping happens in `getsales\`: all of it is Alex's, in `..\Addvery Research
 
 ## 1. Operator preflight (P3)
 
-**Settled by DI-6, verbatim in `..\Operator tasks\Decide - how the scraping demo should work.md`:**
+**Settled by DI-6, verbatim in `..\Operator tasks\Archive\Decide - how the scraping demo should work.md`:**
 - **A6.2.** Alex scrapes Addvery himself. GetSales takes the top six stakeholders from his research: the co-founders, plus the CAIO, RevOps, CEO, CTO and CSO, or directors or their equivalents. The alert goes "by the end of 15:30 Prague time".
 - **A6.4.**
   - There's no scraping in `getsales\`.
@@ -57,7 +57,7 @@ Paths are relative to `getsales\`. Step 1 of the run confirms that every resourc
 - `..\SESSIONS.md`: the roster. Message sessions only by these names. Edit only S-D3's own row.
 - `..\GIT.md`: shared working-tree rules. Commit only `getsales\`, path-limited.
 - `..\answer-desk\ASKING.md`: the desk format, gates, the poke and the 18:00 rule. `..\answer-desk\qa\S-D3.md`: S-D3's Q&A record, which the desk creates with the first question.
-- `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers. Never re-ask what they settle. `..\Operator tasks\Decide - how the scraping demo should work.md` (DI-6): A6.2 and A6.4, his GetSales decisions, verbatim. `..\Operator tasks\Decide - how the GetSales outbound demo runs.md` (DI-7): this spec's open questions. Either may move to `..\Operator tasks\Archive\` once it's answered; look there if it's gone.
+- `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers. Never re-ask what they settle. `..\Operator tasks\Archive\Decide - how the scraping demo should work.md` (DI-6): A6.2 and A6.4, his GetSales decisions, verbatim. `..\Operator tasks\Decide - how the GetSales outbound demo runs.md` (DI-7): this spec's open questions. Either may move to `..\Operator tasks\Archive\` once it's answered; look there if it's gone.
 - `SPEC.md` (this file), and `HANDOFF.md` if it exists.
 - The charter's "Definition of done" (in `..\CHARTER.md`, written in by S2 as change C03): the signed-off project DoD. Read DoD-12, DoD-13 and DoD-22.
 - `..\orchestration\_templates\Gate approval template.md` and `..\orchestration\check_gate.py`: the gate tasks and their 5-minute check.

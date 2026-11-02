@@ -48,6 +48,7 @@ orchestration\                  the parent session's own files (the session itse
 - `answer-desk\ASKING.md`: the desk format, one question per asker at a time, and the poke rule. `answer-desk\qa\S2.md`: S2's own Q&A record (asker `S2`).
 - `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md`, plus DI-2 and DI-3: the operator's answers, verbatim. Read them for wording, never re-ask them.
 - `Operator tasks\Archive\DI-5 S2 DoD sign-off.md`: the operator's DoD sign-off, verbatim (soften DoD-4). Read it for wording, never re-ask it.
+- `Operator tasks\Archive\Approve - research plan for the whole project.md`: Alex's approval of the parent research list, verbatim. Read it for wording, never re-ask it.
 - The decision intake template, in `orchestration\_templates\`: the form of the DoD intake.
 - `bootstrap\SPEC.md`: S0's folder templates, used by `add-deliverable`. `research\SPEC.md`: S1's `FINDINGS` message and its findings index.
 - `orchestration\HANDOFF.md` and the newest `orchestration\changes\` records: state after a fork.
