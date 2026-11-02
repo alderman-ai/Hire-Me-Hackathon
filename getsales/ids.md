@@ -39,7 +39,7 @@ All created 2 Nov between 17:27 and 17:34 Prague in the folder above, with Alex'
 | 20 | Demo · Consumer lending · CS · problem | `7dae781b-6d0b-4e88-96a2-b336e25b5276` |  |
 | 21 | Demo · Consumer lending · CS · proof | `64a2c8b2-6c0c-4936-b368-8b21217bef54` |  |
 | 22 | Demo · Consumer lending · DE · signal | `49faff14-4401-410d-adef-f2276848b106` |  |
-| 23 | Demo · Consumer lending · DE · problem | `cff86c0b-0c77-4c51-a03c-d8da83afba70` | follow-up 1 (nodes 7, 21) reads "Folienätzen", should be "Foliensätzen": a fix in the GetSales UI; the API edit is gated for Alex's approval |
+| 23 | Demo · Consumer lending · DE · problem | `cff86c0b-0c77-4c51-a03c-d8da83afba70` | follow-up 1 (nodes 7, 21) reads "Folienätzen", should be "Foliensätzen": a fix in the GetSales UI; the API edit is gated for Alex's approval (retried 17:41, still gated, token not committed) |
 | 24 | Demo · Consumer lending · DE · proof | `baa46176-05ad-490b-9c5e-9385144fc842` |  |
 | 25 | Demo · Consumer lending · EN · signal | `6c3f80d9-786c-402c-a089-028f32055d80` |  |
 | 26 | Demo · Consumer lending · EN · problem | `80763c5f-2ca3-4b18-9acb-23007caa2961` |  |
