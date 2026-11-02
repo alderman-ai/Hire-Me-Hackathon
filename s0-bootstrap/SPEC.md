@@ -6,14 +6,14 @@ S0 turns the charter into a project where every other spec can launch in paralle
 
 ## Operator preflight (P3)
 
-S0 needs one thing from the operator: approval of the directory plan below. The charter says: "One approval of the directory plan before anything is written." One existing folder needs a second answer. Both go to the answer desk (P4) in the `..\answer-desk\ASKING.md` format, sent together in the opening round.
+S0 needs one thing from the operator: approval of the directory plan below. The charter says: "One approval of the directory plan before anything is written." One existing folder needs a second answer. Both are in decision intake DI-2, `..\Operator tasks\DI-2 S0 Bootstrap preflight.md`, which the operator answers in Obsidian; they are not sent to the answer desk.
 
 | Id | Question | Default if unanswered (P5) | Status |
 | --- | --- | --- | --- |
-| S0-Q1 | Approve the directory plan below? | Approve as shown | draft |
-| S0-Q2 | Which spec owns `Addvery Research\`, and may S0 rename it to `s-d2-addvery`? | S-D2's folder under its current name, session `addvery-research` | draft |
+| Q2.1 (DI-2) | Approve the directory plan below? | Approve as shown | draft |
+| Q2.2 (DI-2) | Which spec owns `Addvery Research\`, and may S0 rename it to `s-d2-addvery`? | S-D2's folder under its current name, session `addvery-research`; S1's, still unrenamed, if Q3.3 in DI-3 gives the Addvery research to S1 | draft |
 
-If either is still open when S0 launches, S0 sends it in the ASKING.md format, built from this section, and goes on with step 2 while it waits.
+**Launch gate.** The S0 session isn't launched until the operator says "DI-2 is ready". From then on, an empty fence means the default named in that question.
 
 ### Directory plan
 
@@ -25,7 +25,7 @@ Rule: a folder's name is its session's name, lowercase and hyphenated, so ListAg
 | S1 Research | `s1-research\` | `s1-research` | new |
 | S2 Project orchestrator | `s2-orchestrator\` | `s2-orchestrator` | new |
 | S-D1 Scraping research demo | `s-d1-scraping\` | `s-d1-scraping` | new |
-| S-D2 Company and stakeholder research | `s-d2-addvery\` | `s-d2-addvery` | adopted from `Addvery Research\`, pending S0-Q2 |
+| S-D2 Company and stakeholder research | `s-d2-addvery\` | `s-d2-addvery` | adopted from `Addvery Research\`, pending Q2.2 |
 | S-D3 GetSales outbound demo | `s-d3-getsales\` | `s-d3-getsales` | new |
 | S-D4 Blog pipeline | `s-d4-blog-pipeline\` | `s-d4-blog-pipeline` | new |
 | S-D5 Three blog articles | `s-d5-blog-articles\` | `s-d5-blog-articles` | new |
@@ -44,7 +44,7 @@ Notes on the plan:
 - If the S1 or S2 spec already sits in a folder with another name when S0 runs, S0 adopts that folder and its name.
 - `Operator tasks\`, `_templates\` and `.obsidian\` are not session folders. S0 leaves them alone.
 - Brand capture feeds S-D6 and S-D7 but has no row in the spec outline, so it gets no folder until the charter's open question on its owner is settled.
-- Reading lists of adopted folders, as of 2 Nov: `website` and `rig` name `..\GIT.md` but not `..\CHARTER.md` or `..\answer-desk\ASKING.md`, so S0 asks those two sessions to add them. `answer-desk` (asking format first, then part of the charter) and `watcher` (git rules only) keep their narrower lists on purpose. Approving S0-Q1 approves these two exceptions to the charter's "a reading list that starts with this charter".
+- Reading lists of adopted folders, as of 2 Nov: `website` and `rig` name `..\GIT.md` but not `..\CHARTER.md` or `..\answer-desk\ASKING.md`, so S0 asks those two sessions to add them. `answer-desk` (asking format first, then part of the charter) and `watcher` (git rules only) keep their narrower lists on purpose. Approving Q2.1 approves these two exceptions to the charter's "a reading list that starts with this charter".
 
 ## Spec contract
 
@@ -55,7 +55,7 @@ Notes on the plan:
    - DoD-S0-d (to be assigned by S2): the answer desk ported and running.
    - DoD-S0-e (to be assigned by S2): a documented launch for every spec session, which can then message the answer desk and the others.
 2. **Its neighbours.** Depends on: the charter handed to Claude Code (done). The charter runs S0 alone; in practice `website`, `rig`, `answer-desk`, `watcher` and `orchestration` already run, and S0 works around them without touching their folders. Unblocks: S1 and S2, in parallel, then every wave-2 spec as its inputs arrive. S0 runs inside today's operator window (P6), because its one approval needs him.
-3. **Operator preflight (P3).** Above: S0-Q1 and S0-Q2.
+3. **Operator preflight (P3).** Above: Q2.1 and Q2.2, in DI-2.
 4. **Decision log (P5).** Below.
 5. **Forking gates (P8).** Below.
 6. **Its working directory.** `s0-bootstrap\`. Reading list, in order: `..\CHARTER.md`, `..\GIT.md`, `..\answer-desk\ASKING.md`, then this SPEC.md. Read `..\answer-desk\CLAUDE.md` before step 9.
@@ -74,11 +74,11 @@ The settings file keeps the root CLAUDE.md, which holds the orchestration sessio
 
 Tick each step in this file when it's done and commit this folder per `..\GIT.md` (P1). The ticks are the handoff state at a forking gate.
 
-1. [ ] **Start.** Load SendMessage and ListAgents with ToolSearch `select:SendMessage,ListAgents`. Check that `answer-desk` and `orchestration` are running; if the desk isn't, tell `orchestration` and wait for it. Send any open preflight question to the desk.
-2. [ ] **Audit, read-only, while answers come in.** Run `claude agents --json` and note every session's name and working directory. Confirm which planned folders exist, whether a session runs in `Addvery Research\`, and the reading lists of the adopted folders. Write nothing yet.
-3. [ ] **Settle S0-Q1,** waiting at most until its deadline. Apply the answer or the default, and log any default.
+1. [ ] **Start.** Load SendMessage and ListAgents with ToolSearch `select:SendMessage,ListAgents`. Check that `answer-desk` and `orchestration` are running; if the desk isn't, tell `orchestration` and wait for it (step 9 needs it). Read the answers to Q2.1 and Q2.2 from DI-2's fences, `..\Operator tasks\DI-2 S0 Bootstrap preflight.md`. Send nothing to the desk.
+2. [ ] **Audit, read-only.** Run `claude agents --json` and note every session's name and working directory. Confirm which planned folders exist, whether a session runs in `Addvery Research\`, and the reading lists of the adopted folders. Write nothing yet.
+3. [ ] **Apply Q2.1.** Apply the answer, or the default if its fence is empty, and log any default.
 4. [ ] **Create the new folders.** Delegate to one subagent (P7): for each `new` row, the folder, its `CLAUDE.md` and its `.claude\settings.json`, from the templates below. S-D9's reading list also gets `..\OBS\rig\RUNBOOK.md`. No SPEC.md and no other files.
-5. [ ] **Adopt `Addvery Research\`** per S0-Q2. If a session runs in it, message that session instead of acting. Otherwise rename it if the answer says so (it's untracked, so a plain folder rename; if Windows refuses because the folder is in use, keep the name and log it), add the settings file, and put the template's header and reading list above the operator's text, which stays word for word.
+5. [ ] **Adopt `Addvery Research\`** per Q2.2. If a session runs in it, message that session instead of acting. Otherwise rename it if the answer says so (it's untracked, so a plain folder rename; if Windows refuses because the folder is in use, keep the name and log it), add the settings file, and put the template's header and reading list above the operator's text, which stays word for word.
 6. [ ] **Ask adopted owners for their reading lists.** One message each to `website` and `rig`: add `..\CHARTER.md` first and `..\answer-desk\ASKING.md` to your CLAUDE.md reading list, without `@` imports, then commit. Don't wait for the replies.
 7. [ ] **Commit the scaffolds.** S0 owns a new folder's scaffold until that folder's session first launches. Stage with `git add -- <folder>/...` for each folder from steps 4 and 5, check `git diff --cached --name-only`, then make one commit: `git commit -m "[s0-bootstrap] Scaffold spec folders" -- <those folders>`. Never commit another session's folder.
 8. [ ] **Check every folder.** A fresh subagent compares each folder from steps 4 and 5 with the templates: settings identical, the first three reading-list lines present and in order, no `@` imports, and a launch line whose folder and session match the plan. S0 fixes any miss and commits again.
@@ -139,8 +139,8 @@ S0 is done when any spec session can be launched from its own directory, reads i
 | Every new folder, and `Addvery Research\` or its renamed successor, has a CLAUDE.md that passes the step 8 check and the standard settings file | DoD-S0-b (to be assigned by S2) |
 | `website` and `rig` have been asked to add the charter and ASKING.md to their reading lists | DoD-S0-b (to be assigned by S2) |
 | `..\GIT.md` is adopted as the convention, and every S0 commit is path-limited, on `main` and unpushed | DoD-S0-c (to be assigned by S2) |
-| `answer-desk` is running and queued S0's questions | DoD-S0-d (to be assigned by S2) |
-| `s0-probe`, launched from a new folder, reported that folder as its working directory, `..\CHARTER.md` as reading-list item 1, and `S0-Q3 queued` from the desk | DoD-S0-e (to be assigned by S2) |
+| S0's preflight answers were read from DI-2 and applied | DoD-S0-a (to be assigned by S2) |
+| `s0-probe`, launched from a new folder, reported that folder as its working directory, `..\CHARTER.md` as reading-list item 1, and `S0-Q3 queued` from the desk | DoD-S0-d and DoD-S0-e (to be assigned by S2) |
 | Every new folder's CLAUDE.md holds its launch command, and `orchestration` has the handover message | DoD-S0-e (to be assigned by S2) |
 
 ## Decision log (P5)
