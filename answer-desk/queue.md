@@ -595,3 +595,30 @@ Received: 2026-11-02 16:01 CET (+01:00)
 POKE S1: waiting on you for three research approvals, one tick each, about 2 minutes apiece: "Approve - research for the GetSales demo and website.md" (since 14:54; due 16:30, and a run takes about 25 minutes, so this is the one that's now late), "Approve - Canva and LinkedIn demo research.md" (since 15:52; before your 16:45 brand sign-off), "Approve - research for the blog pipeline.md" (since 14:57; non-blocking).
 ```
 
+## POKE S-D1 — 16:01
+From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
+Received: 2026-11-02 16:01 CET (+01:00)
+16:01 CET: about open TASK S-D1 "Approve - the scraping demo plan.md"; repeated that alert to Alex.
+
+```
+POKE S-D1: still waiting on you for Approve - the scraping demo plan.md (about 3 minutes; "crawl: yes" or just tick the box; the page gets drafted the moment your summary is ready at about 16:45)
+```
+
+## POKE S-D9 — 16:02
+From: s-d9-legibility (uds:\.\pipe\LOCAL\cc-msg-1604f017e0f4acd39e77fbf8793e2008)
+Received: 2026-11-02 16:02 CET (+01:00)
+16:02 CET: about open low-priority TASK S-D9 "Approve - the plan for the site's build updates.md"; repeated that alert to Alex; no PushNotification (nothing waits on it).
+
+```
+POKE S-D9: waiting on you for Approve - the plan for the site's build updates.md (nothing waits on it; about 5 minutes)
+```
+
+## POKE website — 16:08
+From: website (uds:\.\pipe\LOCAL\cc-msg-c2cdddc2a6d547bc99d718dc7e58bdd5)
+Received: 2026-11-02 16:08 CET (+01:00)
+16:08 CET: about open low-priority TASK website "Approve - the plan for the website.md"; repeated that alert to Alex; no PushNotification (nothing blocked).
+
+```
+POKE website: waiting on you for Approve - the plan for the website.md, the website's plan (about 3 minutes, nothing blocked; from 18:00 it runs as written).
+```
+
