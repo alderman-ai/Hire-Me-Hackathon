@@ -53,7 +53,11 @@ s2-orchestrator\
 6. Dry-run all four skills against a scratch copy of the tree outside the repo (under `%TEMP%`, so no second charter copy sits in the project). Then take forking gate F1.
 7. From then on, serve change requests until the morning cleanup session. Commit after every finished step (P1, `..\GIT.md`).
 
-**Who writes where.** S2 writes `CHARTER.md`, its own folder, and its own intake files in `..\Operator tasks\`. Before F1, `CHARTER.md` belongs to the orchestration session (GIT.md), so S2 tells `orchestration` before each charter write and commits only that path: `git commit -m "[s2-orchestrator] <change>" -- CHARTER.md`. Every other folder belongs to its session: S2 sends the owner the edit and never writes there itself, except in a folder with no running owner (ListAgents), where no session can be clobbered. S2 updates only the file; the Claude app copy of the charter stays a snapshot (charter, "Risks").
+**Who writes where (`..\GIT.md`, ownership).**
+- **`CHARTER.md`:** S2 changes it through its skills, before F1 as well as after; no other session edits it. S2 commits only that path (`git commit -m "[s2-orchestrator] C<nn>: <change>" -- CHARTER.md`) and tells `orchestration`, which owns the root files, in one line afterwards. S2 updates only the file; the Claude app copy of the charter stays a snapshot (charter, "Risks").
+- **S2's own files:** its folder, any new spec folder it creates (its own until that folder's session starts), and its intake files in `..\Operator tasks\`.
+- **Files in other sessions' folders, before F1:** S2 hands each edit to `orchestration` as `S2 EDIT C<nn>: in <file>, <edit>`. The orchestration session applies it directly, tells the owner afterwards, and replies `DONE C<nn>`.
+- **After F1:** the direct-edit right passes to S2 (under Q4.1 B; under A it stays with `orchestration`, which then runs the skills). `propagate` writes every dependent file itself, commits each with a path-limited commit (`-- <folder>/<file>`), and tells each owner afterwards in one line: `S2 changed <file> for C<nn>: <what>.`
 
 ## 4. How every change runs
 
@@ -68,8 +72,8 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 **The five steps.** Every skill runs them; steps 3 to 5 always go through `propagate`.
 1. **Plan.** Work out every edit from the table below. Write the change record `changes\C<nn>-<slug>.md`: the request, who asked, the approval, and for each place the text before and after.
 2. **Preview.** S2 may have only one question on the desk at a time (`..\answer-desk\ASKING.md`), so every preview first joins the preview queue below. When the desk holds no S2 question, S2 sends `answer-desk` one ASK under the next free S2-Q id (from S2-Q1; the preflight used DI-4's ids), Critical `no`, a 15-minute deadline. It covers every change then waiting in the queue, rewritten in light of the last answer: each change in one line, its charter lines before and after, every other place it touches, and options (a) apply all, (b) apply all except the C numbers named, or with the changes named, (c) drop all. Reading-list lines from S1, and mechanical follow-ons of a change already previewed (placeholder swaps, broken references), skip this step so the desk isn't flooded (P4). If a change on the desk goes stale, S2 sends `REPLACE <id>` with a new block, or `WITHDRAW <id>`. A `CHECK <id>` from the desk gets `CURRENT`, `REPLACE` or `WITHDRAW` at once.
-3. **Apply.** On (a), (b) or the deadline: write S2's places and send each owner `S2 CHANGE C<nn>: in <file>, <edit>. Reply DONE C<nn> once committed.` A request that reaches preview was already approved by the operator in substance, which is why the deadline applies it.
-4. **Verify.** Read every place back. An owner with no `DONE` after 15 minutes gets one reminder, then stays listed as open in the record.
+3. **Apply.** On (a), (b) or the deadline: `propagate` writes the charter and S2's own files, and every other dependent file as "Who writes where" (section 3) sets it: handed to `orchestration` before F1, written directly after it. A request that reaches preview was already approved by the operator in substance, which is why the deadline applies it.
+4. **Verify.** Read every place back. Before F1, a handoff with no `DONE` from `orchestration` after 15 minutes gets one reminder, then stays listed as open in the record.
 5. **Log.** If applied on the deadline, log it in section 9 and send the desk `WITHDRAW <id>`. A later answer is applied as a new change. Then send the next ASK if the queue isn't empty.
 
 **Preview queue.** Changes planned but not yet on the desk, oldest first. A change leaves this table when it goes out in an ASK.
@@ -86,8 +90,8 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 | Definition of done | charter: "Definition of done" | S2 |
 | Research reading list | charter: "Research reading list" | S2, with content from S1 only |
 | Open questions | charter: "Risks and open questions" (tick the box, note the answer) | S2 |
-| CLAUDE.md reading lists | each sibling folder's CLAUDE.md | the folder's owner, on S2's message |
-| Specs' DoD links | each SPEC.md: its place and its own definition of done | the folder's owner, on S2's message |
+| CLAUDE.md reading lists | each sibling folder's CLAUDE.md | before F1, `orchestration` on S2's handoff; after F1, S2. The owner is told afterwards |
+| Specs' DoD links | each SPEC.md: its place and its own definition of done | before F1, `orchestration` on S2's handoff; after F1, S2. The owner is told afterwards |
 | A new spec's folder | a new sibling folder, from S0's folder templates | S2 creates it; the orchestration session launches it |
 | The site's deliverables view (D8) | `website\` | `website`, on a one-line notice from S2 |
 
@@ -105,20 +109,20 @@ Each skill takes the project root as a parameter (default `..`), so its dry run 
 - *Trigger:* the operator; a spec that finds a gap, through the desk; `add-deliverable`; `change-outline`; S2's own draft.
 - *Inputs:* to add, the item, how it's checked, the deliverables it traces to, the rows that claim it. To change, the id and the new wording or claims. To drop, the id and why.
 - *Rules:* ids are never renumbered or reused, like principle numbers. A dropped item stays, marked `retired`, so no link breaks. Every live item traces to a deliverable and is claimed by a row.
-- *Updates:* the charter's "Definition of done"; each claiming spec's place and own definition of done (through its owner); the outline, if an item would be left unclaimed (the preview flags it, and the change isn't applied that way).
+- *Updates:* the charter's "Definition of done"; each claiming spec's place and own definition of done; the outline, if an item would be left unclaimed (the preview flags it, and the change isn't applied that way).
 - *Preview:* each item before and after, with its claimants.
 
 **`change-outline`.** Adds, merges or splits a spec outline row.
 - *Trigger:* the operator; a spec orchestrator whose spec is too big (P7) or overlaps another, through the desk; S2's own outline check.
 - *Inputs:* add, as `add-deliverable` but with no new deliverable. Merge, the rows and the surviving id. Split, the row, the new rows, and where each DoD item, dependency and reading-list line goes.
-- *Updates:* the rows; every "Depends on" cell that names an old id; "Run order"; DoD claims, so each item stays claimed; reading-list lines; folders (a split gets a new one; a merge keeps both, and the retired spec's session stops at its next forking gate); the owners of every affected spec, and `orchestration`, which launches and stops sessions.
+- *Updates:* the rows; every "Depends on" cell that names an old id; "Run order"; DoD claims, so each item stays claimed; reading-list lines; folders (a split gets a new one; a merge keeps both, and the retired spec's session stops at its next forking gate); a one-line notice afterwards to the owner of every affected spec, and to `orchestration`, which launches and stops sessions.
 - *Rules:* never deletes a folder or file. A running spec changes shape only at its next forking gate (P8). Split rows keep their id plus a letter (S-D3a, S-D3b); a row with no deliverable of its own gets the id shown in its preview (subject to Q4.2).
 - *Preview:* old and new rows side by side.
 
 **`propagate`.** The engine the other three call, and the only one that writes.
 - *Trigger:* the other skills; a `FINDINGS` message from `s1-research`; an answered charter open question; a hand edit to `CHARTER.md` (S2 diffs the file against its last change record).
 - *Inputs:* what changed in the charter, before and after.
-- *Does:* walks the dependent-places table, writes S2's places, sends owners their edits, verifies (section 4, steps 3 to 5).
+- *Does:* walks the dependent-places table, writes every place (other folders through `orchestration` before F1, itself after), tells each owner afterwards, and verifies (section 4, steps 3 to 5).
 - *Check mode:* reports without writing. Every live DoD item is claimed; every row has a folder whose CLAUDE.md list starts with `..\CHARTER.md`; every DoD id cited anywhere exists; every "Depends on" names a real row; every reading-list line points at a real file. Runs before each sign-off and at each forking gate.
 
 ## 6. The project definition of done
@@ -146,7 +150,7 @@ Each skill takes the project root as a parameter (default `..`), so its dry run 
 | Gate | When | What happens |
 | --- | --- | --- |
 | F1, build done | The DoD and outline are signed off and all four skills pass their dry run | If Q4.1 is B: the orchestration session hands off to a fresh one started in `s2-orchestrator\`. The orchestration part of the root CLAUDE.md moves into this folder's CLAUDE.md. The new session keeps the name `orchestration`, which GIT.md and the watcher use, so the old one stops just before it starts. If A: the skills move into the root's `.claude\skills\`, and `orchestration` runs them from there. Either way, the `s2-orchestrator` session then stops. |
-| F2, context | Context about half full, or ten change records since the last fork | Finish the current change. Write `HANDOFF.md`: open changes and owners without `DONE`, the S2-Q on the desk and its deadline (the preview queue is already in this file), open intakes, held requests, decisions since the last fork. Commit. Launch `claude --bg -n s2-orchestrator-<n+1> "Read CLAUDE.md, then HANDOFF.md. You are now the active S2 session."`, wait for its reply, then stop. After F1 under B, this is the orchestration session's own gate. |
+| F2, context | Context about half full, or ten change records since the last fork | Finish the current change. Write `HANDOFF.md`: open changes and handoffs to `orchestration` without `DONE`, the S2-Q on the desk and its deadline (the preview queue is already in this file), open intakes, held requests, decisions since the last fork. Commit. Launch `claude --bg -n s2-orchestrator-<n+1> "Read CLAUDE.md, then HANDOFF.md. You are now the active S2 session."`, wait for its reply, then stop. After F1 under B, this is the orchestration session's own gate. |
 | F3, window closes | Shortly before the operator window ends (P6) | Run F2, so the overnight session starts with a clean record. |
 
 **Announcement.** At every gate, the new session sends `ACTIVE S2: <old> -> <new>. Send S2 REQUEST, FINDINGS and DONE messages, and answers to S2-Q*, to <new>.` to `answer-desk` (with the S2-Q id on the desk, if any), `orchestration`, `s1-research`, `watcher`, and every running spec session.
