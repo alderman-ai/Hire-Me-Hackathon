@@ -34,9 +34,12 @@ Nothing goes on the site except through this session.
 | DI-XX question | Question | Default |
 | --- | --- | --- |
 | 1 | Addvery branding: when, and from what | Visual identity only, from his brand capture, applied in one pass. The words stay in his voice. |
-| 2 | What each stakeholder section shows | Role-led: the person's name and public title, a note from him on what the project means for that role, and the demos and moments for that role. No photo, and nothing about them beyond name and title. |
+| 2 | What each stakeholder section shows, and how public it is | Named and role-led: the person's name and public title, a note on what the project means for that role, and the demos and moments for that role, under the content rule in §7. Public only after that person has had notice. No photo, and nothing about them beyond name and title. |
 | 3 | What drawn from `..\Addvery Research\` may be committed to the public repo | Nothing. The brand values and the section text sit in the git-ignored `local\` folder, which still deploys. |
 | 4 | When he reviews the stakeholder sections | As soon as the draft is ready. About 10 minutes, with the recording paused. |
+| 5 | Who writes the note in each section (L-01 Q6, Q24) | The agents draft two lines per person, and he rewrites each in his own words at the review. All six get one framing unless he says otherwise. |
+| 6 | What the site leads with (L-01 Q7, Q9) | The systems demos first (GetSales, scraping, the clip-to-site analyser), with the content work after them as his own hand. |
+| 7 | What happens to the sections on a no (L-01 Q16) | Any person's objection takes their section down at once. On a no from Addvery, the six come down and the rest stays as his public portfolio. |
 
 The site's structure isn't asked: part 1 needs it now, and it follows Alex's 14:00 ask for a live feed (§9).
 
@@ -172,9 +175,16 @@ At launch the session sends `s1-research` one line: `RESEARCH S-D8: a new S-D8 l
 
 The spec-draft gate (§7 step 6) goes out once L-01's synthesis lands, and blocks nothing in part 1. If the S-D8 list hasn't run by 17:00, the session sends the spec draft on L-01 alone, and says so in the task.
 
+**Findings (15:05).** L-01 landed at about 15:00, R3 included, so the stakeholder sections no longer wait on research, only on Alex. S1 kept a separate S-D8 list, L-06, which waits on Alex's gate "Approve - research for the GetSales demo and website" (OT-03). The spec-draft gate goes out on L-01 alone and says so. If L-06 reports later, step 5 runs again for its findings. The synthesis's S-D8 section (recommendations 8.1 to 8.16) and its questions that name S-D8 are routed like this:
+- **Done before the revision:** 8.1, the preview card (S-D3-B3). 8.2, the notice page `/privacy` (S-D3-B3 and B4). Analytics went on at Alex's direct request at 15:00 (website-Q4), aggregate only, which answers Q17 and 8.10.
+- **Taken into the method below:** 8.3 (the demo page template), 8.4 and 8.5 (the stakeholder content rule and publication order), 8.9 (the deliverables view), 8.13 (the hand-over checklist), 8.15 (no errors or TODO in public) and X.4 (numbers carry a source).
+- **Asked elsewhere, and the site follows the answer:** Q8 and Q18 (whether the site shows the orchestration layer, and how it frames AI) are on S-D9's gate "Approve - the plan for the site's build updates" (OT-05). Q11 and Q12 (what tonight's visitors see, and which URL the alert carries) are on S-D3's pre-send gate.
+- **Added to the part 2 intake (Appendix A):** Q2 and Q24 (named or role-titled sections, how public, one framing or weighted), Q6 (who writes each note), Q7 and Q9 (what the site leads with, and for which employer type), and Q16 (what happens to the sections on a no, and whether the site doubles as his portfolio).
+- **Decided on a default, changeable at the spec-draft gate (§9):** Q15 (stay on Hobby and keep service-selling language off the site), Q20 (the "not affiliated with Addvery" line, which the spec already plans and `/privacy` already carries) and Q23 (no cold read by outsiders unless Alex names readers).
+
 ## 7. Methodology and steps
 
-**Draft methodology.** The session confirms or revises it once the synthesis lands. It then runs the coherency check: "if we execute this methodology, will that DoD be satisfied?"
+**Methodology, revised at 15:05 on L-01's findings (§6).** The draft was confirmed and extended. The revisions are marked "(L-01)", and the coherency check is at the end of this section.
 
 - **Structure** (part 1: feed and pages, §9).
   - The home page stays as Alex asked: the countdown, the "start here" box, then the feed, newest first.
@@ -183,6 +193,14 @@ The spec-draft gate (§7 step 6) goes out once L-01's synthesis lands, and block
   - The blog lives at `/blog`, with a page for each post (S-D4-B1).
   - In part 2, each stakeholder gets a page. Six links go in the "start here" box once those pages are live.
   - Pages read from content files, so a build request changes content rather than code wherever it can.
+  - (L-01, R1's converged order) Every demo page follows one template, unless its asker's content says otherwise:
+    - an outcome line framed around the reader's problem, not the tool;
+    - a demo of 2 minutes or less, with the result in the first seconds;
+    - a "how it works" in 3 to 4 steps;
+    - the detail behind a toggle;
+    - a short card: the problem, how it was solved, the result, and what broke.
+  - (L-01, W2 C7 item 1) Until the hand-over, the top of the home page stays as Alex asked. At the hand-over it reads as finished: no live countdown and no "Begins", and it says where the six sections are. Intake question 6 sets what leads.
+  - (L-01, 8.15 and X.4) Nothing public carries an error, a broken link or a "TODO". Every number has a source, or is labelled as a projection.
   - Once a wave-2 spec's spec-draft gate is approved, the session may add its page to the spec pages through `scripts\sync_docs.py` and its deny-list.
 - **Brand pass** (part 2, question 1).
   - Every 30 minutes, the session checks `..\Addvery Research\` for the brand capture.
@@ -197,9 +215,18 @@ The spec-draft gate (§7 step 6) goes out once L-01's synthesis lands, and block
   - When they are, the session builds the six sections to question 2's answer, on the local preview only. The content sits in the git-ignored `local\stakeholders.json`, with the same text written out for review in `local\stakeholders-draft.md`, unless question 3 allows it in the repo.
   - The sections never show the live run's messages or anything from `..\getsales\live\`. That folder is S-D3's git-ignored folder, and this session never reads it.
   - The sections also never show anything Alex marks private, or anything on `..\legibility\do-not-post.md`.
+  - (L-01, R3 §7 and R4 rec 1) **The content rule** is R3's table:
+    - **Safe:** the role and what Alex would build for it ("what I'd do for your function"), and company-level facts from Addvery's own public channels.
+    - **Risky but acceptable:** the name and current title, with notice first and one-click removal. So is a short, attributed and linked paraphrase of a public professional statement.
+    - **Kept off:** photos, verbatim LinkedIn posts or screenshots, career history beyond the current role, contact details, personality or "buyer type" profiles, special-category data, connections-only content, and anything about their reaction to the outreach.
+  - Each section carries one line: why it exists, where every fact came from, and "ask and it's removed". It's sourced from company-published material and the role, not LinkedIn.
+  - Two editorial checks before the gate (R4 recs 4, 6 and 7):
+    - its point is clear in about ten seconds, with one small ask;
+    - it would still be useful to its reader if Alex weren't applying, and it doesn't pass verdict on how they run things.
+  - (L-01, R3 §4 and rec 1) **Publication order:** no section goes public before its person has had notice, that is, before the alert's first message linking `/privacy` has gone to them. Question 2 can pick unlisted `noindex` pages instead.
   - They go live only on his approval at the gate (step 8), never on a default.
   - Once they're live, the session sends `s-d9-legibility` the six roles, never the names, so moments sorted by role can be added.
-- **Deliverables view.** This is the feed's `status` post. It lists M0 to M2 and D1 to D10, each with a status. S-D9's posts and the specs' own build requests refresh it. A notice from `orchestration` about a new or changed deliverable is built like a request, and the reply is `BUILT C<nn>: <what changed>`.
+- **Deliverables view.** This is the feed's `status` post. It lists M0 to M2 and D1 to D10, each with a status. S-D9's posts and the specs' own build requests refresh it. (L-01, R1 §6 and 8.9) Done items go first, statuses are in plain words, and the not-started rows never read as a wall. A notice from `orchestration` about a new or changed deliverable is built like a request, and the reply is `BUILT C<nn>: <what changed>`.
 - **Publish check** (DoD-22).
   - Fetch every page of the live site and look for:
     - secret patterns;
@@ -208,8 +235,31 @@ The spec-draft gate (§7 step 6) goes out once L-01's synthesis lands, and block
     - Apify's name, until S-D1 passes on his go-ahead.
   - Confirm every embedded video is webcam footage or one of the allowed screen recordings (§3, CLAUDE.md change 5). The D3 clip must show the six blurred, unless Alex lifted the blur at S-D3's pre-send gate.
   - Scan the tracked tree read-only with `git grep -l` for key and token patterns. Print file names only, never what matched.
+  - (L-01, W2 and 8.15) Check, logged out:
+    - the production alias loads, with no Vercel login and no 503;
+    - the preview card's `og:image` resolves on the alias;
+    - no public page carries an error, a broken link or "TODO";
+    - `/privacy` matches its asker's current text.
   - Log the result in `checks.md`.
   - A hit in another folder goes to its owner and to `orchestration`. A hit on the site comes down at once.
+
+- **Hand-over checklist** (L-01, W2 C7). The last publish check before the morning cleanup runs this list and logs it in `checks.md`:
+  1. The top of the page reads as finished.
+  2. The six sections are live, or the page says plainly why not.
+  3. The production alias serves the final deployment, checked logged out on a phone-sized window.
+  4. The preview card is right. Post Inspector needs Alex's LinkedIn session, so that check is his or is skipped.
+  5. Every embedded video plays logged out.
+  6. The last deploy came from the working tree with the git-ignored `local\` files present.
+  7. The publish check is clean.
+  8. `origin/main` equals local `main` (the watcher's push).
+- **Analytics** (Alex, 15:00: "turn on analytics of this site pls"). Vercel Web Analytics, aggregate and cookieless, disclosed on `/privacy`. No per-person tracking links (R4 rec 9, 8.10). Read it with `vercel api /v1/query/web-analytics/visits/count` and the team id, because the Vercel MCP returns "not found" for this team.
+
+**Coherency check (15:05): "if we execute this methodology, will the DoD be satisfied?"**
+- **DoD-18:** yes, once Alex's six are confirmed and he approves the draft at the gate. Two things are open. A role-titled answer to question 2 needs S2 to confirm it meets "a section for each of the six" (R3 §7 trap). The gate can't close after 18:00 on a default, so DoD-18 may close in the morning (§9).
+- **DoD-19:** yes. `builds.md` already shows additions from S-D9, S-D3 and orchestration as well as Alex, and the deliverables view is kept current.
+- **DoD-22:** yes. The publish check covers the site, the videos and `website\`, and now also the card, `/privacy` and logged-out loads. One open point: W2 and R3 read the D3 clip as sitting inside DoD-22's "own GetSales outbound" ban unless it's redacted. S-D3's rules set the blur, and its gate carries the call.
+- **Served items** (DoD-8, 13, 15, 17, 21): yes, as far as their askers send BUILDs. Each demo page now follows R1's template.
+- No step depends on something no one produces.
 
 **How every spec asks for site work.** This extends CLAUDE.md's rule for S-D9 to every spec.
 - **The request.** A spec asks with one message: `BUILD <spec id>-B<n>: <what to add or change, and where on the page>. Content: <folder>\<file>. Source: <what it shows>.` The content lives in the asker's own folder.
@@ -316,6 +366,14 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, the a
 | 2 Nov, drafting (wave2-specs): the stakeholder sections never go live on a default, even after 18:00. | They name six real people, and CLAUDE.md says they "follow Alex's say on what goes live". | The brief keeps any sign-off the DoD requires open for the morning session. | DoD-18 may close in the morning. |
 | 2 Nov, drafting (wave2-specs): the repo scan prints file names only, and new decisions go here, with `DECISIONS.md` kept as history. | The user's rule is never to print secrets. The spec contract puts the decision log in the spec. | It finds files without exposing secrets, and keeps one log from now on. | None. |
 | 2 Nov, drafting (wave2-specs): the session asks S1 for its own list, though L-01 may cover most of it. | S1 hasn't drafted an S-D8 list, and the brief has every spec ask. | S1 decides whether a list is worth the usage. | One list more or less. |
+| 2 Nov 15:00, closes website-Q4: Vercel Web Analytics is on, aggregate and cookieless, with no per-person tracking links. `/privacy` discloses it (S-D3-B4). | Alex, relayed by the previous `website` session: "turn on analytics of this site pls". The synthesis (8.10, R4 rec 9) says aggregate only, disclosed. | It answers whether anyone visits, and it doesn't track the six. | Turning it off takes one CLI command and removing `<Analytics />`. Per-person links would need his explicit say. |
+| 2 Nov 15:00, S-D3-B3: the preview card is a static `app\opengraph-image.png` rendered in the site's look, and `metadataBase` is the production alias. `/privacy` is unlinked and `noindex` until Alex ticks S-D3's pre-send gate. | The request asked for a static PNG. LinkedIn caches cards for days, so the card carries no times and no names. W2: never a deployment URL. | The card is the first thing the six see, and it stays true all day. | A new card means replacing one PNG and redeploying. LinkedIn may keep showing the old one for up to about a week. |
+| 2 Nov 15:05, step 5: the methodology takes L-01's findings. These are the demo page template (R1), the stakeholder content rule and publication order (R3 §7, R4), the deliverables view ordering (R1 §6), the hand-over checklist (W2 C7), and the publish check's logged-out, card, error and TODO checks. | The research landed at 15:00, and the spec says to revise on FINDINGS. Each item is either assistant-actionable or a default that Alex sees at the spec-draft gate. | It applies the converged findings without spending Alex's time. The calls that are his stay with him (Appendix A). | Text in §7 only. Any item he changes at the gate is one paragraph. |
+| 2 Nov 15:05, L-01 Q15 (Hobby plan): stay on Hobby, and keep service-selling language off the site. | W2 C5. The site is a job application, not a service offer, and Pro costs money. Alex is swamped. | It keeps the site within Hobby's non-commercial terms at no cost. | If Vercel pauses the project, the site is down until he upgrades. Moving to Pro is one dashboard step. |
+| 2 Nov 15:05, L-01 Q20: no question needed for the "not affiliated with Addvery" line. The brand pass already adds it, and `/privacy` already says it. | It was decided at drafting (the brand-pass row above). | Nobody needs to ask twice. | None. |
+| 2 Nov 15:05, L-01 Q23: no cold read by outsiders unless Alex names readers at the spec-draft gate. | Only Alex can pick the readers, and a cold read needs people outside the project. | It costs him nothing unless he wants it. | One hand-over step, if he names readers. |
+| 2 Nov 15:05, routing L-01's S-D8 questions. Q8 and Q18 stay with S-D9's OT-05, and Q11 and Q12 with S-D3's pre-send gate. Q2, Q6, Q7, Q9, Q16 and Q24 go into the held intake, which now holds seven questions. | `s-d9-legibility` asked first and asked not to duplicate. S-D3's gate already carries the alert questions. `orchestration` (C07): "the synthesis questions that name S-D8 belong in your part 2 intake". | Each question reaches Alex once, in the file that decides it. | Moving a question means editing one intake. |
+| 2 Nov 15:05: the spec-draft gate goes out on L-01 alone. S1's S-D8 list, L-06, waits on Alex's OT-03. | §6: "If the S-D8 list hasn't run by 17:00, the session sends the spec draft on L-01 alone". The gate blocks nothing in part 1, so sending it early costs nothing. | Alex sees the plan while he's still at the computer. | If L-06 changes the method, step 5 runs again and the gate snapshot is refreshed. |
 
 ## Appendix A. Held preflight intake
 
@@ -338,13 +396,13 @@ Build goals: []
 
 The website is the end result of today's hackathon: a personalised job application to Addvery, built live over a 12-hour recorded session. Right now it's a build-in-public page. It has the countdown, a "start here" box with your explainer video and the project's plan, and a live feed of updates with the newest on top. Two things will turn it into an application to Addvery: Addvery's look, and a page for each of Addvery's six key stakeholders. Both come from your own Addvery research, which is why you're only seeing this now that your research is in.
 
-You're asked four things: how the branding is applied, what each stakeholder page shows, what may go into the public code repository, and when you review the six pages.
+You're asked seven things: how the branding is applied, what each stakeholder page shows and how public it is, what may go into the public code repository, when you review the six pages, who writes the note on each page, what the site leads with, and what happens to the pages if Addvery says no. The research on personal data and on how this kind of application lands came back at 15:00, and questions 2, 5, 6 and 7 carry what it found.
 
 Once you answer, the website session applies Addvery's look across the site and builds the six pages on a private preview. Nothing about the six people goes live until you've approved it in a separate check of about 10 minutes, and that check happens off camera by default.
 
-The rest of the site doesn't wait on this: the feed, the blog, the demo pages and the videos keep going. Only the branding and the six pages wait. Answering takes about 10 minutes, and nothing here needs you on camera. Please answer before 18:00 Prague; from then, any empty answer takes its default.
+The rest of the site doesn't wait on this: the feed, the blog, the demo pages and the videos keep going. Only the branding and the six pages wait. Answering takes about 15 minutes, and nothing here needs you on camera. Please answer before 18:00 Prague; from then, any empty answer takes its default.
 
-This intake holds 4 decisions. Each one carries its own context, so you can answer them in any order. An empty fence means not answered. Say "DI-XX is ready" when you're done.
+This intake holds 7 decisions. Each one carries its own context, so you can answer them in any order. An empty fence means not answered. Say "DI-XX is ready" when you're done.
 
 # QXX.1 Addvery's branding: what to take from your brand capture
 
@@ -374,34 +432,45 @@ Write A, B, or C and what you want instead.
 ```
 `</operator_answer>`
 
-# QXX.2 What each stakeholder page shows
+# QXX.2 What each stakeholder page shows, and how public it is
 
 The site gets a page for each of the six stakeholders you confirmed in your Addvery Research folder. The site is public, so anyone with the link can read it, and the six are real people. Yesterday you named the roles, "RevOps, CSO, CMO, CEO, CTO, CAIO, COO", and said "finds and sorting clips and messaging by stakeholder is the assistants job".
 
-The project-wide research list includes a question on what GDPR and LinkedIn's terms allow when a site publishes a page about named people. Its answer may not be in yet. Whatever you pick here, you approve each page's actual content before it goes live, and nothing goes live on a default.
+The project's research on personal data came back at 15:00. It isn't legal advice. What it found:
+- No regulator guidance covers a site with pages about several named employees.
+- The safest pages are built around the role, what you'd build for it, and the company's own public material.
+- A name and current job title are acceptable if the person has had notice first and can have the page removed in one click.
+- Photos, LinkedIn posts or screenshots, career history, contact details and personality profiles stay off.
+
+A second study, on how this kind of application lands, found that "what I'd do for your function" pages with their sources shown read as impressive. Profiles of the person read as creepy.
+
+So whatever you pick, every page carries one line: why it exists, where its facts came from, and "ask and it's removed". Its point should be clear in about ten seconds, with one small ask. You approve each page's actual content before it goes live, and nothing goes live on a default.
 
 Your options:
 
-- **A. Role-led, light on personal data.** Each page shows:
+- **A. Named, role-led, public after notice.** Each page shows:
   - the person's name and public job title;
-  - a short note in your words on what this project means for their role;
+  - a short note on what this project means for their role;
   - the demos that matter most to that role;
   - moments from the recordings sorted to that role, added as they come in.
 
-  No photo, and nothing about them beyond their name and title.
-- **B. Person-led.** Everything in A, plus their photo, a link to their public profile, and what your research found about their priorities, with a pitch tailored to each. It's the most personal option, and it puts the most personal data on a public page.
-- **C. Roles only, no names.** Each page is titled by role, for example "For the CMO", with A's content, and no names appear anywhere on the site. It's the safest option, and it still gives six pages that match your list by role.
-- **D. Something else.** Say what.
+  A page goes public only after that person has had the alert's first message, which links the privacy notice. No photo, and nothing about them beyond their name and title.
+- **B. Roles only, no names.** Each page is titled by role, for example "For the CMO", with A's content, and no names appear anywhere on the site. It's the lowest risk. Whether it counts as "a section for each of the six" would need the orchestration session to confirm.
+- **C. A private page per person.** A's content on an unlisted page per person that search engines don't index, sent only to them, plus a public role-titled version as in B.
+- **D. Unlocked on a yes.** A role-titled placeholder for each person that opens into their named page once they say yes to the outreach.
+- **E. Something else.** Say what. That includes a person-led page with photos and their priorities, which the research rates as the most personal and the riskiest.
 
-I recommend A. Each page is addressed to its reader by name, which is the point of a personalised application, and it publishes nothing about them beyond name and title.
+I recommend A. Each page is addressed to its reader by name, which is the point of a personalised application, and it stays inside the research's "acceptable" row: name and title only, notice first, one-click removal.
 
-In every option, the pages never show the messages sent to the six in the GetSales outreach. Those stay in a folder that's kept out of the repository, and nothing from it reaches the site. The pages also never show anything you mark private in your folder.
+By default all six pages get the same framing. If some of the six are much more hands-on with AI than others, say so in the fence, and their pages lean on the machinery more.
+
+In every option, the pages never show the messages sent to the six in the GetSales outreach, or how anyone reacted to them. Those stay in a folder that's kept out of the repository, and nothing from it reaches the site. The pages also never show anything you mark private in your folder.
 
 If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it. The pages still wait for your approval of their content.
 
-This answer affects the six pages, and which recording moments get sorted to them.
+This answer affects the six pages, when each goes public, and which recording moments get sorted to them.
 
-Write A, B, C, or D and what you want instead.
+Write A, B, C, D, or E and what you want instead.
 
 ## AXX.2
 
@@ -470,6 +539,90 @@ Write A, B, C, D, or E and what you want instead.
 
 `<operator_answer>`
 ```a-XX-4
+
+```
+`</operator_answer>`
+
+# QXX.5 Who writes the note on each stakeholder page
+
+Each of the six pages has a short note on what this project means for that person's role. The research on how AI-made work is received came back at 15:00. Visible AI use reads as skill in the machinery: the scraping, the routing, the pipeline. It costs trust in personal lines, and that cost survived honest disclosure. These notes are the most personal text on the site.
+
+Your options:
+
+- **A. The agents draft, you rewrite.** The agents draft two lines per person from the role and the company's public material. You rewrite each one in your own words during the 10-minute review, which adds about 10 minutes.
+- **B. You write them from scratch.** About 2 minutes each, at the review.
+- **C. The agents write them, and you approve them as they are.** This is the fastest, and the research says it's the riskiest for trust.
+- **D. Something else.** Say what.
+
+I recommend A. The lines end up in your voice, and you don't start from a blank page.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it. Nothing goes live before your review either way.
+
+This answer affects the six notes, and how long the review takes.
+
+Write A, B, C, or D and what you want instead.
+
+## AXX.5
+
+`<operator_answer>`
+```a-XX-5
+
+```
+`</operator_answer>`
+
+# QXX.6 What the site leads with
+
+Once the six pages are live, the top of the site becomes the application rather than the build-in-public feed. The research on what a GTM engineer is hired to show found that employers look for someone who builds systems that find accounts, enrich them, personalise outreach and route leads, shown in a short recorded walkthrough. Among today's demos, the strongest fits are the GetSales outbound demo, then the scraping research demo, then the analyser that turns your recordings into site posts. The Canva templates and the Canva video matched no GTM job post, but they're the clearest proof of your own hand and taste. Only you know whether Addvery hires like an agency or an in-house team, and whether the role leans to the pipeline or the data.
+
+Your options:
+
+- **A. Systems first.** The GetSales demo, the scraping demo and the analyser lead. The blog, LinkedIn and Canva work follow, framed as your own hand and as an AI content pipeline.
+- **B. All ten demos carry equal weight,** in the order they were planned.
+- **C. Something else.** Say what, for example a different lead for an agency.
+
+I recommend A. It puts first what the research says this role is hired for.
+
+If you want the headline tuned, add "agency" or "in-house", and "pipeline" or "data", in the fence.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
+
+This answer affects the top of the site and the order of the demo pages.
+
+Write A, B, or C and what you want instead.
+
+## AXX.6
+
+`<operator_answer>`
+```a-XX-6
+
+```
+`</operator_answer>`
+
+# QXX.7 What happens to the six pages if Addvery says no
+
+The site will carry pages about six real people. Under data protection law, if any of them objects, their page has to come down. That part isn't a choice. The research on this kind of application found that the upside is split between the company it targets and everyone else who sees the work, so it's worth deciding in advance what happens on a no.
+
+Your options:
+
+- **A. On a no, the six come down and the rest stays.** Remove the six pages, and keep the rest of the site as your public portfolio.
+- **B. On a no, the pages lose their names.** Each page becomes role-titled ("For the CMO"), and the site stays up as it is.
+- **C. On a no, the whole site comes down.**
+- **D. Something else.** Say what.
+
+In every option, a single person's request takes their own page down at once.
+
+I recommend A. It respects the six, and keeps the work visible to everyone else.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
+
+This answer affects the hand-over, and what the site is after the application.
+
+Write A, B, C, or D and what you want instead.
+
+## AXX.7
+
+`<operator_answer>`
+```a-XX-7
 
 ```
 `</operator_answer>`
