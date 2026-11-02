@@ -20,4 +20,4 @@ Each language row runs the three approaches: signal-led, problem-led, proof-led 
 - **Considered-purchase retail** (kitchens, furniture): one case only. It folds into ICP 1's German row if Alex wants it.
 - **Large enterprises moving AI from pilot to production:** Addvery's current push (their own tool, podcast and hiring), but it has no case study yet. A strong fifth ICP if Alex wants the grid to point where Addvery is heading: Czech and English, 6 more workflows, 39 in total.
 
-**Names in GetSales:** `D3 · <ICP> · <LANG> · <approach>`, for example `D3 · Retail loyalty · DE · proof`.
+**Names in GetSales:** `D3 · <ICP> · <LANG> · <approach>`, for example `D3 · Retail loyalty · DE · proof`. ICP short names: `Retail loyalty`, `Telco CVM`, `Consumer lending`, `Last-mile logistics`. Language codes: CS, SK, DE, EN. The routing sample (`..outing\sample.csv`) uses the same names.
