@@ -13,3 +13,4 @@ One line per check: when, what was new, what got posted. A successor starts from
 | 15:31 | S08 read (covered by website post s08) | aeb9796 | HOLD: no BUILD, REMOVE or CLIP to website until 16:30 (Alex, 15:30, via orchestration). Queue posts in posts/ and send from 16:30. Floor: last live 15:14, so a refresh is due by 16:54 | queue: S08 role tags |
 | 15:45 | none new (S09 recording since 15:17) | 3d16062 15:42 | Alex research landed ~15:34 (C08); brand pass on the site; page per demo /d1 to /d10; outbound grid 33 workflows plus fictional routing sample; scraping output; blog pipeline rehearsal; outreach stage log started in getsales/live-run.md (S09 recording, for the D3 clip) | P6 written, QUEUED until 16:30 (website hold) |
 | 15:47 | (poke check) | 7dc7e55 | Spec-draft gate still OPEN: POKE S-D9 sent to answer-desk; next poke check 16:02 | none |
+| 16:02 | (poke check) | 51be09f | Spec-draft gate still OPEN: second POKE S-D9 sent; next poke check 16:17 | none |
