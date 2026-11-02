@@ -50,6 +50,7 @@ Paths are relative to `canva-templates\`.
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK and ARCHIVE lines, the poke, the 18:00 rule.
 - `..\answer-desk\qa\S-D6.md`: this spec's desk record. The desk creates it with the first question.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's answered intakes, verbatim. The combined gate joins it once archived. Never re-ask what they settle.
+- `..\Operator tasks\Archive\Decide - everything left that needs you.md`: Alex's answers to the intake for everything left (DI-10, 17:23), verbatim; for this spec, Q10.9 (mockups usable as templates, from the pixel-perfect demo) and Q10.10 (each stakeholder profile on a branded background, shown as a carousel in the research section). Read them for wording, never re-ask them.
 - `SPEC.md`: this file.
 - `HANDOFF.md`, if it exists: state after a fork.
 - `..\research\DIRECTORY.md`: S1's index of every report.

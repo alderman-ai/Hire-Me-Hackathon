@@ -8,7 +8,7 @@ S-D5 produces two blog posts, each from about 15 minutes of Alex's dictation, dr
 
 ## 1. Operator preflight (P3)
 
-**No intake** (dropped at the RESTART, 17:13, §9). Under Alex's reset rules (`..\answer-desk\ASKING.md`, 17:00), easy calls are this session's, decided and logged in §9; his only sign-off is the last 10% of each post. His reset intake (`..\Operator tasks\Decide - everything left that needs you.md`) already told him: "the two blog dictations (ready now)" and "each blog post's draft, in a Doc, for your last 10%".
+**No intake** (dropped at the RESTART, 17:13, §9). Under Alex's reset rules (`..\answer-desk\ASKING.md`, 17:00), easy calls are this session's, decided and logged in §9; his only sign-off is the last 10% of each post. His reset intake (`..\Operator tasks\Archive\Decide - everything left that needs you.md`) already told him: "the two blog dictations (ready now)" and "each blog post's draft, in a Doc, for your last 10%".
 
 **Operator scenes.**
 - **Two dictations**, about 15 minutes each, on camera. Each is a Claude Doc with the topic, the decided landing and ask, eight talking prompts and a "Dictate below this line" heading. He dictates into it with Wispr Flow and comments "done". The desk alerts him with a `TASK s-d5-blog-articles: blog dictation <n> is ready to record: <link> ...` line.
@@ -50,6 +50,7 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
 - `..\answer-desk\ASKING.md`: the desk format, TASK lines, the poke, and Alex's reset rules at the top (17:00), which override older text here.
 - `..\answer-desk\qa\S-D5.md`: S-D5's own Q&A record, once the desk creates it.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers; never re-ask them. DI-1: dictation is Wispr Flow, and `/process` runs only when he types it.
+- `..\Operator tasks\Archive\Decide - everything left that needs you.md`: Alex's answers to the intake for everything left (DI-10, 17:23), verbatim; for this spec, Q10.10 (the GTM demos section as a list of blog-style entries). Read them for wording, never re-ask them.
 - `..\Operator tasks\Decide - your three blog posts, topics and timing.md` (in `..\Operator tasks\Archive\` once filed): this spec's preflight answers, verbatim.
 - `..\Operator tasks\Archive\Decide - how the blog pipeline should work.md`: S-D4's preflight intake (DI-8), read only, for its answers on counting the test dictation (question 3), its topic (question 4) and how dictations land (question 2).
 - `SPEC.md`: this file. `HANDOFF.md`: the state after a fork, if it exists.

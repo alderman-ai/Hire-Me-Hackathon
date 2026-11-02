@@ -1,11 +1,13 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Archived
 Intake id: DI-10
 Created: 2026-11-02
+Archived: 2026-11-02
 Build goals: []
 Asker: S2 (orchestration)
 Replaces: OT-12 (scraping page sign-off), folded in as Q10.6
+Answered by: Alex, in the fences, about 17:23
 ---
 
 <!-- File name: "Decide - everything left that needs you.md" -->
@@ -55,7 +57,7 @@ Write "confirmed", or who goes in and who goes out. If empty: confirmed as liste
 
 `<operator_answer>`
 ```a-10-1
-
+approved
 ```
 `</operator_answer>`
 
@@ -69,7 +71,7 @@ Write it in your own words. If empty: the pages make no claim about Czech.
 
 `<operator_answer>`
 ```a-10-2
-
+B1-B2
 ```
 `</operator_answer>`
 
@@ -83,7 +85,7 @@ Write both answers. If empty: the pages don't mention it.
 
 `<operator_answer>`
 ```a-10-3
-
+I've lived in the Czech Republic for 10 years and have a živnostenský list and long-term residency. I'm married to a Czech national 
 ```
 `</operator_answer>`
 
@@ -97,7 +99,7 @@ Write it in your own words, and say whether the minimum may appear on the site (
 
 `<operator_answer>`
 ```a-10-4
-
+Open to either/or or a combination 
 ```
 `</operator_answer>`
 
@@ -116,7 +118,7 @@ Write a, b, c, or a mix. If empty: (a).
 
 `<operator_answer>`
 ```a-10-5
-
+I specifically have a meeting with Ivana tomorrow and this is prep for that meeting 
 ```
 `</operator_answer>`
 
@@ -139,7 +141,7 @@ Write (a) to publish as it stands, (b) followed by your changes, or "LinkedIn: i
 
 `<operator_answer>`
 ```a-10-6
-
+Yep show it off. It's like they should be doing this to their targets too. Like this they should see how it looks 
 ```
 `</operator_answer>`
 
@@ -159,7 +161,9 @@ If empty: (b).
 
 `<operator_answer>`
 ```a-10-7
+We'll break this into two demos. One will be a 3-minute video going through the 36 things, like an intro about JEV classification tools in general and showing the one variable. There's that part: classifying people into ICPs. We'll screen capture something short through OBS and that's basically the demo.
 
+Each of these will be almost like a blog. We'll have a video on top and a summary of the transcript at the bottom so they can either watch it or read it and have it in a blog stylization 
 ```
 `</operator_answer>`
 
@@ -176,7 +180,7 @@ If empty: (a).
 
 `<operator_answer>`
 ```a-10-8
-
+This is the last priority. We can revisit this if everything's finished 
 ```
 `</operator_answer>`
 
@@ -194,7 +198,9 @@ If empty: (a).
 
 `<operator_answer>`
 ```a-10-9
+First this is going to be based on the pixel-perfect branding assets thing. Make sure that's either cloned and explored or just explored through my GitHub.
 
+You're going to make a bunch of mockups of something that could be used as a template right out the gate. If you can't then I want to do something very similar to the Appify thing. Find some coded thing if possible or if not then let's build it ourselves. Give me all the assets I need to build it myself 
 ```
 `</operator_answer>`
 
@@ -211,7 +217,13 @@ If empty: (a).
 
 `<operator_answer>`
 ```a-10-10
+If we're doing web structure I want:
 
+1. The live feed to be the homepage
+2. Background research
+3. GTM demos. That's going to be the videos recorded with GetSales and the eventual pixel-perfect branded assets. We'll introduce the grading rubric thing and those will all live. This will be the content section.
+
+The demo section will basically look like a CMS, like a list of blog entries. Some of them will have a video and some of them will just be purely written. That'll be the GTM stuff, the demos there. A lot of the demos are like the website itself: the building of the website, selecting important content, and all that stuff. A lot of the demos are baked into the website already. The things that are specifically content that's video plus text or just text plus images will go in one section/ Then I think the six decision-maker profiles should be on the research subpage. Here's what we're going to do: we're going to combine the pixel-perfect branded assets and the stakeholder profiles. The branded Canva template thing will be a stakeholder profile, whatever, and we'll have a background for it. Eventually they'll be displayed as a carousel within the research section, the scraping research section 
 ```
 `</operator_answer>`
 
@@ -232,6 +244,9 @@ If empty: nothing to add.
 
 `<operator_answer>`
 ```a-10-11
+I want to do some demo of Comfy but that can be pretty manual. I've got a lot of that set up in a repo elsewhere. I just need some brainstorming of what ideas I can do.
+
+I would like to basically do some mild animations. Take some LinkedIn graphics and apply... Maybe we'll take one of them and we'll show a little 5-second animation. Instead of just having a static image on LinkedIn, we can have a light shimmer. We can have the brand getting some kind of 3D texture to it. It kind of builds itself. I don't know. It's just to show that it's possible to add some energy to the brand through video generation. -- And then I want to create a one-minute video similar to the Gauss rocket thing. You can check that out. It's on the desktop and we have a lot of the skills already built to make that 
 
 ```
 `</operator_answer>`

@@ -46,6 +46,7 @@ Paths are relative to `linkedin-content\`.
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK and ARCHIVE lines, the poke, the 18:00 rule.
 - `..\answer-desk\qa\S-D7.md`: this spec's desk record. The desk creates it with the first question.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's answered intakes, verbatim. DI-XX joins it once archived. Never re-ask what they settle.
+- `..\Operator tasks\Archive\Decide - everything left that needs you.md`: Alex's answers to the intake for everything left (DI-10, 17:23), verbatim; for this spec, Q10.8 (the personal-brand proposal for Ivana is last priority, revisited only when everything else is done). Read them for wording, never re-ask them.
 - `SPEC.md`: this file.
 - `HANDOFF.md`, if it exists: state after a fork.
 - `..\research\DIRECTORY.md`: S1's index of every report.

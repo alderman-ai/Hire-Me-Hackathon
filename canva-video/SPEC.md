@@ -11,7 +11,7 @@ This spec produces a recording of Alex designing in Canva near the end of the da
 | Question | Settled | Source |
 | --- | --- | --- |
 | 1. When, and what he designs | Tonight, once the templates are in Canva: he customises one of the five live. S2-Q1 (17:30 or the morning) was withdrawn | `orchestration` RESTART, 17:13: "Alex is working all night" |
-| 2. Verify the channel, or under 15 minutes | Up to 15 minutes; no channel verification | Alex's Q10.9 (a), in `..\Operator tasks\Decide - everything left that needs you.md` |
+| 2. Verify the channel, or under 15 minutes | Up to 15 minutes; no channel verification | Alex's Q10.9 (a), in `..\Operator tasks\Archive\Decide - everything left that needs you.md` |
 | 3. Screen or webcam | A screen recording, with Canva's private panels off camera; the webcam as a small inset in one corner (§9) | Alex's Q10.9 (a); its default if he leaves it empty |
 
 If `orchestration` relays a different Q10.9 answer, only methodology step 3 and the brief's "What this is" change.
@@ -66,7 +66,8 @@ Paths are relative to `canva-video\`.
   - `..\research\global\L-01-W2-wildcard-delivered.md`: what the six actually get from the alert: the link, the preview card, click timing, and the morning hand-over checklist (C7). Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-W3-wildcard-received.md`: whether AI-made work reads as skill or as a shortcut: the penalty bites on personal lines, not on the machinery. Options for Alex, not decisions. Read only; S1 owns it.
 - `..\orchestration\_templates\Operator task template.md`: the shape `SCENE.md` follows; since the reset, the brief itself goes in a Claude Doc (run step 4).
-- `..\Operator tasks\Decide - everything left that needs you.md`, Q10.9: Alex's answer on how the video is filmed. Read only.
+- `..\Operator tasks\Archive\Decide - everything left that needs you.md`, Q10.9: Alex's answer on how the video is filmed. Read only.
+- `..\Operator tasks\Archive\Decide - everything left that needs you.md`: Alex's answers to the intake for everything left (DI-10, 17:23), verbatim; for this spec, Q10.9 and Q10.11 (the brand motion demo with Comfy, D11, run by this session). Read them for wording, never re-ask them.
 - `..\OBS\rig\RUNBOOK.md`: how the rig records and files sessions. Read only.
 - `..\OBS\Processed\index.json`: the rig's list of filed sessions. It shows which session holds the scene; each filed session's manifest beside it names its screen and webcam files. Read only; the folder is `rig`'s.
 - ffmpeg, local: for the cut and the webcam inset. Step 1 checks it's installed.

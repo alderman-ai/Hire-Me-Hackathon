@@ -1,6 +1,6 @@
 # S-D3 handoff (written 2 Nov 16:55 Prague; to-do updated at RESTART, 17:15)
 
-Read `CLAUDE.md`, then `SPEC.md` (its decision log, §9, is current to 16:45), then this file. **RESTART came at 17:13: start on the to-do below straight away.** First read the reset rules at the top of `..\answer-desk\ASKING.md` (commit 1dc71fc), and `..\Operator tasks\Decide - everything left that needs you.md`. Ask Alex nothing that's already in that file; orchestration relays his answers.
+Read `CLAUDE.md`, then `SPEC.md` (its decision log, §9, is current to 16:45), then this file. **RESTART came at 17:13: start on the to-do below straight away.** First read the reset rules at the top of `..\answer-desk\ASKING.md` (commit 1dc71fc), and `..\Operator tasks\Archive\Decide - everything left that needs you.md`. Ask Alex nothing that's already in that file; orchestration relays his answers.
 
 **Rules since the reset:**
 - Easy calls are yours: decide, log it in SPEC §9, carry on.
@@ -44,7 +44,7 @@ The ids are in `ids.md`. Team: Alex's Team (12269). Folder: "Hackathon demo · A
    - `live\pre-send.md` (each person's full first message, revised after the 16:46 skill pass),
    - stage times in `live-run.md`.
 
-   What's left: make it recordable. A one-screen view of the stages (`alert\sequence.md`'s pipeline table, plus the CSV opened in a viewer) that he can show. Public sources may be shown now (DoD-22 narrowed), but keep it to name, role and the computed message. Check against `..\Operator tasks\Decide - everything left that needs you.md` before deciding what of the six appears on screen.
+   What's left: make it recordable. A one-screen view of the stages (`alert\sequence.md`'s pipeline table, plus the CSV opened in a viewer) that he can show. Public sources may be shown now (DoD-22 narrowed), but keep it to name, role and the computed message. Check against `..\Operator tasks\Archive\Decide - everything left that needs you.md` before deciding what of the six appears on screen.
 4. **When both are ready to record,** send `answer-desk` one line: `TASK s-d3-getsales: the GetSales walkthrough is ready to record: <what he shows, in 3 lines>`.
 5. **After he records:**
    - `CLIP S-D3-C1` to `s-d9-legibility`, with the session or start and end times, his cue words, and the folder name exactly as it shows: "Hackathon demo · Addvery".

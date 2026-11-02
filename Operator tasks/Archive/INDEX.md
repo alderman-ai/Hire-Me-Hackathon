@@ -13,6 +13,7 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | DI-7 | Decide - how the GetSales outbound demo runs | S-D3 | 2026-11-02 | Q7.1 He sends the alert to the six by hand: no automation sends it ("I'm going to do this manually").<br>Q7.2 No view-only GetSales login: the deliverable is a rig video of the setup, scrolled through and explained.<br>Q7.3 Jev: look up typesafe.ai and the existing Jev research; not a question for him. | S-D3 (`getsales\SPEC.md`) |
 | DI-8 | Decide - how the blog pipeline should work | S-D4 | 2026-11-02 | Q8.1 There's no blog pipeline separate from the blogs: it's dead, and the only deliverable is the blog posts.<br>Q8.2 to Q8.5 Void, closed with Q8.1. | S-D4 (`blog-pipeline\SPEC.md`), S-D5 (`blog-articles\SPEC.md`), S2 (`orchestration\SPEC.md`) |
 | DI-9 | Decide - the six stakeholder pages on the site | website (S-D8) | 2026-11-02 | Q9.2 to Q9.7 decided by orchestration at 17:13 on Alex's "clear the plate" instruction, applied by website (4a51cb8): named, role-led pages, live unlinked and noindex, each link sent by Alex himself (Q9.2); the approved page text is committed (Q9.3); no separate review: he edits the text in a Claude Doc and his comment is the sign-off (Q9.4); the agents draft and he rewrites in the Doc (Q9.5); systems first (Q9.6); on a no, the six pages come down and the rest stays (Q9.7). | S-D8 (`website\SPEC.md`) |
+| DI-10 | Decide - everything left that needs you | S2 (orchestration) | 2026-11-02 | Q10.1 The six key people confirmed ("approved").<br>Q10.2 Czech level B1 to B2.<br>Q10.3 He can work and invoice in the Czech Republic (his details are in the file).<br>Q10.4 Open to employed, freelance or a combination.<br>Q10.5 Addvery: the work is prep for his meeting there tomorrow.<br>Q10.6 Publish the scraping page: "Yep show it off".<br>Q10.7 The GetSales demo becomes two demos, each a blog-style entry with a video on top and a transcript summary below: a video of about 3 minutes on classification tools, the 36 workflows and the one variable; and a short screen capture of classifying people into ICPs.<br>Q10.8 The personal-brand proposal is last priority, revisited only when everything else is done.<br>Q10.9 The Canva work builds on his pixel-perfect branded-assets demo: mockups usable as templates straight away, else the Apify-style coded route, with every asset he needs to build it himself.<br>Q10.10 Site structure: the live feed is the homepage; then background research, with the six profiles each on a branded template background, as a carousel in the scraping research section; then the GTM demos as a CMS-style list of entries, video plus text or text only.<br>Q10.11 A new deliverable: a brand motion demo with Comfy (D11), a 5-second animation of one LinkedIn graphic and a one-minute brand video; he runs the Comfy work himself. | S2 (`orchestration\SPEC.md`), S-D1 (`scraping\SPEC.md`), S-D3 (`getsales\SPEC.md`), S-D5 (`blog-articles\SPEC.md`), S-D6 (`canva-templates\SPEC.md`), S-D7 (`linkedin-content\SPEC.md`), S-D8 (`website\SPEC.md`), S-D10 (`canva-video\SPEC.md`), addvery-research (told by message, Q10.1 to Q10.5; its folder is never written) |
 | OT-01 | Approve - research plan for the whole project | s1-research (S1) | 2026-11-02 | OT-01 Approved the parent research list (four questions plus three wildcards) as it stood, with no changes; ticked at 14:38 on his instruction, relayed by `briefing`: "let's just approve ot1 -- i'm swamped we need to remove blockers". | S1 (`research\CLAUDE.md`, `research\lists\L-01-parent.md`), S2 (`orchestration\SPEC.md`), S-D1 (`scraping\SPEC.md`) |
 | OT-02 | Approve - Addvery research is yours, reading lists per demo | S2 (orchestration) | 2026-11-02 | OT-02 Approved both charter changes: the company and stakeholder research, brand capture included, is his own, run one-on-one in `Addvery Research\` with no spec; and the charter's research reading list becomes a pointer to each spec's own. His condition: fold in whatever his research session had since superseded, with no second approval ("Do whatever you need to it and let's clear this out"). Applied 16:30 with the fold-ins: he runs the scraping in his own folder, so his research depends on nothing and feeds the scraping demo. | S2 (`orchestration\SPEC.md`) |
 | OT-03 | Approve - research for the GetSales demo and website | s1-research (S1), for S-D3 and S-D8 | 2026-11-02 | OT-03 Withdrawn unticked at 17:03 by orchestration on Alex's instruction ("clear the plate for me"): he says the research is done, so the GetSales and website research lists don't run. | S1 (`research\SPEC.md`), S-D3 (`getsales\SPEC.md`), S-D8 (`website\SPEC.md`) |
@@ -33,15 +34,18 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | Folders and naming | Q2.1, Q4.1 |
 | `Addvery Research\` ownership | Q2.2, Q3.3, OT-02 |
 | Research method and budget | Q3.1, Q3.2, OT-01, OT-09, OT-04, OT-03 |
-| Scraping demo and Apify | Q6.1, Q6.3, Q6.5, OT-06, OT-12 |
-| GetSales outbound and the six | Q6.2, Q6.4, Q7.1, Q7.2, Q7.3, OT-08, OT-11 |
+| Scraping demo and Apify | Q6.1, Q6.3, Q6.5, OT-06, OT-12, Q10.6 |
+| GetSales outbound and the six | Q6.2, Q6.4, Q7.1, Q7.2, Q7.3, OT-08, OT-11, Q10.7 |
 | Orchestration and reading lists | Q4.1, Q4.2, OT-02 |
 | Desk, pokes and Alex's hours | Q3.4 |
 | Definition of done | Q5.1, OT-11 |
 | Rig: storage and capture | Q1.1, Q1.2, Q1.5, Q1.8 |
 | Rig: sessions, processing and clips | Q1.3, Q1.4, Q1.6, Q1.7, Q1.10 |
-| Stakeholders and clip sorting | Q1.9 |
+| Stakeholders and clip sorting | Q1.9, Q10.1 |
 | Blog posts | Q8.1, Q8.2, Q8.3, Q8.4, Q8.5 |
-| Spec and plan approvals | OT-05, OT-06, OT-07 |
+| Spec and plan approvals | OT-05, OT-06, OT-07, Q10.8 |
 | Overnight run and the computer | OT-10 |
-| Stakeholder pages | Q9.2, Q9.3, Q9.4, Q9.5, Q9.6, Q9.7 |
+| Stakeholder pages | Q9.2, Q9.3, Q9.4, Q9.5, Q9.6, Q9.7, Q10.10 |
+| Alex's own profile for the pitch | Q10.2, Q10.3, Q10.4, Q10.5 |
+| Canva templates and video | Q10.9 |
+| New deliverables | Q10.11 |

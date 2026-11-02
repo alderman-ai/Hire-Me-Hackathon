@@ -29,7 +29,7 @@ No desk question is open. The last poke was at 16:16 (OT-06). No `BUILD` is in f
 
 > Yeah that's fine. This should be basically one page, framed. Imagine if every pitch started with a briefing like this // Then include the artifacts created in the Addvery research subdirectory. You can make a carousel of them maybe or probably a carousel is best so it doesn't eat up so much space. The rest of the stuff is fine but put the actual artifacts that were created first as a carousel with that headline. Then you can put the more boring disclaimer stuff and everything you wrote after that
 
-`orchestration` (17:2x) reads this as **approval with changes, applied with no second approval**. It also answers DI-10 Q10.6 in `..\Operator tasks\Decide - everything left that needs you.md`. Its concrete reading:
+`orchestration` (17:2x) reads this as **approval with changes, applied with no second approval**. It also answers DI-10 Q10.6 in `..\Operator tasks\Archive\Decide - everything left that needs you.md`. Its concrete reading:
 1. One framed page, with the headline **"Imagine if every pitch started with a briefing like this"**.
 2. Then a **carousel of the actual artifacts** made in `..\Addvery Research\`: the canvas pages in `canvas\project\` (`Main.dc.html`, `OrgChart.dc.html`, `Capabilities.dc.html`, `Activity.dc.html`, plus `canvas.json`), and anything else visual there, as images or embeds. The company-level docs in `for-site\` (00 to 06) are already going onto /d2 through `addvery-research-B2`.
 3. Then the rest of the page as it stands: the result, the method, "Show me how", and the disclaimers last.

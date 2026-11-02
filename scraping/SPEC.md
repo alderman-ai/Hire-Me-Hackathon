@@ -41,6 +41,7 @@ Paths are relative to `scraping\`. Step 1 of the run confirms every resource is 
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK lines, the poke, the 18:00 rule.
 - `..\answer-desk\qa\S-D1.md`: S-D1's question record. The desk creates it with the first question.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers, verbatim, and DI-6 once archived. Never re-ask what they settle.
+- `..\Operator tasks\Archive\Decide - everything left that needs you.md`: Alex's answers to the intake for everything left (DI-10, 17:23), verbatim; for this spec, Q10.6 (publish the scraping page, "show it off") and Q10.10 (the site's structure: the research section). Read them for wording, never re-ask them.
 - `..\Operator tasks\Archive\Approve - what the scraping demo section shows.md`: Alex's answer on the scraping section (one framed page, his headline, the research artifacts first as a carousel, then the rest), verbatim. Read it for wording, never re-ask it.
 - `..\Operator tasks\Archive\Approve - the scraping demo plan.md`: Alex's answers to this spec's plan (closed unticked at 17:03, superseded by the scraping-section approval, which approves the plan when ticked), verbatim. Read them for wording, never re-ask them.
 - `..\orchestration\_templates\Gate approval template.md` and `..\orchestration\check_gate.py`: the gate form and its 5-minute check.

@@ -9,7 +9,7 @@ Written 2 Nov at about 17:25 Prague at orchestration's RESTART (17:13), by the s
 - **Copy:** invoke a copy skill first (`design:ux-copy` or `marketing:draft-content`; `marketing:brand-review` checks it). Written work for outside readers is drafted in a **Claude Doc**: invoke `anthropic-skills:docs` before any Docs call. Alex's comment on the Doc is the sign-off. Read the final text back into the repo.
 - **Design:** invoke `frontend-design` for pages and visuals, or `dataviz` for charts. Before anything ships, run `design:design-critique` and `design:accessibility-review`. Name the skill in any subagent's prompt and tell it to invoke the skill first.
 - **One brand source:** `local\addvery\brand\` (BRAND.md, tokens.css), already carried as tokens in `app\addvery-tokens.css`.
-- **What Alex still has to decide** is in one intake: `..\Operator tasks\Decide - everything left that needs you.md`. Orchestration relays each answer. Ask him nothing that's in it.
+- **What Alex still has to decide** is in one intake: `..\Operator tasks\Archive\Decide - everything left that needs you.md`. Orchestration relays each answer. Ask him nothing that's in it.
 - SKILL ON for website (orchestration, 17:13): `frontend-design`, `design:ux-copy`, `marketing:draft-content`, `marketing:brand-review`, `dataviz`, `design:design-critique`, `design:accessibility-review`, `anthropic-skills:docs`.
 
 ## TO-DO, in order (from orchestration's RESTART)
