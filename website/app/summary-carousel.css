@@ -1,0 +1,365 @@
+/* The summary carousel (app/summary-carousel.tsx): a white band between the black welcome and the
+   dark feed head, keeping Addvery's dark-light rhythm. Cards follow their podcast episode card (a
+   16:9 still with the Video badge bottom left and the length bottom right, the tag line, the title)
+   on the grey of their case-study cards. A summary without a video gets the /d1 text card's purple
+   glow, with its title on it. Tokens from addvery-tokens.css; .post-kind from globals.css. */
+
+.sc {
+  --sc-gap: 30px;
+  --sc-bleed: 0px;
+  padding: var(--av-section-pad-y) var(--av-section-pad-x);
+  background: var(--av-white);
+}
+
+.sc-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "head bar"
+    "track track";
+  align-items: end;
+  gap: 48px 32px;
+}
+
+.sc-head {
+  grid-area: head;
+  max-width: 760px;
+}
+
+.sc-heading {
+  color: var(--av-ink);
+  text-transform: none;
+}
+
+.sc-intro {
+  margin-top: 16px;
+  color: var(--av-text-on-light);
+  text-wrap: pretty;
+}
+
+/* Prev, the counter, next. */
+.sc-bar {
+  grid-area: bar;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sc-bar[hidden] {
+  display: none;
+}
+
+.sc-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--av-line-on-light);
+  border-radius: var(--av-radius-pill);
+  background: transparent;
+  color: var(--av-ink);
+  cursor: pointer;
+  transition:
+    border-color var(--av-dur-base) ease,
+    background-color var(--av-dur-base) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sc-btn:not([aria-disabled="true"]):hover {
+    border-color: var(--av-amethyst);
+    background: var(--av-lilac-100);
+  }
+}
+
+.sc-btn:focus-visible {
+  outline: 2px solid var(--av-amethyst);
+  outline-offset: 3px;
+  border-radius: var(--av-radius-pill);
+}
+
+.sc-btn[aria-disabled="true"] {
+  border-color: var(--av-lilac-300);
+  color: #a9a4b2;
+  cursor: default;
+}
+
+.sc-count {
+  min-width: 4.5rem;
+  margin: 0;
+  font-family: var(--av-font-numeric);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sc-count-now {
+  color: var(--av-ink);
+}
+
+.sc-count-of {
+  color: var(--av-text-on-light);
+}
+
+/* The track: native horizontal scrolling, snapped card by card. 8 px of padding all round keeps the
+   cards' focus rings inside the scroll box, which clips. */
+.sc-track {
+  grid-area: track;
+  display: flex;
+  gap: var(--sc-gap);
+  margin: -8px calc(-1 * var(--sc-bleed) - 8px);
+  padding: 8px calc(var(--sc-bleed) + 8px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: calc(var(--sc-bleed) + 8px);
+  scrollbar-width: none;
+}
+
+.sc-track::-webkit-scrollbar {
+  display: none;
+}
+
+.sc-slide {
+  display: flex;
+  flex: 0 0 calc((100% - 2 * var(--sc-gap)) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* ---------- One card ---------- */
+.sc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: var(--av-radius-lg);
+  background: #ededed;
+  color: var(--av-text-on-light);
+}
+
+.sc-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--av-radius-lg) var(--av-radius-lg) 0 0;
+  background: var(--av-plum-900);
+}
+
+.sc-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Static, so the title link's cover (below) spans the whole card; the badges sit in the flow. */
+.sc-cover-text {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 28px 12px;
+  background:
+    radial-gradient(60% 80% at 85% 15%, rgba(102, 69, 235, 0.5), rgba(102, 69, 235, 0) 70%),
+    radial-gradient(50% 60% at 10% 100%, rgba(212, 69, 235, 0.25), rgba(212, 69, 235, 0) 70%),
+    var(--av-ink);
+}
+
+.sc-cover-title {
+  color: var(--av-white);
+  font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.sc-badges {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.sc-badge {
+  padding: 5px 9px;
+  border-radius: var(--av-radius-xs);
+  background: var(--av-badge-bg);
+  color: var(--av-white);
+  font-family: var(--av-font-body-haas);
+  font-size: var(--av-micro-size);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 28px 28px;
+}
+
+.sc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  color: var(--av-amethyst);
+  font-family: var(--av-font-display);
+  font-weight: 500;
+  font-size: var(--av-eyebrow-size);
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-title {
+  color: var(--av-ink);
+  font-size: var(--av-card-title-size);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.sc-line {
+  font-size: 16px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* The title link covers the whole card. */
+.sc-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sc-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--av-radius-lg);
+}
+
+.sc-cover-text .sc-badges {
+  position: static;
+  margin: 0 -16px;
+}
+
+.sc-link:focus-visible {
+  outline: none;
+}
+
+.sc-link:focus-visible::after {
+  outline: 2px solid var(--av-amethyst);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sc-card:has(.sc-link:hover) .sc-title-link,
+  .sc-card:has(.sc-link:hover) .sc-cover-link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+}
+
+/* ---------- Narrower screens ---------- */
+@media (max-width: 991px) {
+  .sc-slide {
+    flex-basis: calc((100% - var(--sc-gap)) / 2);
+  }
+}
+
+/* Phones: one card at a time, running to the screen edges with a peek of the next; the controls
+   move under the track, within thumb reach. */
+@media (max-width: 767px) {
+  .sc {
+    --sc-gap: 12px;
+    /* With the track's own 8 px, this runs it to the screen edges. */
+    --sc-bleed: calc(var(--av-section-pad-x) - 8px);
+  }
+
+  .sc-inner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "head"
+      "track"
+      "bar";
+    gap: 36px;
+  }
+
+  .sc-bar {
+    justify-content: space-between;
+    margin-top: -12px;
+  }
+
+  .sc-slide {
+    flex-basis: calc(100% - 40px);
+  }
+
+  .sc-body {
+    padding: 20px 22px 24px;
+  }
+
+  .sc-cover-text {
+    padding: 22px 22px 12px;
+  }
+
+  .sc-cover-text .sc-badges {
+    margin: 0 -10px;
+  }
+
+  .sc-cover-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .sc {
+    --sc-bleed: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Without JavaScript the buttons can't move the track, so they hide and it scrolls by itself. */
+html:not(.js) .sc-bar {
+  display: none;
+}
+
+html:not(.js) .sc-track {
+  scrollbar-width: thin;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-track {
+    scroll-behavior: auto;
+  }
+
+  .sc-btn {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .sc-card,
+  .sc-btn {
+    border: 1px solid CanvasText;
+  }
+
+  .sc-btn[aria-disabled="true"] {
+    border-color: GrayText;
+    color: GrayText;
+  }
+}

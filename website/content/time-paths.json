@@ -1,0 +1,68 @@
+{
+  "_about": "Copy and reading paths for the welcome at the top of / (app/welcome.tsx) and the heading of the summary carousel under it. Edit freely; no code change needed.",
+  "_source": "intro and paths: COPY s-d7, linkedin-content/local/site-copy/welcome.md (18:50), pasted as written. Keep Alex's ' -- ' as it is (no em dashes).",
+  "_paths": "Each path is a list of site paths in reading order. Titles, one-liners and minutes come from content/inventory.json at build time; an item that's missing there or not live is left out (a /#post-<id> missing from the inventory falls back to content/feed.json, text only). '/for/<your-slug>' is the visitor's own page: it renders as a chooser of the six pages in intro.your_page and counts intro.your_page.min.",
+  "intro": {
+    "headline": "I'm applying to Addvery by doing the job.",
+    "subline": "A research briefing on Addvery, 36 outbound workflows and LinkedIn posts in your brand's voice -- the work a GTM engineer would do for you, already started.",
+    "made_by": "Built in one day, on camera, by me, Alex Alderman. AI agents did the legwork. I made the calls (and was, it turns out, the bottleneck).",
+    "question": "How much time do you have?",
+    "helper": "Pick one. Open the items in order, and stop when your time's up.",
+    "choices": {
+      "5": {
+        "time": "5 min",
+        "label": "One demo, one lesson",
+        "promise": "The research briefing I built on Addvery from $1.24 of scraping, and the day's main lesson."
+      },
+      "10": {
+        "time": "10 min",
+        "label": "The work, and my ask",
+        "promise": "The briefing, what I'd build for your role, and what a day of AI agents actually produced."
+      },
+      "20": {
+        "time": "20 min",
+        "label": "Three demos, and me on camera",
+        "promise": "Three demos built for Addvery, your page, and me on camera grading my own day."
+      },
+      "60": {
+        "time": "60+ min",
+        "label": "The whole build",
+        "promise": "Every finished demo, why I'm doing this, what went wrong, and the full plan the agents worked from."
+      }
+    },
+    "your_page": {
+      "label": "Your page -- pick your role",
+      "min": 3,
+      "pages": [
+        { "path": "/for/ceo", "title": "For Addvery's CEO", "role": "CEO" },
+        { "path": "/for/growth", "title": "For Addvery's Chief Growth Officer", "role": "Chief Growth Officer" },
+        { "path": "/for/delivery", "title": "For Addvery's Chief Delivery Officer", "role": "Chief Delivery Officer" },
+        { "path": "/for/bi", "title": "For Addvery's Head of BI", "role": "Head of BI" },
+        { "path": "/for/cofounder-1", "title": "For Addvery co-founder, Skygena CEO", "role": "Co-founder, Skygena CEO" },
+        { "path": "/for/cofounder-2", "title": "For Addvery co-founder, iMEDIATIC CEO", "role": "Co-founder, iMEDIATIC CEO" }
+      ]
+    },
+    "docs_lead": "The plan the agents work from:"
+  },
+  "carousel": {
+    "heading": "The summaries",
+    "intro": "One card per stretch of the day, newest first. Read these and you have the story."
+  },
+  "paths": {
+    "5": ["/d1", "/#post-insight-bottleneck"],
+    "10": ["/d1", "/for/<your-slug>", "/#post-workflows-built", "/#post-research-in", "/#post-insight-bottleneck"],
+    "20": ["/d1", "/for/<your-slug>", "/#post-workflows-built", "/demos/linkedin-posts-in-addverys-voice-graded-blind", "/#post-s11"],
+    "60": [
+      "/d1",
+      "/for/<your-slug>",
+      "/#post-workflows-built",
+      "/demos/linkedin-posts-in-addverys-voice-graded-blind",
+      "/d2",
+      "/#post-s02",
+      "/#post-reset",
+      "/#post-insight-bottleneck",
+      "/#post-s11",
+      "/docs/charter"
+    ]
+  }
+}
