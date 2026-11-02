@@ -21,7 +21,6 @@ Read this file at startup, and again before you message a session you haven't me
 | `rig` | `OBS\` | The OBS recording rig: /start, /pause, /stop, /process. | |
 | `answer-desk` | `answer-desk\` | Every question for Alex, one at a time; the poke. | |
 | `watcher` | `watcher\` | Hourly git sweep and push. | |
-| `s0-bootstrap` | `bootstrap\` | S0 Bootstrap: rolls out the sister folders, their CLAUDE.md files and roster rows. | Launched 13:39 Prague on 2 Nov. |
 | `accidental-session-kill-recovery` | `OBS\` | Temporary: Alex's recovery session from 13:20 on 2 Nov. | |
 | `briefing` | `briefing\` | Alex's own status session: where everything stands, where he's the blocker, how close to done. Answers from the collector's snapshots and asks no one. Not in the charter. | Launched 2 Nov. |
 | `briefing-build` | repo root | Temporary: a fork of `orchestration` that builds `briefing\`. | Stops once `briefing` is running. |
