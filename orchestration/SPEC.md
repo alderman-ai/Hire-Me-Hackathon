@@ -6,7 +6,7 @@ S2 owns the skills that keep the charter, and everything built from it, consiste
 
 ## 1. Operator preflight (P3)
 
-The charter's spec outline says S2 needs the operator for "nothing beyond review". The preflight was decision intake DI-4 (`Operator tasks\DI-4 S2 Orchestrator preflight.md`), answered in Obsidian. Recordings needed: none.
+The charter's spec outline says S2 needs the operator for "nothing beyond review". The preflight was decision intake DI-4 (`Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md`), answered in Obsidian. Recordings needed: none.
 
 **Launch gate: met.** The operator said "DI-4 is ready". From then on, an empty or unaddressed part of a question takes that question's default and is logged in section 9. There's no session to launch: `orchestration` runs this spec once S0 has handed over (charter, "Run order").
 
@@ -46,7 +46,8 @@ orchestration\                  the parent session's own files (the session itse
 - `GIT.md`: the shared-tree rules, including the orchestration session's right to edit any folder and tell the owner afterwards.
 - `SESSIONS.md`: the roster of official session names. Read it at startup and before messaging a session for the first time.
 - `answer-desk\ASKING.md`: the desk format, one question per asker at a time, and the poke rule. `answer-desk\qa\S2.md`: S2's own Q&A record (asker `S2`).
-- `Operator tasks\DI-4 S2 Orchestrator preflight.md`, plus DI-2 and DI-3: the operator's answers, verbatim. Read them for wording, never re-ask them.
+- `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md`, plus DI-2 and DI-3: the operator's answers, verbatim. Read them for wording, never re-ask them.
+- `Operator tasks\Archive\DI-5 S2 DoD sign-off.md`: the operator's DoD sign-off, verbatim (soften DoD-4). Read it for wording, never re-ask it.
 - The decision intake template, in `orchestration\_templates\`: the form of the DoD intake.
 - `bootstrap\SPEC.md`: S0's folder templates, used by `add-deliverable`. `research\SPEC.md`: S1's `FINDINGS` message and its findings index.
 - `orchestration\HANDOFF.md` and the newest `orchestration\changes\` records: state after a fork.

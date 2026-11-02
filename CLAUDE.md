@@ -12,7 +12,7 @@ The root session is the parent session, named `orchestration`. It coordinates an
 
 It is also the S2 project orchestrator: there is no separate S2 session (DI-4, 2 Nov). It stays at the root, runs `orchestration\SPEC.md` itself once S0 is done, and keeps its own file tree in `orchestration\`. Root files that only this session uses live in `orchestration\`: `_templates\` moved to `orchestration\_templates\` (S0-Q1, 13:43). `website\`, `OBS\` and every other working folder stay where they are.
 
-Reading list for this session as S2, after the charter: `answer-desk\qa\S2.md`, `orchestration\SPEC.md`, `orchestration\HANDOFF.md` if it exists, then the newest records in `orchestration\changes\`. Two background sessions own the work:
+Reading list for this session as S2, after the charter: `answer-desk\qa\S2.md`, `orchestration\SPEC.md`, `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md` (Alex's S2 preflight answers, verbatim), `orchestration\HANDOFF.md` if it exists, then the newest records in `orchestration\changes\`. Two background sessions own the work:
 
 - `website`, in `website\`, adds everything to the Vercel site. Its instructions are in `website\CLAUDE.md`.
 - `rig`, in `OBS\`, runs the OBS recording and its /start, /pause, /stop and /process skills. Its instructions are in `OBS\CLAUDE.md`.
@@ -26,6 +26,7 @@ Every spec and role gets its own sibling folder at the root (charter: standing d
 - `GIT.md`: how all sessions share one working tree on `main` without clobbering each other. The `watcher` session pushes hourly.
 - `answer-desk\ASKING.md`: every question for Alex goes to the `answer-desk` session in that format, never into a session's own chat (charter P4).
 - `SESSIONS.md`: the roster of official session names, folders and roles. Sessions message each other only by these names, and whoever launches, renames, forks or stops a session updates its row in the same step.
+- `Operator tasks\Archive\INDEX.md`: the catalog of every answered intake and operator task; read it before asking Alex something he may already have answered.
 
 Every working folder loads only its own CLAUDE.md (Alex, 2 Nov). When a top-level folder is added, run `python orchestration\sync_claude_excludes.py` from the root; this root session's `*/**` pattern already excludes every child.
 

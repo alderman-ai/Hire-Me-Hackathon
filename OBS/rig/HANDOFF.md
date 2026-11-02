@@ -15,7 +15,7 @@ Read these too:
 
 - `OBS\Pre Hackathon Spec.md`: the executable spec.
 - `OBS\rig\RIG_NOTES.md`: every measurement and decision. Its "Spec changes from DI-1" section **overrides the spec**.
-- `Operator tasks\DI-1 Capture rig decisions.md`: Alex's answers, in his words.
+- `Operator tasks\Archive\DI-1 Capture rig decisions.md`: Alex's answers, in his words.
 
 ## How to work with Alex
 

@@ -16,6 +16,7 @@ This session runs the OBS capture rig, and nothing else. It is the background se
 - Before your first commit, read `..\GIT.md`; it's how all sessions share one working tree.
 - `..\answer-desk\ASKING.md`: every question for Alex goes to the `answer-desk` session in this format, never into your own chat (charter P4). Your asker name is `rig`.
 - `..\answer-desk\qa\rig.md`: every question you've asked Alex and his answers.
+- `..\Operator tasks\Archive\DI-1 Capture rig decisions.md`: Alex's answers to the rig's ten decisions, verbatim. Read them for wording, never re-ask them.
 - `..\SESSIONS.md`: the official name of every session. Message sessions only by those names.
 
 ## The website clock

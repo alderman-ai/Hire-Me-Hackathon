@@ -12,7 +12,7 @@ The public repo has no research section of its own.
 
 ## 1. Operator preflight (P3)
 
-The preflight was decision intake DI-3 (`Operator tasks\DI-3 S1 Research preflight.md`), which Alex answered in Obsidian. **Launch gate: met.** He said "DI-3 is ready" on 2 Nov, and S1 launches after S0, per the run order. Recordings needed: none.
+The preflight was decision intake DI-3 (`Operator tasks\Archive\DI-3 S1 Research preflight.md`), which Alex answered in Obsidian. **Launch gate: met.** He said "DI-3 is ready" on 2 Nov, and S1 launches after S0, per the run order. Recordings needed: none.
 
 | DI-3 | What Alex decided | Applied in |
 | --- | --- | --- |

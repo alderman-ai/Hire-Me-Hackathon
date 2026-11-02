@@ -6,7 +6,7 @@ S0 turns the charter into a project where every other spec can launch in paralle
 
 ## Operator preflight (P3)
 
-S0's preflight was decision intake DI-2, `..\Operator tasks\DI-2 S0 Bootstrap preflight.md`, answered by the operator in Obsidian. **Launch gate met:** he said "DI-2 is ready" on 2 Nov.
+S0's preflight was decision intake DI-2, `..\Operator tasks\Archive\DI-2 S0 Bootstrap preflight.md`, answered by the operator in Obsidian. **Launch gate met:** he said "DI-2 is ready" on 2 Nov.
 
 | Id | Question | His answer, applied below |
 | --- | --- | --- |
