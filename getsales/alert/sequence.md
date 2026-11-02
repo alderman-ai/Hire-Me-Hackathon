@@ -2,7 +2,7 @@
 
 The alert is a short LinkedIn campaign from Alex's own GetSales sender to the six Addvery stakeholders from his research. It says the hackathon is happening, why he's doing it, and that they can follow along. No names live in this folder. The six, their opening lines and the exact rendered text stay in git-ignored `live\`.
 
-Status: **not sent through GetSales.** At 16:44 Alex decided to send the alert to the six himself, by hand ("This is not going to happen through automation"). The pipeline below ran up to the computed `custom message 1`; the drafts, revised after a copywriting-skill pass at 16:50, are in git-ignored `live\pre-send.md` for his own sends. The GetSales flow was never created. Copy: `copy.json`. Graph (unused): `flow-nodes.json`.
+Status: **not sent through GetSales.** At 16:44 Alex decided to send the alert to the six himself, by hand ("This is not going to happen through automation"). The pipeline below ran up to the computed `custom message 1`; the drafts, revised after a copywriting-skill pass at 16:46, are in git-ignored `live\pre-send.md` for his own sends. The GetSales flow was never created. Copy: `copy.json`. Graph (unused): `flow-nodes.json`.
 
 ## Where it lives in GetSales
 
