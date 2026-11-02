@@ -1,59 +1,43 @@
-# S-D7 handoff (forking gate F3, 2 Nov 17:17 Prague)
+# S-D7 handoff (forking gate F3, 2 Nov 18:58 Prague)
 
-From session 6a355ef8 to the fresh `s-d7-linkedin-content`. Read `CLAUDE.md`, then this, then `SPEC.md` §1, §7 and §9 (the decision log's last rows are the live state). Then the reset rules at the top of `..\answer-desk\ASKING.md`, which override the spec where they differ: no gates for Alex except the brand sign-off, easy calls are yours (decide and log), public sources may be published, written work goes in a Claude Doc, design work needs a design skill, no 18:00 cut-off.
+From session 9e96773b to the fresh `s-d7-linkedin-content`. Read `CLAUDE.md`, then this, then `SPEC.md` §9 (the decision log's rows from 17:15 on are the live state). The reset rules at the top of `..\answer-desk\ASKING.md` override the spec where they differ: no gates for Alex except the brand sign-off, easy calls are yours (decide and log), public sources may be published, written work for outside readers goes in a Claude Doc unless Alex says otherwise, any copy or design work needs its skill invoked first (a subagent gets the skill named in its prompt), no 18:00 cut-off. Private links and ids are in `local\links.md` (git-ignored).
 
-## Where things stand
+## The one thing open: Alex's brand sign-off on the LinkedIn posts
 
-Part 1 is done. The held intake (Appendix A) is never released; its questions are decided in §9 (17:15 row). The brand sign-off is Alex's comment on a Claude Doc, not a gate file.
+- **The Doc** (link in `local\links.md`) holds the five posts as exact text blocks, both carousels as images plus editable slide text, the scores, the fair baseline, the method, the five voice rules and a reception-check line. The TASK went to `answer-desk` at about 17:22, and the desk showed it. No comment yet.
+- **Watch it:** load ArtifactComments (ToolSearch) and watch the Doc's URL. A comment sent to Claude may arrive as an `[Artifact comment sent to Claude]` turn. To check by hand, load the docs skill (`anthropic-skills:docs`), then use Claude Docs `query` for utterances under the tab body node. Answer a comment in its own thread (docs `create` utterance, parent = the thread root), as the docs guide says.
+- **When he comments:**
+  1. Apply his edits to `local\drafts\` and to `demo\posts.md` / `demo\baseline.md` / `demo\voice.md` / `demo\entry.md` (copy-skill first: `marketing:draft-content`).
+  2. Run `python -I preflight.py <file>` on any changed post, and re-score only if a rule could have moved.
+  3. Commit, path-limited.
+  4. Send `website`: `BUILD S-D7-B2: <what changed>`. B2 also carries the entry summary, already cut to 144 characters in `demo\entry.md`. The B1 page is https://hire-me-hackathon.vercel.app/demos/linkedin-posts-in-addverys-voice-graded-blind (commit 76b48f9 on their side).
+  5. Send `answer-desk` `TASK DONE s-d7-linkedin-content: brand sign-off`, and send `s-d6-canva-templates` and `s-d10-canva-video` `COPY S-D7: signed-off posts in ..\linkedin-content\demo\posts.md`.
+  6. If a slide's text changed, re-render in `local\slides\src\`: `node build.mjs`, then `python post.py`. Invoke `frontend-design:frontend-design` first, then design-critique. Copy the web files to `demo\slides\`, and refresh the Doc's contact-sheet images.
 
-**Five posts, all final text, all Great 21/21 from a fresh blind judge** (`local\drafts\judge-final.md`; key `local\blind-key-final.md`):
+## Done this session (all handed off, nothing awaiting a reply)
 
-| Post | Format | Files in `local\drafts\` |
+| What | Where | Status |
 | --- | --- | --- |
-| 1 AI pilots in production (invoices) | text | `post-1.txt` |
-| 2 Fix the data before the model | carousel, 8 slides | `post-2-slides.txt`, `post-2-caption.txt` |
-| 3 The launch date, not the deck | text | `post-3.txt` |
-| 4 What not to hand to AI yet | carousel, 8 slides | `post-4-slides.txt`, `post-4-caption.txt` |
-| 5 The spreadsheet that runs the company | text | `post-5.txt` |
+| LinkedIn demo entry | `demo\` (entry, posts, baseline, method, voice; slides git-ignored in `demo\slides\`) | BUILT S-D7-B1; leak check done and fixed; `DONE S-D7` sent to `orchestration` (sign-off pending) |
+| Alex's own voice guide | `local\alex-voice\guide.md`, `excerpts.md` | Used by every job below; `s1-research` reads it |
+| About-me | `local\about\about-me.md` (+ `_sources.md`) | COPY s-d7 sent; live at /about |
+| Six stakeholder landing pages | `local\landing\new\page-1..6.md` (+ `_notes.md`); blind check in `scores.md`, `judge.md` | COPY s-d7 sent, then re-sent with orchestration's two fixes; website gates them on Alex's in-place review |
+| Stakeholder section intro | `local\site-copy\stakeholders-intro.md` | COPY s-d7 sent; replaces /for's own lead |
+| Welcome page and time paths | `local\site-copy\welcome.md` (+ notes) | COPY s-d7 sent; /d1 leads each path |
+| "How this site was built" entry | `local\site-copy\how-this-site-was-built.md` (+ sources) | COPY s-d7 sent at 18:57; the website should check its "As of 18:50" status list |
 
-`local\drafts\posts.md` holds all five as one file (offered to the Canva templates session as sample copy, not signed off).
+All `local\` output is git-ignored. `website` reads it from disk. Any later change to one of these files goes to `website` as a fresh `COPY s-d7: ...` line naming what changed.
 
-**Contrast, same judge, same batch:** the one-line baseline (`local\baseline-raw\baseline.txt`) Unpostable 10/21; the fair baseline, asked for Addvery's brand voice with its public tagline (`local\baseline-raw\baseline-fair.txt`), Unpostable 12/21. Two real company-page posts were slipped in unlabelled as a local calibration and also scored Unpostable; the judge guessed all nine provenances right. So the score is rule adherence, not proof of sounding like Addvery. The calibration stays local, and the site never contrasts against Addvery's own posts.
+## For Alex, when anyone reports to him
 
-**History** (for the method note): `local\scores.md` has every round. Round 1: all writers copied the rubric's own example lines, so the rubric (`local\rubric.md`, v0.3) gained set-level rules. Then rounds 2 and 3, a set-fix pass on two posts, a marketing:brand-review pass (`local\brand-review.md`: three unsourced outcome claims softened), and the final judge. Also in `local\`: `fingerprint-guard.md` (the brand rules tested against the page's own posts), `open-points.md`, `signoff\pack-head.md` (pack text with the four-step method and the five-rule voice summary, reusable for the Doc; `signoff\gate-draft.md` is superseded).
+- A writer subagent accidentally published a private, owner-only claude.ai artifact with a mid-edit copy of landing page 1 (link in `local\links.md`). Delete it only if he asks.
+- Facts on the landing pages he may want to confirm: his Czech level (B1 to B2), and nine months building in Claude Code. The LinkedIn post count is now "hundreds" (2,000 was unverified).
+- One leak-check finding stays in public git history: an older `SPEC.md` line (commit b979ed6) named the CGO beside the personal-brand proposal. The current file is fixed, and rewriting history is orchestration's or his call.
 
-**Personal-brand part:** private, lowest priority, `local\personal-brand\`, never in a tracked file and her name nowhere outside that folder. Touch it only after everything else, and only if `orchestration` relays that Alex wants it.
+## Shelved
 
-**Committed:** `PIPELINE.md` (method), `preflight.py` (mechanical checks plus stock AI phrasings), `.gitignore`, `SPEC.md` decision log. Nothing on the site yet. No desk question open, no pokes, no BUILD awaiting a reply.
+The personal-brand part (`local\personal-brand\`, private) is last priority, revisited only once everything else is finished (Alex, Q10.8).
 
-## Skills switched on for this folder (orchestration, 17:13)
+## Earlier history
 
-marketing:draft-content, marketing:brand-review, anthropic-skills:docs, frontend-design, design:design-critique. Rule: copy skill first, then `anthropic-skills:docs` before any Docs call; `frontend-design` before any visual, then design:design-critique (and design:accessibility-review if available) before it ships. A subagent doing design gets the skill named in its prompt, to invoke first. Visual brand source: `..\website\local\addvery\brand\` (`BRAND.md`, `tokens.css`) and `..\website\public\addvery\`, read from disk; the site's tokens are in `..\website\app\addvery-tokens.css`.
-
-## To do, in order (from orchestration's RESTART, 17:13)
-
-1. **The Doc.** Invoke marketing:draft-content, then anthropic-skills:docs. Make one Claude Doc with the five posts as text, the two carousels as slide images (render the 8 slides each with `frontend-design` in Addvery's brand from the kit above; critique before use), each post's score as rule adherence ("meets 21 of 21 voice rules, 0 AI tells"), the fair baseline with its score, and a short method note (the four steps and honest limits from `local\signoff\pack-head.md`, plus the five-rule voice summary). Then send `answer-desk`: `TASK s-d7-linkedin-content: the five LinkedIn posts are ready for your brand sign-off: <Doc link>; comment approve or edits on the Doc.`
-2. **Without waiting for him:** write `demo\posts.md` (the five posts with format and score), `demo\baseline.md` (the fair baseline and its score; mention the one-line baseline's 10/21 in a line), `demo\method.md` (four steps, the round-1 story, honest limits, the credit to `brand-voice-capture-demo-linkedin`), `demo\voice.md` (the five-rule summary). The carousel images go in `demo\` too if they're small. Commit, path-limited. Then send `website` (wording per SPEC §7 run step 11, updated): `BUILD S-D7-B1: add a D7 section, LinkedIn content in Addvery's voice, in the deliverables area: the five posts as LinkedIn-style cards (carousels as slide strips) with "meets 21 of 21 voice rules, 0 AI tells" each, the generic post beside post 1 with its score, a short how-it-was-made panel, and the five-rule voice summary. Content: linkedin-content\demo\. Source: posts written by S-D7 in Addvery's voice from public sources; brand sign-off pending on Alex's Doc, edits follow as a second request; nothing quoted from Addvery Research; no named person.` If the Canva templates session has previews in `..\canva-templates\exports\`, say which post pairs with which. Wait for `BUILT S-D7-B1` or `REFUSED S-D7-B1` before any next request.
-3. **His comment lands** (it reaches the session that made the Doc): apply his edits to `local\drafts\` and `demo\`, re-run `preflight.py` on any changed post, re-score only if a rule could have moved, commit, and send `website` the update as `BUILD S-D7-B2` if the site already shows the old text. Send `answer-desk` `TASK DONE s-d7-linkedin-content: brand sign-off`. Send `s-d6-canva-templates` and `s-d10-canva-video` (if running) `COPY S-D7: signed-off posts in ..\linkedin-content\demo\posts.md`.
-4. **Leak check** (run step 12): a subagent checks every committed file in `linkedin-content\` and the built section for text copied from `Addvery Research\`, real names, links to Alex's accounts and secrets. Fix, commit.
-5. **DONE:** send `orchestration` `DONE S-D7: posts and baseline on the site, brand sign-off <approved | pending on the Doc>, BUILT S-D7-B1`.
-6. Only then, and only if relayed: the personal-brand part.
-
-## Forking
-
-F1 (sign-off approved) and F3 (context half full) still apply (§8). This session forked at F3. `orchestration` removes the old id 6a355ef8.
-
-## Since the fork (session 9e96773b, live state at 17:35)
-
-- **Sign-off Doc:** link and ids in `local/links.md` (git-ignored). Complete: the five posts as exact text blocks, both carousels as contact-sheet images plus editable slide text, scores, the fair baseline, the method, the five rules, and a reception-check line (L-05 Q11). TASK sent to `answer-desk` at 17:22; the desk showed it. Alex's comment reaches this session.
-- **Slides:** rendered by a design subagent (frontend-design read from its SKILL.md, then design-critique and accessibility-review), in `local\slides\` (source `src\`, rerun `node build.mjs` then `python post.py` there). Web copies and alt text copied to `demo\slides\` (git-ignored).
-- **Site:** Alex at 17:23 (DI-10, relayed): the demo is one blog-style entry in the GTM demos section. `demo\entry.md` is that entry, with markers filled from `posts.md`, `baseline.md`, `voice.md`. `BUILD S-D7-B1` sent to `website` at 17:40; waiting for BUILT or REFUSED.
-- **Next:** on BUILT, the leak check (step 4 above), then DONE to `orchestration` (sign-off pending or approved). On Alex's comment, step 3 above; if the site already shows old text, `BUILD S-D7-B2`.
-- **Personal-brand part:** shelved until everything else is finished (Alex, Q10.8).
-
-## Live state at 18:30 (session 9e96773b)
-
-- **LinkedIn demo:** BUILT S-D7-B1, live at https://hire-me-hackathon.vercel.app/demos/linkedin-posts-in-addverys-voice-graded-blind. Leak check done and fixed. `DONE S-D7` sent to `orchestration` (sign-off pending). Waiting only on Alex's comment on the sign-off Doc; on it, apply his edits and send `BUILD S-D7-B2`. B2 also carries the entry summary cut to 144 characters (already committed in `demo\entry.md`).
-- **Alex's own voice (new jobs from about 18:00):** the guide is in `local\alex-voice\` (guide and excerpts). About-me is in `local\about\` (sent as COPY to `website`). Six stakeholder landing pages are in `local\landing\new\`, blind-checked against `local\landing\current\` (`scores.md`, `judge.md`) and sent as COPY to `website` at 18:28. All git-ignored. `s1-research` reads the guide for a portfolio story.
-- **Stray:** a writer subagent published a private claude.ai artifact with a mid-edit copy of landing page 1 (link in `local/links.md`). It stays until Alex says delete.
-- **Personal-brand part:** still shelved.
+Part 1 (the rubric, five posts all Great 21/21, the baselines at 12/21 and 10/21, the calibration kept local) is in `local\scores.md`, `local\rubric.md` and `PIPELINE.md`. Rounds, judges and blind keys are in `local\drafts\`.
