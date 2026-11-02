@@ -184,6 +184,7 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
 
   When unsure, leave it out and log why under "Left out" in `posted.md`.
 - **Posts and build requests.**
+  - **A copywriting skill first** (Alex, about 16:40, in ASKING.md: "Do not do any copywriting without a copywriting skill."). Feed posts and status rows are copywriting. The skill is `marketing:draft-content`, switched on through `orchestration` (`SKILL s-d9-legibility: ...`, then wait for `SKILL ON`). Invoke it with the Skill tool before writing each post. No post is written or sent without it.
   - Write post `P<n>` in `posts\P<n>.md`: a headline, the text, quotes with their session and time, the video moment and the role tags.
   - Send `BUILD S-D9-B<n>: <what, where>. Content: legibility\posts\P<n>.md. Source: <Sxx at mm:ss, a commit or a spec>.`
   - Send one request at a time, and wait for BUILT or REFUSED. Batch small items.
