@@ -58,7 +58,7 @@ Notes on the plan:
 3. **Operator preflight (P3).** Above: Q2.1 and Q2.2, in DI-2.
 4. **Decision log (P5).** Below.
 5. **Forking gates (P8).** Below.
-6. **Its working directory.** `s0-bootstrap\`. Reading list, in order: `..\CHARTER.md`, `..\GIT.md`, `..\answer-desk\ASKING.md`, then this SPEC.md. Read `..\answer-desk\CLAUDE.md` before step 9.
+6. **Its working directory.** `s0-bootstrap\`. Reading list, in order: `..\CHARTER.md`, `..\GIT.md`, `..\answer-desk\ASKING.md`, `..\answer-desk\qa\S0.md` (once the desk has created it), then this SPEC.md. Read `..\answer-desk\CLAUDE.md` before step 9.
 
 ## Launching S0
 
@@ -79,10 +79,10 @@ Tick each step in this file when it's done and commit this folder per `..\GIT.md
 3. [ ] **Apply Q2.1.** Apply the answer, or the default if its fence is empty, and log any default.
 4. [ ] **Create the new folders.** Delegate to one subagent (P7): for each `new` row, the folder, its `CLAUDE.md` and its `.claude\settings.json`, from the templates below. S-D9's reading list also gets `..\OBS\rig\RUNBOOK.md`. No SPEC.md and no other files.
 5. [ ] **Adopt `Addvery Research\`** per Q2.2. If a session runs in it, message that session instead of acting. Otherwise rename it if the answer says so (it's untracked, so a plain folder rename; if Windows refuses because the folder is in use, keep the name and log it), add the settings file, and put the template's header and reading list above the operator's text, which stays word for word.
-6. [ ] **Ask adopted owners for their reading lists.** One message each to `website` and `rig`: add `..\CHARTER.md` first and `..\answer-desk\ASKING.md` to your CLAUDE.md reading list, without `@` imports, then commit. Don't wait for the replies.
+6. [ ] **Ask adopted owners for their reading lists.** One message each to `website` and `rig`: add `..\CHARTER.md` first, then `..\answer-desk\ASKING.md` and your own desk record (`..\answer-desk\qa\website.md` or `..\answer-desk\qa\rig.md`), to your CLAUDE.md reading list, without `@` imports, then commit. Don't wait for the replies.
 7. [ ] **Commit the scaffolds.** S0 owns a new folder's scaffold until that folder's session first launches. Stage with `git add -- <folder>/...` for each folder from steps 4 and 5, check `git diff --cached --name-only`, then make one commit: `git commit -m "[s0-bootstrap] Scaffold spec folders" -- <those folders>`. Never commit another session's folder.
-8. [ ] **Check every folder.** A fresh subagent compares each folder from steps 4 and 5 with the templates: settings identical, the first three reading-list lines present and in order, no `@` imports, and a launch line whose folder and session match the plan. S0 fixes any miss and commits again.
-9. [ ] **Live probe.** Launch a short-lived session `s0-probe` in `s-d10-canva-video\`, the last spec to run, so nothing collides with it: `claude --bg -n s0-probe "Probe for S0. Read CLAUDE.md. Send answer-desk one question in the ASKING.md format with id S0-Q3, titled Probe, saying it is an automatic check and needs no answer. When the desk replies S0-Q3 queued, send WITHDRAW S0-Q3. Then tell s0-bootstrap in one line your working directory, item 1 of your reading list and the desk reply. Do nothing else."` Confirm its working directory with `claude agents --json`, then stop it.
+8. [ ] **Check every folder.** A fresh subagent compares each folder from steps 4 and 5 with the templates: settings identical, the first four reading-list lines present and in order with the folder's own asker in line 4, no `@` imports, and a launch line whose folder and session match the plan. S0 fixes any miss and commits again.
+9. [ ] **Live probe.** Launch a short-lived session `s0-probe` in `s-d10-canva-video\`, the last spec to run, so nothing collides with it: `claude --bg -n s0-probe "Probe for S0. Read CLAUDE.md. Send answer-desk one question in the ASKING.md format with id S0-Q1, titled Probe, saying it is an automatic check and needs no answer. When the desk replies S0-Q1 queued, send WITHDRAW S0-Q1. Then tell s0-bootstrap in one line your working directory, item 1 of your reading list and the desk reply. Send nothing else to the desk. Do nothing else."` Confirm its working directory with `claude agents --json`, then stop it. The probe asks as `S0`, and the desk allows one question per asker at a time (ASKING.md), so S0 has nothing else on the desk while it runs: its preflight went through DI-2. If the desk replies `RETURNED`, an S0 question is already open; withdraw or settle that one, then rerun the probe. Any later S0 question waits until the one before it is answered or withdrawn, and is rewritten in light of that answer first.
 10. [ ] **Hand over.** Send `orchestration` one message: S0 is done, the folders are ready, the launch pattern below, any defaults taken (see the decision log), and that S1 and S2 can launch. Commit this folder. S0 ends here.
 
 ## Templates
@@ -101,7 +101,7 @@ Tick each step in this file when it's done and commit this folder per `..\GIT.md
 }
 ```
 
-`CLAUDE.md`, with `<spec>`, `<name>`, `<folder>` and `<role>` filled from the plan and the charter's spec outline:
+`CLAUDE.md`, with `<spec>`, `<name>`, `<folder>` and `<role>` filled from the plan and the charter's spec outline, and `<asker>` set to the folder's spec id (`S1`, `S2`, `S-D1` to `S-D10`), the part of its question ids before `-Q`:
 
 ```markdown
 # <spec> — <name>
@@ -113,11 +113,13 @@ Read these at startup with the Read tool, in this order. Never import them with 
 1. `..\CHARTER.md`: the parent context. Never edit it.
 2. `..\GIT.md`: how every session shares one working tree on `main`.
 3. `..\answer-desk\ASKING.md`: every question for the operator goes to `answer-desk` in this format (P4).
-4. `SPEC.md` in this folder, once it exists. Start with its operator preflight.
-5. Research findings for this spec: none yet. Links are added here when the research reading list is filled.
+4. `..\answer-desk\qa\<asker>.md`: this spec's record of every question asked and answered. The desk creates it with the first question; skip it until then.
+5. `SPEC.md` in this folder, once it exists. Start with its operator preflight.
+6. Research findings for this spec: none yet. Links are added here when the research reading list is filled.
 
 ## Working rules
 - Load SendMessage and ListAgents at startup with ToolSearch `select:SendMessage,ListAgents`. Message other sessions by name.
+- Ask as `<asker>`, one question on the desk at a time: send the next only after the last is answered or withdrawn, rewritten in light of that answer (ASKING.md).
 - Commit only this folder, early and often, per `..\GIT.md`. Don't push.
 - Never edit another session's folder or any root-level file. Message its owner instead.
 
@@ -140,7 +142,7 @@ S0 is done when any spec session can be launched from its own directory, reads i
 | `website` and `rig` have been asked to add the charter and ASKING.md to their reading lists | DoD-S0-b (to be assigned by S2) |
 | `..\GIT.md` is adopted as the convention, and every S0 commit is path-limited, on `main` and unpushed | DoD-S0-c (to be assigned by S2) |
 | S0's preflight answers were read from DI-2 and applied | DoD-S0-a (to be assigned by S2) |
-| `s0-probe`, launched from a new folder, reported that folder as its working directory, `..\CHARTER.md` as reading-list item 1, and `S0-Q3 queued` from the desk | DoD-S0-d and DoD-S0-e (to be assigned by S2) |
+| `s0-probe`, launched from a new folder, reported that folder as its working directory, `..\CHARTER.md` as reading-list item 1, and `S0-Q1 queued` from the desk | DoD-S0-d and DoD-S0-e (to be assigned by S2) |
 | Every new folder's CLAUDE.md holds its launch command, and `orchestration` has the handover message | DoD-S0-e (to be assigned by S2) |
 
 ## Decision log (P5)
