@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "16:30",
-  "as_of_line": "As of 16:30 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "16:45",
+  "as_of_line": "As of 16:45 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Thirteen pieces of work, run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come ten demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -31,7 +31,7 @@
     {
       "piece": "Research",
       "what": "Decides with Alex what gets researched and how deep, so the agents work from findings instead of guesses.",
-      "status": "Project-wide research done at 14:59: seven reports and a synthesis. Research for the outbound demo, the website and the blog pipeline is with Alex."
+      "status": "Project-wide research done at 14:59. Research for the blog, Canva and LinkedIn demos is coming in."
     },
     {
       "piece": "Project orchestrator",
@@ -44,7 +44,7 @@
       "n": 1,
       "demo": "Scraping and research on the Apify API",
       "what": "Scraping and researching prospects at scale on the Apify API. It goes first, because other demos use what it finds.",
-      "status": "Alex's results are in. Its section is being drafted."
+      "status": "Page drafted. With Alex for sign-off."
     },
     {
       "n": 2,
@@ -56,7 +56,7 @@
       "n": 3,
       "demo": "Outbound automation in GetSales",
       "what": "10 ideal customer profiles, each with its own drip sequence, and a classifier that sends each lead to the right one. The first message is personalized before import. Shown as a video clipped from these recordings.",
-      "status": "33 demo workflows built. Routing tested on a made-up sample of 12 leads."
+      "status": "Reshaped by Alex: 36 workflows, shown in a recorded walkthrough. Nothing runs."
     },
     {
       "n": 4,
@@ -68,13 +68,13 @@
       "n": 5,
       "demo": "Three blog articles",
       "what": "Three posts made with that pipeline, on the ideas behind this project.",
-      "status": "Plan drafted. After demo 4."
+      "status": "Cut to two by Alex, with topics set. Agent running since 16:42."
     },
     {
       "n": 6,
       "demo": "LinkedIn templates in Canva",
       "what": "Pixel-perfect, on-brand visual templates for LinkedIn.",
-      "status": "Five templates rendered in the company's brand."
+      "status": "Five templates rendered. Method reworked on the research."
     },
     {
       "n": 7,
@@ -98,7 +98,7 @@
       "n": 10,
       "demo": "Canva design video",
       "what": "Alex designing in Canva, on camera, near the end of the day.",
-      "status": "Plan drafted. Recorded near the end."
+      "status": "Agent running since 16:42. Recorded near the end."
     }
   ],
   "quotes": {

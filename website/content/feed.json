@@ -3,7 +3,7 @@
   "posts": [
     {
       "id": "status",
-      "at": "2026-11-02T16:30",
+      "at": "2026-11-02T16:45",
       "kind": "Status",
       "title": "What's being built today",
       "blocks": [
@@ -714,6 +714,74 @@
           "text": "A lot of things I'm really happy to make judgment calls of, like, look, this doesn't need my attention, this can run without me.",
           "source": "S08 at 04:31",
           "href": "https://youtu.be/MyYnFOQCagc?t=268"
+        }
+      ]
+    },
+    {
+      "id": "all-demos-agents",
+      "at": "2026-11-02T16:42",
+      "kind": "Milestone",
+      "title": "Every demo now has an agent on it",
+      "roles": [
+        "CEO",
+        "COO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "As of 16:42, all ten demos have an agent working on them. The last two started at 16:42: the blog articles and the Canva design video. Both are doing groundwork until Alex gives them what they need from him."
+        }
+      ]
+    },
+    {
+      "id": "three-calls",
+      "at": "2026-11-02T16:40",
+      "kind": "Update",
+      "title": "Three calls from the last hour",
+      "roles": [
+        "CEO",
+        "CAIO",
+        "CMO",
+        "CSO",
+        "RevOps"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex spent the hour answering the agents' questions in their approval files. Three of his answers change what you'll see here."
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "Two articles, not three, and their topics.",
+              "text": "The first: no AI workflow is ever finished, because the models keep changing. Every company has to decide where it sits, between training its own people to build and keeping workflows running, and bringing someone in. The second: GTM engineers answer the AI era's big social question. If AI isn't meant to cut half the team, it has to grow the business, and that's pipeline work.",
+              "quote": {
+                "text": "There's no such thing as building something like an AI workflow as a product. It's always a managed service, because the models always change.",
+                "source": "Alex, written note, about 16:40"
+              }
+            },
+            {
+              "lead": "The outbound demo gets smaller and clearer.",
+              "text": "It now has 36 workflows: four customer profiles, three languages (English, Czech and German) and three tactics. Alex will show them in a recorded walkthrough, and none of them will ever run.",
+              "quote": {
+                "text": "We're not tooling it up to run. We're not training the classifier agent. We're explaining what all the pieces are.",
+                "source": "Alex, written note, about 16:40"
+              }
+            },
+            {
+              "lead": "No copywriting without a copywriting skill.",
+              "text": "Anything a reader outside the project sees, such as site copy, posts and articles, is now written with a dedicated writing skill switched on first. This post was written that way.",
+              "quote": {
+                "text": "Do not do any copywriting without identifying which skill you need to turn on … Do not do any copywriting without a copywriting skill.",
+                "source": "Alex, written note, about 16:40"
+              }
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All three quotes are Alex's written notes from about 16:40, in his answers to the agents' approval files."
         }
       ]
     }
