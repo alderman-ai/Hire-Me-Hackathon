@@ -8,3 +8,4 @@ Wall-clock Prague time of each stage of the alert, for the clip. No names: the s
 | 15:41 | `custom message 1` computed for the six (opening line + alert + notice line) and rendered into the pre-send text | recording (S09_2026-11-02_1517) |
 | 15:42 | Pre-send approval file drafted, waiting for Alex's confirmation of the six | recording (S09_2026-11-02_1517) |
 | 15:43:16 | Pre-send approval file sent to Alex through the desk | recording (S09_2026-11-02_1517) |
+| 15:56:03 | Alex confirms the six, with one swap; approval file updated | not recording |
