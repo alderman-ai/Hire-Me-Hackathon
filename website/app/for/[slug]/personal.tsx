@@ -209,7 +209,8 @@ export function PersonalPage({
       {/* ---------- P5 and P6: how this page was made, and the one ask ---------- */}
       {(showWords && (k2.made_line || k2.ask_line)) || !IS_PRODUCTION_BUILD ? (
         <section className="pp-band pp-close" aria-label="How this page was made, and one ask">
-          <div className="art-container pp-close-inner">
+          <div className="art-container">
+          <div className="pp-close-inner">
             {showWords && k2.made_line ? (
               <p className="pp-made">
                 <Inline text={k2.made_line} slug={slug} />
@@ -224,6 +225,7 @@ export function PersonalPage({
             ) : (
               <Placeholder what="K2 brings the one ask (call 5)." />
             )}
+          </div>
           </div>
         </section>
       ) : null}
