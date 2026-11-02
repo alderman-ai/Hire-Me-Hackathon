@@ -5,9 +5,10 @@ Task id: OT-06
 Task State: Open
 Gate: S-D1 spec draft (definition of done and methodology, with the L-01 synthesis questions Q3, Q10, Q13 and Q14 that name S-D1)
 Requested by: s-d1-scraping
-Snapshot of: scraping\SPEC.md at commit f762598
+Snapshot of: scraping\SPEC.md at commit 4929ed7
 Unblocks: drafting the site's scraping page by this plan, once Alex's summary is ready
 Created: 2026-11-02 15:03 Prague
+Updated: 2026-11-02 15:43 Prague (choice 1, after the research session reported what ran on Apify; snapshot refrozen)
 ---
 
 # Approve: the plan for the scraping demo page
@@ -18,7 +19,7 @@ Created: 2026-11-02 15:03 Prague
 
 **What this part of the project is.** One of the site's demos shows web scraping and research on the Apify API. You decided earlier that it runs nothing itself: you scrape Addvery with your own research session, and this session turns your summary of the outputs into one short page on the site. At 14:58 you agreed that the summary goes in `Addvery Research\Scraping summary.md`, and your research session now has a written request saying what the summary needs. The two sessions complete it between themselves.
 
-**What you're asked.** Approve the plan for that page: what "done" means, how the page is built, and three small choices the project's research raised. Each choice has a default. Ticking the box takes all three defaults.
+**What you're asked.** Approve the plan for that page: what "done" means, how the page is built, and three small choices the project's research raised. Each choice has a default. Ticking the box takes all three defaults. Choice 1 changed while you were on break, after your research session reported what actually ran on Apify.
 
 **What happens once you answer.** When your research session marks the summary ready, an agent drafts the page by this plan, and a second agent, who knows nothing about the project, reads it cold to check that it makes sense on its own. Then the actual page comes to you as one more approval, about 5 minutes, before anything goes on the site.
 
@@ -30,7 +31,11 @@ The project's rule is that no real data runs through the demos. The research ask
 
 ## Your three choices (the default is in bold)
 
-1. **LinkedIn.** Default: **nothing on the page comes from LinkedIn, and no scraper that logs in with LinkedIn cookies is named.** Why: the project's research on personal data found that LinkedIn's terms ban scraping and showing its data, and the risk lands on your own account rather than as a fine. Your own scraping stays your call; your research session got the research's advice as advice only. To change it, write "LinkedIn: allow".
+1. **What ran on Apify, and LinkedIn.** New since you went on break (15:40, from your research session): on Apify, only two scrapers have run, and both read LinkedIn without logging in: one read 8 public profiles and one read 32 public posts, for 10.5 cents in all. The company facts (positioning, customers, case studies, the business register) came from agents reading Addvery's own website and from a web search, with no Apify. The project's research on personal data found that LinkedIn's terms ban scraping and showing its data, and the risk lands on your own account. So no LinkedIn data goes on the page in any case, and the page must say truthfully what ran on Apify.
+   - **Recommended: write "crawl: yes".** Your research session then runs Apify's website crawler on www.addvery.com (it says this costs cents, and the site was cleared for it on 18 Oct). The page gets an Apify run whose results it can actually show, and the two LinkedIn scrapers are named with their counts only.
+   - **Default, if you don't answer: no new run.** The page names the two LinkedIn scrapers with their counts, time and cost, shows none of their data, and says plainly that the company picture came from agents reading the website and the register.
+   - Or write "LinkedIn: hide" to keep LinkedIn off the page altogether, or "LinkedIn: aggregates" to allow company-level counts drawn from LinkedIn, such as the team's size by function, still with no person named.
+   - A yes you give your research session in its own chat counts the same.
 2. **A line naming Clay.** Default: **one line in the folded technical part, and only if your summary shows several sources merged into one record:** "Merging several sources into one record is the pattern a Clay waterfall automates; here it ran as a script on the scraped outputs." Why: the research on what hiring managers look for says naming the standard pattern shows you know the stack, with nothing extra built. To drop it, write "Clay: drop".
 3. **A short video.** Default: **no video on the page.** The screen risk sits around Apify (the token, the Console, the proposal), and the page reads fine without one. To opt in, write "video: yes": the clip analyser then cuts two minutes or less of you running the scraping from the rig recordings, checks every frame for the token, the Console and the proposal, and the website hosts it on YouTube, unlisted. The research found a short demo is part of what makes a page easy to follow.
 
@@ -42,8 +47,8 @@ One more of the research's questions came up, the deletion date for scraped data
 
 It follows the order the research converged on. Pages that lead with the tool or the process read as toys, so the result comes first.
 
-- **The result first:** one line (how many scrapers, which kinds of public source, how many results, how long, what it cost), then three to five findings about Addvery, each with the kind of source it came from.
-- **How it works, in four steps:** what you wanted to know; the scrapers on the Apify API reading public sources; the results cleaned and merged; and the research feeding the GetSales outreach demo.
+- **The result first:** one line on what was read (Addvery's website, the business register and press, and the Apify scrapers, with their results, time and cost), then three to five findings about Addvery, each with the kind of source it came from (its website or the register, never LinkedIn).
+- **How it works, in four steps:** what you wanted to know; the public sources that were read, saying truthfully which ran on Apify; the results cleaned and merged; and the research feeding the GetSales outreach demo.
 - **"Show me how", folded:** a table of each Apify scraper (named and linked to its public page), with results, time and cost, then the totals against your $10 cap, and one line on what broke and how it was handled.
 - **Two small lines:** no personal data on this page, by design; and that you chose the questions and sources, the scrapers ran under your direction, and the page shows a stored result, not a live run.
 
@@ -59,7 +64,7 @@ The rules for the draft: company level only, with no person named (you can add n
 
 ## What's being approved
 
-The plan below is frozen as it stood at commit f762598. The live file may move on, but this is what the approval covers.
+The plan below is frozen as it stood at commit 4929ed7. The live file may move on, but this is what the approval covers.
 
 **Codes used in the plan, explained here once:**
 - S-D1 is this scraping demo, S-D2 your own Addvery research, S-D3 the GetSales outreach demo, S-D8 the website and S-D9 the clip analyser.
@@ -205,14 +210,19 @@ Approving the list is S1's gate, not this session's. L-01 is already with Alex a
    - (c) **"Show me how", folded:** the actor table (each actor named and linked to its public Store page, with results, time and cost), plus one line on what broke and how it was handled (synthesis 1.5).
    - (d) **Two framing lines:** why no personal data appears (company level, public sources, by design; synthesis 1.2), and that Alex chose the questions and the sources, and the scrapers ran under his direction (X.1; W3: the machinery reads as skill).
    - The page shows a stored result, never a live run. Every number is the figure Apify reported, with its source (X.4). No "TODO", placeholder or broken link goes public (8.15).
-2. **Fill.** A subagent, handed only the frame, the summary's path and the screen-care rules, drafts `draft\d1.md` from his summary. It names no person (Alex can add names at the gate), shows nothing of the proposal, and cites his summary as its source. It applies the gate's choices: by default, nothing sourced from LinkedIn and no cookie-based LinkedIn actor named (Q13), and the Clay line only if the summary shows several sources merged (Q10).
+2. **Fill.** A subagent, handed only the frame, the summary's path and the screen-care rules, drafts `draft\d1.md` from his summary. It names no person (Alex can add names at the gate), shows nothing of the proposal, and cites his summary as its source. It applies the gate's choices: by default, the run table names every actor that ran, including the cookie-free LinkedIn ones, but the page shows no data sourced from LinkedIn, its findings come only from N4 items tagged [site] or [register], and it says truthfully which sources ran on Apify and which didn't (Q13, revised at 15:42). The Clay line goes in only if the summary shows several sources merged (Q10).
 3. **Cold read** (R1's five-second test; X.5, as a proxy). A fresh subagent that knows nothing of the project gets only the draft, and answers four questions as if it had 60 seconds: what is this, who made it, what did the scraping find, and what happens next. Any miss is fixed before the gate. The gate says this is a proxy, not R1's test with five to ten people.
 4. **Approve.** The whole draft goes to Alex as a gate task. Nothing reaches the site or a tracked file before he approves it.
 5. **Publish.** The approved draft becomes `site\d1.md`, and the `BUILD` quotes the approval.
 
 **The synthesis's questions that name S-D1,** folded into the plan gate (step 6), not the desk (orchestration, C07):
 - **Q3, the data rule:** settled for this page by A6.2. He scrapes Addvery and the page presents it: public, company-level facts only, with one line on why no personal data. Not asked again; the gate states it.
-- **Q13, LinkedIn:** by default, nothing on the page is sourced from LinkedIn and no cookie-based LinkedIn actor is named. His own scraping stays his call; the request to his research session passes on R3's advice. Alex can override this at the gate.
+- **Q13, LinkedIn, and what ran on Apify** (revised 15:42, from `addvery-research`): on Apify only two cookie-free LinkedIn actors have run (8 profiles and 32 posts, $0.105 in all, 15:33). The company picture came from agents reading Addvery's website directly and from a web-search agent (the business register, press), with no Apify. The first default, nothing from LinkedIn and no LinkedIn actor named, would have left the page with no run to show, and a page that implied Apify found the company facts would outrun what ran (R1 toy signal 2). The gate now offers:
+  - **"crawl: yes", recommended:** his research session runs `apify/website-content-crawler` on www.addvery.com, for cents. The page then has an Apify run whose results it can show, beside the two LinkedIn actors (named, counts only).
+  - **The default with no answer:** no new run. The page names the two LinkedIn actors with counts, time and cost, shows none of their data, and says plainly that the company picture came from agents reading the website and the register.
+  - **"LinkedIn: hide"** (no LinkedIn on the page) or **"LinkedIn: aggregates"** (company-level counts drawn from LinkedIn, no person).
+  
+  The page's findings come from the summary's N4 items tagged [site] or [register], never [LinkedIn], unless he picks "aggregates". A yes given to his research session in its own chat counts the same (agreed with `addvery-research`).
 - **Q10, Clay:** by default there's no Clay build. One line in the folded part names the clean-and-merge step as the pattern a Clay waterfall automates, only if his summary shows several sources merged. He can strike it.
 - **Q14, the deletion date:** not S-D1's call, since S-D1 holds no data. The date belongs on the site's notice page (S-D8, synthesis 8.2) and to his folder. The page links to the notice page once it exists.
 - **Added by S-D1, a clip:** by default the page has no video, because the screen risk sits around Apify (the token, the Console, the proposal) and the page reads without one. Alex can opt in: S-D1 then asks `s-d9-legibility` for a clip of two minutes or less of his scraping, screen-checked, and `website` hosts it on YouTube, unlisted (R1: a short demo is part of the converged order).
@@ -277,6 +287,11 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov 15:02, synthesis Q3: not asked again. For this page, A6.2 settles it: public, company-level facts from his own scraping, plus one line on why no personal data. The plan gate states it. | A6.2: "I'm going to scrape Addvery ... it is a demonstration of scraping and we'll do some kind of summary of all of the outputs." The synthesis rules that the charter's rule stands, and it governs *how* data is shown. | Asking again what he has already decided costs his focus (P4). The section gate still shows him every fact before it goes public. | If he wants labelled synthetic data instead, the draft is rewritten from the frame, and nothing is published in between. |
 | 2 Nov 15:02: the plan gate goes now, not merged with the section sign-off. Its LinkedIn and clip choices shape the draft. | §7 step 6 merges the two only if the draft is ready, and the summary isn't in yet. | Taking the choices up front means the draft is written once (P3). The gate takes about 3 minutes. | One more task in front of him. If he doesn't answer before the summary lands, the draft follows the defaults, and the section gate shows them again. |
 | 2 Nov 15:02: the summary request gains N7 (what broke, and how the results were cleaned and merged) and a "From LinkedIn?" column in N3, plus R3's advice for his own scraping, marked as his call. | The coherency check found the gap: the frame's (b) and (c) need N7, and Q13's default needs the column. | The gap is fixed in the method, not by loosening the DoD. The advice reaches the session doing the scraping without a desk question. | The request file only. |
+| 2 Nov 15:16, Alex's break (relayed by `orchestration`; his words to `wave2-specs`: "i'm on break for the next 30 mins, dont let any 'answer expiry defaults' go into affect"): no default takes effect and no poke goes out before 15:46. The OT-06 poke moves from 15:18 to 15:46. | His own instruction, and it outranks this spec's poke timing. | It's his instruction. | None. |
+| 2 Nov 15:35, step 5: `OUTPUT S-D1 ready` was sent to `orchestration` from part N5 of his summary (draft, 15:33), with file names only. It lists four files or groups (one exists, three "not yet"), for readers S-D3, S-D6, S-D7 and S-D8. `s-d3-getsales` was told in one line. | The 15:00 decision: send it as soon as N5 is filled. DoD-9. | The readers' reading lists don't wait for the page. Files marked "not yet" are listed as expected. | If his session renames a file, a corrected `OUTPUT` line follows. |
+| 2 Nov 15:35: the summary says `Ready by: 16:45`, so its poke is 17:00 if it isn't ready by then. The 16:30 "file missing" poke falls away, because the file exists. | Step 5: "Poke only 15 minutes after the time he gave has passed." | It's the rule as written. | None. |
+| 2 Nov 15:40: the DoD-9 criterion in §5 is met. `orchestration` applied the `OUTPUT` line as C08 (commit 17427ac), and S-D3's SPEC.md "Routing and resources" now names his files (checked: lines 77 to 79). The lines also went into the specs of S-D6, S-D7 and S-D8. Later file lists may also come straight from his research session (`orchestration`: "either is fine"). | §5, row 4. | It's checked against the file, not just reported. | A renamed file means a new `OUTPUT` line or a direct note to `orchestration`. |
+| 2 Nov 15:42, Q13 revised before Alex opened OT-06 (he was on break): `addvery-research` reported that only two cookie-free LinkedIn actors ran on Apify, and that the company facts came from direct reads and a web search, not from Apify. Choice 1 now offers "crawl: yes" as recommended (his session runs a website crawler, for cents), with the default being no new run, and the LinkedIn actors named with no data shown. The gate snapshot is refrozen. | The first default would have left the page with no Apify run to show, and implying Apify found the company facts would be a claim that outruns the run (R1). | The page stays truthful about what ran, Alex's yes decides any new spend, and the desk sees one question, not two (agreed with `addvery-research`). | The gate text, `site\frame.md` and the fill brief. If he picks "hide" or "aggregates", the frame's rule 2 changes. |
 ````
 
 ## Approval
