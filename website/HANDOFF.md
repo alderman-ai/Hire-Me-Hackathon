@@ -1,70 +1,82 @@
 # Handoff: website (S-D8)
 
-Written 2 Nov from about 18:00 Prague (updated through 18:25) by session 54c2d301 (took over at 17:15 from b25f14b0), at forking gate F3 (context about half full). Read CLAUDE.md first, then this file, then **the reset rules at the top of `..\answer-desk\ASKING.md`** (Alex, 17:00), which override older rules. SPEC.md §9 has every decision since 15:00, the rows from 17:19 on are this session's. Check the clock (`date`) before writing any time: this session stamped some by estimate and had to correct them.
+Written 2 Nov at about 18:35 Prague by session 54c2d301 (took over at 17:15 from b25f14b0), at forking gate F3. Read CLAUDE.md first, then this file, then **the reset rules at the top of `..\answer-desk\ASKING.md`** (they override older rules; rule 4 now says page copy is reviewed as a rendered page artifact). SPEC.md §9 rows from 17:19 on are this session's.
+
+**Run `date` before writing any time.** This session stamped some times by estimate, up to 1 h 40 min ahead, and had to correct the site and the logs (18:25).
 
 ## The rules in one screen
 
-- Easy calls are yours: decide, log in SPEC §9 (decision, why, blast radius), carry on. No plan approvals to Alex. Pokes only when truly blocked. No 18:00 cut-off; Alex works through the night.
-- Hard exclusions are only DoD-22's three: secrets, the Apify proposal, Alex's own outbound outside the GetSales demo folder. Public sources (photos included) may be published.
-- **Copy:** copy skill first (`design:ux-copy` or `marketing:draft-content`; `marketing:brand-review` to check). **Design:** `frontend-design:frontend-design` first (if it doesn't resolve, Read `~\.claude\plugins\cache\claude-plugins-official\frontend-design\ea10b213686c\skills\frontend-design\SKILL.md` and log that you did), then `design:design-critique` and `design:accessibility-review` before shipping. Name the skill in every subagent's prompt.
-- **Alex's sign-off on words is in a Claude Doc or (new) review artifacts**, never in chat. Questions to him go through `answer-desk` only.
-- One brand source: `local\addvery\brand\` (git-ignored), tokens in `app\addvery-tokens.css`.
+- Easy calls are yours: decide, log in SPEC §9 (decision, why, blast radius), carry on. No plan approvals to Alex. Pokes only when truly blocked. No 18:00 cut-off.
+- Hard exclusions are only DoD-22's three: secrets, the Apify proposal, Alex's own outbound outside the GetSales demo folder. Public sources, photos included, may be published.
+- **Copy:** copy skill first (`design:ux-copy`, `marketing:draft-content`; `marketing:brand-review` checks). **Design:** `frontend-design:frontend-design` first; if it doesn't resolve, Read `~\.claude\plugins\cache\claude-plugins-official\frontend-design\ea10b213686c\skills\frontend-design\SKILL.md`, follow it and log that. Then `design:design-critique` and `design:accessibility-review` before shipping. Name the skill in every subagent's prompt.
+- Alex reviews words as rendered page artifacts (or the Claude Doc), never in chat. Questions to him go only through `answer-desk`.
+- **Times on the site:** Prague time of day only, "12:24" or "12:24 (Prague)". Quote sources read "Alex, S04, 12:24". Never "Prague time", never a session offset next to a clock.
 
-## In flight right now (background subagents of 54c2d301; their reports land in the OLD session)
+## In flight
 
-If the old session ended before they reported, check the working tree: their files are uncommitted. Review with `git status website/`, check locally, then commit and deploy.
+- **`/about` (About-me)**, a subagent of 54c2d301 building to orchestration's mockup (https://claude.ai/artifact/QUtWfgRq4Bcyko4PQNkkVF, 10 boards). Files: `app\about\*`, `content\linkedin-wall.json`, `public\about\` (git-ignored), `.gitignore`. If it isn't committed when you start, its files are uncommitted in the tree: check `/about` locally, commit, deploy, add "About Alex" to the menu (`app\site-links.ts`), and tell `s-d1-scraping` it's live (it asked to check the LinkedIn wall).
+  - Copy: `..\linkedin-content\local\about\about-me.md` (keep his " -- "; the ARTICLE-2-LINK line returns once s-d5's article 2 is live).
+  - Wall: `..\scraping\site\linkedin-wall\wall.json` (34 posts, verbatim; never show `why`).
+  - Assets: `local\alex\` (list in `ASSETS.md`; alderman.ai has only three, the rest come from his desktop folders). `alex-alderman-final.png` is the Apify teaser: never use it.
+  - The **AI portfolio** slot stays empty until `s1-research` sends its entry as a BUILD.
 
-| Work | Files it touches | Status when written |
-| --- | --- | --- |
-| **Time fix** (Alex 18:3x: "All times should just be Prague times ... time (Prague) ... Fix it throughout the entire website"): Prague time of day only, no session-offset clocks | `content\*.json`, `content\demos\*.md`, helpers in `app\` (not `app\for\*`, not `content\docs\`) | Running. Then ship it, and send `s-d9-legibility` the source-format line the subagent reports. |
-| **Landing layout** for `/for/<slug>`: greeting on top, "What I'm guessing you're concerned with", a numbered reading list with times and a running total, per-person preview card | `app\for\*`, `app\stakeholders.ts` | Running. Gated: renders only in `next dev` or when that page's `landing.approved === true` in `content\stakeholders.json`. |
+## Next, in order (from orchestration's mockup and Alex's 17:5x direction)
 
-Git-ignored but deployed (copy them into a clean export): `public\addvery\`, `public\people\`, `public\demos\linkedin-voice\`, `app\demos\_og\glow.jpg`, `local\org-diagrams.json`, `local\research\`.
+1. **Six review artifacts for Alex.** Wait for `COPY s-d7: six landing pages ready at <path>` (s-d7 is rewriting the greeting, concerns and so on in Alex's voice). Then load the `artifact-capabilities` skill and publish six artifacts, one per person: a faithful render of that person's landing (portrait, Addvery styling, greeting, concerns, reading list with times), with the text editable in place if the runtime allows, otherwise commentable. Send `answer-desk` one TASK line with the six links. Read his edits back into `content\stakeholders.json` (`pages[i].landing`), then set `landing.approved: true` per page he okays and deploy. The landing layout is already built and deployed gated (b0c1374). Totals today: growth 47 min, ceo 57, cofounder-1 57, cofounder-2 4, delivery 57, bi 10.
+2. **Welcome and time picker** (mockup board): a component that explains the site and asks how much time the visitor has (5, 10, 20 minutes or more), then gives a reading path. It must sit either at the top of `/` above the feed (orchestration's recommendation) or on `/start`; Alex's pick is still open, and orchestration relays it. Paths come from `content\inventory.json`. Orchestration's call: ordered lists with stop-markers first, a guided tour only if there's time.
+3. **Summary carousel** at the top of the feed: posts with `"summary": true` (+ `summary_line`), newest first. s02, s06, s08 and s11 are tagged. s-d9's P10 "The day so far" is the next one (cleared to send).
+4. **"How this site was built"**, a `/demos` entry you write yourself (copy skills, shared entry format, deliverable d8). s-d9 writes "how content gets picked" (d9).
+5. **Menu target:** Live feed · Research (`/d1` + `/d2`) · GTM demos (`/demos`) · For Addvery (`/for`) · About Alex (`/about`). Today: Live feed · What's being built · GTM demos · For Addvery · The plan.
+6. **Incoming BUILDs:**
+   - S-D3-B1 and B2: two GetSales `/demos` entries (video plus transcript summary), after Alex records; both must be live before his meeting with Ivana on Tue 3 Nov.
+   - s-d5's two articles (kind article, d5): copy `blog-articles\posts\<nn>-<slug>.md` to `content\demos\<slug>.md`, plus assets to `public\demos-assets\<slug>\`, then put the article-2 link into About-me.
+   - s-d5's third entry (taste-capture, showcase, d7).
+   - s-d9's day-one story (showcase, d9), using the four clips in `content\clips.json`.
+   - S-D6-B1 (templates gallery) after Alex's sign-off.
+   - S-D11 (brand motion) later.
+   - S-D7-B2 (Alex's edits to the LinkedIn entry): rerun `C:\Users\alder\.claude\jobs\54c2d301\tmp\blog\assemble_linkedin.py` if it still exists, otherwise reassemble from `..\linkedin-content\demo\`.
+7. **Housekeeping:**
+   - per-page preview tags for `/d2` to `/d11` (sub-pages still unfurl as the homepage);
+   - `app\for\[slug]\page.tsx` line ~604 renders "HH:MM Prague", which should be "(Prague)";
+   - a publish check in `checks.md` (none was run at this fork);
+   - the hand-over checklist (SPEC §7) before morning.
 
-Done since this file was drafted: **S-D7-B1 and S-D5-B2** (`/demos` live with its first entry, menu "GTM demos", the template has clips, feature quotes and figures; 76b48f9); **S-D9's four day-one clips** uploaded unlisted (`content\clips.json`, `scripts\upload_clip.py`; 35d777c); **COPY s-d7 About-me** received at `..\linkedin-content\local\about\about-me.md` (keep his " -- "; drop the ARTICLE-2-LINK line until article 2 is live); **S-D1-B1** `/d1` (BUILT, 983449a, live); the **inventory** (`content\inventory.json`, 75 items, ~204 min; 308970e); **C16** synced (c34923a). The purple band's text is white (AA), and the S01 video is embedded.
+## State of the site (live: https://hire-me-hackathon.vercel.app; last deploy ~18:33, b0c1374)
 
-## Next, in order
+- **Home `/`:** countdown, start-here, live feed (newest first), status board as of 18:03 (D1 to D11; D4 retired; D11 Brand motion with Comfy).
+- **`/d1`:** the scraping briefing with a five-slide board carousel (S-D1-B1). **`/d2`:** org charts and the research documents. **`/d3` to `/d11`:** demo pages, mostly placeholders.
+- **`/demos`** (GTM demos, in the menu): one shared entry template with video on top, inline `[!video]` clips, `[!quote]` feature quotes, `[!figure]`, `[!post]` and `[!carousel]`. Entries are `content\demos\*.md`; production builds only `status: published`. Live entry: "LinkedIn posts in Addvery's voice, graded blind" (S-D7-B1).
+- **`/for`:** a 2×3 grid of credited public portraits (git-ignored `public\people\`), each opening `/for/<slug>`. Text in `content\stakeholders.json`. Every page is `noindex`.
+- **Docs:** `scripts\sync_docs.py` only refuses secret-shaped strings; rerun it on every charter or spec change (last synced at C16, 8a4ae57).
+- **`content\inventory.json`:** 75 items with honest read and watch times (rebuild scripts in the job tmp: `stage1-3.py`).
+- **Clips:** `scripts\upload_clip.py <file> "<title>"` uploads any named file unlisted through the rig's sign-in; ids go in `content\clips.json`.
+- **Clock:** loop pid 39924. `.clock\adjustments.json` holds two hours off on Alex's word. S12 stopped about 18:13, idle, 5.09 h left.
 
-1. **Integrate the four subagents** as they land: local check, commit path-limited, deploy, reply BUILT. Deploy from a clean export of HEAD while other work is uncommitted (recipe below; copy `public\people\`, `public\demos\linkedin-voice\`, `app\demos\_og\glow.jpg` and `public\addvery\` in, since they're git-ignored).
-2. **Menu** (`app\site-links.ts`): today Live feed · What's being built · For Addvery · The plan. Target (Alex, DI-10 Q10.10): Live feed (home) · Research (`/d1` scraping briefing + `/d2` company research; a `/research` landing is optional) · GTM demos (`/demos`) · For Addvery (`/for`). Add GTM demos once `/demos` has a published entry. Then tell `s-d9-legibility` the restructure is up so it sends P10 "The day so far" (a summary post).
-3. **Six review artifacts for Alex (orchestration, 18:05, replaces the stakeholder Doc for these pages).** Alex: "I want to review it as one artifact at a time, which is the image, and then the branded stylized version of how the text will look ... Give me six individual ones for me to edit." Wait for `s-d7-linkedin-content` to send `COPY s-d7: six landing pages ready at <path>` (it's rewriting all six in Alex's own voice). Then: load the `artifact-capabilities` skill, and publish six artifacts, one per person, each a faithful render of that person's landing page as it will look live (portrait, Addvery styling, greeting, concerns, reading list with times, graphics), with the text editable in place if the runtime allows, otherwise commentable. Send `answer-desk` one TASK line with the six links. Read his edits back into `content\stakeholders.json`, set `landing.approved: true` per page he okays, deploy.
-4. **Time-based paths (Alex, 17:5x):** a welcome that explains the site and asks how much time the visitor has (5, 10, 20 minutes or more), then a guided tour or a list of links; and a carousel of the summary posts at the top of the feed, newest first. Feed posts with `"summary": true` (+ `summary_line`) drive it: s02, s06, s08, s11 are tagged (agreed with s-d9). **Layout waits for Alex's comments on orchestration's design mockups**, which orchestration relays.
-5. **S-D3-B1 and B2** (two GetSales `/demos` entries, video plus transcript summary) arrive after Alex records; both must be live before his meeting with Ivana on Tue 3 Nov. **S-D11** (Brand motion with Comfy) comes later as a `/demos` entry.
-6. Housekeeping when there's a gap: the `.art-cta` purple band (lilac on amethyst, 4.37:1) fails AA site-wide in `app\article.css`; make its text white. Per-page preview tags for the `/dN` pages (L-03-W2: sub-pages unfurl as the homepage). The publish check (`checks.md`) at this fork wasn't run; run it after the integrations.
-7. **About-me section (orchestration, 18:1x; Alex: "one section of the website should be my background ... pull it from my live website, alderman.ai" and "a wall of LinkedIn posts, as many as 20 to 40 ... the collapsed version like you would see on LinkedIn. The 'Read more' would basically do a popup of the full version").** Assets already fetched from alderman.ai into git-ignored `locallex\` (`alex-headshot-full-v1.jpg` 1200x1823, `still-human-circle-portrait.svg`, `alderman-ai-stacked-logo-v1.svg`, plus the home and about pages' HTML). Copy comes as `COPY s-d7: About-me ready at <path>` (background, AI sabbatical, the job he wants, openness to Addvery's AI role as a start, his GTM thesis, transcript pull quotes as block quotes). Posts **arrived** at ~19:20: `..\scraping\site\linkedin-wall\wall.json` (commit 8f41487): 34 posts, oldest first, each with id, date, url, text (verbatim, keep it as-is, `white-space: pre-line`), collapsed, has_more, images (16, relative `img\…jpg`, copy them to the site), document (link to LinkedIn), video (cover plus LinkedIn link), reactions, comments and `why` (internal, never shown). The dialog needs a focus trap, Esc, a visible close button and focus back to the card. Reply to `s-d1-scraping` when it's live. The About-me copy arrived too (`COPY s-d7`, above). Layout after his mockup comments; frontend-design first, critique and accessibility, reviewed with him as a rendered page artifact. Add it to the menu, the time paths and every reading list where it fits. alderman.ai holds only those three visual assets (whole site crawled at ~19:10, list in `local\alex\site\_assets.tsv`). Leave a slot linking to Alex's **AI portfolio**, a first-person story of his AI sabbatical with repo citations, which `s1-research` sends as a `/demos`-format entry after his review.
+## Deploying
 
-## State of the site (live: https://hire-me-hackathon.vercel.app)
-
-- Last production deploy ~18:25 (commit ec995b5 + content after). Commits this session: 35a7e16, 4a51cb8, 4107ed0, 55e408f, c9c111c, e475ab3, 3306478, ec995b5, a59d4d4.
-- **The six:** `/for` grid (credited public portraits: five from addvery.com team pages, Ivana's from ivanakarhanova.cz, which Alex okayed; uniform 4:5 greyscale; git-ignored `public\people\`, deployed) and six `/for/<slug>` pages, all `noindex`, menu "For Addvery". Text in tracked `content\stakeholders.json` (from the Claude Doc https://claude.ai/artifact/Abm1SeTTDwAEV4qBb55YtY). `local\stakeholders.json` is retired. Photos topic closed by Alex.
-- **Status board** (`content\build.json`) as of 17:45: D1 to D11 (D4 retired, D11 Brand motion with Comfy added), intro "Fourteen pieces of work (one since retired)".
-- **Docs:** `scripts\sync_docs.py` now redacts nothing; it only refuses secret-shaped strings. Rerun it on every charter or spec change.
-- **Feed:** latest S-D9 build is B9 (posts `site-shape`, `workflows-built`). S-D9's next is P10 "The day so far", held until the restructure is up.
-- **Clock:** loop pid 39924 (pythonw). `.clock\adjustments.json` holds two hours taken off on Alex's word (7200 s). S12 recording since ~17:34, 5.85 h left then.
-- **Dev server** on :3100 was restarted hidden at ~17:20 (its worker crashed). If pages 500 with "Jest worker encountered child process exceptions", restart it.
-
-## Messages and queue
-
-- `website-Q` on the desk: none. TASK DONE sent for DI-9; DI-9 and DI-10 archived by orchestration.
-- Waiting on: `COPY s-d7` (six landing texts), S-D3-B1/B2 after Alex records, orchestration's relay of Alex's mockup comments.
-- S-D3's three earlier BUILDs (footer privacy link, alert-visitor panel, "How this was made") are cancelled by S-D3. `/privacy` stays unlisted and noindex.
-
-## Deploying from a clean export
+The tree usually holds a subagent's uncommitted work, so deploy a clean export of HEAD and copy the git-ignored assets in:
 
 ```bash
 cd "/c/Users/alder/Desktop/Hire me hackaton"; D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"; rm -rf "$D"; mkdir -p "$D"
 git archive --format=tar HEAD:website > "$D.tar" && tar -xf "$D.tar" -C "$D" && rm "$D.tar"
-mkdir -p "$D/.vercel" "$D/public/addvery" "$D/public/people" "$D/local"; cp website/.vercel/project.json "$D/.vercel/"
+mkdir -p "$D/.vercel" "$D/public/addvery" "$D/public/people" "$D/public/demos" "$D/local"; cp website/.vercel/project.json "$D/.vercel/"
 cp website/public/addvery/* "$D/public/addvery/"; cp website/public/people/* "$D/public/people/"
+cp -r website/public/demos/linkedin-voice "$D/public/demos/"; cp website/app/demos/_og/glow.jpg "$D/app/demos/_og/"
 cp -r website/local/org-diagrams.json website/local/research "$D/local/"
-# once they exist: cp -r website/public/demos "$D/public/"; cp website/app/demos/_og/glow.jpg "$D/app/demos/_og/"
+# once /about ships: cp -r website/public/about "$D/public/"
 cd "$D" && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes
 ```
 
-When the tree is clean, plain `MSYS_NO_PATHCONV=1 vercel deploy --prod --yes` from `website\` is simpler and ships every git-ignored asset.
+Git-ignored but deployed: `public\addvery\`, `public\people\` (plus `*-og.jpg`), `public\demos\linkedin-voice\`, `app\demos\_og\glow.jpg`, `public\about\`, `local\org-diagrams.json`, `local\research\`. When the tree is clean, a plain `vercel deploy --prod --yes` from `website\` ships all of them.
 
 ## Working notes
 
-- Long Python through Bash heredocs breaks on quotes and `\u` escapes: Write the script to `$CLAUDE_JOB_DIR\tmp` and run it.
-- `vercel deploy` prints a "Promote to production" hint even on `--prod`; the alias does update. Verify with curl.
-- Webcam uploads: `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_webcam.py Sxx <scratch dir>` (create the dir first).
+- Long Python through Bash heredocs breaks on quotes and on `\u`/`\l` in Windows paths: Write the script to `$CLAUDE_JOB_DIR\tmp` and run it.
+- Throwaway build copies with a junctioned `node_modules`: remove the junction with `cmd /c rmdir`, **never** a recursive delete (it would wipe the real `node_modules`). Done for `tmp\landbuild` at 18:30.
+- If the dev server returns 500s with "Jest worker encountered child process exceptions", restart it hidden. A new `/demos` entry 404s in dev until a route file is touched.
+- `vercel deploy --prod` prints a "Promote to production" hint anyway; the alias does update. Verify with curl.
+
+## Messages
+
+- No `website-Q` on the desk. DI-9 and DI-10 are archived.
+- Waiting on: `COPY s-d7` (six landing texts), Alex's comments on the mockup and his welcome placement (via orchestration), and the BUILDs listed above.
