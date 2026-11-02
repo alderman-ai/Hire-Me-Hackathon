@@ -14,9 +14,9 @@ Both requesters asked for R1 first; S-D7 also R4. All items run in parallel, so 
 - [x] R2 What Canva can do now. What can Canva do, by hand and programmatically, for brand-locked LinkedIn templates today: Brand Kit, brand templates, the Connect API and autofill, the Canva MCP server? Which parts need a paid or Enterprise plan? What are the current LinkedIn image, carousel and banner sizes? · serves: DoD-16, DoD-21 · tools: WebSearch, web-fetch (Canva and LinkedIn docs) · deep: no · report: `global\L-05-R2-canva-capabilities.md` (accepted 16:41)
 - [x] R3 Pixel-perfect in Canva. How do designers keep Canva templates pixel-perfect and on brand when someone else fills them in (locked elements, grids, fonts, export settings)? What are the traps: font substitution, PDF carousel export, compression on upload to LinkedIn? · serves: DoD-16 ("pixel-perfect"), DoD-21 (export settings for the video) · tools: WebSearch, web-fetch · deep: no · report: `global\L-05-R3-pixel-perfect-canva.md` (accepted 16:41)
 - [x] R4 LinkedIn posts in a brand's voice. Starting from Alex's Client Demo research on rubric extraction (local disk, read first so nothing is researched twice), what has changed or been added since August on making an LLM write LinkedIn posts in a specific brand's voice? What post formats does LinkedIn reward in late 2026 (text, carousel, document, video)? Lower priority, added from Alex's OT-09 note: what does a LinkedIn personal-branding strategy for one company leader look like, as against a company page, and how does writing in an individual's voice differ from writing in a company's? (Method only; nothing about any named person.) · serves: DoD-17 ("LinkedIn content created in Addvery's voice") · tools: local read of `Desktop\Atlas OS\Projects\PROJ_Client Demo\Research\`, then WebSearch, web-fetch · deep: no · report: `global\L-05-R4-brand-voice-posts.md` (accepted 16:41)
-- [ ] W1 Wildcard: can it be executed?
-- [ ] W2 Wildcard: can it be delivered?
-- [ ] W3 Wildcard: will it be received?
+- [x] W1 Wildcard: can it be executed? · report: `global\L-05-W1-wildcard-executed.md` (accepted 16:46)
+- [x] W2 Wildcard: can it be delivered? · report: `global\L-05-W2-wildcard-delivered.md` (accepted 16:46)
+- [x] W3 Wildcard: will it be received? · report: `global\L-05-W3-wildcard-received.md` (accepted 16:46); synthesis started 16:45
 <!-- after every item above is ticked -->
 - [ ] Synthesis: cross-document insights and recommendations for the S-D6, S-D7 and S-D10 methodologies
 - [ ] DIRECTORY.md entries for every report above
