@@ -5,7 +5,7 @@ description: "The night my own site got away from me, I stopped redlining and ha
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
-kind: "article"
+kind: "showcase"
 library_id: "art-best-of-three-instead-of-redlining"
 group: "How the day went"
 cover:
