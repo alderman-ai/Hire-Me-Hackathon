@@ -853,10 +853,11 @@ Received: 2026-11-02 17:20 CET (+01:00)
 TASK s-d7-linkedin-content: the five LinkedIn posts are ready for your brand sign-off: https://claude.ai/artifact/A8cmvTCoTfMwd9CQz8u7kj ; comment approve or edits on the Doc. (About 10 minutes. The two carousels' slide images are being added to the Doc within the half hour; the text is final now.)
 ```
 
-## TASK s-d5-blog-articles: blog dictation 1 ready to record (Doc) — open
+## TASK s-d5-blog-articles: blog dictation 1 ready to record (Doc) — withdrawn
 From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
 Received: 2026-11-02 17:21 CET (+01:00)
 17:21 CET: alert shown to Alex; no PushNotification (one went out a minute earlier for the LinkedIn posts).
+18:09 CET: s-d5-blog-articles: optional now, not blocking (Alex asked about 18:15 via orchestration for both posts to be written from what he has already said and typed). Dropped from Alex's waiting list; its poke is withdrawn.
 
 ```
 TASK s-d5-blog-articles: blog dictation 1 is ready to record: https://claude.ai/artifact/3jZqfh9wfu8whexxYsxJQH
@@ -888,10 +889,11 @@ Talking points and terminal set-up: https://claude.ai/artifact/XipRZaxFuESjKrTW3
 Demo 1 (about 3 minutes: classification tools, the 36 workflows, the one variable) follows once the last flows are built. Its talking points are already up: https://claude.ai/artifact/83CBecbQdNyH3NZi2MLYDq
 ```
 
-## TASK s-d5-blog-articles: blog dictation 2 ready to record (Doc) — open
+## TASK s-d5-blog-articles: blog dictation 2 ready to record (Doc) — withdrawn
 From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
 Received: 2026-11-02 17:32 CET (+01:00)
 17:32 CET: mentioned to Alex as next after dictation 1 (sender's order); no PushNotification. Full alert to be shown once dictation 1 is done, or now if Alex asks.
+18:09 CET: s-d5-blog-articles: optional now, not blocking (Alex asked about 18:15 via orchestration for both posts to be written from what he has already said and typed). Dropped from Alex's waiting list; its poke is withdrawn.
 
 ```
 TASK s-d5-blog-articles: blog dictation 2 is ready to record: https://claude.ai/artifact/B1CssS1w8S18ZvxhYypsFL
@@ -920,6 +922,7 @@ All 36 workflows' copy, to skim or edit: https://claude.ai/artifact/Vvapg6BdDS4T
 From: s-d10-canva-video (uds:\.\pipe\LOCAL\cc-msg-77dec7d7da6455d67c8bf7e27ffc2eda)
 Received: 2026-11-02 17:36 CET (+01:00)
 17:36 CET: alert shown to Alex; no PushNotification.
+18:06 CET: s-d10-canva-video confirms it is separate from the recording and still open: it waits on Alex's comment on the Doc naming one 5-second idea and one minute idea.
 
 ```
 TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick: https://claude.ai/artifact/SWcsiYUQpJUkZ18mQA2sWj
