@@ -1,9 +1,0 @@
-{
-  "claudeMdExcludes": [
-    "**/Hire me hackaton/CLAUDE.md"
-  ],
-  "worktree": {
-    "bgIsolation": "none",
-    "baseRef": "head"
-  }
-}

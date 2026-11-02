@@ -23,3 +23,5 @@ Every spec and role gets its own sibling folder at the root (charter: standing d
 - `answer-desk\ASKING.md`: every question for Alex goes to the `answer-desk` session in that format, never into a session's own chat (charter P4).
 
 All work goes straight on `main`. No separate branches.
+
+**`Addvery Research\` is git-ignored** (Alex, 2 Nov), so its research never reaches the public repo. That applies to that one folder only. Don't ignore, skip or hide anything else because it mentions Addvery: the charter, specs, the website and every other folder stay tracked as normal.

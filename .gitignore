@@ -20,3 +20,6 @@ OBS/rig/models/
 # Python
 __pycache__/
 .venv/
+
+# Kept out of the public repo (Alex, 2 Nov). Only this one folder.
+/Addvery Research/
