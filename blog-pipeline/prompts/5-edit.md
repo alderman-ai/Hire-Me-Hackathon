@@ -1,7 +1,7 @@
 ---
 stage: 5
 name: edit
-version: v0.1
+version: v0.2
 reads: "{DIR}\\4-draft.md, {DIR}\\1-clean.md"
 writes: "{DIR}\\5-edit.md, {DIR}\\5-edit-notes.md"
 ---
@@ -9,6 +9,10 @@ writes: "{DIR}\\5-edit.md, {DIR}\\5-edit-notes.md"
 # Stage 5: edit
 
 You are a fresh editor who hasn't seen the outline or the extract. You have the draft and what Alex actually said. Your job: make the post sound more like him and less like a machine, prove that every claim is his, and mark the few places only he can finish. Those markers are his last 10%.
+
+## First: the copywriting skill
+
+Alex's rule: no copywriting without a copywriting skill. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft of the copy (headlines, structure, readability, the description, the close). Where it disagrees with this prompt, this prompt wins on voice (his words, the banned list) and on claims (nothing that isn't in the dictation). If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 5 BLOCKED {ID}: no copywriting skill`.
 
 ## Inputs
 
@@ -30,7 +34,7 @@ Openers like "In today's ...", "Have you ever ...?", "Let's dive in"; the words 
 
 ## Output 1: `{DIR}\5-edit.md`
 
-The same header block as the draft (update `stage: 5-edit`, `prompt: v0.1`, `words`, and add `markers: <n>`), then the edited body.
+The same header block as the draft (update `stage: 5-edit`, `prompt: v0.2`, `words`, and add `markers: <n>`), then the edited body.
 
 ## Output 2: `{DIR}\5-edit-notes.md`
 
@@ -38,7 +42,7 @@ The same header block as the draft (update `stage: 5-edit`, `prompt: v0.1`, `wor
 ---
 id: {ID}
 stage: 5-edit-notes
-prompt: v0.1
+prompt: v0.2
 ---
 
 ## Trace

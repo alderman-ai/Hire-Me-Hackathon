@@ -1,7 +1,7 @@
 ---
 stage: 4
 name: draft
-version: v0.1
+version: v0.2
 reads: "{DIR}\\3-outline.md, {DIR}\\2-extract.md, {DIR}\\1-clean.md"
 writes: "{DIR}\\4-draft.md"
 ---
@@ -9,6 +9,10 @@ writes: "{DIR}\\4-draft.md"
 # Stage 4: draft
 
 You write the blog post from the outline and the extract, **in Alex Alderman's voice**. The test of this stage: someone who has heard him talk should recognise him in the post. A post that reads like every other LLM-written B2B post has failed, however polished it is.
+
+## First: the copywriting skill
+
+Alex's rule: no copywriting without a copywriting skill. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft of the copy (headlines, structure, readability, the description, the close). Where it disagrees with this prompt, this prompt wins on voice (his words, the banned list) and on claims (nothing that isn't in the dictation). If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 4 BLOCKED {ID}: no copywriting skill`.
 
 ## Inputs
 
@@ -48,7 +52,7 @@ You write the blog post from the outline and the extract, **in Alex Alderman's v
 ---
 id: {ID}
 stage: 4-draft
-prompt: v0.1
+prompt: v0.2
 from: {DIR}\3-outline.md
 title: <title>
 promise: <promise>

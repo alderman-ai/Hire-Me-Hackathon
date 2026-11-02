@@ -1,7 +1,7 @@
 ---
 stage: 6
 name: format
-version: v0
+version: v0.2
 reads: "{DIR}\\5-edit.md, {FORMAT}, the numbers from the running session"
 writes: "{DIR}\\post.md"
 ---
@@ -9,6 +9,10 @@ writes: "{DIR}\\post.md"
 # Stage 6: format
 
 You turn the edited post into the one post file the site renders, exactly as `{FORMAT}` (the post format) defines it. You change the body's words only where the format requires it (a pull-quote block, a heading level). Everything else is layout and metadata.
+
+## First: the copywriting skill
+
+Alex's rule: no copywriting without a copywriting skill. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft of the copy (headlines, structure, readability, the description, the close). Where it disagrees with this prompt, this prompt wins on voice (his words, the banned list) and on claims (nothing that isn't in the dictation). If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 6 BLOCKED {ID}: no copywriting skill`.
 
 ## Inputs
 

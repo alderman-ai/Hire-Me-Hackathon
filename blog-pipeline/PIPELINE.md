@@ -39,7 +39,7 @@ Hand each stage to a fresh general-purpose subagent with exactly this message (s
 
 ```
 You are stage <n> of the blog pipeline. Read blog-pipeline\prompts\<n>-<stage>.md and follow it exactly.
-{ID} = T-01   {DICTATION} = blog-pipeline\dictations\T-01.md   {DIR} = blog-pipeline\drafts\T-01   {FORMAT} = blog-pipeline\POST-FORMAT.md   {TOPIC} = <topic>
+{ID} = T-01   {DICTATION} = blog-pipeline\dictations\T-01.md   {DIR} = blog-pipeline\drafts\T-01   {FORMAT} = blog-pipeline\POST-FORMAT.md   {TOPIC} = <topic>   {SKILL} = <the copywriting skill>
 Work from the repo root C:\Users\alder\Desktop\Hire me hackaton. Write only the files the prompt names. Don't commit.
 Return the prompt's "Return" block and nothing else.
 ```
@@ -53,6 +53,8 @@ Return the prompt's "Return" block and nothing else.
 | 5 | edit | `5-edit.md`, `5-edit-notes.md` | every claim traced; 3–6 `[Alex: ...]` notes |
 | 6 | format | `post.md` | `validate.py` exits 0 |
 | 7 | scan | `7-scan.md`; `post.md` set to `near-final` | `scan.py` exits 0 on everything |
+
+**No copywriting without a copywriting skill** (Alex, 2 Nov). Stages 3 to 6 (outline, draft, edit, format) load the skill in `{SKILL}` first and stop with `BLOCKED` without one. The blog research (L-03 R5) names the skill; `orchestration` turns it on. Until then, run stages 1 and 2 only.
 
 Stages run one after another (each needs the last one's output). **Timing,** from a rehearsal on a 13-minute rig transcript (2,040 words): clean 2.6 min, extract 4.5, outline 3.9, draft 3.7, edit 4.5, format 2.0, scan 2.2. About 25 minutes from captured dictation to a near-final post, so book Alex's review at least 30 minutes after his dictation ends, plus the preview deploy. The checks are yours, the running session's: read the stage's return line and the file's header; a failed check means fix the prompt and rerun, never hand-edit.
 

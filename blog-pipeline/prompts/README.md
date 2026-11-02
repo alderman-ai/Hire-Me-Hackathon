@@ -24,6 +24,7 @@ The session running the pipeline fills these in when it hands a stage to a subag
 - `{DIR}`: the post's working folder, e.g. `blog-pipeline\drafts\T-01`.
 - `{FORMAT}`: `blog-pipeline\POST-FORMAT.md`.
 - `{TOPIC}`: the topic as Alex gave it.
+- `{SKILL}`: the copywriting skill stages 3 to 6 load before they write (Alex, 2 Nov: "Do not do any copywriting without a copywriting skill"). Which one is settled by the blog research (L-03 R5) and turned on by `orchestration`; until it's named, stages 3 to 6 don't run.
 
 ## The hand-off message
 
@@ -31,7 +32,7 @@ Every stage gets the same short message, and nothing else from the running sessi
 
 ```
 You are stage <n> of the blog pipeline. Read blog-pipeline\prompts\<n>-<stage>.md and follow it exactly.
-{ID} = ...   {DICTATION} = ...   {DIR} = ...   {FORMAT} = ...   {TOPIC} = ...
+{ID} = ...   {DICTATION} = ...   {DIR} = ...   {FORMAT} = ...   {TOPIC} = ...   {SKILL} = ...
 Work from the repo root C:\Users\alder\Desktop\Hire me hackaton. Write only the files the prompt names. Don't commit.
 Return the prompt's "Return" block and nothing else.
 ```
@@ -43,3 +44,4 @@ Return the prompt's "Return" block and nothing else.
 | v0 | 2 Nov, ~15:00 | First draft of stages 0 to 7 | SPEC §7 methodology, before research |
 | v0 (6, 7) | 2 Nov, ~15:10 | Format stage follows `POST-FORMAT.md` v1 (stages and checks lists, pull-quote placement, `validate.py`); scan stage sets `near-final` when it passes; edit stage: ideas, not verdicts, on a real company's market | The post format landed; L-01 synthesis rec 4.5 |
 | v0.1 (1, 4, 5) | 2 Nov, ~15:45 | Clean: fix mis-hearings only when near-certain. Draft and edit: written, not transcribed (cut "et cetera", "whatever", "yeah" and other speech scaffolding; at most two "So" openers; asides to the camera rewritten), and events of the day in the past tense | Rehearsal on a 13-minute rig transcript (not committed): every check passed, but the post still read as transcribed speech |
+| v0.2 (3, 4, 5, 6) | 2 Nov, ~16:50 | Each loads the copywriting skill `{SKILL}` before writing, and stops if there's none | Alex in his note on the blog research approval: "Do not do any copywriting without a copywriting skill" |

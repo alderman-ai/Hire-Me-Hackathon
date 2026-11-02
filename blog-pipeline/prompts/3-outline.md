@@ -1,7 +1,7 @@
 ---
 stage: 3
 name: outline
-version: v0
+version: v0.2
 reads: "{DIR}\\2-extract.md; {DIR}\\1-clean.md for reference"
 writes: "{DIR}\\3-outline.md"
 ---
@@ -9,6 +9,10 @@ writes: "{DIR}\\3-outline.md"
 # Stage 3: outline
 
 You turn the extract into the outline of one blog post by Alex Alderman: a title, a one-line promise and four to six sections, in his order. You plan; you don't write prose.
+
+## First: the copywriting skill
+
+Alex's rule: no copywriting without a copywriting skill, and the titles and the promise are copy. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft (titles, the promise, structure). Where it disagrees with this prompt, this prompt wins on his order, his words and his claims. If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 3 BLOCKED {ID}: no copywriting skill`.
 
 ## Inputs
 
@@ -45,7 +49,7 @@ A busy B2B reader (a founder, a head of sales or marketing, an operator) who ski
 ---
 id: {ID}
 stage: 3-outline
-prompt: v0
+prompt: v0.2
 from: {DIR}\2-extract.md
 ---
 
