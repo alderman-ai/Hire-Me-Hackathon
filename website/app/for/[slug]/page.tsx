@@ -21,7 +21,7 @@ import { readingPath, type PathItem, type ReadingPath } from "../reading-time";
 import "../../article.css";
 import "../for.css";
 import { NEW_SITE } from "../../flags";
-import { RememberYourPage } from "../../your-page";
+import { PersonalPage } from "./personal";
 
 // One page per key person at Addvery, addressed to their role: /for/<slug>. The grid at /for opens it.
 //
@@ -384,6 +384,20 @@ export default async function StakeholderPageView({ params }: { params: Promise<
   const page = pages.find((p) => p.slug === slug);
   if (!page) notFound();
 
+  // The new site (VERDICT.md 2.3, previews only until a checkpoint): the P1 to P7 stack.
+  if (NEW_SITE) {
+    return (
+      <PersonalPage
+        page={page}
+        portrait={portraitFor(page.slug)}
+        approved={approved}
+        notice={notice}
+        aboutMe={aboutMe}
+        sources={page.sources ?? notice.sources}
+      />
+    );
+  }
+
   const demos = allDemos();
   const picked = page.demos
     .map((d) => {
@@ -428,7 +442,6 @@ export default async function StakeholderPageView({ params }: { params: Promise<
 
   return (
     <main className={landing ? "art art-for for-landing" : "art art-for"}>
-      {NEW_SITE && <RememberYourPage slug={page.slug} />}
       {landing && path ? (
         <>
           {/* ---------- The landing: hello, their likely questions, their reading list ---------- */}

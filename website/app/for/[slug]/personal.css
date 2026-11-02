@@ -1,0 +1,100 @@
+/* The personal page on the new site (app/for/[slug]/personal.tsx). It reuses the live landing's
+   blocks (for.css, article.css); this adds the note's signature photo, the closing band, and the
+   preview-only placeholder marker. */
+
+.pp-note {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 38rem;
+}
+
+.pp-note .for-land-lead {
+  margin: 0;
+}
+
+.pp-note a,
+.pp-made a,
+.pp-ask a,
+.pp .for-qa-a a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* His headshot (the /about file, unaltered), framed on his face: a round photo in the gradient ring. */
+.pp-sign-photo {
+  position: relative;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: var(--av-radius-pill, 999px);
+  background:
+    linear-gradient(var(--av-ink, #151515), var(--av-ink, #151515)) padding-box,
+    var(--av-gradient-row, linear-gradient(90deg, #6645eb, #d445eb)) border-box;
+}
+
+.pp-sign-photo img {
+  position: absolute;
+  left: -13%;
+  top: -40%;
+  width: 140%;
+  max-width: none;
+  height: auto;
+}
+
+.pp-band {
+  padding: 3.5rem 0;
+}
+
+.pp-close {
+  background: var(--av-lilac-100);
+}
+
+.pp-close-inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  max-width: 48rem;
+}
+
+.pp-made {
+  margin: 0;
+  color: var(--av-text-on-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* The one ask: the page's stop point. */
+.pp-ask {
+  margin: 0;
+  color: var(--av-ink);
+  font-family: var(--av-font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.pp-placeholder {
+  max-width: 40rem;
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  border: 1px dashed var(--av-amethyst);
+  border-radius: var(--av-radius-md);
+  color: var(--av-plum);
+  background: var(--av-lilac-100);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* On the dark hero. */
+.for-land-hero .pp-placeholder {
+  color: var(--av-lilac-200);
+  background: rgba(235, 220, 255, 0.08);
+  border-color: var(--av-lilac-200);
+}
