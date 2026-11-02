@@ -14,7 +14,7 @@ cover:
 tags: ["ai-agents", "gtm-engineering", "build-in-public"]
 reading_minutes: 6
 ---
-<!-- Drafted by s-d9-legibility from the rig transcripts S01 to S11 and the project's logs (legibility\local\article\). Clip ids marked PENDING are uploading through website. -->
+<!-- Drafted by s-d9-legibility from the rig transcripts S01 to S11 and the project's logs (legibility\local\article\). Clip ids from website (contentips.json). -->
 
 On 2 November I applied for a job by building the work live. For one day I recorded myself directing about 15 Claude Code sessions, each with one job, while they built demos for Addvery, the company I was applying to, and a public site told anyone following along what was happening. I'd spent six months building my own way of working with AI. That day I left most of it in the drawer, to see if it still gave me an edge.
 
@@ -30,7 +30,7 @@ This is the story of that day, up to the evening: what I set up, what broke, and
 
 Before I handed anything to the agents, I spent the morning writing. The result was a charter: the goal, the ten demos and the rules every agent would follow, such as one job per session and one window, my answer desk, where questions for me wait in line, one at a time. If I don't answer within 15 minutes, the agent decides and writes down why.
 
-> [!video] PENDINGday1
+> [!video] 6Ynpp621fmY
 > The movie-actor rule: everything that needs me happens first
 
 The rule I leaned on most is the movie-actor rule. Anything that needs me (a recording, a judgment call, a list of questions) is scheduled first, the way a film shoots its most expensive actor's scenes first. Once I've answered, the rest runs without me.
@@ -45,7 +45,7 @@ It felt slow. At noon nothing was running yet. But I've worked with AI long enou
 
 Then I made it harder on myself. I'd never recorded myself before or built a site live with people watching, and I'd left my own tools behind for the desktop app I don't normally use. My charter didn't look like my usual documents either, and I had a bad gut feeling about it. I pressed on.
 
-> [!video] PENDINGday2
+> [!video] pyFHE1JHMV8
 > 12:56: too many new things at once
 
 Some of it worked straight away. Three agents wrote the plans for the project's tooling in parallel, and the answer desk did its job. I loved it from the first hour. But by 13:17 I was asking my own agents to bring me back to earth, because I'd lost track of what was waiting on me.
@@ -54,7 +54,7 @@ Some of it worked straight away. Three agents wrote the plans for the project's 
 
 Three minutes later came the worst moment of the day. I tried to close one background session I didn't need any more, and closed all seven that were running in that folder, including the one that runs my recording rig.
 
-> [!video] PENDINGday3
+> [!video] S2NTaJHUmTM
 > 13:21, a minute after I closed every session
 
 > [!quote]
@@ -90,7 +90,7 @@ At 16:44 I told my coordinating session to halt everything that was only waiting
 > Please unstuck everything. If things are an easy judgment, please clear the plate for me. We can just make edits later.
 > Alex Alderman, on camera during the hackathon, 2 Nov 2026
 
-> [!video] PENDINGday5
+> [!video] FMYWlkGWdeY
 > 16:58: the lesson, fourteen minutes after I stopped everything
 
 The sessions restarted at 17:13. In the next half hour, what reached me changed. Instead of reminders, I got eight things only I can do: three sign-offs, four recordings and one choice.
