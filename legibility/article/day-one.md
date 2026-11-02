@@ -16,7 +16,7 @@ reading_minutes: 6
 ---
 <!-- Drafted by s-d9-legibility from the rig transcripts S01 to S11 and the project's logs (legibility\local\article\). Clip ids marked PENDING are uploading through website. -->
 
-On 2 November I applied for a job by building the work live. For one day I recorded myself directing about 15 Claude Code sessions, each with one job, while they built demos for the company and a public site told anyone following along what was happening. I'd spent six months building my own way of working with AI. That day I left most of it in the drawer, to see if it still gave me an edge.
+On 2 November I applied for a job by building the work live. For one day I recorded myself directing about 15 Claude Code sessions, each with one job, while they built demos for Addvery, the company I was applying to, and a public site told anyone following along what was happening. I'd spent six months building my own way of working with AI. That day I left most of it in the drawer, to see if it still gave me an edge.
 
 This is the story of that day, up to the evening: what I set up, what broke, and what I'd keep. The agent that watches my recordings put it together from about four hours of what I said on camera, and I finished it.
 
@@ -28,14 +28,14 @@ This is the story of that day, up to the evening: what I set up, what broke, and
 
 ## A morning of writing before the agents started
 
-Before I handed anything to the agents, I spent the morning writing. The result was a charter: the goal, the ten demos and the rules every agent would follow, such as one job per session and one window where questions for me wait in line, one at a time. If I don't answer within 15 minutes, the agent decides and writes down why.
+Before I handed anything to the agents, I spent the morning writing. The result was a charter: the goal, the ten demos and the rules every agent would follow, such as one job per session and one window, my answer desk, where questions for me wait in line, one at a time. If I don't answer within 15 minutes, the agent decides and writes down why.
 
 > [!video] PENDINGday1
 > The movie-actor rule: everything that needs me happens first
 
-The rule I leaned on most is the movie-actor rule. Anything that needs me, a recording, a judgment call or a list of questions, is scheduled first, the way a film shoots its most expensive actor's scenes first. Once I've answered, the rest runs without me.
+The rule I leaned on most is the movie-actor rule. Anything that needs me (a recording, a judgment call, a list of questions) is scheduled first, the way a film shoots its most expensive actor's scenes first. Once I've answered, the rest runs without me.
 
-It felt slow. At noon nothing was running yet, and that felt bad. But I've worked with AI long enough to know what a sloppy start costs.
+It felt slow. At noon nothing was running yet. But I've worked with AI long enough to know what a sloppy start costs.
 
 > [!quote]
 > Mistakes cascade and they just snowball, and you really want to take the time to get it right, because time is no longer the bottleneck, because you can have 20 agents running side by side.
@@ -48,7 +48,7 @@ Then I made it harder on myself. I'd never recorded myself before or built a sit
 > [!video] PENDINGday2
 > 12:56: too many new things at once
 
-Some of it worked straight away. Three agents wrote the tooling specs in parallel, and the question window did its job: I loved my answer desk from the first hour. But by 13:17 I was asking my own agents to bring me back to earth, because I'd lost track of what was waiting on me.
+Some of it worked straight away. Three agents wrote the plans for the project's tooling in parallel, and the answer desk did its job. I loved it from the first hour. But by 13:17 I was asking my own agents to bring me back to earth, because I'd lost track of what was waiting on me.
 
 ## 13:20: I closed every session
 
@@ -61,9 +61,9 @@ Three minutes later came the worst moment of the day. I tried to close one backg
 > I'm gonna be patient. Hopefully it can spin up all the sessions that we're working and just resume, and this is just a 15 minute setback and not an hour and a half setback. AI is so fun.
 > Alex Alderman, on camera during the hackathon, 2 Nov 2026
 
-It was less than that. A fresh session resumed the six I needed under their own names, each with its full history and a note on where it had stopped. The first was back seven minutes after the click, and the last two minutes later. About 90 seconds of work was lost, because every session commits its work as it goes.
+It was less than that. A fresh session resumed the six I needed under their own names, each with its full history and a note on where it had stopped. The first was back seven minutes after the click, and the last two minutes later. About 90 seconds of work was lost, because every session saves its work as it goes.
 
-Then I asked for the fix to become a skill, so the next power cut or bad click costs one command. It existed eight minutes later.
+Then I asked for the fix to become a reusable procedure, so the next power cut or bad click costs one command. It existed eight minutes later.
 
 ## The plan starts paying for itself
 
@@ -78,11 +78,11 @@ The part that surprised me most was the agents talking to each other. I usually 
 > [!video] MyYnFOQCagc 240 277
 > Back from lunch: I could run this again tomorrow for a new company
 
-Most of what got built is reusable. The skills and workflows from this day could run again for another company, in about half the time and with half the stress.
+Most of what got built is reusable. I'd expect a second run for another company to take about half the time, with half the stress.
 
 ## Everything waited on me, so I stopped everything
 
-The same plan had a flaw I didn't see until it hurt. Every spec asked for my approval, and every approval became a file with a checkbox and an agent checking it every five minutes. By 16:28 some had waited an hour and a half. In the hour before the stop, my question window logged 19 reminders that something was waiting on me.
+The same plan had a flaw I didn't see until it hurt. Every plan asked for my approval, and every approval became a file with a checkbox and an agent checking it every five minutes. By 16:28 some had waited an hour and a half. In the hour before the stop, my answer desk logged 19 reminders that something was waiting on me.
 
 At 16:44 I told my coordinating session to halt everything that was only waiting. It paused 15 sessions in 39 seconds. Then we changed the rules: easy calls belong to the agents, as long as they write down why, plans no longer need my approval, and nobody stops to ask me about public information.
 
