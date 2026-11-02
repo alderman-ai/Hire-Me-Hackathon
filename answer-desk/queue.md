@@ -230,10 +230,11 @@ Received: 2026-11-02 14:02 CET (+01:00)
 TASK S2: DI-5 S2 DoD sign-off is waiting on you: sign off the project definition of done (22 items, DoD-1 to DoD-22). Answer A, B or C in Operator tasks in Obsidian, then say DI-5 is ready. Signing it off lets wave 2 start.
 ```
 
-## TASK S1: OT-01 Gate approval parent research list.md — open
+## TASK S1: OT-01 Gate approval parent research list.md — done
 From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
 Received: 2026-11-02 14:11 CET (+01:00)
 14:11 CET: alert shown to Alex.
+14:36 CET: TASK DONE S1 received; marked done.
 
 ```
 TASK S1: OT-01 Gate approval parent research list.md is waiting on you: approve or change the parent research list L-01, four questions plus three wildcards that every wave-2 spec reads. Approving starts the research; orchestration needs the findings by 16:00 Prague.
@@ -276,19 +277,22 @@ Deadline: 14:33
 **Affects:** only the GitHub repo. The website's copies are already redacted.
 ```
 
-## TASK S-D1: DI-6 S-D1 Scraping preflight.md — open
+## TASK S-D1: DI-6 S-D1 Scraping preflight.md — done
 From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:23 CET (+01:00)
 14:23 CET: alert shown to Alex.
+14:33 CET: wave2-specs says Alex has answered DI-6; marked done.
 
 ```
 TASK S-D1: DI-6 S-D1 Scraping preflight.md is waiting on you: 5 decisions (Apify token and spend cap, what the demo scrapes, whether the site names Apify, who enriches the six stakeholders, earlier Apify tooling to reuse). Unblocks the S-D1 scraping demo launch, first in wave 2, which S-D3's live run depends on. No camera time; the token goes in with the recording paused.
 ```
 
-## TASK S-D3: DI-7 S-D3 GetSales preflight.md — open
+## TASK S-D3: DI-7 S-D3 GetSales preflight.md — on hold
 From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:24 CET (+01:00)
 14:24 CET: alert shown to Alex.
+14:33 CET: wave2-specs put it on hold (Alex's DI-6 answers settle most of it); a shorter version replaces it with a new TASK line. Alex told not to answer it yet.
+14:37 CET: briefing relays Alex (14:38): waits on his Addvery research. Stays on hold.
 
 ```
 TASK S-D3: DI-7 S-D3 GetSales preflight.md is waiting on you: 6 decisions (what the ten ICPs are, which GetSales team the demo lives in, Sales Navigator export method, what the live run sends and the second message, Ivana's view-only access, the live-run slot 17:00-17:30). Unblocks the S-D3 GetSales demo launch; it needs you on camera once, for the live run.
@@ -301,5 +305,42 @@ Received: 2026-11-02 14:26 CET (+01:00)
 
 ```
 POKE S1: waiting on you for OT-01 Gate approval parent research list.md (tick "I approve" or write changes); orchestration needs the findings by 16:00 Prague.
+```
+
+## TASK S-D4: DI-8 S-D4 Blog pipeline preflight.md — open
+From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
+Received: 2026-11-02 14:31 CET (+01:00)
+14:31 CET: alert shown to Alex.
+14:37 CET: briefing relays Alex (14:38): low priority, don't push it at him. Kept on list; no alerts or notifications for its pokes.
+
+```
+TASK S-D4: DI-8 S-D4 Blog pipeline preflight.md is waiting on you: 5 decisions (where the post's look is built, where your dictation lands, whether the test dictation counts as article 1, the test slot 15:15-15:35 and topic, what to do if research runs late). Unblocks the S-D4 blog pipeline launch and your first on-camera dictation, proposed for 15:15.
+```
+
+## POKE S2 — 14:34
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
+Received: 2026-11-02 14:34 CET (+01:00)
+14:34 CET: about open TASK S2 OT-02; repeated that alert to Alex.
+
+```
+POKE S2: waiting on you for OT-02 Gate approval S2 charter changes C01 C02 (in Operator tasks): tick I approve, or write what to change. It's the last step before the outline sign-off that lets wave 2 start.
+```
+
+## TASK S1: Approve - research plan for the whole project.md — open
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
+Received: 2026-11-02 14:36 CET (+01:00)
+14:36 CET: alert shown to Alex. Arrived right after TASK DONE for OT-01.
+
+```
+TASK S1: Approve - research plan for the whole project.md is waiting on you: tick "I approve" or write changes on four research questions (plus three open-ended checks) that every demo reads before its plan is written. About a 3-minute read; approving starts the research now so the findings are ready by 16:00 Prague.
+```
+
+## NOTE from briefing — 14:37
+From: briefing (uds:\.\pipe\LOCAL\cc-msg-6c9e148ff96577cfc5f8baf8d9023902)
+Received: 2026-11-02 14:37 CET (+01:00)
+Recorded against OT-01 (already done), DI-6 (already done), DI-7 and DI-8.
+
+```
+Alex's decisions, 14:38, relayed by briefing on his instruction, for your records: OT-01 approved (box ticked). DI-6 is done. DI-7 waits on his Addvery research, which is his focus now. DI-8 is low priority, so please don't push it at him. His words: "let's just approve ot1 -- i'm swamped we need to remove blockers ... di6 is done. di7 is waiting on addvery research which is where my focus needs to be right now. d1-8 is low priority". I've told s1-research, wave2-specs and orchestration.
 ```
 
