@@ -1,6 +1,6 @@
 # Blog post format
 
-Post format v1.2, 2 Nov 2026 (v1.2: the site's shared entry fields `kind`, `deliverable`, `video` and `poster`, titles at most 64 characters and kickers at most 28, from `website`'s BUILT S-D5-B1; v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D5 (`blog-pipeline\`, since S-D4 retired) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
+Post format v1.3, 2 Nov 2026 (v1.3: video clips inline between sections, `[!video]`, for the site's shared entries; v1.2: the site's shared entry fields `kind`, `deliverable`, `video` and `poster`, titles at most 64 characters and kickers at most 28, from `website`'s BUILT S-D5-B1; v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D5 (`blog-pipeline\`, since S-D4 retired) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
 
 Every blog post is one Markdown file: a block of front matter that says what the post is, then the post itself in plain Markdown with four small additions: pull quotes, a key-points box, an optional diagram and notes left for Alex. The pipeline writes the file, Alex finishes it, and the site renders it as it is. This document is the contract between them. A file that passes the checklist in §6 must render; anything this document doesn't define is a validation failure, not something to guess at. The posts are Alex Alderman's, in his name and voice. The site styles them in its own look, but they are never written as a company's posts.
 
@@ -158,6 +158,19 @@ My longest early attempt lasted [Alex: how many weeks your first try lasted] bef
 - Then 3 to 6 numbered items, `> 1.` onwards, each `Label` or `Label: note`: a label of 1 to 4 words, an optional note of at most 15 words. Plain text only: no links, emphasis or notes for Alex.
 - It draws an idea Alex actually gave (his scale, his steps, his order), never a decoration. Place it between two blocks inside a section, never in the lede and never as the post's last block.
 - The template draws it in the site's look from this text, so there's no image and no design step, and its words stay searchable and readable by screen readers.
+
+### 3.6 Video clip (optional, any number)
+
+```markdown
+> [!video] AbCdEfGhIjK 754 812
+> The first workflow runs on camera
+```
+
+- The first line is `> [!video]`, a space, the 11-character YouTube id, then optionally the start second and, after it, the end second: `> [!video] <id>`, `> [!video] <id> <start>` or `> [!video] <id> <start> <end>`, whole seconds, end after start.
+- The second line is the caption: one plain sentence or phrase, at most 100 characters, no end period needed. It names what the clip shows; the template also uses it as the player's accessible title.
+- Place a clip between two blocks, never in the lede. Any number per entry: a long-form entry can run text, clip, text, clip. A blog post from a dictation normally has none.
+- The template embeds it in the site's look as a 16:9 privacy-enhanced YouTube player (`youtube-nocookie.com`), loaded only when it scrolls into view, starting and stopping at the given seconds, with the caption under it.
+- Only clips from the project's own published recordings; nothing that shows a secret, the Apify proposal or Alex's own outbound (the scan rules).
 
 ## 4. The "How this post was made" box
 

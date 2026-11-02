@@ -57,6 +57,7 @@ SETEXT = re.compile(r"^ {0,3}(=+|-+)[ \t]*$")
 LINK = re.compile(r"\[((?:[^\[\]\n]|\[[^\[\]\n]*\])*)\]\(([^)\s]*)[^)]*\)")
 INLINE_CODE = re.compile(r"`[^`\n]*`")
 DIAGRAM = re.compile(r"> \[!diagram\] (?:scale|flow)")
+VIDEO = re.compile(r"> \[!video\] ([A-Za-z0-9_-]{11})(?: (\d+)(?: (\d+))?)?")
 DIAGRAM_ITEM = re.compile(r"^(\d+)\.\s+(\S.*)$")
 
 
@@ -487,10 +488,22 @@ def validate(raw: bytes):
                 summaries.append(k)
             elif DIAGRAM.fullmatch(first):
                 diagrams.append(k)
+            elif VIDEO.fullmatch(first):
+                m = VIDEO.fullmatch(first)
+                cap = [re.sub(r"^\s*>\s?", "", line).strip() for line in b["lines"][1:]]
+                cap = [c for c in cap if c]
+                if len(cap) != 1 or len(cap[0]) > 100:
+                    P.append(("F", 15, f"line {b['start']}: a video clip has exactly one caption line of at most 100 characters"))
+                if m.group(3) and int(m.group(3)) <= int(m.group(2)):
+                    P.append(("F", 15, f"line {b['start']}: a video clip's end second must come after its start"))
+                if b["section"] == 0:
+                    P.append(("F", 15, f"line {b['start']}: a video clip in the lede"))
+            elif "[!video]" in first:
+                P.append(("F", 15, f"line {b['start']}: a video clip's first line is '> [!video] <11-character id> [start] [end]'"))
             elif "[!diagram]" in first:
                 P.append(("F", 15, f"line {b['start']}: a diagram's first line must be exactly '> [!diagram] scale' or '> [!diagram] flow'"))
             else:
-                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!summary] or [!diagram] scale|flow"))
+                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!summary], [!diagram] scale|flow or [!video]"))
             if "[Alex" in "\n".join(b["lines"]):
                 P.append(("F", 17, f"line {b['start']}: a note for Alex inside a callout"))
 

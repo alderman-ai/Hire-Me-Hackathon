@@ -66,6 +66,7 @@ def body_words(text: str) -> list[str]:
             kept.append(line)
     text = "\n".join(kept)
     text = re.sub(r"\[!(?:pull|summary)\]|\[!diagram\](?:[ \t]+(?:scale|flow)(?![^\W_]))?", " ", text)
+    text = re.sub(r"\[!video\][ \t]+[A-Za-z0-9_-]{11}(?:[ \t]+\d+){0,2}", " ", text)  # v1.3: id and seconds don't count
     text = re.sub(r"\[([^\]\n]*)\]\([^)\n]*\)", r"\1", text)        # links: keep the text
     text = re.sub(r"(?m)^([ \t]*(?:>[ \t]*)*)\d+\.(?=\s)", r"\1", text)  # list numbers
     return [t for t in text.split() if HAS_ALNUM.search(t)]
