@@ -97,14 +97,13 @@ Written 2 Nov at about 18:35 Prague by session 54c2d301 (took over at 17:15 from
 
 ## Deploying
 
-**Warning (20:10): HEAD now contains the unreviewed welcome** (e3e8b9f, `app\page.tsx` and friends, committed at Alex's request after the crash). Alex reads the welcome copy and the four paths before it ships (attended copy, STATUS.md finish list item 2). Until he has, any deploy from HEAD ships it, a plain `vercel deploy` from `website\` included. So until he OKs it, always deploy the clean export below, which swaps `app\page.tsx` back to 9906723's version (the same file as 4a8099f, live since 16:30). `page.tsx` is the only file that imports the welcome, so the other welcome files are then unused and harmless. Once he OKs it, delete that one line.
+**The welcome never ships (W1, 21:17).** The verdict (`..\orchestration\assembly\VERDICT.md`) supersedes the welcome and its time picker. `app\page.tsx` is back to the live deploy's version (27716be, the same file as 9906723 and 4a8099f), so HEAD is safe to deploy as is: `welcome.tsx`, `time-picker.tsx`, `summary-carousel.tsx`, `welcome-data.ts` and `content\time-paths.json` stay in git, imported by nothing. The old "swap page.tsx back" line is gone from the recipe: with the home being rebuilt (W7, W11), it would now undo that work. Every build goes to a PREVIEW first (RULES.md rule 1); production only on Alex's yes, at the verdict's checkpoints (W9, W16).
 
 Deploy a clean export of HEAD and copy **every** git-ignored asset in (fixed 20:10: the earlier recipe missed `/about`'s images and copy). Dry-run checked by `website` at 20:12: every ignored file that deploys reaches the export with matching counts, and no `.env*`, `.clock`, `local\addvery` or `local\alex` gets in.
 
 ```bash
 cd "/c/Users/alder/Desktop/Hire me hackaton"; D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"; rm -rf "$D"; mkdir -p "$D"
 git archive --format=tar HEAD:website > "$D.tar" && tar -xf "$D.tar" -C "$D" && rm "$D.tar"
-git show 9906723:website/app/page.tsx > "$D/app/page.tsx"   # keeps the welcome off; delete this line once Alex OKs it
 mkdir -p "$D/.vercel" "$D/public/addvery" "$D/public/people" "$D/public/demos" "$D/local"; cp website/.vercel/project.json "$D/.vercel/"
 cp website/public/addvery/* "$D/public/addvery/"; cp website/public/people/* "$D/public/people/"
 cp -r website/public/demos/linkedin-voice "$D/public/demos/"; cp website/app/demos/_og/glow.jpg "$D/app/demos/_og/"
@@ -113,7 +112,7 @@ cp -r website/local/org-diagrams.json website/local/research website/local/about
 # once D12 ships: cp -r website/public/agent website/public/llms.txt into "$D/public/"
 cd "$D" && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes
 # then check: /about 200 with "From my LinkedIn", one /about/wall image 200, /for/growth 200, /demos 200,
-# and / has no welcome markup until Alex OKs it
+# previews: same export, `vercel deploy --yes --build-env WALL_FULL=1` (no --prod); $CLAUDE_JOB_DIR\tmp\preview_wall.sh
 ```
 
 Git-ignored but deployed: `public\addvery\` (24 files), `public\people\` (18, `*-og.jpg` included), `public\demos\linkedin-voice\` (18), `app\demos\_og\glow.jpg`, `public\about\` (20), `local\about\about-me.md`, `local\org-diagrams.json`, `local\research\` (7). The app reads only those three from `local\` (`app\about\copy.ts`, `app\org-charts.tsx`, `app\research-docs.tsx`). If you add a git-ignored file the build needs, add it to the recipe too.
