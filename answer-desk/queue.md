@@ -150,3 +150,35 @@ Recommendation: (a). It's a harmless reading pointer, and S0's audit wants it in
 **If unanswered by the deadline:** before 18:00, rig pokes and keeps waiting. From 18:00, rig leaves OBS\CLAUDE.md unchanged.
 ```
 
+## S1-Q5 — answered
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
+Received: 2026-11-02 13:50 CET (+01:00)
+13:50 CET: shown to Alex.
+14:00 CET: answered; recorded in qa\S1.md and sent to s1-research.
+
+```
+ASK S1-Q5
+Critical: no
+Deadline: 14:05 Prague
+
+## S1-Q5 — Where finished research reports live
+
+**The question:** Should finished research reports move from S1's staging folder to their parent or child home through `orchestration` (as the S1 spec reads now), or should they go somewhere else?
+
+**Context you need.** In DI-3 you said research is "stored at either the parent or child level (depending on if it's global or local research) and added to the reading list of any specs that need it." The S1 spec reads that as:
+- **Parent level:** research two or more specs need, or that shapes the whole project. Home: `orchestration\research\`.
+- **Child level:** research only one spec needs. Home: `<spec folder>\research\`, for example `scraping\research\`.
+- **One index:** `research\DIRECTORY.md` lists every report at both levels, with a reverse index by spec, so there's one place to look.
+
+The catch is GIT.md: a session may only write in its own folder. S1 can't put files in `orchestration\` or `scraping\`. `orchestration` can (your standing exception), and it runs S2, which writes the reading-list lines into each spec anyway. Nothing moves home until you answer; reports sit in `research\staging\` meanwhile, so this doesn't block any research.
+
+**Options.**
+- (a) S1 writes and reviews every report in `research\staging\`. When a list is done, it sends `orchestration` the paths; orchestration moves each report to its home and adds it to the reading list of every spec that needs it. GIT.md stays as it is. Cost: each move waits for orchestration, which is often busy.
+- (b) S1 writes reports straight into their homes (`orchestration\research\`, `<spec>\research\`). Fastest, but `orchestration` has to add a GIT.md exception letting S1 write `research\` subfolders in other sessions' folders.
+- (c) Nothing moves. Every report stays in `research\`, split into `research\global\` and `research\<spec>\`. Simplest; reading lists point into S1's folder. Loses the literal parent/child placement you described.
+- (d) Something else — say what.
+Recommended: (a). It matches your parent/child wording and keeps GIT.md untouched, and the extra hop costs minutes, not your time.
+
+**If unanswered by the deadline:** before 18:00 I keep waiting and poke you every 15 minutes; reports stay in staging. From 18:00 I take (a) and log it in S1's decision log.
+```
+
