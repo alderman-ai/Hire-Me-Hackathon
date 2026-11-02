@@ -12,8 +12,29 @@ import stakeholdersJson from "@/content/stakeholders.json";
 // production build, even after approval, so a draft note can't go live by accident.
 //
 // The portraits are public/people/<slug>.webp (800x1000) and <slug>-400.webp: git-ignored, deployed.
+//
+// Each page can also carry a `landing`: the personal opening Alex sends each person a link to (a
+// greeting, their likely questions with his answers, and a reading list, most important first). It
+// has its own gate, on top of the one above: it shows only under `next dev` or when that page's
+// `landing.approved` is exactly `true`. Until then a production build renders the page as before.
 
 export type StakeholderDemo = { n: number; why: string };
+
+/** One likely question, in the person's voice (`q`), and Alex's plain answer (`a`). */
+export type LandingConcern = { q: string; a: string };
+
+/** One reading-list link: a site path ("/d3", "/#post-s02", "/docs/charter", "/") or a full URL. */
+export type LandingLink = { title: string; href: string };
+
+export type StakeholderLanding = {
+  /** The landing's own gate: only `true` puts it on the live site. */
+  approved: boolean;
+  /** Opens the page. The first sentence ("Hi Ivana.") is set as the headline when it's short. */
+  greeting: string;
+  concerns: LandingConcern[];
+  /** Most important first. Times come from content/inventory.json (app/for/reading-time.ts). */
+  reading_list: LandingLink[];
+};
 
 export type StakeholderPage = {
   /** Role-based, never a name: ceo, growth, cofounder-1, cofounder-2, delivery, bi. */
@@ -42,6 +63,11 @@ export type StakeholderPage = {
   ask: { short: string; heading: string; body: string };
   /** Overrides the notice's sources line, when a page uses more than the website and the title. */
   sources?: string;
+  /**
+   * The personal landing. After the gate (stakeholderGate) this is set only when it may show:
+   * under `next dev`, or with `landing.approved === true`. Invalid concerns and links are dropped.
+   */
+  landing?: StakeholderLanding;
 };
 
 export type StakeholderNotice = {
@@ -98,6 +124,28 @@ function isPage(p: unknown): p is StakeholderPage {
   );
 }
 
+/** A reading-list href the page can link to: a site path, or an http(s) URL. */
+const isHref = (v: unknown): v is string => isText(v) && (/^\/(?!\/)/.test(v) || /^https?:\/\//.test(v));
+
+/**
+ * The landing's gate and clean-up: null unless it may show (`next dev`, or `approved` exactly true)
+ * and has a greeting. Concerns without both a question and an answer, and links without a title or a
+ * usable href, are left out rather than shown half-empty.
+ */
+function cleanLanding(raw: unknown): StakeholderLanding | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const l = raw as Partial<Record<keyof StakeholderLanding, unknown>>;
+  const approved = l.approved === true;
+  if (!(approved || isDev()) || !isText(l.greeting)) return undefined;
+  const concerns = (Array.isArray(l.concerns) ? l.concerns : [])
+    .filter((c): c is LandingConcern => !!c && typeof c === "object" && isText(c.q) && isText(c.a))
+    .map((c) => ({ q: c.q.trim(), a: c.a.trim() }));
+  const reading_list = (Array.isArray(l.reading_list) ? l.reading_list : [])
+    .filter((x): x is LandingLink => !!x && typeof x === "object" && isText(x.title) && isHref(x.href))
+    .map((x) => ({ title: x.title.trim(), href: x.href.trim() }));
+  return { approved, greeting: l.greeting.trim(), concerns, reading_list };
+}
+
 /** The gate. Returns no pages unless the file is approved, or this is `next dev`. */
 export function stakeholderGate(): {
   approved: boolean;
@@ -113,7 +161,7 @@ export function stakeholderGate(): {
   const pages = file.pages
     .filter(isPage)
     .filter((p) => isDev() || !p.note_is_draft)
-    .map((p) => ({ ...p, moments: (p.moments ?? []).slice(0, 3) }));
+    .map((p) => ({ ...p, moments: (p.moments ?? []).slice(0, 3), landing: cleanLanding(p.landing) }));
   const about = file.about_me;
   const aboutMe = about && isText(about.heading) && isText(about.text) ? { heading: about.heading, text: about.text } : null;
   return { approved, pages, notice: { ...DEFAULT_NOTICE, ...file.notice }, aboutMe };
@@ -151,6 +199,37 @@ export function portraitFor(slug: string) {
     height: 1000,
     source: PORTRAIT_SOURCES[slug] as { label: string; href: string } | undefined,
   };
+}
+
+/** The first word of the name: "Ivana Karhanová" -> "Ivana". */
+export function firstName(page: Pick<StakeholderPage, "name">): string {
+  return page.name.trim().split(/\s+/)[0];
+}
+
+/** Splits text into sentences at ". ", "! " or "? ". */
+function sentences(text: string): string[] {
+  return text.trim().split(/(?<=[.!?])\s+/).filter(Boolean);
+}
+
+/**
+ * The greeting, split for the hero: a short first sentence ("Hi Ivana.") becomes the headline and the
+ * rest the lead under it. A long first sentence keeps the whole greeting together as the headline.
+ */
+export function greetingParts(greeting: string): { hello: string; rest: string; long: boolean } {
+  const [first, ...more] = sentences(greeting);
+  if (first && first.length <= 40 && more.length > 0) return { hello: first, rest: more.join(" "), long: false };
+  return { hello: greeting.trim(), rest: "", long: true };
+}
+
+/**
+ * The link-preview description: the greeting's first sentence, skipping a bare salutation ("Hi
+ * Ivana." is already the title), cut at a word near 200 characters.
+ */
+export function greetingSummary(greeting: string): string {
+  const all = sentences(greeting);
+  const isSalutation = (s: string) => s.length <= 40 && /^(hi|hello|hey|dear|ahoj|dobrý den)\b/i.test(s);
+  const s = (all.length > 1 && isSalutation(all[0]) ? all[1] : all[0]) ?? greeting.trim();
+  return s.length > 200 ? `${s.slice(0, 197).replace(/\s+\S*$/, "")}…` : s;
 }
 
 /** "Job A, Co · Job B, Co2" -> ["Job A, Co", "Job B, Co2"]: one line per job. */

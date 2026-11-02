@@ -317,6 +317,451 @@
   padding-top: 0;
 }
 
+/* ---------- /for/<slug> with a landing: the personal link Alex sends ----------
+   Three parts before the page's usual content, in Addvery's own patterns:
+   - the hello: their homepage hero (statement left, a photo card rotating in on the right), with the
+     photo dressed as their team card (name and role under it) and Alex's byline under the greeting;
+   - the likely questions: their services layout (heading left, content right) on white, each answer
+     on their article list rule, the 2 px amethyst line;
+   - the reading list: their industries section, #151515 with glass rows that fill on hover, plus one
+     device of our own: a dashed line where 5, 10 or 20 minutes of reading runs out. */
+
+.for-land-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  align-items: center;
+  column-gap: 6rem;
+}
+
+.for-land-copy {
+  min-width: 0;
+}
+
+/* The greeting's first sentence ("Hi Ivana."): the one loud thing on the page. */
+.for-hello {
+  margin: 0;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: clamp(3.5rem, 6.6vw, 6.25rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+/* A greeting with a long first sentence stays whole, at the editorial h2 size. */
+.for-hello.is-long {
+  font-size: var(--av-editorial-h2-size, 2.75rem);
+  line-height: var(--av-editorial-h2-lh, 1.18);
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: pretty;
+}
+
+/* Their podcast hero's lead: lilac on dark, 22 px. #ebdcff on #151515 is 14.6:1. */
+.for-land-lead {
+  max-width: 36rem;
+  margin: 2rem 0 0;
+  color: var(--av-lilac-200, #ebdcff);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: var(--av-lead-size, 1.375rem);
+  line-height: var(--av-lead-lh, 1.55);
+  text-wrap: pretty;
+}
+
+.for-land-from {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin: 2.25rem 0 0;
+}
+
+/* The ring mark from the link-preview cards: a gradient ring round a gradient dot. */
+.for-ring {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: 3px solid transparent;
+  border-radius: var(--av-radius-pill, 999px);
+  background:
+    linear-gradient(var(--av-ink, #151515), var(--av-ink, #151515)) padding-box,
+    var(--av-gradient-row, linear-gradient(90deg, #6645eb, #d445eb)) border-box;
+}
+
+.for-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 14px;
+  height: 14px;
+  margin: auto;
+  border-radius: inherit;
+  background: var(--av-gradient-text, linear-gradient(25deg, #6645eb 35%, #d445eb));
+}
+
+.for-land-from p {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.125rem;
+  margin: 0;
+}
+
+.for-land-from-name {
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.for-land-from-role {
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-family: var(--av-font-body-haas, "Inter", "Helvetica Neue", Arial, sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.for-land-jump {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 2.5rem 0 0;
+}
+
+.for-land-jump .art-button {
+  min-height: 48px;
+}
+
+.for-land-jump-note {
+  margin: 0;
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-family: var(--av-font-body-haas, "Inter", "Helvetica Neue", Arial, sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* The portrait as their team card: outlined photo, the name in white and the role in grey under it. */
+.for-land-photo {
+  margin: 0;
+}
+
+.for-land-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 0;
+  border: 1px solid var(--av-border-photo, #7b7b7b);
+  border-radius: var(--av-radius-xl, 15px);
+  background: var(--av-black, #000);
+}
+
+.for-land-photo figcaption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.25rem;
+  margin: 1.25rem 0 0;
+  text-align: center;
+}
+
+.for-land-name {
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-h6-size, 20px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.for-land-title {
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-family: var(--av-font-body-haas, "Inter", "Helvetica Neue", Arial, sans-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.for-land-title > span {
+  display: block;
+}
+
+.for-land-photo .for-credit {
+  margin-top: 0.5rem;
+}
+
+/* ---------- The two landing sections: heading on the left, content on the right ---------- */
+
+.for-split {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  align-items: start;
+  column-gap: 6rem;
+}
+
+.for-split-head {
+  min-width: 0;
+}
+
+.for-h2 {
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-editorial-h2-size, 2.75rem);
+  font-weight: 500;
+  line-height: var(--av-editorial-h2-lh, 1.18);
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: balance;
+}
+
+.for-dek {
+  max-width: 30rem;
+  margin: 1.25rem 0 0;
+  color: var(--av-text-on-light, #5e6873);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+/* ---------- What I'm guessing you're concerned with ---------- */
+
+.for-qa {
+  padding: 6.875rem 0;
+  background: var(--av-white, #fff);
+}
+
+.for-qa-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+.for-qa-item {
+  padding: 2rem 0 2.25rem;
+  border-bottom: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+/* Their question, in their voice: quoted, with the opening mark hung in the margin. */
+.for-qa-q {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.625rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-indent: -0.42em;
+  text-wrap: balance;
+}
+
+.for-qa-q q {
+  quotes: "\201C" "\201D";
+}
+
+/* Alex's answer, on the article list rule. */
+.for-qa-a {
+  max-width: 40rem;
+  margin: 1rem 0 0;
+  padding-left: 1.125rem;
+  border-left: var(--av-border-rule, 2px) solid var(--av-amethyst, #8b3fcf);
+  color: var(--av-text-on-light, #5e6873);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* ---------- Your reading list ---------- */
+
+.for-reading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 6.875rem 0;
+  background: var(--av-ink, #151515);
+  color: var(--av-white, #fff);
+}
+
+/* Their side glow, low on the right. */
+.for-reading::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -18rem;
+  bottom: -22rem;
+  width: 52rem;
+  aspect-ratio: 1;
+  background: var(--av-glow, radial-gradient(closest-side, rgba(102, 69, 235, 0.55), rgba(102, 69, 235, 0)));
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.for-reading .for-h2 {
+  color: var(--av-white, #fff);
+}
+
+.for-reading .for-dek {
+  color: var(--av-text-on-dark, #bcbcbc);
+}
+
+.for-path-wrap {
+  min-width: 0;
+}
+
+.for-path {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Their industry row: glass on #151515, 1 px outline, radius 10, the arrow on the right. */
+.for-path-link {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) auto 22px;
+  grid-template-areas: "n title time arrow";
+  align-items: center;
+  column-gap: 1.25rem;
+  padding: 1.375rem 1.75rem;
+  border: 1px solid var(--av-border-dark-card, rgba(255, 255, 255, 0.1));
+  border-radius: var(--av-radius-lg, 10px);
+  background: var(--av-surface-dark-card, rgba(255, 255, 255, 0.06));
+  color: var(--av-white, #fff);
+  text-decoration: none;
+  transition: border-color 0.5s ease;
+}
+
+/* The hover fill rises as a layer, so it can fade like theirs. Violet to amethyst rather than their
+   violet to orchid: white text keeps at least 5.7:1 across the whole row. */
+.for-path-link::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--av-violet-deep, #642df0), var(--av-amethyst, #8b3fcf));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.for-path-n {
+  grid-area: n;
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-numeric, "Plus Jakarta Sans", system-ui, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.for-path-title {
+  grid-area: title;
+  min-width: 0;
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.for-path-time {
+  grid-area: time;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 0.125rem;
+  white-space: nowrap;
+}
+
+.for-path-min {
+  font-family: var(--av-font-numeric, "Plus Jakarta Sans", system-ui, sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.for-path-sofar {
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-family: var(--av-font-body-haas, "Inter", "Helvetica Neue", Arial, sans-serif);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.for-path-arrow {
+  grid-area: arrow;
+  display: block;
+  color: var(--av-lavender, #d3c3ff);
+  transition: transform 0.5s ease;
+}
+
+.for-path-link:focus-visible {
+  outline: 2px solid var(--av-lavender, #d3c3ff);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .for-path-link:hover {
+    border-color: transparent;
+  }
+
+  .for-path-link:hover::before {
+    opacity: 1;
+  }
+
+  .for-path-link:hover .for-path-n,
+  .for-path-link:hover .for-path-sofar,
+  .for-path-link:hover .for-path-arrow {
+    color: var(--av-white, #fff);
+  }
+
+  .for-path-link:hover .for-path-arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* Where a reader with 5, 10 or 20 minutes stops: a line of text and a dashed rule to the row's edge. */
+.for-path-stop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.125rem 0 0.5rem;
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.for-path-stop::after {
+  content: "";
+  flex: 1;
+  min-width: 2rem;
+  border-top: 1px dashed rgba(211, 195, 255, 0.55);
+}
+
+.for-path-total {
+  margin: 1.75rem 0 0;
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 /* ---------- Breakpoints: 991, 767, 479 (Webflow's) ---------- */
 
 @media screen and (max-width: 991px) {
@@ -328,6 +773,25 @@
   .for-person-grid {
     grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
     column-gap: 3rem;
+  }
+
+  .for-land-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
+    column-gap: 3rem;
+  }
+
+  .for-split {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2.5rem;
+  }
+
+  .for-dek {
+    max-width: 36rem;
+  }
+
+  .for-qa,
+  .for-reading {
+    padding: 5rem 0;
   }
 }
 
@@ -385,6 +849,133 @@
   .for-about-text {
     font-size: 1.125rem;
   }
+
+  /* The hello reads first; the portrait follows as a small card, the face beside the name. */
+  .for-land-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2.5rem;
+  }
+
+  .for-hello {
+    font-size: 3.5rem;
+  }
+
+  .for-hello.is-long {
+    font-size: 1.875rem;
+  }
+
+  .for-land-lead {
+    margin-top: 1.5rem;
+    font-size: 1.1875rem;
+  }
+
+  .for-land-from {
+    margin-top: 1.75rem;
+  }
+
+  .for-land-jump {
+    margin-top: 2rem;
+  }
+
+  .for-land-photo {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--av-line-on-dark, rgba(255, 255, 255, 0.2));
+  }
+
+  .for-land-photo img {
+    border-radius: var(--av-radius-lg, 10px);
+  }
+
+  .for-land-photo figcaption {
+    align-items: flex-start;
+    margin: 0;
+    text-align: left;
+  }
+
+  .for-land-name {
+    font-size: 1.125rem;
+  }
+
+  .for-land-title {
+    font-size: 0.9375rem;
+  }
+
+  .for-qa,
+  .for-reading {
+    padding: 4rem 0;
+  }
+
+  .for-split {
+    row-gap: 2rem;
+  }
+
+  .for-h2 {
+    font-size: 1.875rem;
+  }
+
+  .for-dek {
+    margin-top: 0.875rem;
+    font-size: 1.0625rem;
+  }
+
+  .for-qa-item {
+    padding: 1.5rem 0 1.75rem;
+  }
+
+  .for-qa-q {
+    font-size: 1.3125rem;
+  }
+
+  .for-qa-a {
+    margin-top: 0.75rem;
+    padding-left: 1rem;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  /* The minutes drop under the title. */
+  .for-path-link {
+    grid-template-columns: 1.75rem minmax(0, 1fr) 22px;
+    grid-template-areas:
+      "n title arrow"
+      "n time arrow";
+    align-items: start;
+    column-gap: 0.875rem;
+    row-gap: 0.5rem;
+    padding: 1.125rem 1.125rem 1.125rem 1rem;
+  }
+
+  .for-path-n {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .for-path-title {
+    font-size: 1.125rem;
+  }
+
+  .for-path-time {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.75rem;
+  }
+
+  .for-path-min {
+    font-size: 1rem;
+  }
+
+  .for-path-arrow {
+    align-self: center;
+  }
+
+  .for-path-stop {
+    font-size: 0.875rem;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -399,13 +990,24 @@
   .for-card-name a::after {
     border-radius: var(--av-radius-lg, 10px);
   }
+
+  .for-hello {
+    font-size: 3rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .for-card-photo img,
   .for-card-photo::after,
-  .for-card-go {
+  .for-card-go,
+  .for-path-link,
+  .for-path-link::before,
+  .for-path-arrow {
     transition: none;
+  }
+
+  .for-path-link:hover .for-path-arrow {
+    transform: none;
   }
 
   .for-card:hover .for-card-photo img,

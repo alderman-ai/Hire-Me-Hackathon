@@ -7,12 +7,17 @@ import { Reveal, RotateIn } from "../../motion";
 import { readOrgData } from "../../org-charts";
 import {
   findStakeholder,
+  firstName,
+  greetingParts,
+  greetingSummary,
   portraitFor,
   stakeholderGate,
   stakeholderSlugs,
   titleLines,
+  type LandingConcern,
   type StakeholderPage,
 } from "../../stakeholders";
+import { readingPath, type PathItem, type ReadingPath } from "../reading-time";
 import "../../article.css";
 import "../for.css";
 
@@ -27,6 +32,13 @@ import "../for.css";
 // (the growth lead's opening and "why now", the note, the one ask), then the details (the demos, the
 // moments from the build, about me, about this page). Laid out in the demo pages' article dress
 // (article.css `.art-*` and `.sh-*`), with the portrait hero in for.css.
+//
+// With a landing (the personal link Alex sends; gated per page in app/stakeholders.ts) the page opens
+// differently: the greeting beside the portrait, then "What I'm guessing you're concerned with", then
+// "Your reading list" with each link's minutes, the running total and where 5, 10 or 20 minutes runs
+// out (app/for/reading-time.ts). Everything above follows unchanged, except that the hero's framing
+// line gives way to the greeting and a moment already on the reading list isn't listed twice.
+// The landing also brings the person's own link preview: the metadata below and opengraph-image.tsx.
 
 export const dynamicParams = false;
 
@@ -39,10 +51,21 @@ const ROBOTS = { index: false, follow: false } as const;
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const page = findStakeholder(slug);
-  // Role-based on purpose: the name stays out of the tab title and any link preview.
-  return page
-    ? { title: `For ${page.label} · Hire Me Hackathon`, description: page.framing, robots: ROBOTS }
-    : { title: "Hire Me Hackathon", robots: ROBOTS };
+  if (!page) return { title: "Hire Me Hackathon", robots: ROBOTS };
+  // Without an approved landing: role-based on purpose, so the name stays out of the tab title and
+  // any link preview. The landing is the link Alex sends that person, so it greets them by name.
+  if (!page.landing) return { title: `For ${page.label} · Hire Me Hackathon`, description: page.framing, robots: ROBOTS };
+  const title = `Hi ${firstName(page)}: a page for you, from Alex Alderman`;
+  const description = greetingSummary(page.landing.greeting);
+  const url = `/for/${page.slug}`;
+  return {
+    title: { absolute: title },
+    description,
+    robots: ROBOTS,
+    alternates: { canonical: url },
+    openGraph: { type: "website", url, siteName: "Hire Me Hackathon", title, description },
+    twitter: { card: "summary_large_image", title, description },
+  };
 }
 
 // ---------- Small helpers ----------
@@ -136,6 +159,219 @@ function WhyNow({ page }: { page: StakeholderPage }) {
   );
 }
 
+// ---------- The landing: greeting, likely questions, reading list ----------
+
+/** "4 min" for the eye, "4 minutes" for a screen reader. */
+function Minutes({ n, suffix = "" }: { n: number; suffix?: string }) {
+  const shown = n < 1 ? "under 1 min" : `${Math.round(n)} min`;
+  const said = n < 1 ? "under a minute" : `${Math.round(n)} ${Math.round(n) === 1 ? "minute" : "minutes"}`;
+  return (
+    <>
+      <span aria-hidden="true">
+        {shown}
+        {suffix}
+      </span>
+      <span className="sr-only">
+        , {said}
+        {suffix}
+      </span>
+    </>
+  );
+}
+
+/**
+ * "If you have about 5 minutes, stop here." / "... about 5 or 10 minutes ...". "About", because a stop
+ * can sit a little past its budget (reading-time.ts allows a fifth over), beside "24 min so far".
+ */
+function stopLine(budgets: number[]): string {
+  const list = budgets.length > 1 ? `${budgets.slice(0, -1).join(", ")} or ${budgets[budgets.length - 1]}` : `${budgets[0]}`;
+  return `If you have about ${list} minutes, stop here.`;
+}
+
+function totalLine(path: ReadingPath): string | null {
+  const n = path.items.length;
+  const timed = n - path.untimed;
+  if (timed === 0) return null;
+  const mins = `about ${Math.max(1, Math.round(path.total))} minutes`;
+  if (path.untimed === 0) return n === 1 ? `It takes ${mins}.` : `All ${n} come to ${mins}.`;
+  return `The ${timed} with a time come to ${mins}.`;
+}
+
+/** Addvery's industry-row arrow (22 x 11). */
+function RowArrow() {
+  return (
+    <svg className="for-path-arrow" viewBox="0 0 22 11" width="22" height="11" aria-hidden="true" focusable="false">
+      <path
+        d="M17 1.459l4 4m0 0l-4 4m4-4H1"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function PathLink({ item, n }: { item: PathItem; n: number }) {
+  const body = (
+    <>
+      <span className="for-path-n" aria-hidden="true">
+        {n}
+      </span>
+      <span className="for-path-title">{item.title}</span>
+      {item.min !== null && (
+        <span className="for-path-time">
+          <span className="for-path-min">
+            <Minutes n={item.min} />
+          </span>
+          {n > 1 && item.sofar !== null && (
+            <span className="for-path-sofar">
+              <Minutes n={item.sofar} suffix=" so far" />
+            </span>
+          )}
+        </span>
+      )}
+      <RowArrow />
+    </>
+  );
+  return item.href.startsWith("/") ? (
+    <Link href={item.href} className="for-path-link">
+      {body}
+    </Link>
+  ) : (
+    <a href={item.href} className="for-path-link">
+      {body}
+    </a>
+  );
+}
+
+function LandingHero({ page, greeting, path, draft }: { page: StakeholderPage; greeting: string; path: ReadingPath; draft: boolean }) {
+  const { hello, rest, long } = greetingParts(greeting);
+  const img = portraitFor(page.slug);
+  const count = path.items.length;
+  const total = path.untimed === 0 ? Math.max(1, Math.round(path.total)) : null;
+
+  return (
+    <section className="art-hero for-person-hero for-land-hero" aria-labelledby="for-hello">
+      <div className="art-container">
+        <p className="art-back">
+          <Link href="/for">← All six pages</Link>
+        </p>
+        <div className="for-land-grid">
+          <div className="for-land-copy">
+            {draft && <p className="sh-draft-strip">Draft for Alex&apos;s review · local only, not on the live site</p>}
+            <h1 id="for-hello" className={long ? "for-hello is-long" : "for-hello"}>
+              {hello}
+            </h1>
+            {rest && <p className="for-land-lead">{rest}</p>}
+            <div className="for-land-from">
+              <span className="for-ring" aria-hidden="true" />
+              <p>
+                <span className="for-land-from-name">Alex Alderman</span>
+                <span className="for-land-from-role">Applying to Addvery as a GTM engineer</span>
+              </p>
+            </div>
+            {count > 0 && (
+              <div className="for-land-jump">
+                <a href="#for-reading" className="art-button">
+                  See your reading list
+                </a>
+                <p className="for-land-jump-note">
+                  {count === 1 ? "One link" : `${count} links`}, most important first
+                  {total !== null ? `, about ${total} minutes in all` : ""}.
+                </p>
+              </div>
+            )}
+          </div>
+          <RotateIn as="figure" from="bottom-right" angle={8} delay={150} duration={800} fade={600} onLoad className="for-land-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={img.src}
+              srcSet={img.srcSet}
+              sizes="(min-width: 992px) 360px, (min-width: 768px) 260px, 104px"
+              width={img.width}
+              height={img.height}
+              alt={page.name}
+              fetchPriority="high"
+            />
+            <figcaption>
+              <span className="for-land-name">{page.name}</span>
+              <span className="for-land-title">
+                {titleLines(page.title).map((line, n) => (
+                  <span key={line}>
+                    {n > 0 && <span className="sr-only">, and </span>}
+                    {line}
+                  </span>
+                ))}
+              </span>
+              {img.source && (
+                <span className="for-credit">
+                  Photo: <a href={img.source.href}>{img.source.label}</a>
+                </span>
+              )}
+            </figcaption>
+          </RotateIn>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Concerns({ concerns }: { concerns: LandingConcern[] }) {
+  if (concerns.length === 0) return null;
+  return (
+    <section className="for-qa" aria-labelledby="for-concerns">
+      <div className="art-container for-split">
+        <div className="for-split-head">
+          <h2 id="for-concerns" className="for-h2">
+            What I&apos;m guessing you&apos;re concerned with
+          </h2>
+          <p className="for-dek">Your likely questions, as I imagine you&apos;d put them, and my answers.</p>
+        </div>
+        <ul className="for-qa-list">
+          {concerns.map((c) => (
+            <li key={c.q} className="for-qa-item">
+              <h3 className="for-qa-q">
+                <q>{c.q}</q>
+              </h3>
+              <p className="for-qa-a">{c.a}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function ReadingList({ path }: { path: ReadingPath }) {
+  if (path.items.length === 0) return null;
+  const total = totalLine(path);
+  return (
+    <section className="for-reading" aria-labelledby="for-reading">
+      <div className="art-container for-split">
+        <div className="for-split-head">
+          <h2 id="for-reading" className="for-h2">
+            Your reading list
+          </h2>
+          <p className="for-dek">Most important first, with the time each one takes. Stop wherever your time runs out.</p>
+        </div>
+        <div className="for-path-wrap">
+          <ol className="for-path">
+            {path.items.map((item, i) => (
+              <li key={`${item.href}-${i}`} className="for-path-item">
+                <PathLink item={item} n={i + 1} />
+                {item.stops.length > 0 && <p className="for-path-stop">{stopLine(item.stops)}</p>}
+              </li>
+            ))}
+          </ol>
+          {total && <p className="for-path-total">{total}</p>}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ---------- The page ----------
 
 export default async function StakeholderPageView({ params }: { params: Promise<{ slug: string }> }) {
@@ -152,8 +388,19 @@ export default async function StakeholderPageView({ params }: { params: Promise<
     })
     .filter((d) => d !== null);
 
+  const landing = page.landing;
+  const path = landing ? readingPath(landing.reading_list) : null;
+  if (path && path.misses.length > 0) {
+    console.warn(`/for/${page.slug}: no reading time for ${path.misses.join(", ")} (content/inventory.json)`);
+  }
+  // A feed post already on the reading list isn't listed again under "Moments from the build".
+  const onList = new Set(
+    (landing?.reading_list ?? []).map((l) => /^(?:https:\/\/hire-me-hackathon\.vercel\.app)?\/#post-(.+)$/.exec(l.href)?.[1]),
+  );
+
   const posts = feedPosts();
   const moments = (page.moments ?? [])
+    .filter((id) => !onList.has(id))
     .map((id) => posts.find((p) => p.id === id))
     .filter((p): p is Post => p !== undefined);
 
@@ -176,8 +423,16 @@ export default async function StakeholderPageView({ params }: { params: Promise<
   const img = portraitFor(page.slug);
 
   return (
-    <main className="art art-for">
-      {/* ---------- Who it's for: the portrait, the name, the title, the framing ---------- */}
+    <main className={landing ? "art art-for for-landing" : "art art-for"}>
+      {landing && path ? (
+        <>
+          {/* ---------- The landing: hello, their likely questions, their reading list ---------- */}
+          <LandingHero page={page} greeting={landing.greeting} path={path} draft={!approved || !landing.approved} />
+          <Concerns concerns={landing.concerns} />
+          <ReadingList path={path} />
+        </>
+      ) : (
+      /* ---------- Who it's for: the portrait, the name, the title, the framing ---------- */
       <section className="art-hero for-person-hero" aria-labelledby="for-name">
         <div className="art-container">
           <p className="art-back">
@@ -225,6 +480,7 @@ export default async function StakeholderPageView({ params }: { params: Promise<
           </div>
         </div>
       </section>
+      )}
 
       {/* ---------- The explaining part ---------- */}
       <Opening page={page} />
