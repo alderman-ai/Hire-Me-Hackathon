@@ -43,18 +43,21 @@ Paths are relative to `scraping\`. Step 1 of the run confirms every resource is 
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK lines, the poke, the 18:00 rule.
 - `..\answer-desk\qa\S-D1.md`: S-D1's question record. The desk creates it with the first question.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers, verbatim, and DI-6 once archived. Never re-ask what they settle.
-- `..\orchestration\DOD-DRAFT.md`: the signed-off project DoD (DI-5) until `change-dod` writes it into the charter. Read DoD-8, DoD-9 and DoD-22.
+- The charter's "Definition of done" (in `..\CHARTER.md`, written in by S2 as change C03): the signed-off project DoD. Read DoD-8, DoD-9 and DoD-22.
 - `..\orchestration\_templates\Gate approval template.md`, `..\orchestration\_templates\Operator task template.md` and `..\orchestration\check_gate.py`: the forms for Alex's tasks, and the 5-minute gate check.
 - `SPEC.md`: this file. `HANDOFF.md`, if it exists: state after a fork.
 - `..\research\DIRECTORY.md`: the index of every research report. `..\research\lists\L-02-scraping.md` (this spec's list) and `..\research\lists\L-01-parent.md`: S1's lists, read only. L-02's R3 is the output contract research that S-D3 reads too.
 - Research findings: S2 adds a line here for each report when S1 sends FINDINGS for L-01 and L-02.
-- `.env`: the Apify token, as `APIFY_TOKEN=...`. Git-ignored by the root `.gitignore` (`.env`) and by `scraping\.gitignore`. Read only by the runner. Never printed, opened on screen, pasted into chat, put on a command line or committed.
-- `data\`: raw scraped data, local only, git-ignored by `scraping\.gitignore`. Never committed, never quoted into a tracked file.
 - Apify's public docs, read only: the API reference at https://docs.apify.com/api/v2, the platform docs at https://docs.apify.com, and the Store at https://apify.com/store. The API is the only way S-D1 talks to Apify. No Apify connector is attached to this project.
-- `..\getsales\SPEC.md`, once it exists: S-D3's spec, read only, for the fields its enrichment step and first-message variable need. Questions go to `s-d3-getsales`.
+- `..\getsales\SPEC.md`: S-D3's spec, read only, for the fields its enrichment step and first-message variable need. Questions go to `s-d3-getsales`.
 - `..\legibility\posted.md`: S-D9's log, read only. Its "Left out" table kept the scraping tool's name off the site at 13:50 (DI-6 question 3 settles it).
 - `..\Addvery Research\`: Alex's own folder, git-ignored. S-D1 doesn't need to read it, and never edits it or copies anything from it into a tracked file. Under DI-6 question 4's default, its only link is that Alex's research may call S-D1's runner (`output\README.md`). Until his research is ready, S-D1 works on its own target and the synthetic sample.
 - Never opened, by the session or any subagent: the Apify proposal, Alex's private `hi-apify` repo, Alex's own GetSales outbound, and the Apify Console in a browser.
+
+**Outputs** (files S-D1 creates; none exist yet, so they aren't resources):
+- The token file, `APIFY_TOKEN=...`, in the folder's git-ignored env file (`.env`, covered by the root ignore rule and by S-D1's own ignore file). Read only by the runner. Never printed, opened on screen, pasted into chat, put on a command line or committed.
+- Raw scraped data in the git-ignored data folder, local only. Never committed, never quoted into a tracked file.
+- Everything else in the tree below.
 
 Folder tree:
 
