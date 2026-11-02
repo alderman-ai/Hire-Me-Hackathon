@@ -1076,3 +1076,117 @@ html.wall-dialog-open body {
     border: 1px solid CanvasText;
   }
 }
+
+/* ---- NEW_SITE additions (clips.ts, page.tsx): glance link, clips, How I work, photos ---- */
+.about-glance-row dd a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--av-plum);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-glance-row dd a:focus-visible,
+.about-belief-more a:focus-visible {
+  outline: 2px solid var(--av-amethyst);
+  outline-offset: 2px;
+}
+
+/* A clip sitting on the page's own light/lilac background: the bx-band class only supplies the colour variables. */
+.about .ab-clip {
+  background: transparent;
+  max-width: 520px;
+  margin-top: 0.75rem;
+}
+
+.about-belief-more {
+  max-width: var(--av-measure);
+}
+
+.about-belief-more a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--av-plum);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-work {
+  /* bx-ink supplies the dark band; the page's own container keeps the column width. */
+  padding: 6.875rem 0;
+}
+
+.about-work .about-h2 {
+  margin: 0.5rem 0 2.5rem;
+  color: var(--av-white);
+}
+
+.about-work-eyebrow {
+  margin: 0;
+  color: var(--av-lavender);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-vids {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-vids > li {
+  min-width: 0;
+}
+
+.about-photos {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 3.5rem;
+}
+
+.about-photos figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.about-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--av-radius-lg);
+  border: 1px solid var(--bx-line);
+  background: var(--av-plum-900);
+}
+
+.about-photos figcaption {
+  margin-top: 0.75rem;
+  color: var(--bx-body);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+  .about-vids {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .about-work {
+    padding: 4.5rem 0;
+  }
+  .about-vids,
+  .about-photos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

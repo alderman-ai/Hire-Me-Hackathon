@@ -4,6 +4,12 @@ import { entryUrl, findEntry } from "../demos/entries";
 import { Reveal, RotateIn } from "../motion";
 import { GradientButton } from "../site-chrome";
 import { readAboutCopy, type CopyBlock } from "./copy";
+import { t } from "../copy";
+import { NEW_SITE } from "../flags";
+import { LIST_SLUGS, RECOMMEND_ON, pageHref, recommendFor } from "../recommend";
+import { RecommendCarousel } from "../recommend-carousel";
+import { VideoFrame } from "../best/parts";
+import { CLIP_S02_E, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "./clips";
 import { AI_PORTFOLIO_SLUG, FACTS, LINKS, SHOW_ZERO_COUNTS } from "./profile";
 import { LinkedInWall } from "./wall";
 import { wallCards, wallSpan } from "./wall-data";
@@ -84,12 +90,35 @@ function PortfolioCard() {
   );
 }
 
+const PAGE_SLUGS = LIST_SLUGS.filter((x) => x !== "default");
+
+/** One clip on the new site, in the colours of the band it sits in (bx-light or bx-lilac supplies them). */
+function Clip({ clip, tone }: { clip: AboutClip; tone: "light" | "lilac" | "ink" }) {
+  const cls = tone === "ink" ? "" : `bx-band bx-${tone} on-light ab-clip`;
+  const frame = (
+    <VideoFrame
+      youtube={clip.youtube}
+      start={clip.start}
+      end={clip.end}
+      label={clip.quote}
+      caption={clip.quote}
+      meta={clip.meta}
+      length={clip.length}
+      still={clip.still}
+      size="sm"
+    />
+  );
+  return cls ? <div className={cls}>{frame}</div> : frame;
+}
+
 export default function AboutPage() {
   const copy = readAboutCopy();
   const story = copy.sections.slice(0, -1);
   const belief = copy.sections[copy.sections.length - 1];
   const cards = WALL_FULL ? [] : wallCards();
   const fullPosts = WALL_FULL ? fullWallCards() : [];
+  const firstQuote = Math.max(0, belief.blocks.findIndex((b) => b.kind === "quote"));
+  const longVersion = copy.articleLinkText ? pageHref("art-pipeline-promise") : undefined;
   const posts: { date: string }[] = WALL_FULL ? fullPosts : cards;
 
   return (
@@ -140,6 +169,14 @@ export default function AboutPage() {
                     <dd>{f.detail}</dd>
                   </div>
                 ))}
+                {NEW_SITE && (
+                  <div className="about-glance-row">
+                    <dt>{t("about.glance.1")}</dt>
+                    <dd>
+                      <Link href="/#machine">{t("about.glance.2")}</Link>
+                    </dd>
+                  </div>
+                )}
               </dl>
               <div className="about-links">
                 <a className="about-link-card" href={LINKS.site.href} target="_blank" rel="noopener noreferrer">
@@ -167,6 +204,7 @@ export default function AboutPage() {
                   {s.title}
                 </h2>
                 <Blocks blocks={s.blocks} />
+                {NEW_SITE && s.title.startsWith("The job I want") && <Clip clip={CLIP_S02_E} tone="light" />}
               </section>
             ))}
           </div>
@@ -178,9 +216,70 @@ export default function AboutPage() {
           <h2 id={belief.id} className="about-h2 about-belief-title">
             {belief.title}
           </h2>
-          <Blocks blocks={belief.blocks} />
+          {NEW_SITE ? (
+            <>
+              <Blocks blocks={belief.blocks.slice(0, firstQuote)} />
+              <Clip clip={CLIP_S12_M} tone="lilac" />
+              <Blocks blocks={belief.blocks.slice(firstQuote)} />
+              {longVersion && (
+                <p className="about-belief-more">
+                  <Link href={longVersion}>{copy.articleLinkText}</Link>
+                </p>
+              )}
+            </>
+          ) : (
+            <Blocks blocks={belief.blocks} />
+          )}
         </div>
       </section>
+
+      {NEW_SITE && (
+        <section className="bx-band bx-ink on-dark about-work" aria-labelledby="work">
+          <div className="about-container">
+            <p className="about-work-eyebrow">{t("about.work.1")}</p>
+            <h2 id="work" className="about-h2">
+              {t("about.work.2")}
+            </h2>
+            <ul className="about-vids">
+              {WORK_CLIPS.map((c) => (
+                <li key={c.still}>
+                  <Clip clip={c} tone="ink" />
+                </li>
+              ))}
+            </ul>
+            <div className="about-photos">
+              <figure>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/setup-2026-11-02.jpg"
+                  width={2400}
+                  height={1800}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Alex's desk on build day: three monitors with terminal windows and a session video, a microphone and a red-backlit keyboard, two bright ring lights, and a grey office chair in front."
+                />
+                <figcaption>{t("about.work.3")}</figcaption>
+              </figure>
+              <figure>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/dog-walk-2026-11-02.jpg"
+                  width={1200}
+                  height={1600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="A small brown and white wire-haired dog lying on the hallway floor by the door, with shoes, a school backpack, a scooter and a helmet behind him."
+                />
+                <figcaption>{t("about.work.4")}</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {NEW_SITE && RECOMMEND_ON && (
+        <RecommendCarousel heading={t("about.written.1")} cards={recommendFor("about")} people={PAGE_SLUGS} />
+      )}
 
       <section className={WALL_FULL ? "about-wall about-wall-full" : "about-wall"} aria-labelledby="linkedin">
         <div className="about-container about-wall-inner">

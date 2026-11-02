@@ -24,7 +24,7 @@ const ARTICLE_2_PLACEHOLDER = "ARTICLE-2-LINK";
 
 export type CopyBlock = { kind: "p"; html: string } | { kind: "quote"; html: string; by: string };
 export type CopySection = { id: string; title: string; blocks: CopyBlock[] };
-export type AboutCopy = { leadHtml: string; sections: CopySection[] };
+export type AboutCopy = { leadHtml: string; sections: CopySection[]; articleLinkText?: string };
 
 const marked = new Marked({ async: false, gfm: true });
 const inline = (md: string) => marked.parseInline(md) as string;
@@ -40,6 +40,12 @@ function slugify(text: string): string {
 /** True if the paragraph links to a placeholder that isn't a real URL yet. */
 function linksToPlaceholder(p: Tokens.Paragraph): boolean {
   return (p.tokens ?? []).some((t) => t.type === "link" && (t as Tokens.Link).href === ARTICLE_2_PLACEHOLDER);
+}
+
+/** The visible text of the placeholder link, for the new site's pageHref-gated "long version" link. */
+function placeholderLinkText(p: Tokens.Paragraph): string | undefined {
+  const l = (p.tokens ?? []).find((t) => t.type === "link" && (t as Tokens.Link).href === ARTICLE_2_PLACEHOLDER);
+  return l ? (l as Tokens.Link).text : undefined;
 }
 
 function quote(token: Tokens.Blockquote): CopyBlock {
@@ -64,6 +70,7 @@ export function readAboutCopy(): AboutCopy {
   const tokens: Token[] = marked.lexer(md);
   let leadHtml = "";
   const sections: CopySection[] = [];
+  let articleLinkText: string | undefined;
   for (const t of tokens) {
     if (t.type === "heading") {
       const h = t as Tokens.Heading;
@@ -74,7 +81,10 @@ export function readAboutCopy(): AboutCopy {
     if (t.type === "paragraph") {
       const p = t as Tokens.Paragraph;
       // The article-2 link waits for its URL (see ARTICLE_2_PLACEHOLDER above).
-      if (linksToPlaceholder(p)) continue;
+      if (linksToPlaceholder(p)) {
+        articleLinkText = placeholderLinkText(p);
+        continue;
+      }
       if (!current) leadHtml = leadHtml || inline(p.text);
       else current.blocks.push({ kind: "p", html: inline(p.text) });
     } else if (t.type === "blockquote" && current) {
@@ -82,5 +92,5 @@ export function readAboutCopy(): AboutCopy {
     }
   }
   if (!leadHtml || sections.length < 2) throw new Error("local/about/about-me.md: expected a lead line and at least two ## sections");
-  return { leadHtml, sections };
+  return { leadHtml, sections, articleLinkText };
 }
