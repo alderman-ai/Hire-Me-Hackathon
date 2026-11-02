@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "17:20",
-  "as_of_line": "As of 17:20 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "17:25",
+  "as_of_line": "As of 17:25 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Thirteen pieces of work (one since retired), run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come the demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -31,12 +31,12 @@
     {
       "piece": "Research",
       "what": "Decides with Alex what gets researched and how deep, so the agents work from findings instead of guesses.",
-      "status": "Project-wide research done at 14:59. Research for the blog, Canva and LinkedIn demos is coming in."
+      "status": "Done. The research for the blog, Canva and LinkedIn demos is in. Alex dropped the last two lists at 17:03."
     },
     {
       "piece": "Project orchestrator",
       "what": "Keeps the plan consistent: adds deliverables and updates everything that depends on them.",
-      "status": "Definition of done written into the charter at 14:25. Its tools are built and tested."
+      "status": "The charter now matches Alex's latest calls (17:10): 36 workflows, two blog posts, the blog pipeline retired."
     }
   ],
   "demos": [
@@ -44,7 +44,7 @@
       "n": 1,
       "demo": "Scraping and research on the Apify API",
       "what": "Scraping and researching prospects at scale on the Apify API. It goes first, because other demos use what it finds.",
-      "status": "Page drafted. With Alex for sign-off."
+      "status": "Signed off by Alex at 17:14, with one change: the research it produced goes first, as a carousel. Being built."
     },
     {
       "n": 2,
@@ -68,19 +68,19 @@
       "n": 5,
       "demo": "Two blog articles",
       "what": "Two posts on the ideas behind this project, each from 15 minutes of Alex talking, brought to near-final. He writes the last 10%.",
-      "status": "Topics set by Alex. Agent at work since 16:42."
+      "status": "Topics set by Alex. A research base for each article is ready. Next, Alex dictates them."
     },
     {
       "n": 6,
       "demo": "LinkedIn templates in Canva",
       "what": "Pixel-perfect, on-brand visual templates for LinkedIn.",
-      "status": "Five templates rendered. Method reworked on the research."
+      "status": "Five templates built, all 16 checks passed. Next they go into Canva, then to Alex for his brand sign-off."
     },
     {
       "n": 7,
       "demo": "LinkedIn content",
       "what": "LinkedIn posts written in the company's own voice.",
-      "status": "Running. Its drafting method and checks are built."
+      "status": "Five posts written in the company's voice. A blind judge scored each 21 out of 21. Next, Alex's brand sign-off."
     },
     {
       "n": 8,
@@ -98,7 +98,7 @@
       "n": 10,
       "demo": "Canva design video",
       "what": "Alex designing in Canva, on camera, near the end of the day.",
-      "status": "Agent running since 16:42. Recorded near the end."
+      "status": "Filming tonight, once the templates are in Canva."
     }
   ],
   "quotes": {

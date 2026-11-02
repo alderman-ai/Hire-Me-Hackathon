@@ -3,7 +3,7 @@
   "posts": [
     {
       "id": "status",
-      "at": "2026-11-02T17:20",
+      "at": "2026-11-02T17:25",
       "kind": "Status",
       "title": "What's being built today",
       "blocks": [
@@ -810,6 +810,124 @@
           "type": "video",
           "session": "S11",
           "start": 0
+        }
+      ],
+      "roles": [
+        "CEO",
+        "COO",
+        "CAIO"
+      ]
+    },
+    {
+      "id": "reset",
+      "at": "2026-11-02T17:13",
+      "session": "S10",
+      "kind": "Update",
+      "title": "Alex stops everything for a reset",
+      "roles": [
+        "COO",
+        "CEO",
+        "CAIO",
+        "CTO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "At 16:44, Alex halted every agent. Too many of them sat waiting on him for answers that, once he read them, didn't need him."
+        },
+        {
+          "type": "quote",
+          "text": "There's too much stuff that's like paused on me, and I read through it and it's dumb. So gently halt anything that's not actively working on something serious.",
+          "source": "Alex, S10 at 20:24 (16:44 Prague)"
+        },
+        {
+          "type": "p",
+          "text": "By 16:49 every session had paused and saved its work. Alex then went through the backlog with the agent that coordinates the others, and set new rules for all of them:"
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "Easy calls belong to the agents.",
+              "text": "They decide, write down why, and carry on. Alex can change anything later."
+            },
+            {
+              "lead": "No more plan approvals.",
+              "text": "Alex signs off only what the finish line names: the six key people, the brand on the templates and LinkedIn posts, and the last touches on each blog post."
+            },
+            {
+              "lead": "Public information is fair game.",
+              "text": "The agents stop asking him about it. Secrets and a short list of private items stay off."
+            },
+            {
+              "lead": "Writing goes into shared documents",
+              "text": "that Alex edits when he has a minute, so nothing waits on him."
+            },
+            {
+              "lead": "No 18:00 cut-off.",
+              "text": "The build runs through the night."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "Please unstuck everything. If things are an easy judgment, please clear the plate for me. We can just make edits later.",
+          "source": "Alex, S10 at 32:21 (16:56 Prague)"
+        },
+        {
+          "type": "p",
+          "text": "The waiting approvals were closed on their defaults, and everything that still needs Alex now sits in one list. The agents restarted at 17:13, several of them as fresh sessions picking up from a written handover."
+        }
+      ]
+    },
+    {
+      "id": "insight-bottleneck",
+      "at": "2026-11-02T16:58",
+      "session": "S10",
+      "kind": "Insight",
+      "title": "“The bottleneck is always human”",
+      "roles": [
+        "CEO",
+        "COO",
+        "CAIO",
+        "CTO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fourteen minutes after the halt, Alex named what had gone wrong. The agents could take on more work. He couldn't answer them fast enough."
+        },
+        {
+          "type": "quote",
+          "text": "The bottleneck is always, always, always human. It's not the amount of stuff that the agents can focus on, it's humans, and I'm paying the price for jumping in.",
+          "source": "Alex, S10 at 34:04 (16:58 Prague)"
+        },
+        {
+          "type": "p",
+          "text": "His fix for next time: spend longer on the plan before anything runs, so the agents need to ask less."
+        },
+        {
+          "type": "quote",
+          "text": "I should have not executed a single thing to like two o'clock. I should have just been writing specifically what I wanted for each thing.",
+          "source": "Alex, S10 at 34:25 (16:58 Prague)"
+        },
+        {
+          "type": "p",
+          "text": "In his 17:07 check-in, he put it another way: people have a context window too."
+        },
+        {
+          "type": "quote",
+          "text": "Humans have like RAM too … there's a human context window … Either you decide you're offloading to the AI, or you have to keep the velocity at a certain amount. You can get a little bit more leverage if you really take the time to write good guiding documents.",
+          "source": "Alex, S11 at 2:45 (17:09 Prague)",
+          "href": "https://youtu.be/iXr-pKhseB8?t=160"
+        },
+        {
+          "type": "p",
+          "text": "He said much the same at 12:28, before the agents started: “The bottleneck is focus.” Four and a half hours later, he acted on it."
+        },
+        {
+          "type": "p",
+          "text": "Both posts were drafted by the agent that runs this feed, from Alex's own words in the recordings."
         }
       ]
     }
