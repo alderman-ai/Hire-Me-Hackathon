@@ -54,7 +54,7 @@ Return the prompt's "Return" block and nothing else.
 | 6 | format | `post.md` | `validate.py` exits 0 |
 | 7 | scan | `7-scan.md`; `post.md` set to `near-final` | `scan.py` exits 0 on everything |
 
-**No copywriting without a copywriting skill** (Alex, 2 Nov). Stages 3 to 6 (outline, draft, edit, format) load the skill in `{SKILL}` first and stop with `BLOCKED` without one. The skill is `marketing:content-creation`, picked from the blog research (L-03 R5) and confirmed on by `orchestration` (2 Nov, ~17:00). A voice-matching editor (`humanizer`) for the edit stage is Alex's call in the morning; until then the edit stage runs on the same skill.
+**No copywriting without a copywriting skill** (Alex, 2 Nov). Stages 3 to 6 (outline, draft, edit, format) load the skill in `{SKILL}` first and stop with `BLOCKED` without one. The skill is `marketing:content-creation`, picked from the blog research (L-03 R5) and confirmed on by `orchestration` (2 Nov, ~16:43). A voice-matching editor (`humanizer`) for the edit stage is Alex's call in the morning; until then the edit stage runs on the same skill.
 
 Stages run one after another (each needs the last one's output). **Timing,** from a rehearsal on a 13-minute rig transcript (2,040 words): clean 2.6 min, extract 4.5, outline 3.9, draft 3.7, edit 4.5, format 2.0, scan 2.2. About 25 minutes from captured dictation to a near-final post, so book Alex's review at least 30 minutes after his dictation ends, plus the preview deploy. The checks are yours, the running session's: read the stage's return line and the file's header; a failed check means fix the prompt and rerun, never hand-edit.
 
