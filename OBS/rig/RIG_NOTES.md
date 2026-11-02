@@ -171,7 +171,7 @@ Set up and read back from OBS: `Wave3 mic` on `Mic In (Elgato Wave:3)` on tracks
 `scripts\rig.py` is the command behind each skill. `scripts\controller.py` runs detached and owns the session. `scripts\rig_state.py` holds paths and the session record. `scripts\recorders.py` runs the two ffmpeg recorders.
 
 - **Spans:** session.json logs each unbroken stretch of recording. Pauses and crash gaps are the spaces between spans, and /process turns spans into the three-clock map.
-- **Test mode:** `RIG_TEST=1` sends everything to `D:\OBS Outputs\_test` and `OBS\_test`, so trials can't take the real S01. **Delete both before hackathon day.**
+- **No test mode:** removed on 2 Nov. `RIG_TEST` is no longer read, the `_test` folders and `rig\tests\` are deleted, and every run writes to the real folders.
 - **Skills:** live in `OBS\.claude\skills\` (moved on 2 Nov, see the decisions log) and run with `shell: powershell`, an absolute quoted path to the rig's Python and `rig.py`, and `--skill`, which always exits 0, because a failing skill command is aborted and Alex would lose the message. The docs don't define `PowerShell(...)` in `allowed-tools`, but it worked with no prompt.
 - **Proof:** all four skills ran through separate `claude -p` processes. Recording kept going with no Claude process attached. Interactive typing is confirmed in Task 12.
 - **After /stop, OBS stays open in the tray**, so the next /start takes about 4 seconds.

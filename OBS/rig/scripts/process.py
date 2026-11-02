@@ -484,8 +484,7 @@ class Job:
             ("webcam", self.webcam), ("upload", self.send), ("verify", self.verify),
             ("move", self.move), ("file", self.file),
         ]
-        skip = rs.TEST and os.environ.get("RIG_SKIP_UPLOAD") == "1"
-        if skip or not UPLOAD_TO_YOUTUBE:
+        if not UPLOAD_TO_YOUTUBE:
             steps = [s for s in steps if s[0] not in ("upload", "verify")]
         return steps
 

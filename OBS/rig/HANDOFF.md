@@ -55,7 +55,7 @@ All of this work is committed, pushed and on `main`, which is checked out. There
 - OBS is running in the tray, which is normal after /stop. No ffmpeg, controller or process worker is running.
 - C: has about 100 GB free and D: about 1,244 GB free.
 - The real areas are untouched, so tomorrow starts at S01: `D:\OBS Outputs\To process` is empty, and `OBS\Live`, `OBS\Processed`, `D:\OBS Outputs\Uploaded` and `OBS\hackathon_clock.json` don't exist yet.
-- Test data sits in `D:\OBS Outputs\_test`, `OBS\_test` and `OBS\rig\run\test`.
+- Test mode is gone (removed 2 Nov): the `_test` folders are deleted and `RIG_TEST` no longer does anything.
 
 ## What to do next
 
@@ -84,7 +84,6 @@ He runs this himself, in a new terminal:
 
 ```powershell
 cd "C:\Users\alder\Desktop\Hire me hackaton\OBS"
-$env:RIG_TEST = '1'
 claude
 ```
 
@@ -124,8 +123,7 @@ This creates a real unlisted video of his screen and room, so tell him it's ther
 
 **Do this last, and confirm no session or worker is running first.**
 
-- Tell Alex to close the rehearsal terminal and open a new one. With `RIG_TEST` set, /start records into the `_test` folders, and after this cleanup it would even say S01. `/start` prints a `TEST MODE` line in that case.
-- Delete `D:\OBS Outputs\_test`, `OBS\_test` and `OBS\rig\run\test`.
+- Done 2 Nov: test mode was removed from the code, the `_test` folders and `rig\tests\` were deleted, and S01 was recorded for real.
 - Confirm the real areas are still empty, so the first real /start gives S01.
 - Update `RUNBOOK.md`, and record the final state in `RIG_NOTES.md`.
 
@@ -157,9 +155,7 @@ This creates a real unlisted video of his screen and room, so tell him it's ther
 | `setup_obs.py` | Rebuilds the OBS profile. Safe to rerun, with OBS closed. |
 | `load_test.py`, `audio_test.py`, `test_whisper.py` | Task 4, 5 and 2 tests. |
 
-`rig\tests\` holds the crash drill and the session and skill trials. They run in test mode.
-
-**Test mode:** `RIG_TEST=1` sends everything to `_test` folders. `RIG_SKIP_UPLOAD=1` skips the upload steps, and works only in test mode.
+**No test mode:** `RIG_TEST` and `RIG_SKIP_UPLOAD` were removed on 2 Nov, along with `rig\tests\`. Every run writes to the real folders.
 
 **Traps that have already cost time** (details in `RIG_NOTES.md`):
 

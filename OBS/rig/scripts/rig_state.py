@@ -1,7 +1,6 @@
 """Paths, session numbering and the session record, shared by every rig script.
 
-Set RIG_TEST=1 to send everything to _test folders, so trial runs can't take
-the real S01 or touch real footage.
+There is no test mode: every run writes to the real hackathon folders.
 """
 import json
 import os
@@ -10,19 +9,16 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-TEST = os.environ.get("RIG_TEST") == "1"
-_area = "_test" if TEST else ""
-
 RIG = Path(__file__).resolve().parent.parent
 OBS_ROOT = RIG.parent
-VIDEO_ROOT = Path(r"D:\OBS Outputs") / _area
-DATA_ROOT = OBS_ROOT / _area
+VIDEO_ROOT = Path(r"D:\OBS Outputs")
+DATA_ROOT = OBS_ROOT
 
 TO_PROCESS = VIDEO_ROOT / "To process"
 UPLOADED = VIDEO_ROOT / "Uploaded"
 LIVE = DATA_ROOT / "Live"
 PROCESSED = DATA_ROOT / "Processed"
-RUN = RIG / "run" / ("test" if TEST else "live")
+RUN = RIG / "run" / "live"
 
 COMMAND_FILE = RUN / "command.json"
 REPLY_FILE = RUN / "reply.json"
