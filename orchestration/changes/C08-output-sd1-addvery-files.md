@@ -66,3 +66,13 @@ Read back: the four blocks sit under each spec's Addvery Research line. propagat
 ## Follow-on, 15:41
 
 Update from `s-d1-scraping` (from addvery-research at 15:40, checked on disk): `Brand capture.md` and `GetSales six.json` now exist (Alex's confirmation of the six still pending); new `brand\raw\logo.png` for S-D6, S-D7 and S-D8; `GetSales ICPs.md` still expected; `apify\README.md` is S-D1's own, no reader line. Mechanical follow-on, no preview: dropped "expected" from those two lines and added the logo line beside each Brand capture line.
+
+## Follow-on, 16:26
+
+Final list from `s-d1-scraping` (from the final `Scraping summary.md`, part N5, marked ready by addvery-research). Mechanical follow-on, no preview:
+- `GetSales six.json`: Alex confirmed the six at 15:55 (getsales, website).
+- `GetSales ICPs.md` isn't coming: its line is dropped, and `00-report.md`'s ICP section is the ICP source (getsales).
+- `Brand capture.md` and the logo: still a draft, Alex's review pending (canva-templates, linkedin-content, website).
+- New `Org diagrams for the website.json` (counts only, no names) for website; new `linkedin-posts\` for linkedin-content.
+- Alex's private briefing (decision-maker profiles and per-person notes): website only, once he approves what the stakeholder sections show. Its file and folder names are deliberately not written into the public repo; the line points at part N5 of `Scraping summary.md` instead (R4: personal, unexpected information about named people reads as creepy).
+- `transcripts\` and `apify\README.md`: no reader line.
