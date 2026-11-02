@@ -21,12 +21,12 @@ Read this file at startup, and again before you message a session you haven't me
 | `rig` | `OBS\` | The OBS recording rig: /start, /pause, /stop, /process. | |
 | `answer-desk` | `answer-desk\` | Every question for Alex, one at a time; the poke. | |
 | `watcher` | `watcher\` | Hourly git sweep and push. | |
-| `accidental-session-kill-recovery` | `OBS\` | Temporary: Alex's recovery session from 13:20 on 2 Nov. | |
 | `briefing` | `briefing\` | Alex's own status session: where everything stands, where he's the blocker, how close to done. Answers from the collector's snapshots and asks no one. Not in the charter. | Launched 2 Nov. |
 | `s-d9-legibility` | `legibility\` | S-D9 Legibility analyzer: finds what's worth showing followers in the filed rig sessions and the project, and sends `website` build requests. Runs on an interim brief until its spec exists. | Started early on Alex's instruction, 2 Nov. Checks every 30 minutes. |
 | `s1-research` | `research\` | S1 Research: sets the research method and fills the research reading list with Alex, within the usage budget. | Launched by `orchestration` after S0, 2 Nov. |
 | `wave2-specs` | repo root | Temporary: writes the wave-2 specs (S-D1, S-D3 to S-D10), gets each one's preflight intake answered, and hands each to `orchestration` for launch. Then stops. | Started by `orchestration`, 2 Nov 14:00. |
 | `s-d1-scraping` | `scraping\` | S-D1 Scraping research demo: presents Alex's own scraping and research on the site, behind his gate on what the section shows. | Launched by `orchestration`, 2 Nov, after its preflight (DI-6) was answered. |
+| `addvery-research` | `Addvery Research\` | Alex's own Addvery research session: the company, its six key people and its brand capture. He works with it directly; it has no spec. The folder is git-ignored. | Launched by `orchestration` at Alex's request, 2 Nov. |
 
 ## Planned
 
@@ -50,5 +50,5 @@ Spec sessions that have done their job and stopped. Their rows stay, so every sp
 
 ## Not sessions
 
-- `Addvery Research\`: Alex's own folder, worked one-on-one, with no spec. It's git-ignored, so read it from the local disk. It has no roster name unless Alex starts a session there.
+- `Addvery Research\`: Alex's own folder, with no spec, now worked through the `addvery-research` session (Running). It's git-ignored, so read it from the local disk.
 - `Operator tasks\` and `orchestration\_templates\`: files, not sessions.
