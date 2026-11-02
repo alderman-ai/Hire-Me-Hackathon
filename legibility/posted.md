@@ -25,6 +25,28 @@ Every filed rig session, and the post that carries its best moments.
 | S06 | 13:36 | P2 | Status update, linked (website uploaded it as mxorwucznvE) |
 | S07 | 14:42 | P4 | Briefing session, this feed, recovery skill, keys off camera; not on YouTube (38 min) |
 
+## Role tags (DI-1 Q1.9)
+
+Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per moment. When the stakeholder sections go live, each role's moments are offered to its section in one build request per batch.
+
+| Post | Feed id | Moment | Roles |
+| --- | --- | --- | --- |
+| P1 | status | What's being built, and how the project runs | CEO, COO |
+| P1 | status | Movie-actor quote (S03 11:11): the operator's time goes first | COO, CEO |
+| P1 | status | "Put the deliverables on the website" (S04 08:23) | CMO |
+| P2 | s01 | Public repo from the first commit (S01 00:08) | CTO |
+| P2 | s02 | Knowledge arbitrage: AI so good it looks human (S02 08:50) | CEO, CSO, CMO, RevOps |
+| P2 | s03 | "Clarity, not files" (S03 18:10) | CAIO, CTO |
+| P2 | s04 | "Mistakes cascade … the bottleneck is focus" (S04 12:55) | CTO, CAIO, COO |
+| P2 | s05 | The 13:20 deletion and the seven-minute recovery (S05 41:31, 44:24) | CTO, COO |
+| P2 | s06 | "AI is very front-loaded" (S06 00:03) | CEO, COO |
+| P2 | bootstrap-done | Bootstrap done at 13:49 | CTO |
+| P3 | definition-of-done | 22 checkable items; a consistency check that caught 7 of 7 planted faults | CEO, COO, CAIO |
+| P3 | research-lists | Research lists, wildcards, "impressive or creepy" | CAIO, CMO, CSO |
+| P4 | (S07 session) | A briefing session, this feed, the recovery skill, approvals as checkboxes | CEO, COO, CTO |
+| P4 | (S07 insight) | API keys never move on camera (S07 35:43) | CTO, CAIO |
+| P4 | (milestone) | Every demo has a plan; seven research agents in parallel | CEO, COO, CAIO, CMO, CSO, RevOps |
+
 ## Left out
 
 | When | What | Why |
