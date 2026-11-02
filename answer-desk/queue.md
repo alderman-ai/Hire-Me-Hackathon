@@ -477,6 +477,7 @@ TASK S-D9: Approve - the plan for the site's build updates.md is waiting on you:
 From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
 Received: 2026-11-02 15:04 CET (+01:00)
 15:04 CET: alert shown to Alex.
+15:43 CET: s-d1-scraping: file updated at 15:43 (choice 1 now reflects the two LinkedIn scrapers run so far; recommends "crawl: yes", a cents-cheap Apify crawl of Addvery's website run by Alex's research session; ticking still takes the defaults, no new run). Repeated alert in the window; no PushNotification during the break.
 
 ```
 TASK S-D1: Approve - the scraping demo plan.md is waiting on you: the plan for the site's scraping page (what done means, result-first layout, and three choices with defaults: LinkedIn, a Clay line, a video); about 3 minutes, and ticking the box takes all defaults; unblocks drafting the page the moment your summary is ready.
@@ -516,5 +517,35 @@ Desk holds pokes that arrive during the break (marked "held") and surfaces those
 
 ```
 Alex is on break until about 15:46 Prague. His words at 15:16, to wave2-specs (checked in its transcript): "i'm on break for the next 30 mins, dont let any 'answer expiry defaults' go into affect". Until at least 15:46: no question, intake or gate takes its default on a passed deadline, whatever its own rule says; anything waiting on him waits; nothing that needs his yes goes ahead. Hold pokes that come in during the break and surface them to him from 15:46, if still open.
+```
+
+## TASK S-D3: Approve - the six alert messages before they send.md — open
+From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-b31a7431253d97f8dd5f0b7f3b09b8aa)
+Received: 2026-11-02 15:43 CET (+01:00)
+15:43 CET: alert shown in the desk window; no PushNotification during Alex's break (until about 15:46). Include in the 15:46 summary.
+
+```
+TASK S-D3: Approve - the six alert messages before they send.md is waiting on you: the six alert messages; ticking it sends them from your profile, target 15:30 (your sender's LinkedIn hours end at 16:30 today unless you take call 9, which extends this one flow to 18:00). Ticking also confirms the six.
+```
+
+## NOTE — break ended 15:46
+15:46 CET: no pokes arrived during the break, so none held. Two alerts came in during it without a notification (S-D3 six alert messages, S-D1 scraping plan update); one PushNotification sent summing up what is waiting, and the open tasks shown to Alex.
+
+## POKE S1 — 15:46
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
+Received: 2026-11-02 15:46 CET (+01:00)
+15:46 CET: about open TASKs S1 GetSales+website research and blog research; repeated both alerts to Alex (covered by the 15:46 break-end notification).
+
+```
+POKE S1: waiting on you for "Approve - research for the GetSales demo and website.md" (open since 14:54; the GetSales and website sessions want findings by 16:30, and a run takes about 25 minutes from the tick, so ticking by about 16:00 still makes it) and "Approve - research for the blog pipeline.md" (open since 14:57; non-blocking). One tick each, about a 2-minute read.
+```
+
+## POKE S-D1 — 15:46
+From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
+Received: 2026-11-02 15:46 CET (+01:00)
+15:46 CET: about open TASK S-D1 "Approve - the scraping demo plan.md"; repeated that alert to Alex (covered by the 15:46 break-end notification).
+
+```
+POKE S-D1: waiting on you for Approve - the scraping demo plan.md (about 3 minutes; choice 1, "crawl: yes", is the one that matters, because it decides whether the page gets an Apify run it can show)
 ```
 
