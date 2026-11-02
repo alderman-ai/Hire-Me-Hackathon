@@ -18,6 +18,8 @@ State as of 17:22 Prague, 2 Nov, written by the second `s1-research` session (00
 
 - **Desk:** no question open; the next id is S1-Q7. No TASK lines open. Don't poke: rule 7 pokes only when work is blocked.
 - **Replies:** none outstanding. `s-d5-blog-articles` (session 5b465de8) confirmed the L-03 synthesis at 17:23; findings 1 and 3 go into its dictation 2 prompts and its build request S-D5-B1.
+- **AI portfolio (a job from `orchestration`, 18:20; see `portfolio\README.md`):** the draft `portfolio\ai-portfolio.md` is with Alex on the private review page https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J (TASK line sent 18:52, "task shown"). After his comment (read it with the ArtifactComments tool, or it comes through the desk): apply his edits, re-run `validate.py`, rebuild the page with `build_preview.py` (in the job's temp folder; it's short to rewrite), then `BUILD` to `website` (place at `website\content\demos\ai-portfolio.md`, linked from About me), hand `s-d1-scraping` the Markdown source for its agent-readable track (D12), and send `TASK DONE S1` to the desk.
+- **Routing since 18:56:** `orchestration` = handoffs, roster, context, charter, FINDINGS and OUTPUT; `orch-site-map` (site-map\) = the site's layout and scope map; `orch-alex-prep` (alex-prep\) = everything that needs Alex, and tracks the portfolio review. Questions still go to `answer-desk`.
 - **Monitors:** none running. The gate-watch script is in the job's temp folder and isn't needed: no gates are open.
 
 ## Answers applied this session
