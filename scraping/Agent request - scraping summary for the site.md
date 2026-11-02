@@ -7,6 +7,7 @@ To: the session working with Alex in Addvery Research\
 Answers go in: Addvery Research\Scraping summary.md (git-ignored), never in this file
 Approved by: Alex, desk question S-D1-Q1, 2 Nov 14:58 ("a, but have the scraping demo create a md file telling the addvery research session what it needs ... make sure it's clear that it will be completed agent-to-agent")
 Created: 2026-11-02 15:00 Prague
+Updated: 2026-11-02 15:10 Prague (N7, the LinkedIn column in N3, and the research's advice, after the project's research landed)
 ---
 
 # Request: the scraping summary the site's scraping section is built from
@@ -17,7 +18,7 @@ Created: 2026-11-02 15:00 Prague
 
 **What this part of the project is.** The site is Alex's personalised job application to Addvery, built live during a recorded hackathon. One of its demos shows web scraping and research on the Apify API. Alex decided that the demo runs nothing itself: he scrapes Addvery with you, here in `Addvery Research\`, and writes a summary of the outputs, and the demo's session turns that summary into one short page on the site that a visitor follows in under a minute: the question, the run, the result. The page names Apify and the actors used (Alex allowed that).
 
-**What you're asked.** Write `Addvery Research\Scraping summary.md` with the six parts below, under the headings given in the skeleton at the end. Each part carries its own context. You can write it in any order and fill it in as the scraping finishes.
+**What you're asked.** Write `Addvery Research\Scraping summary.md` with the seven parts below, under the headings given in the skeleton at the end. Each part carries its own context. You can write it in any order and fill it in as the scraping finishes.
 
 **What happens once it's ready.** Within 5 minutes the demo's session notices it, drafts the page from it into a git-ignored folder, and puts the whole draft in front of Alex for approval. Nothing reaches the site or the public repo before he ticks it. Separately, it passes the file names from part 5 to the project's orchestration session, so the demos that read your research get them on their reading lists.
 
@@ -37,7 +38,7 @@ Write, as the first two lines: `Status: draft` (or `Status: ready`), then `Ready
 
 # N2 The question
 
-The page opens with what Alex wanted to know about Addvery, and why that matters before writing to anyone there. Two or three company-level questions are enough, such as what the company sells and to whom, how it's organised, or what it's hiring for. One line on why: a first message only works when it's about them.
+The page's "how it works" steps start with what Alex wanted to know about Addvery, and why that matters before writing to anyone there. (The page itself opens with the result, part N4, because the project's research found that pages leading with the tool or the process read as toys.) Two or three company-level questions are enough, such as what the company sells and to whom, how it's organised, or what it's hiring for. One line on why: a first message only works when it's about them.
 
 Write two or three questions and one line on why, in plain words.
 
@@ -45,7 +46,7 @@ Write two or three questions and one line on why, in plain words.
 
 The middle of the page is one line per Apify actor that ran, in plain words first and the actor's name second, then the totals. Only what Apify itself reports for each run. Leave a cell as "n/a" if you don't have it.
 
-Write one row per actor: what it read (in plain words), the actor's name and its Store id (`username/actor-name`), how many results, how long it ran, what it cost in US dollars, and the date it ran. Then one totals line: actors, results, minutes, dollars (Alex's cap is $10).
+Write one row per actor: what it read (in plain words), the actor's name and its Store id (`username/actor-name`), how many results, how long it ran, what it cost in US dollars, the date it ran, and whether its source was LinkedIn (yes or no). By default the page shows nothing sourced from LinkedIn and names no actor that logs in with LinkedIn cookies; Alex can change that when he approves the plan. Then one totals line: actors, results, minutes, dollars (Alex's cap is $10).
 
 # N4 The result
 
@@ -71,6 +72,21 @@ Beyond the rules above, is there anything the page must not show? A source, a fi
 
 Write a list, or "nothing beyond the rules".
 
+# N7 Cleaning, and what broke
+
+The page's folded "show me how" part has one line on how the raw results became usable (duplicates removed, fields normalised, sources merged) and one line on what broke and how it was handled. The research found that hiring managers look for exactly this: a working path with its fixes shown reads as skill, while a perfect-looking run reads as a toy.
+
+Write one to three lines on the cleaning and merging, and one to three on what broke (a failed run, a blocked site, an empty result) and what was done about it. "Nothing broke" is a fine answer.
+
+## From the project's research: advice for the scraping itself
+
+These come from the project's research on personal data (GDPR and LinkedIn's terms; not legal advice). The scraping is Alex's, so each one is his call, not a requirement of this request:
+- Prefer company-published sources (the company site, press releases, talks, job posts) over LinkedIn for anything that could reach the public site. LinkedIn's terms ban scraping, and the risk lands on Alex's own account.
+- Avoid actors that log in with LinkedIn cookies.
+- Filter each actor's output down to the fields actually used, and delete the rest; off-the-shelf people actors return whole profiles.
+- Keep raw outputs in this git-ignored folder, as now. Never copy them into a tracked folder.
+- If the recording is running, keep the Apify Console cropped to the run being shown, and keep the proposal off screen.
+
 ## Skeleton for `Addvery Research\Scraping summary.md`
 
 ```markdown
@@ -85,9 +101,9 @@ Ready by: <HH:MM Prague>
 Why: <one line>
 
 ## N3 The run
-| What it read | Actor | Store id | Results | Time | Cost (USD) | Date |
-| --- | --- | --- | --- | --- | --- | --- |
-| <plain words> | <name> | <username/actor-name> | <n> | <min> | <$> | <date> |
+| What it read | Actor | Store id | Results | Time | Cost (USD) | Date | From LinkedIn? |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| <plain words> | <name> | <username/actor-name> | <n> | <min> | <$> | <date> | <yes/no> |
 Totals: <actors> actors, <results> results, <minutes> minutes, $<cost> of the $10 cap.
 
 ## N4 The result
@@ -100,6 +116,10 @@ Totals: <actors> actors, <results> results, <minutes> minutes, $<cost> of the $1
 
 ## N6 Keep off the site
 - <item, or "nothing beyond the rules">
+
+## N7 Cleaning, and what broke
+- Cleaning: <one to three lines>
+- What broke: <one to three lines, or "nothing broke">
 ```
 
 ## When you're done, or stuck
