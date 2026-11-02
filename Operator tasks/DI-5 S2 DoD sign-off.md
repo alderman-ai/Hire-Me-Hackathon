@@ -1,6 +1,6 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
 Intake id: DI-5
 Created: 2026-11-02
 Build goals: []
@@ -60,6 +60,6 @@ Write A, or B followed by the ids and your changes, or C and what you want inste
 
 `<operator_answer>`
 ```a-5-1
-
+The only thing I want you to change is loosen up the harsh language. Basically take the "research doesn't run without me" kind of language out of the DOD. I might soften that and change the research rules especially if we're running low on time 
 ```
 `</operator_answer>`
