@@ -28,10 +28,10 @@ Written 2 Nov at about 18:35 Prague by session 54c2d301 (took over at 17:15 from
 - **Routing since 18:56:** `orchestration` is the master (handoffs, roster, charter). Layout and placement requests now come from `orch-site-map` (site-map\). Anything that needs Alex goes to `orch-alex-prep` (alex-prep\), which keeps his "Open tasks.md". Questions still go to `answer-desk`. Residency is "over a decade" everywhere (fixed, 5ff7f17).
 
 - **Welcome, time picker and summary carousel** at the top of `/`: a subagent of 54c2d301 (since ~18:50). Files: `app\welcome.tsx` and its CSS, a carousel component, `app\page.tsx`, `content\time-paths.json` (path picks plus placeholder intro copy). Paste s-d7's welcome copy into `content\time-paths.json` when `COPY s-d7` sends it.
-- **Fan-out rule (Alex ~18:4x: "We should be really fanning out now"):** run every queued item as a parallel builder subagent on its own files. Copy now comes from `s-d7-linkedin-content` as `COPY s-d7` (the "how this site was built" entry, the welcome and time-path copy, the stakeholder section intro); you only build it. When something ships, tell `orchestration` in one line (it keeps Alex's root tracker, "Open tasks.md").
+- **Fan-out rule: SUPERSEDED at 19:58.** After the crash, Alex's course change (top of `CLAUDE.md`) says one item at a time, attended design and copy only, one build at a time. Build requests now come from `orchestration`, `orch-alex-prep` and `orch-site-map`, and `s-d7` and the other spec sessions are paused. Old text, for history: (Alex ~18:4x: "We should be really fanning out now") run every queued item as a parallel builder subagent on its own files. Copy now comes from `s-d7-linkedin-content` as `COPY s-d7` (the "how this site was built" entry, the welcome and time-path copy, the stakeholder section intro); you only build it. When something ships, tell `orchestration` in one line (it keeps Alex's root tracker, "Open tasks.md").
 
 - **"How this site was built" entry (COPY s-d7, ~18:55, not started):** `..\linkedin-content\local\site-copy\how-this-site-was-built.md` (POST-FORMAT v1.5, showcase, d8, status near-final; sources in `how-this-site-was-built.sources.md` beside it). Copy it to `content\demos\how-this-site-was-built.md`. Its status list is stamped "As of 18:50" and counts the six stakeholder pages as live: say instead that the six pages are live and their new personal versions are with Alex for review (or whatever is true when you ship). Set status `published` (it isn't in the DoD's sign-off list), check `/demos/<slug>` in dev, then commit, deploy and tell s-d7 and orchestration. Keep his " -- ".
-- **S-D9 clip batch: uploading since ~19:03** from 54c2d301 (`C:\Users\alder\.claude\jobs\54c2d301\tmp\clips13.sh`). If it was cut short, rerun the same commands; done clips are skipped. Ids land in `content\clips.json` under each file's stem. Send the 13 to `s-d9-legibility` in this order, then commit `content\clips.json`. The order and titles: upload each one unlisted with `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_clip.py <file> "<title>"`, in this order, after the webcam backlog finishes (one upload at a time; the rig throttles to 10 MB/s while recording). Then reply to `s-d9-legibility` with the 13 ids in order. Files are in `..\legibility\clips\`; the titles are exactly as s-d9 sent them:
+- **S-D9 clip batch: DONE, 13 of 13** (20:12, 00e21ae). Clips 12 and 13 reached `content\clips.json` at 20:10, from a run after the crash. Both ids resolve with s-d9's exact titles, and their lengths match the files. `54c2d301`'s job folder, `clips13.sh` included, no longer exists. `s-d9-legibility` is paused, so the ids were not sent. Whoever builds the day-one story reads them from `content\clips.json` by file stem, in the order below. History: the batch started uploading at ~19:03 from 54c2d301. Ids land in `content\clips.json` under each file's stem. The order and titles: upload each one unlisted with `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_clip.py <file> "<title>"`, in this order, after the webcam backlog finishes (one upload at a time; the rig throttles to 10 MB/s while recording). Then reply to `s-d9-legibility` with the 13 ids in order. Files are in `..\legibility\clips\`; the titles are exactly as s-d9 sent them:
   1. c-s03-noon-low-leverage.mp4: "Hire Me Hackathon, day one: noon, and nothing running yet (S03, 11:58)"
   2. c-s04-legibility-born.mp4: "Hire Me Hackathon, day one: this feed is born (S04, 12:22)"
   3. c-s04-worth-starting-over.mp4: "Hire Me Hackathon, day one: a bad feeling, and why he didn't start over (S04, 12:35)"
@@ -91,17 +91,18 @@ Written 2 Nov at about 18:35 Prague by session 54c2d301 (took over at 17:15 from
 - **Docs:** `scripts\sync_docs.py` only refuses secret-shaped strings; rerun it on every charter or spec change (last synced at C16, 8a4ae57).
 - **`content\inventory.json`:** 75 items with honest read and watch times (rebuild scripts in the job tmp: `stage1-3.py`).
 - **Clips:** `scripts\upload_clip.py <file> "<title>"` uploads any named file unlisted through the rig's sign-in; ids go in `content\clips.json`.
-- **Clock:** loop pid 39924. `.clock\adjustments.json` holds two hours off on Alex's word. S12 stopped about 18:13, idle, 5.09 h left.
+- **Clock:** loop pid 28388, restarted by `orchestration` at 20:02 after the crash killed 39924. It's alive at 20:13 and last published at 20:12:59: recording S15 since 19:56:38, 3.72 h left at 20:13. The log's "4.00 h left" is the banked figure at the span's start, and the page counts down from `running_since`. `.clock\adjustments.json` holds 9000 s (2.5 h) off on Alex's word (5071a93).
 
 ## Deploying
 
-**Warning (20:15): HEAD now contains the unreviewed welcome** (e3e8b9f, `app\page.tsx` and friends, committed at Alex's request after the crash). Alex reads the welcome copy and the four paths before it ships (attended copy, STATUS.md finish list item 2). Until he has, any deploy from HEAD ships it. So either wait for his OK, or deploy with `app\page.tsx` reverted to 9906723's version in the export (`git show 9906723:website/app/page.tsx > "$D/app/page.tsx"`; the welcome files are then unused and harmless).
+**Warning (20:10): HEAD now contains the unreviewed welcome** (e3e8b9f, `app\page.tsx` and friends, committed at Alex's request after the crash). Alex reads the welcome copy and the four paths before it ships (attended copy, STATUS.md finish list item 2). Until he has, any deploy from HEAD ships it, a plain `vercel deploy` from `website\` included. So until he OKs it, always deploy the clean export below, which swaps `app\page.tsx` back to 9906723's version (the same file as 4a8099f, live since 16:30). `page.tsx` is the only file that imports the welcome, so the other welcome files are then unused and harmless. Once he OKs it, delete that one line.
 
-When the tree holds uncommitted work, deploy a clean export of HEAD and copy **every** git-ignored asset in (fixed 20:15: the earlier recipe missed `/about`'s images and copy):
+Deploy a clean export of HEAD and copy **every** git-ignored asset in (fixed 20:10: the earlier recipe missed `/about`'s images and copy). Dry-run checked by `website` at 20:12: every ignored file that deploys reaches the export with matching counts, and no `.env*`, `.clock`, `local\addvery` or `local\alex` gets in.
 
 ```bash
 cd "/c/Users/alder/Desktop/Hire me hackaton"; D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"; rm -rf "$D"; mkdir -p "$D"
 git archive --format=tar HEAD:website > "$D.tar" && tar -xf "$D.tar" -C "$D" && rm "$D.tar"
+git show 9906723:website/app/page.tsx > "$D/app/page.tsx"   # keeps the welcome off; delete this line once Alex OKs it
 mkdir -p "$D/.vercel" "$D/public/addvery" "$D/public/people" "$D/public/demos" "$D/local"; cp website/.vercel/project.json "$D/.vercel/"
 cp website/public/addvery/* "$D/public/addvery/"; cp website/public/people/* "$D/public/people/"
 cp -r website/public/demos/linkedin-voice "$D/public/demos/"; cp website/app/demos/_og/glow.jpg "$D/app/demos/_og/"
@@ -109,10 +110,11 @@ cp -r website/public/about "$D/public/"
 cp -r website/local/org-diagrams.json website/local/research website/local/about "$D/local/"
 # once D12 ships: cp -r website/public/agent website/public/llms.txt into "$D/public/"
 cd "$D" && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes
-# then check: /about 200 with "From my LinkedIn", one /about/wall image 200, /for/growth 200, /demos 200
+# then check: /about 200 with "From my LinkedIn", one /about/wall image 200, /for/growth 200, /demos 200,
+# and / has no welcome markup until Alex OKs it
 ```
 
-Git-ignored but deployed: `public\addvery\`, `public\people\` (plus `*-og.jpg`), `public\demos\linkedin-voice\`, `app\demos\_og\glow.jpg`, `public\about\`, `local\org-diagrams.json`, `local\research\`. When the tree is clean, a plain `vercel deploy --prod --yes` from `website\` ships all of them.
+Git-ignored but deployed: `public\addvery\` (24 files), `public\people\` (18, `*-og.jpg` included), `public\demos\linkedin-voice\` (18), `app\demos\_og\glow.jpg`, `public\about\` (20), `local\about\about-me.md`, `local\org-diagrams.json`, `local\research\` (7). The app reads only those three from `local\` (`app\about\copy.ts`, `app\org-charts.tsx`, `app\research-docs.tsx`). If you add a git-ignored file the build needs, add it to the recipe too.
 
 ## Working notes
 

@@ -1,5 +1,5 @@
 # website: status
-As of 20:01, 2 Nov (Prague), written from the folder's own records after the 19:4x crash.
+As of 20:01, 2 Nov (Prague), written from the folder's own records after the 19:4x crash. Updated at 20:15 by `website`: the clock is running again, the clip batch is complete, and the deploy recipe is fixed.
 
 ## Where it fits in the plan
 
@@ -87,7 +87,7 @@ The site is the project's one outcome: Alex's job application to Addvery, in Add
 | Welcome copy and the four reading paths (s-d7's 18:50 copy, not reviewed by Alex) | `content\time-paths.json` | half-done, not deployed |
 | Read and watch times, 76 items | `content\inventory.json` | done |
 | Webcam YouTube ids, S01 to S12 | `content\videos.json` | done |
-| Clip YouTube ids (15) | `content\clips.json` | half-done (see Videos) |
+| Clip YouTube ids (17: the first four, plus the 13-clip batch) | `content\clips.json` | done (00e21ae) |
 | LinkedIn wall, 34 posts | `content\linkedin-wall.json` | live |
 | S02 summary | `content\summary.json` | live |
 | Scraping page data | `content\d1.json` | live |
@@ -98,7 +98,7 @@ The site is the project's one outcome: Alex's job application to Addvery, in Add
 
 | Item | Where | State |
 | --- | --- | --- |
-| Countdown sync to Blob | `scripts\clock_sync.py` | done. The loop died in the crash (pid 39924 isn't running). Last publish was 19:12: idle, 4.00 h left. |
+| Countdown sync to Blob | `scripts\clock_sync.py` | done. The loop died in the crash (pid 39924). `orchestration` restarted it at 20:02 (pid 28388), and it was alive at 20:13, publishing "S15 recording". |
 | Webcam uploader | `scripts\upload_webcam.py` | done |
 | Named-clip uploader | `scripts\upload_clip.py` | done |
 | Docs copier (refuses secret-shaped strings only) | `scripts\sync_docs.py` | done |
@@ -141,12 +141,12 @@ The site is the project's one outcome: Alex's job application to Addvery, in Add
 | Item | Where | State |
 | --- | --- | --- |
 | Vercel project | `hire-me-hackathon`, team `alex-alderman-s-projects` (Hobby) | live. The last production deploy was 18:57. |
-| Clock status file | Blob store `hire-me-hackathon-clock`, `status.json` | live, frozen at 19:12 (idle, 4.00 h left) |
+| Clock status file | Blob store `hire-me-hackathon-clock`, `status.json` | live: recording S15 since 19:56:38, 3.72 h left at 20:13, refreshed every 10 min |
 | Web Analytics | Vercel, aggregate and cookieless | live |
 | Webcam videos, unlisted (all 12 resolve on YouTube as of 20:00) | S01 mbF291oW_yQ, S02 qrBNOsSYGrQ, S03 M38hI3M3Heo, S04 VaFD-Hm_Phs, S05 EoLyMiV77R0, S06 mxorwucznvE, S07 NULD_WteCRM, S08 MyYnFOQCagc, S09 cNI9EgxHUbk, S10 NyD-epukcWs, S11 iXr-pKhseB8, S12 lo486cSVBcM | done. S01, S02, S06, S08 and S11 are embedded in the feed. |
 | Webcam videos S13, S14 (filed by the rig), S15 (recording since 19:56) | `..\OBS\Processed\S13_*`, `S14_*` | not uploaded |
 | Day-one clips, first four (18:15) | 6Ynpp621fmY, pyFHE1JHMV8, S2NTaJHUmTM, FMYWlkGWdeY | done. pyFHE1JHMV8 and FMYWlkGWdeY are due to be replaced by the v2 cuts. |
-| The 13-clip batch | 11 uploaded: rnFQPYyUmew, d4vSBeoVRg4, U7j50NbM29U, idojGfe0sJQ, _1C1X5--Pfc, zYbH8HfYqAU, PQIZoQ-Ic2w, XVqOE_-COOQ, 9vLcPuSVmLo, enaeHqxjeCc, 0_OKP-0C6Xk (bottleneck v2) | half-done. Clip 12 (`day1-2-too-much-at-once-v2`) and clip 13 (`c-s08-same-thing-tomorrow`) are missing. The ids were never sent to `s-d9-legibility`. |
+| The 13-clip batch | 11 uploaded: rnFQPYyUmew, d4vSBeoVRg4, U7j50NbM29U, idojGfe0sJQ, _1C1X5--Pfc, zYbH8HfYqAU, PQIZoQ-Ic2w, XVqOE_-COOQ, 9vLcPuSVmLo, enaeHqxjeCc, 0_OKP-0C6Xk (bottleneck v2) | done, 13 of 13. Clip 12 (`day1-2-too-much-at-once-v2`, r2DIjaHF_js) and clip 13 (`c-s08-same-thing-tomorrow`, _X4Lf6ErYdc) arrived at 20:10 and were committed at 20:12 (00e21ae). `s-d9-legibility` is paused, so the ids weren't sent. The day-one story's builder reads them from `content\clips.json`. |
 
 **Records**
 
@@ -191,11 +191,11 @@ The six pages must be approved and live before he sends the links in the morning
 
 ## What's left for an assistant
 
-1. **Restart the clock loop now, hidden.** The rig is recording S15 (since 19:56), but the loop is dead, so the site's countdown is frozen at 4.00 h. The command is in `CLAUDE.md` under "The countdown".
+1. **Restart the clock loop: done.** `orchestration` restarted it at 20:02 (pid 28388), and `website` checked it was alive at 20:13. Check it again at the start of every session (`CLAUDE.md`, "The countdown").
 2. **Bring in each of the six pages as Alex signs it off.** Read his saved artifact back first, and never republish an artifact before that. Then run `python scripts\review\apply_review_edits.py <saved.html>` as a dry run, then with `--write`. Set that page's `landing.approved: true`, commit, deploy and check with curl. See `HANDOFF.md`, "In flight" and "Review sign-off protocol".
-3. **Ship the welcome (e3e8b9f) once Alex has done his copy and design pass.** Use a preview deploy (`vercel deploy`) first, then production. Vercel builds it on its side, so skip local `next dev` and `next build` while the PC is fragile. See `HANDOFF.md`, "Deploying". The tree is clean now, so a plain deploy from `website\` works. The clean-export recipe in `HANDOFF.md` misses `public\about\` and `local\about\` and would drop `/about`'s images and copy.
+3. **Ship the welcome (e3e8b9f) once Alex has done his copy and design pass.** Use a preview deploy (`vercel deploy`) first, then production. Vercel builds it on its side, so skip local `next dev` and `next build` while the PC is fragile. See `HANDOFF.md`, "Deploying". Until Alex OKs the welcome, never run a plain deploy from `website\`, because HEAD holds the welcome. Use `HANDOFF.md`'s clean-export recipe instead. It now carries `/about`'s images and copy and swaps `app\page.tsx` back to the live version. It was fixed at 20:10 and dry-run checked at 20:12.
 4. **Upload the webcam for S13 and S14, and for S15 once it's filed.** Use `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_webcam.py Sxx <scratch dir>`, one upload at a time. See `CLAUDE.md`, "Video".
-5. **Finish the clip batch.** Rerun `C:\Users\alder\.claude\jobs\54c2d301\tmp\clips13.sh`; it skips done clips, so only clips 12 and 13 upload. Commit `content\clips.json` and pass the 13 ids, in order, to whoever builds the day-one story. See `HANDOFF.md`, "S-D9 clip batch".
+5. **Finish the clip batch: done** (00e21ae, 20:12). All 13 ids are in `content\clips.json`, and their order is in `HANDOFF.md`, "S-D9 clip batch". Pass them to whoever builds the day-one story.
 6. **Serve the D12 agent track.**
    - Generate it into a clean folder and copy `llms.txt` and `agent\` into `public\`.
    - Serve `/agent/*.md` as `text/markdown` and `noindex`.
@@ -216,7 +216,7 @@ The six pages must be approved and live before he sends the links in the morning
 
 ## Open questions and risks
 
-- **The countdown is wrong right now.** S15 has been recording since 19:56. The sync loop died in the crash, so the site shows idle at 4.00 h until the loop restarts.
+- **The countdown: fixed.** The loop died in the crash and was restarted at 20:02. The site has shown S15 recording since then.
 - **The handoff never happened.** Session 54c2d301 wrote `HANDOFF.md` at about 18:35 and updated it to 19:09, but no successor was launched. `SESSIONS.md` still lists 54c2d301 as the active session.
 - **The welcome was in progress at the crash.** Its local build passed at about 19:09. Accessibility checks were running at 19:11, and their result isn't recorded. The commit calls it "work in progress".
 - **The six reviews: unclear whether Alex has saved edits on any of them.** Ivana's artifact is the most recently opened or updated item in his gallery. A stray half-edited copy of page 1 exists, and reading that one back by mistake would be wrong.
@@ -227,11 +227,9 @@ The six pages must be approved and live before he sends the links in the morning
   - `Open tasks.md` (19:01) still says S03 to S12 are uploading.
   - `builds.md` and commit 27716be (18:57) say all 12 are online, and all 12 ids resolve on YouTube as of 20:00.
   - The brief's "S10 and S12 uploading" matches the older tracker, not the folder's records.
-- **The 13-clip batch stopped at 11.**
-  - Clips 12 and 13 are missing.
-  - The 11 ids reached git only in the crash commit (e3e8b9f).
-  - `s-d9-legibility` never got them.
-  - The old day-one clips pyFHE1JHMV8 and FMYWlkGWdeY are meant to be replaced by the v2 cuts.
+- **The 13-clip batch: complete at 20:12** (00e21ae).
+  - `s-d9-legibility` is paused, so it never got the ids.
+  - The old day-one clips pyFHE1JHMV8 and FMYWlkGWdeY are meant to be replaced by the v2 cuts (r2DIjaHF_js, 0_OKP-0C6Xk) when the day-one story is built.
 - **Stale or contradictory public text.**
   - The status board is from 18:45. Its D8 row still says "Live in the company's look since 16:29, with a page per demo".
   - `/d7` says the demo is being built, though its entry is live.
