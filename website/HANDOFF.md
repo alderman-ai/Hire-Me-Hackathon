@@ -1,6 +1,12 @@
 # Handoff: website
 
-Written 2 Nov at 21:47 Prague by the `website` session started after the crash (Claude session 01UyYB1sQdTqDrzVEZnktDyZ, job 2d36e96a), at orchestration's context-refresh request. **Run `date` before writing any time**: estimated stamps ran ahead today, twice.
+Written 2 Nov at 21:47 Prague by the `website` session started after the crash (Claude session 01UyYB1sQdTqDrzVEZnktDyZ, job 2d36e96a), at orchestration's context-refresh request. Updated at 22:10 by its successor (job 91fdba88) after W13. **Run `date` before writing any time**: estimated stamps ran ahead today, twice.
+
+## Parked overnight (Alex, 22:05, via orchestration)
+
+- **No website updates tonight.** Overnight, orchestration builds three alternative mockups; in the morning Alex picks one and `website` builds it out. Start nothing (W14 included) before that.
+- **Two rules that change the build:** (1) **no asks on any page**: drop the one-ask block (P6) and every `ask_line` from every `/for` page; pages give, they never ask. (2) **The 5/10/20/60 time picker is retired for good** (it already never ships; see W1).
+- **The wall's alt text is parked, not built:** `local\parked\wall-alt.patch` (git-ignored) wires orchestration's 92 alt lines (`scraping\site\linkedin-wall\alt.json`) into `content\linkedin-wall-full.json`, `scripts\about_assets.py`, `app\about\wall-full-data.ts` and the video cover in `wall-full.tsx` (the 34-post wall's checked alts still win; carousel pages read "Page n of N: <alt>"; link previews stay alt="" since their title names them). Orchestration said skip it at 22:05. Only when asked again: `git apply website/local/parked/wall-alt.patch` from the repo root, typecheck, preview.
 
 ## Read first
 
@@ -24,14 +30,17 @@ Written 2 Nov at 21:47 Prague by the `website` session started after the crash (
 | W7 chrome and cleanup | BUILT: new menu and footer, `/d3` to `/d12` redirects, `/d1` `/d2` stripped, feed at `/log`, interim home | 3762e1b | **nr24z43xm (latest)** |
 | W8 articles | NEXT. Waits on Alex approving `art-pipeline-promise` and `art-managed-service` (A4, A8); then fill `ARTICLE-2-LINK` in `local\about\about-me.md` | | |
 | W9 checkpoint 1 | `publish-leak-scan` (DoD-22) on the preview, Alex walks Ivana's page, then promote (see "Going live") | | |
-| W10 to W16 | Not started. W13 `/videos` and W14 `/skills` add their menu items to `NEW_NAV_LINKS` in `app\site-links.ts` when they exist | | |
+| W10 to W12 | Not started | | |
+| W13 `/videos` | BUILT behind `VIDEO_WALL=1`: five rows, 55 tiles, from `scripts\build_video_wall.py` (library + side cards + the booth's latest grades; rerun it after more grading). Six verdict pieces graded No are off (`builds.md`, 22:03). Words go in `content\video-words.json` | ee2ab30, 920cdaf | **elj1v4aja (latest)** |
+| W14 to W16 | Not started; parked by Alex (22:05). `SKILLS_PAGE` is already in `app\flags.ts`, and `newNavLinks()` adds Skills to the menu when it's set | | |
 
-The latest preview, with everything above: https://hire-me-hackathon-nr24z43xm-alex-alderman-s-projects.vercel.app (Vercel login; Alex's Chrome is signed in). Older ones are `https://hire-me-hackathon-<id>-alex-alderman-s-projects.vercel.app` with the ids above. Production is unchanged since 18:57, and was checked after every item.
+The latest preview, with everything above: https://hire-me-hackathon-elj1v4aja-alex-alderman-s-projects.vercel.app (Vercel login; Alex's Chrome is signed in). Older ones are `https://hire-me-hackathon-<id>-alex-alderman-s-projects.vercel.app` with the ids above. Production is unchanged since 18:57, and was checked after every item.
 
 ## The two build flags (`app\flags.ts`)
 
 - **`NEW_SITE=1`**: the verdict's whole new structure. That covers the carousel, the pill, the personal pages, the entry template's new parts, the menu, footer and redirects, `/log`, the interim home and C1/C2's redirect. Only previews set it. Without it, a build is today's live site, so HEAD is always safe for an urgent production deploy, a takedown for example.
 - **`WALL_FULL=1`**: the 94-post LinkedIn wall on `/about` (orchestration's BUILD, 20:55; a11y-checked, see `builds.md` 21:16). It's separate because W12 promotes it on its own glance.
+- **`VIDEO_WALL=1`** (W13) and **`SKILLS_PAGE=1`** (W14, no page yet): each needs `NEW_SITE` too, and has its own flag because Alex promotes each on its own glance (M1). Without it the route is a 404 and the menu leaves it out (`newNavLinks()` in `app\site-links.ts`, called on the server only).
 - `IS_PRODUCTION_BUILD` (`VERCEL_ENV === "production"`): placeholders never render in production, and a `recommend.json` with `"placeholder": true` shows no carousel there.
 - At a checkpoint, going live means building production **with** the flags (see "Going live"), then later deleting the old branches.
 
@@ -47,7 +56,7 @@ The latest preview, with everything above: https://hire-me-hackathon-nr24z43xm-a
 
 ## Deploying
 
-**Preview (every W item):** `bash scripts/preview_deploy.sh` from the repo root or `website\`. It exports HEAD into `$CLAUDE_JOB_DIR\tmp\clean-deploy`, copies every git-ignored asset in, and runs `vercel deploy --yes --build-env WALL_FULL=1 --build-env NEW_SITE=1`, with no `--prod`. Commit first: it deploys HEAD, not the working tree.
+**Preview (every W item):** `bash scripts/preview_deploy.sh` from the repo root or `website\`. It exports HEAD into `$CLAUDE_JOB_DIR\tmp\clean-deploy`, copies every git-ignored asset in, and runs `vercel deploy --yes --build-env WALL_FULL=1 --build-env NEW_SITE=1 --build-env VIDEO_WALL=1`, with no `--prod`. Commit first: it deploys HEAD, not the working tree.
 
 **Production (only on Alex's yes, or a takedown):**
 
@@ -78,7 +87,8 @@ Git-ignored but deployed: `public\addvery\` (24), `public\people\` (18), `public
   3. Start `npx next dev --webpack -p 3101` there, hidden, with `NEW_SITE=1` and `WALL_FULL=1` set in its environment. Add `VERCEL_ENV=production` to test the production gate.
 - Why the export: a dev server (pid 8612, not ours, started 20:10, no flags) already holds port 3100 in `website\`, and Next 16 refuses a second dev server in the same folder. Turbopack won't follow the junction, hence `--webpack`.
 - **Never** delete the export with the junction in it. `scripts\preview_deploy.sh` removes the junction by `rmdir` first, so stop the dev server before running it.
-- Headless checks: `scripts\check\audit_wall.mjs` (Chrome over the DevTools protocol with its own throwaway profile: contrast, targets, keyboard, phone width). `scripts\check\new_site_check.py` (W7's route checks against :3101). Don't use Alex's Chrome window while the rig records.
+- The dev server serves the export, not `website\`: copy an edited file across (or commit and re-export) before rechecking.
+- Headless checks: `scripts\check\audit_videos.mjs` (/videos: contrast, targets, rows, the dialog by keyboard, phone and 200% zoom), `scripts\check\audit_wall.mjs` (Chrome over the DevTools protocol with its own throwaway profile: contrast, targets, keyboard, phone width). `scripts\check\new_site_check.py` (W7's route checks against :3101). Don't use Alex's Chrome window while the rig records.
 
 ## Still open from before the verdict
 
