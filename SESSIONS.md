@@ -25,12 +25,12 @@ Read this file at startup, and again before you message a session you haven't me
 | `briefing` | `briefing\` | Alex's own status session: where everything stands, where he's the blocker, how close to done. Answers from the collector's snapshots and asks no one. Not in the charter. | Launched 2 Nov. |
 | `briefing-build` | repo root | Temporary: a fork of `orchestration` that builds `briefing\`. | Stops once `briefing` is running. |
 | `s-d9-legibility` | `legibility\` | S-D9 Legibility analyzer: finds what's worth showing followers in the filed rig sessions and the project, and sends `website` build requests. Runs on an interim brief until its spec exists. | Started early on Alex's instruction, 2 Nov. Checks every 30 minutes. |
+| `s1-research` | `research\` | S1 Research: sets the research method and fills the research reading list with Alex, within the usage budget. | Launched by `orchestration` after S0, 2 Nov. |
 
 ## Planned
 
 | Session | Folder it starts in | Spec | When |
 | --- | --- | --- | --- |
-| `s1-research` | `research\` | S1 Research | After S0. |
 | none | `orchestration\` | S2 Project orchestrator | Run by `orchestration` after S0. There's no separate S2 session (DI-4). |
 | `s-d1-scraping` | `scraping\` | S-D1 Scraping research demo | Wave 2, first, because others consume its output. After S1. |
 | `s-d3-getsales` | `getsales\` | S-D3 GetSales outbound demo | Wave 2, once Alex's Addvery research (the six stakeholders) is in `Addvery Research\`. Needs the rig recordings, and S-D9 for the clip. |
