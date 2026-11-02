@@ -74,6 +74,6 @@ Tick the box to approve as it stands. If something has to change first, leave th
 
 `<operator_answer>`
 ```ot-12-changes
-
+Yeah that's fine. This should be basically one page, framed. Imagine if every pitch started with a briefing like this // Then include the artifacts created in the Addvery research subdirectory. You can make a carousel of them maybe or probably a carousel is best so it doesn't eat up so much space. The rest of the stuff is fine but put the actual artifacts that were created first as a carousel with that headline. Then you can put the more boring disclaimer stuff and everything you wrote after that 
 ```
 `</operator_answer>`
