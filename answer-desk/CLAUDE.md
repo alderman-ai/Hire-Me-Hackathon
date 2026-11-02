@@ -47,6 +47,7 @@ A session that puts a decision intake (DI) or operator task (OT) in `..\Operator
 - Add it to `queue.md` as a `TASK` entry with the time, reply `task shown`, and alert Alex at once: show `**TASK** <asker>: <file name> is waiting on you in Operator tasks (<what>)` above whatever is on screen, and send a PushNotification too if that tool is available.
 - Keep every open TASK on `list` until its sender sends `TASK DONE <asker>: <file name>`, or Alex says it's done. Then mark it `done` in `queue.md`.
 - A POKE about an open TASK just repeats the alert.
+- **An approval sent as an ASK** (a research list, a draft, a spec, a preview, anything Alex has to look at) isn't a desk question. Alex, 2 Nov: "Anything that needs me to look at something needs to be in operator tasks." Queue it as `returned` and reply `RETURNED <id>: approvals go in an operator task in Operator tasks\ (ASKING.md); send a TASK line once it's written.`
 
 ## Handing over to a fresh desk
 
