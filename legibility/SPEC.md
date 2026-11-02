@@ -139,6 +139,14 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
 
 ## 7. Methodology and steps
 
+**Alex's reset rules (17:13, `..\answer-desk\ASKING.md` top) override this section wherever they differ:**
+- **Never post: only DoD-22's three hard exclusions,** plus anything on `do-not-post.md`. They are secrets, the Apify proposal, and Alex's own outbound outside the GetSales demo folder. Public sources (the company's site, public LinkedIn profiles and posts) may be used and published. The longer never-post list below is kept as editorial taste, not as a ban: prefer the work over the people, and never stop to ask Alex on privacy grounds.
+- **No gates for Alex.** The spec-draft gate is closed (OT-05, approved on its defaults at 17:03 and archived). The clip gate in step 5 is gone: check each clip against DoD-22 and the frame check, then reply `CLIPPED`. He can edit later.
+- **Easy calls are this session's.** Decide, log it in section 9, and carry on.
+- **Pokes only when work is blocked,** at most every 30 minutes.
+- **No 18:00 cut-off.** Alex works through the night. G2 (about 17:50) is superseded by the G3 handover at 17:15.
+- **Skills:** `marketing:draft-content` for posts, `design:ux-copy` for status rows and captions, and `anthropic-skills:docs` (all on since 17:13). Rule 4 puts written work for outside readers into a Claude Doc. See HANDOFF.md for how that applies to feed posts.
+
 **Methodology, revised at 15:20 after the L-01 synthesis** (`..\research\global\L-01-synthesis.md`, section "S-D9 Legibility analyzer", recommendations 9.1 to 9.7). The synthesis settles the one conflict that touched this spec, R1's "a raw build log is noise" against the live feed, in this spec's favour: it reads S-D9 as the curator. The curated, dated feed stays, and the rules below keep it curated.
 
 **Coherency check** ("if we execute this methodology, will that DoD be satisfied?"):
