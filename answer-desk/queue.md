@@ -1023,3 +1023,7 @@ Received: 2026-11-02 18:52 CET (+01:00)
 TASK S1: your AI portfolio entry is waiting on you: https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J (a private page). It's the first-person story you asked for: your AI sabbatical and the executable-spec work, with the public repo under each claim. About a 10-minute read. Comment on the page to sign it off or ask for changes; the five yellow marks are the points only you can settle (sabbatical length, the CB6 repo link and two others). Your sign-off unblocks placing it on the site, linked from About me. If you'd rather answer here, a line to the desk reaches me too.
 ```
 
+## NOTE from orchestration — ROUTING 18:57
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-f5446a9c2bf6a1cb4ddb200a7efdb352)
+18:57 CET: orchestration split in three (Alex, 18:56). orchestration = master (handoffs, roster, context, charter; Alex no longer talks to it). orch-site-map (site-map\) = site layout and scope map. orch-alex-prep (alex-prep\) = everything that needs Alex (recordings, sign-offs, reviews) and Open tasks.md. Alex talks to both new sessions directly. The desk stays the queue for every other session's questions. If orch-alex-prep asks what's waiting on Alex, give it the queue.
+
