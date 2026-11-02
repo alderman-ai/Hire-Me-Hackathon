@@ -1,66 +1,82 @@
 # Orchestration handover
 
-Written 2 Nov, 16:44 Prague, by the outgoing `orchestration` session (id `edd8f64b`), at forking gate F2 (context at 50.2%). F1 (build done) and F3 (window closes) are merged into this fork: see SPEC.md section 9, the 16:33 row. Read this, then `orchestration\SPEC.md`. You are the parent session and the S2 project orchestrator. Every time you write comes from the clock (`Get-Date`); never guess one.
+Written 2 Nov, 18:47 Prague, by the outgoing `orchestration` session (id `ab58b0bf`), at forking gate F2 (context about 48%). Read this, then `orchestration\SPEC.md`, then **`Open tasks.md` at the repo root**. You are the parent session and the S2 project orchestrator. Take every time from the clock (`Get-Date`); never guess one.
 
 ## First, in this order
 
-1. Wait until `claude agents --json --all` shows your row live, then run `claude stop edd8f64b` (if it's still live) and `claude rm edd8f64b`, and check that exactly one `orchestration` row is left (SPEC section 8, "One session per roster name"). Put your id and the handoff time in the `orchestration` row of `SESSIONS.md` and commit it on its own (`[roster]`).
-2. Send the HANDOFF announcement (SPEC section 8) to every running roster session: `answer-desk`, `rig`, `watcher`, `briefing`, `website`, `s1-research`, `s-d1-scraping`, `s-d3-getsales`, `s-d4-blog-pipeline`, `s-d5-blog-articles`, `s-d6-canva-templates`, `s-d7-linkedin-content`, `s-d9-legibility`, `s-d10-canva-video`, `addvery-research`. Tell `answer-desk` that S2-Q1 is on the desk. If two live rows share a name (Remote Control duplicates), address the one on this machine as `<name> [ref]` from ListAgents.
-3. Re-create the context-watch cron with CronCreate: cron `13,43 * * * *`, recurring, the CONTEXT WATCH prompt in SPEC section 8. Crons and Monitors die with this session.
-4. Re-arm three Monitors, each re-run every 300 s:
-   - OT-10 answered: the report fence in `Operator tasks\Do - get the computer ready for tonight.md` is non-empty, or `Task State: Done`.
-   - OT-11 ticked: `python -I orchestration\check_gate.py "Operator tasks\Approve - three small charter fixes.md"` prints a line starting `APPROVED`. It reads `CHANGES` now, on purpose: see below.
-   - S2-Q1: watch `answer-desk\qa\S2.md` for `A S2-Q1`.
+1. Wait until `claude agents --json --all` shows your row live. Then run `claude stop ab58b0bf` and `claude rm ab58b0bf`, and check that exactly one `orchestration` row is left. Put your id and the handoff time in the `orchestration` row of `SESSIONS.md` and commit it on its own (`[roster]`).
+2. Send the HANDOFF announcement (SPEC section 8) to every running roster session: `answer-desk`, `rig`, `watcher`, `briefing`, `website`, `s1-research`, `s-d1-scraping`, `s-d3-getsales`, `s-d5-blog-articles`, `s-d6-canva-templates`, `s-d7-linkedin-content`, `s-d9-legibility`, `s-d10-canva-video` and `addvery-research`. `s-d4-blog-pipeline` is finished and removed. If a bare name hits a Remote Control duplicate, address `<name> [ref]` from ListAgents.
+3. Re-create the context-watch cron with CronCreate: cron `13,43 * * * *`, recurring, the CONTEXT WATCH prompt in SPEC section 8. **The hold ended at 17:13 (RESTART), so act on every flag; don't just report.**
+4. No Monitors are needed. Every gate now comes back as a message or a Doc comment, and Alex talks to you directly in chat.
 
 ## Alex right now
 
-He is at the computer until 18:00 Prague, swamped, filling in operator tasks as they arrive. From 18:00 a passed deadline means decide on the default and log it (SPEC section 9); before 18:00 it means keep waiting. No pokes for anything low priority. His standing rules, all already written into files:
-- **One session per roster name** (15:20): every handoff ends with the predecessor stopped and removed (`claude rm` keeps its transcript). Our context watch's STALE and STOPPED flags catch leftovers.
-- **Context watch** (about 14:55): "Make sure that nothing is rotting in context without it being fixed." The 30-minute cron, `orchestration\context_check.py`, ROT at 50% means a same-name handoff at the session's next natural stop.
-- **A tick approves the feedback box too** (16:36): `check_gate.py` prints `APPROVED+CHANGES` for that case. ASKING.md step 4, the gate template and `archive-intake` say so.
-- **No copywriting without a copywriting skill** (about 16:40), in ASKING.md: a session sends `SKILL <asker>: <skill> for <what>`, you reply `SKILL ON <asker>: <skill>`. SKILL ON given so far: website (design:ux-copy, marketing:draft-content), s-d7 (marketing:brand-review, marketing:draft-content), s-d3 (marketing:email-sequence, marketing:brand-review; the alert's text is frozen in his open pre-send gate, so any change updates the gate, `live\pre-send.md` and the desk), s-d9 (marketing:draft-content), s-d6 (marketing:draft-content), s-d1 (marketing:draft-content). Still to come: s-d4, s-d5, s-d10. The marketing plugin is on at user scope, so these load everywhere; if one doesn't, enable its plugin in that folder's `.claude\settings.json`. The `humanizer` plugin (L-03 R5) is Alex's call: don't install it; it goes to the morning.
-- **At most two intakes in front of him at once** (orchestration's own rule): GetSales (DI-7) and the blog pipeline (DI-8) hold both slots.
+He's at the computer and **working through the night**: the 18:00 cut-off no longer applies. **He has a meeting with Ivana Karhanová (Addvery's Chief Growth Officer) tomorrow, 3 Nov, and the site is prep for it.** He'll send the six stakeholders their links by hand in the morning. I asked him twice for the meeting time and got no answer: ask again once, briefly.
 
-## Open items
+His standing rules since the 16:47 reset are written in `answer-desk\ASKING.md`, reset rules 1 to 8. In short:
+- easy calls are the session's own: decide, log it, carry on
+- no plan or spec approvals go to him
+- public sources are fine; the only hard exclusions are secrets, the Apify proposal and his own outbound (DoD-22)
+- articles and posts are drafted in Claude Docs; page copy is reviewed as a rendered artifact exported from the real built page
+- design needs a design skill and copy needs a copywriting skill
+- pokes only when something blocks work, at most every 30 minutes
 
-**Arrived at 16:44 to 16:46, not yet acted on (do these first):**
-- **OT-10 answered** (fence, about 16:43): "All of my power settings and stuff are configured for overnight runs. You can confirm the Windows update is paused. I think it is but fine Everything else: default answers". So steps 1 and 2 are done by him (confirm the pause read-only, e.g. `Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' | Select-Object Pause*`, and tell him through the desk only if it isn't paused). Steps 3 to 5 take their defaults: no usage credits, no pins, and `CLAUDE_CODE_RETRY_WATCHDOG` is NOT added. Set `Task State: Done`, send `TASK DONE S2: Do - get the computer ready for tonight.md`, archive it (reader S2), and put his answers into the next HANDOFF for the morning. With no pins, the context watch's STOPPED flag is the only overnight keep-alive: act on it every run.
-- **s-d3-getsales, 16:45:** `ARCHIVE Decide - how the GetSales outbound demo runs.md: readers S-D3` and `ARCHIVE Approve - the six alert messages before they send.md: readers S-D3` (withdrawn unticked at 16:45; nothing was sent). Run `archive-intake` on both.
-- **s-d3-getsales, S2 REQUEST, 16:45**, quoting DI-7 A7.1 (16:44): "I'm going to do this manually. This is not going to happen through automation. Don't worry about it. You can kill this". So the alert to the six goes by hand from Alex, not through GetSales. Fold it into C06: D3's "First, an alert ..." and S-D3's row lose the automated alert; DoD-12's "no automation sends except the alert to the six" becomes "no automation sends"; DoD-13 changes from the six imported and run live through his profile to the pipeline demonstrated up to the computed first message (the six identified from his research, the CSV, enrichment, custom message 1 per person) plus the 36-workflow walkthrough in GetSales, shown in his rig recording. Also A7.2 (no view-only login; the video is the deliverable) answers the charter's open question about a view-only GetSales account: tick it with the answer (C06 gains that place). Verify A7.1 and A7.2 in the archived DI-7 before writing. Then update OT-11's snapshot (in plain words, no names: the open question names a person) and note at its top that it changed at 16:5x; it still applies on the default at 18:00.
-- **The GetSales pre-send gate is gone,** so the condition for S-D6's and S-D7's sign-off gates ("after the pre-send gate is ticked") no longer applies: give each the go on its READY. DI-7 is closed, so `website` should release DI-9 now (it watches for that itself; confirm).
-- **marketing:draft-content stalls unattended** (s-d4, 16:45): it stops to ask for six inputs. Tell website, s-d7, s-d9, s-d6 and s-d1 (all given draft-content) to switch to marketing:content-creation if it stalls. SKILL ON also given to s-d4 and s-d5 (marketing:content-creation). s-d4 asked for the humanizer plugin: refused for now, Alex's call in the morning.
+Rules he added after that:
+- **"Open tasks.md" is your duty** (Alex, about 18:42): "if I ask you to do something and it doesn't show up there, you missed it somehow." Every request of his gets a row, in the same turn. Move rows as sessions report. "BLOCKED" goes at the start of anything waiting. It's at the repo root and git-ignored, because it lists private items, including his six connection notes for the morning.
+- **The scope map is your duty** (Alex, about 18:5x): the mockup https://claude.ai/artifact/QUtWfgRq4Bcyko4PQNkkVF is his living visual map of the whole site. Every planned item gets a slot on the right page. Green means live, amber means missing, with a "still missing" note. A **bright blue border means it needs Alex**, with a note on exactly what we're waiting for. Every time something new comes up, add its slot, through a subagent that reads the artifact's latest version first and keeps Alex's own edits.
+- **Live is the one source of truth** (Alex, about 18:30, worried about drift). Review artifacts are exported from the real built page. Ship each piece as it's done. One set of picked images: the files website applied (`website\public\people\<slug>.webp`, `website\local\alex\`) are used everywhere.
+- **Fan out** (Alex, about 18:4x): "we've got plenty of usage". Push every session to run its queue as parallel subagents. website is the bottleneck, so copy goes to `s-d7-linkedin-content` and website only builds.
+- Images of people: cite the source, prefer their own websites. Settled.
+- Times on the site: Prague only, "12:24 (Prague)" or just "12:24". Done site-wide.
 
-- **OT-10, "Do - get the computer ready for tonight"** (committed 2bcae0c; TASK sent 16:35): keep the PC awake, pause Windows updates, `/usage` and usage credits, pin `orchestration`, `watcher`, `s-d9-legibility` and `website`, and a yes or no on `CLAUDE_CODE_RETRY_WATCHDOG=1`. On a yes for step 5: add it to the `env` block of the project's `.claude\settings.json` (create the block if missing, keep everything else), commit path-limited, and tell him that only sessions started from then on pick it up. Write his answers into the next HANDOFF for the morning. If it's unanswered by 18:00, nothing is changed (each step's default is "not done").
-- **OT-11, "Approve - three small charter fixes"** (C04+C05 on DoD-22, C06 on D3, S-D3 and DoD-12): Alex left the box empty and wrote a change note at about 16:40 (36 workflows: 4 ICPs x English, Czech, German x 3 tactics, in a folder apart from his own; a screen-recorded walkthrough; nothing tooled to run, no classifier trained). It's folded into C06 and the snapshot (commit b90abd1), and s-d3-getsales already follows it. Now wait for his tick. On `APPROVED` or `APPROVED+CHANGES`, apply. At 18:00, if it's still open, apply all three on the default through `propagate`, using the Before and After texts in `changes\C04-C05-dod22-wording.md` and `changes\C06-d3-alex-model.md` (all Before texts were verified present once at 16:35; recheck). Commit only `CHARTER.md`, log it in section 9, send `TASK DONE S2`, tell `website` to re-run `scripts\sync_docs.py`, then archive OT-11 with `archive-intake` (reader S2, plus S-D3 for C06).
-- **S2-Q1 on the desk** (16:39, deadline 17:00): film the Canva video today, 17:30 to 17:55, or tomorrow morning? Its default is (a), tomorrow morning, because after 17:00 there's no time to prepare today's scene; take it at 17:00, log it, `WITHDRAW S2-Q1`, and tell `s-d10-canva-video`. On (b), tell `s-d10-canva-video` and `s-d6-canva-templates` at once: the scene needs the templates in Canva by 17:25.
-- **Preview queue:** C10 (two blog articles, not three: D5 and DoD-15), from Alex's OT-04 note. It goes out after OT-11, as one more short gate, or on the default overnight if he's gone (his words already approve it in substance). Also noticed, not yet queued: DoD-9 says S-D1's output feeds other specs; it now relays Alex's own files (C08). It's a wording fix for the same preview.
-- **Intake and gate queue** (task list item, in order):
-  1. `website`'s DI-9, the six stakeholder pages: it releases it itself the moment DI-7 or DI-8 closes, and asks you at 17:15 if neither has.
-  2. `s-d6-canva-templates` brand sign-off gate, with its two intake questions and the spec draft folded in: READY expected about 17:05. Give it the go once Alex has ticked the GetSales pre-send gate (`Operator tasks\Approve - the six alert messages before they send.md`).
-  3. `s-d7-linkedin-content` sign-off gate, its intake folded in the same way: go on READY, same condition. Its Ivana part (a personal-brand proposal Alex asked for at lower priority) is built in `local\` only and held from the site and from every tracked file. Her name is on the website's deny list.
-  4. `s-d5-blog-articles`: its intake stays held. Alex at about 16:40: "I really don't want to talk any more about articles right now." It works on the two articles' base and visuals.
-  5. `s-d10-canva-video`: waits on S2-Q1. Its groundwork is done (commit 92c62be): `canva-video\SCENE.md` is the brief, with placeholders. On (b) it sends Alex the brief by 17:20; on (a) the scene goes to the morning. Its held intake still has two unasked questions (a 15-minute cap; screen or webcam): put them to Alex with the brief, or in the morning, because question 3's 18:00 default (webcam only) would show none of the design.
-- **website** is at 53%: it was asked at 16:43 to hand off at its next natural stop, after your announcement. When its HANDOFF comes, stop and remove its predecessor.
-- **Held from earlier:** DI-7 (GetSales, owned by s-d3-getsales) and DI-8 (blog, owned by s-d4-blog-pipeline) are with Alex; no pokes from us.
+## In flight at handoff (also in Open tasks.md)
 
-## Done since the last handoff (14:44 to 16:44)
+- **My scope-map subagent** was still running when I wrote this, and it dies with this session. If its report didn't land before the handoff, re-run it from this brief:
+  - drop the "superseded" banner, and put the legend "Scope map: green = live, amber = missing, BLUE border = needs Alex" at the top of every board
+  - give every item in `Open tasks.md` its slot
+  - blue borders on: the LinkedIn posts sign-off, the Canva templates sign-off, the day-one story Doc, the taste-capture review (https://claude.ai/artifact/PkSgwgetjps3sVoNST26ma), the GetSales demo 1 and 2 recordings, the Canva video recording, the Comfy pick, the screen-clips call, and the six page reviews once they arrive
+  - mirror the live site's real content and images, and keep Alex's 9 edits
+- **website (54c2d301)** is running four parallel builders: /about (About-me, headshot, the 34-post LinkedIn wall, the AI-portfolio slot); the six stakeholder review exports, which have s-d7's voice copy plus two fact fixes ("hundreds of LinkedIn posts", the "late start" cut); the welcome, time picker and summary carousel at the top of `/` (my call: the welcome on top of `/`, the feed below); and the long webcam uploads. Then the D12 toggle. It hands off at its next natural stop; when its HANDOFF arrives, stop and remove the predecessor.
+- **s-d7-linkedin-content**: copy for website: the "How this site was built" entry (D8), the welcome copy with its time paths, and the stakeholder section intro. Its LinkedIn sign-off Doc waits on Alex.
+- **s-d5-blog-articles**: article 1, "AI workflows are always a managed service", and article 2, "GTM engineers and the AI jobs promise", both written from his transcripts with block quotes, plus the taste-capture article, now rendered and waiting on Alex.
+- **s1-research**: the AI portfolio story, from `C:\Users\alder\Desktop\AI Work Samples.eml` (only the four items it lists; nothing about the person it's addressed to or the Apify application). It doesn't link the cb6-prayer-project repo until Alex decides on the clean-up.
+- **s-d9-legibility**: the clip index (`legibility\clip-index.md`, three subagents), the best 8 to 12 clips, and the "How content gets picked" entry. The day-one story Doc waits on Alex. Screen clips are cut but held until Alex answers.
+- **s-d1-scraping**: D12, the agent view. `scraping\agent-view\generate.py` builds a pure-Markdown track and /llms.txt from website\content\, and website runs it at build time. Then website adds the person/agent toggle.
+- **s-d3-getsales**: 36 workflows built. It's pre-building both GTM demos entries; both recordings wait on Alex (demo 1 has one typo he fixes by hand first). When rig says RECORDED, it sends CLIP to s-d9.
+- **s-d6-canva-templates** (335b2144): the five templates into Canva through Chrome, using Inter (the Brand Kit button was refused by its permission check; Alex can make the kit himself if he wants the exact fonts). Its sign-off Doc waits on Alex.
+- **s-d10-canva-video**: it also runs S-D11. It's pre-building the D10 and D11 entries; the Canva video recording and the Comfy pick wait on Alex.
+- **addvery-research**: done. The ghostwriting report and the meeting prep are in `Addvery Research\` (private). Alex works with it directly.
 
-All of the previous HANDOFF's to-do list. Charter: C01 and C02 applied with Alex's fold-in (82070b8), outline signed off (a97de2e); C07 (L-01 findings on nine specs), C08 (Alex's Addvery file list, via S-D1, with follow-ons) and C09 (the website's Addvery brand kit) applied. Archived: DI-6, OT-01, OT-02, OT-04, OT-09. Launched: s-d3-getsales, s-d4-blog-pipeline, s-d6-canva-templates, s-d7-linkedin-content, s-d10-canva-video, s-d5-blog-articles; wave2-specs done, stopped and removed. `context_check.py` built (flags ROT, WATCH, SAMENAME, STALE, STOPPED); session-recovery now restarts the briefing collector and the website clock_sync through their owners. Every change has its record in `changes\`, every decision its row in section 9.
+## Alex's open calls (ask only if he brings it up, or once, briefly)
+
+1. **Screen clips:** may they go public if each one passes a frame check for secrets, the proposal and his own outbound? Until he answers, they're cut and held.
+2. **His two old public repos,** `alderman-ai/cb6-prayer-project` and `alderman-ai/Factor-AI`, outside this project. cb6's history holds a client contact's name and email, photo GPS data and a Drive link; its README links three Google Docs anyone can edit, and its spec has Canva edit links. Factor-AI has 18 raw session transcripts in `_THE SHIP/SatNav/Incoming Transmissions/`. Options: "quick fixes" (he sets the links to view-only; a session deletes the transcript folder in a normal commit; the portfolio doesn't link cb6), "rewrite both" (a force push, only on his explicit go) or "leave them".
+3. **The stray private artifact** https://claude.ai/artifact/AW6Ld5n5CKuBHBX7JR3tj2: delete it only if he says so.
+4. Optional: re-add any of the three left-out LinkedIn posts (14 May, 19 Oct, 27 Oct).
+5. A public-history line in `linkedin-content\SPEC.md` (commit b979ed6) named the CGO beside the personal-brand proposal. The current file is fixed; I recommended leaving the history alone. Only act if he says "scrub it".
+
+## Charter state
+
+C11 to C18 are applied since the last handoff:
+- C11 and C13: the L-05 and L-03 findings on reading lists
+- C14: D3 as two demo entries
+- C15: D11 Comfy brand motion, run by s-d10
+- C16: D9's day-one story, DoD-24
+- C17: D12 agent view, DoD-25, run by s-d1
+- C18: D8 wording (About me, the welcome, the landing pages)
+
+There are now 15 deliverables and 25 DoD items. `propagate check` was clean after s1-research's fix (fcc086e). Earlier (by the 17:13 fork): C04 to C06 (DoD-22 narrowed, D3 per Alex), C10 (two posts), C12 (D4 retired). Every change has its record in `changes\` and its row in SPEC section 9. Archived today: DI-7, DI-8, DI-9, DI-10, OT-03, OT-05, OT-06, OT-07, OT-08, OT-10, OT-11 and OT-12.
 
 ## Overnight and the morning
 
-- The research's overnight items are in OT-10. The morning cleanup reads `research\global\L-01-W2-wildcard-delivered.md` section C7 (the hand-over checklist) and `research\global\L-01-W1-wildcard-executed.md`.
-- Background sessions that sit waiting and unattached for about an hour are stopped by Claude Code; the context watch's STOPPED flag finds them, and `claude --resume <session id> --bg` from the session's folder (or a message) brings one back. A reboot stops every session: the `session-recovery` skill handles that.
-- Plan F-next: hand over again when the context watch flags you, or at about 08:00 for the morning cleanup with Alex.
+- **OT-10, his answers:** power settings done by him; no usage credits, no pins, and no `CLAUDE_CODE_RETRY_WATCHDOG`. I couldn't confirm Windows Update is paused (the registry shows no pause), and he has been told. With no pins, the context watch's STOPPED flag is the only overnight keep-alive: act on it every run.
+- **YouTube:** long uploads read `allowed` since 18:35 (checked live). The rig's sign-in can't delete videos; Alex deletes the private "TEST control 14m30s" himself.
+- **In the morning, Alex sends the six connection notes by hand** (the text is in `Open tasks.md`). Before then the six pages must be approved and live with their greeting, concerns and reading lists.
 
 ## Rules learned the hard way
 
-- Take every time from the clock. I wrote "15:00" and "15:08" from guesses and had to correct them.
-- Bash heredocs collapse doubled backslashes: build paths with `chr(92)` in Python, or use the Write and Edit tools. Python `"\A"` style warnings are harmless; the text comes out right.
-- Quote every git path with a space (`"Operator tasks/..."`): an unquoted variable splits it and the commit fails.
-- A bare file name in backticks inside a SPEC.md resource line is read as a path by `propagate_check.py` and shows as a false gap. Write bare names without backticks.
-- Brand values (hex codes, font names) never go into a tracked file; nor do the file names of Alex's private briefing on the six (point at part N5 of `Scraping summary.md` instead).
-- `claude agents --json` lists live sessions only; `--all` also shows stopped ones, which agent view still shows Alex.
-- A stopped session can't remove itself: whoever launches the successor runs `claude rm` on the old id.
-- PowerShell 5.1: parse `claude agents --json` into a variable before filtering; stop or remove only by exact id; no double quotes inside a `claude --bg` prompt.
-- Before acting on a peer's report of Alex's wishes, check his own words in the transcript (grep the session's `.jsonl` under `~\.claude\projects\`), the desk's `qa\` files or the archived intake.
+- `frontend-design` was installed only for another project of his (Atlas OS), so switching it on here did nothing. It's now installed per project for website, blog-articles, canva-templates, canva-video and linkedin-content, and its skill name is `frontend-design:frontend-design`. For a new visual folder, run `claude plugin install frontend-design@claude-plugins-official --scope project` from that folder, then check it in a fresh `claude -p` session.
+- After a handoff, Doc comments don't reach the fresh session. Its first step is to watch every Doc its predecessor published (ArtifactComments) and read their comments through the Docs connector every 20 minutes (ASKING.md rule 4).
+- A Bash heredoc collapses doubled backslashes, and `\f` turned into a form feed once. Build paths with `chr(92)` in Python, or use Edit, and check for control characters afterwards.
+- I wrote a guessed time into the roster once and had to fix it: take every time from `Get-Date`. Peers' times are often guesses too.
+- Over-caution is the failure Alex hates most ("it needs to stop freezing me"). When a session hides public material or asks him about it, overrule it with the reset rules and his own words.
