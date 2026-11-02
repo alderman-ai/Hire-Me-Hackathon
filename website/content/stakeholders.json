@@ -1,0 +1,260 @@
+{
+  "approved": true,
+  "about": "The six stakeholder pages (/for/<slug>, S-D8, DoD-18). Text from the Claude Doc \"Six stakeholder pages: text for your edit\" (https://claude.ai/artifact/Abm1SeTTDwAEV4qBb55YtY), Alex's last-mile edit surface; his edits there are copied back here. Live since DI-10 Q10.10 (default: live now, edit later). Names as each person writes it on LinkedIn; titles are their public job titles.",
+  "notice": {
+    "heading": "About this page",
+    "why": "Why this page exists: I'm applying to Addvery by doing a GTM engineer's work in public, in one day. This page picks out the parts that touch your role.",
+    "sources": "The facts on it come only from Addvery's public website and your public job title.",
+    "removal": "Ask and it's removed: reply to my LinkedIn message.",
+    "privacy_label": "Read the privacy notice"
+  },
+  "pages": [
+    {
+      "slug": "growth",
+      "name": "Ivana Karhanová",
+      "role": "Director of Growth",
+      "label": "Addvery's Chief Growth Officer",
+      "title": "Chief Growth Officer, Addvery",
+      "framing": "What Alex Alderman would build for Addvery's growth team, and what he'd need from you to make it real.",
+      "opening": {
+        "before": "On your post about the road to 1 billion CZK, I said I might like to help. You replied:",
+        "quote": "let's find out how to make it possible.",
+        "quote_source": "Your reply to my comment",
+        "after": "This is that."
+      },
+      "why_now": {
+        "heading": "The road to 1 billion CZK",
+        "how": "You're building the sales and marketing team from scratch, and the system under it, with AI agents from day one: CRM upkeep, contact capture, buying signals from job ads and news, and content. Salespeople are being hired. That makes now the time to build the system, before the team that runs on it arrives.",
+        "source": "your public LinkedIn posts of 18 and 30 to 31 October 2026, paraphrased."
+      },
+      "note": "Five times the revenue means a pipeline that holds at five times the deals. That pipeline is what a GTM engineer builds, and I'd like to build it with you, so the salespeople you hire start with one that already runs. Each demo below is a first version of one piece of it.",
+      "note_is_draft": false,
+      "demos": [
+        {
+          "n": 3,
+          "why": "36 outbound workflows built from Addvery's own industry pages, in English, Czech and German, each opening with a first message written for its lead."
+        },
+        {
+          "n": 1,
+          "why": "Prospect research at scale, the feed that buying signals from job ads and news run on."
+        },
+        {
+          "n": 5,
+          "why": "Each starts as 15 minutes of talking and ends near-final, so a consultant's expertise becomes content without taking their week."
+        },
+        {
+          "n": 7,
+          "why": "Posts in Addvery's own voice, with checks built in, ready for a person to approve and post."
+        }
+      ],
+      "feed_roles": [
+        "CMO",
+        "CSO",
+        "RevOps"
+      ],
+      "moments": [
+        "research-lands",
+        "s08",
+        "research-in"
+      ],
+      "ask": {
+        "short": "What to build first, on Tuesday",
+        "heading": "When we meet on Tuesday, could we start with which piece you'd want working first?",
+        "body": "If one stands out before then, a demo number in reply to my message is plenty."
+      },
+      "sources": "Its facts come only from Addvery's public website, your public job title, and your public posts on the 1 billion CZK goal, including your reply to my comment."
+    },
+    {
+      "slug": "ceo",
+      "name": "Stepan Hyks",
+      "role": "CEO",
+      "label": "Addvery's CEO",
+      "title": "CEO & Business Consultant, Addvery",
+      "framing": "What Alex Alderman would build for Addvery, seen from the CEO's chair, and what he'd need from you to make it real.",
+      "note": "You decide whether a GTM engineer earns a seat at Addvery, so this page shows the work instead of arguing for it. I built it in public in one day, with AI agents doing the legwork and me making the calls. Every piece is open to inspect, and all I'd need from you is which one to make real first.",
+      "note_is_draft": false,
+      "demos": [
+        {
+          "n": 3,
+          "why": "36 workflows built from Addvery's own industry pages, each opening with a message written for its lead: the repeatable part of new business."
+        },
+        {
+          "n": 9,
+          "why": "An agent that watches the work and reports what changed, so you can see where a project stands without calling a meeting."
+        },
+        {
+          "n": 1,
+          "why": "Research on prospects at scale, so outreach starts from facts about the account, not guesses."
+        }
+      ],
+      "feed_roles": [
+        "CEO"
+      ],
+      "moments": [
+        "s08",
+        "s07-control-room",
+        "research-in"
+      ],
+      "ask": {
+        "short": "The demo you'd want first",
+        "heading": "Which of these would you want working at Addvery first?",
+        "body": "A demo number in reply to my LinkedIn message is enough. No reply is a fine answer too."
+      }
+    },
+    {
+      "slug": "cofounder-1",
+      "name": "Pavel Novak",
+      "role": "Co-founder",
+      "label": "Addvery co-founder, Skygena CEO",
+      "title": "Co-Founder & Advisor, Addvery · Co-Founder & CEO, Skygena",
+      "framing": "What Alex Alderman would build for the Addvery group, and what he'd need from you to make it real.",
+      "note": "From a co-founder's seat, the question is whether something pays off across the whole group, not one team. The pipeline below doesn't have to stop at Addvery: the same profiles and routing could send each lead to the group company that fits it, whether that's consulting, IT, media or production AI. That's the version I'd want to build, if the group wanted one.",
+      "note_is_draft": false,
+      "demos": [
+        {
+          "n": 3,
+          "why": "36 workflows, one per customer profile, language and approach, and how a classifier would send each lead to the right one. Point that routing at the group, and each lead goes to the company that fits."
+        },
+        {
+          "n": 9,
+          "why": "An agent that runs all day on the real recordings and tells the site what to add: a small, working case of AI past the pilot stage."
+        },
+        {
+          "n": 1,
+          "why": "Prospect research at scale, the research layer that routing like this runs on."
+        }
+      ],
+      "feed_roles": [
+        "CEO",
+        "CAIO"
+      ],
+      "moments": [
+        "handovers",
+        "insight-api-keys",
+        "research-in"
+      ],
+      "ask": {
+        "short": "Whether one fits the group",
+        "heading": "Is one of these worth a look for the group?",
+        "body": "If so, reply to my LinkedIn message with its number. If none is, that's useful to know too."
+      }
+    },
+    {
+      "slug": "cofounder-2",
+      "name": "Lukáš Marek",
+      "role": "Co-founder",
+      "label": "Addvery co-founder, iMEDIATIC CEO",
+      "title": "Advisor & Co-founder, Addvery · Co-Founder & CEO, iMEDIATIC",
+      "framing": "What Alex Alderman would build for the group's marketing work, and what he'd need from you to make it real.",
+      "note": "iMEDIATIC is the group's media agency, so this page looks at what I could make for an agency's clients, not only for Addvery. Brand templates, articles from an expert's own words and posts in a company's own voice get made for client after client. I built each one here for Addvery, in a way that could be pointed at another brand.",
+      "note_is_draft": false,
+      "demos": [
+        {
+          "n": 6,
+          "why": "Five LinkedIn templates in Addvery's brand, taken from its public website. The same method would work from a client's brand."
+        },
+        {
+          "n": 7,
+          "why": "Posts in a company's own voice, worked out from how it already writes, with checks before anything goes out."
+        },
+        {
+          "n": 5,
+          "why": "Each starts as 15 minutes of an expert talking and ends near-final. They do the last 10%."
+        }
+      ],
+      "feed_roles": [
+        "CMO",
+        "CEO"
+      ],
+      "moments": [
+        "s09",
+        "research-lands",
+        "research-in"
+      ],
+      "ask": {
+        "short": "The demo that would suit a client",
+        "heading": "Which of these would you want to see working for an iMEDIATIC client?",
+        "body": "One line in reply to my LinkedIn message is plenty."
+      }
+    },
+    {
+      "slug": "delivery",
+      "name": "Milos Cerovsky",
+      "role": "Director of Delivery",
+      "label": "Addvery's Chief Delivery Officer",
+      "title": "Chief Delivery Officer, Addvery",
+      "framing": "What Alex Alderman would build for delivery at Addvery, and what he'd need from you to make it real.",
+      "note": "Whatever a GTM system sells, delivery has to carry, so I ran this hackathon like a small engagement: a written charter, one spec per piece of work, and a live page showing where everything stands. The same setup could run beside a client project. Your read on where it would hold up is what I'd need to make it real.",
+      "note_is_draft": false,
+      "demos": [
+        {
+          "n": 9,
+          "why": "An agent that watches the work and tells the project page what changed, so the client sees progress without a status call."
+        },
+        {
+          "n": 8,
+          "why": "A live picture of a project: every piece of work, its status and what changed, updated as it moves."
+        },
+        {
+          "n": 5,
+          "why": "Each starts as 15 minutes of talking. The same route turns an end-of-project debrief into a near-final case study."
+        }
+      ],
+      "feed_roles": [
+        "COO"
+      ],
+      "moments": [
+        "s07-control-room",
+        "handovers",
+        "s08"
+      ],
+      "ask": {
+        "short": "Where a live project page helps",
+        "heading": "Where would a live project page like this help on a client project, and where would it get in the way?",
+        "body": "A couple of lines in reply to my LinkedIn message would shape what I build next."
+      }
+    },
+    {
+      "slug": "bi",
+      "name": "David Srenk",
+      "role": "Director of BI",
+      "label": "Addvery's Head of BI",
+      "title": "Head of Business Intelligence, Addvery",
+      "framing": "What Alex Alderman would build for business intelligence at Addvery, and what he'd need from you to make it real.",
+      "note": "Every pipeline ends in a report, and the report is what says whether the rest worked. Addvery connects client funnels from first click to signed contract; the demos below are the first steps of that funnel for Addvery's own new business. I'd want their numbers to land wherever your team already works, not in a new tool.",
+      "note_is_draft": false,
+      "demos": [
+        {
+          "n": 1,
+          "why": "Prospect data pulled at scale, the first rows of any pipeline report."
+        },
+        {
+          "n": 3,
+          "why": "36 workflows, one per customer profile, language and approach: the segments a pipeline report would break down by."
+        },
+        {
+          "n": 9,
+          "why": "An agent that turns hours of raw recordings into short, structured updates: unstructured data in, something countable out."
+        }
+      ],
+      "feed_roles": [
+        "CTO",
+        "CAIO"
+      ],
+      "moments": [
+        "insight-api-keys",
+        "research-in",
+        "handovers"
+      ],
+      "ask": {
+        "short": "Where the numbers should land",
+        "heading": "Where would you want the pipeline's numbers to land?",
+        "body": "Name the tool or the report in reply to my LinkedIn message, and I'll build toward it."
+      }
+    }
+  ],
+  "about_me": {
+    "heading": "About me",
+    "text": "I've lived in the Czech Republic for ten years, with long-term residency and a trade licence, so I can invoice. My Czech is B1 to B2, and I'm open to employment, freelance work or a mix of the two."
+  }
+}
