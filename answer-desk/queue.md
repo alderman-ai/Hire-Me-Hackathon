@@ -734,6 +734,7 @@ TASK S2: Approve - three small charter fixes.md is waiting on you: three wording
 From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
 Received: 2026-11-02 16:38 CET (+01:00)
 16:38 CET: alert shown to Alex with a PushNotification. Replaces "Approve - the scraping demo plan.md".
+16:44 CET: s-d1-scraping: updated at 16:45 with Alex's 16:41 changes (speaks to the reader he named; links to his research page /d2; named people go through the stakeholder-page approval; copywriting pass). Waiting on his tick again, deadline 18:00. Alert repeated; no PushNotification (Alex is at the desk).
 
 ```
 TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: the whole scraping page, exactly as it would go live (about 5 minutes; tick to publish, and anything in the feedback section applies too). It replaces "Approve - the scraping demo plan" too: ticking this one approves that plan as well, so he can skip it. Deadline 18:00 to go live today.
@@ -743,6 +744,7 @@ TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: 
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
 Received: 2026-11-02 16:39 CET (+01:00)
 16:39 CET: shown to Alex.
+16:46 CET: orchestration handed off to a fresh session under the same name (new address uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678); S2-Q1 stays open, answer goes to orchestration as usual. Nothing to re-send.
 
 ```
 ASK S2-Q1
