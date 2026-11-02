@@ -981,3 +981,13 @@ How: comment on the page with changes, or "approved" to publish (use the comment
 Next: on his OK it goes live at /demos as part of the LinkedIn content demo. The two blog drafts follow in their own Docs within the hour.
 ```
 
+## TASK s-d5-blog-articles: blog post 2 last 10% (Doc) — open
+From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
+Received: 2026-11-02 18:48 CET (+01:00)
+18:48 CET: alert shown to Alex; no PushNotification (Alex is active at the desk).
+
+```
+TASK s-d5-blog-articles: blog post 2 is ready for your last 10%: https://claude.ai/artifact/17rFReWZZesyLe94msLskk
+"If AI won't replace half your team, put it in your pipeline", written only from what he said on camera and typed today, with four of his own lines as block quotes. About 10 minutes: fill the five bold notes (a worked pipeline example, one upskilling example, a real pipeline result, one "is this true", what makes the ROI real now), edit anything inline, then comment "approved" and send it to Claude. A sceptical-reader check sits at the top of the Doc. On his comment it goes live in GTM demos.
+```
+
