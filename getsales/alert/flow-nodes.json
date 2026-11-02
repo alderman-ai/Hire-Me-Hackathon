@@ -1,0 +1,293 @@
+{
+  "first_common_node_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "before": [
+        {
+          "node_id": 5,
+          "branch_id": 1
+        },
+        {
+          "node_id": 8,
+          "branch_id": 1
+        },
+        {
+          "node_id": 22,
+          "branch_id": 1
+        }
+      ],
+      "after": [],
+      "type": "end",
+      "automation": "auto",
+      "payload": [],
+      "delay_in_seconds": 0
+    },
+    {
+      "id": 2,
+      "before": [],
+      "after": [
+        {
+          "node_id": 3,
+          "branch_id": 1
+        },
+        {
+          "node_id": 20,
+          "branch_id": 2
+        }
+      ],
+      "type": "trigger_linkedin_connection_request_accepted",
+      "automation": "auto",
+      "payload": {
+        "subtasks": [
+          {
+            "id": 30,
+            "type": "util_timer",
+            "after": [],
+            "before": [],
+            "payload": {
+              "wait_time": 60
+            },
+            "automation": "auto",
+            "delay_in_seconds": 0
+          }
+        ]
+      },
+      "delay_in_seconds": 0
+    },
+    {
+      "id": 3,
+      "before": [
+        {
+          "node_id": 2,
+          "branch_id": 1
+        }
+      ],
+      "after": [
+        {
+          "node_id": 4,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_send_connection_request",
+      "automation": "auto",
+      "payload": {
+        "template": "Hi {{first_name}}, I'm applying to work with Addvery via a 12-hour live build today. Follow along: hire-me-hackathon.vercel.app (privacy note there). Rather not? Ignore this, I won't follow up. Alex",
+        "fallback_send": true,
+        "template_uuid": null
+      },
+      "delay_in_seconds": 0
+    },
+    {
+      "id": 4,
+      "before": [
+        {
+          "node_id": 3,
+          "branch_id": 1
+        }
+      ],
+      "after": [
+        {
+          "node_id": 5,
+          "branch_id": 1
+        },
+        {
+          "node_id": 6,
+          "branch_id": 2
+        }
+      ],
+      "type": "trigger_linkedin_connection_request_accepted",
+      "automation": "auto",
+      "payload": {
+        "subtasks": [
+          {
+            "id": 31,
+            "type": "util_timer",
+            "after": [],
+            "before": [],
+            "payload": {
+              "wait_time": 432000
+            },
+            "automation": "auto",
+            "delay_in_seconds": 0
+          },
+          {
+            "id": 32,
+            "type": "util_timer",
+            "after": [],
+            "before": [],
+            "payload": {
+              "wait_time": 432000
+            },
+            "automation": "auto",
+            "delay_in_seconds": 0
+          }
+        ]
+      },
+      "delay_in_seconds": 0
+    },
+    {
+      "id": 5,
+      "before": [
+        {
+          "node_id": 4,
+          "branch_id": 1
+        }
+      ],
+      "after": [
+        {
+          "node_id": 1,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_withdraw_connection_request",
+      "automation": "auto",
+      "payload": [],
+      "delay_in_seconds": 0
+    },
+    {
+      "id": 6,
+      "before": [
+        {
+          "node_id": 4,
+          "branch_id": 2
+        }
+      ],
+      "after": [
+        {
+          "node_id": 7,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_send_message",
+      "automation": "auto",
+      "payload": {
+        "template": "{{custom_message_1}}",
+        "attachments": [],
+        "template_uuid": null,
+        "stop_on_reply_level": "always"
+      },
+      "delay_in_seconds": 600
+    },
+    {
+      "id": 7,
+      "before": [
+        {
+          "node_id": 6,
+          "branch_id": 1
+        }
+      ],
+      "after": [
+        {
+          "node_id": 8,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_send_message",
+      "automation": "auto",
+      "payload": {
+        "template": "A word on why I'm doing it this way. My background is B2B marketing, and the work I want now is GTM engineering: building the systems that find the right accounts, research them and start the right conversations. A CV can only claim that, so I built it in the open instead. Most of the building was done by AI agents working under my direction, including the research behind my first message to you. Deciding what to build, and checking it, was my part. It's all at hire-me-hackathon.vercel.app",
+        "attachments": [],
+        "template_uuid": null,
+        "stop_on_reply_level": "always"
+      },
+      "delay_in_seconds": 86400
+    },
+    {
+      "id": 8,
+      "before": [
+        {
+          "node_id": 7,
+          "branch_id": 1
+        }
+      ],
+      "after": [
+        {
+          "node_id": 1,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_send_message",
+      "automation": "auto",
+      "payload": {
+        "template": "Last note from me on this. If anything in the build is useful for Addvery, I'd value 20 minutes to walk you through it, or to hear what you'd have done differently. If not, no reply needed, and I won't follow up. Alex",
+        "attachments": [],
+        "template_uuid": null,
+        "stop_on_reply_level": "always"
+      },
+      "delay_in_seconds": 259200
+    },
+    {
+      "id": 20,
+      "before": [
+        {
+          "node_id": 2,
+          "branch_id": 2
+        }
+      ],
+      "after": [
+        {
+          "node_id": 21,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_send_message",
+      "automation": "auto",
+      "payload": {
+        "template": "{{custom_message_1}}",
+        "attachments": [],
+        "template_uuid": null,
+        "stop_on_reply_level": "always"
+      },
+      "delay_in_seconds": 0
+    },
+    {
+      "id": 21,
+      "before": [
+        {
+          "node_id": 20,
+          "branch_id": 1
+        }
+      ],
+      "after": [
+        {
+          "node_id": 22,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_send_message",
+      "automation": "auto",
+      "payload": {
+        "template": "A word on why I'm doing it this way. My background is B2B marketing, and the work I want now is GTM engineering: building the systems that find the right accounts, research them and start the right conversations. A CV can only claim that, so I built it in the open instead. Most of the building was done by AI agents working under my direction, including the research behind my first message to you. Deciding what to build, and checking it, was my part. It's all at hire-me-hackathon.vercel.app",
+        "attachments": [],
+        "template_uuid": null,
+        "stop_on_reply_level": "always"
+      },
+      "delay_in_seconds": 86400
+    },
+    {
+      "id": 22,
+      "before": [
+        {
+          "node_id": 21,
+          "branch_id": 1
+        }
+      ],
+      "after": [
+        {
+          "node_id": 1,
+          "branch_id": 1
+        }
+      ],
+      "type": "linkedin_send_message",
+      "automation": "auto",
+      "payload": {
+        "template": "Last note from me on this. If anything in the build is useful for Addvery, I'd value 20 minutes to walk you through it, or to hear what you'd have done differently. If not, no reply needed, and I won't follow up. Alex",
+        "attachments": [],
+        "template_uuid": null,
+        "stop_on_reply_level": "always"
+      },
+      "delay_in_seconds": 259200
+    }
+  ]
+}
