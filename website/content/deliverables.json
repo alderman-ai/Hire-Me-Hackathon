@@ -14,8 +14,8 @@
       "what_this_is": "Good outreach starts with knowing the company and who makes the decisions. This demo is deep research on one company and the people likely to be involved in hiring. Alex is running it himself today, and what it finds feeds the outbound demo and this website."
     },
     "d3": {
-      "what_this_is": "Outbound that gets the right message to the right person without anyone sorting leads by hand. 36 workflows cover four customer profiles, three languages and three approaches, and each one opens with a first message written for that lead before it's imported.",
-      "pending": "Alex's recorded walkthrough of the 36 workflows lands here when it's ready."
+      "what_this_is": "Outbound that gets the right message to the right person without anyone sorting leads by hand. 36 workflows cover four customer profiles, three languages and three approaches, and each one opens with a first message written for that lead before it's imported. It comes as two short entries in the GTM demos list, each a video with a summary to read.",
+      "pending": "Alex's two recorded walkthroughs land here when they're ready."
     },
     "d4": {
       "what_this_is": "Alex retired this demo at 16:45. There's no blog pipeline apart from the posts themselves, so the two blog articles (demo 5) are the deliverable, and this pipeline's tools went to them.",
@@ -42,6 +42,10 @@
     "d10": {
       "what_this_is": "A recording of Alex designing in Canva, on camera, so you can watch the design work as it happens. It's recorded near the end of the day.",
       "pending": "The video lands here once it's recorded."
+    },
+    "d11": {
+      "what_this_is": "Generated video can give a brand's graphics energy without a production budget. This demo animates one of Addvery's LinkedIn graphics for about five seconds and adds a one-minute brand video, both made by Alex with Comfy.",
+      "pending": "The animation and the brand video land here once Alex has made them."
     }
   }
 }
