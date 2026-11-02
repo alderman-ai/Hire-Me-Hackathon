@@ -95,7 +95,9 @@
           "session": "S06",
           "start": 0
         }
-      ]
+      ],
+      "summary": true,
+      "summary_line": "A two-minute status update: the screen looks quiet because the agents are working."
     },
     {
       "id": "s05",
@@ -191,7 +193,9 @@
         {
           "type": "summary"
         }
-      ]
+      ],
+      "summary": true,
+      "summary_line": "Why this hackathon exists: a job application built live, in public, in one day."
     },
     {
       "id": "s01",
@@ -587,7 +591,9 @@
         "CEO",
         "CSO",
         "RevOps"
-      ]
+      ],
+      "summary": true,
+      "summary_line": "Back from lunch, Alex shows what kept running without him."
     },
     {
       "id": "dog-walk",
@@ -816,7 +822,9 @@
         "CEO",
         "COO",
         "CAIO"
-      ]
+      ],
+      "summary": true,
+      "summary_line": "Seven hours in, Alex grades the day: what worked, what overloaded, and what he'd change."
     },
     {
       "id": "reset",
