@@ -183,6 +183,7 @@ Research never runs on a default (DI-3 Q3.4): an unapproved list waits for Alex,
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
+| 14:41, no ASK (forking gate G1). G1 was reached at 14:38 (S1-Q5 answered, the first list approved). The fork is deferred to G2, when the first list's synthesis is in DIRECTORY.md. | The seven L-01 subagents started at 14:40 report their results to this session. A successor wouldn't receive those notices. The findings are due to `orchestration` by 16:00. | Forking mid-run would add a handoff right before a deadline, and the review would have to work from files with no subagent replies. Context is still well under half (G4 is the backstop). | Small. If this session's context runs short first, G4 forces the fork anyway, and the reports are on disk for the successor to review. |
 
 ## 9. Definition of done
 
