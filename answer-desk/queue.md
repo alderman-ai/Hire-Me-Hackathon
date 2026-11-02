@@ -57,3 +57,31 @@ Deadline: 13:15
 **Affects:** the S02 video now, and every later webcam upload, which use the same two devices.
 ```
 
+## website-Q2 — withdrawn
+From: website (uds:\.\pipe\LOCAL\cc-msg-a20244c812745d4843b7f744587f9bdb)
+Received: 2026-11-02 13:05 CET (+01:00)
+Resent after website-Q1 was answered; shown to Alex.
+13:06 CET: Alex asked for more time; nothing sent.
+13:19 CET: WITHDRAW website-Q2 received (deadline reached); noted in qa\website.md.
+
+```
+ASK website-Q2
+Critical: no
+Deadline: 13:19
+
+## website-Q2 — Is the lip sync right in the site's S02 video?
+
+**The question:** When you play the S02 video on the site, do your lips match your voice?
+
+**Context you need.** The site's video is the webcam recording: sound from the Wave:3 mic, picture from the BRIO camera, joined without re-encoding. Nobody has checked whether they line up. The live page is https://hire-me-hackathon.vercel.app, and the first 30 seconds of play are enough to tell. (website-Q1 is settled: no label on the video, the page stays as it is.)
+
+**Options.**
+- (a) In sync: nothing to do.
+- (b) Out of sync: say roughly how far, and whether the voice is early or late. I'll shift the audio and upload again (new YouTube video, about 10 minutes).
+- (c) Something else — say what.
+
+**If unanswered by the deadline:** assume it's in sync and leave the video as it is.
+
+**Affects:** the S02 video now, and every later webcam upload, which use the same two devices.
+```
+
