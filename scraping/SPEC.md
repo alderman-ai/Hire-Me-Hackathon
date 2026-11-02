@@ -1,24 +1,22 @@
 # S-D1 Scraping research demo: executable spec
 
-Status: draft; preflight DI-6 waiting on Alex · Row: S-D1 — Scraping research demo · Folder: `scraping\` · Session: `s-d1-scraping`
+Status: ready to launch (DI-6 answered and applied) · Row: S-D1 — Scraping research demo · Folder: `scraping\` · Session: `s-d1-scraping`
 
-This spec builds a small, legible demo of scraping and research on the Apify API: a few ready-made actors run through the public API on tiny inputs, an LLM step turns what they fetched into structured research with a source on every field, and a run ledger shows what each run cost. It is for two audiences. Visitors to the site see it as the D1 section, in Addvery's brand, through the `website` session. Other specs use its output: S-D3 reads its output contract for the enrichment step before import into GetSales, and Alex's own Addvery research may use its scrapers (charter: S-D2 "may use S-D1's scrapers"). It comes first in wave 2 because others consume its output.
+S-D1 is the demo layer for D1. Alex does all the scraping on the Apify API himself, one-on-one in `..\Addvery Research\`, and writes a summary of its outputs there (DI-6 A6.2, A6.5). S-D1 runs no actors, calls no API and holds no token. Once his summary exists, it turns it into the site's D1 section: a short story a visitor follows without explanation, naming Apify (A6.3). Alex approves the draft section first, then `website` builds it. S-D1 also tells `orchestration` which of his output files other specs read, S-D3 first (DoD-9).
 
 ## 1. Operator preflight (P3)
 
-The preflight is decision intake DI-6 (`..\Operator tasks\DI-6 S-D1 Scraping preflight.md`).
+The preflight was decision intake DI-6 (`..\Operator tasks\Decide - how the scraping demo should work.md`). **Launch gate: met.** Alex answered it on 2 Nov, and the answers are applied below and in §9.
 
-| DI-6 question | Question | Default |
-| --- | --- | --- |
-| 1 | Apify account, plan, how the token arrives, and the spend cap | A (Alex puts the token in `.env` himself while the recording is paused), $5 cap; no real runs until the token is there |
-| 2 | What the demo scrapes, given the charter's Scope ("Out: real data running through the demos") | C: a scraping sandbox site plus a synthetic sample, which needs no charter change |
-| 3 | May the public site name Apify? | C: not named anywhere on the site |
-| 4 | Who makes the six stakeholders' enrichment for the S-D3 live run | A: Alex's own research, in the shape S-D1 publishes; S-D1 holds no personal data |
-| 5 | Earlier Apify tooling of Alex's to reuse | A: none; build from Apify's public docs |
+| DI-6 question | Question | Alex's answer | Applied |
+| --- | --- | --- | --- |
+| 1 | Apify account, token and spend cap | A6.1: "$10 cap and we can move everything over now because we're currently not recording" | $10 is the cap on his own Apify spend. S-D1 needs no token and spends nothing. |
+| 2 | What the demo scrapes | A6.2: Addvery, scraped by him one-on-one in `Addvery Research\`: "it is a demonstration of scraping and we'll do some kind of summary of all of the outputs. That, again, I'll manage one-on-one." | S-D1 scrapes nothing. The D1 section presents his summary. |
+| 3 | May the public site name Apify? | A6.3: "yes" | Option A: the D1 section names Apify and the actors he used. S-D1 tells `s-d9-legibility`. |
+| 4 | The six stakeholders' enrichment | A6.4, applied to S-D3: GetSales does no scraping and uses what's already scraped in `Addvery Research\`. | S-D1 publishes no schema or sample. Its `OUTPUT` line names his files for S-D3. |
+| 5 | Earlier Apify tooling to reuse | A6.5: "I really don't think this D1 needs any Apify actors or Apify API. It's all going to be happening in the Addvery research subdirectory and this spec or this demo can pull from that research" | No runner, no actors, no token. L-02 isn't needed by S-D1. |
 
-**Launch gate.** The session launches once DI-6 is answered and its answers are applied. From 18:00 Prague an unanswered question takes its default, logged in §9.
-
-**Operator scenes.** None on camera. Off camera: about 2 minutes, any time, with the recording paused, to put the Apify token in `scraping\.env` (DI-6 question 1; timetable slot "any time, 2 minutes, recording paused"). If the token is already in the file when the session starts, there's nothing more. If not, the session writes an operator task for it (§7, step 4).
+**Operator scenes.** None, on camera or off. What S-D1 needs from Alex: one desk question at launch (where his summary will be, §7 step 4), and one gate approval of the draft section, about 5 to 10 minutes.
 
 **Runtime questions** go to `answer-desk` as asker `S-D1`, ids `S-D1-Q1` onwards, one at a time (`..\answer-desk\ASKING.md`). After 15 minutes waiting on Alex for anything, send `POKE S-D1: waiting on you for <what>`, and again every 15 minutes. Before 18:00 Prague, keep waiting and do everything that doesn't depend on the answer. From 18:00, decide on the default, log it in §9 and send `WITHDRAW <id>`.
 
@@ -26,8 +24,8 @@ The preflight is decision intake DI-6 (`..\Operator tasks\DI-6 S-D1 Scraping pre
 
 | Item | S-D1's answer |
 | --- | --- |
-| 1. Its place | Row S-D1, deliverable D1. Claims DoD-8 (a legible Apify scraping and research demo on the live site, in Addvery's brand) and DoD-9 (its research output exists in a form other specs read, and is on their reading lists). Respects DoD-22 (claimed by S-D8 and S-D9): nothing it publishes shows a secret, the Apify proposal or Alex's own GetSales outbound. Uses DoD-11 (Alex's brand capture) only through the site's branding. |
-| 2. Its neighbours | Depends on S1 (lists L-02 and L-01). Runs in parallel with S-D4, S-D6, S-D7, S-D8, S-D9 and Alex's own Addvery research. Feeds S-D3 (the output contract, the synthetic sample, the company data), Alex's research (the runner), S-D8 (the D1 section, through `BUILD`) and S-D9 (which may point followers at it). |
+| 1. Its place | Row S-D1, deliverable D1. Claims DoD-8 (a legible Apify scraping and research demo on the live site, in Addvery's brand) and DoD-9 (its research output exists in a form other specs read, and is on their reading lists). Respects DoD-22 (claimed by S-D8 and S-D9). |
+| 2. Its neighbours | Depends on S1 (list L-01) and on Alex's own scraping and summary in `..\Addvery Research\` (the operator-owned S-D2 row). Runs in parallel with S-D3 to S-D9. Feeds S-D8 (the D1 section, through `BUILD`), S-D3 and any other reader (the `OUTPUT` line naming his files), and S-D9 (the rule on the tool's name). |
 | 3. Operator preflight | §1 (DI-6). |
 | 4. Decision log | §9. |
 | 5. Forking gates | §8. |
@@ -37,67 +35,56 @@ The preflight is decision intake DI-6 (`..\Operator tasks\DI-6 S-D1 Scraping pre
 
 Paths are relative to `scraping\`. Step 1 of the run confirms every resource is reachable and turns anything ambiguous into a desk question.
 
-- `..\CHARTER.md`: the parent context. Read only; never edit.
+- `..\CHARTER.md`: the parent context, including the signed-off "Definition of done" (change C03). Read DoD-8, DoD-9 and DoD-22. Read only; never edit.
 - `..\SESSIONS.md`: the roster. Message sessions only by these names. Edit only S-D1's own row, committed on its own with `[roster]`.
 - `..\GIT.md`: the shared working tree rules. Commit only `scraping\`, path-limited.
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK lines, the poke, the 18:00 rule.
 - `..\answer-desk\qa\S-D1.md`: S-D1's question record. The desk creates it with the first question.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers, verbatim, and DI-6 once archived. Never re-ask what they settle.
-- The charter's "Definition of done" (in `..\CHARTER.md`, written in by S2 as change C03): the signed-off project DoD. Read DoD-8, DoD-9 and DoD-22.
-- `..\orchestration\_templates\Gate approval template.md`, `..\orchestration\_templates\Operator task template.md` and `..\orchestration\check_gate.py`: the forms for Alex's tasks, and the 5-minute gate check.
+- `..\orchestration\_templates\Gate approval template.md` and `..\orchestration\check_gate.py`: the gate form and its 5-minute check.
 - `SPEC.md`: this file. `HANDOFF.md`, if it exists: state after a fork.
-- `..\research\DIRECTORY.md`: the index of every research report. `..\research\lists\L-02-scraping.md` (this spec's list) and `..\research\lists\L-01-parent.md`: S1's lists, read only. L-02's R3 is the output contract research that S-D3 reads too.
-- Research findings: S2 adds a line here for each report when S1 sends FINDINGS for L-01 and L-02.
-- Apify's public docs, read only: the API reference at https://docs.apify.com/api/v2, the platform docs at https://docs.apify.com, and the Store at https://apify.com/store. The API is the only way S-D1 talks to Apify. No Apify connector is attached to this project.
-- `..\getsales\SPEC.md`: S-D3's spec, read only, for the fields its enrichment step and first-message variable need. Questions go to `s-d3-getsales`.
-- `..\legibility\posted.md`: S-D9's log, read only. Its "Left out" table kept the scraping tool's name off the site at 13:50 (DI-6 question 3 settles it).
-- `..\Addvery Research\`: Alex's own folder, git-ignored. S-D1 doesn't need to read it, and never edits it or copies anything from it into a tracked file. Under DI-6 question 4's default, its only link is that Alex's research may call S-D1's runner (`output\README.md`). Until his research is ready, S-D1 works on its own target and the synthetic sample.
-- Never opened, by the session or any subagent: the Apify proposal, Alex's private `hi-apify` repo, Alex's own GetSales outbound, and the Apify Console in a browser.
+- `..\research\DIRECTORY.md`: the index of every research report. `..\research\lists\L-01-parent.md`: S1's parent list, read only. Its R1, on making the work legible, shapes the D1 section.
+- Research findings: S2 adds a line here for each report when S1 sends FINDINGS for L-01.
+- `..\Addvery Research\`: Alex's own folder, git-ignored. S-D1 reads his summary of the scraping and the output files it names, from the local disk only, never from GitHub. It never edits the folder. Nothing from it goes into a tracked file before Alex approves the D1 section, and afterwards only what the approved section shows. Until the summary exists, S-D1 builds the section's frame.
+- `..\getsales\SPEC.md`: S-D3's spec, read only, to see which of Alex's files its pipeline reads. Questions go to `s-d3-getsales`.
+- `..\legibility\posted.md`: S-D9's log, read only. Its "Left out" table kept the tool's name off the site at 13:50; A6.3 lifts that for the name.
+- Apify's public docs and Store, read only, at https://docs.apify.com and https://apify.com/store: only to name and link the actors Alex's summary lists.
+- Never opened, by the session or any subagent: the Apify proposal, Alex's private `hi-apify` repo, Alex's own GetSales outbound, and the Apify Console.
 
 **Outputs** (files S-D1 creates; none exist yet, so they aren't resources):
-- The token file, `APIFY_TOKEN=...`, in the folder's git-ignored env file (`.env`, covered by the root ignore rule and by S-D1's own ignore file). Read only by the runner. Never printed, opened on screen, pasted into chat, put on a command line or committed.
-- Raw scraped data in the git-ignored data folder, local only. Never committed, never quoted into a tracked file.
-- Everything else in the tree below.
-
-Folder tree:
+- A folder ignore file with `draft/`, so nothing drawn from Alex's folder is tracked before he approves it.
+- A summary check script that prints only `FOUND` or `MISSING` for the path Alex gives, never the file's contents.
+- The section's frame, the draft section (git-ignored) and, after approval, the published section, as in the tree below.
 
 ```
 scraping\
-  CLAUDE.md              written by S0
-  SPEC.md                this file
-  HANDOFF.md             written at each fork (§8)
-  .gitignore             .env and data/, so nothing secret or raw is ever tracked
-  .env                   the token (git-ignored)
-  runner\                scripts that start actor runs through the API and collect their datasets; check_token.py
-  actors.md              the actors chosen, their inputs, and what a run costs
-  runs\LEDGER.md         every run: time, actor, input in one line, run id, cost in USD, item count; no token, no scraped content
-  data\                  raw datasets (git-ignored)
-  output\SCHEMA.md       the output contract: fields, sources, formats, and which fields feed S-D3's first-message variable
-  output\sample\         synthetic records in the schema, clearly fictional, for S-D3's dry run
-  output\README.md       how another session, or Alex, runs the runner from its own folder
-  site\d1.md             the D1 section's content for `website`
+  CLAUDE.md            written by S0
+  SPEC.md              this file
+  HANDOFF.md           written at each fork (§8)
+  .gitignore           draft/
+  check_summary.py     FOUND or MISSING, exit 0 or 1
+  site\frame.md        the D1 section's structure and wording, with no Addvery material
+  draft\d1.md          the full draft, drawn from his summary (git-ignored)
+  site\d1.md           the approved section, committed only after his approval
 ```
 
 ## 4. Problem and scope
 
-**The problem.** The site has to show, so that a visitor follows it without explanation, that Alex can turn the open web into usable account research with Apify. Legibility matters more than function (charter, "Deliverables"). The same work has to leave something other specs can use: S-D3 enriches leads and computes a first-message variable before import into GetSales, and Alex's own Addvery research may run the same scrapers. All of it happens on a public repo and on camera, next to a proposal that must never be shown.
+**The problem.** Alex's scraping of Addvery is real work done outside any spec. A visitor needs to see it as a demo in under a minute: what he scraped, with what, what came out, and how it feeds the outbound demo. Other specs need to know which of his files to read. The source folder is git-ignored out of courtesy to the client, the repo is public, and the Apify proposal must never show.
 
 **In scope.**
-- Choosing two or three Apify Store actors that need no login or cookies, from L-02's findings.
-- A runner that drives them through the public API, with every run logged and kept under Alex's spend cap.
-- One demo run on the target DI-6 question 2 picks, on tiny inputs, with its raw data kept local.
-- The research step: raw pages and results into structured research, a source URL and fetch time on every field.
-- The output contract, a synthetic sample in it, and a how-to for reusing the runner.
-- The D1 section's content and its build request to `website`.
-- Telling `orchestration` where the output is, so it reaches its readers' reading lists (DoD-9).
+- The D1 section's frame, then its full draft from Alex's summary.
+- The gate where Alex approves the draft, and the `BUILD` request to `website`, quoting that approval.
+- The `OUTPUT` line naming his output files for their readers (DoD-9).
+- Telling `s-d9-legibility` that the site may name Apify (A6.3).
 
 **Out of scope.**
-- Real data beyond what DI-6 question 2 allows. The charter's Scope binds: no real data through the demos except the D3 live run on six stakeholders; no automation sending except that live run; no one else's LinkedIn account. S-D1 sends nothing.
-- Scraping people, unless DI-6 question 4 says otherwise. Under its default, S-D1 holds no personal data at all.
-- Any actor that needs a login, cookies or Alex's LinkedIn session.
-- Sales Navigator, the CSV export and the GetSales import (S-D3).
-- Alex's Addvery research, the six stakeholders and the brand capture (S-D2, his own; DI-3 Q3.3).
-- Hosting video. The D1 section shows run artifacts, not footage.
+- Any scraping, Apify run, API call or token (A6.5).
+- The summary itself, and everything else in his Addvery research (A6.2; DI-3 Q3.3).
+- S-D3's enrichment, messages and campaign (A6.4).
+- The six stakeholders and the brand capture (S-D2, his own).
+- Hosting video.
+- The charter's Scope binds S-D1: it adds no real data of its own and sends nothing. What the section shows from his research is Alex's to approve.
 
 ## 5. Definition of done
 
@@ -105,53 +92,50 @@ Written before research and methodology. Each criterion traces to a project DoD 
 
 | Criterion | Traces to |
 | --- | --- |
-| The live site has a D1 section (`BUILT S-D1-B1`) that shows, in order, what was asked, what ran (actors, time, cost, items), what came out, and how it feeds the outbound demo, so a visitor follows it without explanation. | DoD-8 |
+| The live site has a D1 section (`BUILT S-D1-B1`) that a visitor follows without explanation: what Alex scraped and why, what ran on the Apify API (named, A6.3), what came out, and how it feeds the outbound demo. | DoD-8 |
 | The section uses the site's Addvery branding, as `website` builds it. | DoD-8 |
-| The demo ran on the real Apify API: `runs\LEDGER.md` shows each run's id, cost and item count, with the total inside Alex's cap. | DoD-8 |
-| `output\SCHEMA.md`, `output\sample\` and the demo dataset exist, and S-D3's SPEC.md names them in its "Routing and resources" (through the `OUTPUT` line to `orchestration`). | DoD-9 |
-| `output\README.md` lets another folder run the scrapers without reading this spec. | DoD-9 |
-| No tracked file in `scraping\` holds the token or raw scraped data, and the D1 section names no person. | DoD-22 (respected, not claimed) |
+| Alex approved the draft section in a gate task before the `BUILD`, and the `BUILD` quotes that approval. | DoD-8 |
+| The output files of his research that other specs read are named in an `OUTPUT` line to `orchestration`, and S-D3's SPEC.md names them in its "Routing and resources". | DoD-9 |
+| No tracked file holds material from `..\Addvery Research\` before his approval, and nothing published shows the Apify proposal. | DoD-22 (respected, not claimed) |
 
 ## 6. Research step
 
 At launch the session sends `s1-research` exactly one line:
 
-`RESEARCH S-D1: L-02, plus L-01, the actor choice, the run pattern and the output contract S-D3 needs before its 17:00 live run, needed by 15:45`
+`RESEARCH S-D1: L-01 only (L-02 isn't needed by S-D1, because Alex runs all the scraping himself in Addvery Research; offer L-02 to him for his own work if useful), L-01 R1 on legibility shapes the D1 section, needed by 16:00`
 
-Approving the list is S1's gate, not this session's. S-D1 is already a reader of L-01, which is with Alex as OT-01.
+Approving the list is S1's gate, not this session's. L-01 is already with Alex as `..\Operator tasks\Approve - research plan for the whole project.md`.
 
-**Groundwork that goes ahead while research runs** (none of it depends on findings): the folder tree, `scraping\.gitignore` and its check, the empty `.env` and `runner\check_token.py`, the token task, a token check against the API, the ledger's header, a draft `output\SCHEMA.md` (v0) from what S-D3's pipeline needs, and a synthetic sample in it.
+**Groundwork while research runs:** the folder tree, `.gitignore` and its check, `check_summary.py`, the frame's structure, the desk question, the `OUTPUT` line, and the note to `s-d9-legibility`.
 
-**What waits for FINDINGS:** the actor choice, the runner's run pattern, the schema's final fields, every real run, and the D1 section's content (L-01 R1 is on legibility).
+**Waits for FINDINGS:** the frame's final layout and wording (L-01 R1). **Waits for Alex's summary:** the draft's content.
 
-**If research is late.** S-D3's live run is proposed for 17:00, and S-D1's contract must reach it by 16:30. If FINDINGS for L-02 haven't landed by 16:00, the session sends the spec-draft gate anyway, with the research verdicts marked pending and the methodology built on its groundwork. Alex decides in that gate whether to build without findings (DI-5: he may soften the research rules when time is short). The schema goes to S-D3 as a draft either way.
+**If research is late.** If L-01 hasn't landed by 16:30, the spec-draft gate goes to Alex with its verdicts marked pending, and the frame stands on the groundwork (DI-5: he may soften the research rules when time is short).
 
 ## 7. Methodology and steps
 
-**Draft methodology.** The session confirms or revises it once the L-02 synthesis lands.
+**Draft methodology.** The session confirms or revises it once L-01's synthesis lands.
 
-1. **Actors.** Two or three Store actors with no login: one for the target's own web pages, one for public listings such as job posts or search results, and one for news if it's cheap. Each is chosen on L-02 R1's cost and reliability verdicts and recorded in `actors.md`.
-2. **Runner.** One script per pattern L-02 R2 recommends: start a run through the API, wait for it, pull its dataset into `data\`, and write the ledger line. Inputs are tiny (L-02 R4). Before each run it checks the ledger total against the cap. It reads the token from `.env` and never prints it.
-3. **Research step.** A subagent turns the raw dataset into the schema's records. Every field carries its source URL and fetch time, and a field with no source is left empty, never guessed (L-02 R3).
-4. **Contract.** `output\SCHEMA.md` covers company fields and person fields, the CSV columns S-D3 joins on, and which fields feed the first-message variable. Person fields exist so Alex's research can fill them in his own folder (DI-6 question 4); S-D1 fills only company fields.
-5. **Sample.** Six fictional records in the schema (`Sample Person 1`, `example.com` domains), so S-D3 can dry-run without real data.
-6. **The D1 section.** Three steps a visitor reads in under a minute: the question, the run (actors, time, cost, items, taken from the ledger), and the result (the structured research with its sources, and the arrow into the outbound demo). The site shows a stored run, never a live one, so it can't fail on screen.
+1. **Frame.** Three steps a visitor reads in under a minute: the question (what Alex wanted to know about Addvery, and why), the run (the Apify actors and API, named, with counts, time and cost where his summary gives them), and the result (the summary's key outputs at company level, and the arrow into the outbound demo). The site shows a stored result, never a live run.
+2. **Fill.** A subagent, handed only the frame, the summary's path and the screen-care rules, drafts `draft\d1.md` from his summary. It names no person (Alex can add names at the gate), shows nothing of the proposal, and cites his summary as its source.
+3. **Approve.** The whole draft goes to Alex as a gate task. Nothing reaches the site or a tracked file before he approves it.
+4. **Publish.** The approved draft becomes `site\d1.md`, and the `BUILD` quotes the approval.
 
 **Coherency check.** Once revised: "if we execute this methodology, will that DoD be satisfied?" Each criterion in §5 is checked against the step that produces it. A gap is fixed in the methodology, never by loosening the DoD.
 
 **Steps.**
 
 1. Read the reading list and confirm each resource is reachable. Load SendMessage. Check that DI-6's answers are applied in §1 and §9.
-2. Send the `RESEARCH` line (§6).
-3. Groundwork. Write `scraping\.gitignore` (`.env`, `data/`) and confirm with `git check-ignore -v .env data\x` before anything else lands. Create `.env` holding only `APIFY_TOKEN=`. Write `runner\check_token.py`, which prints only `TOKEN SET` or `TOKEN EMPTY` and exits 0 or 1. Write the ledger header, SCHEMA v0 and the sample. Commit.
-4. Token. If `check_token.py` says empty, write `..\Operator tasks\OT-<nn> S-D1 Apify token.md` from the operator task template (the next free OT number: check `Operator tasks\` and `Operator tasks\Archive\` just before writing): pause the recording, open `scraping\.env`, paste the token after `APIFY_TOKEN=`, save, resume. Commit it path-limited, then send `answer-desk` `TASK S-D1: <file name> is waiting on you: the Apify token, 2 minutes with the recording paused; unblocks every real run`. Wait with Monitor, running `python -I runner\check_token.py` every 300 seconds; poke after 15 minutes. Once set, make one API call that prints only named fields (HTTP status, plan, this month's usage in USD), never the whole response. Then `TASK DONE S-D1` and `ARCHIVE <file name>: readers S-D1`. Under DI-6 question 5's option B, read Alex's earlier tooling meanwhile, for method only.
-5. On FINDINGS for L-02 (and L-01), confirm or revise the methodology above. Send any post-research questions to the desk, one at a time. Run the coherency check. Commit.
-6. **Gate: spec draft.** Commit SPEC.md, then freeze the whole of it into `..\Operator tasks\OT-<nn> Gate approval S-D1 spec draft.md` from the gate approval template (next free OT number, checked just before writing), with a five-line summary first. Commit that file path-limited, so the snapshot names a commit. Send `answer-desk` `TASK S-D1: <file name> is waiting on you: S-D1's DoD, research verdicts and methodology; unblocks the real runs and the D1 section`. Wait with Monitor, running `python -I orchestration\check_gate.py "Operator tasks\<file>"` from the repo root every 300 seconds until it exits 0. Poke after 15 minutes. Meanwhile, send `s-d3-getsales` the draft schema and the sample, marked draft. On `CHANGES`, apply them, refresh the snapshot and wait again. Then send `TASK DONE S-D1: <file name>` to `answer-desk` and `ARCHIVE <file name>: readers S-D1` to `orchestration`. From 18:00, an open gate means proceed on the coherency-checked methodology and log it in §9.
-7. Build, delegated (P7, P1). One subagent builds the runner; one writes the research step; one drafts `site\d1.md`. Each is handed only the files it needs: this spec, `actors.md`, the relevant reports, and for the research step `output\SCHEMA.md` and the dataset path. Then run the demo on the DI-6 question 2 target, on tiny inputs, logging each run. A run that would pass the cap doesn't start: it becomes a desk question. Commit after each finished piece.
-8. Freeze the contract by 16:30: SCHEMA v1, the sample, the dataset path and `output\README.md`. Send `orchestration` `OUTPUT S-D1 ready: <paths in scraping\>; readers: S-D3`, so S2 adds the resource lines as it does for FINDINGS, and tell `s-d3-getsales` in one line. Commit.
-9. Site request. Send `website` `BUILD S-D1-B1: add the D1 section, linked from demo 1 in the deliverables view, as a three-step story (the question, the run, the result). Content: scraping\site\d1.md. Source: runs\LEDGER.md and the structured research.` Wait for `BUILT S-D1-B1` or `REFUSED S-D1-B1`. On `REFUSED`, fix what it names and send `S-D1-B2`. One request at a time.
-10. Screen care check before DONE. `git grep -n apify_api_ -- scraping` finds nothing; `git status --ignored -- scraping` shows `.env` and `data\` as ignored; `site\d1.md` names no person and doesn't mention the proposal. Before every commit along the way, `git diff --cached --name-only` lists only `scraping/` paths and never `.env` or `data/`.
-11. Close. When §5 is met, send `orchestration` `DONE S-D1: D1 section live (BUILT S-D1-B1), <n> runs for $<total> in runs\LEDGER.md, output contract in output\SCHEMA.md named by S-D3`. Stay up to answer readers' questions until `orchestration` says stop, then move S-D1's row to Finished in `..\SESSIONS.md` (`[roster]` commit) and stop.
+2. Send the `RESEARCH` line (§6). Send `s-d9-legibility` one line: `S-D1: Alex answered DI-6 Q6.3 "yes": the site may name Apify. Anything from near the proposal stays out.`
+3. Groundwork. Write `.gitignore` (`draft/`) and confirm with `git check-ignore -v draft\d1.md` before any draft exists. Write `check_summary.py` and `site\frame.md`. Commit.
+4. Ask `S-D1-Q1`: where will his summary of the scraping outputs be (a file in `Addvery Research\`), roughly when, and which of his output files S-D3 and other specs should read? Default from 18:00: no summary, so the section stays open for the morning cleanup session, logged in §9.
+5. On the answer, send `orchestration` `OUTPUT S-D1 ready: <his output files in ..\Addvery Research\, names only>; readers: S-D3`, adding any other reader he names, so S2 adds the resource lines as it does for FINDINGS. Tell `s-d3-getsales` in one line. Then wait for the summary with Monitor, running `python -I check_summary.py "<path>"` from `scraping\` every 300 seconds until it exits 0. Poke only 15 minutes after the time he gave has passed.
+6. **Gate: spec draft.** On FINDINGS for L-01, confirm or revise the methodology and run the coherency check. Commit SPEC.md, then freeze it into `..\Operator tasks\Approve - the scraping demo plan.md` from the gate approval template. Its OT id (the next free one: check `Operator tasks\` and `Operator tasks\Archive\` just before writing) goes in the front matter only. It opens with `## What this is`, in plain words with no codes: the scraping section of the site, what this plan covers, what approving it unblocks. Commit that file path-limited and send `answer-desk` `TASK S-D1: Approve - the scraping demo plan.md is waiting on you: S-D1's DoD and methodology; unblocks the D1 section`. Wait with Monitor, running `python -I orchestration\check_gate.py "Operator tasks\Approve - the scraping demo plan.md"` from the repo root every 300 seconds until it exits 0. Poke after 15 minutes. On `CHANGES`, apply them, refresh the snapshot and wait again. Then send `TASK DONE S-D1: Approve - the scraping demo plan.md` to `answer-desk` and `ARCHIVE Approve - the scraping demo plan.md: readers S-D1` to `orchestration`. If the draft section (step 7) is ready by then, it goes in the same task as step 8 describes, so Alex sees one gate, not two (P4). From 18:00, an open spec-draft gate means proceed on the coherency-checked methodology and log it.
+7. Draft, delegated (P7). Once the summary is found, a subagent writes `draft\d1.md` (methodology, step 2). Review it against §5 and the screen-care rules.
+8. **Gate: D1 section sign-off.** Write `..\Operator tasks\Approve - what the scraping demo section shows.md` from the template, with its OT id in the front matter only and a plain-words `## What this is` first. The draft is drawn from his git-ignored folder and operator tasks are tracked, so this task doesn't copy it in. Instead it names `scraping\draft\d1.md` (git-ignored) and its SHA-256 (first 12 characters) in `Snapshot of`, with a five-line summary that names no person and quotes nothing from his folder. Under "What's being approved" it embeds the draft with the Obsidian embed `![[scraping/draft/d1.md]]`: the vault is the repo root, so Alex reads the whole draft in place, and it never enters the public repo. Commit the task path-limited, send `TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: the whole D1 section draft; unblocks the site's D1 section`, and wait with Monitor, running `python -I orchestration\check_gate.py "Operator tasks\Approve - what the scraping demo section shows.md"` every 300 seconds, as in step 6. Poke after 15 minutes. On `CHANGES`, edit the draft, record its new hash, and wait again. Then send `TASK DONE S-D1: Approve - what the scraping demo section shows.md` and `ARCHIVE Approve - what the scraping demo section shows.md: readers S-D1`. From 18:00, an open sign-off stays open for the morning cleanup session, and nothing goes on the site.
+9. Publish. Copy the approved draft to `site\d1.md` and commit it. Send `website` `BUILD S-D1-B1: add the D1 section, linked from demo 1 in the deliverables view, as a three-step story (the question, the run, the result). Content: scraping\site\d1.md. Source: Alex's summary of his Apify scraping of Addvery. Approved: Approve - what the scraping demo section shows.md, ticked by Alex at <time>.` Wait for `BUILT S-D1-B1` or `REFUSED S-D1-B1`. On `REFUSED`, fix what it names and send `S-D1-B2`. One request at a time.
+10. Screen care before DONE. `git status --ignored -- scraping` shows `draft\` as ignored. `site\d1.md` matches the approved draft exactly. Before every commit, `git diff --cached --name-only` lists only `scraping/` paths, and never `draft/`.
+11. Close. When §5 is met, send `orchestration` `DONE S-D1: D1 section live (BUILT S-D1-B1, approved in Approve - what the scraping demo section shows.md); Alex's research outputs named for S-D3 (OUTPUT line)`. Stay up to answer readers' questions until `orchestration` says stop, then move S-D1's row to Finished in `..\SESSIONS.md` (`[roster]` commit) and stop.
 
 Commits are path-limited, after every finished step: `git commit -m "[scraping] <message>" -- scraping/...`. Don't push; the watcher does.
 
@@ -159,12 +143,11 @@ Commits are path-limited, after every finished step: `git commit -m "[scraping] 
 
 | Gate | When |
 | --- | --- |
-| F1, methodology locked | The spec-draft gate is approved, if the context is more than a third full. The build then starts clean. |
-| F2, window closes | 17:45 Prague, shortly before 18:00, so overnight starts clean (P6). |
-| F3, context | The context is about half full, whatever else is happening. |
+| F1, window closes | 17:45 Prague, shortly before 18:00, so overnight starts clean (P6). |
+| F2, context | The context is about half full, whatever else is happening. |
 
 **How it forks.**
-1. Write `HANDOFF.md`: the state of each step and run, the ledger total against the cap, the open desk question with the time it was sent and the last poke, open operator tasks and gates with their times, the `BUILD` request in flight, and decisions since the last fork. Commit it.
+1. Write `HANDOFF.md`: the state of each step, the summary's path and whether it was found, the open desk question with the time it was sent and the last poke, open gates with their times and the draft's hash, the `BUILD` request in flight, and decisions since the last fork. Commit it.
 2. From `scraping\`, launch the successor under the same name: `claude --bg -n s-d1-scraping "Read CLAUDE.md, then HANDOFF.md. You are now the active S-D1 session."`
 3. Update S-D1's row in `..\SESSIONS.md` with the handoff time, and commit it on its own: `git commit -m "[roster] s-d1-scraping handoff <time>" -- SESSIONS.md`.
 4. Announce it in one line to `orchestration`, `answer-desk` (with the open `S-D1-Q` id, if any), `s1-research`, `website` and `s-d3-getsales`: `HANDOFF s-d1-scraping, <time>: a fresh session has taken over under the same name.`
@@ -176,10 +159,11 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
-| 2 Nov, drafting (wave2-specs): no on-camera scene. The D1 section is built from run artifacts (the ledger, the structured research), not footage. | The charter's outline asks of Alex only "Screen care around the recent proposal", and the timetable says S-D1 needs no scene. | It spends none of Alex's camera time (P3, P6), and a stored run can't fail on screen. | Small. A scene takes one timetable slot, and a clip from S-D9 one more `BUILD`. |
-| 2 Nov, drafting (wave2-specs): only actors that need no login or cookies. Alex's LinkedIn session is never handed to Apify. | Scope rules out connecting anyone else's LinkedIn account, and a scraper running on Alex's own session puts his account at risk. | The demo shows the capability without risking an account or needing anyone's credentials but the Apify token. | Fewer LinkedIn sources in the demo. Allowing one is a change to `actors.md` and a new desk question. |
-| 2 Nov, drafting (wave2-specs): raw scraped data stays in `scraping\data\`, git-ignored by `scraping\.gitignore`. Only the schema, the sample, the ledger and the curated D1 content are tracked. | The repo is public. Alex kept his own Addvery research out of it although it's public information (DI-2 Q2.2: "it's also going to be ignored just so we're not posting"). | The same courtesy for whatever S-D1 scrapes, and a nested ignore file needs no root change. | None for readers on this computer. Tracking the data later is one commit. |
-| 2 Nov, drafting (wave2-specs): the token lives only in `scraping\.env`. The runner reads it; checks print only `TOKEN SET` or `TOKEN EMPTY`, and API checks print named fields only. The session never opens the Apify Console. | The charter's risk rule: anything on screen can be published, and no secrets on screen or in tracked files. | The token never reaches a transcript, the screen or the repo. | None. |
-| 2 Nov, drafting (wave2-specs): the output reaches S-D3's reading list through an `OUTPUT S-D1 ready: <paths>; readers: S-D3` line to `orchestration`, shaped like S1's `FINDINGS`. | DoD-9 needs the output on readers' reading lists, and S2 writes specs' reading lists. S2's accepted requests name `FINDINGS` but not a spec's own output. | It uses S2's existing resource-line path and keeps the dependency map in one place. | If S2 prefers otherwise, `s-d3-getsales` adds the line to its own SPEC.md. Only step 8 changes. |
-| 2 Nov, drafting (wave2-specs): no deliverable sign-off gate. The spec-draft gate shows Alex exactly what the D1 section will contain. | DoD-8 and DoD-9 don't require his sign-off, and the brief keeps his gate count low (P4). | One gate covers the DoD, the research verdicts and the content plan. | If he wants to see the section before it goes live, one more gate before step 9, about 5 minutes of his time. |
-| 2 Nov, drafting (wave2-specs): research is needed by 15:45, and the contract is frozen by 16:30. | S-D3's live run is proposed for 17:00 and needs the schema and the sample for its dry run first. | It leaves S-D3 30 minutes to dry-run on the sample. | If the live run moves, both times move with it. |
+| 2 Nov, A6.1 applied (wave2-specs): the $10 cap is Alex's cap on his own Apify spend. S-D1 spends nothing and needs no token. Moving the credentials is his, in his own folder. | A6.5 takes all Apify work out of S-D1, so A6.1's cap and credential move apply to his scraping. | No token in `scraping\` means no secret to guard there. | None for S-D1. |
+| 2 Nov, A6.2 applied (wave2-specs): S-D1 scrapes nothing. The D1 section presents Alex's own scraping of Addvery, through his summary. | A6.2: "I'm going to scrape Addvery ... That is separate. No spec is going to manage that." | The demo is his real work, and S-D1 only makes it legible. The intake's Scope question becomes his call, made at the section gate. | If he wants S-D1 to scrape after all, the runner and token come back: a new spec draft. |
+| 2 Nov, A6.3 applied (wave2-specs): option A. The section names Apify and the actors he used, and S-D9 is told. | A6.3: "yes". | The charter and DoD-8 name it, and the risk is the proposal, not the name. | One edit to the section and one `BUILD`. |
+| 2 Nov, A6.4 applied (wave2-specs): no output schema or synthetic sample from S-D1. S-D3 reads his folder directly, and S-D1's `OUTPUT` line names the files. | A6.4 (applied to S-D3): GetSales uses "any information already scraped". | It leaves one source of truth for the enrichment: his folder. | S-D3's reading list only. |
+| 2 Nov, A6.5 applied (wave2-specs): no runner, no actors, no API calls, no token, and L-02 isn't requested. "The scraping thing" in A6.5 is read as his Addvery scraping. | A6.5: "this spec or this demo can pull from that research". The same answer says "It's all going to be happening in the Addvery research subdirectory". | It matches the rest of his answer and DI-3 Q3.3. | If he meant `scraping\`, his scraping moves here: a new spec draft and a git-ignored data folder. |
+| 2 Nov, drafting (wave2-specs): the section gate task names the git-ignored draft and its hash instead of copying the draft in. | Operator tasks are tracked and the repo is public. Nothing from `Addvery Research\` goes into a tracked file before he approves it. | The approval still covers one fixed version, nothing leaks before he has seen it, and the Obsidian embed keeps the whole draft in front of him (his readability rule). | One step (8). If S2 prefers the copy-in, the task is committed only after he ticks it. |
+| 2 Nov, drafting (wave2-specs): his output files reach S-D3's reading list through an `OUTPUT S-D1 ready: <paths>; readers: <spec ids>` line to `orchestration`, shaped like S1's `FINDINGS`. | DoD-9 needs them on readers' reading lists, and S2 writes specs' reading lists. | It uses S2's resource-line path and keeps the dependency map in one place. | If S2 prefers otherwise, `s-d3-getsales` adds the lines itself. Only step 5 changes. |
+| 2 Nov, drafting (wave2-specs): while the summary is outstanding, poke only 15 minutes after the time Alex gave, not every 15 minutes from the start. | He is doing that work himself, one-on-one. | It keeps the desk quiet while he works (P4). | None. |
