@@ -12,3 +12,9 @@ next-env.d.ts
 
 # S-D8: git-ignored material that still deploys (SPEC.md §3)
 local/
+
+# Raw scrape of the Addvery site (untrusted downloads, never deployed or committed)
+.addvery-scrape/
+
+# Addvery's own logo, icon and image files: deploy from the working tree, kept out of the public repo
+public/addvery/
