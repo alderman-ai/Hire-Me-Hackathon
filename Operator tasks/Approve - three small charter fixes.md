@@ -1,0 +1,73 @@
+---
+System Primitive: Operator task
+Task type: Gate approval
+Task id: OT-11
+Task State: Open
+Gate: S2 charter change preview (C04, C05, C06)
+Requested by: orchestration
+Snapshot of: orchestration\changes\C04-C05-dod22-wording.md and C06-d3-alex-model.md at the commit that adds this task
+Unblocks: nothing waits on it; the specs already follow these answers. It brings the charter's wording in line with them.
+Created: 2026-11-02 16:36 Prague
+---
+
+# Approve: three small fixes to the project plan's wording
+
+## What this is
+
+**About 2 minutes. No rush: if you do nothing, these are applied at 18:00 and logged, and you can undo any of them later in one line.**
+
+The project plan (the charter) is the one document every session reads for what the project is and what counts as done. Three of its lines no longer match what you've decided today. Nothing is waiting on this, because each session already follows your answers. These fixes just make the plan say the same thing, so the overnight session and tomorrow's cleanup don't trip over the old wording.
+
+1. **What "nothing sensitive is published" means.** The plan says nothing published may *show* the Apify proposal or your own GetSales outreach. You told the website session at 14:25 that the repo stays as it is, because the plan and the specs only *mention* the proposal. The fix: "show" means displaying them, and the documents may still name them.
+2. **The GetSales video and that same rule.** The plan wants a video of the live GetSales run, and it also keeps your own GetSales outreach off everything published, so the two contradicted each other (the research found this). The fix: your own campaigns stay off, but the demo folder and the alert going to the six may appear in the video, with the six's names, photos and personal lines blurred. The rule also gains the six's personal data and their replies, which it didn't cover.
+3. **What the GetSales demo is.** The plan still says "10 ICPs with a drip sequence each, and a classifier". Your answer this afternoon replaced that: first the alert to the six, then workflows for each of Addvery's ICPs by language and by three approaches, in one GetSales folder you can hide, each opening with a custom first message. The fix rewrites the demo's description, its line in the plan's list of specs, and its done item to match. The done item for the video itself stays as it is.
+
+## What's being approved
+
+The plan's lines exactly as they read now (Before) and as they would read (After). Codes in the text: "DoD-12" and "DoD-22" are the plan's numbered done items, "D3" is the GetSales demo, "D2" is your own research on Addvery, "S-D3" is the GetSales demo's spec, "S-D8" is the website, and "S-D9" is the session that turns recordings into site posts.
+
+**Fixes 1 and 2: the "nothing sensitive is published" done item (DoD-22).**
+
+Before:
+> Nothing published (the site, its videos, the public repo) shows secrets, the Apify proposal or the operator's own GetSales outbound. · Checked by: a check of the site, the published videos and the repo finds none of them.
+
+After:
+> Nothing published (the site, its videos, the public repo) shows secrets, the Apify proposal, the operator's own GetSales outbound outside the demo folder, or the six stakeholders' personal data and replies. · Checked by: a check of the site, the published videos and the repo finds none of them displayed; the charter and specs may name them. The live-run clip may show the demo folder and the alert flow, with the six's names, photos and personal lines blurred.
+
+**Fix 3a: the GetSales demo's description (D3).**
+
+Before:
+> Shows 10 ICPs with a drip sequence each, and a classifier that routes each lead to the right automation. Pipeline: Sales Navigator, then CSV export, then enrichment from D2, then a computed first-message variable, then import into GetSales. Live run: the six stakeholders from D2 go through the operator's own sender profile. The output is a video clipped from the rig recordings.
+
+After:
+> Two parts. First, an alert: a short campaign from the operator's own LinkedIn account tells the six stakeholders from D2 that the hackathon is happening and they can follow along. Second, the demo: workflows for each of Addvery's ICPs by language and by three approaches, in one GetSales folder he can hide, each opening with a custom first message computed before import and imported as a lead field, with an explanation of how leads are routed into the right one. Pipeline: the six from D2, enrichment, the computed first-message variable, import into GetSales. The output is a video clipped from the rig recordings.
+
+**Fix 3b: its line in the list of specs (S-D3).**
+
+Before:
+> 10 ICPs and sequences, a lead classifier, and the full Sales Navigator to GetSales pipeline, run live on the six stakeholders. Delivered as a video.
+
+After:
+> The alert to the six stakeholders from the operator's own LinkedIn account, then ICP by language by approach workflows in one GetSales folder, each opening with a custom first message, with how leads are routed. Delivered as a video.
+
+**Fix 3c: its done item (DoD-12).**
+
+Before:
+> Ten ICPs, each with a drip sequence, and a classifier that routes each lead to the right automation are set up in GetSales, with no automation sending except the live run. · Checked by: GetSales shows the ten sequences and the classifier; no send outside the live run.
+
+After:
+> Workflows for each of Addvery's ICPs, by language and by three approaches, each opening with a custom first message, sit in one GetSales folder, with an explanation of how leads are routed into the right one, and no automation sends except the alert to the six. · Checked by: GetSales shows the folder and its workflows; the routing explanation is on the site; no send outside the alert.
+
+Your options: (a) apply all three; (b) apply all except the ones you name, or with the changes you write; (c) drop all three.
+
+## Approval
+
+- [ ] I approve
+
+Tick the box to apply all three. Anything you write below is applied along with them, even when you tick the box. Either way, the requesting session checks this file every 5 minutes. If it's still open at 18:00, all three are applied as written and logged, and a later answer is applied as a new change.
+
+`<operator_answer>`
+```ot-11-changes
+
+```
+`</operator_answer>`

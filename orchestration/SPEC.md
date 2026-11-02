@@ -98,11 +98,10 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 
 C01 and C02 went out together as `Operator tasks\Archive\Approve - Addvery research is yours, reading lists per demo.md` (OT-02, 2 Nov); their records are in `changes\`. Alex approved it at 16:29, asking S2 to fold in whatever his research session had since superseded, with no second approval. Both were applied at 16:30 (commit 82070b8) with three fold-ins, recorded in the C01 record, and the outline was signed off at 16:32 (commit a97de2e).
 
+C04, C05 and C06 went out together as `Operator tasks\Approve - three small charter fixes.md` (OT-11, 16:38), records `changes\C04-C05-dod22-wording.md` and `changes\C06-d3-alex-model.md`. Nothing waits on them, so no pokes; if it's still open at 18:00, all three apply on the default and are logged in section 9.
+
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
-| C04 | Alex: A website-Q3, 14:25 ("a": the repo stays as it is, since the charter and specs only mention the proposal) | 2 Nov | DoD-22's check reads "shows" as displaying the proposal or the outbound, not mentioning them: the charter and specs may name them. Goes out in the next preview after OT-02 is answered. |
-| C05 | S2's own DoD work (item 5 above); conflict flagged by `s1-research` from `research\global\L-01-R3-personal-data.md`, 14:48 | 2 Nov | DoD-22 keeps "the operator's own GetSales outbound" off everything published, while DoD-13 needs a clip of the live run in GetSales. Proposed: DoD-22 means his own campaigns outside the demo folder; the demo folder, the alert flow and the live-run clip may show, with the six's names, photos and personal lines blurred. DoD-22 also gains the six's personal data and replies. Goes out with C04. |
-| C06 | `s-d3-getsales`, S2 REQUEST 14:51 (approved: A6.4, DI-6, verified in the archived intake) | 2 Nov | D3, the S-D3 outline row, DoD-12 and DoD-13 reworded from "10 ICPs ... and a classifier" to Alex's model: an alert to the six through his sender, then ICPs × languages × 3 approaches workflows in one GetSales folder, each opening with custom message 1, plus how Jev routes leads. DoD-13's pipeline stages stay. Goes out with C04 and C05. |
 
 **Dependent places.**
 
