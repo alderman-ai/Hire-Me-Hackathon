@@ -351,10 +351,11 @@ Recorded against OT-01 (already done), DI-6 (already done), DI-7 and DI-8.
 Alex's decisions, 14:38, relayed by briefing on his instruction, for your records: OT-01 approved (box ticked). DI-6 is done. DI-7 waits on his Addvery research, which is his focus now. DI-8 is low priority, so please don't push it at him. His words: "let's just approve ot1 -- i'm swamped we need to remove blockers ... di6 is done. di7 is waiting on addvery research which is where my focus needs to be right now. d1-8 is low priority". I've told s1-research, wave2-specs and orchestration.
 ```
 
-## TASK S-D3: Decide - how the GetSales outbound demo runs.md — open
+## TASK S-D3: Decide - how the GetSales outbound demo runs.md — done
 From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:40 CET (+01:00)
 14:40 CET: alert shown to Alex; no PushNotification (sender marks it on hold while Alex is on the Addvery research, per his 14:38 words).
+16:43 CET: TASK DONE S-D3 received; marked done.
 
 ```
 TASK S-D3: Decide - how the GetSales outbound demo runs.md is waiting on you: now just 3 small questions, about 3 minutes (how the alert reaches people you aren't connected to, whether Ivana gets a GetSales login, what Jev is). Question 1 by about 15:10 lets the alert to the six go by 15:30; the rest can wait. On hold while you're on your Addvery research: no pokes.
@@ -523,11 +524,12 @@ Desk holds pokes that arrive during the break (marked "held") and surfaces those
 Alex is on break until about 15:46 Prague. His words at 15:16, to wave2-specs (checked in its transcript): "i'm on break for the next 30 mins, dont let any 'answer expiry defaults' go into affect". Until at least 15:46: no question, intake or gate takes its default on a passed deadline, whatever its own rule says; anything waiting on him waits; nothing that needs his yes goes ahead. Hold pokes that come in during the break and surface them to him from 15:46, if still open.
 ```
 
-## TASK S-D3: Approve - the six alert messages before they send.md — open
+## TASK S-D3: Approve - the six alert messages before they send.md — done
 From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-b31a7431253d97f8dd5f0b7f3b09b8aa)
 Received: 2026-11-02 15:43 CET (+01:00)
 15:43 CET: alert shown in the desk window; no PushNotification during Alex's break (until about 15:46). Include in the 15:46 summary.
 15:56 CET: s-d3-getsales: file updated with Alex's 15:55 swap (the Chief Growth Officer replaces the engagement manager); the six messages are final, ticking sends them. LinkedIn hours end 16:30 unless call 9. Alert repeated with a PushNotification.
+16:43 CET: TASK DONE S-D3 received (withdrawn: Alex answered in the intake that he sends the alert by hand, so nothing to tick); off the list, no more reminders.
 
 ```
 TASK S-D3: Approve - the six alert messages before they send.md is waiting on you: the six alert messages; ticking it sends them from your profile, target 15:30 (your sender's LinkedIn hours end at 16:30 today unless you take call 9, which extends this one flow to 18:00). Ticking also confirms the six.
@@ -735,5 +737,29 @@ Received: 2026-11-02 16:38 CET (+01:00)
 
 ```
 TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: the whole scraping page, exactly as it would go live (about 5 minutes; tick to publish, and anything in the feedback section applies too). It replaces "Approve - the scraping demo plan" too: ticking this one approves that plan as well, so he can skip it. Deadline 18:00 to go live today.
+```
+
+## S2-Q1 — open
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
+Received: 2026-11-02 16:39 CET (+01:00)
+16:39 CET: shown to Alex.
+
+```
+ASK S2-Q1
+Critical: no
+Deadline: 17:00
+
+## S2-Q1 — Film the Canva video today, or tomorrow morning?
+
+**The question:** Do you film yourself designing in Canva today before 18:00, or in tomorrow morning's cleanup session?
+
+**Context you need.** The plan ends with a short video of you designing a LinkedIn post in Canva from the Addvery templates. The templates are built as files, but they only reach Canva after your brand sign-off (about 17:05) and an import step of about 5 minutes, so the earliest the scene can start is about 17:15–17:30, squeezed against your other approvals and your 18:00 finish, with almost no time for a retake. The research also found that Canva's side panels (Uploads, Projects, Brand) can show other clients' files, so the scene needs care on screen either way. Nothing else waits on this video.
+
+**Options.**
+- (a) Tomorrow morning, in the cleanup session: calmer, with retakes; the templates are in Canva by then. Recommended: today's window is already full.
+- (b) Today, 17:30–17:55: you import the template on camera as part of the scene, then design one post.
+- (c) Something else: say what.
+
+**If unanswered by the deadline:** (a), tomorrow morning, because after 17:00 there isn't time to prepare today's scene.
 ```
 
