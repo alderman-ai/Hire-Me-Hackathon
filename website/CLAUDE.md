@@ -7,7 +7,8 @@ This session owns the website, and nothing else. Every change to the site goes t
 - **Team:** this is the background session named `website`. The `rig` session (in `..\OBS`) runs the recording, and the root session (repo root) coordinates. Reply to whoever messages you at its `from` address.
 - **Clock messages from the rig:** after each /start, /pause and /stop, `rig` sends one line, such as "S02 recording", "S02 paused", "S02 resumed" or "S02 stopped". When one arrives, check that the sync loop is alive and restart it hidden if not (see The countdown). Then run `python scripts\clock_sync.py --once` so the clock changes now, and reply to `rig` with one line saying what `status.json` now shows.
 - **Sessions are numbered in order with no total.** Never show or say "of 6".
-- **Repo:** public, all work on `main`. Commit or push only when Alex asks.
+- **Repo:** public, all work on `main`. Commit your own folder after every finished step, per `..\GIT.md`; don't push, the watcher does.
+- Before your first commit, read `..\GIT.md`; it's how all sessions share one working tree.
 - **Deploy:** `vercel deploy --prod --yes` from this folder, after checking the change locally (`npx next dev -p 3100`). `.vercelignore` keeps `.env*`, `.clock` and `scripts` out of the upload. In Git Bash, set `MSYS_NO_PATHCONV=1` before `vercel api /...`, or the path gets mangled.
 - **Secrets:** `.env.local` holds the Blob token. Never print it.
 
