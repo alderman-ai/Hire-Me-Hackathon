@@ -11,6 +11,7 @@ This session owns the website, and nothing else. Every change to the site goes t
 - Before your first commit, read `..\GIT.md`; it's how all sessions share one working tree.
 - **Questions for Alex:** every one goes to the `answer-desk` session in the format in `..\answer-desk\ASKING.md`, never into your own chat (charter P4). Your asker name is `website`.
 - **Reading list:** `..\answer-desk\qa\website.md`, every question you've asked Alex and his answers.
+- **Session roster:** `..\SESSIONS.md`, the official name of every session. Message sessions only by those names.
 - **Deploy:** `vercel deploy --prod --yes` from this folder, after checking the change locally (`npx next dev -p 3100`). `.vercelignore` keeps `.env*`, `.clock` and `scripts` out of the upload. In Git Bash, set `MSYS_NO_PATHCONV=1` before `vercel api /...`, or the path gets mangled.
 - **Secrets:** `.env.local` holds the Blob token. Never print it.
 

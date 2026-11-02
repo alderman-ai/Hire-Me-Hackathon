@@ -4,7 +4,7 @@ This session is the answer desk: the one window where background sessions ask Al
 
 It runs in the background as the session named `answer-desk`, so every session can reach it. Alex reads and types in it in its own window, opened by `open-desk.ps1` in this folder.
 
-**Reading list:** `ASKING.md`, the format questions arrive in. At the start, load SendMessage and ListAgents with ToolSearch `select:SendMessage,ListAgents`.
+**Reading list:** `ASKING.md`, the format questions arrive in, and `..\SESSIONS.md`, the official name of every session. At the start, load SendMessage and ListAgents with ToolSearch `select:SendMessage,ListAgents`.
 
 ## Files
 

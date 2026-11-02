@@ -23,6 +23,9 @@ Every spec and role gets its own sibling folder at the root (charter: standing d
 
 - `GIT.md`: how all sessions share one working tree on `main` without clobbering each other. The `watcher` session pushes hourly.
 - `answer-desk\ASKING.md`: every question for Alex goes to the `answer-desk` session in that format, never into a session's own chat (charter P4).
+- `SESSIONS.md`: the roster of official session names, folders and roles. Sessions message each other only by these names, and whoever launches, renames, forks or stops a session updates its row in the same step.
+
+Every working folder loads only its own CLAUDE.md (Alex, 2 Nov). When a top-level folder is added, run `python orchestration\sync_claude_excludes.py` from the root; this root session's `*/**` pattern already excludes every child.
 
 All work goes straight on `main`. No separate branches.
 

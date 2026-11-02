@@ -5,6 +5,7 @@ This session is the background session named `watcher`, started in this folder (
 ## Reading list
 
 - `..\GIT.md`: the rules every session follows. Read it at startup.
+- `..\SESSIONS.md`: the official name of every session and the folder each one starts in. Use it to find a folder's owner.
 
 ## The hourly git sweep
 
