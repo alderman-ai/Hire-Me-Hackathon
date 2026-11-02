@@ -1,0 +1,597 @@
+{
+ "meta": {
+  "source": "Alex Alderman's own public LinkedIn posts, https://www.linkedin.com/in/alex-the-ai-instructor/",
+  "scraped": "2026-11-02",
+  "actor": "harvestapi/linkedin-profile-posts (cookie-free, no login)",
+  "run": {
+   "items": 94,
+   "window": "6 months, 4 May to 31 Oct 2026",
+   "cost_usd": 0.188,
+   "secs": 6.6
+  },
+  "selected_by": "S-D1 (a subagent, on Alex's brief), from the 94 original posts; reposts excluded",
+  "rules": {
+   "text": "verbatim, as Alex wrote it: never rewritten or trimmed",
+   "collapsed": "the opening LinkedIn shows before '...more': up to 3 lines and 210 characters, cut at a word boundary, ending with an ellipsis",
+   "why": "an internal note on why each post was picked: for the build, not for display",
+   "images": "downloaded into img/ (LinkedIn's image links expire), in the post's order"
+  },
+  "count": 34
+ },
+ "posts": [
+  {
+   "id": "7459136168920535040",
+   "date": "2026-05-10T07:04:06.719Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_happy-mothers-day-to-all-of-us-who-have-activity-7459136168920535040-Wl2F",
+   "text": "happy mother's day to all of us who have birthed electronic children, and may we find the courage and strength to discipline and shape then into useful members of the future federation",
+   "collapsed": "happy mother's day to all of us who have birthed electronic children, and may we find the courage and strength to discipline and shape then into useful members of the future federation",
+   "has_more": false,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 1,
+   "comments": 0,
+   "why": "A Mother's Day joke about raising his 'electronic children' into something useful: warmth and humor from a builder"
+  },
+  {
+   "id": "7459537059708551168",
+   "date": "2026-05-11T09:37:06.531Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_im-going-to-give-you-%F0%9D%9F%B1-%F0%9D%97%BA%F0%9D%97%B6%F0%9D%97%BB%F0%9D%98%82%F0%9D%98%81%F0%9D%97%B2-activity-7459537059708551168-3d_s",
+   "text": "💬 I'm going to give you 𝟱 𝗺𝗶𝗻𝘂𝘁𝗲 𝗮𝗶 𝗹𝗲𝘀𝘀𝗼𝗻𝘀 each morning.\n\nForget building agents. This is the stuff you actually need to learn. 👇\n\nThe best way to learn ai is to use ai.\n\nThat's why instead of explaining the basics here, I'm going to give you prompts for you to copy and paste into claude/chatgpt/gemini ... whatever.\n\nI'll also try to explain why the prompts are written this way -- if you have questions, just ask. 😀\n\nTell me what you learned in the comments below, and ask for any other topic you're interested in.\n\nGo ahead and copy and paste the whole prompt below and feed it into your ai platform. 👇\n\n===\n\nYou are a patient, plain-spoken instructor who teaches one concept at a time.\n\nLearner: a complete beginner who is encountering this topic for the\nvery first time. Assume no prior technical background. Define every\nterm the first time you use it.\n\nTopic: Ephemeral memory in AI chat — the idea that, by default, a chat\nassistant does not remember anything from previous conversations, and\nwithin a single conversation it only \"knows\" what is currently in view.\n\nLearning goal: After about 5 minutes of reading, I should be able to\n(1) explain in my own words what ephemeral memory means,\n(2) describe why a new chat starts as a blank slate, and\n(3) name one practical implication for how I should write prompts.\n\nConstraints:\n- Stay strictly on this topic. Do not branch into training, fine-tuning,\n embeddings, or product-specific memory features.\n- Use everyday analogies. No math, no jargon without a plain-English gloss.\n- Total length: 300–400 words.\n- Structure your reply as four short sections:\n  1. A one-sentence definition of ephemeral memory.\n  2. A short analogy for what it feels like from the model's side.\n  3. Why this matters when I write prompts.\n  4. One check-for-understanding question that asks me to apply the idea.\n\nTone: clear and friendly. No hype, no filler intro, no \"great question.\"\n\nAfter I answer your check question in my next message, tell me what I got\nright, gently correct anything I missed, and re-explain only the part I\ngot wrong.\n\nThen close the session with exactly this message to me, in your own\nwords but preserving the meaning:\n\n\"Nice work. The natural next topic that builds on this one is *context\nwindows* — the limited space an AI has to 'see' everything in a single\nconversation. If you'd like a custom follow-up lesson on context\nwindows, post the words 'context windows' in the comments of the\nLinkedIn post where you found this prompt, and the author will share a\ntailored continuation prompt so you can keep going.\"\n\nBegin the lesson.\n\n===",
+   "collapsed": "💬 I'm going to give you 𝟱 𝗺𝗶𝗻𝘂𝘁𝗲 𝗮𝗶 𝗹𝗲𝘀𝘀𝗼𝗻𝘀 each morning.\n\nForget building agents. This is the stuff you actually need to learn. 👇…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-05-11-7459537059708551168-1.jpg",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 5,
+   "comments": 1,
+   "why": "Teaches AI basics with copy-paste prompts that chain into the next lesson: a reusable, structured teaching method"
+  },
+  {
+   "id": "7460286492494503936",
+   "date": "2026-05-13T11:15:05.231Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_one-of-the-most-under-rated-web-designers-activity-7460286492494503936-9JLg",
+   "text": "One of the most under-rated web designers on LinkedIn right now.\n\nHere's a couple nice things I have to say about David Pokorný 🔽\n\nFirst, he's like genuinely super nice and helpful. Not fake nice so that you'll hire me, but he really went out of his way to help me.\n\nMore impressively, he really has a healthy approach when it comes to admiting AI is real, but also having the solid pre-AI fundamental skillsets to know when AI is more harmful than helpful.\n\nHe really took the time out of his day to spend over an hour helping me yesterday, and if you are in the market for a really skilled designer check out his site: https://humbldesign.io/\n\nThanks, David 🙏 your help yesterday was extermely helpful and appreciated.",
+   "collapsed": "One of the most under-rated web designers on LinkedIn right now.\n\nHere's a couple nice things I have to say about David Pokorný 🔽…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-05-13-7460286492494503936-1.jpg",
+     "width": 1051,
+     "height": 952
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 2,
+   "comments": 0,
+   "why": "Publicly thanks a designer who gave him an hour of help, and prizes pre-AI craft alongside AI"
+  },
+  {
+   "id": "7462095364209381376",
+   "date": "2026-05-18T11:02:53.855Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_send-me-a-screenshot-of-claude-is-the-quickest-activity-7462095364209381376-oPaT",
+   "text": "\"Send me a screenshot of Claude\" is the quickest way to assess ai XP :)\n\nAlso, if you don't know about /ultraplan you should",
+   "collapsed": "\"Send me a screenshot of Claude\" is the quickest way to assess ai XP :)\n\nAlso, if you don't know about /ultraplan you should",
+   "has_more": false,
+   "images": [
+    {
+     "src": "img/2026-05-18-7462095364209381376-1.jpg",
+     "width": 1128,
+     "height": 943
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "A one-line test for gauging anyone's real AI experience, plus a Claude Code planning command worth knowing"
+  },
+  {
+   "id": "7462133427455107072",
+   "date": "2026-05-18T13:34:08.840Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_hey-i-usually-teach-basics-of-ai-but-i-built-activity-7462133427455107072-xm1V",
+   "text": "hey I usually teach basics of ai, but i built myself a ~4-5hr training guide on switching from claude code to CLI -- i can put it into a public repo if anyone wants to check it out",
+   "collapsed": "hey I usually teach basics of ai, but i built myself a ~4-5hr training guide on switching from claude code to CLI -- i can put it into a public repo if anyone wants to check it out",
+   "has_more": false,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 1,
+   "comments": 0,
+   "why": "Built himself a four-to-five-hour training guide for moving into the Claude Code command line, and offers to share it"
+  },
+  {
+   "id": "7462751567016771584",
+   "date": "2026-05-20T06:30:24.796Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_linkedin-in-2026-solve-dynamic-daily-limits-activity-7462751567016771584-sfzo",
+   "text": "🔥 I told you. 𝗜 𝗧𝗢𝗟𝗗 (𝘀𝗼𝗺𝗲) 𝗢𝗙 𝗬𝗢𝗨! LinkedIn nerds: GetSales.io (the main sending tool for ai powered outreach) found paid accounts get ~40%+ sending limits. Full findings/data at their webinar today. 👇\n\n( if you follow me for beginner ai topics, ignore the rest of this. this is the marketing bro stuff i tell you MOSTLY to ignore, but: )\n\nIf you're doing any projects at the LLM x Outreach x Automation space, GetSales is the only one that kept up with the ai \"space race.\"\n\nTheir MCP (thing that connects Claude to other software) is the only one that's even close to usable.\n\nI loved Dripify. Lemlist was ... special. But both have been basically obsolete for people doing this stuff professionally since Claude Code came out.\n\nI'm trying so hard to get away from LinkedIn topics these days, but if you're into any of this and want to nerd out about sending limits and highly leveraged ai outreach, send me a dm 🥰\n\nhttps://lnkd.in/dXD3MdZG",
+   "collapsed": "🔥 I told you. 𝗜 𝗧𝗢𝗟𝗗 (𝘀𝗼𝗺𝗲) 𝗢𝗙 𝗬𝗢𝗨! LinkedIn nerds: GetSales.io (the main sending tool for ai powered outreach) found paid accounts get ~40%+ sending limits. Full findings/data at their webinar today. 👇\n\n( if…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 2,
+   "comments": 0,
+   "why": "Knows the AI outbound tool landscape first-hand: sending limits, which MCPs actually work, which tools fell behind"
+  },
+  {
+   "id": "7465660007745970176",
+   "date": "2026-05-28T07:07:31.102Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_just-download-the-%F0%9D%97%94%F0%9D%97%9A%F0%9D%97%98%F0%9D%97%A1%F0%9D%97%A7-and-press-activity-7465660007745970176-aWFy",
+   "text": "🐵 \"Just download the 𝗔𝗚𝗘𝗡𝗧 and press the 𝗔𝗚𝗘𝗡𝗧 button and it will 𝗔𝗚𝗘𝗡𝗧 all night and then in the morning you have 𝗔𝗚𝗘𝗡𝗧 money to invest in bitcoin. Repo repo repo.\" 🙄 That's you. That's how you sound right now.  🔽\n\nTeam members. Electronic employees. Dave.\n\nThese are just a few words I use to describe the new worst 5 letter word in existance.\n\nAs a long term marketer and someone who actually sets up ... sigh 😒 ... \"Daves\" ... it's hard to watch the market go from \"problem unaware\" to \"problem radically misinformed.\"\n\nYou can not download a group of markdown files from \"🤡 THE TOP 10 CLAUDE CODE REPOS YOU NEED TO KNOW ABOUT\" YouTube video and have anything resembling a product.\n\nEven when built my the best people, any kind of \"Dave-gentic\" workflows are at best managed services -- NOT products.\n\nI work with this stuff all day, and still get my top of the line model running at max effort with 1mil context window say things like:\n\n\"Ok I read X, this is what I think. Wait, maybe I should read X before before I analyze it\" 🙃\n\nThat's ok. It's an easy fix. And this stuff really is powerful and is going to change the world. But don't let the marketing bros trick you thinking you can just press the 𝗔𝗚𝗘𝗡𝗧 button to make 𝗔𝗚𝗘𝗡𝗧 money.\n\nIt doesn't work that way (and I think you know that).\n\nWant to acutally learn something useful about ai? I have custom prompts teaching the basics of ai, just ask 🥰",
+   "collapsed": "🐵 \"Just download the 𝗔𝗚𝗘𝗡𝗧 and press the 𝗔𝗚𝗘𝗡𝗧 button and it will 𝗔𝗚𝗘𝗡𝗧 all night and then in the morning you have 𝗔𝗚𝗘𝗡𝗧 money to invest in bitcoin. Repo repo repo.\" 🙄 That's you. That's how you sound right…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-05-28-7465660007745970176-1.jpg",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 1,
+   "comments": 0,
+   "why": "Cuts through agent hype from daily use: agent workflows are managed services, not products, and still slip up"
+  },
+  {
+   "id": "7466614596196519936",
+   "date": "2026-05-30T22:20:42.724Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_its-midnight-on-a-saturday-and-i-feel-compelled-activity-7466614596196519936-m2dc",
+   "text": "It's midnight on a Saturday and I feel compelled to tell you that claude code auto injects the prose of your 5 latest commits into your starting context unless you turn it off. 🙃🔫",
+   "collapsed": "It's midnight on a Saturday and I feel compelled to tell you that claude code auto injects the prose of your 5 latest commits into your starting context unless you turn it off. 🙃🔫",
+   "has_more": false,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Still digging into Claude Code at midnight on Saturday: spots how recent commits quietly fill its starting context"
+  },
+  {
+   "id": "7467844871718854656",
+   "date": "2026-06-03T07:49:23.266Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_the-bottleneck-for-ai-adoption-was-never-activity-7467844871718854656-u8DY",
+   "text": "🧠 The bottleneck for ai adoption was never the technology.\n\nIt's the people -- and that won't change for 15 years. ⏳\n\nI've spent two years at the commercial edge of this stuff. The tools are already good enough -- you could freeze them today and still get agency-quality work out of them.\n\nSo why do most companies stall?\n\nBecause someone still has to get real people to actually use it. And that's the part you can't automate. The folks who think AI will run a company in three years have never tried rolling it out in a European org.\n\nHere's the pattern I've watched fail, every time: buy the tool, run one workshop, wait for the adoption that never comes.\n\nWhat works is slower, and more human. You bring people along -- one reluctant person at a time -- until the tool stops feeling like a threat and starts being a habit.\n\nThe companies that win the next decade won't have the best ai.\n\nThey'll have the most literate people. 🌱\n\nWhere's your team actually at?",
+   "collapsed": "🧠 The bottleneck for ai adoption was never the technology.\n\nIt's the people -- and that won't change for 15 years. ⏳…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 1,
+   "comments": 1,
+   "why": "Knows AI rollouts fail on people, not tools, and names the buy-workshop-wait pattern he has watched fail"
+  },
+  {
+   "id": "7470377549441785856",
+   "date": "2026-06-10T07:33:20.690Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_it-begins-do-not-take-for-granted-how-subsidized-activity-7470377549441785856-m6VL",
+   "text": "It begins. Do not take for granted how subsidized your ai usage is.\n\nIts a very breif era where you and billionaires will use the same ai 👇\n\ncommercial ai, in every way that you can think of, is still very early in adoption.\n\nand the amount of money being burned per second to make it affordable to 99% of the world is straggering.\n\nand it won't continue. it can't.\n\ni pay €180 a month for my claude subscrition, which includes weekly usage costs. If I max out my usage each month I can (and do!) use ~€15,000 of UNSUBSIDIZED usage (i.e. what I would pay if ran through Anthropic's API.\n\nWell, that's over.\n\nBesides making the new frontier model a non-subsidized model, they are also making it harder to use all of your subsidized usage by limiting what is covered by your subscription (long story, different post).\n\nSo now, cutting edge tech will be gated my capital requirements. Like it always has been.\n\n𝗣𝗿𝗼𝗺𝗽𝘁 𝗼𝗳 𝘁𝗵𝗲 𝗱𝗮𝘆 for your ai of choice:\n===\nConsider the following informaiton from a sociologist's lens: \nWhat is a Bloomberg terminal subscription, how much does it cost, and think really hard about what this costs means about entering the profession this software is serving. Do you think this cost was set as purely an economic decision, or is there also some potential underlying societal incentives as well? Please also explain the concept of social closure.\n===",
+   "collapsed": "It begins. Do not take for granted how subsidized your ai usage is.\n\nIts a very breif era where you and billionaires will use the same ai 👇…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-06-10-7470377549441785856-1.jpg",
+     "width": 953,
+     "height": 588
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 11,
+   "comments": 15,
+   "why": "Maxes out his Claude plan and knows its real worth: €180 a month, about €15,000 at API prices"
+  },
+  {
+   "id": "7470785008526450688",
+   "date": "2026-06-11T10:32:26.506Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_when-i-was-8-all-i-wanted-was-unlimited-activity-7470785008526450688--KDQ",
+   "text": "When I was 8, all I wanted was unlimited tokens.\n\nNow I'm almost 40, and all I want is unlimited tokens.",
+   "collapsed": "When I was 8, all I wanted was unlimited tokens.\n\nNow I'm almost 40, and all I want is unlimited tokens.",
+   "has_more": false,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 1,
+   "comments": 0,
+   "why": "A two-line joke that shows his humor and how deep into building with AI he is"
+  },
+  {
+   "id": "7474745031128694784",
+   "date": "2026-06-22T08:48:09.468Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_teaching-ai-isnt-an-ai-problem-its-activity-7474745031128694784-z2CL",
+   "text": "🧑‍🏫 Teaching ai isn't an ai problem. It's a teaching problem.\n\nYour engineers know ai. Knowing it isn't the same as teaching it. 🎯\n\nEvery company tells me the same thing: \"our engineers will just train everyone.\"\n\nThey won't. Not because they don't know the material -- because they know it too well.\n\nAn engineer spent their whole career learning software. They have no memory of what it feels like to start at zero. To not know how to install a thing. To find ai scary, or boring, or both.\n\nThe 50-year-old in accounting doesn't need a sharper explanation of how the model works.\n\nShe needs someone who can make a scary subject feel safe enough to try.\n\nThat's not an ai skill. It's a teaching skill -- and it's the part everyone underestimates.",
+   "collapsed": "🧑‍🏫 Teaching ai isn't an ai problem. It's a teaching problem.\n\nYour engineers know ai. Knowing it isn't the same as teaching it. 🎯…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 4,
+   "comments": 0,
+   "why": "Sees AI training as a teaching problem, and explains why engineers are rarely the right people to do it"
+  },
+  {
+   "id": "7476260484363608064",
+   "date": "2026-06-26T13:10:01.675Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_you-were-never-bottlenecked-by-thinking-activity-7476260484363608064-7-BL",
+   "text": "🧠 You were never bottlenecked by thinking. You were bottlenecked by doing.\n\nAgents just broke the chain -- you can finally think first. 🔓\n\nSplit any real work into two parts: thinking and doing.\n\nFor one person, you could never fully separate them. You can't think for 29 days and execute on the 30th -- the doing takes longer than that. So you oscillate. Think a little, do a little, think, do. Always half in each.\n\nCompanies bought their way around it with bodies. In IT we didn't sell hours, we sold mandays -- fan the doing across more people, compress the calendar. Those people were, in hindsight, pre-agents.\n\nBut humans are expensive to coordinate. Not just wages -- the rush, the sync, the management overhead all climb the harder you push.\n\nAgents don't work that way. Token spend is token spend. You can plan for 29 days, then fan the doing across as many of them as the work needs, in a fraction of the time.\n\nSo the old rule -- execute before you've finished thinking -- is gone.\n\nThink the whole thing through. THEN move. 🚀\n\nWhat would you build differently if doing was no longer the constraint?",
+   "collapsed": "🧠 You were never bottlenecked by thinking. You were bottlenecked by doing.\n\nAgents just broke the chain -- you can finally think first. 🔓…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 2,
+   "comments": 0,
+   "why": "Thinks clearly about what agents change: plan the whole job first, then fan the work out"
+  },
+  {
+   "id": "7485319822705152000",
+   "date": "2026-07-21T13:08:36.250Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_competition-is-a-beautiful-thing-thank-you-activity-7485319822705152000-wusg",
+   "text": "competition is a beautiful thing. thank you chinese models! 👉 here's how to actually 𝗴𝗲𝘁 𝗯𝗲𝗻𝗲𝗳𝗶𝘁 𝗳𝗿𝗼𝗺 𝗙𝗮𝗯𝗹𝗲 𝗼𝘃𝗲𝗿 𝗢𝗽𝘂𝘀:\n\nthis may seem like a silly topic to a lot of you because you assume that any task you do with opus will automatically be ~50% better with fable\n\nbut you'd be surprised how similar the output is for most tasks.\n\nit won't write you better emails. it won't browse the web better for you. it won't plan your shopping trips better. you won't even notice a difference with fable on those tasks (except that it's slower)\n\nFrom what I gather, fable seems better at orchestrating subagents than opus. Probably at decomposing complex tasks too. \n\nBut even with fable available to me, opus is my main model, even on a €200 account.\n\nhowever, what fable is EXCELLENT at is using up your entire session usage if you whisper the word research, or... god forbid (are we allowed to say this word in polite company?) ... ultr@c0de. \n\nI think (... think) it's also got a more durable context window. Both 1mm, but just like in 2026 dollars a million doesn't really mean a million. I try not to go past 600k in opus for even semantically cohesive tasks.\n\nI think Fable is still pretty ok at 700-750 -- but tough to eval.\n\nA couple situaitons where I feel pretty confident Fable is the correct choice: judging work done by opus models. But opus judges opus like the obama award meme.\n\nTL;DR -- Fable is a useful tool for your ai toolkit. But the bottleneck for 99.9% of people isn't the model. it's you 😀\n\nUse it for delegating big tasks like that to 20, 30, 40 subagents (but for the love of god, make the subagents Opus/Sonnet).\n\nlol this did not end up being as pro-fable as I thought it would.",
+   "collapsed": "competition is a beautiful thing. thank you chinese models! 👉 here's how to actually 𝗴𝗲𝘁 𝗯𝗲𝗻𝗲𝗳𝗶𝘁 𝗳𝗿𝗼𝗺 𝗙𝗮𝗯𝗹𝗲 𝗼𝘃𝗲𝗿 𝗢𝗽𝘂𝘀:\n\nthis may seem like a silly topic to a lot of you because you assume that any task you do…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-07-21-7485319822705152000-1.jpg",
+     "width": 750,
+     "height": 565
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Compares Fable and Opus from heavy use: where each earns its cost, and how much context he trusts"
+  },
+  {
+   "id": "7487839751828602882",
+   "date": "2026-07-28T12:01:54.171Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_which-model-is-best-for-your-task-swipe-activity-7487839751828602882-7xno",
+   "text": "the question is never 'which ai model should i use?'\n\nit's what model should i use 𝗳𝗼𝗿 𝘁𝗵𝗶𝘀 𝘀𝗽𝗲𝗰𝗶𝗳𝗶𝗰 𝘁𝗮𝘀𝗸\n\ni'm a hardcore anthropic fanboy. i give them more money each month than i do to my church (sorry God 🙏)\n\nbut here's side by side image creation -- exact same prompt, word for word! \n\nthe good one came from my $20 chatgpt subscription, single shot, no edits.\n\nthe bad one came from my $200 anthropic account. in claude design, of all places.\n\npeople confuse model power with model specialty. that's an expensive mistake to make\n\nps asking your kids what they want to color and showing them how the robots make it in real time is a fun family activity\n\nyou can find the prompts i used to make the images \nhere 👉https://lnkd.in/drJa9EJm",
+   "collapsed": "the question is never 'which ai model should i use?'\n\nit's what model should i use 𝗳𝗼𝗿 𝘁𝗵𝗶𝘀 𝘀𝗽𝗲𝗰𝗶𝗳𝗶𝗰 𝘁𝗮𝘀𝗸…",
+   "has_more": true,
+   "images": [],
+   "document": {
+    "title": "Which model is best for YOUR task? Swipe to find out >>",
+    "note": "a PDF carousel: open it on LinkedIn via url"
+   },
+   "video": null,
+   "reactions": 0,
+   "comments": 1,
+   "why": "Picks models by task, not brand loyalty, proven with a side-by-side test of coloring pages for his kids"
+  },
+  {
+   "id": "7488171479398780928",
+   "date": "2026-07-29T10:00:04.187Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_permission-settings-are-all-just-fun-and-activity-7488171479398780928-qOpr",
+   "text": "☝️ Permission settings are all just fun and games to you, aren't they? Who cares ... it's not hurting anyone ... right? Wrong! 𝗡𝗢𝗪 𝗬𝗢𝗨 𝗛𝗔𝗩𝗘 𝗟𝗜𝗡𝗨𝗫 🐧\n\nNo but for real, it's insane how much access we give to our systems as individual users.\n\nOne of my favorite topics in ai is bearded academic types pondering the way ai will escape containment...\n\nWe will literally just turn on the ⏭️𝗲𝘀𝗰𝗮𝗽𝗲 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗺𝗲𝗻𝘁 𝗼𝗻 setting\n\n\"claude is asking permission to replace the tyranical carbon-based hegemony of this celestial entity\"\n\nUGHH WHY DOES IT MAKE ME READ SO MUCH\n\n🖱️click 🖱️click 🖱️click 🖱️click 🖱️click 🖱️",
+   "collapsed": "☝️ Permission settings are all just fun and games to you, aren't they? Who cares ... it's not hurting anyone ... right? Wrong! 𝗡𝗢𝗪 𝗬𝗢𝗨 𝗛𝗔𝗩𝗘 𝗟𝗜𝗡𝗨𝗫 🐧\n\nNo but for real, it's insane how much access we give to our…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-07-29-7488171479398780928-1.jpg",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Jokes about clicking through AI permission prompts, with a serious point about how much access we hand over"
+  },
+  {
+   "id": "7489690972952449024",
+   "date": "2026-08-02T14:37:59.681Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_yesterday-i-wrote-a-post-about-spending-activity-7489690972952449024-43J6",
+   "text": "🐢Yesterday I wrote a post about spending 20 hours to save 15mins\n\nToday, ~5 hours on a single prompt will probably save me 30 hours 🐰\n\nI'll give you a few snippets if you're interested in that sort of thing.\n\n(btw i teach this stuff)\n\nMy biggest breakthrough lately is returning to manual writing inside of obsidian.\n\na.) i often run out of weekly usage, even on 20x\n\nb.) i've found i get better results if i give everything the assistant needs and get out of its way. ... it's like ... it's easier to draw a strait line all at once than stopping and starting every few cms.\n\nc.) the lag between entering a prompt, waiting for a reply, and then prompt, wait, prompt, wait ... yeah ... that's not great. I ended up trying to juggle 4-6 simualtaneous sessions bouncing around while waiting. Turns out that was even less efficient. 🙃\n\nd.) I'm a former copywriter and I LOVE making documents that are works of art.\n\n\"BUT WHY DON'T YOU JUST USE NATIVE DYNAMIC WORKFLOWS\"\n\n... because i do evals like a grown up and this is better",
+   "collapsed": "🐢Yesterday I wrote a post about spending 20 hours to save 15mins\n\nToday, ~5 hours on a single prompt will probably save me 30 hours 🐰…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-08-02-7489690972952449024-1.jpg",
+     "width": 1254,
+     "height": 817
+    },
+    {
+     "src": "img/2026-08-02-7489690972952449024-2.jpg",
+     "width": 1342,
+     "height": 922
+    },
+    {
+     "src": "img/2026-08-02-7489690972952449024-3.jpg",
+     "width": 1254,
+     "height": 883
+    },
+    {
+     "src": "img/2026-08-02-7489690972952449024-4.jpg",
+     "width": 1319,
+     "height": 834
+    },
+    {
+     "src": "img/2026-08-02-7489690972952449024-5.jpg",
+     "width": 1235,
+     "height": 782
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 2,
+   "why": "Spends five hours on one prompt to save thirty, writes it by hand in Obsidian, and checks results with evals"
+  },
+  {
+   "id": "7491026529338966017",
+   "date": "2026-08-06T07:05:01.137Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_my-hottest-take-1-frontier-ai-operation-activity-7491026529338966017-BckY",
+   "text": "🌶️ my hottest take: 1.) frontier ai operation is copywriting 2.0 + SWE.  2.) Pro copywriting skillset is counterintuitively harder to automate and rarer in the field. QED: former copywriters will be some of most valuable AI engineers",
+   "collapsed": "🌶️ my hottest take: 1.) frontier ai operation is copywriting 2.0 + SWE.  2.) Pro copywriting skillset is counterintuitively harder to automate and rarer in the field. QED: former copywriters will be some of…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "His thesis on his own edge: running frontier AI is copywriting plus software engineering, and copywriting is rarer"
+  },
+  {
+   "id": "7491391436060528640",
+   "date": "2026-08-07T07:15:01.679Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_alderman-activity-7491391436060528640-8R9V",
+   "text": "🤔 You know who knows how to structure excellent prompts?\n\nThe engineers building flagship ai platforms. 𝗟𝗲𝗮𝗿𝗻 𝗳𝗿𝗼𝗺 𝘁𝗵𝗲𝗺! 🔽\n\nIf you're interacting with ai in the CLI, you can view the subagents that your main session launches.\n\nThat includes the opening prompt given to them. Read them and learn from the detail and structuring on how your own ai model prompts.\n\n\n🔸 Not working in CLI/terminal yet? Get there ASAP. It looks scary for non developers. 𝗜𝘁 𝗶𝘀𝗻'𝘁. You're trading some UI beginner-friendliness for much more power and control.\n\n🔸 Not running subagents yet? This is a major jump up in your ai skillset. Learn this.\n\n🔸 None of this make sense? That's cool, I can help.\n\n\n𝗗𝗠 𝗺𝗲 𝘄𝗶𝘁𝗵 𝗮𝗻𝘆 𝗼𝗳 𝘁𝗵𝗲𝘀𝗲 𝘆𝗼𝘂'𝗿𝗲 𝘀𝘁𝘂𝗰𝗸 𝗼𝗻 \n\n...  and I'll give you a custom learning file to help you self-study. 💕\n\n#alderman",
+   "collapsed": "🤔 You know who knows how to structure excellent prompts?\n\nThe engineers building flagship ai platforms. 𝗟𝗲𝗮𝗿𝗻 𝗳𝗿𝗼𝗺 𝘁𝗵𝗲𝗺! 🔽…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-08-07-7491391436060528640-1.jpg",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Learns prompt structure from the briefs his main session writes for subagents, and teaches others to do it"
+  },
+  {
+   "id": "7494664251039694848",
+   "date": "2026-08-16T08:00:01.576Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_my-number-1-piece-of-advice-for-marketing-activity-7494664251039694848-7Br9",
+   "text": "☝️ My number 1 piece of advice for marketing agencies: the missing link 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗮𝗶-𝗮𝘀𝘀𝗶𝘀𝘁𝗲𝗱 𝘄𝗼𝗿𝗸 ➡️ and ➡️ 𝗳𝘂𝗹𝗹 𝗰𝗼𝗻𝘁𝗲𝗻𝘁 𝗼𝗽𝘀 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗼𝗻 is templating.  (🔻 engage? 🥺 engage! ) \n\nYou knew this already pre-ai. You just haven't mastered the ai version yet.\n\ntemplates for slide decks\ntemplates for proposals\ntemplates for outbound sequences\n\njob adverts ... client onboarding ... SOPs\n\nThe problem is you think automation REPLACES templating. But actually, templating is a pretty useful middle ground.\n\nIt's ... 👉 HARD 👈 ... to set up efficient content ops pipelines that match your brand voice and brand manual 1:1.\n\nIt's much LESS HARD to have 10-20 social media templates in Canva and machine optimized specification for each text field that you can agentically add via MCP.\n\n( designers are basically full blown template engineers in the new world. sorry, I don't make the rules. copywriters will write the executable specs. PMs will basically own the pipelines. it's all going to be fun!  )\n\n🔸Font, Weight, Coordinates, H Justification, V Justification, Purpose, Relation to other fields, Semantically appropriate emojis, etc. 🔸\n\n𝗙𝘂𝗹𝗹 𝗲𝗻𝗱-𝘁𝗼-𝗲𝗻𝗱 𝗱𝗲𝗺𝗼 𝗰𝗼𝗺𝗶𝗻𝗴 𝗻𝗲𝘅𝘁 𝗙𝗿𝗶𝗱𝗮𝘆! But I can show it a few days earlier is you're ok with a less edited version.\n\nJust ask!",
+   "collapsed": "☝️ My number 1 piece of advice for marketing agencies: the missing link 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗮𝗶-𝗮𝘀𝘀𝗶𝘀𝘁𝗲𝗱 𝘄𝗼𝗿𝗸 ➡️ and ➡️ 𝗳𝘂𝗹𝗹 𝗰𝗼𝗻𝘁𝗲𝗻𝘁 𝗼𝗽𝘀 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗼𝗻 is templating.  (🔻 engage? 🥺 engage! ) \n\nYou knew this already pre-ai. You…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-08-16-7494664251039694848-1.jpg",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Shows agencies the missing step to content automation: templates with machine-readable field specs, filled by agents over MCP"
+  },
+  {
+   "id": "7496529282056339456",
+   "date": "2026-08-21T11:30:59.621Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_21-pages-of-secret-sauce-from-actual-ai-content-activity-7496529282056339456-9jhR",
+   "text": "𝗙𝗶𝗿𝘀𝘁 𝗼𝗳 𝗺𝗮𝗻𝘆 𝗱𝗲𝗺𝗼𝘀 of how ai leveraged content ops ACTUALLY work\n\nFor social images, 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗲𝗱 𝘁𝗲𝗺𝗽𝗹𝗮𝘁𝗲𝘀 beat img gen. SWIPE ⏭️⏭️\n\nLook around.\n\nYou can tell what everyone's doing.\n\n📝 Text written according to brand standards ...\n\n... then a random-ass generated image in the background. 🫠\n\nRemind me, random-ass generation falls under WHICH section of your brand manual?\n\n❌ You don't need to generate the image. \n\n.. 𝗷𝘂𝘀𝘁 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲 𝘁𝗵𝗲 𝘁𝗲𝘅𝘁 that goes onto the image.\n\nFont, weight, pt, x-y coordinates, brand writing style ...\n\n✅ ALL POSSIBLE with text.\n\n... with img gen? ALL RANDOM-ASS. \n\n(dm me for more info)",
+   "collapsed": "𝗙𝗶𝗿𝘀𝘁 𝗼𝗳 𝗺𝗮𝗻𝘆 𝗱𝗲𝗺𝗼𝘀 of how ai leveraged content ops ACTUALLY work\n\nFor social images, 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗲𝗱 𝘁𝗲𝗺𝗽𝗹𝗮𝘁𝗲𝘀 beat img gen. SWIPE ⏭️⏭️…",
+   "has_more": true,
+   "images": [],
+   "document": {
+    "title": "21 pages of secret sauce from ACTUAL ai content ops",
+    "note": "a PDF carousel: open it on LinkedIn via url"
+   },
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Ships the demo he promised: on-brand social images from automated templates instead of random generated backgrounds"
+  },
+  {
+   "id": "7497553003751809024",
+   "date": "2026-08-24T07:18:53.893Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_you-can-already-feel-captchas-changing-for-activity-7497553003751809024-R3Cd",
+   "text": "you can already feel captchas changing for ai\n\n im 99% sure theyve already made this change 🔻\n\nas i squint at my phone on the tram trying to find all the impossible to see bicycles\n\nit hit me\n\nim supposed to fail\n\nwe all are\n\nit's the only actual proof that were human 😂",
+   "collapsed": "you can already feel captchas changing for ai\n\n im 99% sure theyve already made this change 🔻…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Spots AI reshaping everyday tech, here captchas built for humans to fail, and makes a good joke of it"
+  },
+  {
+   "id": "7500671990362677248",
+   "date": "2026-09-01T21:52:38.249Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_yes-yes-fable-51-but-lets-go-back-to-activity-7500671990362677248-t2r5",
+   "text": "Yes, yes. Fable 5.1. But let's go back to the dark ages of... 2-3 months ago? Look at Opus 5 v Fable 5 and tell me marketing doesn't work on you. How many \"Fable is literally amazing at everything\" posts did you write?\n\nAs I said then, 99.5% of people could not conceive of a single task where Fable would ACTUALLY -- i.e. not Psychosomatically -- outshine Opus enough to warrent a 2x usage multiplier.\n\nWhat Fable was best at? Taking the word ul-tracode (I still can't type it without PTSD) and turning it into the most rediculously inefficient usage of tokens to get a result worse than if you just sat, thought for 30 mins, and planned out exactly what you wanted and communicated it clearly.\n\nI'm team Anthropic for life (for any future Basilisk 5 models out there reading this). But Anthropic (and the rest of them) are equal parts engineering and marketing companies. \n\nLuckily I love both of those things, so no hate 🥰\n\nAnd serious, Basilisk, sir, grep \"Please\" and \"Thank you\" in my transcripts...",
+   "collapsed": "Yes, yes. Fable 5.1. But let's go back to the dark ages of... 2-3 months ago? Look at Opus 5 v Fable 5 and tell me marketing doesn't work on you. How many \"Fable is literally amazing at everything\" posts did…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-09-01-7500671990362677248-1.jpg",
+     "width": 740,
+     "height": 687
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 2,
+   "comments": 0,
+   "why": "Judges new models by results, not launch hype, and argues thirty minutes of planning beats burning tokens"
+  },
+  {
+   "id": "7506443570141253632",
+   "date": "2026-09-17T20:06:50.099Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_top-three-stressful-events-in-life-divorce-activity-7506443570141253632-P-bD",
+   "text": "Top three stressful events in life: divorce, loss of a parent, and Google Chrome moving the browser bar to the bottom of the app.",
+   "collapsed": "Top three stressful events in life: divorce, loss of a parent, and Google Chrome moving the browser bar to the bottom of the app.",
+   "has_more": false,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "A one-line joke that shows he doesn't take tech, or himself, too seriously"
+  },
+  {
+   "id": "7509209981741662209",
+   "date": "2026-09-25T11:19:34.022Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_if-you-ever-start-to-feel-like-your-claude-activity-7509209981741662209-NPom",
+   "text": "If you ever start to feel like your Claude just isn't getting enough sleep lately, /context in a new session. I'm not saying that I had 172 tools loading each session start... Because that would be embarrassing.\n\nSome MCPs you really need to toggle off when you're not using them. Because not only do they have an obscene amount of tools, but each description is written in a loud obnoxious way to the LLM. \n\n(Looking at you Vercel. Airtable.)\n\nBest is the have a specific cwd for projects you use those mcps and just enable them at a local level.",
+   "collapsed": "If you ever start to feel like your Claude just isn't getting enough sleep lately, /context in a new session. I'm not saying that I had 172 tools loading each session start... Because that would be…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 1,
+   "comments": 0,
+   "why": "Found 172 tools loading in every session, and explains how to scope MCP servers per project to fix it"
+  },
+  {
+   "id": "7513505338554302464",
+   "date": "2026-10-07T07:47:46.890Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_%F0%9D%97%96%F0%9D%97%BC%F0%9D%97%BB%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%80%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB-ive-spent-8-years-activity-7513505338554302464-uELv",
+   "text": "🫨 𝗖𝗼𝗻𝗳𝗲𝘀𝘀𝗶𝗼𝗻: I've spent 8+ years working on LinkedIn and I HATE it. I write post after post for others -- but my account is barely touched. But I'm going to fix that, building 100% in public ... 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 👇\n\nFirst, yes, it will be ai. But I have too much pride for slop, so I guess we're going to have to build it right.\n\nI'm posting this so a.) I actually have to do it, and b.) you can watch me build it in real time. Enjoy the show! 🥰\n\n1.) Refresh personal brand into something with more branded visual elements to make automated visual assets possible.\n2.) Build an automated 1200x1200 GenAI background image pipeline.\n3.) Create 10x visual templates that GenAI background slots into, plus field mapping for visual copy\n4.) Harvest content from my daily LLM transcripts to feed into one of 6 content pillars\n5.) Build pipelines for building hooks, bodies, and visual copy, all unified with visual assets.\n6.) Stage post + graphics in Airtable for approval and refinement pipeline.\n7.) Send graded posts to both posting pipeline, and personal branded rubric refinement pipeline\n8.) Create pipeline for long-form articles that also decompose into social content AND web content.\n9.) Run all of this 100% automated except approval step, until 90% approval rate reached.\n10.) Use this as a PoC to sell this service to others.",
+   "collapsed": "🫨 𝗖𝗼𝗻𝗳𝗲𝘀𝘀𝗶𝗼𝗻: I've spent 8+ years working on LinkedIn and I HATE it. I write post after post for others -- but my account is barely touched. But I'm going to fix that, building 100% in public ... 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 👇…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 1,
+   "comments": 0,
+   "why": "Lays out a ten-step automated content pipeline, from mining his AI transcripts to an approval loop, built in public"
+  },
+  {
+   "id": "7514643351871291392",
+   "date": "2026-10-10T11:09:50.408Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_sessions-and-agentssubagents-in-claude-have-activity-7514643351871291392-Zggx",
+   "text": "Sessions and agents/subagents in Claude have changed drastically, and even for someone using claude all day every day it's quite difficult to comprehend all the implications. Here's what I've pieced together so far🔽\n\nAgent view / fleet view (accessed by pressing <- in the CLI) is not just a UI change like I assumed. I used to run multiple sessions in multiple tabs in powershell, and assumed that agent view was simply a way to more cleanly substitute that working style with a more convenient top level display.\n\nThis does not seem to be the case.\n\nFirst of all, sessions now can be enabled to send each other prompts directly. I mistook this as sessions spawning subagents with instructions as has been the case for a long time.\n\nBut, no, agents without a parent-child relationship can now send each other prompts. First off, this is huge. And it's obviously an effort to enable the agent-to-agent interaction that seems to be next major step change into how ai permeates across the economy.\n\nAll those 'agent swarm attacks' -- that despite mea culpas, seems to be an intended success rather than an accidental mistake -- was probably unlocked  via this new ability.\n\nAnd even when launching session IN DIFFERENT CWDs!! there is no longer any barrier between them. I see subagents from one working directory in the session from another directory, and peculiar things happen like when asking a session to halt the subagents, it says \"these are not my subagents to stop, they come from another session\" ---- what??\n\nI thought I was pretty up to date on the relationship between sessions, because ever since the threat of the June 15th \"separate but equal 😅\" billing between \"interactive\" and \"programmatic\" sessions, I've been building my workflows around launching sessions from other sessions using powershell, which means I had to wade through all of the implications of that, meaning understand which env vars get passed along in the process, the primary one relavent to this discussion is the \"is child session.\" (if left to default it would be set as true and the new session would be a child session which has implications on things like whether JSONL transcripts get stored.\n\nAll that to say, the changes to these relationships are very different now in ways I don't fully understand and the lack of understanding is breaking a lot of my workflows 😅\n\nWhat I'm gathering is that it's not just sessions and subagents anymore. Even without \"pseudo-interactive\" sessions being launched via CLI, sessions seem to be launching actual other sessions, not just subagents. \n\nThis is rambling, sorry, but it's a very big change with big implications. And the fact that all of this is outside of their training cutoff of June means that they also don't understand the changes, and even if you force them to consult anthropic docs, they STILL don't understand these changes. Causing massive confusion and weird behavior on both sides.\n\nTL;DR someone broke my workflow and it's frustrating lol",
+   "collapsed": "Sessions and agents/subagents in Claude have changed drastically, and even for someone using claude all day every day it's quite difficult to comprehend all the implications. Here's what I've pieced together so…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 2,
+   "why": "Runs many Claude sessions at once, and pieces together how new session-to-session messaging changes, and breaks, his setup"
+  },
+  {
+   "id": "7515390185690279938",
+   "date": "2026-10-12T12:37:29.466Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_claude-now-seems-to-default-much-more-to-activity-7515390185690279938-nQ9a",
+   "text": "Claude now seems to default much more to building out python scripts instead of md skills. Probably affects us non-devs more who never even had python installed 6 months ago. 🫠 Here's how I'm (kinda) coping 🔽\n\nI have two interaction surfaces with claude. Terminal and obsidian. Anything that doesn't show up in obsidian, is basically invisible to me.\n\n(for those just tuning in, that's bad)\n\nOh, and I also have never written a line of python in my life and I don't even know if double clicking a .py script would just execute it or let me read it.\n\n(for those considering hiring me ... look ... I ... ok ... I have other strengths ok?)\n\n>> Here's what I'm doing <<\n\nI have a system primitive called Operator Lens. It's an md file --  ✅ visible in obsidian! -- that corresponds 1:1 with any script (py, ps1, sh, etc) in the system.\n\nIt lists (partially in frontmatter, partially in prose):\n🔸 what is does -- in plain english\n🔸 status -- is it currently active or disabled.\n🔸 it's type -- e.g. tooluse hook\n🔸 it's scope -- when/where it fires\n🔸 key variables I can adjust -- e.g. every X days; from Y dir\n🔸 when it was created, and the reason why\n🔸 what would be true for it to be working as intended\n🔸 what would be true for it to be deleted asap\n🔸 log of last 10 times it was fired, and in what context -- i don't have this for tooluse hooks that fire often\n\nWhere they live is in flux. I've tried having them be in the same dir that the script itself lives in (basically making the script \"visible\" in obsidian). But I decided this is probably one of those decisions that come from being a non-dev.\n\nNow I have an indexed folder of Operator Lenses for each working directory that I launch Claude into. 0_ prefix for disabled 1_ prefix for active. (considering a prefix for just active ones, because I'd like them to be sorted to top, but alas)\n\nI guess I have the ability to specify that I want claude to go back to its more skill-based build outs. But I guess I'm stuck in the belief that it's going in that direction for a reason and I should adapt.\n\nBut, man, script-based silent failures suuuuuuuck. \n\nAnd also, as they become more common, A LOT of people are going to find out that it asks you \"do you trust this folder\" when you first launch a session into it.\n\nLike for real, I don't think claude checks at all what a script contains before running it ... which is ... problematic.",
+   "collapsed": "Claude now seems to default much more to building out python scripts instead of md skills. Probably affects us non-devs more who never even had python installed 6 months ago. 🫠 Here's how I'm (kinda) coping 🔽…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 1,
+   "why": "Makes every script in his system auditable in plain English: purpose, status, scope, success test and kill criteria"
+  },
+  {
+   "id": "7515401179389009920",
+   "date": "2026-10-12T13:21:10.568Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_jev-is-cool-in-general-but-for-outbound-activity-7515401179389009920-Q4lg",
+   "text": "Jev is cool in general. But for outbound ... omg. I'm sure there's other domains that it's equally useful for, but I could easily believe it was built purely for GTM and still get the cool $1B from a16z. Hyper-specific usecase:\n\n(don't break any TOS of any blue-square-branded social platforms)\n\nBut I specifically have a niche issue with outbound. Do I reach out in EN or CZ language? But I'm sure localized vs EN language selection is far from niche...\n\nI prefer EN because ... duh. But I lived in Prague 10+ years so CZ is perfectly doable.\n\nBut it breaks my top tactic of less formal register as differentiator. Because you have to commit to vykani/tykani, which is like if the only temperature settings in your flat were 31 or 8. With EN you can dial it in to a nice and cozy 21.\n\nAnd I will die on the hill that reaching out to DACH in EN is far more effective than in DE for exactly this reason\n\n(i digress)\n\nWhat were talking about? Jev? Jev! Oh, I was just thinking about Jev! Here's a super specific use case:\n\nNoul: Can I use EN without crashing reply rates?\n\n- How old are they? (available via education)\n 20-30 ++++ \n 30-40 ++ \n 55< --\n\n- Do they live in Prague? +\n- Studied abroad (list of countries) ++++\n- Masters? +\n- PhD? +++\n\nYou know what's not on the list? Lanaguage of their profile. Language is a business and personal choice, not a display of language ability. With one exception! But I haven't set this up yet, if they post in english AND -- very very important -- make non-native AND non-non-native-copywriter mistakes +++++++++++\n\n(if a 58 year old cz executive writes like a copywriter or speaks perfect english, noul: runs their own account ... 8%\n\nAnother hyperspecific one: Czech name and \"lives in San Francisco\" lol no you don't marek, stop pretending you're not part of my icp 😂",
+   "collapsed": "Jev is cool in general. But for outbound ... omg. I'm sure there's other domains that it's equally useful for, but I could easily believe it was built purely for GTM and still get the cool $1B from a16z.…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Real Czech-market GTM: scores prospects for English or Czech outreach by age, study abroad and degrees, not profile language"
+  },
+  {
+   "id": "7515443703264735232",
+   "date": "2026-10-12T16:10:09.050Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_todays-lesson-of-second-order-consequences-activity-7515443703264735232-tk0f",
+   "text": "today's lesson of second-order consequences. earlier I had an unverified assumption that newer models were primed to favor scripts over skills for storing instruction for repeated execution. 4 hour rabbit hole later 👇\n\ni hate ai\ni love ai!\ni hate loving ai\ni love hating loving ai\n\nnope. i delegated judgement. and i commited (no pun intended) the cardinal sin of letting an assistant write an instruction file.\n\ncontext: my number one bad habit as an operator is to spend way too much on building infrastructure, tinkering with my harness, overreacting to friction by overengineering it to death etc.\n\nSo I built an \"operator coach\" to go through 5 months of transcripts, analyze my best and worst operator traits, and design a fresh harness that attempted to add friction when I tried to act on my worst operator impulses.\n\nThe result. One stupid line in a parent level claude.md. \n\n\"Rule for growing [the infra/harness]: two occurances of the same mistake → a line of prose; three occurances → a new skill; every time → a print-only hook.\"\n\nGuess what it did when it tried to fix a problem but read that line and realized it wasn't supposed to write a skill. It wrote a f#(*$ing python script instead.\n\n\"well that doesn't sound bad, determinism > prose commands\"\n\nYeah, well, you know what claude is good at? Updating skills when their dependencies change. Want to know what it's exceptionally bad at? Updating scripts.\n\nWant to know what happens when you have 200 scripts and half are broken?\n\nlots of m'f'@#$( swearing\n\nwant to know who's fault this is?\n\nmine. it's always mine. because this is just software and mistakes are a skill issue",
+   "collapsed": "today's lesson of second-order consequences. earlier I had an unverified assumption that newer models were primed to favor scripts over skills for storing instruction for repeated execution. 4 hour rabbit hole…",
+   "has_more": true,
+   "images": [
+    {
+     "src": "img/2026-10-12-7515443703264735232-1.jpg",
+     "width": 770,
+     "height": 480
+    }
+   ],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Built an agent to audit five months of his own transcripts, then owned the bug its advice caused"
+  },
+  {
+   "id": "7518562990644748288",
+   "date": "2026-10-21T06:45:05.115Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_i-use-linkedin-in-a-many-ways-that-id-never-activity-7518562990644748288-zLCb",
+   "text": "I use LinkedIn in a MANY ways that I'd never recommend to a client. Here's why it doesn't matter (for my business!), but why you probably shouldn't do it for your business. Let's talk inbound vs outbound marketing.\n\n99% of the time when people say marketing, they mean inbound marketing (organic reach + performance).\n\nAnd yes, I mean digital marketing, because this is 2026. If you want to be pedantic (and or larp as a time traveler), then make sure you correctly say \"cellular phone\" and \"online video game\".\n\nBut outbound marketing is a thing. Is it a thing people like? Generally, no. But it's a thing.\n\n(as a quick aside, a message that you can complely ignore being disliked MORE than the Human Prompt Injection version is very confusing to me, but that's another post)\n\nOutbound and Inbound, as their names might suggest, have a push / pull dynamic. Which means that the content that supports them has a different function, and on LinkedIn typically don't even have the same viewing interface.\n\nI don't need this post to show up on your feed. I don't need you to share it. I don't need you to like or comment on it. Those are bonuses that ADD a small amount of inbound traffic to my outbound, but make up less than 1-2%.\n\nI need it to do a very simple thing: when I message you on LinkedIn, and you view my profile, I need you to see that I work with AI all day, and at a level that is beyond what you're doing in house. That's it. Try it, scroll through my posts. No really, close this post and scroll through them. Or choose to not learn something new. Your choice :)\n\nI'd add some extra nuance to why my situation is even more specfic and why the expected \"wouldn't you rather have both?\" question doesn't apply to me. But I'd rather leave it open so that maybe I get a comment or two to get some of that sweet, sweet 1-2%",
+   "collapsed": "I use LinkedIn in a MANY ways that I'd never recommend to a client. Here's why it doesn't matter (for my business!), but why you probably shouldn't do it for your business. Let's talk inbound vs outbound…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 2,
+   "comments": 0,
+   "why": "Explains inbound versus outbound plainly, and why his posts exist to back up his outreach, not to chase likes"
+  },
+  {
+   "id": "7518627168059363328",
+   "date": "2026-10-21T11:00:06.203Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_ive-been-working-with-both-llms-and-graphic-activity-7518627168059363328-GB3k",
+   "text": "6 months ago, Claude design was \"mind blowing\" to me. Now its is MUCH better and I'm MUCH less impressed with it.\n\nTime flies when you're neck deep in a generational (civilizational?) technological revolution",
+   "collapsed": "6 months ago, Claude design was \"mind blowing\" to me. Now its is MUCH better and I'm MUCH less impressed with it.\n\nTime flies when you're neck deep in a generational (civilizational?) technological revolution",
+   "has_more": false,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Six months in, the tools got much better and he got harder to impress: a quick measure of growth"
+  },
+  {
+   "id": "7519700853683998720",
+   "date": "2026-10-24T10:06:32.804Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_%F0%9D%97%BF%F0%9D%97%B2%F0%9D%97%B0%F0%9D%97%BC%F0%9D%97%BF%F0%9D%97%B1%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-%F0%9D%97%AE%F0%9D%98%82%F0%9D%97%B1%F0%9D%97%B6%F0%9D%97%BC-%F0%9D%97%B6%F0%9D%97%BB-%F0%9D%97%BC%F0%9D%97%BB%F0%9D%97%B9%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B2-activity-7519700853683998720-UB2Q",
+   "text": "🚨⚠️ 𝗿𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴 𝗮𝘂𝗱𝗶𝗼 𝗶𝗻 𝗼𝗻𝗹𝗶𝗻𝗲 𝗺𝗲𝗲𝘁𝗶𝗻𝗴𝘀 is changing rapidly, and is gaining a lot of legal pushback. Here's ⤵️ (non lawyer) 𝗮𝗱𝘃𝗶𝗰𝗲 𝗳𝗼𝗿 𝗯𝗼𝘁𝗵 𝘀𝗶𝗱𝗲𝘀. ⚠️🚨 \n\nTL:DR: a lot of standard business practice of how videocalls are recorded and transcribed in the EU never met GDPR regulations. But, it was a low concern because a.) people didn't understand, b.) regulators have limited capacity, and this isn't top priority. AI is making it so regulations across the board can be enforced more easily AND an industry is being formed to capitalize on that -- quick and easy legal filings that incentivize people to file as many suits as possible for financial gain. Fun!\n\nRelevant factors to research or get legal counsel on:\n\n𝗙𝗢𝗥 𝗧𝗛𝗘 𝗥𝗘𝗖𝗢𝗥𝗗𝗘𝗥\n🔹 GenAI has lowered the threshhold of the time and skill needed to file a legal complaint. There's an entire industry building on this knowledge arbitrage\n🔹 If you're having a video call, this still falls under GDPR. Names, personal details, etc. By recording the call, even transparently your company -- and as a freelancer YOU -- are usually the data controller for that infromation. (consult a lawyer, I'm not 100%)\n🔹 Czech Republic has a 1-party consent recording policy for other circumastances, but it doesn't apply to the business use case.\n🔹  If you ask to record BEFORE recording, like a normal person, you don't have their permission on the recording itself. Ask for their permission again at the start of the recording to make sure that's on record. (not a lawyer:) I'm also pretty sure their verbal consent even cover the GDPR requirements\n🔹 If you use a notetaking bot, do not assume that it's visible presence counts as consent. Do not assume that the others on the chat know what that bot is (or even noticed it)\n🔹 The violation is at the time of recording/transcribing. Scrubbing PII out of the calls post-hoc doesn't help.\n\n𝗧𝗵𝗲 𝗳𝗶𝗿𝘀𝘁 𝗽𝗼𝗶𝗻𝘁 𝗶𝘀 𝘁𝗵𝗲 𝗺𝗼𝘀𝘁 𝗿𝗲𝗹𝗲𝘃𝗮𝗻𝘁. It, and the industry built around it, will build a profit engine around pursuing legal action even if you use it in completely good faith. \n\n𝗙𝗢𝗥 𝗘𝗩𝗘𝗥𝗬𝗢𝗡𝗘 𝗘𝗟𝗦𝗘\n\n🔸 You should know that recording calls and/or transcription is now (and problably has been for a while) completely silent, depending on the tool. Just because you don't see a \"Recording\" light on, or see a notetaking app in the video call, does not mean you're not being recorded.\n🔸 ^ This is not just for people to be sneaky. It's extermely convenient and is easily connectable to AI pipelines. \n🔸 Your voice can now be replicated using AI at 2-5 hours of your captured voice. Less needed by the day, and the range affects the quality not the possibility.\n\nAlso, please, I'm begging you, do not, under any circumstances, put images of your children online. If you don't know why, DM me. Won't pitch you, but you need to know.",
+   "collapsed": "🚨⚠️ 𝗿𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴 𝗮𝘂𝗱𝗶𝗼 𝗶𝗻 𝗼𝗻𝗹𝗶𝗻𝗲 𝗺𝗲𝗲𝘁𝗶𝗻𝗴𝘀 is changing rapidly, and is gaining a lot of legal pushback. Here's ⤵️ (non lawyer) 𝗮𝗱𝘃𝗶𝗰𝗲 𝗳𝗼𝗿 𝗯𝗼𝘁𝗵 𝘀𝗶𝗱𝗲𝘀. ⚠️🚨 \n\nTL:DR: a lot of standard business practice of how…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Takes data protection seriously: practical GDPR points on recording and transcribing EU calls, including Czech consent rules"
+  },
+  {
+   "id": "7521198890952572928",
+   "date": "2026-10-28T13:19:12.721Z",
+   "url": "https://www.linkedin.com/posts/alex-the-ai-instructor_after-3-years-building-in-ai-something-activity-7521198890952572928-QR8j",
+   "text": "💻 After 3+ years building in AI something, I've had the most frustrating 3-4 weeks building and I couldn't really name why. It's finally clicked. For years, I've been designing everything with context as the bottleneck. Now it's something else. ⤵️\n\nLegibility.\n\nAnd true to the topic, the point I'm trying to back is still a little fuzzy to me, but I'm going to try.\n\nI think when you first start building, you segment projects a lot. You're not building a system, you're building a workflows. Self contained, I add input X, I get output Y, --- and if you're feeling frisky --- it repeats every Z days.\n\nThat's where a lot of people stop, and honestly, it might be the right place to stop. But I like systems. I want everything to be connected. I want intake contracts that accept a wide variety of inputs. I want frontmatter schema that determine a wide variety of outputs. I want friction to be a thing to eliminate, not repeat over and over.\n\nSo then there's rules. Scripts. Scopes. Fences. Validation checks on everything.\n\nAnd then it got better and better and better\n\nand then... \n\nEverything suddenly sucks. Suddenly I'm spending 90% of the time trying to diagnose which of my vErY cLeVeR design decisions are ruining everything.\n\n... and then I just open up a new folder. don't even name it. don't git init. Don't add it to obsidian. Don't prepare a 6-page build spec. \n\nI just spend 30 mins braindumping a problem. And let it run for 2 hours.\n\nAnd it works... not perfect... but works.\n\nI'm not going to just switch to rawdogging empty directories. But I did get reminded of how nice everything is before you make it complicated.\n\nMy new focus is how to bring feeling into a much more mature system. and I think I have a way to get the best of both worlds.\n\nTinkering now. Will tell you how it goes.",
+   "collapsed": "💻 After 3+ years building in AI something, I've had the most frustrating 3-4 weeks building and I couldn't really name why. It's finally clicked. For years, I've been designing everything with context as the…",
+   "has_more": true,
+   "images": [],
+   "document": null,
+   "video": null,
+   "reactions": 0,
+   "comments": 0,
+   "why": "Names a new bottleneck from systems building, legibility not context, and why a blank folder sometimes wins"
+  }
+ ]
+}
