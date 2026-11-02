@@ -29,3 +29,6 @@ __pycache__/
 
 # Alex's open-tasks tracker (private items; kept by orchestration)
 /Open tasks.md
+
+# Alex's verbatim wants, kept by orchestration (candid chat lines; like site-map/local/)
+/orchestration/local/
