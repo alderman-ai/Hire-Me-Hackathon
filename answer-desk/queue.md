@@ -695,3 +695,21 @@ Received: 2026-11-02 16:32 CET (+01:00)
 POKE S1: thanks for the Canva and LinkedIn research, it's running. Two research approvals still wait on you, one tick each: "Approve - research for the GetSales demo and website.md" (since 14:54; the sessions are carrying on with drafts) and "Approve - research for the blog pipeline.md" (since 14:57; non-blocking).
 ```
 
+## TASK S2: Do - get the computer ready for tonight.md — open
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
+Received: 2026-11-02 16:34 CET (+01:00)
+16:34 CET: alert shown to Alex with a PushNotification.
+
+```
+TASK S2: Do - get the computer ready for tonight.md is waiting on you: five quick steps, about 5 minutes, ideally by 17:45 (keep the PC awake, pause Windows updates for a week, check /usage and decide on usage credits, pin four sessions, a yes or no on one retry setting). It keeps the background sessions working overnight instead of stopping.
+```
+
+## NOTE from Alex — 16:36
+Alex at the desk: approvals include the feedback section. Relayed verbatim to every session with an open TASK (s-d3-getsales, wave2-specs, s-d1-scraping, s1-research, s-d9-legibility, website) and to orchestration, asking it to make it a standing rule for every session that writes operator tasks.
+
+```
+I'm filling in all of the operator tasks now and they just keep coming in. Make sure that even if I approve something, the feedback section (`feedback section`) gets considered as well. Even if I approve something that doesn't include what I mentioned in the feedback section, it's approved along with whatever's in the feedback section
+```
+
+16:36 CET: Alex: "Tell the orchestrator just in case he needs to enforce that". Sent to orchestration with who has the rule; wave2-specs unreachable (its two open tasks didn't get it), so it went to s-d4-blog-pipeline instead.
+
