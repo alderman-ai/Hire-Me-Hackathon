@@ -1,59 +1,187 @@
 {
-  "placeholder": true,
-  "about": "PLACEHOLDER from website (W2), so the carousel can be built and checked. orchestration replaces this whole file with K1 (written through alex-voice; VERDICT.md 2.4). While placeholder is true, no production build shows any of it (app/recommend.ts). Ids are the content library's (orchestration/local/library/*.json). An item shows its id's page if the site has it, else its fallback's, else it's skipped. Each why is the line under the card.",
+  "placeholder": false,
+  "about": "Recommended for you (VERDICT.md 2.4; BUILD.md 9, the best-of build). Each item is a library id and its fallback; why is empty, so each card shows the page's own dek. An id with no page yet shows its fallback, else it's skipped.",
   "lists": {
     "default": [
-      { "id": "m-s02-c", "why": "[Placeholder why-line: K1 brings it]", "fallback": "demo-linkedin-voice-entry" },
-      { "id": "demo-getsales-routing", "why": "[Placeholder why-line: K1 brings it]", "fallback": "demo-d2-company-research" },
-      { "id": "demo-d1-scraping-briefing", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-pipeline-promise", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-f" },
-      { "id": "clip-c-s08-same-thing-tomorrow", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-day-one", "why": "[Placeholder why-line: K1 brings it]", "fallback": "clip-day1-5-bottleneck-human-v2" }
+      {
+        "id": "art-pipeline-promise",
+        "why": "",
+        "fallback": "demo-getsales-routing"
+      },
+      {
+        "id": "knowledge-arbitrage",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      },
+      {
+        "id": "so-good-ai-that-it-looks-human",
+        "why": "",
+        "fallback": "demo-linkedin-voice-entry"
+      },
+      {
+        "id": "art-managed-service",
+        "why": "",
+        "fallback": "demo-d2-company-research"
+      },
+      {
+        "id": "art-day-one",
+        "why": "",
+        "fallback": null
+      }
     ],
     "growth": [
-      { "id": "demo-getsales-36-workflows", "why": "[Placeholder why-line: K1 brings it]", "fallback": "clip-c-s10-36-workflows" },
-      { "id": "demo-getsales-routing", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "m-s02-c", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-pipeline-promise", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-f" },
-      { "id": "demo-d1-scraping-briefing", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-managed-service", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-i" }
+      {
+        "id": "knowledge-arbitrage",
+        "why": "",
+        "fallback": "demo-getsales-routing"
+      },
+      {
+        "id": "so-good-ai-that-it-looks-human",
+        "why": "",
+        "fallback": "demo-linkedin-voice-entry"
+      },
+      {
+        "id": "art-pipeline-promise",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      },
+      {
+        "id": "art-day-one",
+        "why": "",
+        "fallback": null
+      }
     ],
     "ceo": [
-      { "id": "m-s02-j", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-pipeline-promise", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-f" },
-      { "id": "m-s02-e", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "clip-day1-5-bottleneck-human-v2", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-managed-service", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-i" },
-      { "id": "clip-c-s08-same-thing-tomorrow", "why": "[Placeholder why-line: K1 brings it]", "fallback": null }
+      {
+        "id": "art-pipeline-promise",
+        "why": "",
+        "fallback": "demo-getsales-routing"
+      },
+      {
+        "id": "art-managed-service",
+        "why": "",
+        "fallback": "demo-d2-company-research"
+      },
+      {
+        "id": "knowledge-arbitrage",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      },
+      {
+        "id": "art-day-one",
+        "why": "",
+        "fallback": null
+      }
     ],
     "cofounder-1": [
-      { "id": "demo-d1-scraping-briefing", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "demo-d2-company-research", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "clip-day1-1-movie-actor", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "clip-c-s08-same-thing-tomorrow", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-managed-service", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-i" }
+      {
+        "id": "art-managed-service",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      },
+      {
+        "id": "art-how-this-site-was-built",
+        "why": "",
+        "fallback": "demo-d2-company-research"
+      },
+      {
+        "id": "knowledge-arbitrage",
+        "why": "",
+        "fallback": "demo-getsales-36-workflows"
+      },
+      {
+        "id": "art-pipeline-promise",
+        "why": "",
+        "fallback": null
+      }
     ],
     "cofounder-2": [
-      { "id": "demo-linkedin-voice-entry", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "m-s02-h", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "m-s02-d", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-managed-service", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-i" },
-      { "id": "art-ai-slop-to-ai-ops", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-c" }
+      {
+        "id": "so-good-ai-that-it-looks-human",
+        "why": "",
+        "fallback": "demo-getsales-36-workflows"
+      },
+      {
+        "id": "art-ai-slop-to-ai-ops",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      },
+      {
+        "id": "knowledge-arbitrage",
+        "why": "",
+        "fallback": "demo-getsales-routing"
+      },
+      {
+        "id": "art-pipeline-promise",
+        "why": "",
+        "fallback": null
+      }
     ],
     "delivery": [
-      { "id": "art-how-this-site-was-built", "why": "[Placeholder why-line: K1 brings it]", "fallback": "clip-c-s10-halt" },
-      { "id": "clip-day1-3-closed-every-session", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "clip-day1-1-movie-actor", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "clip-day1-5-bottleneck-human-v2", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-managed-service", "why": "[Placeholder why-line: K1 brings it]", "fallback": "m-s02-i" },
-      { "id": "art-day-one", "why": "[Placeholder why-line: K1 brings it]", "fallback": null }
+      {
+        "id": "art-day-one",
+        "why": "",
+        "fallback": "demo-getsales-routing"
+      },
+      {
+        "id": "art-how-this-site-was-built",
+        "why": "",
+        "fallback": "demo-getsales-36-workflows"
+      },
+      {
+        "id": "art-managed-service",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      },
+      {
+        "id": "art-pipeline-promise",
+        "why": "",
+        "fallback": null
+      }
     ],
     "bi": [
-      { "id": "demo-getsales-routing", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "demo-d2-company-research", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "demo-d1-scraping-briefing", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "clip-c-s09-assistant-can-do", "why": "[Placeholder why-line: K1 brings it]", "fallback": null },
-      { "id": "art-how-content-gets-picked", "why": "[Placeholder why-line: K1 brings it]", "fallback": null }
+      {
+        "id": "art-how-content-gets-picked",
+        "why": "",
+        "fallback": "demo-d2-company-research"
+      },
+      {
+        "id": "art-ai-slop-to-ai-ops",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      },
+      {
+        "id": "art-managed-service",
+        "why": "",
+        "fallback": "demo-getsales-36-workflows"
+      },
+      {
+        "id": "art-day-one",
+        "why": "",
+        "fallback": null
+      }
+    ],
+    "about": [
+      {
+        "id": "art-pipeline-promise",
+        "why": "",
+        "fallback": "demo-getsales-36-workflows"
+      },
+      {
+        "id": "knowledge-arbitrage",
+        "why": "",
+        "fallback": "demo-getsales-routing"
+      },
+      {
+        "id": "art-managed-service",
+        "why": "",
+        "fallback": "demo-linkedin-voice-entry"
+      },
+      {
+        "id": "art-ai-slop-to-ai-ops",
+        "why": "",
+        "fallback": "demo-d1-scraping-briefing"
+      }
     ]
   }
 }

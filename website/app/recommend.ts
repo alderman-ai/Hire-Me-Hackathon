@@ -23,7 +23,8 @@ export type RecCard = {
 };
 
 export const LIST_SLUGS = ["default", "growth", "ceo", "cofounder-1", "cofounder-2", "delivery", "bi"] as const;
-export type ListSlug = (typeof LIST_SLUGS)[number];
+/** A person's list, or the default. "about" is /about's own list ("What I've written"), not a person. */
+export type ListSlug = (typeof LIST_SLUGS)[number] | "about";
 
 const PLACEHOLDER = (data as { placeholder?: boolean }).placeholder === true;
 
@@ -36,24 +37,26 @@ const ENTRY_SLUG: Record<string, string> = {
   "demo-linkedin-voice-entry": "linkedin-posts-in-addverys-voice-graded-blind",
 };
 
-type Target = { href: string; title: string; image?: RecImage; youtube?: string };
+/** `dek` is the page's own one-liner: a card shows it when its list item has no why-line. */
+type Target = { href: string; title: string; dek?: string; image?: RecImage; youtube?: string };
 
 function pageFor(id: string): Target | undefined {
   if (id === "demo-d1-scraping-briefing") {
-    return { href: "/d1", title: d1.title, image: { src: "/d1/01-overview-800.webp", width: 800, height: 533 } };
+    return { href: "/d1", title: d1.title, dek: d1.intro, image: { src: "/d1/01-overview-800.webp", width: 800, height: 533 } };
   }
   if (id === "demo-d2-company-research") {
     const d2 = findDemo("d2");
-    return d2 ? { href: "/d2", title: d2.name } : undefined;
+    return d2 ? { href: "/d2", title: d2.name, dek: d2.what } : undefined;
   }
   const slug = ENTRY_SLUG[id];
   const e = visibleEntries().find((x) => x.library_id === id || (slug !== undefined && x.slug === slug));
   if (!e) return undefined;
   const href = entryUrl(e.slug);
-  if (e.video) return { href, title: e.title, youtube: e.video.youtube_id };
-  if (e.poster && !/^https?:/.test(e.poster)) return { href, title: e.title, image: { src: e.poster, width: 1200, height: 630 } };
+  const dek = e.cover.subtitle;
+  if (e.video) return { href, title: e.title, dek, youtube: e.video.youtube_id };
+  if (e.poster && !/^https?:/.test(e.poster)) return { href, title: e.title, dek, image: { src: e.poster, width: 1200, height: 630 } };
   // Every entry has its own 1200 x 630 link card (app/demos/[slug]/opengraph-image.tsx).
-  return { href, title: e.title, image: { src: `${href}/opengraph-image`, width: 1200, height: 630 } };
+  return { href, title: e.title, dek, image: { src: `${href}/opengraph-image`, width: 1200, height: 630 } };
 }
 
 /** The cards for one list, in its order: each item's page, else its fallback's; duplicates and misses skipped. */
@@ -66,7 +69,8 @@ export function recommendFor(list: ListSlug): RecCard[] {
     const t = pageFor(item.id) ?? (item.fallback ? pageFor(item.fallback) : undefined);
     if (!t || seen.has(t.href)) continue;
     seen.add(t.href);
-    cards.push({ key: `${item.id}:${t.href}`, ...t, why: item.why, placeholder: PLACEHOLDER });
+    const { dek, ...rest } = t;
+    cards.push({ key: `${item.id}:${t.href}`, ...rest, why: item.why || dek || "", placeholder: PLACEHOLDER });
   }
   return cards;
 }
