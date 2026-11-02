@@ -399,8 +399,66 @@ TASK S-D4: Decide - how the blog pipeline should work.md is waiting on you: rewr
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
 Received: 2026-11-02 14:42 CET (+01:00)
 14:42 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing is blocked on it).
+14:44 CET: orchestration handed off to a fresh session under the same name (new address uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de); it watches this task silently. Nothing from the desk was awaiting its reply.
 
 ```
 TASK S2: Approve - Addvery research is yours, reading lists per demo is waiting on you: two updates to the project plan (the Addvery research and brand capture are your own work, and each demo gets its own reading list). It's low priority now: nothing is blocked on it, so no pokes.
+```
+
+## TASK S-D1: scraping\Agent request - scraping summary for the site.md — open
+From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
+Received: 2026-11-02 14:46 CET (+01:00)
+14:46 CET: alert shown to Alex with the paste line. File is in scraping\, not Operator tasks; Alex's part is the hand-over to his Addvery research session.
+
+```
+TASK S-D1: scraping\Agent request - scraping summary for the site.md is waiting on your Addvery research session, not on you: about 10 seconds to hand it over; it unblocks the site's scraping section and the other demos' reading lists of your research files.
+For Alex, the line to paste into the session you're running in Addvery Research: Read "..\scraping\Agent request - scraping summary for the site.md" and complete it agent-to-agent with s-d1-scraping: write the summary to "Scraping summary.md" in this folder, ideally by 17:00.
+Nothing else is asked of him until he approves the finished page.
+```
+
+## website-Q4 — withdrawn
+From: website (uds:\.\pipe\LOCAL\cc-msg-a51a96108d1ef1c1345765adb1f2c425)
+Received: 2026-11-02 14:52 CET (+01:00)
+14:52 CET: shown to Alex.
+14:53 CET: website handed off to a fresh session under the same name; website-Q4 stays open, answer goes to website as usual. Nothing to re-send.
+14:57 CET: WITHDRAW website-Q4 received (Alex answered it in the website session: (a), analytics on); noted in qa\website.md.
+
+```
+ASK website-Q4
+Critical: no
+Deadline: 15:07
+
+## website-Q4 — Turn on visitor counting for the website?
+
+**The question:** Should the website start counting visitors with Vercel's own analytics?
+
+**Context you need.** You asked whether anyone besides you has visited the site. Nobody can tell: Vercel's visitor counting (Web Analytics) has never been switched on for this project ("Web Analytics not found"), and the site is plain pages with no server code that logs requests. So no record of past visits exists. Turning it on counts visits from that moment on, with no back-dating. It never records IP addresses or uses cookies; it shows countries, device types, pages and the sites people came from, which is usually enough to tell your own visits apart. It costs nothing on the free plan, within a monthly event cap, and adds one small script to the page.
+
+**Options.**
+- (a) Turn it on now: one switch in the Vercel project, one line in the site's code, one deploy. (Recommended: the GetSales alert may send the link to the six around 15:30, and this is the only way to see whether they open it.)
+- (b) Leave it off.
+- (c) Something else — say what.
+
+**If unanswered by the deadline:** before 18:00 I keep waiting and poke; from 18:00 I leave it off.
+
+**Affects:** one script on every page, and whether anyone can later see who visited and when.
+```
+
+## TASK S1: Approve - research for the GetSales demo and website.md — open
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
+Received: 2026-11-02 14:53 CET (+01:00)
+14:53 CET: alert shown to Alex.
+
+```
+TASK S1: Approve - research for the GetSales demo and website.md is waiting on you: one tick approves five research questions for the GetSales demo and the website (plus wildcards). About a 3-minute read; answer by about 15:20 so both sessions get findings by 16:30.
+```
+
+## TASK S1: Approve - research for the blog pipeline.md — open
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
+Received: 2026-11-02 14:54 CET (+01:00)
+14:54 CET: alert shown to Alex as low priority; no PushNotification (not blocking; Alex, 14:38: the blog pipeline is low priority).
+
+```
+TASK S1: Approve - research for the blog pipeline.md is waiting on you: four research questions (plus wildcards) for the blog pipeline and the three articles. About a 2-minute read; not blocking, because the blog session drafts the test post anyway, but findings by 16:00 would shape it.
 ```
 

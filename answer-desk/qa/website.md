@@ -80,3 +80,29 @@ Deadline: 14:33
 ```
 
 **Answer:** a
+
+## website-Q4 — Turn on visitor counting for the website?
+Asked 2026-11-02 14:52 CET · withdrawn at 2026-11-02 14:57 CET
+
+```
+ASK website-Q4
+Critical: no
+Deadline: 15:07
+
+## website-Q4 — Turn on visitor counting for the website?
+
+**The question:** Should the website start counting visitors with Vercel's own analytics?
+
+**Context you need.** You asked whether anyone besides you has visited the site. Nobody can tell: Vercel's visitor counting (Web Analytics) has never been switched on for this project ("Web Analytics not found"), and the site is plain pages with no server code that logs requests. So no record of past visits exists. Turning it on counts visits from that moment on, with no back-dating. It never records IP addresses or uses cookies; it shows countries, device types, pages and the sites people came from, which is usually enough to tell your own visits apart. It costs nothing on the free plan, within a monthly event cap, and adds one small script to the page.
+
+**Options.**
+- (a) Turn it on now: one switch in the Vercel project, one line in the site's code, one deploy. (Recommended: the GetSales alert may send the link to the six around 15:30, and this is the only way to see whether they open it.)
+- (b) Leave it off.
+- (c) Something else — say what.
+
+**If unanswered by the deadline:** before 18:00 I keep waiting and poke; from 18:00 I leave it off.
+
+**Affects:** one script on every page, and whether anyone can later see who visited and when.
+```
+
+**Answer:** none through the desk. Withdrawn by website, which said: "Alex answered it directly in the website session, verbatim: "turn on analytics of this site pls", which is option (a). The active website session is turning it on now."
