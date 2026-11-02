@@ -1,6 +1,6 @@
 ---
 title: LinkedIn posts in Addvery's voice, graded blind
-summary: Five posts in Addvery's company voice met all 21 rules of a voice rubric, scored by an AI judge that wrote none of them. The same AI, asked for Addvery's voice without the rubric, met 12.
+summary: Five LinkedIn posts in Addvery's voice met all 21 rules of a voice rubric, scored blind by an AI judge. The same AI, without the rubric, met 12.
 section: GTM demos
 status: final text; Alex's brand sign-off pending, edits follow as a second request
 ---
