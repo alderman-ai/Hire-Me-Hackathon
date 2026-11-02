@@ -73,7 +73,7 @@
       },
       "sources": "Its facts come only from Addvery's public website, your public job title, and your public posts on the 1 billion CZK goal, including your reply to my comment.",
       "landing": {
-        "approved": false,
+        "approved": true,
         "greeting": "Hi Ivana. The short version before we meet: you're building a sales and marketing team and the system under it at once, and the system is the part I'd like to build with you. So I guessed your questions and answered them here, with the work behind each one.",
         "concerns": [
           {
@@ -170,7 +170,7 @@
         "body": "One demo number in reply to my LinkedIn message. That's the whole ask."
       },
       "landing": {
-        "approved": false,
+        "approved": true,
         "greeting": "Hi Stepan. I could have sent you a CV. Instead I spent one recorded day doing the job in public, since a role like this would need your yes. Here are my guesses at your questions, with the proof linked.",
         "concerns": [
           {
@@ -217,7 +217,7 @@
           }
         ],
         "lead": "I could have sent you a CV. Instead I spent one recorded day doing the job in public, since a role like this would need your yes.",
-        "note": "You decide whether a GTM engineer earns a seat at Addvery, so here are the economics in two lines. AI pays for itself by cutting labour costs or by growing revenue. **I'd point it at revenue, so the whole team grows with it.**",
+        "note": "If AI won't cut half the team, the return has to come from more business. **That's why I'd put AI in your pipeline first,** and it's what this page is about.\n\nSo that's where I started. Below is me saying it on camera, then what I built for Addvery in 12 hours: four ICPs from your own case studies, 36 outbound workflows and one personal first message per lead. None of it sends, and no real data ran through it.\n\nFurther down is what happens after the first build. An AI workflow is always a managed service, because the models always change. It starts on the expensive side, so **someone has to keep making it cheaper.** And the keys stayed off camera all day. (Leaking your secrets on video is the fastest way not to get hired.)",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""
@@ -263,7 +263,7 @@
         "body": "If so, its number is all I need. If none is, that's a useful answer too, and it saves us both a meeting."
       },
       "landing": {
-        "approved": false,
+        "approved": true,
         "greeting": "Hi Pavel. What goes into the model? It's the first thing I'd ask anyone doing AI work inside a company, so it's the first thing this page answers. The rest are my guesses at what a co-founder would want settled.",
         "concerns": [
           {
@@ -305,7 +305,7 @@
           }
         ],
         "lead": "From a co-founder's seat, the question is whether something pays off across the group.",
-        "note": "The pipeline below doesn't have to stop at Addvery: the same profiles and routing could send each lead to the group company that fits it, whether that's consulting, IT, media or production AI. **One research layer feeding several pipelines is where the cost starts to make sense,** and it's the version I'd build if the group wanted one.",
+        "note": "If you run more than one company, the pipeline below doesn't have to stop at Addvery. **One research layer could feed several pipelines,** sending each lead to whichever company fits it: Addvery's CRM and data work, iMEDIATIC's marketing or Skygena's AI engineering.\n\nIt's six steps, in the order a lead moves. Once it's built, it's built, right? Run it for a new company tomorrow and the time gets cut in half, and so does the stress.\n\nUnder that is the call every company is going to have to make: how much AI skill to keep for itself. Whichever rung you pick, **someone still has to get real people to actually use it.**",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""
@@ -350,7 +350,7 @@
         "body": "Name the one, and the pilot gets built around it."
       },
       "landing": {
-        "approved": false,
+        "approved": true,
         "greeting": "Hi Lukáš. Nobody should pay for a seat on faith, mine included, so I'm open to starting with a fixed-scope, paid pilot. I've looked at Addvery and iMEDIATIC, and your likely questions are next, with plain answers.",
         "concerns": [
           {
@@ -400,7 +400,7 @@
           }
         ],
         "lead": "iMEDIATIC is the group's media agency, so I looked at what an agency makes for client after client: articles from an expert's own words, posts in a company's own voice. **I built each one for Addvery, in a way that could be pointed at another brand.**",
-        "note": "",
+        "note": "Everyone's blasting out AI right now, low quality, high volume, so **the opening is AI so good it looks human.** Getting it to write is the easy bit. Sounding like a person is where it falls over.\n\nI found that out on this exact build. The agents wrote the first copy for this site and I hated almost all of it, that weird mix of super formal and really awkward. That's not me. So now no agent writes a word here without the skill enabled (for the love of God): every line is drafted from my own transcripts and posts, and a separate grader passes or fails it against my rubric. I still do the last 10% myself.\n\nBelow, Addvery's voice gets the same treatment: five posts, graded blind. Even the look is Addvery's, not mine.\n\n**Anything that goes out under someone's name has to sound like them.** I have too much pride for slop.",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""
@@ -444,7 +444,7 @@
         "body": "The “get in the way” half is the more useful one."
       },
       "landing": {
-        "approved": false,
+        "approved": true,
         "greeting": "Hi Milos. I'd expect you to judge this the way you'd judge any engagement: what got delivered, by when, and who answered for it. That's what this page tries to show.",
         "concerns": [
           {
@@ -486,7 +486,7 @@
           }
         ],
         "lead": "I'd expect you to judge this the way you'd judge any engagement: what got delivered, by when, and who answered for it. That's what this page tries to show.",
-        "note": "Whatever a GTM system sells, delivery has to carry. So I ran this hackathon like a small engagement: a written charter, one spec per piece of work. (Twelve hours, one very demanding client: me.) **The same setup could run beside a client project.**",
+        "note": "At 13:20 I tried to end one session I didn't need anymore and ended all of them, including the ones that handle the recording. So that was bad. They were all back within nine minutes with about 90 seconds of work lost, and I had the fix codified as a skill, so next time it's an instant fix.\n\nThat's below in clock order, and **the low points stay in.**\n\nThere was a plan, too. I spent the morning writing a charter: one job per AI session, about 15 of them, and everything that needed me shot first, like an expensive movie actor. By 16:44 I was still drowning in requests, so I stopped everything and changed the rules.\n\nThe lesson, said out loud at 16:58: **the bottleneck is always, always, always human.**",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""
@@ -531,7 +531,7 @@
         "body": "Name the tool or the report, and I'll build to fit it, not the other way round."
       },
       "landing": {
-        "approved": false,
+        "approved": true,
         "greeting": "Hi David. Every GTM system I'd build ends up as rows in a report, and at Addvery those rows would feed the data your team owns. So you'd be the one to tell me whether they can be trusted.",
         "concerns": [
           {
@@ -585,7 +585,7 @@
           }
         ],
         "lead": "Every GTM system I'd build ends up as rows in a report, and at Addvery those rows would feed the data your team owns.",
-        "note": "The report is what says whether a pipeline was worth paying for, right? Addvery connects client funnels from first click to signed contract; the demos below are the first steps of that funnel, pointed at Addvery's own new business. **I'd want their numbers landing where your team already works.**",
+        "note": "**Every number below comes with how I got it and a link to check it,** because the report is what says whether a pipeline was worth paying for, right?\n\nIt's all public information, read with no logins, and people show up as counts, never names. (One \"employee\" turned out to be an outside English teacher, so 57 became 56.) I wanted to make sure the keys got set up off camera, and I checked to see that nothing leaked before I let it run.\n\nThen the decision rule: rules first, one narrow question for a classification model, and a person decides anything under 0.75.\n\n**Nothing has sent, so the one number I can't give you is conversion.** I'd rather show you an honest zero than a made-up funnel.",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""
