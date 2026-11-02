@@ -1,6 +1,6 @@
 # Project definition of done: draft
 
-Written by S2 (the `orchestration` session) from the charter alone, 2 Nov. Status: **signed off by the operator in DI-5 with one change** (2 Nov: "loosen up the harsh language. Basically take the 'research doesn't run without me' kind of language out of the DOD"), so DoD-4 no longer requires his approval for every piece of research. Waiting to be written into the charter by `change-dod`. Once signed off, it goes into the charter's "Definition of done" through `change-dod`, and the placeholder ids in the specs are swapped for these ids through `propagate`.
+Written by S2 (the `orchestration` session) from the charter alone, 2 Nov. Status: **signed off by the operator in DI-5 with one change** (2 Nov: "loosen up the harsh language. Basically take the 'research doesn't run without me' kind of language out of the DOD"), so DoD-4 no longer requires his approval for every piece of research. **Written into the charter as C03** (2 Nov), and the placeholder ids in the specs swapped for these ids in the same change. The charter's "Definition of done" is now the source of truth: later changes go there through `change-dod`, not here.
 
 Rules it follows (charter): every item has an id and traces to at least one deliverable; every spec's own definition of done links to items by id; the outline is complete only when every item is claimed by at least one row. Ids are never renumbered or reused; a dropped item is marked retired. Each item is an outcome someone who wasn't there could check tomorrow morning, not an instruction.
 
