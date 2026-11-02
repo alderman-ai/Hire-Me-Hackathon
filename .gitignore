@@ -26,3 +26,6 @@ __pycache__/
 
 # The briefing collector's snapshots hold session text the public repo shouldn't carry.
 /briefing/data/
+
+# Alex's open-tasks tracker (private items; kept by orchestration)
+/Open tasks.md
