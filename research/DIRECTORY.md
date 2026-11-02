@@ -10,13 +10,48 @@ Storage (S1-Q5, Alex: "Just store it locally"): every report lives in `research\
 | --- | --- | --- | --- |
 | [L-01 parent](lists/L-01-parent.md) | every wave-2 spec | done 15:05: 7 reports and the synthesis; on every reader's reading list (S2 change C07) | OT-01, Alex, 14:38 |
 | [L-02 scraping](lists/L-02-scraping.md) | (S-D1 declined) | parked: Alex runs the scraping himself | — |
-| [L-03 blog](lists/L-03-blog.md) | S-D4, S-D5 | with Alex: `Operator tasks\Archive\Approve - research for the blog pipeline.md` (OT-04) | — |
+| [L-03 blog](lists/L-03-blog.md) | S-D4, S-D5 | running since 16:36: R1 to R6 and W1 to W3 in; R7 (the second article's research base) running, then the synthesis | OT-04, changes applied (`Operator tasks\Archive\Approve - research for the blog pipeline.md`) |
 | [L-04 GetSales](lists/L-04-getsales.md), [L-06 website](lists/L-06-website.md) | S-D3; S-D8 | with Alex, one gate: `Operator tasks\Approve - research for the GetSales demo and website.md` (OT-03) | — |
-| [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | with Alex: `Operator tasks\Archive\Approve - Canva and LinkedIn demo research.md` (OT-09); requested by S-D6 and S-D7, 15:49 | — |
+| [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | done 16:47: 7 reports and the synthesis | OT-09, ticked with changes, 16:29 (`Operator tasks\Archive\Approve - Canva and LinkedIn demo research.md`) |
 
 ## Parent level
 
-Research that two or more specs need, or that shapes the whole project. All of L-01 is here, in `research\global\`. Every recommendation in these reports is an option for Alex, not a decision. **Start with the synthesis.**
+Research that two or more specs need, or that shapes the whole project. L-01, L-03 and L-05 are here, in `research\global\`. Every recommendation in these reports is an option for Alex, not a decision. **Start with the synthesis.**
+
+### L-05 synthesis (Canva templates, LinkedIn posts, Canva video) · [global/L-05-synthesis.md](global/L-05-synthesis.md)
+- **Strongest findings:** (1) The Canva connector can't be today's route for the import or the locks: it can't lock elements or upload fonts, and imports only from a public URL, while the templates are local files held until sign-off (R2, W1). Alex by hand off camera, or the import as the 17:15 scene, after a 2-minute test import of the smallest template. (2) "Anyone can fill them in" isn't true as built: ordinary-design locks are guard rails anyone with edit rights can undo, Brand Templates can't leave a team, and custom fonts and brand kits don't carry to another account. Addvery's people get pictures unless a private template link goes in the hand-over (R3, W2). Canva-library stand-in fonts are right on three grounds. (3) The posts' scores measure rule-following, not whether a post sounds like Addvery: show them rule by rule and treat Alex's sign-off as the real check (R4, overriding W3's guess).
+- **Has:** five lines for the next 30 minutes; convergences with their strength; conflicts adjudicated, each with the 2-to-5-minute probe that settles it (no report ran a live probe); recommendations per spec, tagged; 12 one-line questions for Alex, each naming the spec it blocks.
+- **Governs:** the S-D6, S-D7 and S-D10 methodologies; DoD-16, DoD-17, DoD-21, DoD-22. **Read this when** bringing the templates into Canva, writing the D6 or D7 site claim, scoring or presenting the posts, or briefing the Canva scene.
+- **Caveats:** no live probe of Canva, the connector or LinkedIn; R2, R3, W1 and W2 lean on the same Canva help pages, counted once. The leader is unnamed in tracked files.
+
+### L-05-R1 Alex's earlier pixel-perfect demo · [global/L-05-R1-pixel-perfect-demo.md](global/L-05-R1-pixel-perfect-demo.md)
+- **Verdicts:** it made one format, a 1200x1200 PNG LinkedIn speaker card: an agent fills a static HTML/CSS page on a fixed backdrop and headless Chrome screenshots it. Canva was only the first sketch, later replaced. Reusable: the method, not the files (render flags, bundled fonts, backdrop plus fixed slots, character budgets measured on real renders, "halt, don't degrade", the edge check). Hard: guessed text budgets clipped a card; colour-based geometry broke on brand colours; Windows traps (Chrome can't write to Desktop folders, a comma decimal locale breaks CSS numbers); 17 days for one template.
+- **Bears on the plan:** the old demo went from Canva to code, and this redo goes the other way, so the pixel-perfect guarantee ends at import. It's also the "template in the background, AI text on top" method Alex named for the blog and LinkedIn imagery (OT-04).
+- **Governs:** DoD-16. **Read this when** building templates or any card image code-first. **Caveats:** the repo has no licence, so reusing its code is Alex's call; its public history is squashed; no Canva or LinkedIn behaviour tested.
+
+### L-05-R2 What Canva can do now · [global/L-05-R2-canva-capabilities.md](global/L-05-R2-canva-capabilities.md)
+- **Verdicts:** Enterprise is no longer needed: API autofill opened to Pro and Teams on 2026-09-21, and brand templates need any paid plan. The connector creates, imports (from a URL), resizes, fills and exports; no documented tool locks elements, uploads fonts or edits a brand kit. LinkedIn: the company cover is now 1512x256, the personal banner 1584x396, the event cover 16:9; document posts take up to 100 MB and 300 pages; there's no official feed-image size (1080x1080 and 1080x1350 are third-party).
+- **Governs:** DoD-16, DoD-21. **Read this when** choosing the Canva route or plan, or setting sizes. **Caveats:** the connector wasn't called; one Canva snippet says its tools were cut to two; which plan has element locking is contradictory.
+
+### L-05-R3 Pixel-perfect in Canva · [global/L-05-R3-pixel-perfect-canva.md](global/L-05-R3-pixel-perfect-canva.md)
+- **Verdicts:** a full Lock on brand elements and "Lock position only" on slots; locks bind only in Brand Templates. Fixed art as a locked PNG or simple SVG; editable text must be native Canva text in a static font; whole-template PDF import risks substitution and shift. Export PNG at exact size (LinkedIn up to 5 MB, 3:1 to 4:5); the carousel as PDF Standard, flattened, RGB, no bleed. Cropped-out image parts are recoverable from Canva PDFs that LinkedIn lets viewers download (a DoD-22 point).
+- **Has:** a 17-item checklist for the export checker. **Governs:** DoD-16, DoD-21, DoD-22. **Read this when** building, locking or exporting a template, or checking an export. **Caveats:** documentation only; Canva's PDF-import pages contradict each other; LinkedIn's recompression is undocumented.
+
+### L-05-R4 LinkedIn posts in a brand's voice · [global/L-05-R4-brand-voice-posts.md](global/L-05-R4-brand-voice-posts.md)
+- **Verdicts:** a judge scoring against AI-extracted traits shows rule-following, not voice (an Aug 2026 study: an authorship model found no difference, and the judge rated generated text above the real author). Example posts chosen for variety beat descriptions. LinkedIn added a "Seems like AI slop" flag on 30 July 2026; stock phrasings and posts with no concrete detail lose reach (vendor). Formats, company pages Q3 2026: document carousels and multi-image lead (vendor). A leader's personal brand: the leader posts and the company amplifies; it needs the leader's own material and approval.
+- **Governs:** DoD-17. **Read this when** setting the rubric, judge, baseline or how scores are shown. **Caveats:** format and personal-brand evidence is thin vendor data; no study of a company voice or of Claude.
+
+### L-05-W1 Wildcard, can it be executed? · [global/L-05-W1-wildcard-executed.md](global/L-05-W1-wildcard-executed.md)
+- **Question it picked:** can about five locked templates get from local files into Canva by 17:05, and by which route? **Verdicts:** not on the current route and clock (about 17:10-17:20). The connector can't carry local files or set locks; Chrome is the only agent route that can, untested. Fastest: sign off on the exports, then Alex imports by hand or the import becomes the scene, after a 2-minute test. Flagged: the Canva video had no session and nothing to start it.
+- **Governs:** DoD-16, DoD-21. **Read this when** timing the Canva step or the scene. **Caveats:** no live test; the tool list is from third-party sources.
+
+### L-05-W2 Wildcard, can it be delivered? · [global/L-05-W2-wildcard-delivered.md](global/L-05-W2-wildcard-delivered.md)
+- **Question it picked:** what of a template can Addvery's people actually open and use, and by which route? **Verdicts:** as planned they get pictures; a template can't leave Alex's account whole; only a template link (paid plan) gives an outsider a fillable copy, and it belongs in a private message, not on the site. The video's screen-care list misses Canva's Uploads, Projects and Brand panels.
+- **Governs:** DoD-16, DoD-19, DoD-21, DoD-22. **Read this when** writing the D6 claim, the hand-over or the scene's screen care. **Caveats:** no live test of a link or an embed.
+
+### L-05-W3 Wildcard, will it be received? · [global/L-05-W3-wildcard-received.md](global/L-05-W3-wildcard-received.md)
+- **Question it picked:** a leader's own voice and personal-brand strategy, unasked and public: gift or overreach? **Verdicts:** company-voice posts and templates land as a gift if framed as tools the team keeps; a named leader's voice, unasked and published, lands as overreach on every strand found. Options are ranked from A (company voice only) to E (published posts in the leader's voice); B and C combine.
+- **Governs:** DoD-17, DoD-18. **Read this when** deciding anything personal to a named leader, or framing the templates and posts. **Caveats:** no study of this exact case; the law point is not legal advice.
 
 ### L-01 synthesis · [global/L-01-synthesis.md](global/L-01-synthesis.md)
 - **Strongest findings:** (1) The stakeholder sections are the most exposed part of the plan. The law (R3) and the creepiness research (R4) independently give the same rule: write about the role, not the person; show sources; notice before publishing; a way out. The "alert today, sections tomorrow" order is what GDPR requires, so the fix for tonight's visitors is an orientation panel plus a second "it's finished" message after the hand-over, not rushing the sections live. (2) Visible AI use costs trust on the personal writing (the opening lines, the stakeholder notes), not on the machinery (scraping, ICPs, classifier), where it reads as skill. Hiding it is impossible once the clip shows every stage, so frame it as "Alex directs and decides, the agents build", with the personal parts in his words. (3) Lead with the outcome and the reader's problem, not the tool or the process. Also: R3's compliance steps are the "sending safety and guardrails" proof R2 says nothing shows; a guardrails note on the GetSales section turns them into portfolio evidence.
@@ -83,7 +118,7 @@ No reports yet.
 | S-D1 Scraping demo | L-01: R1, R3 (what scraped data may show), R2, W3 |
 | S-D3 GetSales outbound | L-01: R3 (notice, opt-out, LinkedIn account risk), W2 (alert link, preview, click timing), W3 (AI-written opening lines), R1 (the clip), R2, R4. L-04 when it runs |
 | S-D4 Blog pipeline, S-D5 Three articles | L-01: R1, W3, R2. L-03 when it runs |
-| S-D6 Canva templates, S-D7 LinkedIn content, S-D10 Canva video | L-01: R1 (AI labels), W3, R2 (Canva matched no GTM post) |
+| S-D6 Canva templates, S-D7 LinkedIn content, S-D10 Canva video | L-05 synthesis first, then: S-D6 R1, R2, R3, W1, W2; S-D7 R4, W3; S-D10 R2, R3, W1, W2. L-01: R1 (AI labels), W3, R2 (Canva matched no GTM post) |
 | S-D8 Website | L-01: all seven, above all R3 section 7, R4, W2 (preview card, hand-over checklist C7), R1. L-06 when it runs |
 | S-D9 Legibility analyser | L-01: R1, R3 (what never to post), W3, W1 |
 | Overnight run and the morning cleanup (orchestration) | L-01: W1, W2 (C7 hand-over checklist), synthesis "Overnight" section |
