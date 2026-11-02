@@ -47,6 +47,15 @@ Paths are relative to `legibility\`. Step 1 of the run (§7) confirms each resou
 - `posts\`: the posts, `P1` onwards.
 - `..\research\DIRECTORY.md`: the index of research reports. `..\research\lists\L-01-parent.md`: S1's parent list. Read only; S1 owns it.
 - Research findings: S2 adds a line here for each report when S1 sends FINDINGS for L-01.
+- **L-01 findings** (S1's parent research, approved by Alex as OT-01; added by S2 as C07): for this spec, read the synthesis first, then R1, R3 (what never to post), W3, W1.
+  - `..\research\global\L-01-synthesis.md`: S1's synthesis of the parent research: the strongest findings, recommendations per spec, and 24 one-line questions for Alex, each naming the spec it blocks. Start here: take this spec's section, and fold the questions that name it into your next gate. Options for Alex, not decisions. Read only; S1 owns it.
+  - `..\research\global\L-01-R1-legibility.md`: making the work legible: outcome first, a short demo, a 3 to 4 step how-it-works; what reads as a toy or as noise; AI labels. Options for Alex, not decisions. Read only; S1 owns it.
+  - `..\research\global\L-01-R2-gtm-engineer-hiring.md`: what a GTM engineer is hired to show, which deliverables fit it best, and the gaps none of them shows. Options for Alex, not decisions. Read only; S1 owns it.
+  - `..\research\global\L-01-R3-personal-data.md`: personal data on a public site: GDPR, LinkedIn's terms, what the live run needs, and the safe, risky and keep-off table for stakeholder sections (section 7). Not legal advice. Options for Alex, not decisions. Read only; S1 owns it.
+  - `..\research\global\L-01-R4-format-reception.md`: whether a site aimed at one employer lands: replies versus hires, when it turns creepy or self-indulgent, and the one small ask. Options for Alex, not decisions. Read only; S1 owns it.
+  - `..\research\global\L-01-W1-wildcard-executed.md`: whether a dozen background sessions can run through the day and night: usage limits, Windows Update restarts, idle stops. Options for Alex, not decisions. Read only; S1 owns it.
+  - `..\research\global\L-01-W2-wildcard-delivered.md`: what the six actually get from the alert: the link, the preview card, click timing, and the morning hand-over checklist (C7). Options for Alex, not decisions. Read only; S1 owns it.
+  - `..\research\global\L-01-W3-wildcard-received.md`: whether AI-made work reads as skill or as a shortcut: the penalty bites on personal lines, not on the machinery. Options for Alex, not decisions. Read only; S1 owns it.
 - `..\OBS\Processed\index.json`: every filed session. Each session's folder holds `..\OBS\Processed\S*\segments.jsonl` (the transcript), `..\OBS\Processed\S*\claude-code\` (that session's Claude Code logs) and `..\OBS\Processed\S*\manifest.json`. All read only, because `rig` owns `..\OBS\`. The Claude Code logs carry S-D3's GetSales tool output, so read them under the never-post rules in §7.
 - `..\OBS\rig\RUNBOOK.md`: how the rig records and files sessions. Read only.
 - `D:\OBS Outputs\Uploaded\`: the screen recordings, `S<nn>.mp4`, and the webcam folders, `S<nn>_webcam\`. Read only. ffmpeg cuts clips from them.
