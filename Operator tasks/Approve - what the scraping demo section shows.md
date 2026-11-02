@@ -2,7 +2,7 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-12
-Task State: Open
+Task State: Answered (in its feedback section, committed 17:14; read by orchestration as approval with changes; also answers the intake's Q10.6)
 Gate: S-D1 D1 section sign-off (folds in OT-06, the spec-draft gate, which was still open)
 Requested by: s-d1-scraping
 Snapshot of: scraping\draft\d1.md (git-ignored) at SHA-256 0961c7fe33df
@@ -14,6 +14,8 @@ Updated: 2026-11-02 16:45 Prague (Alex's 16:41 changes applied; copy pass with t
 # Approve: what the scraping page on the site shows
 
 ## What this is
+
+**Answered.** Alex replied in the feedback section at the bottom (committed 17:14). `orchestration` reads it as approval with changes, applied with no second approval under the reset rules. It also answers question Q10.6 in "Decide - everything left that needs you.md". The fresh scraping session applies the changes and publishes.
 
 **About 5 minutes: read the page below and tick, or write changes. This one task covers everything for the scraping page. You can skip "Approve - the scraping demo plan": ticking here approves that plan too, with the defaults described below. If you've already answered it, that answer stands.**
 
