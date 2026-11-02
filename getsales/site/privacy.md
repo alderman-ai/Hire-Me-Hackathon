@@ -31,7 +31,7 @@ Public LinkedIn profiles, Addvery's public website, and web scraping of public p
 - GetSales sends the LinkedIn messages.
 - Anthropic's Claude helped me draft the opening lines.
 - Apify ran the web scraping.
-- Vercel hosts this site.
+- Vercel hosts this site. It also counts visits to it in aggregate (pages viewed, country, device type), without cookies and without identifying you.
 
 Some of these providers are based in the US, so your data may be processed outside the EU under their standard terms.
 
