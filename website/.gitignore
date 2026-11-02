@@ -21,3 +21,8 @@ public/addvery/
 
 # Portraits of the six people on /for (from addvery.com and ivanakarhanova.cz): deploy from the working tree, kept out of the public repo
 public/people/
+
+# GTM demos: carousel slides that carry Addvery's logo (S-D7-B1), and the link card's glow layer,
+# flattened from Addvery's own glow images. Both deploy from the working tree, kept out of the public repo.
+public/demos/linkedin-voice/
+app/demos/_og/glow.jpg

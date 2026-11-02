@@ -3,6 +3,7 @@
 export const NAV_LINKS = [
   { href: "/#feed", label: "Live feed" },
   { href: "/#status", label: "What's being built" },
+  { href: "/demos", label: "GTM demos" },
   { href: "/for", label: "For Addvery" },
   { href: "/docs/charter", label: "The plan" },
 ];

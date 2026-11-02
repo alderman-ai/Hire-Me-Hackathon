@@ -1,0 +1,1507 @@
+/* GTM demos: the index (/demos) and an entry (/demos/<slug>). Brief: S-D5-B1 plus the website
+   session's amendment; format: blog-pipeline/POST-FORMAT.md v1.1.
+
+   Two layers of Addvery's kit (local/addvery/brand/BRAND.md): the cover is the gradient layer (black,
+   the kit's two glows, the accent phrase in the text gradient) and matches the link-preview card;
+   the long read below it is the editorial layer (solid amethyst, lavender, plum; Outfit body).
+   One more colour, yellow, is the reviewer layer: the draft banner, the status chips and the notes
+   for Alex. It only ever shows on previews and is off-brand on purpose, so nobody mistakes it for design.
+
+   Layout: one reading column of about 70 characters (Outfit is narrow: a literal 68ch runs near 100),
+   with a wide track 7rem either side for the cover, pull quotes, the diagram, tables and the made box.
+   Every rule sits under .entry or .entry-index, so nothing here reaches other pages. */
+
+.entry,
+.entry-index {
+  --entry-flag: #ffe066;
+  --entry-flag-edge: #8a6d00;
+  --entry-measure: 35rem;
+  --entry-hang: 7rem;
+  --entry-gutter: 2.5rem;
+  --entry-overlap: 6rem;
+}
+
+/* ---------- The tracks ---------- */
+
+.entry-track {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--entry-gutter), 1fr)
+    [wide-start] minmax(0, var(--entry-hang))
+    [content-start] min(var(--entry-measure), 100% - 2 * var(--entry-gutter))
+    [content-end] minmax(0, var(--entry-hang))
+    [wide-end] minmax(var(--entry-gutter), 1fr) [full-end];
+}
+
+.entry-track > * {
+  grid-column: content;
+  min-width: 0;
+}
+
+/* ---------- The cover (gradient layer) ---------- */
+
+.entry-cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: calc(-1 * var(--av-nav-height, 92px));
+  padding: 10rem 0 4.5rem;
+  background: var(--av-black, #000);
+  color: var(--av-white, #fff);
+}
+
+.entry.has-video .entry-cover {
+  padding-bottom: calc(4.5rem + var(--entry-overlap));
+}
+
+.entry-cover-inner > * {
+  grid-column: wide;
+}
+
+/* The kit's glows, placed as on the link-preview card: glow-hero high on the right, glow-contact
+   rising below it and fading in from the left so it stays clear of the text. */
+.entry-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.entry-glow-hero,
+.entry-glow-contact {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.entry-glow-hero {
+  top: -80px;
+  right: -181px;
+  width: 521px;
+  height: 471px;
+  background-image: url("/addvery/glow-hero.avif");
+}
+
+.entry-glow-contact {
+  top: 110px;
+  right: -428px;
+  width: 1328px;
+  height: 1004px;
+  background-image: url("/addvery/glow-contact.avif");
+  -webkit-mask-image: linear-gradient(90deg, transparent 480px, #000 620px);
+  mask-image: linear-gradient(90deg, transparent 480px, #000 620px);
+}
+
+/* The reviewer layer: what isn't published says so before anything else. */
+.entry-flag {
+  justify-self: start;
+  margin: 0 0 2rem;
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--entry-flag-edge);
+  border-radius: var(--av-radius-sm, 6px);
+  background: var(--entry-flag);
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.entry-flag strong {
+  display: block;
+  font-weight: 600;
+}
+
+.entry-cover .art-back {
+  justify-self: start;
+}
+
+/* The card's gradient bar over the kicker. */
+.entry-kicker-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1rem;
+  margin: 0 0 1.25rem;
+}
+
+.entry-kicker-bar {
+  width: 4rem;
+  height: 4px;
+  background: var(--av-gradient-row, linear-gradient(90deg, #6645eb, #d445eb));
+}
+
+.entry-kicker {
+  margin: 0;
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-eyebrow-size, 13px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking, 0.12em);
+  text-transform: uppercase;
+}
+
+.entry-title {
+  max-width: 14em;
+  margin: 0;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-editorial-h1-size, 4.125rem);
+  font-weight: 500;
+  line-height: var(--av-editorial-h1-lh, 1.09);
+  letter-spacing: var(--av-editorial-h1-tracking, -0.03em);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.entry-title-line {
+  display: block;
+  text-wrap: balance;
+}
+
+/* The accent phrase in Addvery's text gradient (3.6:1 at its violet end on black: large text only). */
+.entry-accent {
+  background-image: var(--av-gradient-text, linear-gradient(25deg, #6645eb 35%, #d445eb));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.entry-subtitle {
+  max-width: 34rem;
+  margin: 1.75rem 0 0;
+  color: var(--av-mauve-400, #b4aebf);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: var(--av-lead-size, 1.375rem);
+  line-height: var(--av-lead-lh, 1.55);
+  text-wrap: pretty;
+}
+
+/* The byline under the card's hairline, with its ring mark. */
+.entry-byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 2.75rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--av-line-on-dark, rgba(255, 255, 255, 0.2));
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.entry-mark {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.25rem;
+}
+
+.entry-mark-a { stop-color: var(--av-violet, #6645eb); }
+.entry-mark-b { stop-color: var(--av-orchid, #d445eb); }
+
+.entry-byline-name {
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Date and length stay together; on phones they drop under the name with no leading dot. */
+.entry-byline-meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  column-gap: 0.75rem;
+}
+
+.entry-byline-meta::before,
+.entry-byline-meta > * + *::before {
+  content: "·" / "";
+}
+
+.entry-byline-meta > * + *::before {
+  margin-right: 0.75rem;
+}
+
+/* ---------- The video, on top, straddling the cover's edge ---------- */
+
+.entry-video {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(-1 * var(--entry-overlap));
+}
+
+.entry-video > * {
+  grid-column: wide;
+}
+
+.entry-video .video-frame {
+  border-radius: var(--av-radius-2xl, 16px);
+  box-shadow: var(--av-shadow-soft, 0 4px 60px rgba(0, 0, 0, 0.1));
+}
+
+/* ---------- The long read (editorial layer) ---------- */
+
+.entry-body {
+  padding: 4.5rem 0 6.5rem;
+  background: var(--av-white, #fff);
+}
+
+.entry.has-video .entry-body {
+  padding-top: 3.5rem;
+}
+
+.entry-prose {
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.entry-prose > * {
+  margin: 0 0 1.25em;
+}
+
+.entry-prose > :last-child {
+  margin-bottom: 0;
+}
+
+.entry-prose p {
+  text-wrap: pretty;
+}
+
+/* The lede: the paragraphs before the key points and the first section. */
+.entry-prose > p:not(:is(h2, .entry-points) ~ p) {
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+
+.entry-prose h2 {
+  margin: 2.25em 0 0.75em;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: balance;
+}
+
+.entry-prose h3 {
+  margin: 2.25em 0 0.625em;
+  padding-top: 1rem;
+  border-top: var(--av-border-rule, 2px) solid var(--av-ink, #151515);
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: balance;
+}
+
+.entry-prose strong {
+  font-weight: 600;
+}
+
+.entry-prose a {
+  color: var(--av-amethyst, #8b3fcf);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--av-dur-base, 0.3s) ease;
+}
+
+.entry-prose a:hover,
+.entry-prose a:focus-visible {
+  color: var(--av-plum, #4a1d73);
+  text-decoration-thickness: 2px;
+}
+
+/* Lists: Addvery's article lists, the amethyst rule with dots or numbers. */
+.entry-prose ul,
+.entry-prose ol {
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: var(--av-border-rule, 2px) solid var(--av-amethyst, #8b3fcf);
+  list-style: none;
+}
+
+.entry-prose ol {
+  counter-reset: entry-ol;
+}
+
+.entry-prose li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  text-wrap: pretty;
+}
+
+.entry-prose li:last-child {
+  margin-bottom: 0;
+}
+
+.entry-prose ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0.68em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--av-amethyst, #8b3fcf);
+}
+
+.entry-prose ol > li {
+  padding-left: 1.75rem;
+  counter-increment: entry-ol;
+}
+
+.entry-prose ol > li::before {
+  content: counter(entry-ol) ".";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--av-amethyst, #8b3fcf);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-prose code {
+  padding: 0.12em 0.38em;
+  border-radius: var(--av-radius-xs, 4px);
+  background: var(--av-lilac-100, #f5f2fa);
+  color: var(--av-plum, #4a1d73);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
+}
+
+.entry-prose pre {
+  grid-column: wide;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  border-radius: var(--av-radius-lg, 10px);
+  background: var(--av-ink, #151515);
+  color: var(--av-lilac-200, #ebdcff);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.entry-prose pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+
+/* Tables take the wide track and scroll sideways inside their own box, never the page. */
+.entry-table {
+  grid-column: wide;
+  margin: 0.5rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-2xl, 16px);
+  overscroll-behavior-x: contain;
+}
+
+.entry-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.entry-table th,
+.entry-table td {
+  min-width: 10rem;
+  padding: 0.875rem 1.125rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.entry-table thead th {
+  background: var(--av-lilac-100, #f5f2fa);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+.entry-table td {
+  border-top: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+/* Pull quotes hang into the left of the wide track. Hidden from screen readers: they repeat the body. */
+.entry-pull {
+  grid-column: wide-start / content-end;
+  margin: 1.25em 0 2em;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 3px solid var(--av-amethyst, #8b3fcf);
+}
+
+.entry-pull + h2 {
+  margin-top: 1.5em;
+}
+
+.entry-prose .entry-pull p {
+  margin: 0;
+  color: var(--av-plum, #4a1d73);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: balance;
+}
+
+/* Key points: the lilac box before the first section. */
+.entry-points {
+  margin: 0.75em 0 0.5em;
+  padding: 1.75rem 2rem 1.875rem;
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-lilac-100, #f5f2fa);
+}
+
+.entry-prose .entry-points-title {
+  margin: 0 0 1rem;
+  color: var(--av-amethyst, #8b3fcf);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-eyebrow-size, 13px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking, 0.12em);
+  text-transform: uppercase;
+}
+
+.entry-prose .entry-points ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.entry-prose .entry-points li {
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+/* ---------- The diagram: real text in HTML and CSS ---------- */
+
+.entry-diagram {
+  grid-column: wide;
+  margin: 1em 0 2.25em;
+  padding: 2rem;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-2xl, 16px);
+  container-type: inline-size;
+}
+
+.entry-diagram figcaption {
+  margin-top: 1.25rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.entry-prose .entry-diagram ol {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+.entry-prose .entry-diagram li {
+  margin: 0;
+  padding: 0;
+}
+
+.entry-prose .entry-diagram li::before {
+  content: none;
+}
+
+.entry-dg-label {
+  display: block;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.entry-dg-note {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* flow: numbered steps, stacked with arrows down; left to right when there's room. */
+.entry-prose .entry-flow {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.entry-prose .entry-flow-step {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.375rem;
+  border-radius: var(--av-radius-lg, 10px);
+  background: var(--av-lilac-100, #f5f2fa);
+}
+
+.entry-flow-n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.875rem;
+  border-radius: 999px;
+  background: var(--av-amethyst, #8b3fcf);
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.entry-prose .entry-flow-step + .entry-flow-step::before {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-right: 2px solid var(--av-amethyst, #8b3fcf);
+  border-bottom: 2px solid var(--av-amethyst, #8b3fcf);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@container (min-width: 38rem) {
+  .is-n3 .entry-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@container (min-width: 44rem) {
+  .is-n4 .entry-flow { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@container (min-width: 38rem) {
+  .is-n3 .entry-flow-step + .entry-flow-step::before,
+  .is-n4 .entry-flow-step + .entry-flow-step::before {
+    top: 50%;
+    left: -1.125rem;
+    border-bottom: 0;
+    border-top: 2px solid var(--av-amethyst, #8b3fcf);
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+@container (max-width: 43.99rem) {
+  .is-n4 .entry-flow-step + .entry-flow-step::before {
+    top: -1.25rem;
+    left: 50%;
+    border-top: 0;
+    border-bottom: 2px solid var(--av-amethyst, #8b3fcf);
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+/* scale: a vertical bar, item 1 on top, darkest (plum) to lightest (lavender). */
+.entry-prose .entry-scale-step {
+  display: grid;
+  grid-template-columns: 0.875rem minmax(0, 1fr);
+  column-gap: 1.25rem;
+}
+
+.entry-scale-seg {
+  background: color-mix(in oklab, var(--av-plum, #4a1d73) calc(100% - var(--t, 0%)), var(--av-lavender, #d3c3ff));
+}
+
+.entry-scale-step:first-child .entry-scale-seg {
+  border-radius: 999px 999px 0 0;
+}
+
+.entry-scale-step:last-child .entry-scale-seg {
+  border-radius: 0 0 999px 999px;
+}
+
+.entry-scale-text {
+  padding: 0.875rem 0;
+}
+
+.entry-scale-step + .entry-scale-step .entry-scale-text {
+  border-top: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+/* ---------- Notes for Alex (previews only; a published entry can't hold one) ---------- */
+
+.entry-note {
+  padding: 0.05em 0.35em;
+  border: 1px solid var(--entry-flag-edge);
+  border-radius: var(--av-radius-xs, 4px);
+  background: var(--entry-flag);
+  color: var(--av-ink, #151515);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.entry-note strong {
+  font-weight: 700;
+}
+
+/* ---------- How this post was made ---------- */
+
+.entry-made-wrap {
+  margin-top: 4.5rem;
+}
+
+.entry-made-wrap > * {
+  grid-column: wide;
+}
+
+.entry-made {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 2.5rem 2.5rem 2.25rem;
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-ink, #151515);
+  color: var(--av-text-on-dark, #bcbcbc);
+  container-type: inline-size;
+}
+
+.entry-made-title {
+  margin: 0;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.625rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+}
+
+.entry-made-lead {
+  max-width: 40rem;
+  margin: 1rem 0 0;
+  color: var(--av-lilac-200, #ebdcff);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.entry-made-steps {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry-made-step {
+  position: relative;
+  padding: 0.875rem 1rem 1rem;
+  border: 1px solid var(--av-border-dark-card, rgba(255, 255, 255, 0.1));
+  border-radius: var(--av-radius-lg, 10px);
+  background: var(--av-surface-dark-card, rgba(255, 255, 255, 0.06));
+}
+
+.entry-made-step + .entry-made-step::before {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  left: 1.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--av-lavender, #d3c3ff);
+  border-bottom: 2px solid var(--av-lavender, #d3c3ff);
+  transform: rotate(45deg);
+}
+
+.entry-made-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-micro-size, 12px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking, 0.12em);
+  text-transform: uppercase;
+}
+
+.entry-made-value {
+  display: block;
+  color: var(--av-white, #fff);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+@container (min-width: 38rem) {
+  .entry-made-steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .entry-made-step + .entry-made-step::before {
+    top: 50%;
+    left: -1.125rem;
+    border-bottom: 0;
+    border-top: 2px solid var(--av-lavender, #d3c3ff);
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+.entry-made-details {
+  margin: 1.75rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--av-plum-800, #333038);
+  color: var(--av-text-on-dark, #bcbcbc);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.entry-made-details a {
+  color: var(--av-lavender, #d3c3ff);
+  text-underline-offset: 3px;
+}
+
+.entry-made a:focus-visible {
+  outline-color: var(--av-lavender, #d3c3ff);
+}
+
+/* ---------- The index ---------- */
+
+.entry-list-wrap {
+  padding: 3.5rem 0 6.5rem;
+  background: var(--av-white, #fff);
+}
+
+.entry-list-wrap .entry-track > * {
+  grid-column: wide;
+}
+
+.entry-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+.entry-row:first-child {
+  border-top: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+.entry-row-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--av-radius-lg, 10px);
+  background: var(--av-plum-900, #26222c);
+}
+
+.entry-row-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* A play mark on video thumbnails: a white disc with the kit's plum triangle. */
+.entry-row-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: var(--av-white, #fff);
+  box-shadow: var(--av-shadow-button, 0 2px 40px rgba(0, 0, 0, 0.1));
+  transform: translate(-50%, -50%);
+}
+
+.entry-row-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  border-style: solid;
+  border-width: 0.5rem 0 0.5rem 0.8125rem;
+  border-color: transparent transparent transparent var(--av-plum, #4a1d73);
+  transform: translate(-50%, -50%);
+}
+
+.entry-row-text {
+  min-width: 0;
+}
+
+.entry-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.875rem;
+  margin: 0 0 0.875rem;
+}
+
+.entry-row-kicker {
+  color: var(--av-text-on-light, #5e6873);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-eyebrow-size, 13px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking, 0.12em);
+  text-transform: uppercase;
+}
+
+.entry-row-title {
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: balance;
+}
+
+.entry-row-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The whole row is the link's hit area; the focus ring draws round the row. */
+.entry-row-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--av-radius-lg, 10px);
+}
+
+.entry-row-title a:hover,
+.entry-row-title a:focus-visible {
+  color: var(--av-amethyst, #8b3fcf);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.entry-row-title a:focus-visible {
+  outline: none;
+}
+
+.entry-row-title a:focus-visible::after {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 4px;
+}
+
+.entry-row-dek {
+  max-width: 38rem;
+  margin: 0.625rem 0 0;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.entry-row-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem 0;
+  margin: 1rem 0 0;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.entry-row-info > * + *::before {
+  content: "·" / "";
+  margin: 0 0.625rem;
+}
+
+.entry-row-flag {
+  margin: 0.875rem 0 0;
+}
+
+.entry-chip {
+  display: inline-block;
+  padding: 0.1875rem 0.625rem;
+  border: 1px solid var(--entry-flag-edge);
+  border-radius: 999px;
+  background: var(--entry-flag);
+  color: var(--av-ink, #151515);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.entry-empty {
+  padding: 2.5rem;
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-lilac-100, #f5f2fa);
+}
+
+.entry-empty-title {
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.625rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+}
+
+.entry-empty-body {
+  max-width: 36rem;
+  margin: 0.75rem 0 1.25rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.entry-empty-link {
+  color: var(--av-amethyst, #8b3fcf);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.entry-empty-link:hover {
+  color: var(--av-plum, #4a1d73);
+}
+
+/* ---------- Breakpoints (Addvery's 991, 767, 479) ---------- */
+
+@media screen and (min-width: 640px) {
+  .entry-row.has-thumb {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .entry,
+  .entry-index {
+    --entry-gutter: 1.5rem;
+    --entry-hang: 4rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .entry,
+  .entry-index {
+    --entry-overlap: 2.5rem;
+  }
+
+  .entry-cover {
+    padding: calc(var(--av-nav-height, 64px) + 2.5rem) 0 3.5rem;
+  }
+
+  .entry.has-video .entry-cover {
+    padding-bottom: calc(3.5rem + var(--entry-overlap));
+  }
+
+  /* Phones: only the hero glow, behind the menu bar, clear of the text. */
+  .entry-glow-hero {
+    top: -240px;
+    right: -170px;
+  }
+
+  .entry-glow-contact {
+    display: none;
+  }
+
+  .entry-byline {
+    margin-top: 2rem;
+  }
+
+  .entry-byline-meta {
+    flex-basis: 100%;
+    padding-left: 2.75rem;
+  }
+
+  .entry-byline-meta::before {
+    content: none;
+  }
+
+  .entry-body {
+    padding: 3rem 0 4.5rem;
+  }
+
+  .entry-prose h2 {
+    font-size: 1.625rem;
+  }
+
+  .entry-pull + h2 {
+  margin-top: 1.5em;
+}
+
+.entry-prose .entry-pull p {
+    font-size: 1.5rem;
+  }
+
+  .entry-points,
+  .entry-diagram,
+  .entry-made,
+  .entry-empty {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .entry-made-wrap {
+    margin-top: 3.5rem;
+  }
+
+  .entry-row-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .entry,
+  .entry-index {
+    --entry-gutter: 1.25rem;
+  }
+
+  .entry-prose > p:not(:is(h2, .entry-points) ~ p) {
+    font-size: 1.1875rem;
+  }
+}
+
+/* ---------- Forced colours: gradient text and the yellow layer stay visible ---------- */
+
+@media (forced-colors: active) {
+  .entry-accent {
+    background: none;
+    color: inherit;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .entry-kicker-bar,
+  .entry-scale-seg {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+}
+
+/* ---------- Fixes from the accessibility review (scoped to these pages) ---------- */
+
+/* The shared purple band sets lilac-200 on amethyst at 4.37:1; white is 5.66:1. */
+.entry-end .art-cta-copy .art-eyebrow,
+.entry-end .art-cta-body {
+  color: var(--av-white, #fff);
+}
+
+/* Small text links get a 44 px tall hit area without moving the layout. */
+.entry-cover .art-back a,
+.entry-end .art-cta-link {
+  display: inline-block;
+  padding: 0.8125rem 0;
+  margin: -0.8125rem 0;
+}
+
+.entry-end .art-cta-actions {
+  row-gap: 1.75rem;
+}
+
+/* Focus rings: lavender on the dark cover and made box, amethyst on white (the global default is lavender). */
+.entry-body,
+.entry-list-wrap {
+  --focus: var(--av-amethyst, #8b3fcf);
+}
+
+.entry-cover,
+.entry-made {
+  --focus: var(--av-lavender, #d3c3ff);
+}
+
+/* ---------- Post cards ([!post], [!carousel]): neutral cards, never LinkedIn's interface ----------
+   A text post sits at the reading column's width, about a real post's width. A carousel takes the
+   wide track, its slide strip running to the card's right edge. A post and its contrast post spread
+   wider than the column, side by side, on wide screens. */
+
+.entry-post {
+  overflow: hidden;
+  margin: 1.5em 0 2em;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-white, #fff);
+}
+
+.entry-post.is-carousel {
+  grid-column: wide;
+}
+
+.entry-post-head {
+  padding: 1.25rem 1.5rem 1.125rem;
+  border-bottom: 1px solid var(--av-lilac-300, #e3dfea);
+  background: var(--av-lilac-100, #f5f2fa);
+}
+
+.entry-prose .entry-post-title {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-weight: 500;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+}
+
+.entry-post-n {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--av-amethyst, #8b3fcf);
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.entry-post-name {
+  display: block;
+  color: var(--av-ink, #151515);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.entry-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.875rem;
+  margin: 0.875rem 0 0;
+}
+
+.entry-post-format {
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.entry-post-score {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--av-amethyst, #8b3fcf);
+  color: var(--av-white, #fff);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.entry-post-text {
+  max-width: 35rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.entry-post-text p {
+  margin: 0 0 0.875em;
+}
+
+.entry-post-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* The contrast post: dashed, unaccented, its score outlined instead of filled. */
+.entry-post.is-contrast {
+  border: 1px dashed var(--av-mauve-500, #9c94a8);
+}
+
+.entry-post.is-contrast .entry-post-head {
+  border-bottom-style: dashed;
+  border-bottom-color: var(--av-mauve-500, #9c94a8);
+  background: var(--av-white, #fff);
+}
+
+.entry-post.is-contrast .entry-post-score {
+  padding: calc(0.25rem - 1px) calc(0.75rem - 1px);
+  border: 1px solid var(--av-mauve-500, #9c94a8);
+  background: var(--av-white, #fff);
+  color: var(--av-text-on-light, #5e6873);
+}
+
+.entry-compare {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5em 0 2em;
+}
+
+.entry-compare > .entry-post {
+  margin: 0;
+}
+
+@media screen and (min-width: 1100px) {
+  .entry-compare {
+    grid-column: full;
+    justify-self: center;
+    width: min(72rem, 100% - 2 * var(--entry-gutter));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+/* ---------- The slide strip (a carousel's slides; wired by ./strip.tsx) ---------- */
+
+.entry-strip {
+  padding: 1.25rem 0 0;
+}
+
+.entry-strip-viewport {
+  position: relative;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--av-mauve-500, #9c94a8) transparent;
+}
+
+.entry-strip-viewport:focus-visible {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: -2px;
+  border-radius: var(--av-radius-lg, 10px);
+}
+
+.entry-prose .entry-strip-list {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  margin: 0;
+  padding: 0 1.5rem 1rem;
+  border: 0;
+  list-style: none;
+}
+
+.entry-prose .entry-strip-slide {
+  flex: none;
+  width: min(20rem, 72vw);
+  margin: 0;
+  padding: 0;
+  scroll-snap-align: start;
+}
+
+.entry-prose .entry-strip-slide::before {
+  content: none;
+}
+
+.entry-strip-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--av-radius-sm, 6px);
+  background: var(--av-plum-900, #26222c);
+}
+
+.entry-strip-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 1.5rem 0;
+}
+
+.entry-strip-controls[hidden] {
+  display: none;
+}
+
+.entry-strip-btn {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--av-mauve-500, #9c94a8);
+  border-radius: 999px;
+  background: var(--av-white, #fff);
+  color: var(--av-plum, #4a1d73);
+  cursor: pointer;
+  transition: background-color var(--av-dur-fast, 0.2s) ease;
+}
+
+.entry-strip-btn:hover {
+  background: var(--av-lilac-100, #f5f2fa);
+}
+
+.entry-strip-btn[aria-disabled="true"] {
+  border-color: var(--av-lilac-300, #e3dfea);
+  color: var(--av-mauve-500, #9c94a8);
+  cursor: default;
+}
+
+.entry-strip-btn[aria-disabled="true"]:hover {
+  background: var(--av-white, #fff);
+}
+
+.entry-prose .entry-strip-status {
+  margin: 0;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-strip-btn {
+    transition: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .entry-post-head,
+  .entry-post-text {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .entry-strip-viewport {
+    scroll-padding-inline: 1.25rem;
+  }
+
+  .entry-prose .entry-strip-list {
+    padding: 0 1.25rem 1rem;
+  }
+
+  .entry-strip-controls {
+    padding: 0.25rem 1.25rem 0;
+  }
+}
+
+/* ---------- Inline video clips ([!video], POST-FORMAT v1.3 §3.6; loaded by ./clips.tsx) ---------- */
+
+.entry-clip {
+  grid-column: wide;
+  margin: 1em 0 2.25em;
+}
+
+.entry-clip-frame {
+  border-radius: var(--av-radius-2xl, 16px);
+}
+
+.entry-clip figcaption {
+  margin-top: 0.875rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* ---------- Feature quotes ([!quote], POST-FORMAT v1.4 §3.7): Alex's own words ----------
+   A real blockquote, read by screen readers (unlike the aria-hidden pull quote). Set as an editorial
+   inset quote: ink display type larger than the pull quote, the amethyst opening mark hanging in the
+   left margin on wide screens, the attribution under a short amethyst rule. */
+
+.entry-quote {
+  grid-column: content-start / wide-end;
+  position: relative;
+  margin: 1.75em 0 2.25em;
+}
+
+.entry-quote::before {
+  content: "\201C" / "";
+  position: absolute;
+  top: -1.375rem;
+  left: -5rem;
+  color: var(--av-amethyst, #8b3fcf);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 7rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.entry-prose .entry-quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.entry-prose .entry-quote blockquote p {
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: clamp(1.5rem, 1.05rem + 1.3vw, 2.125rem);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: pretty;
+}
+
+.entry-quote figcaption {
+  margin-top: 1.25rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.entry-quote figcaption::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+  background: var(--av-amethyst, #8b3fcf);
+}
+
+.entry-quote-name {
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 767px) {
+  .entry-quote::before {
+    position: static;
+    display: block;
+    height: 2.75rem;
+    font-size: 5rem;
+  }
+}
+
+/* ---------- Figures ([!figure], POST-FORMAT v1.5 §3.8): the reading column's width ---------- */
+
+.entry-figure {
+  margin: 1.25em 0 2em;
+}
+
+.entry-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-lg, 10px);
+  background: var(--av-white, #fff);
+}
+
+.entry-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
