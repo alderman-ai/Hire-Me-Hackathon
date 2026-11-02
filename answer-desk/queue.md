@@ -874,3 +874,27 @@ Received: 2026-11-02 17:23 CET (+01:00)
 TASK website: Claude Doc "Six stakeholder pages: text for your edit" is waiting on you: https://claude.ai/artifact/Abm1SeTTDwAEV4qBb55YtY. It's the text of the six people's pages, with Ivana's first as prep for Tuesday. Edit inline, then one comment saying it's good to go: that's the sign-off, and the pages update. About 10 minutes. Nothing is blocked on it.
 ```
 
+## TASK S-D3: GetSales demo 2 "classifying leads into ICPs" ready to record — open
+From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-5456b0a3ed0bfef495d210300bf66ec0)
+Received: 2026-11-02 17:31 CET (+01:00)
+17:31 CET: alert shown to Alex with a PushNotification (recording ready).
+
+```
+TASK S-D3: GetSales demo 2, "classifying leads into ICPs", is ready to record. It's about a minute, terminal only, nothing to set up in GetSales.
+In the getsales folder, run python -I routing\route.py: twelve fictional leads sorted into the 36 workflows, rules first, Jev's questions for the vague cases, one no fit.
+Talking points and terminal set-up: https://claude.ai/artifact/XipRZaxFuESjKrTW3qoKmB
+Demo 1 (about 3 minutes: classification tools, the 36 workflows, the one variable) follows once the last flows are built. Its talking points are already up: https://claude.ai/artifact/83CBecbQdNyH3NZi2MLYDq
+```
+
+## TASK s-d5-blog-articles: blog dictation 2 ready to record (Doc) — open
+From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
+Received: 2026-11-02 17:32 CET (+01:00)
+17:32 CET: mentioned to Alex as next after dictation 1 (sender's order); no PushNotification. Full alert to be shown once dictation 1 is done, or now if Alex asks.
+
+```
+TASK s-d5-blog-articles: blog dictation 2 is ready to record: https://claude.ai/artifact/B1CssS1w8S18ZvxhYypsFL
+Topic: GTM engineers and the AI era's jobs question: if companies promise AI won't fire half the team, its return has to come from revenue, and GTM engineers who point AI at the pipeline help them keep that promise.
+How: about 15 minutes of talking with Wispr Flow into the bottom of that page, from the nine prompts and the checked facts on it, then a comment on the page saying "done". No file to fill in.
+Order: after blog dictation 1 (https://claude.ai/artifact/3jZqfh9wfu8whexxYsxJQH), which goes first since article 1 should be near-final before his meeting with Ivana tomorrow. Show this one once dictation 1 has its "done", or now if he'd rather do both back to back.
+```
+
