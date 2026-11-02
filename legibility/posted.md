@@ -13,7 +13,7 @@ Every post sent to the website, and every item deliberately left out.
 
 ## Working rules from research (L-01, read 15:00)
 
-Applied now. The full methodology revision waits for the L-01 synthesis (about 16:00, SPEC step 6). Reports: `..esearch\global\L-01-R1-legibility.md`, `L-01-R3-personal-data.md`, `L-01-W3-wildcard-received.md`.
+Applied now. The full methodology revision waits for the L-01 synthesis (about 16:00, SPEC step 6). Reports: `..\research\global\L-01-R1-legibility.md`, `L-01-R3-personal-data.md`, `L-01-W3-wildcard-received.md`.
 
 - **Curated, not raw (R1).** Each post is a dated "what changed" item in plain words that can be scanned: done items first, and one point per post. No commit dumps and no long unedited footage. Raw build logs carry the weakest evidence and the highest noise risk.
 - **Alex decides, the agents carry out (W3, option B; R1).** Write so the judgment calls are visibly his, in a talent frame, not "agents take over". Past posts stay as they are unless Alex picks otherwise.
