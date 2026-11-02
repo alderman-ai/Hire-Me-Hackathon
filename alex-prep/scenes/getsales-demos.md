@@ -22,7 +22,7 @@ For demo 2, a **fresh terminal** in `C:\Users\alder\Desktop\Hire me hackaton\get
 | --- | --- | --- |
 | 0:00 to 0:40 | tab 1, the README | classification tools |
 | 0:40 to 1:40 | tab 2, scroll the 36 | the 36 workflows: four ICPs by EN, CS, DE by three tactics |
-| 1:40 to 2:30 | tab 3, the builder | the one variable, `{{custom_message_1}}` |
+| 1:40 to 2:30 | tab 3, the builder: **zoom in, and hold still for 3 to 4 seconds** with the flow title and node #6 "Send Message" both on screen (that frame becomes the entry's figure) | the one variable, `{{custom_message_1}}` |
 | 2:30 to 3:00 | tab 4, the CSV | where the variable comes from |
 
 ## Demo 2, about 1 minute (Doc: https://claude.ai/artifact/XipRZaxFuESjKrTW3qoKmB)
