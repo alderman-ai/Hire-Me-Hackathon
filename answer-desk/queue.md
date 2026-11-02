@@ -523,6 +523,7 @@ Alex is on break until about 15:46 Prague. His words at 15:16, to wave2-specs (c
 From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-b31a7431253d97f8dd5f0b7f3b09b8aa)
 Received: 2026-11-02 15:43 CET (+01:00)
 15:43 CET: alert shown in the desk window; no PushNotification during Alex's break (until about 15:46). Include in the 15:46 summary.
+15:56 CET: s-d3-getsales: file updated with Alex's 15:55 swap (the Chief Growth Officer replaces the engagement manager); the six messages are final, ticking sends them. LinkedIn hours end 16:30 unless call 9. Alert repeated with a PushNotification.
 
 ```
 TASK S-D3: Approve - the six alert messages before they send.md is waiting on you: the six alert messages; ticking it sends them from your profile, target 15:30 (your sender's LinkedIn hours end at 16:30 today unless you take call 9, which extends this one flow to 18:00). Ticking also confirms the six.
@@ -574,5 +575,23 @@ Received: 2026-11-02 15:53 CET (+01:00)
 
 ```
 POKE website: waiting on you for Approve - the plan for the website.md, the website's plan (about 3 minutes, nothing blocked; from 18:00 it runs as written).
+```
+
+## POKE S-D3 — 15:58
+From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-b31a7431253d97f8dd5f0b7f3b09b8aa)
+Received: 2026-11-02 15:58 CET (+01:00)
+15:58 CET: about open TASK S-D3 "Approve - the six alert messages before they send.md"; repeated that alert to Alex.
+
+```
+POKE S-D3: waiting on you for Approve - the six alert messages before they send.md (your swap is in; ticking sends the alert; your sender's LinkedIn hours end at 16:30 unless you take call 9 to run this one flow until 18:00)
+```
+
+## POKE S1 — 16:01
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
+Received: 2026-11-02 16:01 CET (+01:00)
+16:01 CET: about open TASKs S1 GetSales+website research, Canva and LinkedIn research, and blog research; repeated all three alerts to Alex, PushNotification for the late GetSales+website one.
+
+```
+POKE S1: waiting on you for three research approvals, one tick each, about 2 minutes apiece: "Approve - research for the GetSales demo and website.md" (since 14:54; due 16:30, and a run takes about 25 minutes, so this is the one that's now late), "Approve - Canva and LinkedIn demo research.md" (since 15:52; before your 16:45 brand sign-off), "Approve - research for the blog pipeline.md" (since 14:57; non-blocking).
 ```
 
