@@ -2,6 +2,16 @@
 
 Written 2 Nov at 21:47 Prague by the `website` session started after the crash (Claude session 01UyYB1sQdTqDrzVEZnktDyZ, job 2d36e96a), at orchestration's context-refresh request. Updated at 22:10 by its successor (job 91fdba88) after W13. **Run `date` before writing any time**: estimated stamps ran ahead today, twice.
 
+## LIVE since 23:40: the best-of build (supersedes the "Parked overnight" notes below)
+
+Alex picked the combined version at 22:4x and gave his go-live in advance (`orchestration\local\ALEX-WANTS.md` W55, W58); he redlines the live version in the morning (W59). Spec: `orchestration\local\mockups\best\BUILD.md`. Production deployment r8987w3hr, from 9e75838, built with **NEW_SITE, WALL_FULL, VIDEO_WALL and SKILLS_PAGE**. `builds.md` (23:40) has the full list.
+
+- **Production deploys from now on need all four flags:** `vercel deploy --prod --yes --build-env NEW_SITE=1 --build-env WALL_FULL=1 --build-env VIDEO_WALL=1 --build-env SKILLS_PAGE=1`. A plain `--prod` build would put the old site back.
+- **Words:** `content\site-copy.json` holds every new string by key (`t()` in `app\copy.ts`); `scripts\apply_copy.py` swaps in orchestration's `copy\*.json` and `copy\notes.json` by key and slug. Notes live in `stakeholders.json` `pages[i].landing` (`lead`, `lead_key`, `note`, `made_line`); `approved` is true on all six. `questions` and `ask_line` are retired (rule 11: no asks).
+- **Code map:** shared parts `app\best\` (parts, the 36-workflow `machine.tsx` reading C2's `video` field), home `app\home\`, the six lens blocks and quote lists `app\for\[slug]\lens.tsx`, `quotes.tsx` with `content\quotes.json`, `/skills` `app\skills\` with `content\skills.json`, C2's additions through `> [!slot]` markers (`app\demos\slots.tsx`).
+- **The walkthrough swap:** when the GetSales walkthrough is cut, change only `video` in `content\demos\getsales-36-workflows.md`; home, Ivana's page and the entry follow. Then the `data-swap` words (BUILD.md §2) through alex-voice.
+- **Checks:** `scripts\check\audit_page.mjs <url> <out>` (any page), `render_pages.py` then `python -I ..\blog-pipeline\scripts\scan.py <out>` for the leak scan. The scan's "website deny list not found" is harmless: `sync_docs.py`'s patterns are secret shapes the scan already checks.
+
 ## Parked overnight (Alex, 22:05, via orchestration)
 
 - **No website updates tonight.** Overnight, orchestration builds three alternative mockups; in the morning Alex picks one and `website` builds it out. Start nothing (W14 included) before that.
@@ -34,7 +44,7 @@ Written 2 Nov at 21:47 Prague by the `website` session started after the crash (
 | W13 `/videos` | BUILT behind `VIDEO_WALL=1`: five rows, 55 tiles, from `scripts\build_video_wall.py` (library + side cards + the booth's latest grades; rerun it after more grading). Six verdict pieces graded No are off (`builds.md`, 22:03). Words go in `content\video-words.json` | ee2ab30, 920cdaf | **elj1v4aja (latest)** |
 | W14 to W16 | Not started; parked by Alex (22:05). `SKILLS_PAGE` is already in `app\flags.ts`, and `newNavLinks()` adds Skills to the menu when it's set | | |
 
-The latest preview, with everything above: https://hire-me-hackathon-elj1v4aja-alex-alderman-s-projects.vercel.app (Vercel login; Alex's Chrome is signed in). Older ones are `https://hire-me-hackathon-<id>-alex-alderman-s-projects.vercel.app` with the ids above. Production is unchanged since 18:57, and was checked after every item.
+The latest preview, with everything above: https://hire-me-hackathon-elj1v4aja-alex-alderman-s-projects.vercel.app (superseded: the best-of build is in production, see the top). (Vercel login; Alex's Chrome is signed in). Older ones are `https://hire-me-hackathon-<id>-alex-alderman-s-projects.vercel.app` with the ids above. Production is unchanged since 18:57, and was checked after every item.
 
 ## The two build flags (`app\flags.ts`)
 
