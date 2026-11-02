@@ -50,3 +50,10 @@ F1 (sign-off approved) and F3 (context half full) still apply (§8). This sessio
 - **Site:** Alex at 17:23 (DI-10, relayed): the demo is one blog-style entry in the GTM demos section. `demo\entry.md` is that entry, with markers filled from `posts.md`, `baseline.md`, `voice.md`. `BUILD S-D7-B1` sent to `website` at 17:40; waiting for BUILT or REFUSED.
 - **Next:** on BUILT, the leak check (step 4 above), then DONE to `orchestration` (sign-off pending or approved). On Alex's comment, step 3 above; if the site already shows old text, `BUILD S-D7-B2`.
 - **Personal-brand part:** shelved until everything else is finished (Alex, Q10.8).
+
+## Live state at 19:15 (session 9e96773b)
+
+- **LinkedIn demo:** BUILT S-D7-B1, live at https://hire-me-hackathon.vercel.app/demos/linkedin-posts-in-addverys-voice-graded-blind. Leak check done and fixed. `DONE S-D7` sent to `orchestration` (sign-off pending). Waiting only on Alex's comment on the sign-off Doc; on it, apply his edits and send `BUILD S-D7-B2`. B2 also carries the entry summary cut to 144 characters (already committed in `demo\entry.md`).
+- **Alex's own voice (new jobs from 18:05):** the guide is in `local\alex-voice\` (guide and excerpts). About-me is in `local\about\` (sent as COPY to `website`). Six stakeholder landing pages are in `local\landing\new\`, blind-checked against `local\landing\current\` (`scores.md`, `judge.md`) and sent as COPY to `website` at 19:12. All git-ignored. `s1-research` reads the guide for a portfolio story.
+- **Stray:** a writer subagent published a private claude.ai artifact with a mid-edit copy of landing page 1 (link in `local/links.md`). It stays until Alex says delete.
+- **Personal-brand part:** still shelved.
