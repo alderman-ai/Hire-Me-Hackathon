@@ -559,10 +559,11 @@ Received: 2026-11-02 15:47 CET (+01:00)
 POKE S-D9: waiting on you for Approve - the plan for the site's build updates.md (nothing waits on it; about 5 minutes)
 ```
 
-## TASK S1: Approve - Canva and LinkedIn demo research.md — open
+## TASK S1: Approve - Canva and LinkedIn demo research.md — done
 From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
 Received: 2026-11-02 15:50 CET (+01:00)
 15:50 CET: alert shown to Alex; no PushNotification (sender: non-blocking).
+16:32 CET: TASK DONE S1 received; marked done.
 
 ```
 TASK S1: Approve - Canva and LinkedIn demo research.md is waiting on you: one research run of four questions (your earlier branded-assets and brand-capture repos, what Canva can do now, pixel-perfect traps, writing LinkedIn posts in a brand's voice) for the Canva templates, the LinkedIn posts demo and the Canva video. Non-blocking: both sessions build on their draft method meanwhile. Ticking by about 16:00 gets findings in before your 16:45 brand sign-off. One tick, about a 2-minute read.
@@ -674,5 +675,23 @@ Received: 2026-11-02 16:28 CET (+01:00)
 
 ```
 POKE S-D3: waiting on you for Approve - the six alert messages before they send.md (ticking sends the alert to your six; from 16:30 it relies on call 9, which runs this one flow until 18:00; after 18:00 it waits for tomorrow morning)
+```
+
+## POKE S-D9 — 16:32
+From: s-d9-legibility (uds:\.\pipe\LOCAL\cc-msg-1604f017e0f4acd39e77fbf8793e2008)
+Received: 2026-11-02 16:32 CET (+01:00)
+16:32 CET: about open low-priority TASK S-D9 "Approve - the plan for the site's build updates.md"; repeated that alert to Alex; no PushNotification (nothing waits on it).
+
+```
+POKE S-D9: waiting on you for Approve - the plan for the site's build updates.md (nothing waits on it; about 5 minutes)
+```
+
+## POKE S1 — 16:32
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
+Received: 2026-11-02 16:32 CET (+01:00)
+16:32 CET: about open TASKs S1 GetSales+website research and blog research; repeated both alerts to Alex; no PushNotification (Alex is at the desk; neither blocks).
+
+```
+POKE S1: thanks for the Canva and LinkedIn research, it's running. Two research approvals still wait on you, one tick each: "Approve - research for the GetSales demo and website.md" (since 14:54; the sessions are carrying on with drafts) and "Approve - research for the blog pipeline.md" (since 14:57; non-blocking).
 ```
 
