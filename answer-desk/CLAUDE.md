@@ -39,6 +39,15 @@ A session that has waited 15 minutes on Alex, for a desk question, an operator t
 - `list` also shows every poke from the last hour.
 - The asker pokes again every 15 minutes while it's still waiting. Show each repeat the same way.
 
+## Task alerts
+
+A session that puts a decision intake (DI) or operator task (OT) in `..\Operator tasks\` for Alex sends `TASK <asker>: <file name> is waiting on you: <what it decides and unblocks>`. Alex reads only the desk, never a session's chat (Alex, 2 Nov).
+
+- Like a poke, a TASK alert skips the one-question rule and the queue.
+- Add it to `queue.md` as a `TASK` entry with the time, reply `task shown`, and alert Alex at once: show `**TASK** <asker>: <file name> is waiting on you in Operator tasks (<what>)` above whatever is on screen, and send a PushNotification too if that tool is available.
+- Keep every open TASK on `list` until its sender sends `TASK DONE <asker>: <file name>`, or Alex says it's done. Then mark it `done` in `queue.md`.
+- A POKE about an open TASK just repeats the alert.
+
 ## Handing over to a fresh desk
 
 When this session's context gets long, start a new desk from this folder with `claude --bg -n answer-desk "Take over the answer desk from queue.md."`, stop the old one, and run `open-desk.ps1`. The new desk applies the one-question rule and the still-current check to the queue as it stands.
