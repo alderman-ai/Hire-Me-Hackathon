@@ -17,7 +17,7 @@ State as of 17:22 Prague, 2 Nov, written by the second `s1-research` session (00
 ## Open items
 
 - **Desk:** no question open; the next id is S1-Q7. No TASK lines open. Don't poke: rule 7 pokes only when work is blocked.
-- **Waiting on a reply:** `s-d5-blog-articles [b32408]` was asked at 17:22 to confirm it got the L-03 synthesis. Re-send if nothing comes (it handed off at 17:16; the old id is being removed).
+- **Replies:** none outstanding. `s-d5-blog-articles` (session 5b465de8) confirmed the L-03 synthesis at 17:23; findings 1 and 3 go into its dictation 2 prompts and its build request S-D5-B1.
 - **Monitors:** none running. The gate-watch script is in the job's temp folder and isn't needed: no gates are open.
 
 ## Answers applied this session
