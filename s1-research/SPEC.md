@@ -37,7 +37,7 @@ s1-research\
   findings\<slug>.md        one per topic
 ```
 
-The CLAUDE.md that S0 writes for this folder must hold this reading list, in order: `CHARTER.md`, `GIT.md`, `answer-desk\ASKING.md`, `s1-research\SPEC.md`, `s1-research\HANDOFF.md` if it exists, `s1-research\findings\INDEX.md`. It must also hold two role lines:
+The CLAUDE.md that S0 writes for this folder must hold this reading list, in order: `..\CHARTER.md`, `..\GIT.md`, `..\answer-desk\ASKING.md`, `..\answer-desk\qa\S1.md` (S1's running Q&A record at the desk), `SPEC.md`, `HANDOFF.md` if it exists, `findings\INDEX.md`. It must also hold two role lines:
 - A session named `s1-research` or `s1-research-<n>` is the S1 spec orchestrator and follows this spec.
 - A session named `rw-T<nn>` is a worker. It reads only CLAUDE.md, section 4 of this spec and its own task file. It writes only its task's output path, never commits, and sends questions to the active research session, never to the desk.
 
@@ -101,6 +101,7 @@ Output: s1-research\findings\<slug>.md
 - **Readers.** Other specs' reading lists point at `s1-research\findings\INDEX.md` and at the files whose Feeds name them. S1 notifies; S2 and the folder owners edit.
 - **Overrides.** A finding Alex overrides is edited in place, marked `Overridden by Alex, <time>`, and its readers are told.
 - **New requests.** A session asks for research with a message to the active research session: `RESEARCH <spec id>: <topic>, <why>, <needed by>`. If the topic exists, S1 adds the spec to its Feeds. If not, it is queued, and queued topics go to the desk together as one non-critical ASK (P4, P5). Nothing new runs before Alex approves it, except as S1-Q4 allows.
+- **One question on the desk at a time** (`answer-desk\ASKING.md`). S1 never sends a second ASK while one is open. Topic requests, budget calls and worker questions that arrive meanwhile wait in the queue. The next ASK goes out only once the open one is answered or withdrawn, rewritten in light of that answer, and folds in everything queued. If something queued can't wait, S1 sends `REPLACE <id>` with a block that folds it in, never a new ASK.
 
 ## 7. Priority order
 
@@ -112,7 +113,7 @@ Within a band, Alex's order wins. Tasks that wait on nothing run in parallel (P1
 
 ## 8. Decision log (P5)
 
-When Alex hasn't answered within the deadline, the active research session decides, logs it here, and sends the desk `WITHDRAW <id>`. If his answer arrives later, it reconciles and logs that too. Start each Decision with the time and the ASK id it closes.
+When Alex hasn't answered within the deadline, the active research session decides, logs it here, and sends the desk `WITHDRAW <id>`, which frees S1's one desk slot (section 6). If his answer arrives later, it reconciles and logs that too. Start each Decision with the time and the ASK id it closes.
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
@@ -143,8 +144,8 @@ The active session forks at the first of these:
 
 How it forks (unless S0 sets a project-wide format; then use that):
 
-1. Write `HANDOFF.md`: task states, running workers, open ASK ids and their deadlines, answers not yet applied, decisions since the last fork, and budget spent. Commit the folder (GIT.md).
+1. Write `HANDOFF.md`: task states, running workers, the open ASK id and its deadline if there is one, the queue waiting behind it, answers not yet applied, decisions since the last fork, and budget spent. Commit the folder (GIT.md).
 2. From `s1-research\`, launch the next generation: `claude --bg -n s1-research-<n+1> "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."` The first session is `s1-research`; the next is `s1-research-2`.
 3. Wait for its reply that it has read the handoff.
-4. Announce `ACTIVE S1: <old> -> <new>. Send S1 messages, answers to S1-Q*, FINDINGS replies and RESEARCH requests to <new>.` to `answer-desk`, `orchestration`, the S2 session, every running `rw-` worker, and every session with an open request.
+4. Announce `ACTIVE S1: <old> -> <new>. Send S1 messages, answers to S1-Q*, FINDINGS replies and RESEARCH requests to <new>.` to `answer-desk`, `orchestration`, the S2 session, every running `rw-` worker, and every session with an open request. The new session takes over the open ASK as it stands and sends nothing new until it is answered or withdrawn.
 5. The old session stops.
