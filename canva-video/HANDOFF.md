@@ -1,37 +1,30 @@
 # S-D10 handoff
 
-Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting acc0550f) ahead of forking gate F0. The F0 section at the bottom is filled in when `READY S-D6` arrives.
+Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting acc0550f) for forking gate F0. F0 now fires when the brainstorm draft is in (SPEC §8, 17:35). The F0 section at the bottom is filled in at the fork.
 
-## Where things stand (17:20, 2 Nov)
+## Where things stand (17:35, 2 Nov)
 
-- **Reset, 17:13** (`orchestration` RESTART; Alex's reset rules at the top of `..\answer-desk\ASKING.md`). No intake: the held one (SPEC Appendix A) is dropped and must not be released. S2-Q1 was withdrawn. Alex films tonight, whenever suits him, once the templates are in Canva. The video is Alex's Q10.9 (a): a screen recording of him customising one of the five templates live, up to 15 minutes, with Canva's private panels off camera. This session added a small webcam inset (SPEC §9).
-- **Skills switched on** (`SKILL ON`, 17:13): `design:ux-copy`, `marketing:draft-content`, `anthropic-skills:docs`. Design work also needs `frontend-design` (reset rule 5), which this session's skill list didn't show. Ask `orchestration` if yours doesn't either.
-- **Done and committed:** `SCENE.md` is the full brief, with the off-camera list (Step 1, 14 items) and the on-camera rules (Step 2: the Projects, Uploads, Brand and Share panels, the profile menu and file pickers kept off camera). L-05 (all reports and the synthesis) and L-01 are applied. SPEC.md is updated for the reset, with §9 rows from 16:45 and 17:20. `.gitignore` covers `local/`, `out/` and video files. Latest commit: 5eca0ab.
-- **Messages sent at 17:19:**
-  - `s-d6-canva-templates`: send `READY S-D6` with the folder, the link and the scene's template. No edits to that template and no Claude in Chrome from then until S-D10 says the scene is done. Say which templates made it in if not all five.
-  - `s-d9-legibility`: heads-up, one clip tonight by the two cues, screen and webcam. It confirmed: it will cut from the last start cue before "done", with 3 s padding, frame-checked. Its `CLIPPED` reply gives both paths in `legibility\clips\`.
-  - `s-d6-canva-templates` confirmed at about 17:22 (new session a841934d, same name). Nothing is in Canva yet. Its order: switch the templates to the website's brand kit, then three queued fixes, then a test import, then all five. It sends `READY S-D6` the moment they're in, then leaves the scene's template alone and stays off Chrome until told the scene is done.
-- **Open with nobody:** no desk question, no operator task, no pokes running.
+- **Reset, 17:13** (`orchestration` RESTART; Alex's reset rules at the top of `..\answer-desk\ASKING.md`). No intakes for Alex: easy calls are yours, decided and logged in SPEC §9. Written work for him goes in Claude Docs. The held intake (SPEC Appendix A) is dropped; never release it.
+- **DI-10, Alex at 17:23** (verbatim in `..\Operator tasks\Archive\Decide - everything left that needs you.md`):
+  - **Q10.9, the Canva video:** Alex builds one LinkedIn graphic himself on camera, from an asset pack `s-d6-canva-templates` prepares out of his pixel-perfect branded assets repo, following one of its mockups. `SCENE.md` is rewritten for this: a fresh design, the pack's images staged on page 2 as a parts tray while paused, page 1 built on camera, page 2 deleted, export. Screen recording with a small webcam inset, at most 15 minutes.
+  - **Q10.11, new deliverable D11:** a Comfy brand-motion brainstorm. A Claude Doc with 6 to 10 ideas, two lines each, covering a 5-second animation of one LinkedIn graphic and a one-minute video like his Gauss piece. He runs Comfy himself, by hand, and picks from the Doc. `orchestration` adds D11 to the charter.
+- **Skills switched on** (17:13): `design:ux-copy`, `marketing:draft-content`, `anthropic-skills:docs`. Design work also needs `frontend-design` (reset rule 5), which this session's skill list didn't show. Ask `orchestration` if yours doesn't either.
+- **Committed:** `SCENE.md` (the brief, re-planned for the pack), SPEC.md (updated for the reset, Q10.9 and Q10.11, with §9 rows to 17:35), `.gitignore`. Latest: ca14ab0.
+- **The brainstorm draft** is `comfy-motion\IDEAS.md`, written by a subagent of the outgoing session from read-only references. It generated nothing and spent no credits.
+- **Others:**
+  - `s-d9-legibility` confirmed: one clip tonight, from the last "Canva design starts now" before "Canva design done", 3 s padding, screen plus webcam, `CLIPPED` with paths in `legibility\clips\`.
+  - `s-d6-canva-templates` (session a841934d) sends `READY S-D6` when the pack is ready, and stays off Claude in Chrome from the brief's TASK line until told the scene is done.
+- **Open with nobody:** no desk question, no pokes running.
 
-## What the successor does (SPEC run steps 3 to 5)
+## What the successor does
 
-1. Put the link from `READY S-D6` in `local\link.md` (git-ignored; never in a tracked file or a message to anyone but Alex's brief).
-2. Fill `SCENE.md`'s placeholders:
-   - `<template>`, from READY or from the previews in `..\canva-templates\exports\`;
-   - `<copy>` and `<where the copy is>`, from `..\linkedin-content\demo\posts.md` once `COPY S-D7` says it exists. Pick a post naming no real person. Otherwise placeholder copy, written only after invoking `marketing:draft-content`, saved in `local\copy.md`;
-   - the export line: PNG High 1x, or for a carousel PDF Standard with Flatten on.
+1. **The brainstorm Doc** (SPEC brainstorm step B2): invoke `anthropic-skills:docs` and follow its guide before any Docs call. Make a Claude Doc from `comfy-motion\IDEAS.md` and save its link in `local\comfy-doc.md`. Send `answer-desk`: `TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick: <Doc link>`. His pick comes back as a comment on the Doc: record it in `comfy-motion\PICK.md` and tell `orchestration` (B3).
+2. **Wait, with no polling, for `READY S-D6`** (the asset pack). Fill `SCENE.md`'s placeholders from it (SPEC run step 3). Make the scene Doc from the title down to "When you are done", leaving out the HTML comment and the draft notes. Save its link in `local\doc.md`. Send `answer-desk`: `TASK s-d10-canva-video: the Canva video is ready to record: <Doc link>, about 20 minutes with the off-camera list` (run step 4).
+3. On Alex's comment that the scene is done: `TASK DONE s-d10-canva-video: the Canva video`. Tell `s-d6-canva-templates` it can use Chrome again. Note the times here. Take F1 (run step 5).
+4. Then run steps 6 to 10: the clip from `s-d9-legibility`, the cut (`frontend-design` first), the screen-care check, `site\d10.md` through `design:ux-copy`, `BUILD S-D10-B1`, `DONE S-D10`.
 
-   If READY reports no templates in Canva, use the draft notes' build-from-backdrop variant. Log any switch in §9.
-3. Invoke `anthropic-skills:docs` and follow its guide before any Docs call. Make a Claude Doc from the title down to "When you are done", leaving out the draft notes and the HTML comment. Save its link in `local\doc.md`.
-4. Send `answer-desk`: `TASK s-d10-canva-video: the Canva video is ready to record: <Doc link>, about 20 minutes with the off-camera list`.
-5. Wait, with no polling, for Alex's comment on the Doc. Then send `TASK DONE s-d10-canva-video: the Canva video`, tell `s-d6-canva-templates` the template is free, note the scene's times here, and take F1.
-6. After that: run steps 6 to 10 (the clip from `s-d9-legibility`, the cut, the screen-care check, `site\d10.md` through `design:ux-copy`, `BUILD S-D10-B1`, `DONE S-D10`).
+## F0 (filled at the fork)
 
-## F0 (filled when READY S-D6 arrives)
-
-- READY S-D6 received at: <time>
-- Folder / template for the scene: <from READY>
-- Templates in Canva: <all five, or which>
-- Link saved in `local\link.md`: <yes/no>
-- COPY S-D7: <received or not; path>
+- Brainstorm draft in at: <time>; committed: <hash>
+- READY S-D6 received: <not yet / time and contents>
 - Successor launched at: <time>; `HANDOFF s-d10-canva-video, <time>` sent to `orchestration`, which stops and removes the old id.
