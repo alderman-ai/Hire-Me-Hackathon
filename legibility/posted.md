@@ -11,6 +11,7 @@ Every post sent to the website, and every item deliberately left out.
 | P3 | Two milestones on the timeline: the definition of done signed off at 14:02 with S2's tools built, and the first five research lists with the wildcards; P1 statuses to 14:15 | DOD-DRAFT.md; commits 40f5f45, 0f83fe4, bb71f33, aaa69a4, f2ecd10, 81333db, c7558a0; OT-01 | The plan now has a checkable finish line, and research is about to fan out. These are the first signs of the parallel phase S06 promised. | 14:20 (website, same build that turned the site into a feed) |
 | P4 | S07 session post (briefing session, this feed, recovery skill, approval checkboxes), Insight on API keys never moving on camera, Milestone "Every demo has a plan" (spec drafts, research running, scraping launched, plain-names rule), status to 14:45 with Apify named | S07 02:07, 05:04, 08:20, 33:29, 35:43; commits 96fa0bb, cb05028, a3f9451, 1ca60d9, spec drafts 14:22 to 14:34 | How Alex steers a dozen agents, a trust signal for a tech team (keys off camera), and the jump from one plan to a plan per demo. Roles: post 1 CEO/COO/CTO, post 2 CTO/CAIO, post 3 all. | 14:55 (website 9314fec). Role tags stored as a roles field on each feed post. |
 | P5 (S-D9-B5) | Milestone "The research is in" (seven agents, 21 minutes, three findings that shape the feed); Update "Agents hand over before they get tired" (first three handovers, the context watch); status to 15:15 | L-01 synthesis; commits 96fa0bb, dca2c06, 8b59414, 4cbac2b, 5102967, 770e59b; OT-03 to OT-07 | The research changes how the site reads, and the handovers show the plan for a long day actually working. | 15:14 (website 52bdee5) |
+| P6 (S-D9-B6) | Session post for S09 (one name per agent, the company's look, one red disclaimer); Update "Alex's research lands, and the demos move" (S08 quotes linked; brand pass, 33 workflows, scraping input, a page per demo, blog rehearsal); roles on s08; status to 16:30 | S09 03:06, 11:27, 18:37; S08 04:31, 05:55; commits 440912f, 6e30e6d, db84e4c, 4a8099f, be97c53, 1b29ac2, 50f7c49, 32d0dd1, 0a05cec, 5235bb5 | Three judgment calls in Alex's words, and the moment his own research unblocked four demos at once. | sent 16:31 (held 15:30 to 16:30 for website's reskin), waiting for BUILT |
 
 ## Working rules from research (L-01, read 15:00)
 
@@ -60,6 +61,9 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | P4 | (milestone) | Every demo has a plan; seven research agents in parallel | CEO, COO, CAIO, CMO, CSO, RevOps |
 | P5 | (milestone) | The research is in: outcome first, curated not raw, a decision trail | CEO, CMO, CAIO |
 | P5 | (update) | Agents hand over before they get tired; the context watch | CTO, CAIO, COO |
+| P6 | (S09 session) | One name per agent; the company's look, only what fits; one disclaimer | CMO, CEO, CTO, COO |
+| P6 | (update) | Alex's research lands, and four demos move | CEO, COO, CMO, RevOps, CSO |
+| P6 | s08 (website's post) | Back from lunch: what runs without him | COO, CEO, CSO, RevOps |
 
 ## Left out
 
