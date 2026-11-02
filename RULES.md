@@ -2,7 +2,7 @@
 
 Alex's rules for everything on https://hire-me-hackathon.vercel.app, from what he said on 2 Nov. Every session and every subagent that builds, writes or places anything for the site reads this first. Where an older plan, spec or mockup disagrees, this file wins. Kept by `orchestration`.
 
-**Status: draft, 20:45 on 2 Nov.** Every rule is in Alex's own words or follows from them; it becomes final when he says yes to it.
+**Status: draft, 20:45 on 2 Nov.** Every rule is in Alex's own words or follows from them; it becomes final when he says yes to it. Rule 11 and the line on the six added at 22:10, from his answers to the five calls.
 
 ## What the site is for
 
@@ -26,10 +26,11 @@ Alex, 20:45 on 2 Nov:
 8. **One thing in front of Alex at a time, as the real thing.** Never a block of text to review, and never a status mockup.
 9. **Easy calls get made for him.** Only taste, and facts about him, go to him.
 10. **Public information never stops the work.** What stays off the site: secrets, the Apify proposal, and his own GetSales outbound outside the demo folder (charter, DoD-22).
+11. **No asks, anywhere. Pages give.** (Alex, 22:05: "There are no asks. There's just giving.") No page asks any of the six for a reply, a call, feedback or anything else. No "one ask" block, no call to action aimed at them.
 
 ## The people the site is for
 
-The six at Addvery each have their own page. Some of them know Alex personally, so a page or a note must sound like it's from someone they know, never like a cold pitch. Ask `orchestration` for the context on a person before writing to them.
+The six at Addvery each have their own page. Of the six, only Ivana knows Alex personally: her page must sound like it's from someone she knows, never a cold pitch. The other five are written to their role: warm, generous, never familiar, and never asking for anything. Ask `orchestration` for the context on a person before writing to them.
 
 ## Where things are
 
