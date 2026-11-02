@@ -1,6 +1,9 @@
 :root {
   --bg: #808080;
   --frame: #1f1f1f;
+  --ink: #111111;
+  --ink-muted: #3a3a3a;
+  --live: #b3001b;
 }
 
 *,
@@ -22,9 +25,84 @@ body {
 .page {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 32px 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.clock-time {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: clamp(40px, 9vw, 88px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.clock-label {
+  font-size: 16px;
+  text-align: center;
+}
+
+.clock-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink-muted);
+}
+
+.dot-live {
+  background: var(--live);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-live { animation: none; }
+}
+
+.video-empty {
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
+  color: #d6d6d6;
+  font-size: 16px;
+  text-align: center;
 }
 
 .video-frame {

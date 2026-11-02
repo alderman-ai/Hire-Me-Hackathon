@@ -1,0 +1,7 @@
+{
+  "claudeMdExcludes": [
+    "**/Hire me hackaton/website/**/CLAUDE.md",
+    "**/Hire me hackaton/website/**/AGENTS.md",
+    "**/Hire me hackaton/OBS/**/CLAUDE.md"
+  ]
+}
