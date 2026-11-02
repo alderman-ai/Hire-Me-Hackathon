@@ -93,8 +93,8 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
-| C01 | The operator: DI-2 Q2.2, DI-3 Q3.3 | 2 Nov | The S-D2 row becomes operator-owned, in `Addvery Research\`, with no spec, and brand capture goes there too. Touches: the S-D2 row; "Addvery brand capture" in the S-D6 and S-D7 rows; "Run order"; the operator scenes; the brand-capture open question (ticked); resource lines in S-D3, S-D6, S-D7 and S-D8 naming the local path; the S-D2 row of S0's folder plan (no folder made). |
-| C02 | The operator: DI-4 Q4.2 | 2 Nov | The charter's "Research reading list" section becomes a pointer: each executable spec carries its own reading list in its "Routing and resources" section, and findings are indexed by S1 in `research\`. Its bracketed note on the operator steering research stays word for word. |
+
+C01 and C02 went out together as `Operator tasks\OT-02 Gate approval S2 charter changes C01 C02.md` (2 Nov); their records are in `changes\`.
 
 **Dependent places.**
 
