@@ -22,7 +22,7 @@ The preflight was decision intake DI-3 (`Operator tasks\DI-3 S1 Research preflig
 | Q3.4 (S1-Q4) | Research is part of the preflight and always involves Alex. It never runs on a default. He's at the computer until at least 18:00 Prague. | sections 1, 8 |
 
 **Questions at runtime** go to the answer desk, one at a time (`..\answer-desk\ASKING.md`). Ids continue from S1-Q5.
-- **S1-Q5, the first question:** confirm the storage reading in section 6. The options are A (as written there), B (S1 writes reports straight to their homes, which needs a GIT.md exception from `orchestration`) and C (every report stays in `research\`, split into `global\` and per-spec subfolders). I recommend A, because it leaves GIT.md untouched. Nothing moves home before Alex answers.
+- **S1-Q5, the first question: answered 13:59, "Just store it locally."** Read as option C: every report stays in `research\`, split into `global\` and per-spec subfolders, and nothing moves to other folders (section 6). The reading was put to Alex inside S1-Q6, with the alternative "keep research off GitHub" offered.
 - **Then one question per research list,** to approve it (section 5).
 
 **Waiting on Alex.** After 15 minutes waiting on him for anything (a desk question, an operator task or a decision intake), S1 sends `answer-desk` the line `POKE <asker>: waiting on you for <what>` (`answer-desk\ASKING.md`; S1's asker is `S1`). It sends the poke again every 15 minutes while it's still waiting. Before 18:00 Prague, it keeps waiting and works on anything that doesn't depend on the answer, such as drafting the next list or indexing. From 18:00, non-research decisions follow P5 (section 8). Research still waits for Alex.
@@ -32,7 +32,7 @@ The preflight was decision intake DI-3 (`Operator tasks\DI-3 S1 Research preflig
 - **Place.** Row S1 of the spec outline. It claims the DoD items in section 9, which stay placeholders until S2 assigns real ids.
 - **Depends on** S0. **Runs in parallel with** S2.
 - **Feeds** every wave-2 spec. Each one gets a research list before its methodology is written: S-D1 and S-D4 first (spec outline), then the rest. S-D2 is out of scope, because Addvery research is Alex's own (Q3.3). A spec that needs Addvery material reads it from local disk in `..\Addvery Research\`, never from GitHub.
-- **Works with S2.** S1 never edits the charter or another folder (GIT.md). The one root file it edits is `..\SESSIONS.md`, and only its own rows. S2, which the `orchestration` session runs, moves accepted reports to their homes and writes the reading-list lines in each spec that needs them (DI-4 Q4.2: "Reading lists go into the executable specs").
+- **Works with S2.** S1 never edits the charter or another folder (GIT.md). The one root file it edits is `..\SESSIONS.md`, and only its own rows. Every report stays in `research\` (S1-Q5). S2, which the `orchestration` session runs, writes the reading-list lines pointing at them in each spec that needs them (DI-4 Q4.2: "Reading lists go into the executable specs").
 - **One session, one role (P2).** `s1-research` drafts lists, dispatches research and reviews it; it doesn't research anything itself (P7).
 
 Folder tree:
@@ -43,23 +43,25 @@ research\
   SPEC.md                    this file
   HANDOFF.md                 written at each fork (section 10)
   DIRECTORY.md               the one index of every report, at both levels (section 6)
+  BRIEFS.md                  the briefs handed to research subagents
   lists\L-<nn>-<scope>.md    one research list per spec or merged group (section 5)
-  staging\<report>.md        reports while being written and reviewed, before they move home
+  global\<report>.md         parent-level reports: research two or more specs need (S1-Q5)
+  <spec folder>\<report>.md  child-level reports, e.g. scraping\, blog-pipeline\ (S1-Q5)
 ```
 
 The CLAUDE.md that S0 writes for this folder must hold this reading list, in order: `..\CHARTER.md`, `..\SESSIONS.md` (the roster of official session names), `..\GIT.md`, `..\answer-desk\ASKING.md`, `..\answer-desk\qa\S1.md` (S1's running Q&A record at the desk), `SPEC.md`, `HANDOFF.md` if it exists, `DIRECTORY.md`. It must also hold two role lines:
 - The session named `s1-research` is the S1 spec orchestrator and follows this spec. A successor after a handoff keeps that name.
-- A session named `rw-L<nn>-<item>` is a worker running one deep-research item, with its own roster row while it runs. It reads only CLAUDE.md, section 4 and its list. It writes only that item's staging file, never commits, and sends questions to the active S1 session, never to the desk.
+- A session named `rw-L<nn>-<item>` is a worker running one deep-research item, with its own roster row while it runs. It reads only CLAUDE.md, section 4 and its list. It writes only that item's report file, never commits, and sends questions to the active S1 session, never to the desk.
 
 ## 3. How the session runs
 
 1. Read the reading list. If `HANDOFF.md` exists, resume from it.
-2. Apply DI-3's answers as recorded in section 1, and build the empty `lists\`, `staging\` and `DIRECTORY.md`. Commit (P1, GIT.md).
+2. Apply DI-3's answers as recorded in section 1, and build the empty `lists\` and `DIRECTORY.md`. Commit (P1, GIT.md).
 3. Send S1-Q5 (section 1). While it's open, draft the first research lists (section 7).
 4. Put each drafted list to Alex as its own desk question. A list runs only after he approves it, and its `Approved by` line carries his answer id.
 5. Run an approved list's items in parallel, one subagent per item (P1). An item Alex marks for deep research runs as the deep-research skill in a worker session, launched from `research\` with `claude --bg -n rw-L<nn>-<item> "Read CLAUDE.md, then lists\L-<nn>-<scope>.md. Do only item <item>."` In the same step, S1 adds the worker's row to `..\SESSIONS.md` and commits that file on its own, path-limited: `git commit -m "[roster] ..." -- SESSIONS.md`. When the worker stops, S1 updates its row the same way.
 6. Review each report against section 4. Accept it, or send it back once with the gap named. Tick its box and commit.
-7. When every item is ticked, run the synthesis, write the directory entries and commit. Then send `orchestration`, which runs S2, `FINDINGS <list id> ready: <staging paths>; home: <path>; readers: <spec ids>`, and tell each reader's session.
+7. When every item is ticked, run the synthesis, write the directory entries and commit. Then send `orchestration`, which runs S2, `FINDINGS <list id> ready: <report paths in research\>; readers: <spec ids>`, and tell each reader's session that's running.
 8. Approved lists that need nothing more from Alex may keep running overnight (P6).
 
 ## 4. Methodology
@@ -135,10 +137,10 @@ The approval question shows Alex the whole list and offers three options: approv
 
 ## 6. Findings store and index
 
-- **Storage reading** (to be confirmed as S1-Q5):
-  - **Parent level** is research that two or more specs need, or that shapes the project as a whole. Its home is `..\orchestration\research\`, the parent session's file tree.
-  - **Child level** is research only one spec needs. Its home is `..\<spec folder>\research\`.
-  - S1 writes and reviews every report in `research\staging\`. S2 moves accepted reports to their homes and adds each one to the reading list of every spec in its readers. That keeps GIT.md as it is.
+- **Storage (S1-Q5, Alex: "Just store it locally"):** every report lives in `research\` and never moves.
+  - **Parent level** is research that two or more specs need, or that shapes the project as a whole. It goes in `research\global\`.
+  - **Child level** is research only one spec needs. It goes in `research\<spec folder>\`, for example `research\scraping\`.
+  - Subagents write each report straight to that path. A report counts only once S1 has reviewed it and ticked its box. S2 adds each accepted report to the reading list of every spec in its readers. GIT.md is unchanged.
 - **The index.** `research\DIRECTORY.md` is the one place to look, covering both levels and written for retrieval, as in the Client Demo directory. Each report gets an entry with its verdicts, what it governs (specs and DoD ids), "read this when…" and its caveats. A reverse index lists the reports by spec.
 - **Precedence** goes at the foot of the directory:
   1. The synthesis adjudicates between reports.

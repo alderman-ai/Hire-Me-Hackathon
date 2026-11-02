@@ -1,7 +1,7 @@
 # L-01 Research list: parent level (every wave-2 spec)
 Status: draft
 Approved by: (not yet)
-Level: parent (`orchestration\research\`, pending S1-Q5)
+Level: parent (`research\global\`)
 Readers: S-D1, S-D3, S-D4, S-D5, S-D6, S-D7, S-D8, S-D9, S-D10 (R3 mainly S-D1, S-D3, S-D8)
 Drawn from: charter "Context and outcome" (one live site that works as "a highly personalized outreach job application"), the Deliverables intro ("legibility matters more than function, and no real data runs through it except where noted"), Scope (the D3 live run on six stakeholders), and "Risks and open questions". No spec's own DoD exists yet and the project DoD isn't written (S2 owns it), so each item cites the charter line it serves instead of a DoD id.
 

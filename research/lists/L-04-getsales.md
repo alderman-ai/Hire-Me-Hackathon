@@ -1,7 +1,7 @@
 # L-04 Research list: S-D3 GetSales outbound demo
 Status: draft
 Approved by: (not yet)
-Level: child (`getsales\research\`, pending S1-Q5)
+Level: child (`research\getsales\`)
 Readers: S-D3 (also reads L-02 R3, the scraped-data output contract)
 Drawn from: D3 ("10 ICPs with a drip sequence each, and a classifier that routes each lead to the right automation. Pipeline: Sales Navigator, then CSV export, then enrichment from D2, then a computed first-message variable, then import into GetSales. Live run: the six stakeholders from D2 go through the operator's own sender profile. The output is a video clipped from the rig recordings"), and the charter's open questions on D3. S-D3's own problem, scope and DoD aren't written yet and the project DoD doesn't exist, so each item cites the charter line it serves instead of a DoD id.
 

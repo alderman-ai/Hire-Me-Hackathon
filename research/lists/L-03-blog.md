@@ -1,7 +1,7 @@
 # L-03 Research list: S-D4 Blog pipeline (S-D5 offered merged)
 Status: draft
 Approved by: (not yet)
-Level: child (`blog-pipeline\research\`, pending S1-Q5); parent instead if S-D5 merges in
+Level: child (`research\blog-pipeline\`); parent (`research\global\`) instead if S-D5 merges in
 Readers: S-D4; S-D5 if merged
 Drawn from: D4 ("Turns 15 minutes of operator dictation into a good-looking blog post that he finishes off (the last 10%). Likely built in the Claude design app"), D5 ("Three posts produced through D4"), and the rig's `/process` step, which already transcribes every recorded session. S-D4's own problem, scope and DoD aren't written yet and the project DoD doesn't exist, so each item cites the charter line it serves instead of a DoD id.
 

@@ -1,7 +1,7 @@
 # L-02 Research list: S-D1 Scraping research demo
 Status: draft
 Approved by: (not yet)
-Level: child (`scraping\research\`, pending S1-Q5), except R3, which is parent (`orchestration\research\`) because S-D3 reads it too
+Level: child (`research\scraping\`), except R3, which is parent (`research\global\`) because S-D3 reads it too
 Readers: S-D1; S-D3 (R3)
 Drawn from: charter row S-D1 ("Demonstrates scraping and research on the Apify API. Early, because others consume its output"), D1 ("Shows the scraping and research capability on the Apify API"), D3's pipeline (enrichment, then a computed first-message variable, then import into GetSales), Scope (no real data except the D3 live run), and the risks rule (the Apify proposal stays off screen). S-D1's own problem, scope and DoD aren't written yet and the project DoD doesn't exist, so each item cites the charter line it serves instead of a DoD id.
 

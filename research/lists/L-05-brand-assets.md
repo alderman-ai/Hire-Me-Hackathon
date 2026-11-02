@@ -1,7 +1,7 @@
 # L-05 Research list: S-D6 Canva LinkedIn templates, S-D7 LinkedIn content, S-D10 Canva video (offered merged)
 Status: draft
 Approved by: (not yet)
-Level: parent (`orchestration\research\`, pending S1-Q5), because three specs read it; child (`<spec>\research\`) for any item only one of them reads if Alex splits the list
+Level: parent (`research\global\`), because three specs read it; child (`research\<spec folder>\`) for any item only one of them reads if Alex splits the list
 Readers: S-D6, S-D7, S-D10
 Drawn from: D6 ("LinkedIn visual asset templates in Canva, in Addvery's brand. A redo of an earlier pixel-perfect branded-assets demo"), D7 ("LinkedIn content creation in Addvery's voice. References the operator's subjective brand capture repo on GitHub"), D10 ("A recording of the operator designing in Canva"). None of the three specs has its own DoD yet and the project DoD doesn't exist, so each item cites the charter line it serves instead of a DoD id.
 

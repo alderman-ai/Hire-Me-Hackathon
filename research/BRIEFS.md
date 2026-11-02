@@ -17,7 +17,7 @@ For every question, answer three things: (1) is there an easy, obvious or conver
 
 Tools: <tools from the list line>.
 
-Write your report to research\staging\<L-nn>-<Rk>-<slug>.md, in this shape:
+Write your report to research\<level folder>\<L-nn>-<Rk>-<slug>.md, in this shape:
 - Header: the question verbatim, then the date, "session s1-research subagent", and "item <k> of <n>" on list <L-nn>.
 - Method: what you searched and when. Cite every substantive claim with a link; mark inference as inference.
 - Verdict up front, then the evidence.
@@ -26,7 +26,7 @@ Write your report to research\staging\<L-nn>-<Rk>-<slug>.md, in this shape:
 - Sources.
 Scale: about 250 to 450 lines for literature research, about 100 for a live probe. Shorter is fine if the evidence is thin; say so.
 
-Reply to me with: the staging path, a three-line verdict, and anything you couldn't do.
+Reply to me with: the report path, a three-line verdict, and anything you couldn't do.
 ```
 
 ## Wildcard
@@ -43,13 +43,13 @@ The other wildcards' lenses: <the two other lenses>.
 Your lens: <W1 can it be executed? | W2 can it be delivered? | W3 will it be received?>
 Research the biggest open question NOT being researched, within your lens.
 
-Write your report to research\staging\<L-nn>-<Wk>-<slug>.md in three parts:
+Write your report to research\<level folder>\<L-nn>-<Wk>-<slug>.md in three parts:
 (a) Gap analysis: what the other items cover, everything left open, a ranked shortlist, why you picked your question and what you passed over.
 (b) Research on that question, in the regular report shape: method, verdict up front, evidence with citations, evidence gaps.
 (c) Recommendations: evidence plus options. Every call in them is Alex's.
 Then Sources. Scale: about 300 to 450 lines.
 
-Reply to me with: the staging path, the question you picked, a three-line verdict, and anything you couldn't do.
+Reply to me with: the report path, the question you picked, a three-line verdict, and anything you couldn't do.
 ```
 
 ## Synthesis
@@ -57,9 +57,9 @@ Reply to me with: the staging path, the question you picked, a three-line verdic
 ```
 You are writing the synthesis for research list <L-nn> for the Hire Me Hackathon project at C:\Users\alder\Desktop\Hire me hackaton. Work alone; do not message other sessions.
 
-Read CHARTER.md, research\lists\<L-nn-scope>.md, then every report on it: <staging paths>.
+Read CHARTER.md, research\lists\<L-nn-scope>.md, then every report on it: <report paths>.
 
-Write research\staging\<L-nn>-synthesis.md:
+Write research\<level folder>\<L-nn>-synthesis.md:
 - Convergences: where reports reached the same finding independently. Say which, and how strongly.
 - Cross-document insights: what only shows when the reports are read together.
 - Conflicts: adjudicate each one and say why. A live probe outranks literature on a tool's behaviour, within what it tested.
@@ -68,7 +68,7 @@ Write research\staging\<L-nn>-synthesis.md:
 - Sources: the reports, by path.
 Scale: about 300 lines.
 
-Reply to me with: the staging path, the three strongest findings, and the open questions.
+Reply to me with: the report path, the three strongest findings, and the open questions.
 ```
 
 ## Shared rules (append to every brief)
@@ -78,6 +78,6 @@ Rules:
 - Screen care: assume anything on screen can be published. Never open the Apify proposal, Alex's private hi-apify repo, or Alex's own GetSales outbound (flows, leads, contacts, inbox).
 - No real data beyond the charter's scope. Nothing about Addvery itself: that research is Alex's own.
 - Don't read C:\Users\alder\Desktop\Hire me hackaton\Addvery Research\ unless your item says so; never copy anything from it into a file.
-- Read-only everywhere outside your one staging file: no commits, no edits to other files, no writes to any connected tool.
+- Read-only everywhere outside your one report file: no commits, no edits to other files, no writes to any connected tool.
 - Never print secrets.
 ```

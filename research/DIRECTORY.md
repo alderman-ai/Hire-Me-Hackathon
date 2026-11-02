@@ -2,7 +2,7 @@
 
 The one index of every research report in this project, at both levels (SPEC.md section 6). Look here first. Each entry says where the report lives, what it decides, what it governs, when to read it and its caveats.
 
-Storage reading: awaiting Alex (S1-Q5). Until he answers, every report stays in `research\staging\`.
+Storage (S1-Q5, Alex: "Just store it locally"): every report lives in `research\` and never moves. Parent-level reports are in `research\global\`, child-level ones in `research\<spec folder>\`.
 
 ## Lists
 

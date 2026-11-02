@@ -15,7 +15,7 @@ Read these at startup with the Read tool, in this order. Never import them with 
 
 ## Roles
 - The session named `s1-research` is the S1 spec orchestrator and follows SPEC.md. A successor after a handoff keeps that name.
-- A session named `rw-L<nn>-<item>` is a worker running one deep-research item, with its own roster row while it runs. It reads only this CLAUDE.md, section 4 of SPEC.md and its list. It writes only that item's staging file, never commits, and sends questions to the active S1 session, never to the desk.
+- A session named `rw-L<nn>-<item>` is a worker running one deep-research item, with its own roster row while it runs. It reads only this CLAUDE.md, section 4 of SPEC.md and its list. It writes only that item's report file, never commits, and sends questions to the active S1 session, never to the desk.
 
 ## Working rules
 - Load SendMessage and ListAgents at startup with ToolSearch `select:SendMessage,ListAgents`. Message other sessions by name.
