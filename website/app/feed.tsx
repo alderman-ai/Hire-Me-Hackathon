@@ -6,10 +6,16 @@ import StatusBoard from "./build-status";
 
 // The live feed: content/feed.json, newest on top (sorted by `at`). s-d9-legibility sends new posts.
 
+type Quote = { text: string; source: string; href?: string; note?: string };
+
+// A bulleted point with a bold lead, optional text and an optional quote under it.
+type Point = { lead: string; text?: string; quote?: Quote };
+
 type Block = {
-  type: string; // p, list, quote, highlight, video, summary, status-board, doc-link
+  type: string; // p, list, points, quote, highlight, video, summary, status-board, doc-link
   text?: string;
   items?: string[];
+  points?: Point[];
   source?: string;
   href?: string;
   note?: string;
@@ -20,7 +26,8 @@ type Block = {
   slug?: string;
 };
 
-type Post = { id: string; at: string; kind: string; session?: string; title: string; blocks: Block[] };
+// roles: which stakeholders a post is for (from s-d9-legibility), kept for the stakeholder pages.
+type Post = { id: string; at: string; kind: string; session?: string; title: string; roles?: string[]; blocks: Block[] };
 
 const feed: { intro: string; posts: Post[] } = feedJson;
 const youtubeIds: Record<string, string | undefined> = videos;
@@ -45,11 +52,45 @@ function Video({ session, start }: { session: string; start: number }) {
   );
 }
 
+function QuoteFigure({ quote }: { quote: Quote }) {
+  return (
+    <figure className="post-quote">
+      <blockquote>
+        <p>&ldquo;{quote.text}&rdquo;</p>
+      </blockquote>
+      <figcaption>
+        {quote.source}
+        {quote.href && (
+          <>
+            {" · "}
+            <a href={quote.href} target="_blank" rel="noopener noreferrer">
+              Watch this moment
+            </a>
+          </>
+        )}
+        {quote.note && <>. {quote.note}</>}
+      </figcaption>
+    </figure>
+  );
+}
+
 function Blocks({ blocks }: { blocks: Block[] }) {
   return (
     <>
       {blocks.map((block, i) => {
         switch (block.type) {
+          case "points":
+            return (
+              <ul key={i} className="post-points">
+                {(block.points ?? []).map((point) => (
+                  <li key={point.lead}>
+                    <strong>{point.lead}</strong>
+                    {point.text && <> {point.text}</>}
+                    {point.quote && <QuoteFigure quote={point.quote} />}
+                  </li>
+                ))}
+              </ul>
+            );
           case "list":
             return (
               <ul key={i} className="post-list">
@@ -60,23 +101,10 @@ function Blocks({ blocks }: { blocks: Block[] }) {
             );
           case "quote":
             return (
-              <figure key={i} className="post-quote">
-                <blockquote>
-                  <p>&ldquo;{block.text}&rdquo;</p>
-                </blockquote>
-                <figcaption>
-                  {block.source}
-                  {block.href && (
-                    <>
-                      {" · "}
-                      <a href={block.href} target="_blank" rel="noopener noreferrer">
-                        Watch this moment
-                      </a>
-                    </>
-                  )}
-                  {block.note && <>. {block.note}</>}
-                </figcaption>
-              </figure>
+              <QuoteFigure
+                key={i}
+                quote={{ text: block.text ?? "", source: block.source ?? "", href: block.href, note: block.note }}
+              />
             );
           case "highlight":
             return (

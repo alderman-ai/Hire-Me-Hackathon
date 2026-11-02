@@ -3,7 +3,7 @@
   "posts": [
     {
       "id": "status",
-      "at": "2026-11-02T14:15",
+      "at": "2026-11-02T14:45",
       "kind": "Status",
       "title": "What's being built today",
       "blocks": [
@@ -353,6 +353,114 @@
           "type": "quote",
           "text": "Make sure that if there's an easy answer, an obvious answer, converged upon answer, we're using it, or if not that we at least know traps and gotchas that we don't fall into. So that when we design the methodology to go from problem to DoD that we have research to guide that process. We're not just using raw training data.",
           "source": "S05 at 28:27"
+        }
+      ]
+    },
+    {
+      "id": "s07-control-room",
+      "at": "2026-11-02T13:36",
+      "session": "S07",
+      "kind": "Session",
+      "title": "Alex builds himself a control room",
+      "roles": [
+        "CEO",
+        "COO",
+        "CTO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "With a dozen agents running, Alex spends S07 making the project easier to steer instead of building more of it."
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "A briefing session for himself.",
+              "text": "It isn't in the plan. It watches every session every few minutes, so that when he's lost it can tell him where things stand and where he's the blocker.",
+              "quote": {
+                "text": "That's going to be the session where I go to where I'm like, I'm lost, there's a million things happening, keep me updated.",
+                "source": "S07 at 02:07"
+              }
+            },
+            {
+              "lead": "This feed.",
+              "text": "He asks for the agent that reads these recordings and keeps the site updated, started straight away instead of later in the day. That agent wrote this post.",
+              "quote": {
+                "text": "Done equals that I just build and work and the website gets additions … I wanted to proactively keep updating the website to show as much as possible to people following along, without me explicitly saying so.",
+                "source": "S07 at 05:04"
+              }
+            },
+            {
+              "lead": "The 13:20 recovery becomes a skill.",
+              "quote": {
+                "text": "Whatever you did to make all this working again was perfect. Please go ahead and codify that as a skill, so that if I need to use it again, it's an instant fix.",
+                "source": "S07 at 08:20"
+              }
+            },
+            {
+              "lead": "Approvals become checkboxes.",
+              "text": "Anything that waits on Alex becomes a file with an \"I approve\" box. The waiting agent checks it every five minutes, and the answer desk tells him it's there."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "He ends on one priority:"
+        },
+        {
+          "type": "quote",
+          "text": "I am going to start this research. And I'm not going to start anything else until that's done.",
+          "source": "S07 at 33:29"
+        }
+      ]
+    },
+    {
+      "id": "insight-api-keys",
+      "at": "2026-11-02T14:12",
+      "session": "S07",
+      "kind": "Insight",
+      "title": "API keys never move on camera",
+      "roles": [
+        "CTO",
+        "CAIO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Before the research can start, the project needs API keys, and everything on screen is recorded and published. So Alex stops the recording before he moves them, and gives the agent doing the move a rule: no keys move while the rig is recording."
+        },
+        {
+          "type": "quote",
+          "text": "I'm going to definitely turn off recording while I push, pull all the secret keys over, just in case … Do not move any secret keys if the rig is recording an OBS session. Require it to stop first and alert operator.",
+          "source": "S07 at 35:43"
+        }
+      ]
+    },
+    {
+      "id": "demo-plans",
+      "at": "2026-11-02T14:39",
+      "kind": "Milestone",
+      "title": "Every demo has a plan",
+      "roles": [
+        "all"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Between 14:22 and 14:34, a temporary agent drafts a plan (a spec) for each demo: scraping, outbound, the blog pipeline and its three articles, the Canva templates, the LinkedIn content and the Canva video. Each plan opens with the questions it needs Alex to answer, so he answers them in one go and the agent carries on without him."
+        },
+        {
+          "type": "p",
+          "text": "At 14:38 Alex approves the project-wide research. Seven agents now research in parallel: four questions, plus three \"wildcards\" (can it be executed, delivered, received?)."
+        },
+        {
+          "type": "p",
+          "text": "At 14:39 the scraping demo's agent starts work. Alex runs the scraping himself on the Apify API, and the agent turns his results into a section of this site that a visitor can follow without explanation."
+        },
+        {
+          "type": "p",
+          "text": "Alex also set a rule for everything the agents put in front of him: name it in plain words, open with all the context, and use no internal codes like \"D2\" or \"S1\"."
         }
       ]
     }

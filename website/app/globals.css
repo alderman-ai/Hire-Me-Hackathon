@@ -222,13 +222,23 @@ a:hover {
   text-wrap: balance;
 }
 
-.post-list {
+.post-list,
+.post-points {
+  max-width: 720px;
   margin: 0 0 12px;
   padding-left: 20px;
 }
 
 .post-list li {
   margin-bottom: 8px;
+}
+
+.post-points li {
+  margin-bottom: 14px;
+}
+
+.post-points .post-quote {
+  margin: 8px 0 0;
 }
 
 .post-doc-link a {

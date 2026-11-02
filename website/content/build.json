@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "14:15",
-  "as_of_line": "As of 14:15 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "14:45",
+  "as_of_line": "As of 14:45 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Thirteen pieces of work, run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come ten demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -31,74 +31,74 @@
     {
       "piece": "Research",
       "what": "Decides with Alex what gets researched and how deep, so the agents work from findings instead of guesses.",
-      "status": "Running. Five research lists drafted; the first is with Alex for approval."
+      "status": "Project-wide research approved at 14:38. Seven agents researching in parallel."
     },
     {
       "piece": "Project orchestrator",
       "what": "Keeps the plan consistent: adds deliverables and updates everything that depends on them.",
-      "status": "Definition of done signed off at 14:02. Its tools are built and tested."
+      "status": "Definition of done written into the charter at 14:25. Its tools are built and tested."
     }
   ],
   "demos": [
     {
       "n": 1,
-      "demo": "Scraping and research",
-      "what": "Scraping and researching prospects at scale. It goes first, because other demos use what it finds.",
-      "status": "Folder ready, next to launch."
+      "demo": "Scraping and research on the Apify API",
+      "what": "Scraping and researching prospects at scale on the Apify API. It goes first, because other demos use what it finds.",
+      "status": "Running since 14:39. Alex scrapes, and the agent turns his results into this site's demo section."
     },
     {
       "n": 2,
       "demo": "Company and stakeholder research",
       "what": "Deep research on the company and the people likely to be involved in hiring.",
-      "status": "Alex is doing this one himself."
+      "status": "Alex is on it, with his own agent since 14:42."
     },
     {
       "n": 3,
       "demo": "Outbound automation in GetSales",
       "what": "10 ideal customer profiles, each with its own drip sequence, and a classifier that sends each lead to the right one. The first message is personalized before import. Shown as a video clipped from these recordings.",
-      "status": "Waiting on demo 2."
+      "status": "Plan drafted. Waiting on demo 2."
     },
     {
       "n": 4,
       "demo": "Blog pipeline",
       "what": "15 minutes of Alex talking turns into a near-finished blog post. He does the last 10%.",
-      "status": "Folder ready."
+      "status": "Plan drafted. Its questions are with Alex."
     },
     {
       "n": 5,
       "demo": "Three blog articles",
       "what": "Three posts made with that pipeline, on the ideas behind this project.",
-      "status": "After demo 4."
+      "status": "Plan drafted. After demo 4."
     },
     {
       "n": 6,
       "demo": "LinkedIn templates in Canva",
       "what": "Pixel-perfect, on-brand visual templates for LinkedIn.",
-      "status": "Folder ready."
+      "status": "Plan drafted."
     },
     {
       "n": 7,
       "demo": "LinkedIn content",
       "what": "LinkedIn posts written in the company's own voice.",
-      "status": "Folder ready."
+      "status": "Plan drafted."
     },
     {
       "n": 8,
       "demo": "This website",
       "what": "A page for each key stakeholder, and a running picture of the project.",
-      "status": "Live."
+      "status": "Live, now a feed, newest first."
     },
     {
       "n": 9,
       "demo": "Legibility analyzer",
       "what": "An agent that watches the recordings and tells the website what to add. This section is its first post.",
-      "status": "Running since 13:46."
+      "status": "Running since 13:46. Has read every session up to S07."
     },
     {
       "n": 10,
       "demo": "Canva design video",
       "what": "Alex designing in Canva, on camera, near the end of the day.",
-      "status": "Near the end."
+      "status": "Plan drafted. Recorded near the end."
     }
   ],
   "quotes": {
