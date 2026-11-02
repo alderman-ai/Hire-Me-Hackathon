@@ -150,3 +150,118 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov, drafting (wave2-specs): S-D10 makes the cut itself with ffmpeg; video files stay in `out\`, git-ignored, and go only to YouTube. | Clips come from S-D9 and uploads from `website`; the inset and the trim are this spec's own work. Video is never hosted on Vercel. | It keeps each session to its role (P2) and the repo free of video. | If `website` would rather composite, run step 7 moves there. |
 | 2 Nov, drafting (wave2-specs): the screen-care check looks at a frame at every scene change and at least every 5 seconds. | His Canva account may show other clients' designs, and anything published must pass DoD-22, which S-D10 serves. | Dense enough to catch a panel opening, cheap enough to run on a 15-minute cut. | A closer check costs only subagent time. |
 | 2 Nov, drafting (wave2-specs): the scene brief goes to Alex as a plain operator task, `Do - film yourself designing in Canva.md`, at about 17:05, not as a desk question. | It's something he reads and acts on, not a decision (ASKING.md: other operator tasks use the operator task template). | It keeps his one-question desk free for decisions. | None beyond how the brief reaches him. |
+
+## Appendix A. Held preflight intake
+
+This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** the Canva templates intake (Decide - how the Canva templates get made.md) is answered, because the recording films the templates. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - when and how to film the Canva video.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D10: Decide - when and how to film the Canva video.md is waiting on you: <what it decides and unblocks>`.
+
+~~~~markdown
+---
+System Primitive: Intake file
+Intake State: Waiting on operator
+Intake id: DI-XX
+Created: 2026-11-02
+Build goals: []
+---
+
+<!-- File name: "Decide - when and how to film the Canva video.md" -->
+
+# Decide: when and how to film the Canva video
+
+## What this is
+
+The site you're building today is a personalised job application to Addvery, made live during a 12-hour recorded hackathon. One part of it is a short video of you designing in Canva, filmed near the end of the day. You build a LinkedIn post or short carousel from the Addvery templates made earlier today, using copy from the LinkedIn posts demo. It shows Addvery's marketing side that you can do the design work yourself, not only automate it, and that the templates hold up in a person's hands. The video goes on YouTube, unlisted, and gets its own section on the site.
+
+You're asked three things: when you film it and what you design, whether you verify your YouTube channel for videos over 15 minutes or keep this one under 15, and whether the video shows your screen or your webcam. Once you answer, the assistant that prepares the scene starts. It writes you a one-page scene brief, then waits for the templates.
+
+It needs you on camera once: the design scene itself, proposed for 17:15–17:40, at most 15 minutes of footage unless you verify the channel. This intake takes you about 3 minutes. Answer by 16:45 if you can, so the scene brief is ready by 17:05; if you choose to verify the channel, do it before 17:15.
+
+This intake holds 3 decisions. Each carries its own context, so you can answer them in any order. An empty fence means not answered. The spec draft is at `canva-video\SPEC.md` for reference, but you needn't read it. Say "DI-XX is ready" when you're done.
+
+# QXX.1 When you design in Canva on camera, and what
+
+The charter's line for this video is "A recording of the operator designing in Canva, done near the end", and the project's definition of done wants it "on the site". It needs the Addvery templates in Canva first. Those are due for your brand sign-off at 16:45–17:00.
+
+The proposed scene: during a recorded rig session (type `/start` if you're between sessions), you build one LinkedIn post or short carousel from the templates, using one of the LinkedIn posts as the copy, and export it. You say "Canva design starts now" at the start and "Canva design done" at the end, so the clip can be cut by those words. At about 17:05 the assistant sends you the one-page scene brief as a task in Operator tasks, with where to find the design link and a screen-care checklist. Your Canva account may show other clients' work, so you open the design by its link with the recording paused, and stay out of Canva's home page and project list on camera. After the scene, the clip waits until you `/stop` that session and type `/process`, as you do now.
+
+The timetable changed at 14:30: you moved the GetSales live run to before 15:30, which freed 17:00–17:30.
+
+Your options:
+
+- **A. 17:15–17:40.** It leaves 15 minutes after the sign-off to fix the templates, and 17:40–18:00 for a retake and for `/stop` and `/process` before you leave.
+- **B. 17:30–17:55,** the earlier proposal. More time to fix the templates, but almost no time for a retake before 18:00.
+- **C. Another time, or something else to design.** Write the time, and what you'd rather design if not the above.
+
+I recommend A. It uses the time the GetSales move freed and still leaves room to reshoot before you leave.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it moves the scene to the morning cleanup session and logs it.
+
+This answer sets when you're on camera for the video and what you design.
+
+Write A, B, or C and the time or what to design.
+
+## AXX.1
+
+`<operator_answer>`
+```a-XX-1
+
+```
+`</operator_answer>`
+
+# QXX.2 Verify your YouTube channel, or keep the video under 15 minutes
+
+YouTube caps unverified channels at 15 minutes. The website assistant's notes say that until you switch on long uploads at https://www.youtube.com/verify, any longer video won't upload. The videos go on your main channel, the one you picked for every upload.
+
+That cap isn't only this video's problem. The site's videos of your work sessions run 1 to 1.5 hours each, so unless you've already verified, none of them can upload either. Verifying takes a phone number and a few minutes (estimate), off camera, with the recording paused. No other part of the project asks you this.
+
+Your options:
+
+- **A. Verify the channel before 17:15.** This video can run longer than 15 minutes if the scene does, and every session video can upload too.
+- **B. Keep this video under 15 minutes.** Nothing to do now. The cut trims the slow stretches (waiting, exporting) to fit. Session videos stay capped until you verify.
+- **C. Something else.** Say what.
+
+I recommend A. It's a few minutes off camera, and it lifts the cap for every video on the site, not just this one.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes B, keeps the video under 15 minutes, and logs it.
+
+This answer decides how long this video can be, and whether the site's session videos can upload at all.
+
+Write A, B, or C and what you want instead.
+
+## AXX.2
+
+`<operator_answer>`
+```a-XX-2
+
+```
+`</operator_answer>`
+
+# QXX.3 What the video shows: the screen or the webcam
+
+The site shows the webcam, not the screen share: your call earlier today, which holds for every session video. A Canva design video shown as webcam only would show your face, not the design. The rig records the screen and the webcam as separate files (you chose a separate webcam file when you set the rig up), so both exist either way, and the clip finder cuts the screen clip with its matching webcam clip.
+
+Whatever goes up, a check runs first: a frame at every scene change and at least every 5 seconds is checked for other clients' designs, Canva's home page or project list, secrets, the Apify proposal and your own GetSales outbound. Anything found is blurred or cut.
+
+Your options:
+
+- **A. The screen, with your webcam as a small inset in one corner,** for this one video. Every session video stays webcam-only. The assistant makes the inset locally, and the website assistant adds a screen-video upload to its flow.
+- **B. The screen only.**
+- **C. The webcam only,** as your standing call says, with a still of the finished design beside the video. Cheapest, but viewers don't see the design happen.
+- **D. Something else.** Say what.
+
+I recommend A. The definition of done asks for a recording of you designing, and only the screen shows the designing; the inset keeps your face in it, as the rest of the site does.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it puts C live, which keeps your standing call, leaves an A cut ready for the morning cleanup session to swap in on your word, and logs it.
+
+This answer decides what the video's section on the site shows, and whether the website assistant adds a screen-video upload.
+
+Write A, B, C, or D and what you want instead.
+
+## AXX.3
+
+`<operator_answer>`
+```a-XX-3
+
+```
+`</operator_answer>`
+~~~~
