@@ -64,7 +64,7 @@ WORDS = {w: i for i, w in enumerate(
 SKIP_DIRS = {"node_modules", ".next", ".venv", "__pycache__", ADDVERY.lower(), "operator tasks"}
 SKIP_PATHS = {"orchestration/changes", "orchestration/_templates", "answer-desk/qa",
               "obs/processed", "obs/live", "obs/_test", "obs/rig/run", "obs/rig/models",
-              "briefing/data"}
+              "briefing/data", "website/content/docs", "research/lists", "legibility/posts"}
 SKIP_FILES = {"orchestration/dod-draft.md", "orchestration/handoff.md", "answer-desk/queue.md"}
 
 gaps, notes, placeholders = [], [], {}
