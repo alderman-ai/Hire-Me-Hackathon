@@ -20,7 +20,7 @@ Created: 2026-11-02 15:08 Prague
 
 **What you're asked.** Approve the website's plan: what "done" means for it, how it gets there, and four small choices made on defaults. Ticking the box takes all four defaults.
 
-**What happens once you answer.** Nothing changes on the site from this approval alone. It confirms the plan the website session is already running. Addvery's look and the six pages still wait for a separate decision form. That form is held until your Addvery research has your six confirmed or your brand capture, so it doesn't pull you off that research. After it, the six pages come to you for one more approval of about 10 minutes before anything about the six goes live.
+**What happens once you answer.** Nothing changes on the site from this approval alone. It confirms the plan the website session is already running. One update since this was written: on your word at about 15:30, Addvery's look is being taken from their own website now (design, logos, icons, structure and motion), with a visible line on every page saying it's your unofficial application. The six pages still wait for a separate decision form. That form is held until your Addvery research has your six confirmed, so it doesn't pull you off that research. After it, the six pages come to you for one more approval of about 10 minutes before anything about the six goes live.
 
 **What's waiting on it.** Nothing is blocked. If it's still open at 18:00 Prague, the session carries on with this plan as written and notes that it did.
 
