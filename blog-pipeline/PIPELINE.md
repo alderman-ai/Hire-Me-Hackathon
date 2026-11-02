@@ -1,6 +1,6 @@
 # Blog pipeline runbook
 
-**v0, 2 Nov 2026, ~15:15 · not yet run, not yet accepted.** Written from the planned stages before the test dictation. v1 replaces it once the test post has gone through every stage; each version is announced to the three-articles session as `PIPELINE S-D4 v<n>: blog-pipeline\PIPELINE.md at <commit>; <accepted | not yet accepted>`.
+**v1, 2 Nov 2026, ~19:30 · run by S-D5 on the two articles (compiled-source mode, see Versions).** v0, ~15:15, was the first draft. Written from the planned stages before the test dictation. v1 replaces it once the test post has gone through every stage; each version is announced to the three-articles session as `PIPELINE S-D4 v<n>: blog-pipeline\PIPELINE.md at <commit>; <accepted | not yet accepted>`.
 
 What it does: about 15 minutes of Alex talking (Wispr Flow) in, one near-final post file out, in the format of `POST-FORMAT.md`, with only his last 10% left as `[Alex: ...]` notes. Every stage is a fresh subagent with one prompt from `prompts\` and only its input files. **Nobody edits between stages:** when a stage's output is wrong, fix its prompt, bump the prompt's version, and rerun that stage and every one after it.
 
@@ -97,3 +97,4 @@ gives `share_changed_by_alex`; the publish step sets `status: "published"` and t
 | --- | --- | --- |
 | v0 | 2 Nov, ~15:15 | First draft from the planned stages and prompts v0, before any run and before the blog research lands |
 | v0 (timing) | 2 Nov, ~15:45 | Stage timings from a rehearsal on a rig transcript; prompts 1, 4 and 5 at v0.1 after it. The rehearsal isn't the test post and isn't committed |
+| v1 | 2 Nov, ~19:30 | S-D5 owns the kit (S-D4 retired). Compiled-source mode: on Alex's instruction (about 18:15, "I've given you the transcripts ... pull lots of quotes") a reader subagent compiles his recorded and typed words per post into `blog-articles\local\sources\<id>.md` (git-ignored), which stands in for `{DICTATION}`; stage files run in `blog-articles\local\drafts\<id>\`. Block quotes (POST-FORMAT v1.4) in prompts 4 to 6; a cold read under `marketing:brand-review` after stage 5 writes `5b-coldread.md` and changes nothing. Drafts go to a Claude Doc for his last 10%, not a gate approval. Prompts: 3 v0.4, 4 v0.3, 5 v0.4, 6 v0.4 |
