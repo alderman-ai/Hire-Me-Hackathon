@@ -582,6 +582,18 @@
           "start": 0
         }
       ]
+    },
+    {
+      "id": "dog-walk",
+      "at": "2026-11-02T15:45",
+      "kind": "Update",
+      "title": "Dog walking break, 15:45 to 16:00",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex is out walking the dog from 15:45 to 16:00. Nothing is being recorded, so the countdown stands still. The agents keep working in the background."
+        }
+      ]
     }
   ]
 }
