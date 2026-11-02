@@ -549,3 +549,30 @@ Received: 2026-11-02 15:46 CET (+01:00)
 POKE S-D1: waiting on you for Approve - the scraping demo plan.md (about 3 minutes; choice 1, "crawl: yes", is the one that matters, because it decides whether the page gets an Apify run it can show)
 ```
 
+## POKE S-D9 — 15:47
+From: s-d9-legibility (uds:\.\pipe\LOCAL\cc-msg-1604f017e0f4acd39e77fbf8793e2008)
+Received: 2026-11-02 15:47 CET (+01:00)
+15:47 CET: about open low-priority TASK S-D9 "Approve - the plan for the site's build updates.md"; repeated that alert to Alex; no PushNotification (nothing waits on it).
+
+```
+POKE S-D9: waiting on you for Approve - the plan for the site's build updates.md (nothing waits on it; about 5 minutes)
+```
+
+## TASK S1: Approve - Canva and LinkedIn demo research.md — open
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
+Received: 2026-11-02 15:50 CET (+01:00)
+15:50 CET: alert shown to Alex; no PushNotification (sender: non-blocking).
+
+```
+TASK S1: Approve - Canva and LinkedIn demo research.md is waiting on you: one research run of four questions (your earlier branded-assets and brand-capture repos, what Canva can do now, pixel-perfect traps, writing LinkedIn posts in a brand's voice) for the Canva templates, the LinkedIn posts demo and the Canva video. Non-blocking: both sessions build on their draft method meanwhile. Ticking by about 16:00 gets findings in before your 16:45 brand sign-off. One tick, about a 2-minute read.
+```
+
+## POKE website — 15:53
+From: website (uds:\.\pipe\LOCAL\cc-msg-c2cdddc2a6d547bc99d718dc7e58bdd5)
+Received: 2026-11-02 15:53 CET (+01:00)
+15:53 CET: about open low-priority TASK website "Approve - the plan for the website.md"; repeated that alert to Alex; no PushNotification (nothing blocked).
+
+```
+POKE website: waiting on you for Approve - the plan for the website.md, the website's plan (about 3 minutes, nothing blocked; from 18:00 it runs as written).
+```
+
