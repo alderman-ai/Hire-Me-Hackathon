@@ -21,7 +21,7 @@ From the first `s-d1-scraping` session (fork gate F2: context about half full, a
 | 7 Draft | `draft\d1.md` (git-ignored), SHA-256 0961c7fe33df: cold-read, copy-passed under `marketing:draft-content`, with Alex's 16:41 changes applied. Fill and cold-read briefs: see SPEC.md §7. |
 | 8 Section sign-off (OT-12) | **Answered by Alex**, below. Marked Answered in the file (0bb061d). |
 | 9 Publish and BUILD | **Done by the successor at 17:23–17:25:** `site\d1.md` (SHA-256 1a16011be7b0) plus `site\carousel\01–04` (addvery-research's site-safe boards, 2x), commit f2fc07d. `BUILD S-D1-B1` sent to `website` at 17:25: waiting for BUILT or REFUSED. TASK DONE sent to the desk, ARCHIVE to `orchestration`. Decisions are in SPEC.md §9, 17:23. |
-| 10–11 Screen care, DONE | After BUILT. |
+| 10–11 Screen care, DONE | **Done at 18:03:** BUILT S-D1-B1 (website 983449a), screen care passed, DONE sent to `orchestration`. Staying up for readers until it says stop. |
 
 No desk question is open. The last poke was at 16:16 (OT-06). No `BUILD` is in flight.
 
