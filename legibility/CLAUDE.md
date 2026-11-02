@@ -12,7 +12,7 @@ Read these at startup with the Read tool, in this order. Never import them with 
 4. `..\answer-desk\ASKING.md`: every question for the operator goes to `answer-desk` in this format (P4), including the poke.
 5. `..\answer-desk\qa\S-D9.md`: this spec's record of every question asked and answered. The desk creates it with the first question; skip it until then.
 6. `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers, such as the stakeholder roles (DI-1 Q1.9).
-7. `SPEC.md` in this folder, once it exists. Start with its operator preflight.
+7. `SPEC.md` in this folder: the job (no operator preflight needed).
 8. `HANDOFF.md` in this folder, if it exists: the state after a fork.
 9. `..\research\DIRECTORY.md`, the index of research reports, and `..\research\lists\L-01-parent.md`, S1's parent list. Read only; S1 owns them.
 10. `..\OBS\rig\RUNBOOK.md`: how the capture rig records and processes the clips this spec reads. Read it; never edit anything under `..\OBS\`, which `rig` owns.
@@ -62,5 +62,5 @@ When Alex says something overshares, through `website`, the desk or directly: se
 
 ## Launch and forking gate (P8)
 In PowerShell, from any folder:
-`cd "C:\Users\alder\Desktop\Hire me hackaton\legibility"; claude --bg -n s-d9-legibility "Read CLAUDE.md and run the interim brief, starting with the startup catch-up. Then run the 30-minute check with /loop 30m."`
-Once `SPEC.md` exists, the launch prompt becomes "Read CLAUDE.md, then SPEC.md in this folder, and start with its operator preflight." The forking gates are in SPEC.md. A handoff keeps the name: the old session writes its handoff, launches the successor as `s-d9-legibility` again, updates its row in `..\SESSIONS.md` with the handoff time, and stops itself straight away.
+`cd "C:\Users\alder\Desktop\Hire me hackaton\legibility"; claude --bg -n s-d9-legibility "Read CLAUDE.md, then SPEC.md in this folder, and HANDOFF.md if it exists. Then run the 30-minute check with /loop 30m."`
+SPEC.md needs no operator preflight. The forking gates, and the successor's prompt, are in SPEC.md section 8. A handoff keeps the name: the old session writes its handoff, launches the successor as `s-d9-legibility` again, updates its row in `..\SESSIONS.md` with the handoff time, and stops itself straight away.

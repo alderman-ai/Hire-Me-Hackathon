@@ -101,6 +101,7 @@ C01 and C02 went out together as `Operator tasks\Approve - Addvery research is y
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
 | C04 | Alex: A website-Q3, 14:25 ("a": the repo stays as it is, since the charter and specs only mention the proposal) | 2 Nov | DoD-22's check reads "shows" as displaying the proposal or the outbound, not mentioning them: the charter and specs may name them. Goes out in the next preview after OT-02 is answered. |
+| C05 | S2's own DoD work (item 5 above); conflict flagged by `s1-research` from `research\global\L-01-R3-personal-data.md`, 14:58 | 2 Nov | DoD-22 keeps "the operator's own GetSales outbound" off everything published, while DoD-13 needs a clip of the live run in GetSales. Proposed: DoD-22 means his own campaigns outside the demo folder; the demo folder, the alert flow and the live-run clip may show, with the six's names, photos and personal lines blurred. DoD-22 also gains the six's personal data and replies. Goes out with C04. |
 
 **Dependent places.**
 
