@@ -39,6 +39,14 @@ Read this file at startup, and again before you message a session you haven't me
 | `s-d7-linkedin-content` | `linkedin-content\` | S-D7 LinkedIn content creation demo | Wave 2, once Alex's brand capture is in `Addvery Research\`. |
 | `s-d10-canva-video` | `canva-video\` | S-D10 Canva design video | After S-D6, near the end of the day. |
 
+## Finished
+
+Spec sessions that have done their job and stopped. Their rows stay, so every spec row keeps a roster row.
+
+| Session | Folder it started in | Spec | Finished |
+| --- | --- | --- | --- |
+| `s0-bootstrap` | `bootstrap\` | S0 Bootstrap | Done and stopped on 2 Nov; all 10 steps ticked, check passed. |
+
 ## Not sessions
 
 - `Addvery Research\`: Alex's own folder, worked one-on-one, with no spec. It's git-ignored, so read it from the local disk. It has no roster name unless Alex starts a session there.
