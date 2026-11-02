@@ -1,6 +1,6 @@
 # S-D9 Legibility analyzer: executable spec
 
-Status: ready to launch (no preflight needed: its one decision is the clip gate) · Row: S-D9 — Legibility analyzer · Folder: `legibility\` · Session: `s-d9-legibility`
+Status: running on this spec since 14:51; methodology revised after the L-01 synthesis at 15:20; spec-draft gate with Alex · Row: S-D9 — Legibility analyzer · Folder: `legibility\` · Session: `s-d9-legibility`
 
 This spec keeps the site telling the story of the build without Alex having to ask. Every 30 minutes, the session reads what the rig has filed and what has changed in the project. It picks what a follower or an Addvery stakeholder should see, writes it as a post, and asks `website` to put it on the site. It also cuts clips from the rig recordings for any spec that asks. Two of those clips feed deliverables: the D3 GetSales live run, and the D10 Canva design video. Its work shows in the site's live feed, newest on top, and in the feed's `status` post, which is the deliverables view. It also shows, through the specs it cuts clips for, in the D3 and D10 sections, and in the stakeholder sections once those are live.
 
@@ -129,7 +129,14 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
 
 ## 7. Methodology and steps
 
-**Draft methodology.** The session confirms or revises this once the L-01 synthesis lands. It then runs the coherency check: "if we execute this methodology, will that DoD be satisfied?"
+**Methodology, revised at 15:20 after the L-01 synthesis** (`..\research\global\L-01-synthesis.md`, section "S-D9 Legibility analyzer", recommendations 9.1 to 9.7). The synthesis settles the one conflict that touched this spec, R1's "a raw build log is noise" against the live feed, in this spec's favour: it reads S-D9 as the curator. The curated, dated feed stays, and the rules below keep it curated.
+
+**Coherency check** ("if we execute this methodology, will that DoD be satisfied?"):
+- **DoD-20.** The 30-minute check reads every filed session. The "Sessions covered" table records each one, and the 100-minute floor keeps gaps under two hours. Yes.
+- **DoD-19.** Every post goes as a build request, and the floor refreshes the `status` post. Yes, provided `website` keeps answering. The 30-minute resend rule covers a silent `website`.
+- **DoD-13.** It depends on two things outside this spec: the rig recording the outreach, and Alex typing /process. The `NO CLIP` path and the one poke cover both. Yes on S-D9's side.
+- **DoD-22.** The never-post list now includes R3's keep-off items, the clip frame check covers 9.4, and a publish check runs at every fork. Yes.
+- **DoD-18 (served).** Role tags are kept in `posted.md` from P1 on. Yes, once the sections exist.
 
 - **The 30-minute check** (from the interim brief).
   - Check `..\OBS\Processed\index.json`, and read any newly filed sessions, oldest first.
@@ -146,6 +153,13 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
   - milestones on the clock.
 
   Prefer Alex's own words, quoted with the session and time, and linked to the video moment where there is one. Use the feed's kinds: Status, Update, Milestone, Insight, Session and Explainer.
+- **How posts read** (L-01 synthesis).
+  - **Curated, not raw (9.1).** Each post is a dated "what changed" item in plain words that a reader can scan. Done items come first, with a link to the section where there is one. Never post raw clips, long unedited footage or a commit stream.
+  - **Judgment first (9.2).** Prefer moments that show Alex's judgment (a choice, a cut, a check), and moments that show what broke and how it was handled.
+  - **Alex directs and decides, the agents carry out (9.3, Q18).** New posts put the decision in Alex's hands and the execution in the agents'. Never write "the agents take over". Past posts keep their titles. This is the research default until Alex answers Q18; `website` owns the site-level framing, and this spec follows its answer.
+  - **Show the orchestration layer as skill (conflict 5, Q8).** Posts about the sessions, the answer desk and this loop stay, worded around outcomes, not tool names. If Alex answers Q8 differently through `website` or S2, follow that.
+  - **No invented numbers (X.4).** Every number is counted from a source (a commit, a file, a transcript), or labelled as an estimate.
+  - **Say what the AI did.** When a post was drafted by this session from Alex's words, the feed can say so. The relational text, anything addressed to the six, is never this session's to write.
 - **The two-hour floor** (DoD-20). While sessions are being filed, post a status refresh once 100 minutes have passed since the last post, even if nothing new was filed. It updates the `status` post, which moves back to the top, and adds the latest moment worth showing.
 - **Role tags** (DI-1 Q1.9). Tag each moment in `posted.md` with the roles it speaks to: roles only, never people. Once `website` sends the six roles, offer each section its moments in one build request per batch.
 - **Never post.** This keeps the interim brief's list and adds to it:
@@ -154,6 +168,7 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
   - Apify's name, until S-D1 passes on Alex's answer to its DI-6 question 3;
   - anything from `..\Addvery Research\`, or research about Addvery's people, until Alex says so;
   - the six stakeholders' names, and anything from S-D3's GetSales output in the filed Claude Code logs;
+  - about the six (R3, section 8 and its keep-off table): their reactions to the outreach (acceptances, replies, the inbox), photos or avatars, verbatim LinkedIn posts or profile screenshots, career history, and any personality or "buyer type" profiling;
   - personal or health matters, or anything about people other than Alex;
   - anything on `do-not-post.md`;
   - screen footage in its own posts.
@@ -173,14 +188,22 @@ All the groundwork goes ahead while research runs, and the loop never waits for 
   - S-D3's line is `S-D3 live run: stage times for the DoD-13 clip in getsales\live-run.md; show <what the pre-send gate approved> of the six, blur the rest.` It counts as `CLIP S-D3-C1`.
   - Once the session is filed, find the cues from its transcript, or use the times given.
   - Cut with ffmpeg from the recordings in `D:\OBS Outputs\Uploaded\`, with 3 seconds of padding (DI-1 Q1.10), into `clips\`.
-  - Check one frame every 2 seconds for anything the never-post rules forbid beyond what the request allows, and cut around it.
+  - Check one frame every 2 seconds for anything the never-post rules forbid beyond what the request allows, and cut around it. That includes the six people's names, avatars and LinkedIn profiles, GetSales lead lists, acceptances, replies and the inbox (9.4).
   - Reply `CLIPPED <id>: <clip paths or YouTube id>`, or `NO CLIP <id>: <why>`.
   - The asking spec places the clip on the site with its own build request.
 - **The D3 clip** (DoD-13), as `CLIP S-D3-C1`.
   - Read the stage times from `..\getsales\live-run.md` once S-D3 has written it. It holds times, no names. If it's missing, find the stages from that session's transcript and Claude Code logs, and keep the blur.
   - Cut one short piece per stage from the screen recording.
   - Blur every region where one of the six shows, as S-D3's line says, using boxes found from sampled frames. A stage that can't be blurred reliably becomes a blurred still or a caption card.
-  - Caption each stage, and join the pieces into `clips\d3-live-run.mp4`. Aim for about 2 to 4 minutes, well under YouTube's 15-minute cap.
+  - Caption each stage, and join the pieces into `clips\d3-live-run.mp4`, to the synthesis's clip spec (3.6):
+    - 2 minutes or less, or about 60 seconds plus a longer cut;
+    - the end state in the first seconds;
+    - one labelled chapter per stage;
+    - captions for sound-off viewing;
+    - waiting cut out, but nothing sped up;
+    - each cut disclosed on screen ("cut for length");
+    - tight crops.
+  - Never show acceptances, replies or the inbox (3.7). How the six are hidden (blur, a dummy lead alongside, or the stages only) is Alex's Q4, which S-D3 owns through its pre-send gate. Until S-D3 says otherwise, blur.
   - Run the gate (step 5). Then reply `CLIPPED S-D3-C1: legibility\clips\d3-live-run.mp4`. S-D3 sends `BUILD S-D3-B2` to place it.
 
 **Steps.**
@@ -251,6 +274,8 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, the a
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
+| 2 Nov 15:20, s-d9-legibility, after the L-01 synthesis: no desk question from S-D9 for Q4, Q8 or Q18. Q4 belongs to S-D3's pre-send gate (blur until told otherwise). Q8 and Q18 are site-level, so `website` (S-D8) is the asker, and this spec follows its answer. Meanwhile posts use the research defaults: show the orchestration layer as skill, and frame new posts as Alex directs and decides, the agents carry out. | Each question names two or three specs. Asking from each would put the same question in front of Alex two or three times, and he said "i'm swamped we need to remove blockers". | One asker per question protects his focus (P4). The defaults are what the research recommends, and they only shape wording. | Rewording future posts, and retitling past ones only if he asks. Nothing structural. |
+| 2 Nov 15:20, s-d9-legibility: the clip frame check stays at one frame every 2 seconds (9.7 suggests a longer interval overnight). | The only clip in sight, D3, is about 2 minutes, so about 60 frames. | The cost is small, and the clip carries the most risk. | One interval, if overnight clips get long. |
 | 2 Nov, wave2-specs, on Alex's 14:38 instruction to remove blockers: no preflight intake. Its one question, whether he watches the GetSales clip before it goes live, is the clip gate (§7 step 5), with the cautious default: the clip doesn't go live until he approves, and waits for the morning if he's away. | Alex: "i'm swamped we need to remove blockers". He also said "I don't want to micromanage it". The interim brief and DI-1 settle everything else. | It removes an intake from his queue, and keeps the one check on the only clip with other people and his own account in it. | If he says he doesn't need to see it, the gate is dropped, and the clip is handed over after the frame check. |
 | 2 Nov, wave2-specs: the clip gate embeds the clip with `![[legibility/clips/d3-live-run.mp4]]`, after a five-line plain summary. `Snapshot of` keeps its SHA-256. | His readability rule wants everything in front of him. The Obsidian vault is the repo root, and video never goes in git. | He watches it in place, and nothing reaches the repo. | One task's layout. An unlisted YouTube link works instead, if the embed won't play. |
 | 2 Nov, wave2-specs: the GetSales outreach is "by 15:30", a connection request or message from his own profile (his answer at 14:30). It's no longer a 17:00 on-camera run. If the rig wasn't recording during it, the reply is `NO CLIP`. | That timetable change comes from the GetSales spec's session, through wave2-specs. | The clip can only show what the rig recorded. | DoD-13's clip, if the outreach wasn't recorded. S-D3 then decides what the site shows instead. |
