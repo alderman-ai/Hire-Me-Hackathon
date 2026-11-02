@@ -34,3 +34,8 @@ Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting
 - Brainstorm draft in at 17:30; committed in 3a389e4 with the S-D11 plan.
 - READY S-D6: not yet, at 17:34.
 - Successor da2b38ac launched at 17:34; `HANDOFF s-d10-canva-video, 17:34` sent to `orchestration`, which stops and removes the old id.
+
+## Since F0 (successor da2b38ac)
+
+- 17:36: the Comfy ideas Doc is made from `comfy-motion\IDEAS.md` (link in `local\comfy-doc.md`), and `TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick` went to `answer-desk`, which showed it. Waiting on Alex's pick as a Doc comment (B3).
+- Waiting, with no polling, for `READY S-D6` (run step 3).
