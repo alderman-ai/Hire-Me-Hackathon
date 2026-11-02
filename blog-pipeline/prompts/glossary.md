@@ -35,3 +35,19 @@ The names and terms Alex uses, spelled right, with the ways speech-to-text has m
 | hackathon | hack a thon | |
 | Addvery | ad very, add very, advery | the company the site is for (stage 2 decides whether a post may name it) |
 | Prague | | where Alex lives |
+| OpenAI | open AI, open eye | the company behind ChatGPT |
+| Agent Builder | agent builder | OpenAI's workflow builder (launched Oct 2025, shuts 30 Nov 2026) |
+| Sonnet, Opus, Haiku | sonnet, sonet, opus, haiku | Claude model families |
+| GPT-4, GPT-5 | GPT four, G P T five | OpenAI models |
+| Menlo Ventures | Menlo, men low ventures | investor; enterprise AI survey (article 1) |
+| BCG | B C G | Boston Consulting Group; AI training survey (article 1) |
+| McKinsey | McKinsey, mckenzie | consultancy; AI value surveys (article 2) |
+| PwC | P W C, PWC | consultancy; AI jobs barometer (article 2) |
+| MIT NANDA | MIT nanda, M I T nanda | MIT study on enterprise AI returns (both articles) |
+| Challenger, Gray & Christmas | challenger gray, challenger report | US job-cut announcement tracker (article 2) |
+| HBR | H B R | Harvard Business Review (article 2) |
+| Klarna | clarna, clarina | fintech that cut staff with AI and then rehired (article 2) |
+| IBM | I B M | its CEO said AI let it hire more in other roles (article 2) |
+| SDR | S D R, SDRs | sales development representative |
+| EU AI Act | E U AI act | the EU's AI law; Article 4 is about AI literacy |
+| managed service | managed services | Alex's term for article 1 |
