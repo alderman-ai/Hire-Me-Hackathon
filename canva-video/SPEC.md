@@ -1,29 +1,28 @@
 # S-D10 Canva design video: executable spec
 
-Status: draft; preflight DI-XX still held (Appendix A). Groundwork running since 16:41 (launched by `orchestration`): `SCENE.md` drafted; the slot waits on Alex's answer to S2-Q1 (today 17:30 or tomorrow morning), relayed by `orchestration` · Row: S-D10 — Canva design video · Folder: `canva-video\` · Session: `s-d10-canva-video`
+Status: running since 16:41 (launched by `orchestration`). Restarted 17:13 under Alex's reset rules (`..\answer-desk\ASKING.md`): no intake; the scene is filmed tonight, once the templates are in Canva; the video is form (a) of Alex's Q10.9. `SCENE.md` drafted; waiting, with no polling, for `READY S-D6`, then forking gate F0 · Row: S-D10 — Canva design video · Folder: `canva-video\` · Session: `s-d10-canva-video`
 
 This spec produces a recording of Alex designing in Canva near the end of the day. During a recorded rig session he builds a LinkedIn post or short carousel from S-D6's Addvery templates, using S-D7's copy. It's aimed at Addvery's marketing side (the CMO first), and it shows two things: the templates hold up in a person's hands, and Alex can do the design work himself, not only automate it. The video goes on YouTube, unlisted, and onto the site as a D10 section. The scene is most of the work; the session's job is to prepare it, get the clip, cut it safely and hand it to the site.
 
 ## 1. Operator preflight (P3)
 
-The intake is DI-XX: `..\Operator tasks\Decide - when and how to film the Canva video.md`.
+**No intake (reset, 17:13).** The held intake (Appendix A) was dropped at `orchestration`'s RESTART. Its three questions are settled:
 
-| Question (DI-XX) | Question | Default |
+| Question | Settled | Source |
 | --- | --- | --- |
-| 1 | When he designs on camera, and what: 17:15–17:40 (proposed), 17:30–17:55, or another time or design | The scene moves to the morning cleanup session |
-| 2 | Whether he verifies his YouTube channel for uploads over 15 minutes, or keeps this video under 15 | Keep it under 15 minutes |
-| 3 | What the video shows: the screen with a webcam inset, the screen only, or the webcam only (his standing call for the site) | The webcam-only cut with a still of the finished design goes live; a screen-with-inset cut is left ready for the morning |
+| 1. When, and what he designs | Tonight, once the templates are in Canva: he customises one of the five live. S2-Q1 (17:30 or the morning) was withdrawn | `orchestration` RESTART, 17:13: "Alex is working all night" |
+| 2. Verify the channel, or under 15 minutes | Up to 15 minutes; no channel verification | Alex's Q10.9 (a), in `..\Operator tasks\Decide - everything left that needs you.md` |
+| 3. Screen or webcam | A screen recording, with Canva's private panels off camera; the webcam as a small inset in one corner (§9) | Alex's Q10.9 (a); its default if he leaves it empty |
 
-**Launch gate.** The session launches once DI-XX is answered and its answers are applied. From 18:00 Prague, an unanswered question takes its default, logged in §9.
+If `orchestration` relays a different Q10.9 answer, only methodology step 3 and the brief's "What this is" change.
 
-**Operator scene.** Alex designing in Canva, proposed for 17:15–17:40, at most 15 minutes of footage unless he verifies his channel (questions 1 and 2). The GetSales live run moved to before 15:30 (Alex, 14:30), which freed 17:00–17:30. The scene moves up to 17:15, 15 minutes after the 16:45–17:00 brand sign-off, so S-D6 has time to fix the templates. That leaves 17:40–18:00 for a retake and for `/stop` and `/process` before he leaves. It happens during a recorded rig session: if he's between sessions at 17:15, he types `/start`. At about 17:05 the session sends him a one-page scene brief as an operator task: what to design, the two spoken cues, and the screen-care checklist.
+**Operator scene.** Alex designing in Canva tonight, whenever suits him once the templates are in Canva: about 5 minutes of off-camera setup, then at most 15 minutes of footage, so about 20 minutes in all. It happens during a recorded rig session: if he's between sessions, he types `/start`. When `READY S-D6` arrives, the session forks (F0) and the successor sends him the scene brief as a Claude Doc: what to design, the two spoken cues, and the screen-care checklist.
 
 **Off camera.**
 - With the recording paused (`/pause`), open the S-D6 design by its link, which the scene brief says where to find, then resume. Canva's home page and project list may show other clients' work. The full off-camera list is `SCENE.md` Step 1 (14 items, about 5 minutes).
-- Only if question 2 says verify: switch on long uploads at https://www.youtube.com/verify before 17:15.
 - After the scene, the clip waits until he ends that rig session with `/stop` and types `/process`, as usual (DI-1 Q1.7: /process runs only when he types it). Nothing here asks him to change that.
 
-**Runtime questions** go to the desk as asker `S-D10`, ids `S-D10-Q1` onwards, one at a time (`..\answer-desk\ASKING.md`). After 15 minutes waiting on Alex for anything, send `POKE S-D10: waiting on you for <what>`, and again every 15 minutes. Before 18:00 Prague, keep waiting and do whatever doesn't depend on the answer. From 18:00, decide on the default and log it in §9.
+**Runtime questions.** Under the reset rules, easy calls are this session's: decide and log them in §9. Only a real blocker goes to the desk, as asker `S-D10`, ids `S-D10-Q1` onwards, one at a time (`..\answer-desk\ASKING.md`). Poke only when the work is blocked, at most every 30 minutes, then decide and log. There's no 18:00 cut-off any more.
 
 ## 2. Spec contract
 
@@ -31,7 +30,7 @@ The intake is DI-XX: `..\Operator tasks\Decide - when and how to film the Canva 
 | --- | --- |
 | 1. Its place | Row S-D10. Claims DoD-21. Reads DoD-16 (S-D6's templates) and, optionally, DoD-17 (S-D7's posts as copy). Serves DoD-22 (nothing it publishes leaks). It claims none of those three. |
 | 2. Its neighbours | Depends on S-D6 (`s-d6-canva-templates`: templates in Canva and their link), the rig recordings (`rig`), S-D9 (`s-d9-legibility`) for the clip, and S-D8 (`website`) for the upload and the site. Runs in parallel with all of wave 2; its scene is the last of the day. Feeds the site. |
-| 3. Operator preflight | §1 (DI-XX). |
+| 3. Operator preflight | §1 (no intake since the 17:13 reset; the scene brief is his one task). |
 | 4. Decision log | §9. |
 | 5. Forking gates | §8. |
 | 6. Working directory | `canva-video\`. Reading list §3, which matches its CLAUDE.md. |
@@ -43,9 +42,9 @@ Paths are relative to `canva-video\`.
 - `..\CHARTER.md`: the parent context. Read only, never edit.
 - `..\SESSIONS.md`: the roster. Read it at startup and before messaging a session for the first time. Edit only S-D10's own row.
 - `..\GIT.md`: shared working-tree rules. Commit only this folder, path-limited.
-- `..\answer-desk\ASKING.md`: the desk format, operator tasks and their plain file names, TASK and ARCHIVE lines, the poke, the 18:00 rule.
+- `..\answer-desk\ASKING.md`: the desk format, operator tasks and their plain file names, TASK and ARCHIVE lines, the poke, and Alex's reset rules at the top (17:00), which override the rest.
 - `..\answer-desk\qa\S-D10.md`: this spec's desk record. The desk creates it with the first question.
-- `..\Operator tasks\Archive\INDEX.md`: Alex's answered intakes, verbatim. DI-XX joins it once archived. Never re-ask what they settle (DI-1 covers the rig: separate webcam file, typed /process, main YouTube channel).
+- `..\Operator tasks\Archive\INDEX.md`: Alex's answered intakes, verbatim. This spec's held intake was dropped, not archived (§1). Never re-ask what they settle (DI-1 covers the rig: separate webcam file, typed /process, main YouTube channel).
 - `SPEC.md`: this file.
 - `HANDOFF.md`, if it exists: state after a fork.
 - `..\research\DIRECTORY.md`: S1's index of every report.
@@ -60,7 +59,8 @@ Paths are relative to `canva-video\`.
   - `..\research\global\L-01-W1-wildcard-executed.md`: whether a dozen background sessions can run through the day and night: usage limits, Windows Update restarts, idle stops. Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-W2-wildcard-delivered.md`: what the six actually get from the alert: the link, the preview card, click timing, and the morning hand-over checklist (C7). Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-W3-wildcard-received.md`: whether AI-made work reads as skill or as a shortcut: the penalty bites on personal lines, not on the machinery. Options for Alex, not decisions. Read only; S1 owns it.
-- `..\orchestration\_templates\Operator task template.md`: the form of the scene brief.
+- `..\orchestration\_templates\Operator task template.md`: the shape `SCENE.md` follows; since the reset, the brief itself goes in a Claude Doc (run step 4).
+- `..\Operator tasks\Decide - everything left that needs you.md`, Q10.9: Alex's answer on how the video is filmed. Read only.
 - `..\OBS\rig\RUNBOOK.md`: how the rig records and files sessions. Read only.
 - `..\OBS\Processed\index.json`: the rig's list of filed sessions. It shows which session holds the scene; each filed session's manifest beside it names its screen and webcam files. Read only; the folder is `rig`'s.
 - ffmpeg, local: for the cut and the webcam inset. Step 1 checks it's installed.
@@ -74,13 +74,13 @@ Step 1 of the run confirms every resource is reachable and turns anything ambigu
 - `local\`: git-ignored; the design link.
 - `out\`: git-ignored; the cut and its stills. Video files are never committed.
 - `.gitignore`: covers `out/` and `local/`.
-- In `..\Operator tasks\`: the scene brief, `Do - film yourself designing in Canva.md`.
+- A Claude Doc holding the scene brief, made by the F0 successor through `anthropic-skills:docs`. Its link goes in `local\doc.md` and in the TASK line, never in a tracked file.
 
 ## 4. Problem and scope
 
 **The problem.** The other demos show automation. This one shows Alex doing the craft, with templates S-D6 built, in a video short enough to watch. Three things stand in the way. His Canva account may show other clients' designs on screen. The site's standing rule is to show the webcam, not the screen, but a design video needs the screen. And YouTube caps unverified channels at 15 minutes.
 
-**In scope.** The scene brief; the clip request to S-D9; the cut, in the form question 3 picks and the length question 2 allows; the screen-care check; the site request.
+**In scope.** The scene brief; the clip request to S-D9; the cut, a screen recording with a webcam inset, at most 15 minutes; the screen-care check; the site request.
 
 **Out of scope.** Building the templates (S-D6). Writing the copy (S-D7). Running the rig (`rig`). Cutting clips from the recordings (S-D9). Uploading and embedding (`website`). Anything posted to LinkedIn (charter Scope).
 
@@ -88,8 +88,8 @@ Step 1 of the run confirms every resource is reachable and turns anything ambigu
 
 | Criterion | Traces to |
 | --- | --- |
-| The scene was recorded during a rig session near the end of the day, in the question 1 slot, with both spoken cues | DoD-21 |
-| The cut is in the form question 3 picked, and at most 15 minutes long unless question 2 chose a verified channel | DoD-21 |
+| The scene was recorded during a rig session tonight, once the templates were in Canva, with both spoken cues | DoD-21 |
+| The cut is a screen recording with a small webcam inset (Alex's Q10.9 (a)), at most 15 minutes long | DoD-21 |
 | The cut passed the screen-care check before upload: no other client's design, no Canva home or project list, no Projects, Uploads or Brand panel in the editor, no brand kit of another client, no Share panel access list, no file picker or save dialog, no secret, no Apify proposal, none of Alex's own GetSales outbound | serves DoD-22 |
 | The video is on YouTube, unlisted, through `website`'s upload flow, and live in the site's D10 section (`BUILT S-D10-B1` received) | DoD-21 |
 
@@ -101,33 +101,35 @@ At launch, the session sends `s1-research` exactly one line:
 
 Approving the list is S1's gate, not this session's.
 
-**Goes ahead while research runs:** everything except the Canva details of the scene brief: step 1's checks, the brief's skeleton, the clip request, and the ffmpeg recipe for each form in question 3.
+**Done by 16:50.** L-05 (all seven reports and its synthesis) and L-01 were already written when the session launched. They're applied in `SCENE.md` and §9, so the RESEARCH line was never sent.
+
+**Goes ahead while research runs:** everything except the Canva details of the scene brief: step 1's checks, the brief's skeleton, the clip request, and the ffmpeg recipe for the cut.
 
 **Waits for FINDINGS:** the export settings in the brief (R2, R3), and anything W1 to W3 say about the video landing.
 
-**If research is late,** the scene brief goes out at 17:05 on the draft. The scene doesn't move for research; later findings only change the cut.
+**If research is late,** the scene brief goes out on the draft. The scene doesn't move for research; later findings only change the cut.
 
 ## 7. Methodology and steps
 
 **Draft methodology.** The session confirms or revises it once the synthesis lands, then runs the coherency check.
 1. **Scene brief** (`SCENE.md`). What he designs: by default, one LinkedIn post or short carousel from S-D6's templates, with one of S-D7's posts as the copy, then an export. Where the design link is (`..\canva-video\local\link.md`, git-ignored). The two cues to say aloud: "Canva design starts now" and "Canva design done". The screen-care checklist: open only that design, by link, with the recording paused; don't open Canva's home, projects or other brand kits; close other tabs; anything else goes on the 4K monitor. In the editor, stay out of the Projects, Uploads and Brand panels, the Share panel and any file picker; use only the images already placed, and pause to add one (L-05-W1 C6, L-05-W2 C5). `SCENE.md` holds the full list: off camera (Step 1) and on camera (Step 2). At most 15 minutes, unless question 2 says verify.
 2. **The clip.** Once the session holding the scene is filed, ask S-D9 for the screen and webcam clips between the two cues.
-3. **The cut,** by question 3. A: the screen full frame with the webcam as a small inset in one corner. B: the screen only. C: the webcam only, with a still of the finished design beside it on the site. Over the length cap, trim the slow stretches (waiting, exporting) and keep the order. Made with ffmpeg into `out\`.
+3. **The cut:** the screen full frame, with the webcam as a small inset in one corner (Alex's Q10.9 (a); inset by §9). Over 15 minutes, trim the slow stretches (waiting, exporting) and keep the order. Made with ffmpeg into `out\`. It's design work (reset rule 5). Invoke `frontend-design` before placing the inset; if the session doesn't list it, ask `orchestration` to switch it on. Before upload, run `design:design-critique` and `design:accessibility-review` on the cut and the still.
 4. **Screen-care check.** A subagent that didn't make the cut looks at a frame at every scene change and at least every 5 seconds, against the checklist in §5. It looks hardest at the moments a panel opens on the left of the editor, at the colour and font pickers, at the export, and at any time Alex notes in the brief's Step 4. Anything found is blurred or cut, then checked again.
 5. **Site.** `site\d10.md`: a title, two lines on what the viewer sees, and a still of the finished design taken from the cut. That's copywriting: before writing it, send `orchestration` `SKILL s-d10-canva-video: design:ux-copy for the D10 section's title and two lines`, wait for `SKILL ON`, then invoke it (ASKING.md). A subagent that writes it gets the skill named in its prompt.
 
 **Coherency check:** "if we execute this methodology, will that DoD be satisfied?" Scene with cues: methodology step 1, run steps 4 and 5. Form and length: methodology step 3, run step 7. Screen care: methodology steps 1 and 4, run step 8. Live on the site: methodology step 5, run step 9. Run it again after the synthesis. The methodology has no gate approval (§9); a finding that changes what Alex does on camera becomes a desk question.
 
 **Run steps.** Commit after every finished step, path-limited: `git commit -m "[canva-video] <message>" -- canva-video/...`. Video files are never committed.
-1. Read the reading list, and `HANDOFF.md` if it exists. Confirm every resource is reachable, ffmpeg included. Create `.gitignore` (`out/`, `local/`), `out\` and `local\`. Apply DI-XX's answers. Commit.
-2. Send the RESEARCH line (§6). Send `s-d9-legibility` a heads-up: `S-D10 will ask for one clip after the Canva scene at <the question 1 slot>, by the cues Canva design starts now and Canva design done.` Draft `SCENE.md` and the ffmpeg recipes. Commit.
-3. Wait, with the Monitor tool, until `READY S-D6` arrives or 17:05, whichever is first. Put the design link from `READY S-D6` in `local\link.md`, and look at S-D6's previews in `..\canva-templates\exports\` (read only) to pick the template for the brief. Take the copy from S-D7's posts in `..\linkedin-content\demo\posts.md` (read only) once `COPY S-D7` says they exist; otherwise the brief names placeholder copy. If S-D6 isn't ready by 17:05, the brief switches to its fallback: a LinkedIn post on a blank canvas in Addvery's brand. Log it in §9.
-4. **The scene brief.** At about 17:05 (or 10 minutes before the question 1 slot), write `..\Operator tasks\Do - film yourself designing in Canva.md` from the operator task template, with the next free OT number in the front matter only. It opens with `## What this is`, in plain words and with no codes (no spec, DoD or OT ids, no session names): what the video is for in the job application, what to do, when, how long, the cues and the checklist. Then `SCENE.md`, copied in. Commit that file on its own, path-limited, and send `answer-desk` `TASK S-D10: Do - film yourself designing in Canva.md is waiting on you: the Canva design scene at <slot>, what to design and the two cues`. Poke after 15 minutes if the slot starts with no sign of the scene.
-5. **The scene.** At the end of the slot, send `TASK DONE S-D10: Do - film yourself designing in Canva.md`, then `ARCHIVE Do - film yourself designing in Canva.md: readers S-D10` to `orchestration`. Note the wall-clock times of the scene in `HANDOFF.md`. Take forking gate F1.
+1. Read the reading list, and `HANDOFF.md` if it exists. Confirm every resource is reachable, ffmpeg included. Create `.gitignore` (`out/`, `local/`), `out\` and `local\`. Commit. (`.gitignore` done at 16:45; the intake was dropped at the 17:13 reset, and §1 holds the settled answers.)
+2. Send `s-d9-legibility` a heads-up: `S-D10 will ask for one clip after the Canva scene tonight, once the templates are in Canva, by the cues Canva design starts now and Canva design done.` Draft `SCENE.md` and the ffmpeg recipes. Commit.
+3. Wait, with no polling, until `READY S-D6` arrives as a message (`orchestration`, 17:13). Put the design link from `READY S-D6` in `local\link.md`, and look at S-D6's previews in `..\canva-templates\exports\` (read only) to pick the template for the brief, unless `READY S-D6` names one. Take the copy from S-D7's posts in `..\linkedin-content\demo\posts.md` (read only) once `COPY S-D7` says they exist. Otherwise the brief names placeholder copy, written only after `marketing:draft-content` is invoked (switched on at 17:13). If `READY S-D6` reports fewer than five templates in Canva, the brief uses one that's there. If it reports none, it uses the brief's build-from-backdrop variant. Log either in §9. Then take forking gate F0.
+4. **The scene brief (F0's successor).** Fill `SCENE.md`'s placeholders. Load `anthropic-skills:docs` (switched on at 17:13) and follow its guide before any Docs call. Put the brief in a Claude Doc: everything from `## What this is` down to "When you are done", in plain words with no codes (no spec, DoD or OT ids, no session names). Save the Doc's link in `local\doc.md`. Then send `answer-desk` `TASK s-d10-canva-video: the Canva video is ready to record: <Doc link>, about 20 minutes with the off-camera list`. Alex's comment on the Doc is his report (the brief's Step 4) and reaches this session. No pokes unless the work is blocked (reset rule 7).
+5. **The scene.** When Alex's comment on the Doc says the scene is done, or the rig files a session holding both cues, send `answer-desk` `TASK DONE s-d10-canva-video: the Canva video`. Tell `s-d6-canva-templates` the template is free again. Note the scene's wall-clock times in `HANDOFF.md`. Take forking gate F1.
 6. Wait, with the Monitor tool checking `..\OBS\Processed\index.json` every 300 seconds, until the session holding the scene is filed. Then send `s-d9-legibility` `CLIP S-D10-C1: session S<nn>, from the cue Canva design starts now to the cue Canva design done, screen and webcam clips. For: the D10 video.` S-D9 answers `CLIPPED S-D10-C1: <paths or YouTube id>` or `NO CLIP S-D10-C1: <why>`. Use the clip paths in S-D9's reply (S-D9 cuts into its own git-ignored folder), read only. On `NO CLIP`, send `CLIP S-D10-C2` with the scene's wall-clock times instead of the cues.
 7. Make the cut (methodology step 3), delegated to a subagent handed the clip paths, the recipe and the length cap. It writes only to `out\`.
 8. Screen-care check (methodology step 4), by a different subagent. Fix and check again until clean. Write `site\d10.md`. Commit.
-9. **Site request.** Send `website`: `BUILD S-D10-B1: upload canva-video\out\d10.mp4 to YouTube, unlisted, through your upload flow, and add a D10 section, Designing in Canva, in the deliverables area, with the video and a still of the finished design. Content: canva-video\site\d10.md. Source: Alex designing in Canva, cut from rig session S<nn>, checked for screen care; <the form question 3 picked>.` Wait for `BUILT S-D10-B1` or `REFUSED S-D10-B1`. Under question 3's default, a second request swaps in the A cut once Alex says so.
+9. **Site request.** Send `website`: `BUILD S-D10-B1: upload canva-video\out\d10.mp4 to YouTube, unlisted, through your upload flow, and add a D10 section, titled as in site\d10.md, in the deliverables area, with the video and a still of the finished design. Content: canva-video\site\d10.md. Source: Alex designing in Canva, cut from rig session S<nn>, checked for screen care; a screen recording with a webcam inset.` Wait for `BUILT S-D10-B1` or `REFUSED S-D10-B1`.
 10. When §5 is met, send `orchestration` `DONE S-D10: <D10 video live on the site, BUILT S-D10-B1, YouTube id>`.
 
 **Screen care (every step).** Assume anything on screen can be published. The session never opens Canva itself. Design links stay in `local\`. Video goes on YouTube only, never Vercel or the repo. Nothing in the cut may show another client's design, a secret, the Apify proposal or Alex's own GetSales outbound.
@@ -136,19 +138,20 @@ Approving the list is S1's gate, not this session's.
 
 | Gate | When |
 | --- | --- |
-| F1 | Right after the scene ends (about 17:40–17:45 in the proposed slot). It's also the fork before 18:00 Prague, so the overnight session starts clean (P6) with only the clip, the cut and the site left. |
+| F0 | When `READY S-D6` arrives (`orchestration`, 17:13). The successor starts with the Claude Docs connector, which this session lacks, and runs run step 4 onwards. |
+| F1 | Right after the scene ends, so the next session starts clean (P6), with only the clip, the cut and the site left. |
 | F2 | Context about half full, whatever else is happening. |
 
 **How it forks.**
 1. Write `HANDOFF.md`: whether the scene happened and its wall-clock times; the rig session it's in; the CLIP request and its state; open questions and tasks with their times; pokes in progress; decisions since the last fork. Commit it.
 2. From `canva-video\`, launch the successor under the same name: `claude --bg -n s-d10-canva-video "Read CLAUDE.md, then HANDOFF.md. You are now the active S-D10 session."`
 3. Update S-D10's row in `..\SESSIONS.md` with the handoff time, and commit it on its own: `git commit -m "[roster] ..." -- SESSIONS.md`.
-4. Announce the handoff to `s-d9-legibility`, `website`, `s-d6-canva-templates`, `s1-research`, `orchestration`, and `answer-desk` if a question or task is open.
-5. The old session stops itself with `claude stop` and its own exact id.
+4. Send `orchestration` `HANDOFF s-d10-canva-video, <time>` (its 17:13 instruction), and announce the handoff to `s-d9-legibility`, `s-d6-canva-templates`, `website`, and `answer-desk` if a question or task is open.
+5. `orchestration` stops and removes the old id (`..\SESSIONS.md`, handoff step 4). The old session starts nothing more.
 
 ## 9. Decision log (P5)
 
-Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decide on the default, log it here, and send `WITHDRAW <id>` for a desk question. Start each decision with the time and the question id.
+Since the 17:13 reset (`..\answer-desk\ASKING.md`, Alex's reset rules), easy calls are this session's: decide, log here, carry on. On a real blocker, poke once, then decide and log, and send `WITHDRAW <id>` for a desk question. There's no 18:00 cut-off. Start each decision with the time and the question id, if any.
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
@@ -166,8 +169,15 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov 16:45, groundwork: on a retake, Alex says the start cue again, and the cut runs from the last start cue to "Canva design done". | The clip finder cuts by quote, and a retake repeats the start line. | One rule, nothing to remember beyond the two lines. | If S-D9 can only find the first cue, run step 6's CLIP line names the last one by time. |
 | 2 Nov 16:45, groundwork: if the templates aren't in Canva by the slot, the preferred fallback is building one template on camera from its backdrop (uploaded with the recording paused); a blank canvas is the last resort. | S-D6 now builds each template as a locked backdrop plus native Canva text (its methodology step 3), and L-05-W1 C2 option B makes the build itself the scene. | It films real design work with the same files S-D6 uses, and keeps the Uploads panel off camera. | Only `SCENE.md` changes; S-D6's route is untouched. |
 | 2 Nov 16:45, groundwork: no lines are scripted for Alex beyond the two cues, and any placeholder copy or site copy waits for a copywriting skill through `orchestration`. | Alex's rule at about 16:40: no copywriting without a copywriting skill (ASKING.md). What he says on camera reaches viewers. | It keeps the session inside the rule and keeps his voice his own. | None: the brief already works without a script. |
+| 2 Nov 17:20, reset: the held intake is dropped and S2-Q1 withdrawn. The scene is tonight, once the templates are in Canva, and the video is a screen recording of Alex customising one of the five templates, up to 15 minutes, with Canva's private panels off camera. | `orchestration` RESTART, 17:13, on Alex's reset rules and his Q10.9 (a). | It's Alex's own answer, or his intake's default. | A different Q10.9 answer changes methodology step 3 and the brief's opening only. |
+| 2 Nov 17:20, reset: the screen recording carries a small webcam inset in one corner. | Q10.9 (a) says "a screen recording" and doesn't rule an inset in or out. Every other video on the site shows his face, and the rig keeps the webcam as a separate file. An easy call (reset rule 1). | It keeps his face in the one video that shows his hands, at the cost of a corner of the frame. | The inset is a single ffmpeg overlay, dropped in one step if he says so. |
+| 2 Nov 17:20, reset: the brief goes to Alex as a Claude Doc, not an operator task file. It goes from a fresh session (F0) once `READY S-D6` arrives, and his comment on the Doc is his report. | Reset rule 4 (written work in Claude Docs) and `orchestration`'s 17:13 instruction. This session has no Docs connector. | The fork costs one launch, and the Doc is where he reads and comments anyway. | If the Docs connector fails, fall back to the operator task file in `..\Operator tasks\`, which the brief's structure already fits. |
+| 2 Nov 17:20, reset: the screen-care list stays as written, although public sources are now fine (reset rule 3). | `orchestration`'s decision keeps "Canva's private panels off camera". Other clients' designs and uploads aren't public sources, and the list asks Alex nothing: it's about 5 minutes of setup. | It protects third parties at no cost to his focus. | Trimming it leaves more to the frame check. |
+| 2 Nov 17:20, reset: the cut counts as design work, so `frontend-design` before the inset and `design:design-critique` plus `design:accessibility-review` before upload (reset rule 5). | Rule 5 covers "any page, template, visual". | It costs minutes and catches a badly placed inset or an unreadable still. | None. |
 
-## Appendix A. Held preflight intake
+## Appendix A. Held preflight intake (dropped at the 17:13 reset)
+
+**Dropped, never released.** `orchestration`'s RESTART at 17:13 settled its questions (§1), and no intakes go to Alex under the reset rules. It's kept for the record only. Don't release it.
 
 This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** the Canva templates intake (Decide - how the Canva templates get made.md) is answered, because the recording films the templates. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - when and how to film the Canva video.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D10: Decide - when and how to film the Canva video.md is waiting on you: <what it decides and unblocks>`.
 

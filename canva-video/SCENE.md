@@ -1,20 +1,20 @@
 # Do: film yourself designing in Canva
 
-<!-- Scene brief, draft. This is the body of the operator task `Do - film yourself designing in Canva.md` (run step 4 in SPEC.md): front matter from the operator task template, then everything from "What this is" down to "When you are done". The last section, "Draft notes", stays here and is not copied. Fill every <placeholder> first. No codes in the copied part: no spec, DoD or OT ids, no session names. -->
+<!-- Scene brief, draft. Since the 17:13 reset this goes to Alex as a Claude Doc (SPEC.md run step 4), made by the session after forking gate F0: the title above, then everything from "What this is" down to "When you are done". The last section, "Draft notes", stays here and isn't copied. Fill every <placeholder> first. No codes in the copied part: no spec, DoD or OT ids, no session names. -->
 
 ## What this is
 
 The site you're building today is a personalised job application to Addvery, made live during a recorded 12-hour hackathon. One part of it is a short video of you designing in Canva: you fill one of the Addvery LinkedIn templates made earlier today with a post's copy, then export it. It shows Addvery's marketing side that the templates hold up in a person's hands, and that you can do the design work yourself, not only automate it. The video goes on YouTube, unlisted, and gets its own section on the site.
 
-You're asked to film that scene at **<slot>**, in your normal recorded rig session (type `/start` first if you're between sessions). It takes about 5 minutes of setup with the recording paused, then 10 to 12 minutes on camera, never more than 15, because YouTube caps unverified channels at 15 minutes. Once you've said the closing line, nothing more is needed from you: the clip waits until you `/stop` and `/process` that session, as usual, and is then cut, checked frame by frame for anything private, and put on the site.
+The templates are in Canva now, so you can film the scene **whenever it suits you tonight**, in your normal recorded rig session (type `/start` first if you're between sessions). It's about 20 minutes in all. That's about 5 minutes of setup with the recording paused, then 10 to 12 minutes on camera, never more than 15, because YouTube caps unverified channels at 15 minutes. The video shows your screen, with your webcam in a small corner. Once you've said the closing line, nothing more is needed from you. The clip waits until you `/stop` and `/process` that session, as usual. Then it's cut, checked frame by frame for anything private, and put on the site.
 
-What's waiting on it: the video's section on the site. Deadline: the slot itself.
+What's waiting on it: the video's section on the site. No deadline beyond tonight.
 
 **The scene in one look**
 
 | | |
 | --- | --- |
-| When | <slot>; start the setup at <slot minus 5 minutes> |
+| When | Whenever suits you tonight, in a recorded rig session |
 | What | <template> from the Addvery templates, filled with <copy>, then exported |
 | Where | The left monitor only, the one being recorded. Everything else on the 4K monitor |
 | Length | 10 to 12 minutes of designing, never over 15 |
@@ -72,30 +72,24 @@ About 5 minutes. Type `/pause` first (or do all of this before `/start`).
 
 ## Step 4. Report
 
-Write roughly when you said each line, and anything that went wrong or showed on screen that shouldn't have. "All fine" is enough.
-
-`<operator_answer>`
-```ot-<nn>-s4
-
-```
-`</operator_answer>`
+Leave a comment on this Doc: roughly when you said each line, and anything that went wrong or showed on screen that shouldn't have. "All fine" is enough.
 
 ## When you are done
 
-Say "OT-<nn> done". The assistant waits for the session to be filed, asks for the clip between your two lines, cuts it, has a separate check look at a frame at every scene change and at least every 5 seconds, then hands the video to the site.
+Your comment on this Doc is all it takes. The assistant waits for the session to be filed, asks for the clip between your two lines, cuts it, has a separate check look at a frame at every scene change and at least every 5 seconds, then hands the video to the site.
 
 ---
 
 ## Draft notes (not copied into the operator task)
 
 **Placeholders and what fills each**
-- `<slot>`: Alex's answer to S2-Q1 (today 17:30 or tomorrow morning), sent by `orchestration`. Today at 17:30: the task goes out by 17:20, setup 17:25–17:30, scene 17:30–17:45, which leaves 17:45–18:00 for a retake, `/stop` and `/process`. Tomorrow: the morning cleanup slot he names.
+- No slot (reset, 17:13): S2-Q1 was withdrawn, and Alex films tonight, whenever suits him, once `READY S-D6` says the templates are in Canva. The brief goes out from the F0 successor as a Claude Doc. The TASK line is `TASK s-d10-canva-video: the Canva video is ready to record: <Doc link>, about 20 minutes with the off-camera list`.
 - `<template>`, the link in `local\link.md`: `READY S-D6` (S-D6 run step 12).
 - `<copy>`, `<where the copy is>`: `COPY S-D7`, from `..\linkedin-content\demo\posts.md` (read only). Pick a post that names no real person (L-01 synthesis 6.5). Without it: neutral placeholder copy in no one's name, opened from `canva-video\local\copy.md`. That placeholder is template text viewers see, so it's copywriting: send `SKILL s-d10-canva-video: marketing:draft-content for placeholder copy in the Canva video's template` to `orchestration` and wait for `SKILL ON` before writing it (ASKING.md, Alex about 16:40).
 - No scripted lines for Alex beyond the two cues: what he says on camera is his own (the copywriting rule).
 - Export line: one of the two, by template. PNG High 1x, or PDF Standard with Flatten on (L-05-R3 Q5, Q6, Q8).
-- `<nn>`: the next free OT number, in the front matter and the two fences only.
-- Length: "never over 15" holds unless the held intake's question 2 comes back "verify". The rig records screen and webcam either way, so question 3 (screen or webcam) doesn't change the brief, only the cut.
+- No OT number or answer fence: Alex's comment on the Doc is the report (reset rule 4).
+- Length and form: Alex's Q10.9 (a). That's a screen recording of him customising one of the five templates, up to 15 minutes, with Canva's private panels off camera. The webcam inset is this session's call (SPEC §9).
 
 **Which scene: fill a template, or build one on camera.** L-05 synthesis 10.2 prefers the build (import, lock, fill, export) once the off-camera probe has passed, with filling a ready template as the fallback. That's Alex's call (synthesis Q2, through `orchestration` and S-D6), not this session's: the brief takes whichever one `READY S-D6` reports. The body above is written for filling; the build version swaps in the paragraph below.
 
@@ -104,8 +98,8 @@ Say "OT-<nn> done". The assistant waits for the session to be filed, asks for th
 - Last resort, the spec's original fallback: a post on a blank canvas in Addvery's brand. It leans on the colour and font pickers, so Step 1 item 8 matters most.
 - Either way, log the switch in SPEC.md §9.
 
-**Coordination before the slot** (send when the slot is known)
-- `s-d6-canva-templates`: no Canva edits and no Claude in Chrome during the slot. A connector commit fails if the design is edited at the same time (L-05-R2 1.3), and two sessions driving Chrome on Windows collide (L-05-W1 E5).
-- `s-d9-legibility`: the heads-up from run step 2, with the slot.
+**Coordination** (both sent 17:19, after the reset)
+- `s-d6-canva-templates`: no edits to the scene's template and no Claude in Chrome from the TASK line until this session says the scene is done. A connector commit fails if the design is edited at the same time (L-05-R2 1.3), and two sessions driving Chrome on Windows collide (L-05-W1 E5).
+- `s-d9-legibility`: the heads-up from run step 2 (tonight, by the two cues).
 
 **Sources for the checklist.** Spec §1 and methodology step 1 (home, projects, other brand kits, tabs, the 4K monitor). L-05-W1 C6 and L-05-W2 B4, C5 (the editor's Projects, Uploads and Brand panels; use only placed images; pause to add one). L-05-R3 Q8 (the Share panel's access list, exact export clicks, the upgrade prompt, Canva AI and locks). L-01-R1 (outcome first in the opening seconds). The rest is this session's inference, to check on the day: the download bubble and save dialog, brand-kit selectors in the colour, font and Text panels, the team switcher, notifications, `F11`. Every Canva menu name is from help pages and research, not a live look; the session never opens Canva.
