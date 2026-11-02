@@ -1,52 +1,43 @@
 # Handoff: website (S-D8)
 
-Written 2 Nov, 14:55 Prague, at forking gate F3 (context about half full). The previous `website` session has run the site since the morning and became the S-D8 orchestrator at 14:50. Read CLAUDE.md first, then this file, then SPEC.md.
+Last updated 2 Nov, 15:12 Prague, by the session that took over at 14:53 (gate F3). Not a fork yet: this is the running state, kept current so a crash or the next fork (F2 at about 17:50) starts clean. Read CLAUDE.md first, then this file, then SPEC.md.
 
 ## State of the site
 
-- **Live:** https://hire-me-hackathon.vercel.app, last production deploy 14:49 (`9ef53a3`). Home page: title, countdown, "start here" box (S02 explainer link, charter and S0 to S2 specs at `/docs/<slug>`), then the live feed from `content\feed.json`, newest first, 23 posts. Top three: the status board (`status`, as of 14:45), "Every demo has a plan" (14:39), "Lunch break, 14:25 to 15:00" with the setup photo.
-- **Feed blocks** (`app\feed.tsx`): `p`, `list`, `points` (bullets `{lead, text?, quote?}`), `quote`, `highlight`, `video` (`session`, `start`), `image` (`src` in `public\`, `width`, `height`, `alt`, `caption`), `summary`, `status-board`, `doc-link`. Posts may carry `roles` (S-D9's stakeholder tags, unused until part 2).
-- **Videos on YouTube** (`content\videos.json`): S01, S02 (embedded from 62 s), S06 (embedded). S03, S04, S05 and S07 are over the 15-minute cap and not uploaded; they need Alex to verify the channel.
-- **Docs:** `python scripts\sync_docs.py` copies and redacts the charter and S0 to S2 specs; it refuses if a deny-listed term survives. Last run 14:28 for change C03.
-- **Photo:** `public\setup-2026-11-02.jpg`, unblurred on Alex's explicit word ("don't blur any text from the image. It's this project. It's on purpose"); GPS and camera metadata stripped.
+- **Live:** https://hire-me-hackathon.vercel.app, last production deploy 15:02 (`a2b54e1`). Home page: title, countdown, "start here" box (S02 explainer, charter and S0 to S2 specs at `/docs/<slug>`), then the live feed (`content\feed.json`, 23 posts, status board as of 14:45).
+- **Preview card** (S-D3-B3, 15:00): `openGraph`/`twitter` tags in `app\layout.tsx` with `metadataBase` = the production alias, and a static `app\opengraph-image.png` (1200x630 RGB) plus `opengraph-image.alt.txt`. In preview deploys `og:image` points at the deployment URL (Next's own behaviour); in production it's the alias.
+- **`/privacy`** (S-D3-B3, B4): `app\privacy\page.tsx` renders `content\privacy.md`, copied from `getsales\site\privacy.md` minus its first comment line. Unlinked and `noindex` until Alex ticks S-D3's pre-send gate. S-D3 will send a BUILD for a footer link and an alert-visitor panel after that.
+- **Web Analytics** on since 15:00 (Alex: "turn on analytics of this site pls", closing website-Q4). `@vercel/analytics` 2.0.1, `<Analytics />` in the layout. Counts: `vercel api "/v1/query/web-analytics/visits/count?projectId=prj_rT9kFM97a02ouvSsMrZZRYqJi4jo&teamId=team_m6QeC9FHcO8dk7PvEHtfkAod&since=2026-11-02T00:00:00.000Z&until=2026-11-03T00:00:00.000Z"` (the Vercel MCP returns "not found" for this team). 0 views at 15:08; a headless load didn't register.
+- **Verified:** a file in git-ignored `local\` reaches the deploy upload (preview `dpl_5NakubbYg5HDnfNTqdpXJ8kTzAvK` listed `/src/local/deploy-probe.txt`; probe deleted). Step 1 is complete.
+- Videos, docs and photo are unchanged from the 14:55 handoff (S01, S02, S06 on YouTube; S03 to S05 and S07 over the 15-minute cap).
 
 ## S-D8 progress (SPEC.md §7)
 
-- **Step 1 done** (`5c2d26f`, roster `6fdaf4c`): clock loop alive, production and preview deploys work (preview URL pattern `hire-me-hackathon-<hash>-alex-alderman-s-projects.vercel.app`), local preview runs, `builds.md` backfilled, `checks.md` created, `local/` added to `.gitignore`. **Not yet verified:** that a file in `local\` reaches the deploy upload. `.vercelignore` doesn't list it, so it should; confirm with a preview deploy and its file list before part 2 relies on it.
-- **Step 2 done:** `RESEARCH S-D8: …` sent to `s1-research` at 14:52. Its reply (about 14:56): the S-D8 list is drafted as `..\research\lists\L-06-website.md`, with R1 structure and how each named visitor finds their part, R2 what a stakeholder section holds per role, R3 the brand pass mechanics, plus three wildcards. It waits on Alex's gate "Approve - research for the GetSales demo and website.md" (asked by about 15:20), with findings by about 16:30. **L-01 is done and reviewed:** read `..\research\global\L-01-R1-legibility.md` (structure: outcome, demo, "how it works"), `L-01-R3-personal-data.md` (section 7: what a stakeholder section may and may not hold), `L-01-R4-format-reception.md`, `L-01-W2-wildcard-delivered.md` (preview card, hand-over checklist C7) and `L-01-W3-wildcard-received.md`. The L-01 synthesis lands by about 16:00, which triggers step 6.
-- **SPEC.md Appendix A** (`6e936f7`, from wave2-specs): the held part 2 intake and its release rule. wave2-specs releases it when Alex's Addvery research has his confirmed six or his brand capture, or he says he's done; if wave2-specs has stopped by then, `website` or `orchestration` releases it as the appendix says.
-- **Step 3 onwards:** serve build requests; add demo, video and blog pages as their requests arrive.
-- **Step 6** (spec-draft gate) goes out once L-01's synthesis lands. If the S-D8 list hasn't run by 17:00, send it on L-01 alone and say so.
-- **Part 2** (branding, six stakeholder pages) waits for orchestration's part 2 line.
+- Steps 1 and 2 done. Step 5 done at 15:05 (`45fc691`): the method revised on L-01. §6 "Findings" routes every S-D8 recommendation and question, §7 carries the "(L-01)" revisions and the coherency check, §9 has eight new rows, and Appendix A (the held intake) now has seven questions.
+- **Step 6, spec-draft gate open:** `Operator tasks\Approve - the plan for the website.md`, OT-07, committed `589a798`. TASK line sent 15:08, and the desk said "task shown". Monitor `bn7agu954` checks every 5 min and prints "POKE DUE" every 15 min. First poke is due about 15:24 (`POKE website: waiting on you for Approve - the plan for the website, the website's plan`). On APPROVED or CHANGES: apply, send `TASK DONE website: Approve - the plan for the website.md` to `answer-desk` and `ARCHIVE Approve - the plan for the website.md: readers website` to `orchestration`. From 18:00, proceed on the plan as written and log it in §9.
+- **Appendix A release:** when `..\Addvery Research\` has the six confirmed or the brand capture, or Alex says he's done. `wave2-specs` releases it while it runs, otherwise this session. Monitor `b7bp854u4` watches the folder's file list every 5 min (skipping `secrets\` and `.claude\`). At 15:10 it held only `CLAUDE.md` and `Research Addvery Spec.md`.
+- **Part 2** waits for orchestration's part 2 line.
+- **L-06** (S1's website list) waits on Alex's OT-03. If it reports, rerun step 5 for it and refresh the OT-07 snapshot.
 
 ## Build queue
 
-- **Nothing in flight.**
-- **Expected soon:** a link preview card (Open Graph title, description, URL and a 1200x630 image) before the GetSales alert's link goes out around 15:30. `s1-research` flagged it (source `research\global\L-01-W2-wildcard-delivered.md`, section (c), C2, C3, C7). Orchestration said to build it as a BUILD from `s-d3-getsales` when that request arrives. The image must carry no stakeholder names and nothing DoD-22 forbids. Check the production alias logged out afterwards.
-- **Later:** `S-D1-B1`, the D1 page (content `scraping\site\d1.md`), after Alex approves its draft. Alex allowed naming Apify (DI-6 Q6.3 "yes", in `Operator tasks\Decide - how the scraping demo should work.md`); the proposal rule still stands.
-
-## On the desk
-
-- **website-Q4 open** (queued at the desk), sent 14:52, deadline 15:07: turn on Vercel Web Analytics? Alex asked whether anyone besides him has visited; nothing can tell, because Web Analytics was never enabled ("Web Analytics not found") and the site has no server logs. Recommended (a), turn it on now. No poke sent yet. Poke from 15:07 every 15 minutes (`POKE website: waiting on you for website-Q4, visitor counting`); before 18:00 keep waiting, from 18:00 leave it off.
-- If (a): enable Web Analytics for project `hire-me-hackathon` (dashboard, project → Analytics → Enable, or the API), add `@vercel/analytics` with its `<Analytics />` component in `app\layout.tsx` (check the package's current Next.js import path first), deploy, then confirm with the Vercel MCP `count_pageviews` for `projectId: hire-me-hackathon`, `slug: alex-alderman-s-projects`.
+- Nothing in flight. Last BUILT: S-D3-B4 at 15:02.
+- Expected: S-D3's footer link plus visitor panel after the pre-send gate; `S-D1-B1` (the D1 page) after Alex approves its plan (OT-06, "Approve - the scraping demo plan"); S-D9 status updates.
+- `s-d9-legibility` holds L-01 Q8 and Q18 in its OT-05 and will pass the answers on. Don't ask them.
 
 ## Processes
 
-- **Clock loop:** pid 27164 (`pythonw`), last published 14:15:50 idle, 9.10 h left. It's separate and keeps running.
-- **Dev server:** this session started `npx next dev -p 3100`; it may stop with this session. Restart it in the background if you need it. Restart it after any `npm install`, or new packages 500.
+- **Clock loop:** pid 27164 (`pythonw`), alive. S08 started recording at about 15:07; published "recording S08, 9.10 h left" at 15:07:34 and replied to `rig`.
+- **Dev server:** something answers on :3100 (a restart at 14:59 hit EADDRINUSE, and `netstat` doesn't show the owner). It serves the current code, including `@vercel/analytics`. If it stops, start it hidden: `Start-Process cmd.exe -ArgumentList '/c','npx next dev -p 3100' -WorkingDirectory <website> -WindowStyle Hidden`.
 - **No stakeholder preview** is running.
 
-## Decisions since the morning (before SPEC.md's §9 existed; DECISIONS.md has the rest)
+## Decisions since 14:55
 
-- 14:00, Alex: the site is a live feed, newest on top; the charter must be on the site. Built with the specs too, redacted.
-- 14:18: a subagent found eight Insight posts in S03 to S05; every quote checked against its transcript.
-- 14:25, website-Q3, Alex "a": leave the public repo as it is; mentions of the proposal are fine.
-- 14:45: Apify named on the site after Alex's DI-6 Q6.3 "yes" (checked in the intake file).
-- 14:49, Alex: the setup photo stays unblurred; metadata stripped anyway.
-- 14:55: first publish check clean (`checks.md`).
+All are in SPEC.md §9 (15:00 to 15:05 rows): analytics aggregate-only; the card as a static PNG with no times or names; the L-01 method revisions; Q15 Hobby stays; Q20 needs no question; Q23 no cold read unless Alex names readers; the question routing; the gate goes out on L-01 alone.
 
 ## Working notes
 
-- In Git Bash, `export MSYS_NO_PATHCONV=1` before curl or vercel commands with `/paths`.
-- Headless Edge screenshots for visual checks: `msedge --headless=new --screenshot=… --window-size=W,H --virtual-time-budget=8000 http://localhost:3100/`. It won't lay out narrower than about 540 px, so a phone-width shot looks clipped on the right; that's the browser, not the page.
-- The S-D9 asker sends one request at a time and waits for BUILT. Log every build in `builds.md`.
+- In Git Bash, `export MSYS_NO_PATHCONV=1` before vercel commands with `/paths`.
+- Protected preview URLs: `vercel curl <path> --deployment <url>` bypasses the login. The Vercel MCP can't (403 for this team).
+- Headless Edge screenshots: `msedge --headless=new --screenshot=… --window-size=W,H --virtual-time-budget=8000 http://localhost:3100/`.
+- Long multi-line Python through Bash heredocs can break on quoting. Write the script to `$CLAUDE_JOB_DIR\tmp` and run it.
