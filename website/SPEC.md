@@ -98,6 +98,7 @@ Paths are relative to `website\`. Step 1 of the run (§7) confirms each resource
     - Alex's private briefing on the six: the files that part N5 of `..\Addvery Research\Scraping summary.md` lists as his decision-maker profiles and per-person notes. Read them for the stakeholder sections only once Alex has approved what those sections show; nothing from them is quoted, and their names stay out of tracked files.
 - `content\feed.json`: the feed, newest first. Its post kinds are Status, Update, Milestone, Insight, Session and Explainer. The post with id `status` is the deliverables view, and a status update moves it back to the top.
 - `content\docs\` and `scripts\sync_docs.py`: the "start here" box's copies of the charter and the S0 to S2 specs. The script redacts them and refuses to write if a deny-listed term survives.
+- `..\scraping\agent-view\generate.py` and its output `..\scraping\agent-view\out\`: S-D12's agent track (OUTPUT S-D1, 19:10, C19; DoD-25). Run it before each deploy over `content\`. Its git-ignored output (77 Markdown files: llms.txt, the index, the four time paths, demos, the feed, docs, About Alex and the six /for tracks) is what you serve as the unlisted Markdown pages and /llms.txt behind the person/agent toggle. It carries the same words as the person view, so the two never drift.
 - `content\videos.json`: YouTube ids for the session videos.
 - `app\`: the site's pages.
 - `scripts\clock_sync.py` and `scripts\upload_webcam.py`: the clock, and the YouTube upload flow (unlisted, through the rig's sign-in).
