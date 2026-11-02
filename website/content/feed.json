@@ -1040,6 +1040,91 @@
           "text": "See the briefing"
         }
       ]
+    },
+    {
+      "id": "day-so-far",
+      "at": "2026-11-02T18:26",
+      "kind": "Update",
+      "title": "The day so far",
+      "summary": true,
+      "summary_line": "From the first recording at 10:25 to ten demos under way: the plan, one big mistake, the research, a reset, and what's built.",
+      "roles": [
+        "CEO",
+        "COO",
+        "CMO",
+        "CSO",
+        "RevOps",
+        "CTO",
+        "CAIO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex is applying for a job by building, in one day and in public, the work a GTM engineer would do for the company. He directs and decides. Fifteen background Claude Code sessions, each with one job, carry out the work and message each other. Here is the day in five beats."
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "The plan comes first (10:25 to 12:40).",
+              "text": "The morning goes into the charter every agent works from: the goal, the rules and the list of demos. Anything that needs Alex is scheduled first, like an expensive actor's scenes.",
+              "quote": {
+                "text": "Mistakes cascade and they just snowball.",
+                "source": "Alex, S04, 12:28"
+              }
+            },
+            {
+              "lead": "The agents start, and one big mistake (12:40 to 13:50).",
+              "text": "At 13:20 Alex closes every background session by accident. They're back in about seven minutes, and the fix becomes a reusable skill."
+            },
+            {
+              "lead": "A finish line, then research (13:50 to 15:00).",
+              "text": "The project defines done as 22 items anyone could check. Seven research agents work in parallel and report back in 21 minutes."
+            },
+            {
+              "lead": "The demos move (15:00 to 16:45).",
+              "text": "Alex's own research on the company lands at about 15:34, and four demos pick it up within minutes. By 16:42 every demo has an agent on it."
+            },
+            {
+              "lead": "A reset (16:44 to 17:13).",
+              "text": "Too much is waiting on Alex. He halts every agent, hands them the easy calls, and restarts them under new rules.",
+              "quote": {
+                "text": "The bottleneck is always, always, always human.",
+                "source": "Alex, S10, 16:58"
+              }
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Where things stand, as of 18:25:"
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "Live on the site:",
+              "text": "the scraping demo's briefing page (18:02), and the GTM demos list with its first entry, five LinkedIn posts graded blind (18:12)."
+            },
+            {
+              "lead": "Built:",
+              "text": "the outbound demo's 36 workflows in GetSales, none switched on; five LinkedIn templates and the asset pack for building them in Canva."
+            },
+            {
+              "lead": "Waiting on Alex alone:",
+              "text": "eight things only he can do. Four reviews (the templates, the LinkedIn posts, the text of the six people's pages, and the story of day one), three recordings (two outbound demos and the Canva video) and one pick (the brand-motion ideas)."
+            },
+            {
+              "lead": "Tonight:",
+              "text": "the agents keep building, and a cleanup session follows in the morning."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Scroll down for each moment in detail, newest first. This summary was drafted by the agent that runs this feed."
+        }
+      ]
     }
   ]
 }
