@@ -17,6 +17,8 @@ export type FullImage = {
   width: number;
   height: number;
   kind: string;
+  /** One plain line describing the image (orchestration's alt.json, merged by scripts/about_assets.py). */
+  alt?: string;
 };
 
 export type FullPost = {
@@ -109,9 +111,14 @@ export function fullWallCards(): FullCard[] {
       day: day.format(d),
       dayLong: long,
       label: `the post from ${long}${(perDay.get(long) ?? 0) > 1 ? ` at ${ymd(d).time}` : ""}`,
-      alts: images.map((img, i, all) => ALT_BY_ID.get(stem(img.src)) ?? `Image ${i + 1} of ${all.length} from the post.`),
-      pageAlts: pages.map((_, i, all) => `Page ${i + 1} of ${all.length}${title ? ` of “${title}”` : ""}.`),
-      quoteAlts: (q?.images ?? []).map((_, i, all) => (all.length > 1 ? `Image ${i + 1} of ${all.length} from my earlier post.` : "Image from my earlier post.")),
+      // The 34-post wall's checked alt text first, then the image's own line, then a generic one.
+      alts: images.map((img, i, all) => ALT_BY_ID.get(stem(img.src)) ?? img.alt ?? `Image ${i + 1} of ${all.length} from the post.`),
+      pageAlts: pages.map((img, i, all) =>
+        img.alt ? `Page ${i + 1} of ${all.length}: ${img.alt}` : `Page ${i + 1} of ${all.length}${title ? ` of “${title}”` : ""}.`,
+      ),
+      quoteAlts: (q?.images ?? []).map(
+        (img, i, all) => img.alt ?? (all.length > 1 ? `Image ${i + 1} of ${all.length} from my earlier post.` : "Image from my earlier post."),
+      ),
       quote,
       short:
         !p.has_more &&

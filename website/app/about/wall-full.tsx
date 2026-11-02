@@ -115,7 +115,8 @@ function Video({ post }: { post: FullCard }) {
   const cover = post.video?.cover;
   return (
     <a className="wf-video" href={post.url} target="_blank" rel="noopener noreferrer">
-      {cover && <CardImg img={cover} alt="" crop={false} />}
+      {/* The cover's own line names the link (the visible words only say where it plays). */}
+      {cover && <CardImg img={cover} alt={cover.alt ?? ""} crop={false} />}
       <span className="wall-video-play" aria-hidden="true" />
       <span className="wf-video-note">
         Plays on LinkedIn

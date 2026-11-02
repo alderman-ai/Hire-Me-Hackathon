@@ -36,14 +36,16 @@
           "width": 1280,
           "height": 1706,
           "kind": "image",
-          "card": "/about/wall-full/7522341978378874880-1-640.webp"
+          "card": "/about/wall-full/7522341978378874880-1-640.webp",
+          "alt": "Night photo of a child in a witch costume with a pointed hat, holding a bucket, with a hand in the foreground"
         },
         {
           "src": "/about/wall-full/7522341978378874880-2-1280.webp",
           "width": 1280,
           "height": 1706,
           "kind": "image",
-          "card": "/about/wall-full/7522341978378874880-2-640.webp"
+          "card": "/about/wall-full/7522341978378874880-2-640.webp",
+          "alt": "Night photo of a child in a dark costume with a black braided wig and glow sticks, holding a bucket"
         }
       ],
       "document": null,
@@ -102,14 +104,16 @@
           "width": 1280,
           "height": 1088,
           "kind": "image",
-          "card": "/about/wall-full/7520752692877770752-1-640.webp"
+          "card": "/about/wall-full/7520752692877770752-1-640.webp",
+          "alt": "Screenshot of a New York Times headline: Anthropic reveals skyrocketing growth and spending plans in I.P.O. filing"
         },
         {
           "src": "/about/wall-full/7520752692877770752-2-1280.webp",
           "width": 1280,
           "height": 1137,
           "kind": "image",
-          "card": "/about/wall-full/7520752692877770752-2-640.webp"
+          "card": "/about/wall-full/7520752692877770752-2-640.webp",
+          "alt": "Screenshot of the Microsoft Agent 365 web page headline with a \"See plans and pricing\" button"
         }
       ],
       "document": null,
@@ -181,7 +185,8 @@
             "width": 862,
             "height": 416,
             "kind": "quoted",
-            "card": "/about/wall-full/7518627168059363328-1-640.webp"
+            "card": "/about/wall-full/7518627168059363328-1-640.webp",
+            "alt": "Dark graphic reading \"still HUMAN...\" with a note about an about-section header and a paired positioning line"
           }
         ]
       },
@@ -244,7 +249,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7517873252996775937-1-640.webp"
+          "card": "/about/wall-full/7517873252996775937-1-640.webp",
+          "alt": "Dark square graphic: orange splats lead to a pixel creature; speech bubble reads \"I SEE YOU! ... you little (it/swarm) rascal\""
         }
       ],
       "document": null,
@@ -269,7 +275,8 @@
           "width": 1280,
           "height": 1151,
           "kind": "image",
-          "card": "/about/wall-full/7517660148203712512-1-640.webp"
+          "card": "/about/wall-full/7517660148203712512-1-640.webp",
+          "alt": "Screenshot of a Claude Code terminal with a prompt about a file tree template and three subagents running"
         }
       ],
       "document": null,
@@ -311,7 +318,8 @@
           "width": 1024,
           "height": 1024,
           "kind": "image",
-          "card": "/about/wall-full/7517618031930462208-1-640.webp"
+          "card": "/about/wall-full/7517618031930462208-1-640.webp",
+          "alt": "AI-generated photo of a store blister pack \"Pep-tudes for REAL dudes\" holding a syringe labeled \"Ransack Your Tech Stack.\""
         }
       ],
       "document": null,
@@ -336,20 +344,23 @@
           "width": 1280,
           "height": 1075,
           "kind": "image",
-          "card": "/about/wall-full/7517294736366538752-1-640.webp"
+          "card": "/about/wall-full/7517294736366538752-1-640.webp",
+          "alt": "Screenshot of a Claude Code prompt asking for a CSV of top 500 sites known for selling users' email addresses"
         },
         {
           "src": "/about/wall-full/7517294736366538752-2-1280.webp",
           "width": 1280,
           "height": 1027,
           "kind": "image",
-          "card": "/about/wall-full/7517294736366538752-2-640.webp"
+          "card": "/about/wall-full/7517294736366538752-2-640.webp",
+          "alt": "Screenshot of a Claude Code prompt to benchmark token use by enabling all cookies across 10 Haiku subagents"
         },
         {
           "src": "/about/wall-full/7517294736366538752-3-1280.webp",
           "width": 532,
           "height": 445,
-          "kind": "image"
+          "kind": "image",
+          "alt": "Screenshot of a reply email draft about AI-generated outbound campaign services, with names and some text blacked out"
         }
       ],
       "document": null,
@@ -386,28 +397,32 @@
           "width": 1280,
           "height": 1810,
           "kind": "document-page",
-          "card": "/about/wall-full/7516966952024879104-1-640.webp"
+          "card": "/about/wall-full/7516966952024879104-1-640.webp",
+          "alt": "Carousel cover: \"new claude design doc creator VS claude code + canva\", two cards comparing method, time, models and output"
         },
         {
           "src": "/about/wall-full/7516966952024879104-2-1280.webp",
           "width": 1280,
           "height": 1810,
           "kind": "document-page",
-          "card": "/about/wall-full/7516966952024879104-2-640.webp"
+          "card": "/about/wall-full/7516966952024879104-2-640.webp",
+          "alt": "Carousel page: Czech church brochure with a building render, key stats (1995, about 150 members) and interior renders"
         },
         {
           "src": "/about/wall-full/7516966952024879104-3-1280.webp",
           "width": 1280,
           "height": 1810,
           "kind": "document-page",
-          "card": "/about/wall-full/7516966952024879104-3-640.webp"
+          "card": "/about/wall-full/7516966952024879104-3-640.webp",
+          "alt": "Carousel page: Czech brochure on why to build a prayer hall, with chair-filled hall render, cost bar and a QR code"
         },
         {
           "src": "/about/wall-full/7516966952024879104-4-1280.webp",
           "width": 1280,
           "height": 1810,
           "kind": "document-page",
-          "card": "/about/wall-full/7516966952024879104-4-640.webp"
+          "card": "/about/wall-full/7516966952024879104-4-640.webp",
+          "alt": "Carousel page: Czech one-page flyer for a church building project, with street photo, cost figures, QR codes and bank details"
         }
       ]
     },
@@ -424,7 +439,8 @@
           "width": 1254,
           "height": 1254,
           "kind": "image",
-          "card": "/about/wall-full/7516521163859345409-1-640.webp"
+          "card": "/about/wall-full/7516521163859345409-1-640.webp",
+          "alt": "AI-generated cartoon of two kids asking a tired driver mom for a high-end model; her thought shows a dusty PC labeled Fable 5.1"
         }
       ],
       "document": null,
@@ -449,7 +465,8 @@
           "width": 1280,
           "height": 1038,
           "kind": "image",
-          "card": "/about/wall-full/7515830862135853058-1-640.webp"
+          "card": "/about/wall-full/7515830862135853058-1-640.webp",
+          "alt": "Screenshot of an Accenture careers page for a \"Gen AI Consultant / Work Transformation\" role, \"Early Career\" circled in red"
         }
       ],
       "document": null,
@@ -474,7 +491,8 @@
           "width": 1280,
           "height": 804,
           "kind": "image",
-          "card": "/about/wall-full/7515826554686529536-1-640.webp"
+          "card": "/about/wall-full/7515826554686529536-1-640.webp",
+          "alt": "Screenshot of a Claude Code terminal note about an install script that restores skills and hooks, with yellow and red markup"
         }
       ],
       "document": null,
@@ -545,7 +563,8 @@
           "width": 770,
           "height": 480,
           "kind": "image",
-          "card": "/about/wall-full/7515443703264735232-1-640.webp"
+          "card": "/about/wall-full/7515443703264735232-1-640.webp",
+          "alt": "Screenshot of a terminal table of new scripts written per week, from 27 July to 5 October, with some project names redacted"
         }
       ],
       "document": null,
@@ -630,7 +649,8 @@
           "width": 1280,
           "height": 672,
           "kind": "link-preview",
-          "card": "/about/wall-full/7514431768180056064-1-640.webp"
+          "card": "/about/wall-full/7514431768180056064-1-640.webp",
+          "alt": "Black ANTHROPIC wordmark on a cream background, the link preview card"
         }
       },
       "poll": null,
@@ -732,7 +752,8 @@
           "width": 976,
           "height": 800,
           "kind": "link-preview",
-          "card": "/about/wall-full/7507110049408901120-1-640.webp"
+          "card": "/about/wall-full/7507110049408901120-1-640.webp",
+          "alt": "Collage of a teal punched card over patent line drawings, including a head wearing a headset, labeled FIG. 63"
         }
       },
       "poll": null,
@@ -768,7 +789,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7506308973780721664-1-640.webp"
+          "card": "/about/wall-full/7506308973780721664-1-640.webp",
+          "alt": "Promo graphic for an Apify AI marketing meetup on 17.09 in Prague, with a speaker portrait photo and an Actor listing card"
         }
       ],
       "document": null,
@@ -810,13 +832,15 @@
           "width": 1280,
           "height": 814,
           "kind": "image",
-          "card": "/about/wall-full/7500787226344271872-1-640.webp"
+          "card": "/about/wall-full/7500787226344271872-1-640.webp",
+          "alt": "Screenshot of a Claude Code reply arguing permission dialogs are theater, and a request to look up OpenAI news"
         },
         {
           "src": "/about/wall-full/7500787226344271872-2-1280.webp",
           "width": 507,
           "height": 352,
-          "kind": "image"
+          "kind": "image",
+          "alt": "Cropped terminal screenshot of a failed web fetch that received 0 bytes, followed by the reply \"You win this round.\""
         }
       ],
       "document": null,
@@ -841,7 +865,8 @@
           "width": 740,
           "height": 687,
           "kind": "image",
-          "card": "/about/wall-full/7500671990362677248-1-640.webp"
+          "card": "/about/wall-full/7500671990362677248-1-640.webp",
+          "alt": "Benchmark table comparing Fable 5.1, Fable 5 and Opus 5 on agentic coding, computer use, reasoning and business workflows"
         }
       ],
       "document": null,
@@ -866,7 +891,8 @@
           "width": 1280,
           "height": 1706,
           "kind": "image",
-          "card": "/about/wall-full/7499736569302634496-1-640.webp"
+          "card": "/about/wall-full/7499736569302634496-1-640.webp",
+          "alt": "Photo of a home desk with monitors, a yellow lamp and water bottle, and a doll sitting in the office chair"
         }
       ],
       "document": null,
@@ -937,147 +963,168 @@
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-1-640.webp"
+          "card": "/about/wall-full/7496529282056339456-1-640.webp",
+          "alt": "Carousel cover: \"DEMO of the Day!\" on turning a 5-minute Canva visual into a template Claude can reproduce pixel-perfect"
         },
         {
           "src": "/about/wall-full/7496529282056339456-2-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-2-640.webp"
+          "card": "/about/wall-full/7496529282056339456-2-640.webp",
+          "alt": "Carousel page \"Step 1\": you don't need to recreate visual assets from scratch if you have a custom-coded website"
         },
         {
           "src": "/about/wall-full/7496529282056339456-3-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-3-640.webp"
+          "card": "/about/wall-full/7496529282056339456-3-640.webp",
+          "alt": "Carousel page: a plain blank off-white box on a dark background, captioned \"... from this ...\""
         },
         {
           "src": "/about/wall-full/7496529282056339456-4-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-4-640.webp"
+          "card": "/about/wall-full/7496529282056339456-4-640.webp",
+          "alt": "Carousel page: a browser-style window frame with orange glow, empty inside, captioned \"... to this!\""
         },
         {
           "src": "/about/wall-full/7496529282056339456-5-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-5-640.webp"
+          "card": "/about/wall-full/7496529282056339456-5-640.webp",
+          "alt": "Carousel page: a \"Teaching EN to Czechs for 8 Years\" card beside a framed portrait of a smiling man, from the website frontend"
         },
         {
           "src": "/about/wall-full/7496529282056339456-6-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-6-640.webp"
+          "card": "/about/wall-full/7496529282056339456-6-640.webp",
+          "alt": "Carousel page \"Step 2\": show Claude the workflow once manually, template it, so it only adds text, with pink-marked fields"
         },
         {
           "src": "/about/wall-full/7496529282056339456-7-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-7-640.webp"
+          "card": "/about/wall-full/7496529282056339456-7-640.webp",
+          "alt": "Carousel page: a \"Tip of the Day!\" template with pink placeholder boxes for text fields 1 to 3 and two emoji slots"
         },
         {
           "src": "/about/wall-full/7496529282056339456-8-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-8-640.webp"
+          "card": "/about/wall-full/7496529282056339456-8-640.webp",
+          "alt": "Carousel page: the \"Tip of the Day!\" template with pink boxes filled in, about feeling versus being productive and a daily plan"
         },
         {
           "src": "/about/wall-full/7496529282056339456-9-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-9-640.webp"
+          "card": "/about/wall-full/7496529282056339456-9-640.webp",
+          "alt": "Carousel page: the same tip card with the pink boxes removed, the lower text dimmed"
         },
         {
           "src": "/about/wall-full/7496529282056339456-10-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-10-640.webp"
+          "card": "/about/wall-full/7496529282056339456-10-640.webp",
+          "alt": "Carousel page: finished tip card on feeling versus being productive, with highlighted words and advice to check your plan"
         },
         {
           "src": "/about/wall-full/7496529282056339456-11-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-11-640.webp"
+          "card": "/about/wall-full/7496529282056339456-11-640.webp",
+          "alt": "Carousel page \"Step 3\": the author and Claude found a way to measure boxes, using recorded screenshots and Claude in Chrome"
         },
         {
           "src": "/about/wall-full/7496529282056339456-12-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-12-640.webp"
+          "card": "/about/wall-full/7496529282056339456-12-640.webp",
+          "alt": "Screenshot of the Canva editor zoomed on a \"Tip of the Day\" template, with bracketed field tags like [TF1.b1] in a pink text box"
         },
         {
           "src": "/about/wall-full/7496529282056339456-13-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-13-640.webp"
+          "card": "/about/wall-full/7496529282056339456-13-640.webp",
+          "alt": "Screenshot of the Canva editor zoomed on overlapping text-field tags such as [TF3.b1], with a font toolbar and slide thumbnails"
         },
         {
           "src": "/about/wall-full/7496529282056339456-14-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-14-640.webp"
+          "card": "/about/wall-full/7496529282056339456-14-640.webp",
+          "alt": "Screenshot of the Tip of the Day template with tagged placeholder fields TF1 to TF3, e1 and e2 in pink boxes"
         },
         {
           "src": "/about/wall-full/7496529282056339456-15-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-15-640.webp"
+          "card": "/about/wall-full/7496529282056339456-15-640.webp",
+          "alt": "Carousel page \"Step 4\": give the specifications for each place Claude adds copy, with text writing done separately and batch-added"
         },
         {
           "src": "/about/wall-full/7496529282056339456-16-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-16-640.webp"
+          "card": "/about/wall-full/7496529282056339456-16-640.webp",
+          "alt": "Dark-mode table titled \"Copy spec\" listing fields TF1, TF2, TF3, e1 and e2 with length budgets, fill requirements and span rules"
         },
         {
           "src": "/about/wall-full/7496529282056339456-17-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-17-640.webp"
+          "card": "/about/wall-full/7496529282056339456-17-640.webp",
+          "alt": "Carousel page \"Step 5\": build a simple skill that writes field specs, creates the copy, and batch-adds it to images via MCP"
         },
         {
           "src": "/about/wall-full/7496529282056339456-18-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-18-640.webp"
+          "card": "/about/wall-full/7496529282056339456-18-640.webp",
+          "alt": "Carousel page \"Tip of the Day!\": feed an AI chat context, not cleverness; write three lines once and paste them into every chat"
         },
         {
           "src": "/about/wall-full/7496529282056339456-19-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-19-640.webp"
+          "card": "/about/wall-full/7496529282056339456-19-640.webp",
+          "alt": "Carousel page \"Tip of the Day!\": teach an AI your tone by showing a rough draft and the shipped version side by side"
         },
         {
           "src": "/about/wall-full/7496529282056339456-20-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-20-640.webp"
+          "card": "/about/wall-full/7496529282056339456-20-640.webp",
+          "alt": "Carousel page \"Tip of the Day!\": before closing a session, ask the AI what it needs, and save the answer for the next session"
         },
         {
           "src": "/about/wall-full/7496529282056339456-21-1280.webp",
           "width": 1280,
           "height": 1280,
           "kind": "document-page",
-          "card": "/about/wall-full/7496529282056339456-21-640.webp"
+          "card": "/about/wall-full/7496529282056339456-21-640.webp",
+          "alt": "Carousel last page: \"do they look perfect? ... they're terrible\", then \"next demo is on fine-tuning ...\" with a contact address"
         }
       ]
     },
@@ -1094,7 +1141,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7494664251039694848-1-640.webp"
+          "card": "/about/wall-full/7494664251039694848-1-640.webp",
+          "alt": "LinkedIn template graphic: a \"Tip of the Day!\" window with text-field placeholders and a pixel creature, on dark"
         }
       ],
       "document": null,
@@ -1119,14 +1167,16 @@
           "width": 1080,
           "height": 2400,
           "kind": "image",
-          "card": "/about/wall-full/7494491757594906624-1-640.webp"
+          "card": "/about/wall-full/7494491757594906624-1-640.webp",
+          "alt": "Phone screenshot of a Claude Code chat showing an API error that Fable 5's safeguards flagged a message"
         },
         {
           "src": "/about/wall-full/7494491757594906624-2-1280.webp",
           "width": 1080,
           "height": 2400,
           "kind": "image",
-          "card": "/about/wall-full/7494491757594906624-2-640.webp"
+          "card": "/about/wall-full/7494491757594906624-2-640.webp",
+          "alt": "Phone screenshot of the same chat: a user asks how to edit a message, followed by the same API error"
         }
       ],
       "document": null,
@@ -1151,7 +1201,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7493930154226970625-1-640.webp"
+          "card": "/about/wall-full/7493930154226970625-1-640.webp",
+          "alt": "Dark square graphic: orange splats lead to a pixel creature; speech bubble reads \"I KNOW you're here Claude! ... and I'm so glad.\""
         }
       ],
       "document": null,
@@ -1176,7 +1227,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7493545340227289089-1-640.webp"
+          "card": "/about/wall-full/7493545340227289089-1-640.webp",
+          "alt": "Dark graphic of a checklist command in code text, with a speech bubble \"I'm only tough on you because I believe in you.\""
         }
       ],
       "document": null,
@@ -1201,7 +1253,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7492854357743300608-1-640.webp"
+          "card": "/about/wall-full/7492854357743300608-1-640.webp",
+          "alt": "Screenshot of JSON describing a magnifying-glass emoji, with the caption \"I think I got the ps-ai-chosis. Not the cat girl one.\""
         }
       ],
       "document": null,
@@ -1226,7 +1279,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7491391436060528640-1-640.webp"
+          "card": "/about/wall-full/7491391436060528640-1-640.webp",
+          "alt": "\"Tip of the day\" graphic: inspect the transcripts of your subagents; how your main session prompts them is instructive"
         }
       ],
       "document": null,
@@ -1268,7 +1322,8 @@
           "width": 1076,
           "height": 935,
           "kind": "image",
-          "card": "/about/wall-full/7490687952486952960-1-640.webp"
+          "card": "/about/wall-full/7490687952486952960-1-640.webp",
+          "alt": "Screenshot of an ad card: \"Brand-New Factory Automation Game on Steam is Terraria Meets Factorio,\" with a colorful game scene"
         }
       ],
       "document": null,
@@ -1293,7 +1348,8 @@
           "width": 1080,
           "height": 1080,
           "kind": "image",
-          "card": "/about/wall-full/7489759333023596545-1-640.webp"
+          "card": "/about/wall-full/7489759333023596545-1-640.webp",
+          "alt": "Phone screenshot of a Claude reply about splitting a charter into a compact list and spec files, ending \"Thanks for the offer.\""
         }
       ],
       "document": null,
@@ -1318,35 +1374,40 @@
           "width": 1254,
           "height": 817,
           "kind": "image",
-          "card": "/about/wall-full/7489690972952449024-1-640.webp"
+          "card": "/about/wall-full/7489690972952449024-1-640.webp",
+          "alt": "Screenshot of a project charter document, \"IMPORTANT CONSTRAINT / FENCE\" and \"What this document is\", in dark mode"
         },
         {
           "src": "/about/wall-full/7489690972952449024-2-1280.webp",
           "width": 1280,
           "height": 879,
           "kind": "image",
-          "card": "/about/wall-full/7489690972952449024-2-640.webp"
+          "card": "/about/wall-full/7489690972952449024-2-640.webp",
+          "alt": "Screenshot of a document section \"Demos to create\": extracting subjective taste into a rubric for LinkedIn post copy"
         },
         {
           "src": "/about/wall-full/7489690972952449024-3-1280.webp",
           "width": 1254,
           "height": 883,
           "kind": "image",
-          "card": "/about/wall-full/7489690972952449024-3-640.webp"
+          "card": "/about/wall-full/7489690972952449024-3-640.webp",
+          "alt": "Screenshot of a document section \"Demo 2: Post Writing with Rubric\", describing a skill that writes and grades posts in a loop"
         },
         {
           "src": "/about/wall-full/7489690972952449024-4-1280.webp",
           "width": 1280,
           "height": 809,
           "kind": "image",
-          "card": "/about/wall-full/7489690972952449024-4-640.webp"
+          "card": "/about/wall-full/7489690972952449024-4-640.webp",
+          "alt": "Screenshot of a \"Pre-flight check\" checklist the assistant ticks off before starting work"
         },
         {
           "src": "/about/wall-full/7489690972952449024-5-1280.webp",
           "width": 1235,
           "height": 782,
           "kind": "image",
-          "card": "/about/wall-full/7489690972952449024-5-640.webp"
+          "card": "/about/wall-full/7489690972952449024-5-640.webp",
+          "alt": "Screenshot of a spec template listing description, purpose, scope logic, dependencies, and operator approval checkboxes"
         }
       ],
       "document": null,
@@ -1388,7 +1449,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7488171479398780928-1-640.webp"
+          "card": "/about/wall-full/7488171479398780928-1-640.webp",
+          "alt": "Graphic of a \"Who did that?\" children's whodunit book cover, with a magnified file-explorer view of This PC, Network and Linux"
         }
       ],
       "document": null,
@@ -1425,42 +1487,48 @@
           "width": 1280,
           "height": 1811,
           "kind": "document-page",
-          "card": "/about/wall-full/7487839751828602882-1-640.webp"
+          "card": "/about/wall-full/7487839751828602882-1-640.webp",
+          "alt": "Carousel cover: a coloring page of a princess beside a rough unicorn sketch, titled \"The right ai model depends on YOUR task ...\""
         },
         {
           "src": "/about/wall-full/7487839751828602882-2-1280.webp",
           "width": 1280,
           "height": 1811,
           "kind": "document-page",
-          "card": "/about/wall-full/7487839751828602882-2-640.webp"
+          "card": "/about/wall-full/7487839751828602882-2-640.webp",
+          "alt": "Carousel page \"ChatGpt 5.5 | High\": detailed coloring page of a princess and a unicorn by a creek"
         },
         {
           "src": "/about/wall-full/7487839751828602882-3-1280.webp",
           "width": 1280,
           "height": 1811,
           "kind": "document-page",
-          "card": "/about/wall-full/7487839751828602882-3-640.webp"
+          "card": "/about/wall-full/7487839751828602882-3-640.webp",
+          "alt": "Carousel page \"Opus 5 | High (claude design)\": crude line-art coloring page \"Creek Fetch!\" of a princess and a unicorn"
         },
         {
           "src": "/about/wall-full/7487839751828602882-4-1280.webp",
           "width": 1280,
           "height": 1811,
           "kind": "document-page",
-          "card": "/about/wall-full/7487839751828602882-4-640.webp"
+          "card": "/about/wall-full/7487839751828602882-4-640.webp",
+          "alt": "Carousel page \"Opus 5 | High (claude design)\": detailed coloring page of a princess eating s'more's pizza next to a teddy bear"
         },
         {
           "src": "/about/wall-full/7487839751828602882-5-1280.webp",
           "width": 1280,
           "height": 1811,
           "kind": "document-page",
-          "card": "/about/wall-full/7487839751828602882-5-640.webp"
+          "card": "/about/wall-full/7487839751828602882-5-640.webp",
+          "alt": "Carousel page \"ChatGpt 5.5 | High\": crude line-art coloring page of a princess at a picnic with a basket and a laptop"
         },
         {
           "src": "/about/wall-full/7487839751828602882-6-1280.webp",
           "width": 1280,
           "height": 1811,
           "kind": "document-page",
-          "card": "/about/wall-full/7487839751828602882-6-640.webp"
+          "card": "/about/wall-full/7487839751828602882-6-640.webp",
+          "alt": "Carousel last page: \"hey claude ... can we add a meme here? (juuusst kidding)\" with a grinning emoji and a note on prompts"
         }
       ]
     },
@@ -1486,7 +1554,8 @@
           "width": 1280,
           "height": 720,
           "kind": "link-preview",
-          "card": "/about/wall-full/7487826656666062848-1-640.webp"
+          "card": "/about/wall-full/7487826656666062848-1-640.webp",
+          "alt": "Graphic \"a few sample prompts to generate coloring images for YOUR KIDS\" beside a princess and unicorn coloring page"
         }
       },
       "poll": null,
@@ -1505,7 +1574,8 @@
           "width": 750,
           "height": 565,
           "kind": "image",
-          "card": "/about/wall-full/7485319822705152000-1-640.webp"
+          "card": "/about/wall-full/7485319822705152000-1-640.webp",
+          "alt": "Screenshot of a Claude chat home screen noting Fable 5 is the most capable model and is now part of the Max plan"
         }
       ],
       "document": null,
@@ -1607,7 +1677,8 @@
           "width": 1280,
           "height": 672,
           "kind": "link-preview",
-          "card": "/about/wall-full/7471483407450173442-1-640.webp"
+          "card": "/about/wall-full/7471483407450173442-1-640.webp",
+          "alt": "White text on black: \"Statement on the US government directive to suspend access to Fable 5 and Mythos 5\""
         }
       },
       "poll": null,
@@ -1666,7 +1737,8 @@
           "width": 953,
           "height": 588,
           "kind": "image",
-          "card": "/about/wall-full/7470377549441785856-1-640.webp"
+          "card": "/about/wall-full/7470377549441785856-1-640.webp",
+          "alt": "Screenshot of a Claude model picker listing Fable 5, Opus 4.8, Sonnet 4.6 and Haiku 4.5, with a plan-limits note"
         }
       ],
       "document": null,
@@ -1725,7 +1797,8 @@
           "width": 1080,
           "height": 1350,
           "kind": "image",
-          "card": "/about/wall-full/7465660007745970176-1-640.webp"
+          "card": "/about/wall-full/7465660007745970176-1-640.webp",
+          "alt": "Graphic of a browser-style card: \"You don't need agentic workflows. You just need five minutes, a coffee and a prompt\""
         }
       ],
       "document": null,
@@ -1750,7 +1823,8 @@
           "width": 738,
           "height": 143,
           "kind": "image",
-          "card": "/about/wall-full/7465440521860288512-1-640.webp"
+          "card": "/about/wall-full/7465440521860288512-1-640.webp",
+          "alt": "Screenshot of an AI chat reply saying it read a prompt document and should read it properly before analyzing"
         }
       ],
       "document": null,
@@ -1774,7 +1848,8 @@
           "src": "/about/wall-full/7463138875029409792-1-1280.webp",
           "width": 626,
           "height": 617,
-          "kind": "image"
+          "kind": "image",
+          "alt": "Screenshot of a Claude Code terminal where a tired user demands a careful, dependable plan and a runcard for new sessions"
         }
       ],
       "document": null,
@@ -1808,7 +1883,8 @@
           "width": 800,
           "height": 420,
           "kind": "link-preview",
-          "card": "/about/wall-full/7462751567016771584-1-640.webp"
+          "card": "/about/wall-full/7462751567016771584-1-640.webp",
+          "alt": "Event card for a Luma webinar \"LinkedIn in 2026: solve dynamic daily limits & secure your pipeline\", with two presenters"
         }
       },
       "poll": null,
@@ -1827,7 +1903,8 @@
           "width": 1080,
           "height": 1350,
           "kind": "image",
-          "card": "/about/wall-full/7462392891672309761-1-640.webp"
+          "card": "/about/wall-full/7462392891672309761-1-640.webp",
+          "alt": "Graphic of a browser-style card: \"Teaching EN to Czechs for 8 Years\", on natural language processing versus a certified instructor"
         }
       ],
       "document": null,
@@ -1869,7 +1946,8 @@
           "width": 1128,
           "height": 943,
           "kind": "image",
-          "card": "/about/wall-full/7462095364209381376-1-640.webp"
+          "card": "/about/wall-full/7462095364209381376-1-640.webp",
+          "alt": "Screenshot of a Claude Code terminal welcome panel and the /ultraplan command usage text"
         }
       ],
       "document": null,
@@ -1894,7 +1972,8 @@
           "width": 1280,
           "height": 866,
           "kind": "image",
-          "card": "/about/wall-full/7462048107791396864-1-640.webp"
+          "card": "/about/wall-full/7462048107791396864-1-640.webp",
+          "alt": "Wispr Flow \"Your Voice Profile\" card labeled \"AI Navigator\", with an illustrated person pointing at a numbered board"
         }
       ],
       "document": null,
@@ -1932,7 +2011,8 @@
             "width": 1080,
             "height": 1236,
             "kind": "quoted",
-            "card": "/about/wall-full/7461787275841110016-1-640.webp"
+            "card": "/about/wall-full/7461787275841110016-1-640.webp",
+            "alt": "Phone screenshot of an Opus 4.6 chat about governance and \"quantity has a quality of its own\""
           }
         ]
       },
@@ -1965,7 +2045,8 @@
             "src": "/about/wall-full/7461786550209544192-1-1280.webp",
             "width": 441,
             "height": 324,
-            "kind": "quoted"
+            "kind": "quoted",
+            "alt": "Cropped screenshot of \"Allow once\" and \"Always allow\" permission buttons with an Opus 4.7 Extra high label"
           }
         ]
       },
@@ -1986,7 +2067,8 @@
           "width": 1080,
           "height": 2400,
           "kind": "image",
-          "card": "/about/wall-full/7461400059692208128-1-640.webp"
+          "card": "/about/wall-full/7461400059692208128-1-640.webp",
+          "alt": "Phone screenshot of a Claude Code chat asking which key branch to switch to: main, semi-auto or fully-auto"
         }
       ],
       "document": null,
@@ -2011,7 +2093,8 @@
           "width": 1080,
           "height": 2400,
           "kind": "image",
-          "card": "/about/wall-full/7461364830793457665-1-640.webp"
+          "card": "/about/wall-full/7461364830793457665-1-640.webp",
+          "alt": "Phone screenshot of a Claude Code chat about adding a branch variable to a template, with a draft pull request link"
         }
       ],
       "document": null,
@@ -2036,7 +2119,8 @@
           "width": 1076,
           "height": 1330,
           "kind": "image",
-          "card": "/about/wall-full/7460673722161618945-1-640.webp"
+          "card": "/about/wall-full/7460673722161618945-1-640.webp",
+          "alt": "Screenshot of an AI reply: frustration after a mistake turns into \"just do it all\"; stop the session and walk away"
         }
       ],
       "document": null,
@@ -2101,7 +2185,8 @@
           "width": 1051,
           "height": 952,
           "kind": "image",
-          "card": "/about/wall-full/7460286492494503936-1-640.webp"
+          "card": "/about/wall-full/7460286492494503936-1-640.webp",
+          "alt": "Screenshot of David Pokorný's LinkedIn profile: smiling man with glasses, three five-star testimonials, audit headline"
         }
       ],
       "document": null,
@@ -2126,7 +2211,8 @@
           "width": 1080,
           "height": 1350,
           "kind": "image",
-          "card": "/about/wall-full/7460214763776548864-1-640.webp"
+          "card": "/about/wall-full/7460214763776548864-1-640.webp",
+          "alt": "Graphic with a portrait of a smiling man on a narrow street, captioned \"hi, i'm alex\", and a note \"five minutes = real progress\""
         }
       ],
       "document": null,
@@ -2150,13 +2236,15 @@
           "src": "/about/wall-full/7459992630316244993-1-1280.webp",
           "width": 470,
           "height": 717,
-          "kind": "image"
+          "kind": "image",
+          "alt": "Screenshot of a LinkedIn post preview about \"5 minute ai lessons each morning\" with a \"Learn something new in ai\" image"
         },
         {
           "src": "/about/wall-full/7459992630316244993-2-1280.webp",
           "width": 455,
           "height": 717,
-          "kind": "image"
+          "kind": "image",
+          "alt": "Screenshot of a LinkedIn post preview \"Your morning coffee + a 5-minute ai lesson\" showing 47 impressions"
         }
       ],
       "document": null,
@@ -2181,7 +2269,8 @@
           "width": 1080,
           "height": 1350,
           "kind": "image",
-          "card": "/about/wall-full/7459852384064688128-1-640.webp"
+          "card": "/about/wall-full/7459852384064688128-1-640.webp",
+          "alt": "Graphic of a browser-style card: \"You don't need agentic workflows. You just need five minutes, a coffee and a prompt\""
         }
       ],
       "document": null,
@@ -2206,7 +2295,8 @@
           "width": 1080,
           "height": 1350,
           "kind": "image",
-          "card": "/about/wall-full/7459537059708551168-1-640.webp"
+          "card": "/about/wall-full/7459537059708551168-1-640.webp",
+          "alt": "Graphic of a browser-style card \"Learn something new in ai. One prompt. One coffee. One sharper instinct.\""
         }
       ],
       "document": null,
@@ -2248,7 +2338,8 @@
           "width": 1200,
           "height": 1200,
           "kind": "image",
-          "card": "/about/wall-full/7459177920373186560-1-640.webp"
+          "card": "/about/wall-full/7459177920373186560-1-640.webp",
+          "alt": "Vintage-style Mother's Day graphic \"To my carbon-based mother\": periodic-table tiles for Carbon and Silicon joined by a heart"
         }
       ],
       "document": null,
@@ -2309,7 +2400,8 @@
           "width": 1280,
           "height": 720,
           "kind": "video-cover",
-          "card": "/about/wall-full/7458425504912723968-1-640.webp"
+          "card": "/about/wall-full/7458425504912723968-1-640.webp",
+          "alt": "Screenshot of a screen recording: a local site homepage reading \"ai is a language your COMPANY needs to learn\", webcam bubble"
         }
       },
       "reactions": 3,

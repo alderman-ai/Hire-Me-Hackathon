@@ -117,6 +117,8 @@ def wall_full_image(img: dict) -> dict:
             "height": big.height,
             "kind": img.get("kind", "image"),
         }
+        if img.get("alt"):
+            rec["alt"] = img["alt"]  # one plain line per image (orchestration, scraping/site/linkedin-wall/alt.json)
         if big.width > CARD_W:
             small = resized(im, CARD_W)
             save_webp(small, out / f"{src.stem}-{CARD_W}.webp", quality=78)
