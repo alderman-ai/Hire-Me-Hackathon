@@ -22,6 +22,8 @@ Created: <YYYY-MM-DD HH:MM Prague>
 
 <The spec, list or draft exactly as it stands at this stage, copied in whole. This is a frozen snapshot: the live file may move on, but this is what the approval covers. If it's long, put a five-line summary first, then the full text.>
 
+<!-- Git-ignored drafts: when the draft lives in a git-ignored file (so it never reaches the public repo), embed it here with an Obsidian embed, ![[<path to the draft>]], instead of copying it in. That file is then the snapshot: it must not change while this gate is open. To change it, write the change below, wait for his answer, and only then edit the draft. -->
+
 ## Approval
 
 - [ ] I approve

@@ -80,6 +80,10 @@ On `FINDINGS <list id> ready: <paths in research\>; readers: <spec ids>`:
 2. For each path and each reader spec, plan one line in that spec's SPEC.md "Routing and resources": the path, written from the repo root unless that spec's other lines use `..\`, and one line from the report's `research\DIRECTORY.md` entry on what it is and how to treat it. If a reader has no SPEC.md yet, hold the line under `## Held` as `- HELD <spec id> <file>: <line>`, and deliver it when the SPEC.md appears; check mode flags it.
 3. Run steps 2 to 5. Write nothing in `research\`, and tell each reader's running session.
 
+## OUTPUT from a spec session
+
+On `OUTPUT <spec id> ready: <paths>; readers: <spec ids>` (SPEC section 4, "What S2 accepts", item 4): handle it as FINDINGS, with these differences. The record is `C<nn>-output-<spec id>.md`, Asked by that spec's session; its approval is the spec's own SPEC.md, which lists the outputs. Each path must exist inside that spec's folder. The resource line's description comes from the spec's "Outputs" list, not from `research\DIRECTORY.md`. No preview. Write nothing in the producing spec's folder.
+
 ## Other triggers
 
 - **An answered open question:** tick its box in "Risks and open questions" and note the answer with its id (`A <id>`). Then walk the places the answer changes.
