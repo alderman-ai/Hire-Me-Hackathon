@@ -171,3 +171,153 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov, drafting (wave2-specs): topics are proposed from Alex's own expertise and today's build; no Addvery research is read. | Addvery research is his own (DI-3 Q3.3), and nothing from `Addvery Research\` may reach a tracked file. | He picks or swaps; nothing leaks from his folder. | `TOPICS.md` and the dictation tasks. |
 | 2 Nov, drafting (wave2-specs): each post shows the share of words Alex changed. | It turns "the last 10%" (DoD-14, which S-D5 serves) into a number a visitor can see. | It's honest evidence, whatever the number turns out to be. | The front matter and S-D4's template box. |
 | 2 Nov, drafting (wave2-specs): finish-task pokes go out only inside the times Alex picks in DI-XX question 3. | A poke during a recorded scene or overnight helps no one. | It respects P4 and P5 without letting tasks go quiet in his window. | Step 7 only. |
+
+## Appendix A. Held preflight intake
+
+This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** the blog pipeline's own intake (Decide - how the blog pipeline should work.md) is answered, because this one's topic count and slots follow its answer on whether the test dictation counts as the first article. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - your three blog posts, topics and timing.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D5: Decide - your three blog posts, topics and timing.md is waiting on you: <what it decides and unblocks>`.
+
+~~~~markdown
+---
+System Primitive: Intake file
+Intake State: Waiting on operator
+Intake id: DI-XX
+Created: 2026-11-02
+Build goals: []
+---
+
+<!-- File name: "Decide - your three blog posts, topics and timing.md" -->
+
+# Decide: your three blog posts, topics and timing
+
+## What this is
+
+The whole site is a personalised job application to Addvery, built live in a 12-hour recorded hackathon. This part is **three blog posts** on the site. Each one starts as about 15 minutes of you talking, gets drafted by the blog pipeline into a nearly finished post, and is finished by you, the last 10%. On the site they show your thinking in your own voice, and they show the blog pipeline works more than once.
+
+**What you're asked:** four things. The topics; when you dictate; when you do your last 10% on each post; and whether each post goes live as soon as you finish it.
+
+**What happens once you answer:** the blog posts session starts. Before each dictation it writes you a short task to dictate into, with the topic and five prompts to talk through. Once the blog pipeline is accepted, each draft comes back to you as a task with the whole post in it, for your edit. When you tick Done, it's published through the website session.
+
+**Waiting on this right now:** the dictation slots, the first proposed for 15:50.
+
+**On camera:** two dictations of about 15 minutes each, or three if the blog pipeline's test dictation doesn't count as the first post (you decide that in the blog pipeline's decision file, `Decide - how the blog pipeline should work.md`). Then about 10 minutes per post for your last 10%, on camera or not.
+
+**Time to answer:** about 5 minutes. **Deadline:** about 15:40, so the first dictation can happen at 15:50. Anything still empty at 18:00 takes its default.
+
+**Timetable change:** the GetSales outreach to Addvery's six stakeholders now goes out by 15:30 instead of a live run at 17:00 (your answer at 14:30), so 17:00–17:30 is free.
+
+This intake holds 4 decisions. Each question carries its own context, so you can answer them in any order. An empty fence means not answered. The full plan for this part is at `blog-articles\SPEC.md` for reference, but you needn't read it. Say "DI-XX is ready" when you're done.
+
+# QXX.1 The topics
+
+The facts:
+- The posts are in your voice and under your name, written for Addvery's audience and shown on the site in its Addvery look. Each runs about 900 to 1,400 words from 15 minutes of talking.
+- Which topics Addvery's audience reads is your own research, in Addvery Research, and nothing from that folder goes into the project's files. So the proposals below come only from your own expertise and today's build. Swap any of them for one you know their readers want.
+- The blog pipeline's decision file asks whether its test dictation counts as the first post, and offers this same list for the test's topic. If it counts, you pick two topics here; if not, three. Don't repeat the test's topic.
+
+Proposed topics:
+1. The movie-actor rule: when your time is the bottleneck, shoot your scenes first and let ten AI sessions build around you.
+2. From B2B marketing consultant to GTM engineer: what changed in the work, and what didn't.
+3. Executable specs: how to brief AI agents so that parallel work doesn't fall apart.
+4. Route before you sequence: why outbound needs a lead classifier before it needs more sequences.
+5. Dictate, don't type: fifteen minutes from expertise to a publishable post.
+
+I recommend topic 1 for the test (as the blog pipeline's decision file suggests), then 2 and 3 here, and 4 if you need a third. Topic 2 is the story behind your application, topic 3 explains how the site itself was built, and topic 4 ties to the GetSales demo.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes the first topics on the list that the test didn't take, in list order, and logs it.
+
+This answer sets what each dictation task asks you to talk about, and what gets published.
+
+Write two topic numbers (three if the test doesn't count), your own topics, or a mix.
+
+## AXX.1
+
+`<operator_answer>`
+```a-XX-1
+
+```
+`</operator_answer>`
+
+# QXX.2 The dictation slots
+
+The facts:
+- Each dictation is about 15 minutes of talking into a task file written for you: the topic, five prompts to talk through, and a Done box. It happens on camera, during a recorded rig session. The blog pipeline needn't be ready, because a dictation is raw input that's drafted afterwards (the rule that your time is shot first, before the build, like a film's most expensive actor).
+- Today's timetable: the blog pipeline's test dictation at 15:15–15:35; the GetSales outreach by 15:30; blog dictations at 15:50–16:10 and 16:20–16:40; the brand sign-off at 16:45; 17:00–17:30 free; the Canva recording at 17:30. If the test doesn't count as the first post, a third dictation takes 17:00–17:20, and nothing else moves.
+
+Your options:
+- **A. As proposed:** 15:50–16:10 and 16:20–16:40, and 17:00–17:20 if a third is needed.
+- **B. All in the morning cleanup session.** Frees 40 to 60 minutes today, and the posts go live tomorrow.
+- **C. Times you name.**
+
+I recommend A. A dictation needs nothing but you, so it belongs in today's window, and drafting then runs while you do other scenes. The charter: "Work that needs the operator is scheduled into the hours he is at the computer."
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it moves the dictations to the morning cleanup session and logs it.
+
+This answer sets when you dictate, and so when the posts can be drafted and go live.
+
+Write A, B, or C with your times.
+
+## AXX.2
+
+`<operator_answer>`
+```a-XX-2
+
+```
+`</operator_answer>`
+
+# QXX.3 When you do the last 10%
+
+The facts:
+- Each post comes to you as a task file with the whole post copied in, the spots marked where only you can add something (a number, an example, the closing ask), and a Done box. You edit it in place, about 10 minutes per post (an estimate). It isn't an approval: ticking Done means finished.
+- Drafts reach you only after you've accepted the blog pipeline's test post as near-final, so you never polish a draft the pipeline is about to change. If the day runs to plan, the first ones are ready between about 16:10 and 17:00.
+- Today's gaps: about 16:10–16:20, 16:40–16:45, 17:00–17:30 (unless a third dictation takes 17:00–17:20) and 17:55–18:00.
+- The charter: "Everything else is set up to run autonomously overnight, so that the morning cleanup session has little to clean."
+
+Your options:
+- **A. Gaps first, the morning for the rest.** The desk alerts you when a post is ready and pokes only inside those gaps. Whatever's left waits for the morning cleanup session.
+- **B. All in the morning cleanup session.** No alerts today, and all three posts go live tomorrow.
+- **C. A block you name,** for example 17:00–17:30, or 18:00–18:30 if you stay on.
+
+I recommend A. Each post you finish today goes live today, and nothing interrupts your scenes.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
+
+This answer sets when the desk alerts and pokes you about posts, and when they can go live.
+
+Write A, B, or C with your block.
+
+## AXX.3
+
+`<operator_answer>`
+```a-XX-3
+
+```
+`</operator_answer>`
+
+# QXX.4 When each post goes live
+
+The facts:
+- Publishing goes only through the website session: a build request, a deploy, and a check of the live page, about 5 to 10 minutes.
+- The definition of done you signed off earlier today: "Three blog posts, each from a 15-minute dictation through the blog pipeline and finished by the operator, are published on the site." It also asks that the site "kept getting clearer through the day".
+- Before any post goes out, it's checked for secrets, the Apify proposal and your own GetSales outbound, and that none of your edit marks is left. If your own edit trips the check, you get one desk question before anything is published.
+
+Your options:
+- **A. As soon as you finish each one.** Ticking Done publishes it.
+- **B. All three together,** once the third is finished.
+- **C. Each waits for one more look** on a preview link before it goes live. That's an extra check for you per post.
+
+I recommend A. Ticking Done is already your go-ahead, and the site grows through the day.
+
+If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
+
+This answer decides whether ticking Done publishes a post, and the order the posts appear on the site.
+
+Write A, B or C.
+
+## AXX.4
+
+`<operator_answer>`
+```a-XX-4
+
+```
+`</operator_answer>`
+~~~~
