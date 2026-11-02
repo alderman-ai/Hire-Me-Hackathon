@@ -1,6 +1,6 @@
 # L-01 Research list: parent level (every wave-2 spec)
-Status: with Alex (OT-01, `Operator tasks\Approve - research plan for the whole project.md`)
-Approved by: (not yet)
+Status: running (started 14:40)
+Approved by: OT-01, ticked 14:38 (`Operator tasks\Approve - research plan for the whole project.md`; relayed by `briefing`, Alex: "let's just approve ot1 -- i'm swamped we need to remove blockers")
 Requested by: orchestration, `RESEARCH S2: L-01, it feeds every wave-2 spec, needed by 16:00 Prague` (2 Nov)
 Level: parent (`research\global\`)
 Readers: S-D1, S-D3, S-D4, S-D5, S-D6, S-D7, S-D8, S-D9, S-D10 (R3 mainly S-D1, S-D3, S-D8)
