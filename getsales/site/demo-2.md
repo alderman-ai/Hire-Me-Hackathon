@@ -38,9 +38,13 @@ Three rules do most of the work, in this order:
 - Country and profile language give the language. Slovakia reads Czech, Austria gets German, and an English profile overrides both.
 - A signal under 90 days old makes the lead signal-led. A job post 27 days old counts; an app relaunch 263 days old doesn't.
 
-> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run.png
-> Terminal output of the router: twelve fictional leads, each with its ICP, language and tactic decision, what settled it, and its workflow
-> The full run: violet marks a rule, amber marks a question for Jev
+> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png
+> Terminal run, part 1: fictional leads L01 to L06 sorted into workflows, each decision tagged rule in violet or Jev in amber
+> The full run, part 1: violet marks a rule, amber marks a question for Jev
+
+> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-2.png
+> Terminal run, part 2: leads L07 to L12, then the summary line: 4 by rules alone, 7 needed Jev, 1 no fit, 12 of 12 match the sample
+> Part 2: twelve leads, 4 placed by rules alone, 7 with a Jev question, 1 no fit
 
 Rules are free, exact, and anyone can read why a lead went where it did.
 
