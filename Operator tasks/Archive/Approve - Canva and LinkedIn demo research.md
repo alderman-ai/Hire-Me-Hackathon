@@ -2,12 +2,13 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-09
-Task State: Open
+Task State: Archived
 Gate: S-D6, S-D7 and S-D10 research list L-05 (merged)
 Requested by: s1-research, for s-d6-canva-templates and s-d7-linkedin-content ("RESEARCH S-D6: L-05 ... (R1 first), needed by 16:15"; "RESEARCH S-D7: L-05 ... (R1 and R4 first), needed by 16:15")
 Snapshot of: research\lists\L-05-brand-assets.md at commit 7c649a1
 Unblocks: the research behind the Canva templates' build route and pixel-perfect checks, and the LinkedIn posts' writing method and scoring bar; the Canva design video reads it too
 Created: 2026-11-02 15:52 Prague
+Archived: 2026-11-02
 ---
 
 # Approve research for the Canva and LinkedIn demos
@@ -42,12 +43,12 @@ Three demos share this research: the Addvery LinkedIn templates in Canva (a redo
 
 ## Approval
 
-- [ ] I approve
+- [x] I approve
 
 Tick the box to approve as it stands. If something has to change first, leave the box empty and write what to change below. Either way, the requesting session checks this file every 5 minutes while it's blocked.
 
 `<operator_answer>`
 ```ot-09-changes
-
+Those are just okay. You can clone those repos and go through them but just one of them: the picture-perfect branded assets one, whatever one is closest to that. Clone the repo and then go through it. It's really agentically navigable. For the LinkedIn one I want to design, not so much for the company, but for Ivana, like a possible branding strategy but that's lower priority. Look take whatever you need from this and just run. Go, go, go 
 ```
 `</operator_answer>`

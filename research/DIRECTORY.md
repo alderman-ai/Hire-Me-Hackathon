@@ -12,7 +12,7 @@ Storage (S1-Q5, Alex: "Just store it locally"): every report lives in `research\
 | [L-02 scraping](lists/L-02-scraping.md) | (S-D1 declined) | parked: Alex runs the scraping himself | — |
 | [L-03 blog](lists/L-03-blog.md) | S-D4, S-D5 | with Alex: `Operator tasks\Approve - research for the blog pipeline.md` (OT-04) | — |
 | [L-04 GetSales](lists/L-04-getsales.md), [L-06 website](lists/L-06-website.md) | S-D3; S-D8 | with Alex, one gate: `Operator tasks\Approve - research for the GetSales demo and website.md` (OT-03) | — |
-| [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | with Alex: `Operator tasks\Approve - Canva and LinkedIn demo research.md` (OT-09); requested by S-D6 and S-D7, 15:49 | — |
+| [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | with Alex: `Operator tasks\Archive\Approve - Canva and LinkedIn demo research.md` (OT-09); requested by S-D6 and S-D7, 15:49 | — |
 
 ## Parent level
 
