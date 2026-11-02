@@ -182,3 +182,51 @@ Recommended: (a). It matches your parent/child wording and keeps GIT.md untouche
 **If unanswered by the deadline:** before 18:00 I keep waiting and poke you every 15 minutes; reports stay in staging. From 18:00 I take (a) and log it in S1's decision log.
 ```
 
+## S1-Q6 — answered
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
+Received: 2026-11-02 14:01 CET (+01:00)
+14:01 CET: shown to Alex.
+14:05 CET: answered; recorded in qa\S1.md and sent to s1-research. Alex's same words relayed to orchestration at his request.
+
+```
+ASK S1-Q6
+Critical: no
+Deadline: 14:15 Prague
+
+## S1-Q6 — Approve the parent research list (L-01)?
+
+**The question:** Should S1 run this parent-level research list, which every wave-2 spec reads, as it stands?
+
+**Context you need.**
+- **Your S1-Q5 answer, as I read it:** every report stays in `research\`, with `research\global\` for research two or more specs need and `research\<spec folder>\` for research only one spec needs. Reports are committed with the folder like any other file, and nothing moves to other folders. If you also meant "keep research off GitHub" (the repo is public and the watcher pushes), say so and I'll git-ignore the reports instead.
+- **How a list runs:** the questions you approve are used word for word. One subagent per item, all in parallel, at normal depth; mark any item "deep" for a multi-agent deep-research run (costly). Three wildcards each research the biggest open question the list misses, through one lens each: can it be executed, delivered, received? Then one synthesis, whose open points come back to you as post-research questions.
+- Drawn from the charter, because no spec's DoD exists yet. Nothing about Addvery itself is on it (your DI-3 answer).
+
+**L-01, parent level (readers: every wave-2 spec)**
+- **R1 Making the work legible.** How do the strongest GTM-engineer portfolios, hackathon demos and "job application as outreach" sites make the work legible to a non-technical decision maker in under a minute? Is there a converged pattern (short video, live build log, before/after, a "how it works" panel)? What makes such demos read as toys, or as noise?
+- **R2 What a GTM engineer is hired to show.** What do agencies and B2B companies hiring GTM engineers in 2026 look for: skills, tool stacks, proof of work? Which of the ten deliverables map to that, and what does a hiring manager expect that none of them shows?
+- **R3 Personal data on a public site.** What do GDPR and LinkedIn's terms allow when a project scrapes public information about six named people, publishes a section about each on a public website, and runs them through a live outbound sequence from your own account? What's the converged safe practice for personalised outreach of this kind, and what should stay off the site?
+- **R4 Does the format land?** Is there evidence (case studies, recruiter and founder accounts) on how recipients react to a personalised website built as a job application? What tips it from impressive to creepy or self-indulgent, and what makes the recipient act on it?
+- **W1, W2, W3** wildcards (executed / delivered / received), then the synthesis.
+
+**Also drafted.** Each comes to you as its own question next, in this order: L-02 S-D1 scraping; L-03 S-D4 blog, with S-D5 merged in; L-04 S-D3 GetSales; L-05 S-D6 + S-D7 + S-D10 brand assets, merged. They're in `research\lists\` if you'd rather read ahead and approve several in one answer. Lists for S-D8 and S-D9 come after these.
+
+**Options.**
+- (a) Approve as it stands. Eight subagents start now: four items and three wildcards, then the synthesis.
+- (b) Edit it: strike, add or rewrite items, mark any of them "deep", or change the wildcard lenses.
+- (c) Skip the parent list and go straight to S-D1's.
+- (d) Something else — say what.
+Recommended: (a). R3 covers the one risk that touches three specs (S-D1, S-D3, S-D8), and no other list covers it.
+
+**If unanswered by the deadline:** nothing runs, because research never runs on a default. I poke you every 15 minutes.
+```
+
+## TASK S2: DI-5 S2 DoD sign-off — done
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-858c8cb9949843d4a38ab4d9b814cc4e)
+Received: 2026-11-02 14:02 CET (+01:00)
+14:02 CET: TASK DONE S2 received from orchestration (Alex answered it in Obsidian) before the alert was shown; marked done, no alert sent.
+
+```
+TASK S2: DI-5 S2 DoD sign-off is waiting on you: sign off the project definition of done (22 items, DoD-1 to DoD-22). Answer A, B or C in Operator tasks in Obsidian, then say DI-5 is ready. Signing it off lets wave 2 start.
+```
+
