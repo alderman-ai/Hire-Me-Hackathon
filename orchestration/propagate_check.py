@@ -28,7 +28,8 @@ Operator-owned rows and everything in `Addvery Research\\` are skipped. The
 markers are the ones change-outline writes, matched exactly: a row is
 operator-owned when its Spec cell ends `(operator-owned)`, and retired when its
 Spec cell ends `(retired)` or its Outline cell starts `Merged into` or `Retired`.
-A DoD item is retired when its Status cell says retired. Change records:
+A DoD item is retired when its Status cell says retired, and a deliverable
+when its Name cell ends `(retired)`. Change records:
 `Status:` other than applied or dropped is open; `- HELD <spec id> ...` is held.
 Placeholders (DoD-S0-a ...) are notes until the DoD is signed off, which this
 script takes to be once the charter holds an item numbered DoD-<n>. Test items
@@ -140,6 +141,11 @@ def deliverable_ids(cell: str) -> set:
 
 
 # ---------------------------------------------------------------- charter
+
+def deliv_retired(delivs, dv):
+    """A deliverable is retired when its name cell ends `(retired)`; its id is never reused."""
+    return clean(delivs.get(dv, "")).lower().endswith("(retired)")
+
 
 def parse_charter(root: Path):
     secs = sections(read(root / "CHARTER.md"))
@@ -315,7 +321,8 @@ def check_items(items, delivs, rows, area, where, real_repo):
     if any(REAL_DOD.match(d["id"]) for d in live):
         served = set().union(*(d["traces"] for d in live))
         for dv in sorted(set(delivs) - served, key=sort_key):
-            gap(area, f"{dv} has no live DoD item tracing to it in {where}")
+            if not deliv_retired(delivs, dv):
+                gap(area, f"{dv} has no live DoD item tracing to it in {where}")
     return live
 
 
@@ -417,6 +424,9 @@ def check_spec(root, rid, spec: Path, live, signed):
 def check_deliverables(secs, delivs, rows):
     live_rows = [r for r in rows if not rows[r]["retired"]]
     for dv in sorted(delivs, key=sort_key):
+        if deliv_retired(delivs, dv):
+            note("deliverables", f"{dv} skipped: retired")
+            continue
         row_id = f"S{dv[1:]}" if dv.startswith("M") else f"S-{dv}"
         if not any(re.fullmatch(rf"{row_id}[a-z]?", r) for r in live_rows):
             gap("deliverables", f"{dv} has no outline row ({row_id})")
