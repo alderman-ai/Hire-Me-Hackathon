@@ -2,6 +2,13 @@
 
 Status: draft, **needs a native read** (Czech and German above all).
 
+Copy pass (2 Nov, marketing:email-sequence + marketing:brand-review):
+- **Sequence.** Signal Follow-up 1 no longer restarts with "why I'm writing now" and a list of trigger types (message 1 already did that): it picks up message 1's question ("the reason I asked" / "proč se ptám" / "warum ich frage") and adds the lock-in point. DE signal Follow-up 1 now cites Rohlík's four countries on one CRM model, not the interim ownership that Follow-up 2 offers. EN proof message 1 no longer mentions interim ownership, so Follow-up 1 tells something new.
+- **Briefs.** Proof briefs now allow one result number only. CS problem brief gives the Czech hedge ("často", not "máte"). The EN problem example dropped the "first order" line, which belongs to a different problem than the one it picked.
+- **Voice.** The five-verb sentence in EN proof Follow-up 1 is now two sentences. The DE problem example hedges ("dürfte") instead of stating their data as fact.
+- **Facts.** No claim was wrong. The DE proof example now uses the site's own verb ("segmented 2M+ loyalty members") instead of "mit Mitgliedern gearbeitet".
+- **Language.** CS: "Dává smysl si 20 minut promluvit o tom" (was a calque, "Stálo by za 20 minut probrat"), "nastavit první segmenty", "na vaší platformě", "je jedním z". DE: "noch im Aufbau", "aufsetzen", "auf Ihrer Plattform", "eine Kleinigkeit holt", "jeden und niemanden kannte", "Einen Blick wert?".
+
 ICP: multi-market grocery and e-commerce retailers with loyalty programmes, in Central and Eastern Europe and German-speaking Europe: grocery, drugstore and online-retail chains. Buyers: CMO, Head of CRM or CVM, Head of Loyalty, Head of E-commerce, CDO. Czech, German and English × signal, problem and proof: 9 workflows. These are Addvery's messages to Addvery's prospects, sent by an Addvery person.
 
 ## How every workflow runs
@@ -49,26 +56,26 @@ Write in Czech with formal vykání. Start with 'Dobrý den,' and no name (a fir
 Dobrý den, vidím, že Northwind Grocery CZ hledá CRM manažera. V téhle fázi bývá věrnostní karta plná dat, ale tým ještě nemá kapacitu udělat z nich komunikaci, která dává smysl každému zákazníkovi. Jak to řešíte, než se místo obsadí?
 ```
 
-**Follow-up 1** (3 days later, 536 characters)
+**Follow-up 1** (3 days later, 459 characters)
 
 ```text
 Dobrý den,
 
-proč píšu právě teď: nový člověk v CRM, nová aplikace nebo vstup na nový trh jsou chvíle, kdy se rozhoduje, k čemu bude věrnostní program svá data používat několik dalších let. Když se to odloží, zůstane karta hlavně slevovým nástrojem.
+proč se ptám: právě v takové chvíli se rozhoduje, k čemu bude věrnostní program svá data používat několik dalších let. Potom se to už mění jen těžko.
 
 Jeden příklad: pro REWE Group (BILLA, IKI) jsme pracovali s věrnostní základnou přes 2 miliony členů ve čtyřech zemích, včetně Česka a Slovenska. Tržby v prodejnách vzrostly o 2 %.
 
-Stálo by za 20 minut probrat, jak by to vypadalo ve společnosti {{company_name}}?
+Dává smysl si 20 minut promluvit o tom, jak by to vypadalo ve společnosti {{company_name}}?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 298 characters)
+**Follow-up 2** (3 days after that, 299 characters)
 
 ```text
 Dobrý den,
 
-tohle je moje poslední zpráva. Pokud se váš CRM tým teprve skládá, věrnostní program nemusí čekat: CRM můžeme na přechodnou dobu převzít, spustit první segmenty a kampaně a pak ho předat vašim lidem.
+tohle je moje poslední zpráva. Pokud se váš CRM tým teprve skládá, věrnostní program nemusí čekat: CRM můžeme na přechodnou dobu převzít, nastavit první segmenty a kampaně a pak ho předat vašim lidem.
 
 Pokud to teď není priorita, stačí napsat a přestanu se ozývat.
 
@@ -79,7 +86,7 @@ Pokud to teď není priorita, stačí napsat a přestanu se ozývat.
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in Czech with formal vykání. Start with 'Dobrý den,' and no name, then 2-3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms, tied to one public fact about the lead's company (stores plus an online shop, a loyalty card or app, several countries, fast growth). Pick the problem that fits the fact: a loyalty card that knows everyone and no one (plenty of data, the same offer for everyone); a CRM team with recommendations but no capacity to carry them out; customers arriving faster than a CRM team can be hired. End on one short, genuine question about where they stand. Do not state their internal situation as fact (write 'often', not 'you have'), lecture, pitch Addvery, cite clients or numbers, ask for a meeting, or use anything private. No gendered first-person past tense and no 'rád/a'. No links, emoji or exclamation marks.
+Write in Czech with formal vykání. Start with 'Dobrý den,' and no name, then 2-3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms, tied to one public fact about the lead's company (stores plus an online shop, a loyalty card or app, several countries, fast growth). Pick the problem that fits the fact: a loyalty card that knows everyone and no one (plenty of data, the same offer for everyone); a CRM team with recommendations but no capacity to carry them out; customers arriving faster than a CRM team can be hired. End on one short, genuine question about where they stand. Do not state their internal situation as fact (write 'často', not 'máte'), lecture, pitch Addvery, cite clients or numbers, ask for a meeting, or use anything private. No gendered first-person past tense and no 'rád/a'. No links, emoji or exclamation marks.
 
 **Message 1 example** (282 characters). Fictional lead: Head of Loyalty at Northwind Grocery CZ, which runs one loyalty card across its stores and online shop; no recent trigger.
 
@@ -94,7 +101,7 @@ Dobrý den,
 
 obvykle to řetězce řeší jedním ze dvou způsobů: strategii napíše poradenská firma, nebo kampaně převezme agentura. CRM tým pak zůstane s doporučeními, na která nemá kapacitu, a karta dál sbírá data, se kterými nikdo nepracuje.
 
-My to děláme jinak. Zmapujeme, s čím k vám lidé chodí nakupovat, navrhneme podle toho segmenty a CRM na přechodnou dobu sami provozujeme ve vaší platformě, dokud ho nepřevezme váš tým.
+My to děláme jinak. Zmapujeme, s čím k vám lidé chodí nakupovat, navrhneme podle toho segmenty a CRM na přechodnou dobu sami provozujeme na vaší platformě, dokud ho nepřevezme váš tým.
 
 Dává smysl si o tom 20 minut promluvit?
 
@@ -117,12 +124,12 @@ A pokud to teď není priorita, stačí napsat a přestanu se ozývat.
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in Czech with formal vykání. Start with 'Dobrý den,' and no name, then 2-3 short sentences, under 400 characters in all. Rest it on the closest look-alike case, worded as Addvery's website has it, one result only. Grocery or drugstore chain with stores and a loyalty card: REWE Group (BILLA, IKI), a loyalty base of 2M+ members in 4 markets (CZ, SK, BG, LT), +2% in-store revenue. Online grocer or e-commerce retailer: Rohlík Group, one of Europe's fastest-growing online grocers, 4 countries on one CRM model, +17% revenue per customer (ARPU). Add one public fact that makes the lead's company a fair look-alike, then a light question ('Má smysl se podívat, co by to znamenalo u vás?'). Do not round, change or combine numbers, promise the lead the same result, suggest the client recommends Addvery, name any other client, or tell the whole story (the follow-ups do). Past work is 'we' ('jsme pracovali'), never a gendered first-person past tense. No links, emoji or exclamation marks.
+Write in Czech with formal vykání. Start with 'Dobrý den,' and no name, then 2-3 short sentences, under 400 characters in all. Rest it on the closest look-alike case, worded as Addvery's website has it, with only the one result number given for it here. Grocery or drugstore chain with stores and a loyalty card: REWE Group (BILLA, IKI), a loyalty base of 2M+ members in 4 markets (CZ, SK, BG, LT), +2% in-store revenue. Online grocer or e-commerce retailer: Rohlík Group, one of Europe's fastest-growing online grocers, 4 countries on one CRM model, +17% revenue per customer (ARPU). Add one public fact that makes the lead's company a fair look-alike, then a light question ('Má smysl se podívat, co by to znamenalo u vás?'). Do not round, change or combine numbers, promise the lead the same result, suggest the client recommends Addvery, name any other client, or tell the whole story (the follow-ups do). Past work is 'we' ('jsme pracovali'), never a gendered first-person past tense. No links, emoji or exclamation marks.
 
 **Message 1 example** (294 characters). Fictional lead: CMO at Northwind Grocery CZ, a store chain with its own card, so the REWE Group case is the look-alike.
 
 ```text
-Dobrý den, pro REWE Group (BILLA, IKI) jsme pracovali s věrnostní základnou přes 2 miliony členů v Česku, na Slovensku, v Bulharsku a v Litvě a tržby v prodejnách vzrostly o 2 %. Northwind Grocery CZ má podobný model: síť prodejen a vlastní kartu. Má smysl podívat se, co by to znamenalo u vás?
+Dobrý den, pro REWE Group (BILLA, IKI) jsme pracovali s věrnostní základnou přes 2 miliony členů v Česku, na Slovensku, v Bulharsku a v Litvě a tržby v prodejnách vzrostly o 2 %. Northwind Grocery CZ má podobný model: síť prodejen a vlastní kartu. Má smysl se podívat, co by to znamenalo u vás?
 ```
 
 **Follow-up 1** (3 days later, 505 characters)
@@ -137,12 +144,12 @@ U vás by se začínalo stejně: zjistit, s čím k vám lidé chodí nakupovat.
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 454 characters)
+**Follow-up 2** (3 days after that, 455 characters)
 
 ```text
 Dobrý den,
 
-ještě jeden příklad a končím. Rohlík Group je jeden z nejrychleji rostoucích online prodejců potravin v Evropě a zákazníci tam přibývali rychleji, než šlo nabrat CRM tým. CRM jsme proto na přechodnou dobu převzali, postavili jeden CRM model pro čtyři země a pak ho předali. Tržby na zákazníka (ARPU) vzrostly o 17 %.
+ještě jeden příklad a končím. Rohlík Group je jedním z nejrychleji rostoucích online prodejců potravin v Evropě a zákazníci tam přibývali rychleji, než šlo nabrat CRM tým. CRM jsme proto na přechodnou dobu převzali, postavili jeden CRM model pro čtyři země a pak ho předali. Tržby na zákazníka (ARPU) vzrostly o 17 %.
 
 Pokud je to pro vás téma, dejte vědět. Pokud to teď není priorita, stačí napsat a přestanu se ozývat.
 
@@ -163,26 +170,26 @@ Write in German with formal Sie. Start with 'Hallo' and the lead's first name, t
 Hallo Sabine, Wingtip Markt hat im Oktober eine neue Kunden-App angekündigt. Gerade jetzt entscheidet sich, ob die App vor allem Rabatte verteilt oder aus den Kartendaten Angebote macht, die zum Einkauf jedes Kunden passen. Wie ist das bei Ihnen geplant?
 ```
 
-**Follow-up 1** (3 days later, 530 characters)
+**Follow-up 1** (3 days later, 486 characters)
 
 ```text
 Hallo {{first_name}},
 
-warum ich gerade jetzt schreibe: Eine neue App, ein neuer Markt oder eine neue Besetzung im CRM sind die Momente, in denen festgelegt wird, was ein Kundenbindungsprogramm in den nächsten Jahren mit seinen Daten macht. Danach ändert sich selten noch viel.
+warum ich frage: In so einer Phase wird festgelegt, was ein Kundenbindungsprogramm in den nächsten Jahren mit seinen Daten macht. Danach ändert sich selten noch viel.
 
-Ein Beispiel: Bei der Rohlík Group, einem der am schnellsten wachsenden Online-Lebensmittelhändler Europas, haben wir das CRM übergangsweise übernommen. Der Umsatz pro Kunde (ARPU) stieg um 17 %.
+Ein Beispiel: Bei der Rohlík Group, einem der am schnellsten wachsenden Online-Lebensmittelhändler Europas, haben wir vier Länder, darunter Österreich und Deutschland, auf ein CRM-Modell gebracht. Der Umsatz pro Kunde (ARPU) stieg um 17 %.
 
 Wäre Ihnen das 20 Minuten wert?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 368 characters)
+**Follow-up 2** (3 days after that, 369 characters)
 
 ```text
 Hallo {{first_name}},
 
-das ist meine letzte Nachricht dazu. Wenn Ihr CRM-Team gerade erst wächst, muss das Programm nicht warten: Wir können das CRM übergangsweise übernehmen, die ersten Segmente und Kampagnen umsetzen und es dann an Ihr Team übergeben.
+das ist meine letzte Nachricht dazu. Wenn Ihr CRM-Team noch im Aufbau ist, muss das Programm nicht warten: Wir können das CRM übergangsweise übernehmen, die ersten Segmente und Kampagnen aufsetzen und es dann an Ihr Team übergeben.
 
 Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 
@@ -195,32 +202,32 @@ Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich 
 
 Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2-3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms, tied to one public fact about the lead's company (stores plus an online shop, a loyalty card or app, several countries, fast growth). Pick the problem that fits the fact: a loyalty card that knows everyone and no one (plenty of data, the same offer for everyone); a CRM team with recommendations but no capacity to carry them out; customers arriving faster than a CRM team can be hired. End on one short, genuine question about where they stand. Do not state their internal situation as fact (write 'oft', not 'Sie haben'), lecture, pitch Addvery, cite clients or numbers, ask for a meeting, or use anything private. No links, emoji or exclamation marks.
 
-**Message 1 example** (303 characters). Fictional lead: Sabine, Head of CRM & Loyalty at Wingtip Markt AT, one card across all stores and the online shop; no recent trigger.
+**Message 1 example** (311 characters). Fictional lead: Sabine, Head of CRM & Loyalty at Wingtip Markt AT, one card across all stores and the online shop; no recent trigger.
 
 ```text
-Hallo Sabine, Wingtip Markt hat eine Kundenkarte für alle Filialen und den Onlineshop, an Einkaufsdaten fehlt es also nicht. Trotzdem kennt so eine Karte oft jeden und niemanden: Alle bekommen denselben Prospekt. Wie weit sind Sie heute mit Angeboten, die sich danach richten, was jemand wirklich kauft?
+Hallo Sabine, Wingtip Markt hat eine Kundenkarte für alle Filialen und den Onlineshop, an Einkaufsdaten dürfte es also nicht fehlen. Trotzdem kennt so eine Karte oft jeden und niemanden: Alle bekommen denselben Prospekt. Wie weit sind Sie heute mit Angeboten, die sich danach richten, was jemand wirklich kauft?
 ```
 
-**Follow-up 1** (3 days later, 538 characters)
+**Follow-up 1** (3 days later, 539 characters)
 
 ```text
 Hallo {{first_name}},
 
 meist wird das auf einem von zwei Wegen gelöst: Eine Beratung schreibt die Strategie, oder eine Agentur übernimmt die Kampagnen. Dem CRM-Team bleiben Empfehlungen, aber keine Kapazität, sie umzusetzen, und die Karte sammelt weiter Daten, mit denen niemand arbeitet.
 
-Wir machen es anders: Wir finden heraus, aus welchen Anlässen Ihre Kunden einkaufen, bauen daraus Segmente und betreiben das CRM übergangsweise selbst in Ihrer Plattform, bis Ihr Team übernimmt.
+Wir machen es anders: Wir finden heraus, aus welchen Anlässen Ihre Kunden einkaufen, bauen daraus Segmente und betreiben das CRM übergangsweise selbst auf Ihrer Plattform, bis Ihr Team übernimmt.
 
 Lohnen sich dafür 20 Minuten?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 418 characters)
+**Follow-up 2** (3 days after that, 428 characters)
 
 ```text
 Hallo {{first_name}},
 
-zum Schluss nur eine Frage: Bekommt bei Ihnen jemand, der den großen Wocheneinkauf macht, ein anderes Angebot als jemand, der auf dem Heimweg schnell eine Sache holt? Wenn ja, sind Sie gut aufgestellt, und ich halte Sie nicht länger auf. Wenn nicht, wäre genau das der Anfang.
+zum Schluss nur eine Frage: Bekommt bei Ihnen jemand, der den großen Wocheneinkauf macht, ein anderes Angebot als jemand, der auf dem Heimweg nur schnell eine Kleinigkeit holt? Wenn ja, sind Sie gut aufgestellt, und ich halte Sie nicht länger auf. Wenn nicht, wäre genau das der Anfang.
 
 Und wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 
@@ -231,12 +238,12 @@ Und wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich m
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2-3 short sentences, under 400 characters in all. Rest it on the closest look-alike case, worded as Addvery's website has it, one result only. Grocery or drugstore chain with stores and a loyalty card: REWE Group (BILLA, IKI), a loyalty base of 2M+ members in 4 markets (CZ, SK, BG, LT), +2% in-store revenue. Online grocer or e-commerce retailer: Rohlík Group, one of Europe's fastest-growing online grocers, 4 countries on one CRM model (Czechia, Hungary, Austria, Germany), +17% revenue per customer (ARPU). Add one public fact that makes the lead's company a fair look-alike, then a light question ('Einen Blick wert?'). The REWE work was in CZ, SK, BG and LT: never imply it covered Austria or Germany. Do not round, change or combine numbers, promise the lead the same result, suggest the client recommends Addvery, name any other client, or tell the whole story (the follow-ups do). No links, emoji or exclamation marks.
+Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2-3 short sentences, under 400 characters in all. Rest it on the closest look-alike case, worded as Addvery's website has it, with only the one result number given for it here. Grocery or drugstore chain with stores and a loyalty card: REWE Group (BILLA, IKI), a loyalty base of 2M+ members in 4 markets (CZ, SK, BG, LT), +2% in-store revenue. Online grocer or e-commerce retailer: Rohlík Group, one of Europe's fastest-growing online grocers, 4 countries on one CRM model (Czechia, Hungary, Austria, Germany), +17% revenue per customer (ARPU). Add one public fact that makes the lead's company a fair look-alike, then a light question ('Einen Blick wert?'). The REWE work was in CZ, SK, BG and LT: never imply it covered Austria or Germany. Do not round, change or combine numbers, promise the lead the same result, suggest the client recommends Addvery, name any other client, or tell the whole story (the follow-ups do). No links, emoji or exclamation marks.
 
-**Message 1 example** (341 characters). Fictional lead: Sabine, Head of CRM & Loyalty at Wingtip Markt AT, a store chain with its own card, so the REWE Group case is the look-alike.
+**Message 1 example** (304 characters). Fictional lead: Sabine, Head of CRM & Loyalty at Wingtip Markt AT, a store chain with its own card, so the REWE Group case is the look-alike.
 
 ```text
-Hallo Sabine, für die REWE Group (BILLA, IKI) haben wir mit über 2 Mio. Mitgliedern im Kundenprogramm in Tschechien, der Slowakei, Bulgarien und Litauen gearbeitet, und der Umsatz in den Filialen stieg um 2 %. Wingtip Markt ist ähnlich aufgestellt, mit Filialnetz und eigener Kundenkarte. Einen Blick wert, was das bei Ihnen bedeuten könnte?
+Hallo Sabine, für die REWE Group (BILLA, IKI) haben wir über 2 Mio. Mitglieder des Kundenprogramms in Tschechien, der Slowakei, Bulgarien und Litauen segmentiert, und der Umsatz in den Filialen stieg um 2 %. Wingtip Markt ist ähnlich aufgestellt, mit Filialnetz und eigener Kundenkarte. Einen Blick wert?
 ```
 
 **Follow-up 1** (3 days later, 538 characters)
@@ -244,7 +251,7 @@ Hallo Sabine, für die REWE Group (BILLA, IKI) haben wir mit über 2 Mio. Mitgli
 ```text
 Hallo {{first_name}},
 
-so lief es bei der REWE Group: eine Kundenkarte mit über 2 Mio. Mitgliedern, die jeden kannte und niemanden, und lokale CRM-Teams, die Umsetzungskapazität brauchten, nicht nur Empfehlungen. Wir haben 24+ Einkaufsmissionen erfasst, das CRM bei BILLA CZ und SK übergangsweise übernommen und die Kanäle per A/B-Test geprüft. Ergebnis: +2 % Umsatz in den Filialen, +5 % E-Mail-Öffnungsrate.
+so lief es bei der REWE Group: eine Kundenkarte mit über 2 Mio. Mitgliedern, die jeden und niemanden kannte, und lokale CRM-Teams, die Umsetzungskapazität brauchten, nicht nur Empfehlungen. Wir haben 24+ Einkaufsmissionen erfasst, das CRM bei BILLA CZ und SK übergangsweise übernommen und die Kanäle per A/B-Test geprüft. Ergebnis: +2 % Umsatz in den Filialen, +5 % E-Mail-Öffnungsrate.
 
 Bei {{company_name}} würde es genauso anfangen: mit den Einkaufsanlässen Ihrer Kunden. Einen Blick wert?
 
@@ -277,12 +284,12 @@ Write in plain English. Start with 'Hi' and the lead's first name, then 2-3 shor
 Hi Dana, I saw Proseware is launching in Croatia this autumn. A new market is usually where CRM either becomes one model every country runs on, or splits into one set-up per country. Which way are you leaning?
 ```
 
-**Follow-up 1** (3 days later, 437 characters)
+**Follow-up 1** (3 days later, 418 characters)
 
 ```text
 Hi {{first_name}},
 
-why the timing matters: a new market, a new app or a new person running CRM is when a loyalty programme gets set up for the next few years. After that, habits stick.
+the reason I asked: the months after a change like that are when a loyalty programme gets set up for the next few years. After that, habits stick.
 
 One example: for REWE Group (BILLA, IKI), we worked with a loyalty base of 2M+ members across four markets, CZ, SK, BG and LT. In-store revenue went up 2%.
 
@@ -309,10 +316,10 @@ If it's not a priority, just say so and I'll stop.
 
 Write in plain English. Start with 'Hi' and the lead's first name, then 2-3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms, tied to one public fact about the lead's company (several countries, stores plus an online shop, a loyalty card or app, fast growth). Pick the problem that fits the fact: each country running its own CRM, segments and reports; a loyalty card that knows everyone and no one; a CRM team with recommendations but no capacity to carry them out; customers arriving faster than a CRM team can be hired ('Winning the first order is easy. The next hundred take a system.'). End on one short, genuine question about where they stand. Do not state their internal situation as fact (write 'often', not 'you have'), lecture, pitch Addvery, cite clients or numbers, ask for a meeting, or use anything private. No links, emoji or exclamation marks.
 
-**Message 1 example** (277 characters). Fictional lead: Dana, Group CRM Director at Proseware Online Grocery, delivering in three countries; no recent trigger.
+**Message 1 example** (212 characters). Fictional lead: Dana, Group CRM Director at Proseware Online Grocery, delivering in three countries; no recent trigger.
 
 ```text
-Hi Dana, Proseware delivers groceries in three countries, and in a set-up like that each market often ends up with its own CRM, segments and reports. Winning the first order is easy; the next hundred take a system. How close are you to one CRM model that every country runs on?
+Hi Dana, Proseware delivers groceries in three countries, and in a set-up like that each market often ends up with its own CRM, segments and reports. How close are you to one CRM model that every country runs on?
 ```
 
 **Follow-up 1** (3 days later, 480 characters)
@@ -345,20 +352,20 @@ And if it's not a priority, just say so and I'll stop.
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in plain English. Start with 'Hi' and the lead's first name, then 2-3 short sentences, under 400 characters in all. Rest it on the closest look-alike case, worded as Addvery's website has it, one result only. Online grocer or e-commerce retailer: Rohlík Group, one of Europe's fastest-growing online grocers, interim ownership of CRM, 4 countries on one CRM model, +17% revenue per customer (ARPU). Grocery or drugstore chain with stores and a loyalty card: REWE Group (BILLA, IKI), a loyalty base of 2M+ members in 4 markets (CZ, SK, BG, LT), +2% in-store revenue. Add one public fact that makes the lead's company a fair look-alike, then 'Worth a look?'. Do not round, change or combine numbers, promise the lead the same result, suggest the client recommends Addvery, name any other client, or tell the whole story (the follow-ups do). No links, emoji or exclamation marks.
+Write in plain English. Start with 'Hi' and the lead's first name, then 2-3 short sentences, under 400 characters in all. Rest it on the closest look-alike case, worded as Addvery's website has it, with only the one result number given for it here. Online grocer or e-commerce retailer: Rohlík Group, one of Europe's fastest-growing online grocers, 4 countries on one CRM model, +17% revenue per customer (ARPU). Grocery or drugstore chain with stores and a loyalty card: REWE Group (BILLA, IKI), a loyalty base of 2M+ members in 4 markets (CZ, SK, BG, LT), +2% in-store revenue. Add one public fact that makes the lead's company a fair look-alike, then 'Worth a look?'. Do not round, change or combine numbers, promise the lead the same result, suggest the client recommends Addvery, name any other client, or tell the whole story (the follow-ups do). No links, emoji or exclamation marks.
 
-**Message 1 example** (260 characters). Fictional lead: Dana, Group CRM Director at Proseware Online Grocery, an online grocer in several markets, so the Rohlík Group case is the look-alike.
+**Message 1 example** (230 characters). Fictional lead: Dana, Group CRM Director at Proseware Online Grocery, an online grocer in several markets, so the Rohlík Group case is the look-alike.
 
 ```text
-Hi Dana, we took interim ownership of CRM for Rohlík Group, one of Europe's fastest-growing online grocers, put four countries on one CRM model, and revenue per customer (ARPU) went up 17%. Proseware sells groceries online in several markets too. Worth a look?
+Hi Dana, for Rohlík Group, one of Europe's fastest-growing online grocers, we put four countries on one CRM model, and revenue per customer (ARPU) went up 17%. Proseware sells groceries online in several markets too. Worth a look?
 ```
 
-**Follow-up 1** (3 days later, 527 characters)
+**Follow-up 1** (3 days later, 536 characters)
 
 ```text
 Hi {{first_name}},
 
-the short version of the Rohlík Group story: customers arrived faster than a CRM team could be hired. We took interim ownership of CRM, built behavioural segments, automated the onboarding, churn and cross-sell journeys, rolled the model out to Czechia, Hungary, Austria and Germany, then handed it over. Revenue per customer (ARPU) went up 17%.
+the short version of the Rohlík Group story: customers arrived faster than a CRM team could be hired. We took interim ownership of CRM, built behavioural segments and automated the onboarding, churn and cross-sell journeys. Then we rolled the model out to Czechia, Hungary, Austria and Germany and handed it over. Revenue per customer (ARPU) went up 17%.
 
 For {{company_name}}, it would start with the same question: what makes a customer place the next order, and the one after? Worth a look?
 

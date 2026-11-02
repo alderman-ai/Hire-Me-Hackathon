@@ -191,7 +191,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nproč píšu právě teď: nový člověk v CRM, nová aplikace nebo vstup na nový trh jsou chvíle, kdy se rozhoduje, k čemu bude věrnostní program svá data používat několik dalších let. Když se to odloží, zůstane karta hlavně slevovým nástrojem.\n\nJeden příklad: pro REWE Group (BILLA, IKI) jsme pracovali s věrnostní základnou přes 2 miliony členů ve čtyřech zemích, včetně Česka a Slovenska. Tržby v prodejnách vzrostly o 2 %.\n\nStálo by za 20 minut probrat, jak by to vypadalo ve společnosti {{company_name}}?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nproč se ptám: právě v takové chvíli se rozhoduje, k čemu bude věrnostní program svá data používat několik dalších let. Potom se to už mění jen těžko.\n\nJeden příklad: pro REWE Group (BILLA, IKI) jsme pracovali s věrnostní základnou přes 2 miliony členů ve čtyřech zemích, včetně Česka a Slovenska. Tržby v prodejnách vzrostly o 2 %.\n\nDává smysl si 20 minut promluvit o tom, jak by to vypadalo ve společnosti {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -215,7 +215,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\ntohle je moje poslední zpráva. Pokud se váš CRM tým teprve skládá, věrnostní program nemusí čekat: CRM můžeme na přechodnou dobu převzít, spustit první segmenty a kampaně a pak ho předat vašim lidem.\n\nPokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\ntohle je moje poslední zpráva. Pokud se váš CRM tým teprve skládá, věrnostní program nemusí čekat: CRM můžeme na přechodnou dobu převzít, nastavit první segmenty a kampaně a pak ho předat vašim lidem.\n\nPokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -263,7 +263,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nproč píšu právě teď: nový člověk v CRM, nová aplikace nebo vstup na nový trh jsou chvíle, kdy se rozhoduje, k čemu bude věrnostní program svá data používat několik dalších let. Když se to odloží, zůstane karta hlavně slevovým nástrojem.\n\nJeden příklad: pro REWE Group (BILLA, IKI) jsme pracovali s věrnostní základnou přes 2 miliony členů ve čtyřech zemích, včetně Česka a Slovenska. Tržby v prodejnách vzrostly o 2 %.\n\nStálo by za 20 minut probrat, jak by to vypadalo ve společnosti {{company_name}}?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nproč se ptám: právě v takové chvíli se rozhoduje, k čemu bude věrnostní program svá data používat několik dalších let. Potom se to už mění jen těžko.\n\nJeden příklad: pro REWE Group (BILLA, IKI) jsme pracovali s věrnostní základnou přes 2 miliony členů ve čtyřech zemích, včetně Česka a Slovenska. Tržby v prodejnách vzrostly o 2 %.\n\nDává smysl si 20 minut promluvit o tom, jak by to vypadalo ve společnosti {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -287,7 +287,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\ntohle je moje poslední zpráva. Pokud se váš CRM tým teprve skládá, věrnostní program nemusí čekat: CRM můžeme na přechodnou dobu převzít, spustit první segmenty a kampaně a pak ho předat vašim lidem.\n\nPokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\ntohle je moje poslední zpráva. Pokud se váš CRM tým teprve skládá, věrnostní program nemusí čekat: CRM můžeme na přechodnou dobu převzít, nastavit první segmenty a kampaně a pak ho předat vašim lidem.\n\nPokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -488,7 +488,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nobvykle to řetězce řeší jedním ze dvou způsobů: strategii napíše poradenská firma, nebo kampaně převezme agentura. CRM tým pak zůstane s doporučeními, na která nemá kapacitu, a karta dál sbírá data, se kterými nikdo nepracuje.\n\nMy to děláme jinak. Zmapujeme, s čím k vám lidé chodí nakupovat, navrhneme podle toho segmenty a CRM na přechodnou dobu sami provozujeme ve vaší platformě, dokud ho nepřevezme váš tým.\n\nDává smysl si o tom 20 minut promluvit?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nobvykle to řetězce řeší jedním ze dvou způsobů: strategii napíše poradenská firma, nebo kampaně převezme agentura. CRM tým pak zůstane s doporučeními, na která nemá kapacitu, a karta dál sbírá data, se kterými nikdo nepracuje.\n\nMy to děláme jinak. Zmapujeme, s čím k vám lidé chodí nakupovat, navrhneme podle toho segmenty a CRM na přechodnou dobu sami provozujeme na vaší platformě, dokud ho nepřevezme váš tým.\n\nDává smysl si o tom 20 minut promluvit?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -560,7 +560,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nobvykle to řetězce řeší jedním ze dvou způsobů: strategii napíše poradenská firma, nebo kampaně převezme agentura. CRM tým pak zůstane s doporučeními, na která nemá kapacitu, a karta dál sbírá data, se kterými nikdo nepracuje.\n\nMy to děláme jinak. Zmapujeme, s čím k vám lidé chodí nakupovat, navrhneme podle toho segmenty a CRM na přechodnou dobu sami provozujeme ve vaší platformě, dokud ho nepřevezme váš tým.\n\nDává smysl si o tom 20 minut promluvit?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nobvykle to řetězce řeší jedním ze dvou způsobů: strategii napíše poradenská firma, nebo kampaně převezme agentura. CRM tým pak zůstane s doporučeními, na která nemá kapacitu, a karta dál sbírá data, se kterými nikdo nepracuje.\n\nMy to děláme jinak. Zmapujeme, s čím k vám lidé chodí nakupovat, navrhneme podle toho segmenty a CRM na přechodnou dobu sami provozujeme na vaší platformě, dokud ho nepřevezme váš tým.\n\nDává smysl si o tom 20 minut promluvit?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -809,7 +809,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nještě jeden příklad a končím. Rohlík Group je jeden z nejrychleji rostoucích online prodejců potravin v Evropě a zákazníci tam přibývali rychleji, než šlo nabrat CRM tým. CRM jsme proto na přechodnou dobu převzali, postavili jeden CRM model pro čtyři země a pak ho předali. Tržby na zákazníka (ARPU) vzrostly o 17 %.\n\nPokud je to pro vás téma, dejte vědět. Pokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nještě jeden příklad a končím. Rohlík Group je jedním z nejrychleji rostoucích online prodejců potravin v Evropě a zákazníci tam přibývali rychleji, než šlo nabrat CRM tým. CRM jsme proto na přechodnou dobu převzali, postavili jeden CRM model pro čtyři země a pak ho předali. Tržby na zákazníka (ARPU) vzrostly o 17 %.\n\nPokud je to pro vás téma, dejte vědět. Pokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -881,7 +881,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nještě jeden příklad a končím. Rohlík Group je jeden z nejrychleji rostoucích online prodejců potravin v Evropě a zákazníci tam přibývali rychleji, než šlo nabrat CRM tým. CRM jsme proto na přechodnou dobu převzali, postavili jeden CRM model pro čtyři země a pak ho předali. Tržby na zákazníka (ARPU) vzrostly o 17 %.\n\nPokud je to pro vás téma, dejte vědět. Pokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nještě jeden příklad a končím. Rohlík Group je jedním z nejrychleji rostoucích online prodejců potravin v Evropě a zákazníci tam přibývali rychleji, než šlo nabrat CRM tým. CRM jsme proto na přechodnou dobu převzali, postavili jeden CRM model pro čtyři země a pak ho předali. Tržby na zákazníka (ARPU) vzrostly o 17 %.\n\nPokud je to pro vás téma, dejte vědět. Pokud to teď není priorita, stačí napsat a přestanu se ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1082,7 +1082,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nwarum ich gerade jetzt schreibe: Eine neue App, ein neuer Markt oder eine neue Besetzung im CRM sind die Momente, in denen festgelegt wird, was ein Kundenbindungsprogramm in den nächsten Jahren mit seinen Daten macht. Danach ändert sich selten noch viel.\n\nEin Beispiel: Bei der Rohlík Group, einem der am schnellsten wachsenden Online-Lebensmittelhändler Europas, haben wir das CRM übergangsweise übernommen. Der Umsatz pro Kunde (ARPU) stieg um 17 %.\n\nWäre Ihnen das 20 Minuten wert?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nwarum ich frage: In so einer Phase wird festgelegt, was ein Kundenbindungsprogramm in den nächsten Jahren mit seinen Daten macht. Danach ändert sich selten noch viel.\n\nEin Beispiel: Bei der Rohlík Group, einem der am schnellsten wachsenden Online-Lebensmittelhändler Europas, haben wir vier Länder, darunter Österreich und Deutschland, auf ein CRM-Modell gebracht. Der Umsatz pro Kunde (ARPU) stieg um 17 %.\n\nWäre Ihnen das 20 Minuten wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1106,7 +1106,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht dazu. Wenn Ihr CRM-Team gerade erst wächst, muss das Programm nicht warten: Wir können das CRM übergangsweise übernehmen, die ersten Segmente und Kampagnen umsetzen und es dann an Ihr Team übergeben.\n\nWenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht dazu. Wenn Ihr CRM-Team noch im Aufbau ist, muss das Programm nicht warten: Wir können das CRM übergangsweise übernehmen, die ersten Segmente und Kampagnen aufsetzen und es dann an Ihr Team übergeben.\n\nWenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1154,7 +1154,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nwarum ich gerade jetzt schreibe: Eine neue App, ein neuer Markt oder eine neue Besetzung im CRM sind die Momente, in denen festgelegt wird, was ein Kundenbindungsprogramm in den nächsten Jahren mit seinen Daten macht. Danach ändert sich selten noch viel.\n\nEin Beispiel: Bei der Rohlík Group, einem der am schnellsten wachsenden Online-Lebensmittelhändler Europas, haben wir das CRM übergangsweise übernommen. Der Umsatz pro Kunde (ARPU) stieg um 17 %.\n\nWäre Ihnen das 20 Minuten wert?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nwarum ich frage: In so einer Phase wird festgelegt, was ein Kundenbindungsprogramm in den nächsten Jahren mit seinen Daten macht. Danach ändert sich selten noch viel.\n\nEin Beispiel: Bei der Rohlík Group, einem der am schnellsten wachsenden Online-Lebensmittelhändler Europas, haben wir vier Länder, darunter Österreich und Deutschland, auf ein CRM-Modell gebracht. Der Umsatz pro Kunde (ARPU) stieg um 17 %.\n\nWäre Ihnen das 20 Minuten wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1178,7 +1178,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht dazu. Wenn Ihr CRM-Team gerade erst wächst, muss das Programm nicht warten: Wir können das CRM übergangsweise übernehmen, die ersten Segmente und Kampagnen umsetzen und es dann an Ihr Team übergeben.\n\nWenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht dazu. Wenn Ihr CRM-Team noch im Aufbau ist, muss das Programm nicht warten: Wir können das CRM übergangsweise übernehmen, die ersten Segmente und Kampagnen aufsetzen und es dann an Ihr Team übergeben.\n\nWenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1379,7 +1379,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nmeist wird das auf einem von zwei Wegen gelöst: Eine Beratung schreibt die Strategie, oder eine Agentur übernimmt die Kampagnen. Dem CRM-Team bleiben Empfehlungen, aber keine Kapazität, sie umzusetzen, und die Karte sammelt weiter Daten, mit denen niemand arbeitet.\n\nWir machen es anders: Wir finden heraus, aus welchen Anlässen Ihre Kunden einkaufen, bauen daraus Segmente und betreiben das CRM übergangsweise selbst in Ihrer Plattform, bis Ihr Team übernimmt.\n\nLohnen sich dafür 20 Minuten?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nmeist wird das auf einem von zwei Wegen gelöst: Eine Beratung schreibt die Strategie, oder eine Agentur übernimmt die Kampagnen. Dem CRM-Team bleiben Empfehlungen, aber keine Kapazität, sie umzusetzen, und die Karte sammelt weiter Daten, mit denen niemand arbeitet.\n\nWir machen es anders: Wir finden heraus, aus welchen Anlässen Ihre Kunden einkaufen, bauen daraus Segmente und betreiben das CRM übergangsweise selbst auf Ihrer Plattform, bis Ihr Team übernimmt.\n\nLohnen sich dafür 20 Minuten?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1403,7 +1403,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nzum Schluss nur eine Frage: Bekommt bei Ihnen jemand, der den großen Wocheneinkauf macht, ein anderes Angebot als jemand, der auf dem Heimweg schnell eine Sache holt? Wenn ja, sind Sie gut aufgestellt, und ich halte Sie nicht länger auf. Wenn nicht, wäre genau das der Anfang.\n\nUnd wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nzum Schluss nur eine Frage: Bekommt bei Ihnen jemand, der den großen Wocheneinkauf macht, ein anderes Angebot als jemand, der auf dem Heimweg nur schnell eine Kleinigkeit holt? Wenn ja, sind Sie gut aufgestellt, und ich halte Sie nicht länger auf. Wenn nicht, wäre genau das der Anfang.\n\nUnd wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1451,7 +1451,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nmeist wird das auf einem von zwei Wegen gelöst: Eine Beratung schreibt die Strategie, oder eine Agentur übernimmt die Kampagnen. Dem CRM-Team bleiben Empfehlungen, aber keine Kapazität, sie umzusetzen, und die Karte sammelt weiter Daten, mit denen niemand arbeitet.\n\nWir machen es anders: Wir finden heraus, aus welchen Anlässen Ihre Kunden einkaufen, bauen daraus Segmente und betreiben das CRM übergangsweise selbst in Ihrer Plattform, bis Ihr Team übernimmt.\n\nLohnen sich dafür 20 Minuten?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nmeist wird das auf einem von zwei Wegen gelöst: Eine Beratung schreibt die Strategie, oder eine Agentur übernimmt die Kampagnen. Dem CRM-Team bleiben Empfehlungen, aber keine Kapazität, sie umzusetzen, und die Karte sammelt weiter Daten, mit denen niemand arbeitet.\n\nWir machen es anders: Wir finden heraus, aus welchen Anlässen Ihre Kunden einkaufen, bauen daraus Segmente und betreiben das CRM übergangsweise selbst auf Ihrer Plattform, bis Ihr Team übernimmt.\n\nLohnen sich dafür 20 Minuten?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1475,7 +1475,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nzum Schluss nur eine Frage: Bekommt bei Ihnen jemand, der den großen Wocheneinkauf macht, ein anderes Angebot als jemand, der auf dem Heimweg schnell eine Sache holt? Wenn ja, sind Sie gut aufgestellt, und ich halte Sie nicht länger auf. Wenn nicht, wäre genau das der Anfang.\n\nUnd wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nzum Schluss nur eine Frage: Bekommt bei Ihnen jemand, der den großen Wocheneinkauf macht, ein anderes Angebot als jemand, der auf dem Heimweg nur schnell eine Kleinigkeit holt? Wenn ja, sind Sie gut aufgestellt, und ich halte Sie nicht länger auf. Wenn nicht, wäre genau das der Anfang.\n\nUnd wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1676,7 +1676,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nso lief es bei der REWE Group: eine Kundenkarte mit über 2 Mio. Mitgliedern, die jeden kannte und niemanden, und lokale CRM-Teams, die Umsetzungskapazität brauchten, nicht nur Empfehlungen. Wir haben 24+ Einkaufsmissionen erfasst, das CRM bei BILLA CZ und SK übergangsweise übernommen und die Kanäle per A/B-Test geprüft. Ergebnis: +2 % Umsatz in den Filialen, +5 % E-Mail-Öffnungsrate.\n\nBei {{company_name}} würde es genauso anfangen: mit den Einkaufsanlässen Ihrer Kunden. Einen Blick wert?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nso lief es bei der REWE Group: eine Kundenkarte mit über 2 Mio. Mitgliedern, die jeden und niemanden kannte, und lokale CRM-Teams, die Umsetzungskapazität brauchten, nicht nur Empfehlungen. Wir haben 24+ Einkaufsmissionen erfasst, das CRM bei BILLA CZ und SK übergangsweise übernommen und die Kanäle per A/B-Test geprüft. Ergebnis: +2 % Umsatz in den Filialen, +5 % E-Mail-Öffnungsrate.\n\nBei {{company_name}} würde es genauso anfangen: mit den Einkaufsanlässen Ihrer Kunden. Einen Blick wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1748,7 +1748,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nso lief es bei der REWE Group: eine Kundenkarte mit über 2 Mio. Mitgliedern, die jeden kannte und niemanden, und lokale CRM-Teams, die Umsetzungskapazität brauchten, nicht nur Empfehlungen. Wir haben 24+ Einkaufsmissionen erfasst, das CRM bei BILLA CZ und SK übergangsweise übernommen und die Kanäle per A/B-Test geprüft. Ergebnis: +2 % Umsatz in den Filialen, +5 % E-Mail-Öffnungsrate.\n\nBei {{company_name}} würde es genauso anfangen: mit den Einkaufsanlässen Ihrer Kunden. Einen Blick wert?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nso lief es bei der REWE Group: eine Kundenkarte mit über 2 Mio. Mitgliedern, die jeden und niemanden kannte, und lokale CRM-Teams, die Umsetzungskapazität brauchten, nicht nur Empfehlungen. Wir haben 24+ Einkaufsmissionen erfasst, das CRM bei BILLA CZ und SK übergangsweise übernommen und die Kanäle per A/B-Test geprüft. Ergebnis: +2 % Umsatz in den Filialen, +5 % E-Mail-Öffnungsrate.\n\nBei {{company_name}} würde es genauso anfangen: mit den Einkaufsanlässen Ihrer Kunden. Einen Blick wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -1973,7 +1973,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nwhy the timing matters: a new market, a new app or a new person running CRM is when a loyalty programme gets set up for the next few years. After that, habits stick.\n\nOne example: for REWE Group (BILLA, IKI), we worked with a loyalty base of 2M+ members across four markets, CZ, SK, BG and LT. In-store revenue went up 2%.\n\nWorth 20 minutes to see what that could look like at {{company_name}}?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nthe reason I asked: the months after a change like that are when a loyalty programme gets set up for the next few years. After that, habits stick.\n\nOne example: for REWE Group (BILLA, IKI), we worked with a loyalty base of 2M+ members across four markets, CZ, SK, BG and LT. In-store revenue went up 2%.\n\nWorth 20 minutes to see what that could look like at {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -2045,7 +2045,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nwhy the timing matters: a new market, a new app or a new person running CRM is when a loyalty programme gets set up for the next few years. After that, habits stick.\n\nOne example: for REWE Group (BILLA, IKI), we worked with a loyalty base of 2M+ members across four markets, CZ, SK, BG and LT. In-store revenue went up 2%.\n\nWorth 20 minutes to see what that could look like at {{company_name}}?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nthe reason I asked: the months after a change like that are when a loyalty programme gets set up for the next few years. After that, habits stick.\n\nOne example: for REWE Group (BILLA, IKI), we worked with a loyalty base of 2M+ members across four markets, CZ, SK, BG and LT. In-store revenue went up 2%.\n\nWorth 20 minutes to see what that could look like at {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -2567,7 +2567,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nthe short version of the Rohlík Group story: customers arrived faster than a CRM team could be hired. We took interim ownership of CRM, built behavioural segments, automated the onboarding, churn and cross-sell journeys, rolled the model out to Czechia, Hungary, Austria and Germany, then handed it over. Revenue per customer (ARPU) went up 17%.\n\nFor {{company_name}}, it would start with the same question: what makes a customer place the next order, and the one after? Worth a look?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nthe short version of the Rohlík Group story: customers arrived faster than a CRM team could be hired. We took interim ownership of CRM, built behavioural segments and automated the onboarding, churn and cross-sell journeys. Then we rolled the model out to Czechia, Hungary, Austria and Germany and handed it over. Revenue per customer (ARPU) went up 17%.\n\nFor {{company_name}}, it would start with the same question: what makes a customer place the next order, and the one after? Worth a look?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -2639,7 +2639,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nthe short version of the Rohlík Group story: customers arrived faster than a CRM team could be hired. We took interim ownership of CRM, built behavioural segments, automated the onboarding, churn and cross-sell journeys, rolled the model out to Czechia, Hungary, Austria and Germany, then handed it over. Revenue per customer (ARPU) went up 17%.\n\nFor {{company_name}}, it would start with the same question: what makes a customer place the next order, and the one after? Worth a look?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nthe short version of the Rohlík Group story: customers arrived faster than a CRM team could be hired. We took interim ownership of CRM, built behavioural segments and automated the onboarding, churn and cross-sell journeys. Then we rolled the model out to Czechia, Hungary, Austria and Germany and handed it over. Revenue per customer (ARPU) went up 17%.\n\nFor {{company_name}}, it would start with the same question: what makes a customer place the next order, and the one after? Worth a look?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -2864,7 +2864,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nještě k tomu, co se teď ve společnosti {{company_name}} mění. Nová role, nová nabídka nebo spojení značek je chvíle, kdy se dá prodejní trychtýř nastavit znovu, dřív než se usadí staré zvyky. Pro Vodafone CZ jsme po 14 workshopech se 16 lidmi z CVM a online prodeje namodelovali až 1 660 objednávek měsíčně navíc, v trychtýři, který už měli. Má smysl si na to dát 20 minut a projít, kde by to mohlo být u vás?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nještě k tomu, co se teď ve společnosti {{company_name}} mění. Nová role, nová nabídka nebo spojení značek je chvíle, kdy se dá prodejní trychtýř nastavit znovu, dřív než se všechno zase zaběhne. Pro Vodafone CZ jsme po 14 workshopech se 16 lidmi z CVM a online prodeje namodelovali až 1 660 objednávek měsíčně navíc, v trychtýři, který už měli. Má smysl si na to dát 20 minut a podívat se, jestli podobné rezervy nejsou i u vás?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -2888,7 +2888,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím. Jen jedna poznámka: s tím, co se v trychtýři nastaví v prvních měsících, se pak pracuje roky. Pokud by se hodil pohled zvenku, stačí odpovědět a najdeme 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím. Kdyby se hodil pohled zvenku, odpovězte a těch 20 minut pojmeme jednoduše: vy nám řeknete, co se u vás mění, a my vám řekneme, kam bychom se ve vašem trychtýři podívali nejdřív. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -2936,7 +2936,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nještě k tomu, co se teď ve společnosti {{company_name}} mění. Nová role, nová nabídka nebo spojení značek je chvíle, kdy se dá prodejní trychtýř nastavit znovu, dřív než se usadí staré zvyky. Pro Vodafone CZ jsme po 14 workshopech se 16 lidmi z CVM a online prodeje namodelovali až 1 660 objednávek měsíčně navíc, v trychtýři, který už měli. Má smysl si na to dát 20 minut a projít, kde by to mohlo být u vás?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nještě k tomu, co se teď ve společnosti {{company_name}} mění. Nová role, nová nabídka nebo spojení značek je chvíle, kdy se dá prodejní trychtýř nastavit znovu, dřív než se všechno zase zaběhne. Pro Vodafone CZ jsme po 14 workshopech se 16 lidmi z CVM a online prodeje namodelovali až 1 660 objednávek měsíčně navíc, v trychtýři, který už měli. Má smysl si na to dát 20 minut a podívat se, jestli podobné rezervy nejsou i u vás?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -2960,7 +2960,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím. Jen jedna poznámka: s tím, co se v trychtýři nastaví v prvních měsících, se pak pracuje roky. Pokud by se hodil pohled zvenku, stačí odpovědět a najdeme 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím. Kdyby se hodil pohled zvenku, odpovězte a těch 20 minut pojmeme jednoduše: vy nám řeknete, co se u vás mění, a my vám řekneme, kam bychom se ve vašem trychtýři podívali nejdřív. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3185,7 +3185,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nozývám se naposledy, tak jen jedna otázka na zamyšlení: kolik objednávek, které začnou na webu, nakonec dotáhne call centrum? A víte, v kterém kroku se zákazník rozhodne zavolat? Pokud odpověď není po ruce, právě tam se často schovávají objednávky navíc. Rádi to s vámi projdeme za 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nozývám se naposledy, tak jen dvě otázky na zamyšlení: kolik objednávek, které začnou na webu, nakonec dotáhne call centrum? A ve kterém kroku se zákazník rozhodne zavolat? Když odpovědi nemáte po ruce, právě v tom kroku se často schovávají objednávky navíc. Rádi to s vámi projdeme za 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3257,7 +3257,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nozývám se naposledy, tak jen jedna otázka na zamyšlení: kolik objednávek, které začnou na webu, nakonec dotáhne call centrum? A víte, v kterém kroku se zákazník rozhodne zavolat? Pokud odpověď není po ruce, právě tam se často schovávají objednávky navíc. Rádi to s vámi projdeme za 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nozývám se naposledy, tak jen dvě otázky na zamyšlení: kolik objednávek, které začnou na webu, nakonec dotáhne call centrum? A ve kterém kroku se zákazník rozhodne zavolat? Když odpovědi nemáte po ruce, právě v tom kroku se často schovávají objednávky navíc. Rádi to s vámi projdeme za 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3458,7 +3458,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nkrátce jeden příběh z telekomunikací. Ve Vodafone CZ se většina objednávek pořád dokončovala přes call centrum. Za 14 workshopů se 16 lidmi z CVM a online prodeje vzniklo sedm iniciativ s vyčíslenými náklady v jedné roadmapě a model ukázal až 1 660 objednávek měsíčně navíc, po odečtení překryvů. Pro {{company_name}} by to byl stejný pohled: kolik objednávek už ve vašem trychtýři leží a kolik by stálo je získat. Stálo by to za 20 minut?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nkrátce jeden příběh z telekomunikací. Ve Vodafone CZ se většina objednávek pořád dokončovala přes call centrum. Za 14 workshopů se 16 lidmi z CVM a online prodeje vzniklo sedm iniciativ s vyčíslenými náklady v jedné roadmapě a model ukázal až 1 660 objednávek měsíčně navíc, po odečtení překryvů. Ve společnosti {{company_name}} bychom se podívali na stejné dvě věci: kolik objednávek už ve vašem trychtýři leží a kolik by stálo je získat. Stálo by to za 20 minut?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3482,7 +3482,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupiny spojily své streamovací služby do Oneplay a 1,8 milionu zákazníků bylo potřeba převést k veřejně ohlášenému datu. Jeden tým napříč 10+ odděleními, tři kola cenových testů a start 3. března 2025, podle plánu. Pokud {{company_name}} čeká podobný krok, rádi ukážeme, jak jsme na to šli. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupiny spojily své streamovací služby do Oneplay a 1,8 milionu zákazníků bylo potřeba převést k veřejně ohlášenému datu. Jeden tým napříč 10+ odděleními, tři kola cenových testů a start 3. března 2025, podle plánu. Jestli ve společnosti {{company_name}} chystáte podobný krok, rádi ukážeme, jak jsme na to šli. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3530,7 +3530,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nkrátce jeden příběh z telekomunikací. Ve Vodafone CZ se většina objednávek pořád dokončovala přes call centrum. Za 14 workshopů se 16 lidmi z CVM a online prodeje vzniklo sedm iniciativ s vyčíslenými náklady v jedné roadmapě a model ukázal až 1 660 objednávek měsíčně navíc, po odečtení překryvů. Pro {{company_name}} by to byl stejný pohled: kolik objednávek už ve vašem trychtýři leží a kolik by stálo je získat. Stálo by to za 20 minut?\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nkrátce jeden příběh z telekomunikací. Ve Vodafone CZ se většina objednávek pořád dokončovala přes call centrum. Za 14 workshopů se 16 lidmi z CVM a online prodeje vzniklo sedm iniciativ s vyčíslenými náklady v jedné roadmapě a model ukázal až 1 660 objednávek měsíčně navíc, po odečtení překryvů. Ve společnosti {{company_name}} bychom se podívali na stejné dvě věci: kolik objednávek už ve vašem trychtýři leží a kolik by stálo je získat. Stálo by to za 20 minut?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3554,7 +3554,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den,\n\nještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupiny spojily své streamovací služby do Oneplay a 1,8 milionu zákazníků bylo potřeba převést k veřejně ohlášenému datu. Jeden tým napříč 10+ odděleními, tři kola cenových testů a start 3. března 2025, podle plánu. Pokud {{company_name}} čeká podobný krok, rádi ukážeme, jak jsme na to šli. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
+     "template": "Dobrý den,\n\nještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupiny spojily své streamovací služby do Oneplay a 1,8 milionu zákazníků bylo potřeba převést k veřejně ohlášenému datu. Jeden tým napříč 10+ odděleními, tři kola cenových testů a start 3. března 2025, podle plánu. Jestli ve společnosti {{company_name}} chystáte podobný krok, rádi ukážeme, jak jsme na to šli. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3755,7 +3755,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nnoch ein Gedanke dazu, was sich bei {{company_name}} gerade verändert. Eine neue Rolle, ein neues Paket oder eine Fusion öffnet ein kurzes Zeitfenster, um den Vertriebsfunnel neu aufzusetzen, bevor sich alte Routinen einschleifen. Bei Vodafone CZ haben wir nach 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert, im Funnel, den es dort schon gab. Lohnen sich 20 Minuten, um zu sehen, wo das bei Ihnen liegen könnte?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nnoch ein Gedanke dazu, was sich bei {{company_name}} gerade verändert. Eine neue Rolle, ein neues Paket oder eine Fusion öffnet ein kurzes Zeitfenster, um den Vertriebsfunnel neu aufzusetzen, bevor sich wieder alte Routinen einschleifen. Bei Vodafone CZ haben wir nach 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert, im Funnel, den es dort schon gab. Lohnen sich 20 Minuten, um zu sehen, ob bei Ihnen Ähnliches zu holen ist?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3779,7 +3779,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender voll, das verstehe ich. Nur ein Gedanke: Womit das Team die nächsten Jahre arbeitet, wird oft in den ersten Monaten im Funnel festgelegt. Wenn ein Blick von außen hilft, genügt eine kurze Antwort, und wir finden 20 Minuten. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender voll, das verstehe ich. Falls ein Blick von außen hilft, genügt eine kurze Antwort. Die 20 Minuten sind schnell erklärt: Sie erzählen uns, was sich ändert, und wir sagen Ihnen, wo wir in Ihrem Funnel zuerst hinschauen würden. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3827,7 +3827,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nnoch ein Gedanke dazu, was sich bei {{company_name}} gerade verändert. Eine neue Rolle, ein neues Paket oder eine Fusion öffnet ein kurzes Zeitfenster, um den Vertriebsfunnel neu aufzusetzen, bevor sich alte Routinen einschleifen. Bei Vodafone CZ haben wir nach 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert, im Funnel, den es dort schon gab. Lohnen sich 20 Minuten, um zu sehen, wo das bei Ihnen liegen könnte?\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nnoch ein Gedanke dazu, was sich bei {{company_name}} gerade verändert. Eine neue Rolle, ein neues Paket oder eine Fusion öffnet ein kurzes Zeitfenster, um den Vertriebsfunnel neu aufzusetzen, bevor sich wieder alte Routinen einschleifen. Bei Vodafone CZ haben wir nach 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert, im Funnel, den es dort schon gab. Lohnen sich 20 Minuten, um zu sehen, ob bei Ihnen Ähnliches zu holen ist?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -3851,7 +3851,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender voll, das verstehe ich. Nur ein Gedanke: Womit das Team die nächsten Jahre arbeitet, wird oft in den ersten Monaten im Funnel festgelegt. Wenn ein Blick von außen hilft, genügt eine kurze Antwort, und wir finden 20 Minuten. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\ndas ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender voll, das verstehe ich. Falls ein Blick von außen hilft, genügt eine kurze Antwort. Die 20 Minuten sind schnell erklärt: Sie erzählen uns, was sich ändert, und wir sagen Ihnen, wo wir in Ihrem Funnel zuerst hinschauen würden. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -4076,7 +4076,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nzum Schluss nur eine Frage zum Nachdenken: Wie viele Bestellungen, die auf Ihrer Website beginnen, werden am Ende im Callcenter abgeschlossen? Und wissen Sie, bei welchem Schritt Kunden zum Telefon greifen? Wenn die Antwort nicht gleich parat ist, stecken genau dort oft die zusätzlichen Bestellungen. Gern gehen wir das in 20 Minuten mit Ihnen durch. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nzum Schluss nur zwei Fragen zum Nachdenken: Wie viele Bestellungen, die auf Ihrer Website beginnen, werden am Ende im Callcenter abgeschlossen? Und bei welchem Schritt greifen Kunden zum Telefon? Haben Sie die Antworten nicht gleich parat, stecken genau in diesem Schritt oft die zusätzlichen Bestellungen. Gern gehen wir das in 20 Minuten mit Ihnen durch. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -4148,7 +4148,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}},\n\nzum Schluss nur eine Frage zum Nachdenken: Wie viele Bestellungen, die auf Ihrer Website beginnen, werden am Ende im Callcenter abgeschlossen? Und wissen Sie, bei welchem Schritt Kunden zum Telefon greifen? Wenn die Antwort nicht gleich parat ist, stecken genau dort oft die zusätzlichen Bestellungen. Gern gehen wir das in 20 Minuten mit Ihnen durch. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}},\n\nzum Schluss nur zwei Fragen zum Nachdenken: Wie viele Bestellungen, die auf Ihrer Website beginnen, werden am Ende im Callcenter abgeschlossen? Und bei welchem Schritt greifen Kunden zum Telefon? Haben Sie die Antworten nicht gleich parat, stecken genau in diesem Schritt oft die zusätzlichen Bestellungen. Gern gehen wir das in 20 Minuten mit Ihnen durch. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -4646,7 +4646,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\none more thought on what's changing at {{company_name}}. A new role, a new bundle or a merger opens a short window to reset the sales funnel before old habits set in. At Vodafone CZ, after 14 workshops with 16 people from CVM and online sales, we modelled up to 1,660 extra orders a month, inside the funnel they already had. Worth 20 minutes to see where that might sit for you?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\none more thought on what's changing at {{company_name}}. A new role, a new bundle or a merger opens a short window to reset the sales funnel before old habits settle back in. At Vodafone CZ, after 14 workshops with 16 people from CVM and online sales, we modelled up to 1,660 extra orders a month, inside the funnel they already had. Worth 20 minutes to see if yours holds something similar?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -4670,7 +4670,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nlast note from me. After a big change the calendar fills up, I get that. One thought: whatever gets set up in the funnel in the first months is what the team lives with for years. If an outside view would help, just reply and we'll find 20 minutes. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nlast note from me. After a big change the calendar fills up, I get that. If an outside view would help, reply and we'll keep the 20 minutes simple: you tell us what's changing, we tell you where we'd look first in your funnel. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -4718,7 +4718,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\none more thought on what's changing at {{company_name}}. A new role, a new bundle or a merger opens a short window to reset the sales funnel before old habits set in. At Vodafone CZ, after 14 workshops with 16 people from CVM and online sales, we modelled up to 1,660 extra orders a month, inside the funnel they already had. Worth 20 minutes to see where that might sit for you?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\none more thought on what's changing at {{company_name}}. A new role, a new bundle or a merger opens a short window to reset the sales funnel before old habits settle back in. At Vodafone CZ, after 14 workshops with 16 people from CVM and online sales, we modelled up to 1,660 extra orders a month, inside the funnel they already had. Worth 20 minutes to see if yours holds something similar?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -4742,7 +4742,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nlast note from me. After a big change the calendar fills up, I get that. One thought: whatever gets set up in the funnel in the first months is what the team lives with for years. If an outside view would help, just reply and we'll find 20 minutes. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nlast note from me. After a big change the calendar fills up, I get that. If an outside view would help, reply and we'll keep the 20 minutes simple: you tell us what's changing, we tell you where we'd look first in your funnel. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -4967,7 +4967,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nlast note, so just one question to sit with: how many orders that start on your website end up closed by the call centre? And do you know at which step people decide to pick up the phone? If the answer isn't to hand, that's often where the extra orders hide. Happy to walk through it in 20 minutes. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nlast note, so two questions to sit with: how many orders that start on your website end up closed by the call centre? And at which step do people decide to pick up the phone? If the answers aren't to hand, that step is often where the extra orders hide. Happy to walk through it in 20 minutes. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5039,7 +5039,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\nlast note, so just one question to sit with: how many orders that start on your website end up closed by the call centre? And do you know at which step people decide to pick up the phone? If the answer isn't to hand, that's often where the extra orders hide. Happy to walk through it in 20 minutes. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\nlast note, so two questions to sit with: how many orders that start on your website end up closed by the call centre? And at which step do people decide to pick up the phone? If the answers aren't to hand, that step is often where the extra orders hide. Happy to walk through it in 20 minutes. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5240,7 +5240,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\na short story from telecoms. At Vodafone CZ, most orders were still completed with a call-centre agent. Over 14 workshops with 16 people from CVM and online sales, we turned that into seven costed initiatives in one roadmap, and the model showed up to 1,660 extra orders a month, net of overlap. For {{company_name}}, it would mean the same view: how many orders already sit in your funnel, and what it costs to win them. Worth 20 minutes?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\na short story from telecoms. At Vodafone CZ, most orders were still completed with a call-centre agent. Over 14 workshops with 16 people from CVM and online sales, we turned that into seven costed initiatives in one roadmap, and the model showed up to 1,660 extra orders a month, net of overlap. At {{company_name}}, we'd look at the same two things: how many orders already sit in your funnel, and what it would cost to win them. Worth 20 minutes?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5264,7 +5264,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\none more story, this time from streaming. Two Czech media groups merged their streaming services into Oneplay, and 1.8 million customers had to move by a public date. One team across 10+ departments, three rounds of pricing tests, and a launch on 3 March 2025, as planned. If {{company_name}} has a move like that ahead, happy to show how we ran it. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\none more story, this time from streaming. Two Czech media groups merged their streaming services into Oneplay, and 1.8 million customers had to move by a publicly announced date. One team across 10+ departments, three rounds of pricing tests, and a launch on 3 March 2025, as planned. If {{company_name}} has a move like that ahead, happy to show how we ran it. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5312,7 +5312,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\na short story from telecoms. At Vodafone CZ, most orders were still completed with a call-centre agent. Over 14 workshops with 16 people from CVM and online sales, we turned that into seven costed initiatives in one roadmap, and the model showed up to 1,660 extra orders a month, net of overlap. For {{company_name}}, it would mean the same view: how many orders already sit in your funnel, and what it costs to win them. Worth 20 minutes?\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\na short story from telecoms. At Vodafone CZ, most orders were still completed with a call-centre agent. Over 14 workshops with 16 people from CVM and online sales, we turned that into seven costed initiatives in one roadmap, and the model showed up to 1,660 extra orders a month, net of overlap. At {{company_name}}, we'd look at the same two things: how many orders already sit in your funnel, and what it would cost to win them. Worth 20 minutes?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5336,7 +5336,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}},\n\none more story, this time from streaming. Two Czech media groups merged their streaming services into Oneplay, and 1.8 million customers had to move by a public date. One team across 10+ departments, three rounds of pricing tests, and a launch on 3 March 2025, as planned. If {{company_name}} has a move like that ahead, happy to show how we ran it. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
+     "template": "Hi {{first_name}},\n\none more story, this time from streaming. Two Czech media groups merged their streaming services into Oneplay, and 1.8 million customers had to move by a publicly announced date. One team across 10+ departments, three rounds of pricing tests, and a launch on 3 March 2025, as planned. If {{company_name}} has a move like that ahead, happy to show how we ran it. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5537,7 +5537,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ještě jedna myšlenka k načasování. Nový produkt, nový systém nebo nové vedení znamená, že se pravidla stejně přepisují: který lead se počítá, kdo dostane jakou zprávu, jak se schvaluje žádost. Levněji už se cesta od prvního kliknutí k podepsané smlouvě propojit nedá. Pro Home Credit na Filipínách jsme to udělali na nástrojích, které už měl, s projektovaným nárůstem odeslaných leadů až o 30 %. Stálo by to za 20 minut?",
+     "template": "Dobrý den, ještě poznámka k načasování. Nový produkt, nový systém nebo nové vedení znamená, že se pravidla stejně přepisují: který lead se počítá, kdo dostane jakou zprávu, jak se schvaluje žádost. Levnější chvíle propojit cestu od leadu k podepsané smlouvě už nebude. Pro Home Credit na Filipínách jsme to postavili na nástrojích, které už měl, s projektovaným nárůstem odeslaných leadů až o 30 %. Stálo by to za 20 minut?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5609,7 +5609,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ještě jedna myšlenka k načasování. Nový produkt, nový systém nebo nové vedení znamená, že se pravidla stejně přepisují: který lead se počítá, kdo dostane jakou zprávu, jak se schvaluje žádost. Levněji už se cesta od prvního kliknutí k podepsané smlouvě propojit nedá. Pro Home Credit na Filipínách jsme to udělali na nástrojích, které už měl, s projektovaným nárůstem odeslaných leadů až o 30 %. Stálo by to za 20 minut?",
+     "template": "Dobrý den, ještě poznámka k načasování. Nový produkt, nový systém nebo nové vedení znamená, že se pravidla stejně přepisují: který lead se počítá, kdo dostane jakou zprávu, jak se schvaluje žádost. Levnější chvíle propojit cestu od leadu k podepsané smlouvě už nebude. Pro Home Credit na Filipínách jsme to postavili na nástrojích, které už měl, s projektovaným nárůstem odeslaných leadů až o 30 %. Stálo by to za 20 minut?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5834,7 +5834,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, obvyklé řešení je nová platforma nebo další dashboard. Produktové týmy pak dál píšou stejným zákazníkům a lead se dál ztrácí mezi formulářem a smlouvou. My začínáme z druhé strany: jeden životní cyklus zákazníka napříč produkty, postavený na nástrojích, které už máte, a reporting, který sleduje každý lead až k podpisu smlouvy. Pracujeme přímo s vaším týmem, ne přes prezentace. Má smysl se na to podívat?",
+     "template": "Dobrý den, když se o stejné zákazníky přetahuje několik produktů, obvyklé řešení je nová platforma nebo další dashboard. Týmy pak těm zákazníkům píšou dál a lead se stejně ztrácí mezi formulářem a smlouvou. My začínáme z opačného konce: jeden životní cyklus zákazníka napříč produkty, postavený na nástrojích, které už máte, a reporting, který sleduje každý lead až k podpisu smlouvy. Pracujeme přímo s vaším týmem, ne přes prezentace. Má smysl se na to podívat?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5858,7 +5858,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ještě poslední věc. Stejná mezera bývá i na straně úvěrů: každý produkt si časem vytvoří vlastní schvalovací pravidla a dva stejní žadatelé pak dostanou různé odpovědi. To umíme zmapovat jednou, napříč produkty i datovými zdroji, dřív než se kupuje nový systém. Jestli ve společnosti {{company_name}} řešíte jedno nebo druhé, za 20 minut zjistíme, zda můžeme pomoct. Pokud to není priorita, stačí napsat a už se neozvu.",
+     "template": "Dobrý den, ještě poslední věc. Podobný problém bývá i ve schvalování úvěrů: každý produkt si časem vytvoří vlastní pravidla a dva žadatelé se stejným profilem pak dostanou různé odpovědi. To umíme zmapovat jednou, napříč produkty i datovými zdroji, dřív než se koupí nový systém. Jestli ve společnosti {{company_name}} řešíte jedno nebo druhé, za 20 minut zjistíme, zda můžeme pomoct. Pokud to není priorita, stačí napsat a už se neozvu.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5906,7 +5906,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, obvyklé řešení je nová platforma nebo další dashboard. Produktové týmy pak dál píšou stejným zákazníkům a lead se dál ztrácí mezi formulářem a smlouvou. My začínáme z druhé strany: jeden životní cyklus zákazníka napříč produkty, postavený na nástrojích, které už máte, a reporting, který sleduje každý lead až k podpisu smlouvy. Pracujeme přímo s vaším týmem, ne přes prezentace. Má smysl se na to podívat?",
+     "template": "Dobrý den, když se o stejné zákazníky přetahuje několik produktů, obvyklé řešení je nová platforma nebo další dashboard. Týmy pak těm zákazníkům píšou dál a lead se stejně ztrácí mezi formulářem a smlouvou. My začínáme z opačného konce: jeden životní cyklus zákazníka napříč produkty, postavený na nástrojích, které už máte, a reporting, který sleduje každý lead až k podpisu smlouvy. Pracujeme přímo s vaším týmem, ne přes prezentace. Má smysl se na to podívat?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -5930,7 +5930,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ještě poslední věc. Stejná mezera bývá i na straně úvěrů: každý produkt si časem vytvoří vlastní schvalovací pravidla a dva stejní žadatelé pak dostanou různé odpovědi. To umíme zmapovat jednou, napříč produkty i datovými zdroji, dřív než se kupuje nový systém. Jestli ve společnosti {{company_name}} řešíte jedno nebo druhé, za 20 minut zjistíme, zda můžeme pomoct. Pokud to není priorita, stačí napsat a už se neozvu.",
+     "template": "Dobrý den, ještě poslední věc. Podobný problém bývá i ve schvalování úvěrů: každý produkt si časem vytvoří vlastní pravidla a dva žadatelé se stejným profilem pak dostanou různé odpovědi. To umíme zmapovat jednou, napříč produkty i datovými zdroji, dřív než se koupí nový systém. Jestli ve společnosti {{company_name}} řešíte jedno nebo druhé, za 20 minut zjistíme, zda můžeme pomoct. Pokud to není priorita, stačí napsat a už se neozvu.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6131,7 +6131,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, v kostce příběh Home Creditu na Filipínách. Několik produktových týmů tam oslovovalo stejné zákazníky a online leady nešlo dohledat až ke smlouvě. Nastavili jsme čtyři fáze životního cyklu a pět scénářů na systémech, které už měli, a k tomu reporting od leadu po smlouvu. Nová platforma nebyla potřeba a projekce počítá s nárůstem odeslaných leadů až o 30 %. Stálo by za to věnovat 20 minut tomu, jak by to vypadalo ve společnosti {{company_name}}?",
+     "template": "Dobrý den, v kostce příběh Home Creditu na Filipínách. Několik produktových týmů tam oslovovalo stejné zákazníky a online leady nešlo dohledat až ke smlouvě. Nastavili jsme čtyři fáze životního cyklu a pět scénářů na systémech, které už měli, a k tomu reporting od leadu po smlouvu. Nová platforma nebyla potřeba a projekce počítá s nárůstem odeslaných leadů až o 30 %. Stálo by za to věnovat 20 minut tomu, jak by to vypadalo ve společnosti {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6155,7 +6155,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, poslední zpráva ode mě. Oba úvěrové projekty, které máme na webu, jsou z Filipín, ne ze střední Evropy, a nebudu předstírat opak. Problémy se ale podobají: pro Security Bank jsme prověřili 23 datových zdrojů a navrhli jeden schvalovací proces pro pět úvěrových produktů. Ve společnosti {{company_name}} by to mohlo znamenat jeden pohled od kliknutí ke smlouvě a jednu odpověď pro každého žadatele. Pokud to není priorita, stačí napsat a už se neozvu.",
+     "template": "Dobrý den, poslední zpráva ode mě. Oba úvěrové projekty na našem webu jsou z Filipín, ne ze střední Evropy, a nebudu předstírat opak. Problémy se ale podobají: pro Security Bank jsme prověřili 23 datových zdrojů, navrhli jeden schvalovací proces pro pět úvěrových produktů a sepsali 40+ stran požadavků pro dodavatele úvěrového systému. Ve společnosti {{company_name}} by to mohlo znamenat stejnou odpověď pro stejného žadatele u všech produktů. Pokud to není priorita, stačí napsat a už se neozvu.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6203,7 +6203,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, v kostce příběh Home Creditu na Filipínách. Několik produktových týmů tam oslovovalo stejné zákazníky a online leady nešlo dohledat až ke smlouvě. Nastavili jsme čtyři fáze životního cyklu a pět scénářů na systémech, které už měli, a k tomu reporting od leadu po smlouvu. Nová platforma nebyla potřeba a projekce počítá s nárůstem odeslaných leadů až o 30 %. Stálo by za to věnovat 20 minut tomu, jak by to vypadalo ve společnosti {{company_name}}?",
+     "template": "Dobrý den, v kostce příběh Home Creditu na Filipínách. Několik produktových týmů tam oslovovalo stejné zákazníky a online leady nešlo dohledat až ke smlouvě. Nastavili jsme čtyři fáze životního cyklu a pět scénářů na systémech, které už měli, a k tomu reporting od leadu po smlouvu. Nová platforma nebyla potřeba a projekce počítá s nárůstem odeslaných leadů až o 30 %. Stálo by za to věnovat 20 minut tomu, jak by to vypadalo ve společnosti {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6227,7 +6227,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, poslední zpráva ode mě. Oba úvěrové projekty, které máme na webu, jsou z Filipín, ne ze střední Evropy, a nebudu předstírat opak. Problémy se ale podobají: pro Security Bank jsme prověřili 23 datových zdrojů a navrhli jeden schvalovací proces pro pět úvěrových produktů. Ve společnosti {{company_name}} by to mohlo znamenat jeden pohled od kliknutí ke smlouvě a jednu odpověď pro každého žadatele. Pokud to není priorita, stačí napsat a už se neozvu.",
+     "template": "Dobrý den, poslední zpráva ode mě. Oba úvěrové projekty na našem webu jsou z Filipín, ne ze střední Evropy, a nebudu předstírat opak. Problémy se ale podobají: pro Security Bank jsme prověřili 23 datových zdrojů, navrhli jeden schvalovací proces pro pět úvěrových produktů a sepsali 40+ stran požadavků pro dodavatele úvěrového systému. Ve společnosti {{company_name}} by to mohlo znamenat stejnou odpověď pro stejného žadatele u všech produktů. Pokud to není priorita, stačí napsat a už se neozvu.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6428,7 +6428,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. Ein neues Produkt, ein neues System oder eine neue Führung bedeutet, dass die Regeln ohnehin neu geschrieben werden: welcher Lead zählt, wer welche Nachricht bekommt, wie ein Antrag genehmigt wird. Günstiger lässt sich der Weg vom ersten Klick bis zum unterschriebenen Vertrag nicht mehr verbinden. Für Home Credit auf den Philippinen haben wir das mit den vorhandenen Tools umgesetzt, mit einer prognostizierten Steigerung der eingereichten Leads um bis zu 30 %. Sind Ihnen das 20 Minuten wert?",
+     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. Mit einem neuen Produkt, System oder Management werden die Regeln ohnehin neu geschrieben: welcher Lead zählt, wer welche Nachricht bekommt, wie ein Antrag genehmigt wird. Einen günstigeren Moment, jeden Lead bis zum unterschriebenen Vertrag nachvollziehbar zu machen, gibt es nicht. Für Home Credit auf den Philippinen haben wir das mit den vorhandenen Tools umgesetzt, prognostiziert sind bis zu 30 % mehr eingereichte Leads. Ist Ihnen das 20 Minuten wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6452,7 +6452,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Solche Zeitfenster schließen sich schnell: Ist das neue Setup erst live, bleiben seine Regeln meist jahrelang. Wenn es hilft, reichen 20 Minuten, um durchzugehen, wo Leads und Genehmigungen bei {{company_name}} heute hängen bleiben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Solche Zeitfenster schließen sich schnell: Ist das neue Setup erst live, gelten seine Regeln meist jahrelang. Gern gehen wir in 20 Minuten durch, wo Leads und Genehmigungen bei {{company_name}} heute hängen bleiben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6500,7 +6500,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. Ein neues Produkt, ein neues System oder eine neue Führung bedeutet, dass die Regeln ohnehin neu geschrieben werden: welcher Lead zählt, wer welche Nachricht bekommt, wie ein Antrag genehmigt wird. Günstiger lässt sich der Weg vom ersten Klick bis zum unterschriebenen Vertrag nicht mehr verbinden. Für Home Credit auf den Philippinen haben wir das mit den vorhandenen Tools umgesetzt, mit einer prognostizierten Steigerung der eingereichten Leads um bis zu 30 %. Sind Ihnen das 20 Minuten wert?",
+     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. Mit einem neuen Produkt, System oder Management werden die Regeln ohnehin neu geschrieben: welcher Lead zählt, wer welche Nachricht bekommt, wie ein Antrag genehmigt wird. Einen günstigeren Moment, jeden Lead bis zum unterschriebenen Vertrag nachvollziehbar zu machen, gibt es nicht. Für Home Credit auf den Philippinen haben wir das mit den vorhandenen Tools umgesetzt, prognostiziert sind bis zu 30 % mehr eingereichte Leads. Ist Ihnen das 20 Minuten wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6524,7 +6524,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Solche Zeitfenster schließen sich schnell: Ist das neue Setup erst live, bleiben seine Regeln meist jahrelang. Wenn es hilft, reichen 20 Minuten, um durchzugehen, wo Leads und Genehmigungen bei {{company_name}} heute hängen bleiben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
+     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Solche Zeitfenster schließen sich schnell: Ist das neue Setup erst live, gelten seine Regeln meist jahrelang. Gern gehen wir in 20 Minuten durch, wo Leads und Genehmigungen bei {{company_name}} heute hängen bleiben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6725,7 +6725,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, die übliche Lösung ist eine neue Plattform oder noch ein Dashboard. Die Produktteams schreiben danach weiter dieselben Kunden an, und der Lead verschwindet weiter irgendwo zwischen Formular und Vertrag. Wir fangen am anderen Ende an: ein Kundenlebenszyklus über alle Produkte, aufgebaut auf den Tools, die Sie schon nutzen, und ein Reporting, das jeden Lead bis zum unterschriebenen Vertrag verfolgt. Wir arbeiten direkt mit Ihrem Team, nicht mit Foliensätzen. Einen Blick wert?",
+     "template": "Hallo {{first_name}}, wenn mehrere Produkte dieselben Kunden umwerben, heißt die übliche Lösung: neue Plattform oder noch ein Dashboard. Danach schreiben die Teams diese Kunden trotzdem weiter an, und der Lead geht zwischen Formular und Vertrag verloren. Wir fangen am anderen Ende an: ein Kundenlebenszyklus über alle Produkte, auf den Tools, die Sie schon nutzen, und ein Reporting, das jeden Lead bis zum unterschriebenen Vertrag verfolgt. Wir arbeiten direkt mit Ihrem Team, nicht mit Foliensätzen. Einen Blick wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6749,7 +6749,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, eine letzte Sache. Dieselbe Lücke zeigt sich oft auf der Kreditseite: Jedes Produkt entwickelt eigene Genehmigungsregeln, und zwei gleiche Anträge können unterschiedliche Antworten bekommen. Wir bilden das einmal ab, über Produkte und Datenquellen hinweg, bevor jemand ein neues System kauft. Wenn bei {{company_name}} eines der beiden Themen aktuell ist, reichen 20 Minuten, um zu sehen, ob wir helfen können. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.",
+     "template": "Hallo {{first_name}}, eine letzte Sache. Dasselbe Muster zeigt sich oft bei der Kreditentscheidung: Jedes Produkt entwickelt eigene Regeln, und zwei identische Anträge können unterschiedliche Antworten bekommen. Wir bilden das einmal ab, über Produkte und Datenquellen hinweg, bevor jemand ein neues System kauft. Ist eines der Themen bei {{company_name}} aktuell, reichen 20 Minuten, um zu sehen, ob wir helfen können. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6797,7 +6797,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, die übliche Lösung ist eine neue Plattform oder noch ein Dashboard. Die Produktteams schreiben danach weiter dieselben Kunden an, und der Lead verschwindet weiter irgendwo zwischen Formular und Vertrag. Wir fangen am anderen Ende an: ein Kundenlebenszyklus über alle Produkte, aufgebaut auf den Tools, die Sie schon nutzen, und ein Reporting, das jeden Lead bis zum unterschriebenen Vertrag verfolgt. Wir arbeiten direkt mit Ihrem Team, nicht mit Foliensätzen. Einen Blick wert?",
+     "template": "Hallo {{first_name}}, wenn mehrere Produkte dieselben Kunden umwerben, heißt die übliche Lösung: neue Plattform oder noch ein Dashboard. Danach schreiben die Teams diese Kunden trotzdem weiter an, und der Lead geht zwischen Formular und Vertrag verloren. Wir fangen am anderen Ende an: ein Kundenlebenszyklus über alle Produkte, auf den Tools, die Sie schon nutzen, und ein Reporting, das jeden Lead bis zum unterschriebenen Vertrag verfolgt. Wir arbeiten direkt mit Ihrem Team, nicht mit Foliensätzen. Einen Blick wert?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -6821,7 +6821,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, eine letzte Sache. Dieselbe Lücke zeigt sich oft auf der Kreditseite: Jedes Produkt entwickelt eigene Genehmigungsregeln, und zwei gleiche Anträge können unterschiedliche Antworten bekommen. Wir bilden das einmal ab, über Produkte und Datenquellen hinweg, bevor jemand ein neues System kauft. Wenn bei {{company_name}} eines der beiden Themen aktuell ist, reichen 20 Minuten, um zu sehen, ob wir helfen können. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.",
+     "template": "Hallo {{first_name}}, eine letzte Sache. Dasselbe Muster zeigt sich oft bei der Kreditentscheidung: Jedes Produkt entwickelt eigene Regeln, und zwei identische Anträge können unterschiedliche Antworten bekommen. Wir bilden das einmal ab, über Produkte und Datenquellen hinweg, bevor jemand ein neues System kauft. Ist eines der Themen bei {{company_name}} aktuell, reichen 20 Minuten, um zu sehen, ob wir helfen können. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7022,7 +7022,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, die Kurzfassung der Geschichte von Home Credit. Auf den Philippinen sprachen mehrere Produktteams dieselben Kunden an, und Online-Leads ließen sich nicht bis zum Vertrag nachverfolgen. Wir haben auf dem vorhandenen Stack vier Lebenszyklusphasen und fünf Use Cases aufgesetzt und dazu ein Reporting vom Lead bis zum Vertrag gebaut. Eine neue Plattform war nicht nötig, und die Prognose liegt bei bis zu 30 % mehr eingereichten Leads. Lohnen sich 20 Minuten, um zu sehen, wie das bei {{company_name}} aussähe?",
+     "template": "Hallo {{first_name}}, kurz die Geschichte von Home Credit auf den Philippinen. Dort sprachen mehrere Produktteams dieselben Kunden an, und Online-Leads ließen sich nicht bis zum Vertrag nachverfolgen. Wir haben auf dem vorhandenen Stack vier Lebenszyklusphasen und fünf Use Cases aufgesetzt und ein Reporting vom Lead bis zum Vertrag gebaut. Eine neue Plattform war nicht nötig, und die Prognose liegt bei bis zu 30 % mehr eingereichten Leads. Lohnen sich 20 Minuten, um zu sehen, wie das bei {{company_name}} aussähe?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7046,7 +7046,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, meine letzte Nachricht. Beide Kreditprojekte auf unserer Website stammen von den Philippinen, nicht aus Europa, und das will ich nicht beschönigen. Die Probleme sind aber übertragbar: Für die Security Bank haben wir 23 Datenquellen geprüft und einen einheitlichen Genehmigungsprozess für fünf Kreditprodukte entworfen. Bei {{company_name}} könnte das einen Blick vom ersten Klick bis zum Vertrag bedeuten und eine Antwort pro Antrag. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.",
+     "template": "Hallo {{first_name}}, meine letzte Nachricht. Beide Kreditprojekte auf unserer Website sind von den Philippinen, das will ich nicht beschönigen. Die Probleme sind aber übertragbar: Für die Security Bank haben wir 23 Datenquellen geprüft und einen Genehmigungsprozess für fünf Kreditprodukte entworfen, samt 40+ Seiten Anforderungen an die Systemanbieter. Bei {{company_name}} könnte das heißen: gleicher Antrag, gleiche Antwort. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7094,7 +7094,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, die Kurzfassung der Geschichte von Home Credit. Auf den Philippinen sprachen mehrere Produktteams dieselben Kunden an, und Online-Leads ließen sich nicht bis zum Vertrag nachverfolgen. Wir haben auf dem vorhandenen Stack vier Lebenszyklusphasen und fünf Use Cases aufgesetzt und dazu ein Reporting vom Lead bis zum Vertrag gebaut. Eine neue Plattform war nicht nötig, und die Prognose liegt bei bis zu 30 % mehr eingereichten Leads. Lohnen sich 20 Minuten, um zu sehen, wie das bei {{company_name}} aussähe?",
+     "template": "Hallo {{first_name}}, kurz die Geschichte von Home Credit auf den Philippinen. Dort sprachen mehrere Produktteams dieselben Kunden an, und Online-Leads ließen sich nicht bis zum Vertrag nachverfolgen. Wir haben auf dem vorhandenen Stack vier Lebenszyklusphasen und fünf Use Cases aufgesetzt und ein Reporting vom Lead bis zum Vertrag gebaut. Eine neue Plattform war nicht nötig, und die Prognose liegt bei bis zu 30 % mehr eingereichten Leads. Lohnen sich 20 Minuten, um zu sehen, wie das bei {{company_name}} aussähe?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7118,7 +7118,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, meine letzte Nachricht. Beide Kreditprojekte auf unserer Website stammen von den Philippinen, nicht aus Europa, und das will ich nicht beschönigen. Die Probleme sind aber übertragbar: Für die Security Bank haben wir 23 Datenquellen geprüft und einen einheitlichen Genehmigungsprozess für fünf Kreditprodukte entworfen. Bei {{company_name}} könnte das einen Blick vom ersten Klick bis zum Vertrag bedeuten und eine Antwort pro Antrag. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.",
+     "template": "Hallo {{first_name}}, meine letzte Nachricht. Beide Kreditprojekte auf unserer Website sind von den Philippinen, das will ich nicht beschönigen. Die Probleme sind aber übertragbar: Für die Security Bank haben wir 23 Datenquellen geprüft und einen Genehmigungsprozess für fünf Kreditprodukte entworfen, samt 40+ Seiten Anforderungen an die Systemanbieter. Bei {{company_name}} könnte das heißen: gleicher Antrag, gleiche Antwort. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7319,7 +7319,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, one more thought on timing. A new product, a new system or a new leader means the rules get rewritten anyway: which lead counts, who gets which message, how an application gets approved. That makes it the cheapest moment to connect the path from first click to signed contract. We did this for Home Credit in the Philippines on tools it already had, with a projected increase of up to 30% in submitted leads. Worth 20 minutes?",
+     "template": "Hi {{first_name}}, one more thought on timing. A new product, a new system or a new leader means the rules get rewritten anyway: which lead counts, who gets which message, how an application gets approved. That makes it the cheapest moment to connect the path from lead to signed contract. We did this for Home Credit in the Philippines on tools it already had, with a projected increase of up to 30% in submitted leads. Worth 20 minutes?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7391,7 +7391,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, one more thought on timing. A new product, a new system or a new leader means the rules get rewritten anyway: which lead counts, who gets which message, how an application gets approved. That makes it the cheapest moment to connect the path from first click to signed contract. We did this for Home Credit in the Philippines on tools it already had, with a projected increase of up to 30% in submitted leads. Worth 20 minutes?",
+     "template": "Hi {{first_name}}, one more thought on timing. A new product, a new system or a new leader means the rules get rewritten anyway: which lead counts, who gets which message, how an application gets approved. That makes it the cheapest moment to connect the path from lead to signed contract. We did this for Home Credit in the Philippines on tools it already had, with a projected increase of up to 30% in submitted leads. Worth 20 minutes?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7616,7 +7616,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, the usual fix is a new platform or one more dashboard. The product teams then keep messaging the same customers, and the lead still disappears between the form and the contract. We start from the other end: one customer lifecycle across all products, built on the tools you already run, and reporting that follows each lead to a signed contract. We work next to your team, not from a slide deck. Worth a look?",
+     "template": "Hi {{first_name}}, when several products chase the same customers, the usual fix is a new platform or one more dashboard. The teams keep messaging those customers anyway, and the lead still disappears between the form and the contract. We start from the other end: one customer lifecycle across all products, built on the tools you already run, and reporting that follows each lead to a signed contract. We work next to your team, not from a slide deck. Worth a look?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7640,7 +7640,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, one last thing. The same gap often shows up on the credit side: each product grows its own approval rules, and two identical applicants can get different answers. We map that once, across products and data sources, before anyone buys a new system. If either side is live at {{company_name}}, 20 minutes is enough to see if we can help. If it's not a priority, just say so and I'll stop.",
+     "template": "Hi {{first_name}}, one last thing. The same gap often shows up on the credit side: each product grows its own approval rules, and two identical applicants can get different answers. We map that once, across products and data sources, before anyone buys a new system. If either one is on the table at {{company_name}}, 20 minutes is enough to see if we can help. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7688,7 +7688,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, the usual fix is a new platform or one more dashboard. The product teams then keep messaging the same customers, and the lead still disappears between the form and the contract. We start from the other end: one customer lifecycle across all products, built on the tools you already run, and reporting that follows each lead to a signed contract. We work next to your team, not from a slide deck. Worth a look?",
+     "template": "Hi {{first_name}}, when several products chase the same customers, the usual fix is a new platform or one more dashboard. The teams keep messaging those customers anyway, and the lead still disappears between the form and the contract. We start from the other end: one customer lifecycle across all products, built on the tools you already run, and reporting that follows each lead to a signed contract. We work next to your team, not from a slide deck. Worth a look?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7712,7 +7712,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, one last thing. The same gap often shows up on the credit side: each product grows its own approval rules, and two identical applicants can get different answers. We map that once, across products and data sources, before anyone buys a new system. If either side is live at {{company_name}}, 20 minutes is enough to see if we can help. If it's not a priority, just say so and I'll stop.",
+     "template": "Hi {{first_name}}, one last thing. The same gap often shows up on the credit side: each product grows its own approval rules, and two identical applicants can get different answers. We map that once, across products and data sources, before anyone buys a new system. If either one is on the table at {{company_name}}, 20 minutes is enough to see if we can help. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7913,7 +7913,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, the short version of the Home Credit story. In the Philippines, several product teams were talking to the same customers, and online leads couldn't be traced through to contracts. We set four lifecycle stages and five use cases on the stack they already had, then built reporting from lead to contract. No new platform was needed, and the projection is up to 30% more submitted leads. Worth 20 minutes to see how it maps onto {{company_name}}?",
+     "template": "Hi {{first_name}}, here's one lending story in short: Home Credit in the Philippines. Several product teams were talking to the same customers, and online leads couldn't be traced through to contracts. We set up four lifecycle stages and five use cases on the stack they already had, then built reporting from lead to contract. No new platform was needed, and the projection is up to 30% more submitted leads. Worth 20 minutes to see how it maps onto {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7937,7 +7937,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, last note from me. Both lending cases on our site are from the Philippines, not Central Europe, and I won't pretend otherwise. The problems travel, though: for Security Bank we reviewed 23 data sources and put five credit products on one approval design. At {{company_name}}, that could mean one view from first click to contract and one answer per applicant. If it's not a priority, just say so and I'll stop.",
+     "template": "Hi {{first_name}}, last note from me. Both lending cases on our site are from the Philippines, not Central Europe, and I won't pretend otherwise. The problems travel, though: for Security Bank we reviewed 23 data sources, put five credit products on one approval design and wrote a 40+ page requirements blueprint for loan origination system vendors. At {{company_name}}, that could mean the same answer for the same applicant on every product. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -7985,7 +7985,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, the short version of the Home Credit story. In the Philippines, several product teams were talking to the same customers, and online leads couldn't be traced through to contracts. We set four lifecycle stages and five use cases on the stack they already had, then built reporting from lead to contract. No new platform was needed, and the projection is up to 30% more submitted leads. Worth 20 minutes to see how it maps onto {{company_name}}?",
+     "template": "Hi {{first_name}}, here's one lending story in short: Home Credit in the Philippines. Several product teams were talking to the same customers, and online leads couldn't be traced through to contracts. We set up four lifecycle stages and five use cases on the stack they already had, then built reporting from lead to contract. No new platform was needed, and the projection is up to 30% more submitted leads. Worth 20 minutes to see how it maps onto {{company_name}}?\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8009,7 +8009,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, last note from me. Both lending cases on our site are from the Philippines, not Central Europe, and I won't pretend otherwise. The problems travel, though: for Security Bank we reviewed 23 data sources and put five credit products on one approval design. At {{company_name}}, that could mean one view from first click to contract and one answer per applicant. If it's not a priority, just say so and I'll stop.",
+     "template": "Hi {{first_name}}, last note from me. Both lending cases on our site are from the Philippines, not Central Europe, and I won't pretend otherwise. The problems travel, though: for Security Bank we reviewed 23 data sources, put five credit products on one approval design and wrote a 40+ page requirements blueprint for loan origination system vendors. At {{company_name}}, that could mean the same answer for the same applicant on every product. If it's not a priority, just say so and I'll stop.\n\n{{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8210,7 +8210,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ještě k načasování. V takové fázi růstu rozhodnou první měsíce o podobě celé sítě: kde budou stát boxy, kteří partneři převezmou objem a na jakých systémech to celé poběží. Měnit to později je pomalé a drahé. V Addvery jsme spoluzaložili BOX NOW v Řecku a vybudovali jeho technologie, značku i provoz: přes 700 chytrých boxů ve více než 60 řeckých městech za šest měsíců od nuly. Stálo by to za 20minutový rozhovor? {{sender_first_name}}",
+     "template": "Dobrý den, ještě k načasování. V prvních měsících se v praxi rozhoduje, kde budou stát boxy, kteří partneři převezmou objem a na jakých systémech to celé poběží. Tím jsme sami prošli. V Addvery jsme spoluzaložili BOX NOW v Řecku a vybudovali jeho technologie, značku i provoz: přes 700 chytrých boxů ve více než 60 řeckých městech za šest měsíců od nuly. Stálo by to za 20minutový rozhovor? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8234,7 +8234,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ozývám se naposledy. Pokud firma {{company_name}} právě vstupuje na nový trh nebo rozšiřuje síť, umíme pomoct s tím, co obvykle drhne: kam umístit boxy a výdejní místa, jak nastavit spolupráci s partnery a přeshraniční toky zásilek a jak to celé propojit v systémech. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. A pokud jen nesedí načasování, pošlete jedno slovo: později. {{sender_first_name}}",
+     "template": "Dobrý den, ozývám se naposledy. Pokud firma {{company_name}} právě vstupuje na nový trh nebo rozšiřuje síť, umíme pomoct i s tím, co se kolem sítě točí: s přeshraničními toky zásilek, s automatizací procesů a s daty, která ukážou, jestli se to celé vyplácí. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8282,7 +8282,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ještě k načasování. V takové fázi růstu rozhodnou první měsíce o podobě celé sítě: kde budou stát boxy, kteří partneři převezmou objem a na jakých systémech to celé poběží. Měnit to později je pomalé a drahé. V Addvery jsme spoluzaložili BOX NOW v Řecku a vybudovali jeho technologie, značku i provoz: přes 700 chytrých boxů ve více než 60 řeckých městech za šest měsíců od nuly. Stálo by to za 20minutový rozhovor? {{sender_first_name}}",
+     "template": "Dobrý den, ještě k načasování. V prvních měsících se v praxi rozhoduje, kde budou stát boxy, kteří partneři převezmou objem a na jakých systémech to celé poběží. Tím jsme sami prošli. V Addvery jsme spoluzaložili BOX NOW v Řecku a vybudovali jeho technologie, značku i provoz: přes 700 chytrých boxů ve více než 60 řeckých městech za šest měsíců od nuly. Stálo by to za 20minutový rozhovor? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8306,7 +8306,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, ozývám se naposledy. Pokud firma {{company_name}} právě vstupuje na nový trh nebo rozšiřuje síť, umíme pomoct s tím, co obvykle drhne: kam umístit boxy a výdejní místa, jak nastavit spolupráci s partnery a přeshraniční toky zásilek a jak to celé propojit v systémech. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. A pokud jen nesedí načasování, pošlete jedno slovo: později. {{sender_first_name}}",
+     "template": "Dobrý den, ozývám se naposledy. Pokud firma {{company_name}} právě vstupuje na nový trh nebo rozšiřuje síť, umíme pomoct i s tím, co se kolem sítě točí: s přeshraničními toky zásilek, s automatizací procesů a s daty, která ukážou, jestli se to celé vyplácí. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8507,7 +8507,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, drahou poslední míli řeší většina dopravců stejně: víc aut, víc termínů pro opakované doručení, víc boxů tam, kde se zrovna našlo místo. Přidá to kapacitu, ale příčinu to většinou neodstraní. V Addvery začínáme od dat: kde se zásilky napoprvé nedoručí, kde si lidé balíky opravdu vyzvedávají a co stojí jednotlivé trasy a místa. Pak to s vámi postavíme, od rozmístění a partnerů po systémy, a nekončíme u prezentace. Našlo by se na to 20 minut? {{sender_first_name}}",
+     "template": "Dobrý den, drahou poslední míli řeší většina dopravců stejně: víc aut, víc termínů pro opakované doručení, víc boxů tam, kde se zrovna našlo místo. Přidá to kapacitu, ale příčinu to většinou neodstraní. V Addvery začínáme od dat: kde se zásilky napoprvé nepodaří doručit, kde si lidé balíky opravdu vyzvedávají a co stojí jednotlivé trasy a místa. Pak s vámi řešení postavíme, od rozmístění a partnerů po systémy. U prezentace nekončíme. Našlo by se na to 20 minut? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8579,7 +8579,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, drahou poslední míli řeší většina dopravců stejně: víc aut, víc termínů pro opakované doručení, víc boxů tam, kde se zrovna našlo místo. Přidá to kapacitu, ale příčinu to většinou neodstraní. V Addvery začínáme od dat: kde se zásilky napoprvé nedoručí, kde si lidé balíky opravdu vyzvedávají a co stojí jednotlivé trasy a místa. Pak to s vámi postavíme, od rozmístění a partnerů po systémy, a nekončíme u prezentace. Našlo by se na to 20 minut? {{sender_first_name}}",
+     "template": "Dobrý den, drahou poslední míli řeší většina dopravců stejně: víc aut, víc termínů pro opakované doručení, víc boxů tam, kde se zrovna našlo místo. Přidá to kapacitu, ale příčinu to většinou neodstraní. V Addvery začínáme od dat: kde se zásilky napoprvé nepodaří doručit, kde si lidé balíky opravdu vyzvedávají a co stojí jednotlivé trasy a místa. Pak s vámi řešení postavíme, od rozmístění a partnerů po systémy. U prezentace nekončíme. Našlo by se na to 20 minut? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8828,7 +8828,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, tohle je poslední zpráva ode mě. Pokud ve firmě {{company_name}} řešíte síť výdejních boxů, vstup na nový trh nebo nové nastavení poslední míle, můžeme za 20 minut projít, jak se BOX NOW dostal od nuly na více než 700 boxů a co by se z toho dalo použít u vás. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}",
+     "template": "Dobrý den, tohle je poslední zpráva ode mě. Pokud ve firmě {{company_name}} řešíte síť výdejních boxů, vstup na nový trh nebo nové nastavení poslední míle, můžeme za 20 minut projít, co jsme se při budování BOX NOW naučili a co by se z toho dalo použít u vás. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -8900,7 +8900,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Dobrý den, tohle je poslední zpráva ode mě. Pokud ve firmě {{company_name}} řešíte síť výdejních boxů, vstup na nový trh nebo nové nastavení poslední míle, můžeme za 20 minut projít, jak se BOX NOW dostal od nuly na více než 700 boxů a co by se z toho dalo použít u vás. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}",
+     "template": "Dobrý den, tohle je poslední zpráva ode mě. Pokud ve firmě {{company_name}} řešíte síť výdejních boxů, vstup na nový trh nebo nové nastavení poslední míle, můžeme za 20 minut projít, co jsme se při budování BOX NOW naučili a co by se z toho dalo použít u vás. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9101,7 +9101,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. In einer Wachstumsphase wie dieser legen die ersten Monate die Form des Netzes fest: wo die Paketautomaten stehen, welche Partner das Volumen tragen und auf welchen Systemen alles läuft. Das später zu ändern, ist langsam und teuer. Bei Addvery haben wir BOX NOW in Griechenland mitgegründet und Technik, Marke und Betrieb aufgebaut: über 700 smarte Paketautomaten in über 60 griechischen Städten, in sechs Monaten von null. Lohnt sich ein Austausch von 20 Minuten? {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. In der Praxis entscheidet sich in den ersten Monaten, wo die Paketautomaten stehen, welche Partner das Volumen tragen und auf welchen Systemen alles läuft. Das kennen wir aus eigener Erfahrung. Bei Addvery haben wir BOX NOW in Griechenland mitgegründet und Technik, Marke und Betrieb aufgebaut: in sechs Monaten von null auf über 700 smarte Paketautomaten in über 60 griechischen Städten. Lohnt sich ein Austausch von 20 Minuten? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9125,7 +9125,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Wenn {{company_name}} gerade einen neuen Markt erschließt oder das Netz ausbaut, helfen wir bei dem, was gern hakt: wo Paketautomaten und Abholstellen hinkommen, Partner und grenzüberschreitende Paketströme und die Systeme, die alles verbinden. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. Und wenn nur der Zeitpunkt nicht passt, genügt ein Wort: später. {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Wenn {{company_name}} gerade einen neuen Markt erschließt oder das eigene Netz ausbaut, helfen wir auch bei dem, was rund um das Netz anfällt: grenzüberschreitende Paketströme, Prozessautomatisierung und Daten, die zeigen, ob sich das Ganze rechnet. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9173,7 +9173,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. In einer Wachstumsphase wie dieser legen die ersten Monate die Form des Netzes fest: wo die Paketautomaten stehen, welche Partner das Volumen tragen und auf welchen Systemen alles läuft. Das später zu ändern, ist langsam und teuer. Bei Addvery haben wir BOX NOW in Griechenland mitgegründet und Technik, Marke und Betrieb aufgebaut: über 700 smarte Paketautomaten in über 60 griechischen Städten, in sechs Monaten von null. Lohnt sich ein Austausch von 20 Minuten? {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, noch ein Gedanke zum Timing. In der Praxis entscheidet sich in den ersten Monaten, wo die Paketautomaten stehen, welche Partner das Volumen tragen und auf welchen Systemen alles läuft. Das kennen wir aus eigener Erfahrung. Bei Addvery haben wir BOX NOW in Griechenland mitgegründet und Technik, Marke und Betrieb aufgebaut: in sechs Monaten von null auf über 700 smarte Paketautomaten in über 60 griechischen Städten. Lohnt sich ein Austausch von 20 Minuten? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9197,7 +9197,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Wenn {{company_name}} gerade einen neuen Markt erschließt oder das Netz ausbaut, helfen wir bei dem, was gern hakt: wo Paketautomaten und Abholstellen hinkommen, Partner und grenzüberschreitende Paketströme und die Systeme, die alles verbinden. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. Und wenn nur der Zeitpunkt nicht passt, genügt ein Wort: später. {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, das ist meine letzte Nachricht. Wenn {{company_name}} gerade einen neuen Markt erschließt oder das eigene Netz ausbaut, helfen wir auch bei dem, was rund um das Netz anfällt: grenzüberschreitende Paketströme, Prozessautomatisierung und Daten, die zeigen, ob sich das Ganze rechnet. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9398,7 +9398,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, eine teure letzte Meile lösen die meisten Paketdienste gleich: mehr Fahrzeuge, mehr Zweitzustellungen, mehr Paketautomaten dort, wo gerade Platz frei ist. Das schafft Kapazität, behebt aber selten die Ursache. Bei Addvery fangen wir bei den Daten an: wo Pakete beim ersten Versuch scheitern, wo Kunden tatsächlich abholen, was jede Tour und jeder Standort kostet. Dann setzen wir es mit Ihnen um, von Standorten und Partnern bis zu den Systemen, statt bei Folien aufzuhören. 20 Minuten wert? {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, auf eine teure letzte Meile reagieren die meisten Paketdienste gleich: mehr Fahrzeuge, mehr Zweitzustellungen, mehr Paketautomaten, wo gerade Platz ist. Das schafft Kapazität, behebt aber selten die Ursache. Bei Addvery fangen wir bei den Daten an: wo der erste Zustellversuch scheitert, wo Kunden wirklich abholen, was jede Tour und jeder Standort kostet. Dann setzen wir die Lösung mit Ihnen um, von Standorten und Partnern bis zu den Systemen, statt bei Folien aufzuhören. Ist Ihnen das 20 Minuten wert? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9422,7 +9422,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, kurz zum Abschluss. Wenn die Erstzustellquote, grenzüberschreitende Paketströme oder ein Abholnetz, das sich rechnet, für nächstes Jahr auf der Liste stehen, zeigen wir Ihnen gern, wie das bei {{company_name}} aussehen könnte, ausgehend von den Daten, die Sie schon haben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, kurz zum Abschluss. Wenn die Erstzustellquote, grenzüberschreitende Paketströme oder ein Netz aus Abholstellen, das sich rechnet, für nächstes Jahr auf Ihrer Liste stehen, zeigen wir Ihnen gern, wie das bei {{company_name}} aussehen könnte, ausgehend von den Daten, die Sie schon haben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9470,7 +9470,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, eine teure letzte Meile lösen die meisten Paketdienste gleich: mehr Fahrzeuge, mehr Zweitzustellungen, mehr Paketautomaten dort, wo gerade Platz frei ist. Das schafft Kapazität, behebt aber selten die Ursache. Bei Addvery fangen wir bei den Daten an: wo Pakete beim ersten Versuch scheitern, wo Kunden tatsächlich abholen, was jede Tour und jeder Standort kostet. Dann setzen wir es mit Ihnen um, von Standorten und Partnern bis zu den Systemen, statt bei Folien aufzuhören. 20 Minuten wert? {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, auf eine teure letzte Meile reagieren die meisten Paketdienste gleich: mehr Fahrzeuge, mehr Zweitzustellungen, mehr Paketautomaten, wo gerade Platz ist. Das schafft Kapazität, behebt aber selten die Ursache. Bei Addvery fangen wir bei den Daten an: wo der erste Zustellversuch scheitert, wo Kunden wirklich abholen, was jede Tour und jeder Standort kostet. Dann setzen wir die Lösung mit Ihnen um, von Standorten und Partnern bis zu den Systemen, statt bei Folien aufzuhören. Ist Ihnen das 20 Minuten wert? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9494,7 +9494,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, kurz zum Abschluss. Wenn die Erstzustellquote, grenzüberschreitende Paketströme oder ein Abholnetz, das sich rechnet, für nächstes Jahr auf der Liste stehen, zeigen wir Ihnen gern, wie das bei {{company_name}} aussehen könnte, ausgehend von den Daten, die Sie schon haben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, kurz zum Abschluss. Wenn die Erstzustellquote, grenzüberschreitende Paketströme oder ein Netz aus Abholstellen, das sich rechnet, für nächstes Jahr auf Ihrer Liste stehen, zeigen wir Ihnen gern, wie das bei {{company_name}} aussehen könnte, ausgehend von den Daten, die Sie schon haben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9695,7 +9695,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, die Geschichte von BOX NOW in Kürze. Am Anfang stand ein neues Unternehmen ohne Netz, Systeme und Marke. Wir haben es mitgegründet, Technik, Marke und Betrieb aufgebaut und es über ein Jahr lang übergangsweise geführt. Nach sechs Monaten ab null hatte es über 700 smarte Paketautomaten in über 60 griechischen Städten. Für {{company_name}} hieße das: ein Team, das das Netz plant, die Systeme baut und bleibt, bis alles läuft, statt drei Dienstleistern und einer Präsentation. Einen Blick wert? {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, die Geschichte von BOX NOW in Kürze. Am Anfang stand ein neues Unternehmen ohne Netz, Systeme und Marke. Wir haben es mitgegründet, Technik, Marke und Betrieb aufgebaut und es über ein Jahr lang übergangsweise geführt. In sechs Monaten kam es von null auf über 700 smarte Paketautomaten in über 60 griechischen Städten. Für {{company_name}} könnte das heißen: ein Team, das das Netz plant, die Systeme baut und bleibt, bis alles läuft, statt drei Dienstleistern und einer Präsentation. Einen Blick wert? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9719,7 +9719,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, meine letzte Nachricht. Wenn bei {{company_name}} ein Netz aus Paketautomaten, ein neuer Markt oder ein neues Setup für die letzte Meile ansteht, könnten Ihnen 20 Minuten darüber, wie BOX NOW von null auf über 700 Automaten kam, ein paar Umwege ersparen. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, meine letzte Nachricht. Wenn bei {{company_name}} ein Netz aus Paketautomaten, ein neuer Markt oder ein neues Setup für die letzte Meile ansteht, könnten Ihnen 20 Minuten über unsere Erfahrungen beim Aufbau von BOX NOW ein paar Umwege ersparen. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9767,7 +9767,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, die Geschichte von BOX NOW in Kürze. Am Anfang stand ein neues Unternehmen ohne Netz, Systeme und Marke. Wir haben es mitgegründet, Technik, Marke und Betrieb aufgebaut und es über ein Jahr lang übergangsweise geführt. Nach sechs Monaten ab null hatte es über 700 smarte Paketautomaten in über 60 griechischen Städten. Für {{company_name}} hieße das: ein Team, das das Netz plant, die Systeme baut und bleibt, bis alles läuft, statt drei Dienstleistern und einer Präsentation. Einen Blick wert? {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, die Geschichte von BOX NOW in Kürze. Am Anfang stand ein neues Unternehmen ohne Netz, Systeme und Marke. Wir haben es mitgegründet, Technik, Marke und Betrieb aufgebaut und es über ein Jahr lang übergangsweise geführt. In sechs Monaten kam es von null auf über 700 smarte Paketautomaten in über 60 griechischen Städten. Für {{company_name}} könnte das heißen: ein Team, das das Netz plant, die Systeme baut und bleibt, bis alles läuft, statt drei Dienstleistern und einer Präsentation. Einen Blick wert? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9791,7 +9791,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hallo {{first_name}}, meine letzte Nachricht. Wenn bei {{company_name}} ein Netz aus Paketautomaten, ein neuer Markt oder ein neues Setup für die letzte Meile ansteht, könnten Ihnen 20 Minuten darüber, wie BOX NOW von null auf über 700 Automaten kam, ein paar Umwege ersparen. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
+     "template": "Hallo {{first_name}}, meine letzte Nachricht. Wenn bei {{company_name}} ein Netz aus Paketautomaten, ein neuer Markt oder ein neues Setup für die letzte Meile ansteht, könnten Ihnen 20 Minuten über unsere Erfahrungen beim Aufbau von BOX NOW ein paar Umwege ersparen. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -9992,7 +9992,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, one more thought on timing. In a growth step like this one, the first months fix the shape of the network: where the lockers go, which partners carry the volume, which systems it all runs on. Changing that later is slow and expensive. At Addvery we co-founded BOX NOW in Greece and built its tech, brand and operations: 700+ smart lockers in 60+ Greek cities, six months from zero. Worth 20 minutes to compare notes? {{sender_first_name}}",
+     "template": "Hi {{first_name}}, one more thought on timing. In practice, the first months settle where the lockers go, which partners carry the volume and which systems it all runs on. We've been through that ourselves. At Addvery we co-founded BOX NOW in Greece and built its tech, brand and operations: 700+ smart lockers in 60+ Greek cities, six months from zero. Worth 20 minutes to compare notes? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10016,7 +10016,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, last note from me. If {{company_name}} is opening a market or growing its network right now, we can help with the parts that tend to slip: where lockers and pickup points go, partners and cross-border flows, and the systems that tie it all together. If it's not a priority, just say so and I'll stop. And if it's just bad timing, a one-word 'later' works too. {{sender_first_name}}",
+     "template": "Hi {{first_name}}, last note from me. If {{company_name}} is opening a market or growing its network right now, we also help with what sits around the network: cross-border parcel flows, process automation, and the data that shows whether it all pays off. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10064,7 +10064,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, one more thought on timing. In a growth step like this one, the first months fix the shape of the network: where the lockers go, which partners carry the volume, which systems it all runs on. Changing that later is slow and expensive. At Addvery we co-founded BOX NOW in Greece and built its tech, brand and operations: 700+ smart lockers in 60+ Greek cities, six months from zero. Worth 20 minutes to compare notes? {{sender_first_name}}",
+     "template": "Hi {{first_name}}, one more thought on timing. In practice, the first months settle where the lockers go, which partners carry the volume and which systems it all runs on. We've been through that ourselves. At Addvery we co-founded BOX NOW in Greece and built its tech, brand and operations: 700+ smart lockers in 60+ Greek cities, six months from zero. Worth 20 minutes to compare notes? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10088,7 +10088,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, last note from me. If {{company_name}} is opening a market or growing its network right now, we can help with the parts that tend to slip: where lockers and pickup points go, partners and cross-border flows, and the systems that tie it all together. If it's not a priority, just say so and I'll stop. And if it's just bad timing, a one-word 'later' works too. {{sender_first_name}}",
+     "template": "Hi {{first_name}}, last note from me. If {{company_name}} is opening a market or growing its network right now, we also help with what sits around the network: cross-border parcel flows, process automation, and the data that shows whether it all pays off. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10289,7 +10289,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, most parcel companies handle a costly last mile the same way: more vans, more redelivery slots, more lockers wherever a site happens to be free. That adds capacity, but rarely fixes the cause. At Addvery we start from the data: where parcels fail first time, where people actually collect, what each route and location costs. Then we build it with you, from placement and partners to the systems behind them, and don't stop at a slide deck. Worth 20 minutes? {{sender_first_name}}",
+     "template": "Hi {{first_name}}, most parcel companies handle a costly last mile the same way: more vans, more redelivery slots, more lockers wherever a site happens to be free. That adds capacity, but rarely fixes the cause. At Addvery we start from the data: where parcels fail first time, where people actually collect, what each route and location costs. Then we build the fix with you, from placement and partners to the systems behind them. We don't stop at a slide deck. Worth 20 minutes? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10313,7 +10313,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, closing the loop. If first-attempt success, cross-border flows or a pickup network that pays its way are on the list for next year, we can show how it could look at {{company_name}}, starting from the data you already have. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
+     "template": "Hi {{first_name}}, one last note. If first-attempt success, cross-border flows or a pickup network that pays its way are on your list for next year, we can show what that could look like at {{company_name}}, starting from the data you already have. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10361,7 +10361,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, most parcel companies handle a costly last mile the same way: more vans, more redelivery slots, more lockers wherever a site happens to be free. That adds capacity, but rarely fixes the cause. At Addvery we start from the data: where parcels fail first time, where people actually collect, what each route and location costs. Then we build it with you, from placement and partners to the systems behind them, and don't stop at a slide deck. Worth 20 minutes? {{sender_first_name}}",
+     "template": "Hi {{first_name}}, most parcel companies handle a costly last mile the same way: more vans, more redelivery slots, more lockers wherever a site happens to be free. That adds capacity, but rarely fixes the cause. At Addvery we start from the data: where parcels fail first time, where people actually collect, what each route and location costs. Then we build the fix with you, from placement and partners to the systems behind them. We don't stop at a slide deck. Worth 20 minutes? {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10385,7 +10385,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, closing the loop. If first-attempt success, cross-border flows or a pickup network that pays its way are on the list for next year, we can show how it could look at {{company_name}}, starting from the data you already have. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
+     "template": "Hi {{first_name}}, one last note. If first-attempt success, cross-border flows or a pickup network that pays its way are on your list for next year, we can show what that could look like at {{company_name}}, starting from the data you already have. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10610,7 +10610,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, last one from me. If a locker network, a new market or a new last-mile setup is on the table at {{company_name}}, 20 minutes on how BOX NOW went from zero to 700+ lockers might save you a few wrong turns. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
+     "template": "Hi {{first_name}}, last one from me. If a locker network, a new market or a new last-mile setup is on the table at {{company_name}}, 20 minutes on what we learned building BOX NOW might save you a few wrong turns. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"
@@ -10682,7 +10682,7 @@
     "type": "linkedin_send_message",
     "automation": "auto",
     "payload": {
-     "template": "Hi {{first_name}}, last one from me. If a locker network, a new market or a new last-mile setup is on the table at {{company_name}}, 20 minutes on how BOX NOW went from zero to 700+ lockers might save you a few wrong turns. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
+     "template": "Hi {{first_name}}, last one from me. If a locker network, a new market or a new last-mile setup is on the table at {{company_name}}, 20 minutes on what we learned building BOX NOW might save you a few wrong turns. If it's not a priority, just say so and I'll stop. {{sender_first_name}}",
      "attachments": [],
      "template_uuid": null,
      "stop_on_reply_level": "always"

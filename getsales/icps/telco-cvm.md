@@ -2,6 +2,12 @@
 
 Status: draft, **needs a native read** (Czech and German above all).
 
+Copy pass (2 Nov, marketing:email-sequence + marketing:brand-review):
+- **Sequence.** Signal Follow-up 2 no longer restates Follow-up 1's point that the early months matter. It now says what the 20 minutes are: you tell us what's changing, and we tell you where we'd look first. The problem briefs now keep Message 1 on the two funnel problems, because both follow-ups build on the funnel. The "several apps" problem had nothing to follow it.
+- **Voice.** Vague asks are now concrete ("where that might sit for you" became "if yours holds something similar"). A Follow-up 2 that promised "one question" and asked two now says "two". EN proof Follow-up 1's "it would mean the same view" became "we'd look at the same two things", and "nejlepší chvíle" became "dobrá chvíle".
+- **Facts.** Every number, client and qualifier was checked against the case studies, and none needed a change. "a public date" is now "a publicly announced date", as in the CS and DE copy.
+- **Czech.** "zájemců … ztrácejí", "ve kterém", reflexive "své", "tarify a domácí internet". "Má smysl se na to podívat?" replaces the calque "Stálo by to za pohled?". In the proof follow-ups, `{{company_name}}` now sits after "ve společnosti", as the conventions say. **German.** "bevor sich wieder alte Routinen einschleifen", and fewer stacked "Wenn" clauses.
+
 ICP: telco, pay-TV and streaming operators, for customer value management and digital sales. Czech, German and English × signal, problem and proof: 9 workflows. These are Addvery's messages to Addvery's prospects, sent by an Addvery person.
 
 ## How every workflow runs
@@ -39,28 +45,28 @@ Message 1 names clients by type only; the follow-ups name them. Leads at Vodafon
 
 Write in Czech. Start with 'Dobrý den,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on the lead's one dated public trigger from the last 90 days (a new commercial, CVM or online-sales role; CVM or digital-sales hiring; a bundle or streaming launch; a brand merger; a CRM replacement): name it plainly, say in one sentence why that moment matters for turning online interest into orders, and end on one short question. Don't pitch Addvery, cite numbers or clients, ask for a meeting, or use anything private. Use formal vykání, and no gendered first-person past tense ('viděl/a jsem') or 'rád/a'.
 
-**Message 1 example** (267 characters). Fictional lead: new Head of Online Sales at Relecloud Mobil (CZ mobile operator), in the role for six weeks.
+**Message 1 example** (268 characters). Fictional lead: new Head of Online Sales at Relecloud Mobil (CZ mobile operator), in the role for six weeks.
 
 ```text
-Dobrý den, gratuluji k nové pozici v čele online prodeje ve společnosti Relecloud Mobil. Prvních pár měsíců v takové roli je nejlepší chvíle zjistit, kolik zájmu o tarify z webu nakonec dotáhne až call centrum a kde se cestou ztrácí. Vidíte to dnes v jednom přehledu?
+Dobrý den, gratuluji k nové pozici v čele online prodeje ve společnosti Relecloud Mobil. Prvních pár měsíců v takové roli je dobrá chvíle zjistit, kolik zájemců o tarify z webu nakonec dotáhne až call centrum a kde se cestou ztrácejí. Vidíte to dnes v jednom přehledu?
 ```
 
-**Follow-up 1** (3 days later, 444 characters)
+**Follow-up 1** (3 days later, 463 characters)
 
 ```text
 Dobrý den,
 
-ještě k tomu, co se teď ve společnosti {{company_name}} mění. Nová role, nová nabídka nebo spojení značek je chvíle, kdy se dá prodejní trychtýř nastavit znovu, dřív než se usadí staré zvyky. Pro Vodafone CZ jsme po 14 workshopech se 16 lidmi z CVM a online prodeje namodelovali až 1 660 objednávek měsíčně navíc, v trychtýři, který už měli. Má smysl si na to dát 20 minut a projít, kde by to mohlo být u vás?
+ještě k tomu, co se teď ve společnosti {{company_name}} mění. Nová role, nová nabídka nebo spojení značek je chvíle, kdy se dá prodejní trychtýř nastavit znovu, dřív než se všechno zase zaběhne. Pro Vodafone CZ jsme po 14 workshopech se 16 lidmi z CVM a online prodeje namodelovali až 1 660 objednávek měsíčně navíc, v trychtýři, který už měli. Má smysl si na to dát 20 minut a podívat se, jestli podobné rezervy nejsou i u vás?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 331 characters)
+**Follow-up 2** (3 days after that, 346 characters)
 
 ```text
 Dobrý den,
 
-ozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím. Jen jedna poznámka: s tím, co se v trychtýři nastaví v prvních měsících, se pak pracuje roky. Pokud by se hodil pohled zvenku, stačí odpovědět a najdeme 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.
+ozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím. Kdyby se hodil pohled zvenku, odpovězte a těch 20 minut pojmeme jednoduše: vy nám řeknete, co se u vás mění, a my vám řekneme, kam bychom se ve vašem trychtýři podívali nejdřív. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.
 
 {{sender_first_name}}
 ```
@@ -69,12 +75,12 @@ ozývám se naposledy. Po velké změně bývá kalendář plný, tomu rozumím.
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in Czech. Start with 'Dobrý den,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent; viewers who don't want several apps), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results. Use formal vykání, and no gendered first-person past tense ('viděl/a jsem') or 'rád/a'.
+Write in Czech. Start with 'Dobrý den,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on one of this ICP's funnel problems, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. Don't use another problem: both follow-ups build on the funnel. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results. Use formal vykání, and no gendered first-person past tense ('viděl/a jsem') or 'rád/a'.
 
 **Message 1 example** (223 characters). Fictional lead: Director of CVM at Trey Telekom (CZ operator, mobile and home internet), no recent trigger.
 
 ```text
-Dobrý den, Trey Telekom prodává tarify i domácí internet na webu, v prodejnách i přes call centrum. Při takovém nastavení má obvykle každý tým svoje čísla, ale jeden pohled od kampaně po aktivaci chybí. Jak to máte dnes vy?
+Dobrý den, Trey Telekom prodává tarify a domácí internet na webu, v prodejnách i přes call centrum. Při takovém nastavení má obvykle každý tým svoje čísla, ale jeden pohled od kampaně po aktivaci chybí. Jak to máte dnes vy?
 ```
 
 **Follow-up 1** (3 days later, 456 characters)
@@ -87,12 +93,12 @@ operátoři to většinou řeší dalším dashboardem nebo dalším nástrojem.
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 390 characters)
+**Follow-up 2** (3 days after that, 393 characters)
 
 ```text
 Dobrý den,
 
-ozývám se naposledy, tak jen jedna otázka na zamyšlení: kolik objednávek, které začnou na webu, nakonec dotáhne call centrum? A víte, v kterém kroku se zákazník rozhodne zavolat? Pokud odpověď není po ruce, právě tam se často schovávají objednávky navíc. Rádi to s vámi projdeme za 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.
+ozývám se naposledy, tak jen dvě otázky na zamyšlení: kolik objednávek, které začnou na webu, nakonec dotáhne call centrum? A ve kterém kroku se zákazník rozhodne zavolat? Když odpovědi nemáte po ruce, právě v tom kroku se často schovávají objednávky navíc. Rádi to s vámi projdeme za 20 minut. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.
 
 {{sender_first_name}}
 ```
@@ -101,30 +107,30 @@ ozývám se naposledy, tak jen jedna otázka na zamyšlení: kolik objednávek, 
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in Czech. Start with 'Dobrý den,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on the closest look-alike result, worded as Addvery's site has it: for a mobile, fixed or convergent operator, up to 1,660 extra orders a month (modelled) found in a telco's existing funnel; for streaming or pay-TV, 1.8 million customers moved to one new platform on the planned date, when two Czech media groups merged their streaming services. Describe the client by type, not name, add one clause on what it could mean for the lead's company, and end with 'Stálo by to za pohled?'. Never drop 'up to' or 'modelled', round up, or promise the lead the same result. Use formal vykání, and no gendered first-person past tense ('viděl/a jsem') or 'rád/a'.
+Write in Czech. Start with 'Dobrý den,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on the closest look-alike result, worded as Addvery's site has it: for a mobile, fixed or convergent operator, up to 1,660 extra orders a month (modelled) found in a telco's existing funnel; for streaming or pay-TV, 1.8 million customers moved to one new platform on the planned date, when two Czech media groups merged their streaming services. Describe the client by type, not name, add one clause on what it could mean for the lead's company, and end with 'Má smysl se na to podívat?'. Never drop 'up to' or 'modelled', round up, or promise the lead the same result. Use formal vykání, and no gendered first-person past tense ('viděl/a jsem') or 'rád/a'.
 
-**Message 1 example** (288 characters). Fictional lead: Head of Subscriptions at Southridge Video (CZ streaming service), which runs two apps.
+**Message 1 example** (307 characters). Fictional lead: Head of Subscriptions at Southridge Video (CZ streaming service), which runs two apps.
 
 ```text
-Dobrý den, pomohli jsme dvěma českým mediálním skupinám spojit jejich streamovací služby a převést 1,8 milionu zákazníků na jednu platformu, a to v plánovaném termínu. Pokud Southridge Video chystá novou platformu, to, co fungovalo tam, by mohlo ubrat riziko i vám. Stálo by to za pohled?
+Dobrý den, pomohli jsme dvěma českým mediálním skupinám spojit své streamovací služby a převést 1,8 milionu zákazníků na jednu platformu, a to v plánovaném termínu. Pokud Southridge Video uvažuje o spojení svých dvou aplikací, to, co fungovalo tam, by mohlo snížit riziko i u vás. Má smysl se na to podívat?
 ```
 
-**Follow-up 1** (3 days later, 474 characters)
+**Follow-up 1** (3 days later, 499 characters)
 
 ```text
 Dobrý den,
 
-krátce jeden příběh z telekomunikací. Ve Vodafone CZ se většina objednávek pořád dokončovala přes call centrum. Za 14 workshopů se 16 lidmi z CVM a online prodeje vzniklo sedm iniciativ s vyčíslenými náklady v jedné roadmapě a model ukázal až 1 660 objednávek měsíčně navíc, po odečtení překryvů. Pro {{company_name}} by to byl stejný pohled: kolik objednávek už ve vašem trychtýři leží a kolik by stálo je získat. Stálo by to za 20 minut?
+krátce jeden příběh z telekomunikací. Ve Vodafone CZ se většina objednávek pořád dokončovala přes call centrum. Za 14 workshopů se 16 lidmi z CVM a online prodeje vzniklo sedm iniciativ s vyčíslenými náklady v jedné roadmapě a model ukázal až 1 660 objednávek měsíčně navíc, po odečtení překryvů. Ve společnosti {{company_name}} bychom se podívali na stejné dvě věci: kolik objednávek už ve vašem trychtýři leží a kolik by stálo je získat. Stálo by to za 20 minut?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 454 characters)
+**Follow-up 2** (3 days after that, 474 characters)
 
 ```text
 Dobrý den,
 
-ještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupiny spojily své streamovací služby do Oneplay a 1,8 milionu zákazníků bylo potřeba převést k veřejně ohlášenému datu. Jeden tým napříč 10+ odděleními, tři kola cenových testů a start 3. března 2025, podle plánu. Pokud {{company_name}} čeká podobný krok, rádi ukážeme, jak jsme na to šli. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.
+ještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupiny spojily své streamovací služby do Oneplay a 1,8 milionu zákazníků bylo potřeba převést k veřejně ohlášenému datu. Jeden tým napříč 10+ odděleními, tři kola cenových testů a start 3. března 2025, podle plánu. Jestli ve společnosti {{company_name}} chystáte podobný krok, rádi ukážeme, jak jsme na to šli. Pokud to teď není priorita, stačí napsat a už se nebudu ozývat.
 
 {{sender_first_name}}
 ```
@@ -143,22 +149,22 @@ Write in German with formal Sie. Start with 'Hallo' and the lead's first name, t
 Hallo Katrin, Litware Telekom hat vor vier Wochen ein Paket aus Mobilfunk, Internet und TV gestartet. Bei einem neuen Paket zeigt sich schnell, wie viel Interesse aus dem Web wirklich zur Bestellung wird und wie viel doch im Callcenter landet. Sehen Sie das heute in einer Übersicht, von der Kampagne bis zur Aktivierung?
 ```
 
-**Follow-up 1** (3 days later, 530 characters)
+**Follow-up 1** (3 days later, 542 characters)
 
 ```text
 Hallo {{first_name}},
 
-noch ein Gedanke dazu, was sich bei {{company_name}} gerade verändert. Eine neue Rolle, ein neues Paket oder eine Fusion öffnet ein kurzes Zeitfenster, um den Vertriebsfunnel neu aufzusetzen, bevor sich alte Routinen einschleifen. Bei Vodafone CZ haben wir nach 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert, im Funnel, den es dort schon gab. Lohnen sich 20 Minuten, um zu sehen, wo das bei Ihnen liegen könnte?
+noch ein Gedanke dazu, was sich bei {{company_name}} gerade verändert. Eine neue Rolle, ein neues Paket oder eine Fusion öffnet ein kurzes Zeitfenster, um den Vertriebsfunnel neu aufzusetzen, bevor sich wieder alte Routinen einschleifen. Bei Vodafone CZ haben wir nach 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert, im Funnel, den es dort schon gab. Lohnen sich 20 Minuten, um zu sehen, ob bei Ihnen Ähnliches zu holen ist?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 439 characters)
+**Follow-up 2** (3 days after that, 441 characters)
 
 ```text
 Hallo {{first_name}},
 
-das ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender voll, das verstehe ich. Nur ein Gedanke: Womit das Team die nächsten Jahre arbeitet, wird oft in den ersten Monaten im Funnel festgelegt. Wenn ein Blick von außen hilft, genügt eine kurze Antwort, und wir finden 20 Minuten. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
+das ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender voll, das verstehe ich. Falls ein Blick von außen hilft, genügt eine kurze Antwort. Die 20 Minuten sind schnell erklärt: Sie erzählen uns, was sich ändert, und wir sagen Ihnen, wo wir in Ihrem Funnel zuerst hinschauen würden. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 
 {{sender_first_name}}
 ```
@@ -167,7 +173,7 @@ das ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2–3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent; viewers who don't want several apps), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results.
+Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2–3 short sentences, under 400 characters in all. Rest it on one of this ICP's funnel problems, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. Don't use another problem: both follow-ups build on the funnel. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results.
 
 **Message 1 example** (274 characters). Fictional lead: Stefan, Head of CVM at Wide World Kabel (Austrian cable, internet and TV provider), no recent trigger.
 
@@ -185,12 +191,12 @@ die meisten Betreiber reagieren darauf mit noch einem Dashboard oder noch einem 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 488 characters)
+**Follow-up 2** (3 days after that, 493 characters)
 
 ```text
 Hallo {{first_name}},
 
-zum Schluss nur eine Frage zum Nachdenken: Wie viele Bestellungen, die auf Ihrer Website beginnen, werden am Ende im Callcenter abgeschlossen? Und wissen Sie, bei welchem Schritt Kunden zum Telefon greifen? Wenn die Antwort nicht gleich parat ist, stecken genau dort oft die zusätzlichen Bestellungen. Gern gehen wir das in 20 Minuten mit Ihnen durch. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
+zum Schluss nur zwei Fragen zum Nachdenken: Wie viele Bestellungen, die auf Ihrer Website beginnen, werden am Ende im Callcenter abgeschlossen? Und bei welchem Schritt greifen Kunden zum Telefon? Haben Sie die Antworten nicht gleich parat, stecken genau in diesem Schritt oft die zusätzlichen Bestellungen. Gern gehen wir das in 20 Minuten mit Ihnen durch. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 
 {{sender_first_name}}
 ```
@@ -241,22 +247,22 @@ Write in English. Start with 'Hi' and the lead's first name, then 2–3 short se
 Hi Dana, I see Northwind Telecom Group is hiring a Head of CVM. A new CVM lead often inherits plenty of data and many answers, but no single funnel from campaign to activation. Is that something you want fixed before they start?
 ```
 
-**Follow-up 1** (3 days later, 422 characters)
+**Follow-up 1** (3 days later, 434 characters)
 
 ```text
 Hi {{first_name}},
 
-one more thought on what's changing at {{company_name}}. A new role, a new bundle or a merger opens a short window to reset the sales funnel before old habits set in. At Vodafone CZ, after 14 workshops with 16 people from CVM and online sales, we modelled up to 1,660 extra orders a month, inside the funnel they already had. Worth 20 minutes to see where that might sit for you?
+one more thought on what's changing at {{company_name}}. A new role, a new bundle or a merger opens a short window to reset the sales funnel before old habits settle back in. At Vodafone CZ, after 14 workshops with 16 people from CVM and online sales, we modelled up to 1,660 extra orders a month, inside the funnel they already had. Worth 20 minutes to see if yours holds something similar?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 342 characters)
+**Follow-up 2** (3 days after that, 320 characters)
 
 ```text
 Hi {{first_name}},
 
-last note from me. After a big change the calendar fills up, I get that. One thought: whatever gets set up in the funnel in the first months is what the team lives with for years. If an outside view would help, just reply and we'll find 20 minutes. If it's not a priority, just say so and I'll stop.
+last note from me. After a big change the calendar fills up, I get that. If an outside view would help, reply and we'll keep the 20 minutes simple: you tell us what's changing, we tell you where we'd look first in your funnel. If it's not a priority, just say so and I'll stop.
 
 {{sender_first_name}}
 ```
@@ -265,7 +271,7 @@ last note from me. After a big change the calendar fills up, I get that. One tho
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in English. Start with 'Hi' and the lead's first name, then 2–3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent; viewers who don't want several apps), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results.
+Write in English. Start with 'Hi' and the lead's first name, then 2–3 short sentences, under 400 characters in all. Rest it on one of this ICP's funnel problems, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. Don't use another problem: both follow-ups build on the funnel. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results.
 
 **Message 1 example** (237 characters). Fictional lead: Head of Digital Sales at Proseware Mobile (operator in several CEE markets), no recent trigger.
 
@@ -283,12 +289,12 @@ most operators answer this with another dashboard or another tool. The data grow
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 392 characters)
+**Follow-up 2** (3 days after that, 387 characters)
 
 ```text
 Hi {{first_name}},
 
-last note, so just one question to sit with: how many orders that start on your website end up closed by the call centre? And do you know at which step people decide to pick up the phone? If the answer isn't to hand, that's often where the extra orders hide. Happy to walk through it in 20 minutes. If it's not a priority, just say so and I'll stop.
+last note, so two questions to sit with: how many orders that start on your website end up closed by the call centre? And at which step do people decide to pick up the phone? If the answers aren't to hand, that step is often where the extra orders hide. Happy to walk through it in 20 minutes. If it's not a priority, just say so and I'll stop.
 
 {{sender_first_name}}
 ```
@@ -305,22 +311,22 @@ Write in English. Start with 'Hi' and the lead's first name, then 2–3 short se
 Hi Marta, we helped two Czech media groups merge their streaming services and move 1.8 million customers to one platform, on the planned date. If VanArsdel Media Group is bringing its apps under one roof, what worked there could take some risk out of your move. Worth a look?
 ```
 
-**Follow-up 1** (3 days later, 482 characters)
+**Follow-up 1** (3 days later, 491 characters)
 
 ```text
 Hi {{first_name}},
 
-a short story from telecoms. At Vodafone CZ, most orders were still completed with a call-centre agent. Over 14 workshops with 16 people from CVM and online sales, we turned that into seven costed initiatives in one roadmap, and the model showed up to 1,660 extra orders a month, net of overlap. For {{company_name}}, it would mean the same view: how many orders already sit in your funnel, and what it costs to win them. Worth 20 minutes?
+a short story from telecoms. At Vodafone CZ, most orders were still completed with a call-centre agent. Over 14 workshops with 16 people from CVM and online sales, we turned that into seven costed initiatives in one roadmap, and the model showed up to 1,660 extra orders a month, net of overlap. At {{company_name}}, we'd look at the same two things: how many orders already sit in your funnel, and what it would cost to win them. Worth 20 minutes?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 443 characters)
+**Follow-up 2** (3 days after that, 455 characters)
 
 ```text
 Hi {{first_name}},
 
-one more story, this time from streaming. Two Czech media groups merged their streaming services into Oneplay, and 1.8 million customers had to move by a public date. One team across 10+ departments, three rounds of pricing tests, and a launch on 3 March 2025, as planned. If {{company_name}} has a move like that ahead, happy to show how we ran it. If it's not a priority, just say so and I'll stop.
+one more story, this time from streaming. Two Czech media groups merged their streaming services into Oneplay, and 1.8 million customers had to move by a publicly announced date. One team across 10+ departments, three rounds of pricing tests, and a launch on 3 March 2025, as planned. If {{company_name}} has a move like that ahead, happy to show how we ran it. If it's not a priority, just say so and I'll stop.
 
 {{sender_first_name}}
 ```
