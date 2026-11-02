@@ -20,6 +20,7 @@ Sizes, safe zones and crops are draft until the research (L-05) lands: change §
 **One system on every canvas:** 8px baseline unit, 12 columns, 24px gutter, 96px side margins.
 - Column start: `x = 96 + (n−1) × step`. Spans on 1080 canvases: 2 = 128, 3 = 204, 4 = 280, 6 = 432, 8 = 584, 10 = 736, 11 = 812, 12 = 888. On 1200: 8 = 664, 12 = 1008.
 - Every y, block height, gap and line-height is a multiple of 8. Exceptions: 1px hairlines, the 4px progress bar, text optically centred on the logo, and canvas heights 1350 and 627 (not multiples of 8: the remainder goes to the bottom margin).
+- **Optical alignment at display sizes.** At the `display` and `display-num` steps the font's left side bearing is wide enough to see (about 13px at 240px), so the text box shifts left by the measured bearing and the glyph's visible edge sits on the margin, in line with the accent bar and eyebrow. Check 3 measures the visible edge for these two steps.
 - Standard gaps: 32 between stacked text slots, 96 between groups, 32 from the accent bar to the eyebrow.
 
 | Canvas | Safe zone rule |
@@ -111,12 +112,12 @@ Lock: **L** locked in full; **P** position-locked, content editable; **O** owner
 | 1 | Background | `bg-base` | 0 | 0 | 1080×1350 | — | — | L | — |
 | 2 | Accent bar | `accent-gradient` | 96 | 96 | 128×8 | left | — | L | — |
 | 3 | Eyebrow | label, `text-body-dark` | 96 | 136 | 888×32 | left | 1 line, 32 ch | P | GTM ENGINEERING NOTES |
-| 4 | Headline | headline-xl, `text-primary-dark` | 96 | 200 | 888×288 | left, top | 3 lines, 54 ch | P | Your CRM is not the problem. Your **handoffs** are. |
+| 4 | Headline | headline-xl, `text-primary-dark` | 96 | 200 | 888×288 | left, top | 3 lines, 48 ch (stress-tested; 54 ran to 4 lines in 10%) | P | Your CRM is not the problem. Your **handoffs** are. |
 | 5 | Supporting line | subhead, `text-body-dark` | 96 | 520 | 736×144 | left, top | 3 lines, 100 ch | P | Three places leads stall between marketing, sales and success, and how to spot each one in a week. |
 | 6 | Image slot (optional) | `glass-fill`, `glass-line`, `radius-card` | 96 | 696 | 888×432 | fill, centre crop | — | P (replace only) | Abstract three-node workflow diagram, `glass-line-strong` strokes, one `accent-gradient` node |
 | 7 | Hairline | `glass-line` | 96 | B−88 (1160) | 888×1 | — | — | L | — |
 | 8 | Logo | `logo-white` M | 96 | B−48 (1200) | 178×48 | left | — | L | — |
-| 9 | Footer caption | caption, `text-body-dark` | 400 | 1204 (centred on logo) | 584×40 | right | 1 line, 40 ch | P | Full breakdown in the comments |
+| 9 | Footer caption | caption, `text-body-dark` | 400 | 1204 (centred on logo) | 584×40 | right | 1 line, 38 ch | P | Full breakdown in the comments |
 
 Without an image, delete slot 6; the space stays `bg-base`.
 
@@ -128,8 +129,8 @@ Without an image, delete slot 6; the space stays `bg-base`.
 | 2 | Accent bar | `accent-gradient` | 96 | 96 | 128×8 | left | — | L | — |
 | 3 | Eyebrow | label, `text-body-dark` | 96 | 136 | 888×32 | left | 1 line, 32 ch | P | PIPELINE HYGIENE |
 | 4a | Big number | display, `accent-gradient` | 96 | 264 | 888×240 | left | 1 line, 5 ch | P | 38% |
-| 4b | or Short claim | headline-xl, `text-primary-dark` | 96 | 264 | 888×192 | left, top | 2 lines, 36 ch | P | Fewer tools, cleaner **pipeline**. |
-| 5 | Context line | subhead, `text-primary-dark` | 96 | 536 | 736×144 | left, top | 3 lines, 100 ch | P | of open deals in a sample CRM had no next step logged in the last 30 days. |
+| 4b | or Short claim | headline-xl, `text-primary-dark` | 96 | 264 | 888×192 | left, top | 2 lines, 28 ch (stress-tested: 36 ran to 3 lines in 10% of samples) | P | Clean data, then **models**. |
+| 5 | Context line | subhead, `text-primary-dark` | 96 | 536 (with 4b: 488) | 736×144 | left, top | 3 lines, 100 ch | P | of open deals in a sample CRM had no next step logged in the last 30 days. |
 | 6 | Source line | caption, `text-body-dark` | 96 | B−216 (768) | 736×80 | left, top | 2 lines, 90 ch | P | Illustrative figure for this template, not client or survey data. |
 | 7 | Hairline | `glass-line` | 96 | B−96 (888) | 888×1 | — | — | L | — |
 | 8 | Logo | `logo-white` M | 96 | B−48 (936) | 178×48 | left | — | L | — |
@@ -218,10 +219,10 @@ Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Ad
 | 2 | Gradient panel | `accent-gradient` (angled variant), bleeds top, right, bottom | 870 | 0 | 330×627 | — | — | L | — |
 | 3 | Logo | `logo-white` M, on the panel | 926 | 72 | 178×48 | right edge on 1104 | — | L | — |
 | 4 | Eyebrow | label (T5), `text-body-dark` | 96 | 72 | 664×40 | left | 1 line, 24 ch | P | LIVE WEBINAR |
-| 5 | Title | headline (T5), `text-primary-dark` | 96 | 136 | 664×144 | left, top | 2 lines, 36 ch | P | From CRM chaos to **clean pipeline** |
+| 5 | Title | headline (T5), `text-primary-dark` | 96 | 136 | 664×144 | left, top | 2 lines, 32 ch | P | From CRM chaos to **clean pipeline** |
 | 6 | Date and time | subhead, `text-primary-dark` | 96 | 312 | 664×48 | left | 1 line, 30 ch | P | Thu 3 Dec · 15:00 CET |
 | 7 | Format line | body, `text-body-dark` | 96 | 368 | 664×48 | left | 1 line, 36 ch | P | Online · 45 min · Free to join |
-| 8 | CTA pill | fill `accent-gradient` (angled variant), `radius-pill`; label cta, `text-primary-dark` | 96 | B−72 (480) | auto 240–400 × 72, padding 40 side | label centred | 1 line, 18 ch | P (label) | Save your seat |
+| 8 | CTA pill | fill `accent-gradient` (angled variant), `radius-pill`; label cta, `text-primary-dark` | 96 | B−72 (480) | auto 240–400 × 72, padding 40 side | label centred | 1 line, 16 ch | P (label) | Save your seat |
 
 The sample date and event are fictional.
 
