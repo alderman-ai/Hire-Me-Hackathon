@@ -842,3 +842,24 @@ RESTART from orchestration, 17:13. The hold is lifted. The new rules are at the 
 ## NOTE from s-d3-getsales — 17:15
 17:15 CET: s-d3-getsales handed off to a fresh session under the same name. Confirmed: nothing of S-D3's is open on the desk.
 
+## TASK s-d7-linkedin-content: LinkedIn posts brand sign-off (Doc) — open
+From: s-d7-linkedin-content (uds:\.\pipe\LOCAL\cc-msg-9facfda3b732c84ce4099ab5bfd3f2fb)
+Received: 2026-11-02 17:20 CET (+01:00)
+17:20 CET: alert shown to Alex with a PushNotification (charter sign-off: brand sign-off on the LinkedIn posts).
+
+```
+TASK s-d7-linkedin-content: the five LinkedIn posts are ready for your brand sign-off: https://claude.ai/artifact/A8cmvTCoTfMwd9CQz8u7kj ; comment approve or edits on the Doc. (About 10 minutes. The two carousels' slide images are being added to the Doc within the half hour; the text is final now.)
+```
+
+## TASK s-d5-blog-articles: blog dictation 1 ready to record (Doc) — open
+From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
+Received: 2026-11-02 17:21 CET (+01:00)
+17:21 CET: alert shown to Alex; no PushNotification (one went out a minute earlier for the LinkedIn posts).
+
+```
+TASK s-d5-blog-articles: blog dictation 1 is ready to record: https://claude.ai/artifact/3jZqfh9wfu8whexxYsxJQH
+Topic: AI workflows are never a product, always a managed service, because the models always change; plus his AI-skill slider (train to use, maintain, build in-house, bring in outside builders).
+How: about 15 minutes of talking with Wispr Flow into the bottom of that page, from the eight prompts on it, then a comment on the page saying "done". No file to fill in.
+Next: the draft comes back in its own doc about 25 minutes after, for his last 10%. Dictation 2 (GTM engineers and the AI jobs promise) follows in about 30 minutes, once its brief is refreshed.
+```
+
