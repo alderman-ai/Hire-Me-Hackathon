@@ -103,7 +103,7 @@
           },
           {
             "title": "LinkedIn posts in Addvery's voice, graded blind",
-            "href": "/demos"
+            "href": "/demos/linkedin-posts-in-addverys-voice-graded-blind"
           },
           {
             "title": "The plan the agents worked from",
@@ -328,19 +328,31 @@
         "reading_list": [
           {
             "title": "LinkedIn posts in Addvery's voice, graded blind",
-            "href": "/demos"
+            "href": "/demos/linkedin-posts-in-addverys-voice-graded-blind"
           },
           {
             "title": "LinkedIn templates in Canva, built from the brand",
             "href": "/d6"
           },
           {
-            "title": "Two blog articles, each from 15 minutes of talking",
-            "href": "/d5"
+            "title": "The scraping briefing: research before a pitch, for any client",
+            "href": "/d1"
           },
           {
             "title": "Outbound in GetSales: the 36 workflows",
             "href": "/d3"
+          },
+          {
+            "title": "Back from lunch: what kept running without anyone at the desk",
+            "href": "/#post-s08"
+          },
+          {
+            "title": "Two blog articles, each from 15 minutes of talking",
+            "href": "/d5"
+          },
+          {
+            "title": "Why this hackathon exists: my explainer video",
+            "href": "/#post-s02"
           }
         ]
       }
@@ -486,12 +498,28 @@
             "href": "/d2"
           },
           {
+            "title": "The grading rubric: posts scored blind against 21 rules",
+            "href": "/demos/linkedin-posts-in-addverys-voice-graded-blind"
+          },
+          {
             "title": "Outbound in GetSales: the segments a pipeline report would break down by",
             "href": "/d3"
           },
           {
+            "title": "The 36 workflows, built and switched off: how leads get classified",
+            "href": "/#post-workflows-built"
+          },
+          {
             "title": "The legibility analyzer: unstructured recordings in, structured updates out",
             "href": "/d9"
+          },
+          {
+            "title": "The research is in: what changed because of it",
+            "href": "/#post-research-in"
+          },
+          {
+            "title": "Why this hackathon exists: my explainer video",
+            "href": "/#post-s02"
           }
         ]
       }
