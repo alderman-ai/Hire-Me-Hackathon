@@ -40,6 +40,9 @@ ALIGN_TRIM = 3  # The recorders outlast OBS at both ends, so match on the file's
 ALIGN_RATE = 8000
 ALIGN_MIN_SCORE = 0.15
 MIN_GAP_TO_PATCH = 1.0
+# 2 Nov 2026: YouTube hadn't allowed long uploads yet, so Alex chose to keep sessions on D:
+# only. Sessions are filed without a YouTube link. Set True to upload again.
+UPLOAD_TO_YOUTUBE = False
 
 report: list[str] = []
 model_cache = {}
@@ -93,8 +96,9 @@ def transcribe_file(path: Path) -> list[dict]:
         str(path), language="en", word_timestamps=True, vad_filter=True,
         condition_on_previous_text=False, hallucination_silence_threshold=2.0,
     )
-    return [
-        {
+    lines = []
+    for s in segments:
+        lines += split_at_pauses({
             "start": round(s.start, 3),
             "end": round(s.end, 3),
             "text": s.text.strip(),
@@ -102,8 +106,28 @@ def transcribe_file(path: Path) -> list[dict]:
                 {"word": w.word.strip(), "start": round(w.start, 3), "end": round(w.end, 3)}
                 for w in (s.words or [])
             ],
-        }
-        for s in segments
+        })
+    return lines
+
+
+def split_at_pauses(line: dict) -> list[dict]:
+    """Whisper can join words from either side of a long silence into one line.
+
+    In S06, one line ran 96 s across 87 s of typing, so the transcript put words said at
+    3:00 at 1:30. Start a new line wherever the words stop for over PARAGRAPH_GAP.
+    """
+    words = line["words"]
+    parts = [words[:1]] if words else []
+    for word in words[1:]:
+        if word["start"] - parts[-1][-1]["end"] > PARAGRAPH_GAP:
+            parts.append([])
+        parts[-1].append(word)
+    if len(parts) < 2:
+        return [line]
+    return [
+        {"start": part[0]["start"], "end": part[-1]["end"],
+         "text": " ".join(w["word"] for w in part), "words": part}
+        for part in parts
     ]
 
 
@@ -460,7 +484,8 @@ class Job:
             ("webcam", self.webcam), ("upload", self.send), ("verify", self.verify),
             ("move", self.move), ("file", self.file),
         ]
-        if rs.TEST and os.environ.get("RIG_SKIP_UPLOAD") == "1":
+        skip = rs.TEST and os.environ.get("RIG_SKIP_UPLOAD") == "1"
+        if skip or not UPLOAD_TO_YOUTUBE:
             steps = [s for s in steps if s[0] not in ("upload", "verify")]
         return steps
 
@@ -472,6 +497,8 @@ class Job:
             step()
             self.session["steps"][name] = rs.stamp(time.time())
             self.save()
+        if "upload" not in self.session["steps"]:
+            report.append(f"- {self.id}: kept on D: only, not uploaded to YouTube.")
         return True
 
 

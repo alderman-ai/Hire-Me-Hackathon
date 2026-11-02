@@ -78,10 +78,12 @@ def upload_video(path: Path, title: str, description: str, progress=lambda _: No
 
 
 def _seconds(iso: str) -> float:
-    """YouTube durations look like PT1H15M3S."""
-    found = re.fullmatch(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", iso)
-    hours, minutes, seconds = (int(v or 0) for v in found.groups())
-    return hours * 3600 + minutes * 60 + seconds
+    """YouTube durations look like PT1H15M3S, and P0D while a new upload processes."""
+    found = re.fullmatch(r"P(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?)?", iso)
+    if not found:
+        raise ValueError(f"YouTube gave a duration the rig can't read: {iso!r}")
+    days, hours, minutes, seconds = (int(v or 0) for v in found.groups())
+    return days * 86400 + hours * 3600 + minutes * 60 + seconds
 
 
 def wait_until_ready(video_id: str, local_seconds: float, progress=lambda _: None) -> float:

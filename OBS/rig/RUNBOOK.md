@@ -13,7 +13,7 @@
 | `/start` | Beginning of a session | Checks the mic, webcam and disk space, then starts the screen, webcam and backup audio |
 | `/pause` | Private moment or a short break | Stops all three. Type it again to resume. |
 | `/stop` | End of a session, after about 1 to 1.5 hours | Closes everything. Nothing stops by itself, and the next session waits for `/start`. |
-| `/process` | During a break, after `/stop` | Transcribes and uploads in the background. You can start the next session straight away. |
+| `/process` | During a break, after `/stop` | Transcribes and files in the background. Videos stay on D:, because YouTube upload is off for now. You can start the next session straight away. |
 
 ## What you might hear
 
@@ -37,4 +37,4 @@
 .venv\Scripts\python.exe scripts\find_clip.py "the quote you remember" --cut
 ```
 
-This gives the session, a YouTube link at that second, and a padded clip in `OBS\Processed\clips\`, plus the matching webcam clip.
+This gives the session, a YouTube link at that second (while upload is off, it says "not uploaded yet"), and a padded clip in `OBS\Processed\clips\`, plus the matching webcam clip.
