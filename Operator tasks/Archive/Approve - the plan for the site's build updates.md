@@ -2,12 +2,14 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-05
-Task State: Open
+Task State: Archived
 Gate: S-D9 spec draft
 Requested by: s-d9-legibility
 Snapshot of: legibility/SPEC.md at commit 2e1c6f4
 Unblocks: nothing waits on it; it confirms how the site's build updates are chosen, and when that job counts as done
 Created: 2026-11-02 15:05
+Archived: 2026-11-02
+Closed: 2026-11-02 17:03 Prague by orchestration on Alex's instruction in chat ("If things are an easy judgment please clear the plate for me. We can just make edits later."): approved as written, on its defaults; nothing waited on it.
 ---
 
 # Approve: the plan for the site's build updates

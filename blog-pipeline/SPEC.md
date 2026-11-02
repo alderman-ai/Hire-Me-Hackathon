@@ -6,7 +6,7 @@ S-D4 builds the pipeline that turns about 15 minutes of Alex talking into a good
 
 ## 1. Operator preflight (P3)
 
-The preflight is decision intake DI-8 (`..\Operator tasks\Decide - how the blog pipeline should work.md`).
+The preflight is decision intake DI-8 (`..\Operator tasks\Archive\Decide - how the blog pipeline should work.md`).
 
 | DI-8 question | Question | Default |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ Paths are relative to `blog-pipeline\`. Step 1 of the run confirms every resourc
 - `..\answer-desk\ASKING.md`: the desk format, TASK lines, gate approvals, the poke and the 18:00 rule.
 - `..\answer-desk\qa\S-D4.md`: S-D4's own Q&A record, once the desk creates it.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers; never re-ask them. DI-1 settles two things S-D4 leans on: dictation is Wispr Flow, and `/process` runs only when he types it.
-- `..\Operator tasks\Decide - how the blog pipeline should work.md` (in `..\Operator tasks\Archive\` once filed): this spec's preflight answers, verbatim.
+- `..\Operator tasks\Archive\Decide - how the blog pipeline should work.md` (in `..\Operator tasks\Archive\` once filed): this spec's preflight answers, verbatim.
 - `SPEC.md`: this file. `HANDOFF.md`: the state after a fork, if it exists.
 - `..\research\DIRECTORY.md`: the index of every research report. Read only.
 - `..\research\lists\L-03-blog.md` and `..\research\lists\L-01-parent.md`: S1's lists for this spec. Read only; S1 owns them.

@@ -60,7 +60,7 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
 - `..\answer-desk\qa\S-D5.md`: S-D5's own Q&A record, once the desk creates it.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers; never re-ask them. DI-1: dictation is Wispr Flow, and `/process` runs only when he types it.
 - `..\Operator tasks\Decide - your three blog posts, topics and timing.md` (in `..\Operator tasks\Archive\` once filed): this spec's preflight answers, verbatim.
-- `..\Operator tasks\Decide - how the blog pipeline should work.md`: S-D4's preflight intake (DI-8), read only, for its answers on counting the test dictation (question 3), its topic (question 4) and how dictations land (question 2).
+- `..\Operator tasks\Archive\Decide - how the blog pipeline should work.md`: S-D4's preflight intake (DI-8), read only, for its answers on counting the test dictation (question 3), its topic (question 4) and how dictations land (question 2).
 - `SPEC.md`: this file. `HANDOFF.md`: the state after a fork, if it exists.
 - `..\research\DIRECTORY.md`: the index of every research report. Read only.
 - `..\research\lists\L-03-blog.md` (S-D4's list, with S-D5 offered merged) and `..\research\lists\L-01-parent.md`. Read only; S1 owns them.

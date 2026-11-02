@@ -2,12 +2,13 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-08
-Task State: Withdrawn
+Task State: Archived
 Gate: S-D3 pre-send (the alert to the six)
 Requested by: s-d3-getsales
 Snapshot of: getsales/live/pre-send.md (git-ignored) and getsales/alert/copy.json at commit f5184f1
 Unblocks: the alert sends from Alex's LinkedIn sender to the six; answers DI-7 question 1 if ticked as it stands
 Created: 2026-11-02 15:42 Prague (six changed 15:55)
+Archived: 2026-11-02
 ---
 
 <!-- File name: "Approve - the six alert messages before they send.md". No ids or codes in the name or the text. -->

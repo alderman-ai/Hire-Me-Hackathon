@@ -2,13 +2,15 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-06
-Task State: Open
+Task State: Archived
 Gate: S-D1 spec draft (definition of done and methodology, with the L-01 synthesis questions Q3, Q10, Q13 and Q14 that name S-D1)
 Requested by: s-d1-scraping
 Snapshot of: scraping\SPEC.md at commit 4929ed7
 Unblocks: drafting the site's scraping page by this plan, once Alex's summary is ready
 Created: 2026-11-02 15:03 Prague
+Archived: 2026-11-02
 Updated: 2026-11-02 15:43 Prague (choice 1, after the research session reported what ran on Apify; snapshot refrozen)
+Closed: 2026-11-02 17:03 Prague by orchestration on Alex's instruction in chat ("If things are an easy judgment please clear the plate for me. We can just make edits later."): superseded by "Approve - what the scraping demo section shows.md", which approves this plan when ticked.
 ---
 
 # Approve: the plan for the scraping demo page

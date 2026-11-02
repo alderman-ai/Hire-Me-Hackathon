@@ -49,6 +49,8 @@ orchestration\                  the parent session's own files (the session itse
 - `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md`, plus DI-2 and DI-3: the operator's answers, verbatim. Read them for wording, never re-ask them.
 - `Operator tasks\Archive\DI-5 S2 DoD sign-off.md`: the operator's DoD sign-off, verbatim (soften DoD-4). Read it for wording, never re-ask it.
 - `Operator tasks\Archive\Approve - research plan for the whole project.md`: Alex's approval of the parent research list, verbatim. Read it for wording, never re-ask it.
+- `Operator tasks\Archive\Decide - how the blog pipeline should work.md`: Alex's answers on the blog pipeline (DI-8: it's dead, only the blogs remain), verbatim. Read them for wording, never re-ask them.
+- `Operator tasks\Archive\Do - get the computer ready for tonight.md`: Alex's answers on the overnight set-up (OT-10), verbatim. Read them for wording, never re-ask them.
 - The decision intake template, in `orchestration\_templates\`: the form of the DoD intake.
 - `bootstrap\SPEC.md`: S0's folder templates, used by `add-deliverable`. `research\SPEC.md`: S1's `FINDINGS` message and its findings index.
 - `orchestration\HANDOFF.md` and the newest `orchestration\changes\` records: state after a fork.

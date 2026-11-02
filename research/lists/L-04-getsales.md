@@ -1,5 +1,5 @@
 # L-04 Research list: S-D3 GetSales outbound demo
-Status: with Alex (OT-03, `Operator tasks\Approve - research for the GetSales demo and website.md`)
+Status: with Alex (OT-03, `Operator tasks\Archive\Approve - research for the GetSales demo and website.md`)
 Approved by: (not yet)
 Requested by: s-d3-getsales, `RESEARCH S-D3: L-04 (R2 and R3 superseded by DI-6 A6.4: no Sales Navigator export, ICP × language × approach model; R1 and R4 still needed), plus L-01 ... needed by 16:30` (2 Nov, about 14:52)
 Level: child (`research\getsales\`)

@@ -18,7 +18,7 @@ No scraping happens in `getsales\`: all of it is Alex's, in `..\Addvery Research
   - The tech is the session's call ("okay you figure it out").
   - The ICP demo follows his model: ICPs × languages × 3 approaches, all in one new GetSales folder, each workflow starting with `custom message 1` imported as a lead field, plus the Jev routing explanation.
 
-These supersede most of the first DI-7. That intake, `..\Operator tasks\Decide - how the GetSales outbound demo runs.md`, was rewritten down to three questions:
+These supersede most of the first DI-7. That intake, `..\Operator tasks\Archive\Decide - how the GetSales outbound demo runs.md`, was rewritten down to three questions:
 
 | DI-7 question | Question | Default (from 18:00 Prague) |
 | --- | --- | --- |
@@ -58,6 +58,8 @@ Paths are relative to `getsales\`. Step 1 of the run confirms that every resourc
 - `..\GIT.md`: shared working-tree rules. Commit only `getsales\`, path-limited.
 - `..\answer-desk\ASKING.md`: the desk format, gates, the poke and the 18:00 rule. `..\answer-desk\qa\S-D3.md`: S-D3's Q&A record, which the desk creates with the first question.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers. Never re-ask what they settle. `..\Operator tasks\Archive\Decide - how the scraping demo should work.md` (DI-6): A6.2 and A6.4, his GetSales decisions, verbatim. `..\Operator tasks\Decide - how the GetSales outbound demo runs.md` (DI-7): this spec's open questions. Either may move to `..\Operator tasks\Archive\` once it's answered; look there if it's gone.
+- `..\Operator tasks\Archive\Approve - the six alert messages before they send.md`: Alex's answers to the pre-send gate for the alert to the six (withdrawn unticked at 16:43: he sends the alert by hand), verbatim. Read them for wording, never re-ask them.
+- `..\Operator tasks\Archive\Approve - research for the GetSales demo and website.md`: Alex's answers to the GetSales and website research lists (withdrawn unticked at 17:03: research is done, so neither list runs), verbatim. Read them for wording, never re-ask them.
 - `SPEC.md` (this file), and `HANDOFF.md` if it exists.
 - The charter's "Definition of done" (in `..\CHARTER.md`, written in by S2 as change C03): the signed-off project DoD. Read DoD-12, DoD-13 and DoD-22.
 - `..\orchestration\_templates\Gate approval template.md` and `..\orchestration\check_gate.py`: the gate tasks and their 5-minute check.

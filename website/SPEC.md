@@ -70,6 +70,8 @@ Paths are relative to `website\`. Step 1 of the run (§7) confirms each resource
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK lines, the poke and the 18:00 rule.
 - `..\answer-desk\qa\website.md`: every question this session has asked Alex, with his answers.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers. Never ask again what they settle.
+- `..\Operator tasks\Archive\Approve - the plan for the website.md`: Alex's answers to the website's plan and its definition of done (approved on its defaults at 17:03, on his instruction to clear his plate), verbatim. Read them for wording, never re-ask them.
+- `..\Operator tasks\Archive\Approve - research for the GetSales demo and website.md`: Alex's answers to the GetSales and website research lists (withdrawn unticked at 17:03: research is done, so neither list runs), verbatim. Read them for wording, never re-ask them.
 - `CLAUDE.md`: the session's standing duties (clock, video, deploys, Hobby limits). This spec extends it and never overrides it. The changes it needs are listed below.
 - `SPEC.md`: this file. `HANDOFF.md`: the state after a fork, if it exists.
 - `DECISIONS.md`: decisions taken before this spec. New ones go in §9.

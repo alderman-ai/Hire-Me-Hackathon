@@ -39,6 +39,7 @@ Paths are relative to `legibility\`. Step 1 of the run (§7) confirms each resou
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK lines, the poke and the 18:00 rule.
 - `..\answer-desk\qa\S-D9.md`: this spec's questions and answers. The desk creates it with the first question; skip it until then.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers. DI-1 Q1.9 gives the stakeholder roles and says sorting clips "is the assistants job". DI-1 Q1.7 says /process runs only when he types it. DI-1 Q1.10 sets 3 seconds of clip padding.
+- `..\Operator tasks\Archive\Approve - the plan for the site's build updates.md`: Alex's answers to this spec's plan and definition of done (approved on its defaults at 17:03, on his instruction to clear his plate), verbatim. Read them for wording, never re-ask them.
 - `CLAUDE.md`: the interim brief, which this spec adopts. This spec wins where they differ. The changes CLAUDE.md needs are listed below.
 - `SPEC.md`: this file. `HANDOFF.md`: the state after a fork, if it exists.
 - `posted.md`: every post, the "Sessions covered (DoD-20)" table for S01 onwards, and everything left out on purpose. It is the evidence for DoD-20.

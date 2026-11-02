@@ -2,12 +2,14 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-03
-Task State: Open
+Task State: Archived
 Gate: S-D3 research list L-04 and S-D8 research list L-06 (one gate for both)
 Requested by: s1-research, for s-d3-getsales ("RESEARCH S-D3: L-04 ... needed by 16:30") and website ("RESEARCH S-D8: a new S-D8 list ... needed by 16:30")
 Snapshot of: research\lists\L-04-getsales.md and research\lists\L-06-website.md at commit 3b7eef7
 Unblocks: the GetSales demo's build and message copy, and the website's structure, stakeholder sections and brand pass
 Created: 2026-11-02 14:54 Prague
+Archived: 2026-11-02
+Closed: 2026-11-02 17:03 Prague by orchestration on Alex's instruction in chat ("If things are an easy judgment please clear the plate for me. We can just make edits later."): withdrawn, unticked: Alex says the research is done ("All the research scraping is done and assets are being created"), so the two lists don't run.
 ---
 
 # Approve research for the GetSales demo and the website

@@ -2,12 +2,14 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-07
-Task State: Open
+Task State: Archived
 Gate: S-D8 spec draft (definition of done and methodology, revised on the L-01 synthesis; L-06 still with Alex as OT-03)
 Requested by: website
 Snapshot of: website\SPEC.md at commit 45fc691
 Unblocks: nothing that waits; it confirms the website's plan and its definition of done, and the defaults below
 Created: 2026-11-02 15:08 Prague
+Archived: 2026-11-02
+Closed: 2026-11-02 17:03 Prague by orchestration on Alex's instruction in chat ("If things are an easy judgment please clear the plate for me. We can just make edits later."): approved as written, on its defaults; nothing waited on it.
 ---
 
 # Approve: the plan for the website

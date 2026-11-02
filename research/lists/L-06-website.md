@@ -1,5 +1,5 @@
 # L-06 Research list: S-D8 Website
-Status: with Alex (OT-03, `Operator tasks\Approve - research for the GetSales demo and website.md`)
+Status: with Alex (OT-03, `Operator tasks\Archive\Approve - research for the GetSales demo and website.md`)
 Approved by: (not yet)
 Requested by: website, `RESEARCH S-D8: a new S-D8 list (none drafted yet), plus L-01, for the site's structure, the stakeholder sections and the brand pass, needed by 16:30` (2 Nov, about 14:53)
 Level: child (`research\website\`)

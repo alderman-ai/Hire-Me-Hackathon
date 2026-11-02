@@ -1,13 +1,15 @@
 ---
 System Primitive: Operator task
 Task id: OT-10
-Task State: Open
+Task State: Archived
 Build goals: []
 Unblocks: the overnight run: the background sessions keep working from 18:00 to the morning instead of stopping
 Depends on: nothing
 Time: 5
 Cost: 0, unless you switch on usage credits (step 3)
 Created: 2026-11-02 16:35 Prague
+Archived: 2026-11-02
+Closed: 2026-11-02 17:03 Prague by orchestration on Alex's instruction in chat ("If things are an easy judgment please clear the plate for me. We can just make edits later."): done on his report: steps 1 and 2 done by him; Windows Update could not be confirmed paused (no pause in the registry at 16:49; he was told in chat); steps 3 to 5 take their defaults: no usage credits, no pins, no retry watchdog.
 ---
 
 # Do: get the computer ready for tonight
@@ -62,7 +64,7 @@ One line per step is enough, for example: "1 done, 2 done, 3 about 40% left, res
 
 `<operator_answer>`
 ```ot-10-report
-
+All of my power settings and stuff are configured for overnight runs. You can confirm the Windows update is paused. I think it is but fine Everything else: default answers 
 ```
 `</operator_answer>`
 

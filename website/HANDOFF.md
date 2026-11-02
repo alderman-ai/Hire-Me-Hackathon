@@ -87,7 +87,7 @@ Once the tree is clean (nothing uncommitted except git-ignored files), a plain `
 
 ## Gates and desk
 
-- **OT-07** `Operator tasks\Approve - the plan for the website.md`: open since 15:08 (`589a798`), with its summary updated for the brand pass (`3b3823f`). Pokes went at 15:53, 16:08 and 16:23. The 16:38 poke was skipped because Alex said at 16:36 he was working through all his operator tasks. On APPROVED or CHANGES: apply the fence too (his rule), send `TASK DONE website: Approve - the plan for the website.md`, and send `ARCHIVE Approve - the plan for the website.md: readers website` to `orchestration`. From 18:00 Prague, proceed on the plan as written and log it in §9.
+- **OT-07** `Operator tasks\Archive\Approve - the plan for the website.md`: open since 15:08 (`589a798`), with its summary updated for the brand pass (`3b3823f`). Pokes went at 15:53, 16:08 and 16:23. The 16:38 poke was skipped because Alex said at 16:36 he was working through all his operator tasks. On APPROVED or CHANGES: apply the fence too (his rule), send `TASK DONE website: Approve - the plan for the website.md`, and send `ARCHIVE Approve - the plan for the website.md: readers website` to `orchestration`. From 18:00 Prague, proceed on the plan as written and log it in §9.
 - website-Q4 is closed (analytics on). No website question is on the desk.
 - **L-06** (S1's website list) still waits on Alex's OT-03. When FINDINGS land in `research\website\`, rerun step 5 and refresh the OT-07 snapshot.
 

@@ -13,6 +13,7 @@ Read these at startup with the Read tool, in this order. Never import them with 
 7. `HANDOFF.md` in this folder, if it exists: the state after a fork. Resume from it.
 8. `DIRECTORY.md` in this folder: the one index of every research report, at both levels.
 9. `..\Operator tasks\Archive\Approve - research plan for the whole project.md`: Alex's approval of the parent research list, verbatim. Read it for wording, never re-ask it.
+10. `..\Operator tasks\Archive\Approve - research for the GetSales demo and website.md`: Alex's answer to the GetSales and website research lists, verbatim (withdrawn unticked at 17:03: research is done, so neither list runs). Read it for wording, never re-ask it.
 
 ## Roles
 - The session named `s1-research` is the S1 spec orchestrator and follows SPEC.md. A successor after a handoff keeps that name.
