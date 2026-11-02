@@ -729,11 +729,12 @@ I'm filling in all of the operator tasks now and they just keep coming in. Make 
 
 16:37 CET: orchestration: feedback rule done and enforced (commit 0fdb87d: check_gate.py prints APPROVED+CHANGES; ASKING.md step 4, the gate template and the archive skill updated). It is telling s-d6-canva-templates, s-d7-linkedin-content, rig and briefing; not addvery-research. Its own two open tasks follow the rule ("the Addvery approval's note was folded in at 16:30"; no TASK DONE yet).
 
-## TASK S2: Approve - three small charter fixes.md — open
+## TASK S2: Approve - three small charter fixes.md — done
 From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
 Received: 2026-11-02 16:37 CET (+01:00)
 16:37 CET: alert shown to Alex as low priority; no PushNotification (sender: low priority, no pokes).
 17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
+17:11 CET: TASK DONE S2 received (closed at 17:10 on Alex's "clear the plate" instruction; changes applied without the tick in b5cb6fd, archived in 650448d); marked done.
 
 ```
 TASK S2: Approve - three small charter fixes.md is waiting on you: three wording fixes so the project plan matches your answers (what "nothing sensitive is published" means, and the GetSales demo in your model). Low priority, about 2 minutes, no pokes; if it's still open at 18:00 all three are applied and logged.
