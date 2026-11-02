@@ -37,7 +37,11 @@ The ids are in `ids.md`. Team: Alex's Team (12269). Folder: "Hackathon demo · A
 - **website:** S-D3-B3, B4 and B5 are BUILT (preview card, unlisted `/privacy` with noindex). Nothing pending. `/privacy` stays live but unlisted; whether to keep it is Alex's call, since his manual messages may or may not link it.
 - **s-d9-legibility:** told at 16:44 that the clip is now his walkthrough. It waits for CLIP S-D3-C1.
 - **s1-research:** nothing coming. OT-03 was withdrawn at 17:03 on Alex's instruction ("research is done"), so L-04 doesn't run. The copy rests on the draft method (SPEC §9, 16:18).
-- **Archived by S2 (commit 55d81e5):** DI-7, OT-08 and OT-03 are in `..\Operator tasks\Archive\`, and SPEC.md's resource lines point there. The S2 REQUEST on DoD-12 and DoD-13 was being applied to the charter at 17:03.
+- **Archived by S2 (commit 55d81e5):** DI-7, OT-08 and OT-03 are in `..\Operator tasks\Archive\`, and SPEC.md's resource lines point there. The S2 REQUEST is applied (C06, commit b5cb6fd):
+  - The charter's D3 row, the S-D3 outline row and DoD-12 now say 36 workflows (4 ICPs × EN/CS/DE × 3 tactics), in a folder apart from his own. Nothing sends from GetSales and no classifier is trained. The alert goes by hand, outside the demo.
+  - DoD-13 is now the pipeline up to the computed first message for the six, plus the walkthrough of the 36, shown in a clip from his rig recording.
+  - DoD-22 is narrowed to secrets, the Apify proposal and his own outbound outside the demo folder.
+  - SPEC.md §5 still has the older wording; bring it in line with the charter at restart.
 
 ## Decisions since the last fork
 
