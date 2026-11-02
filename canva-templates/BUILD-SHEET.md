@@ -88,7 +88,7 @@ Rules: the gradient never touches body, caption or label text. One key-word high
 | `text-body-dark` on `glass-fill` over `bg-base` | 8.3:1 | 7:1 | Meets |
 | `accent-gradient` text on `bg-base` | 3.1:1 (violet end) to 5.1:1 (magenta end) | 3:1, large text only | Meets at ≥ 56px only |
 | `accent-solid` marks on `bg-base` | 3.2:1 | 3:1 non-text | Meets |
-| `text-primary-dark` on `accent-gradient-button` (CTA) | 6.6:1 deep violet (held to 35%), 3.6:1 magenta end | 3:1, label ≥ 24px canvas size | Meets |
+| `text-primary-dark` on `accent-gradient-button` (CTA) | 6.6:1 deep violet (held to 35%), 3.6:1 magenta end; under the label's glyphs (measured, both pills) 5.9:1 median, 4.4:1 worst, the label's right end | 3:1, label ≥ 24px canvas size (WCAG AA for 36px / 500 text is 4.5:1: about 1% of glyph pixels fall just short) | Meets the sheet's target |
 | `glass-line-strong` bars on `bg-base` | 1.9:1 | decorative: every bar also carries its value as text | Meets by labelling |
 
 Canva fallback: if Canva can't fill text with a gradient (R1/R3 check), highlights and numbers take `accent-solid` (3.2:1, still ≥ 3:1 at ≥ 56px).
@@ -105,7 +105,7 @@ Canva fallback: if Canva can't fill text with a gradient (R1/R3 check), highligh
 
 Lock: **L** locked in full; **P** position-locked, content editable; **O** owner-only (§7). Highlighted words are in bold.
 
-**Sample copy.** The copy in these tables is the neutral fallback. The exports are filled with lines from the LinkedIn posts demo's round-1 drafts (Addvery's voice, not yet signed off), so the templates and the posts show one campaign; the fallback applies if those drafts change or are withdrawn. Either way: no real person, and numbers in stat and chart slots are labelled illustrative.
+**Sample copy.** The copy in these tables is the neutral fallback. The exports are filled with lines from the LinkedIn posts demo's final text (Addvery's voice; Alex signs it off on his own Doc), so the templates and the posts show one campaign; the fallback applies if those posts change or are withdrawn. Either way: no real person, and numbers in stat and chart slots are labelled illustrative.
 
 ### T1 Single-image post, 1080×1350
 
@@ -116,7 +116,7 @@ Lock: **L** locked in full; **P** position-locked, content editable; **O** owner
 | 3 | Eyebrow | label, `text-body-dark` | 96 | 136 | 888×32 | left | 1 line, 32 ch | P | GTM ENGINEERING NOTES |
 | 4 | Headline | headline-xl, `text-primary-dark` | 96 | 200 | 888×288 | left, top | 3 lines, 48 ch (stress-tested; 54 ran to 4 lines in 10%) | P | Your CRM is not the problem. Your **handoffs** are. |
 | 5 | Supporting line | subhead, `text-body-dark` | 96 | 520 | 736×144 | left, top | 3 lines, 100 ch | P | Three places leads stall between marketing, sales and success, and how to spot each one in a week. |
-| 6 | Image slot (optional) | `glass-fill`, `glass-line`, `radius-card` | 96 | 696 | 888×432 | fill, centre crop | — | P (replace only) | Abstract three-node workflow diagram, `glass-line-strong` strokes, one `accent-gradient` node |
+| 6 | Image slot (optional; a Canva frame, not in the backdrop: `BUILD-NOTES.md`, N1) | `glass-fill`, `glass-line`, `radius-card` | 96 | 696 | 888×432 | fill, centre crop | — | P (replace only) | Abstract three-node workflow diagram, `glass-line-strong` strokes, one `accent-gradient` node |
 | 7 | Hairline | `glass-line` | 96 | B−88 (1160) | 888×1 | — | — | L | — |
 | 8 | Logo | `logo-white` M | 96 | B−48 (1200) | 178×48 | left | — | L | — |
 | 9 | Footer caption | caption, `text-body-dark` | 400 | 1204 (centred on logo) | 584×40 | right | 1 line, 38 ch | P | Full breakdown in the comments |
@@ -151,6 +151,8 @@ Use 4a or 4b, never both. A number always has a source line; a sample number alw
 | 6 | Hairline | `glass-line` | 96 | B−96 (888) | 888×1 | — | — | L | — |
 | 7 | Logo | `logo-white` M | 96 | B−48 (936) | 178×48 | left | — | L | — |
 
+Name and role are bottom-anchored: they stay on B−240 and B−192 whatever the quote's length, so a short quote leaves its free space between quote and name.
+
 ### T4 Document carousel, 1080×1350 per page, 6 pages, one PDF
 
 Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Add or drop content pages as needed (3–10 pages); the owner updates the counter and progress (§7).
@@ -181,7 +183,7 @@ Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Ad
 | # | Slot | Roles | x | y | w × h | Max | Lock | Sample copy (p2 / p3) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Point number | display-num, `accent-gradient` | 96 | 232 | 280×160 | 2 ch | P | 01 / 02 |
-| 2 | Point title | headline, `text-primary-dark` | 96 | 424 | 888×216 | 3 lines, 75 ch | P | Map the data you already have / Write the rules before the prompts |
+| 2 | Point title (bottom-aligned: the last line ends on 640, so a short title stays 32 above the body) | headline, `text-primary-dark` | 96 | 424 | 888×216 | 3 lines, 75 ch | P | Map the data you already have / Write the rules before the prompts |
 | 3 | Body | body, `text-body-dark` | 96 | 672 | 736×384 | 8 lines, 320 ch | P | p2: Before you add a tool, list every field your team uses to qualify an account: where it comes from, who updates it and how often. Gaps here turn into wrong messages later, sent at scale. p3: Decide which accounts qualify, what a good first message says and when a person steps in. Keep it to one page the whole team can read. A model follows rules well; it can't invent them for you. |
 
 **p4 List**
@@ -189,8 +191,8 @@ Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Ad
 | # | Slot | Roles | x | y | w × h | Max | Lock | Sample copy |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Point number | display-num, `accent-gradient` | 96 | 232 | 280×160 | 2 ch | P | 03 |
-| 2 | Title | headline, `text-primary-dark` | 96 | 424 | 888×144 | 2 lines, 48 ch | P | Start with a small, measured test |
-| 3 | Markers ×4 | `accent-solid`, 16×16 circle | 96 | item y + 16 | 16×16 | — | L | — |
+| 2 | Title (bottom-aligned: the last line ends on 568) | headline, `text-primary-dark` | 96 | 424 | 888×144 | 2 lines, 48 ch | P | Start with a small, measured test |
+| 3 | Markers ×4 (native Canva shapes, not in the backdrop: `BUILD-NOTES.md`, N1) | `accent-solid`, 16×16 circle | 96 | item y + 16 | 16×16 | — | L | — |
 | 4 | Items ×4 (hanging indent) | body, `text-body-dark` | 144 | 616 / 744 / 872 / 1000 | 840×96 each | 4 items, 2 lines and 90 ch each | P | Pick one segment of 100 to 200 accounts · Fix one success metric before you start · Read every message in the first week · Scale only what beats your manual baseline |
 
 **p5 Bar chart (2–3 horizontal bars, axis at zero, no gridlines)**
@@ -210,7 +212,7 @@ Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Ad
 | 1 | Accent bar | `accent-gradient` | 96 | 296 | 128×8 | — | L | — |
 | 2 | Title | headline-xl, `text-primary-dark` | 96 | 336 | 888×288 | 3 lines, 54 ch | P | Want the one-page **checklist**? |
 | 3 | Body | body, `text-body-dark` | 96 | 656 | 736×144 | 3 lines, 120 ch | P | Comment "checklist" below and we'll share the one-page version of this guide. |
-| 4 | CTA pill | fill `accent-gradient` (angled variant), `radius-pill`; label cta, `text-primary-dark`, centred | 96 | 832 | auto 280–584 × 88, padding 48 side | 1 line, 24 ch | P (label) | Get the checklist |
+| 4 | CTA pill (native Canva shape, not in the backdrop: N1) | fill `accent-gradient-button`, `radius-pill`; label cta, `text-primary-dark`, centred | 96 | 832 | auto 280–584 × 88, padding 48 side | 1 line, 24 ch | P (label) | Get the checklist |
 | 5 | Caption | caption, `text-body-dark` | 96 | 952 | 736×40 | 1 line, 48 ch | P | Follow for more GTM engineering notes |
 
 ### T5 Event / webinar teaser, 1200×627
@@ -224,7 +226,7 @@ Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Ad
 | 5 | Title | headline (T5), `text-primary-dark` | 96 | 136 | 664×144 | left, top | 2 lines, 32 ch | P | From CRM chaos to **clean pipeline** |
 | 6 | Date and time | subhead, `text-primary-dark` | 96 | 312 | 664×48 | left | 1 line, 30 ch | P | Thu 3 Dec · 15:00 CET |
 | 7 | Format line | body, `text-body-dark` | 96 | 368 | 664×48 | left | 1 line, 36 ch | P | Online · 45 min · Free to join |
-| 8 | CTA pill | fill `accent-gradient` (angled variant), `radius-pill`; label cta, `text-primary-dark` | 96 | B−72 (480) | auto 240–400 × 72, padding 40 side | label centred | 1 line, 16 ch | P (label) | Save your seat |
+| 8 | CTA pill (native Canva shape, not in the backdrop: N1) | fill `accent-gradient-button`, `radius-pill`; label cta, `text-primary-dark` | 96 | B−72 (480) | auto 240–400 × 72, padding 40 side | label centred | 1 line, 16 ch | P (label) | Save your seat |
 
 The sample date and event are fictional.
 

@@ -22,6 +22,7 @@ Written by role, like `BUILD-SHEET.md`. Brand values, the import-ready files and
 | Gradient text in print | CSS gradient-clipped text prints as invisible text under a masked gradient; some PDF viewers draw a hairline at the box edge | Big gradient numbers are drawn as SVG text with a gradient fill (live text, no hairline). Highlighted words inside wrapping text still use the CSS route: clean in PNG and Chrome's viewer; how Canva imports them is a part-2 check, and the build sheet's fallback (the solid accent) applies if Canva can't fill text with a gradient |
 | Optical alignment | At 160–240px the font's side bearing leaves the visible digit 8–13px right of the margin | The box shifts left by the measured bearing, so the visible edge is on the margin |
 | Character limits | Stress copy at the sheet's first limits overflowed on seven slots | Limits tightened from stress renders (hundreds to thousands of random samples per slot), type sizes unchanged |
+| Transparent parts | A headless screenshot comes out opaque, and the sRGB tagger flattens every PNG to RGB | `?part` sets every page background transparent and Chrome runs with a fully transparent default background; the tagger keeps alpha only when asked (`--rgba`), and `canva_assets.mjs` checks each part is RGBA at its slot size |
 
 ## Fonts: no substitution
 
@@ -36,3 +37,18 @@ Exact pixel size (scripted), grid margins and safe zones, fonts as specified wit
 ## Into Canva (part 2, not started)
 
 Waits for Alex's answers on how the session gets into Canva and which account. The PNG previews and the carousel PDF are the import-ready files; where an import doesn't hold up (locking, grouping), the template is rebuilt in Canva's editor from the build sheet.
+
+## Native Canva shapes (N1)
+
+A backdrop holds only art that never depends on the copy. Shapes whose size or place follows the copy are left out of it (hidden by `visibility` in `?backdrop` mode, from the shared tokens file, so nothing else moves) and rebuilt in Canva as native elements on top. `canva_assets.mjs` writes their measured boxes to `local\canva\native-shapes.json` on every run, and exports the T1 image slot alone, transparent, at its slot size to `local\canva\parts\` for a Canva frame.
+
+Positions in px from the canvas top-left. "Sheet" is where the shape sits at the slots' maximum lines (where the Canva element goes); "sample" is where it sits in the current export, since the HTML stack flows up with shorter copy (BUILD-SHEET §5, Stacks).
+
+| Element | Template | x | y: sheet (sample) | w × h | Radius | Fill role | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Image slot with the sample diagram | T1 | 96 | 696 (696) | 888 × 432 | `radius-card` | `glass-fill`, 1px `glass-line` border | A Canva frame. The part PNG carries the slot fill, border and diagram on transparency; replace it with a photo or delete the frame |
+| CTA pill | T4 p6 | 96 | 832 (784) | auto 280–584 × 88 (sample 480) | `radius-pill` | `accent-gradient-button` | Width = label + 48 each side; the label stays a native text box (cta, `text-primary-dark`), centred on the pill |
+| CTA pill | T5 | 96 | 480, B−72 (480) | auto 240–400 × 72 (sample 313) | `radius-pill` | `accent-gradient-button` | Width = label + 40 each side; bottom-anchored, so it never moves |
+| List markers ×4 | T4 p4 | 96 | 632 / 760 / 888 / 1016 (632 / 712 / 792 / 920) | 16 × 16 each | 50% (circle) | `accent-solid` | Item y + 16, one per item row; Lock in Canva |
+
+Still in the backdrops on purpose: accent bars, the T3 quote mark, the T5 gradient panel, hairlines, logos, the T4 progress track and fill, the swipe arrow and the p5 chart bars. All are fixed in place, or owner-only (progress fill, bar lengths: BUILD-SHEET §7).
