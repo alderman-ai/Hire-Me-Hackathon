@@ -62,7 +62,7 @@ export function YourPagePill({ people, variant }: { people: Record<string, strin
   return (
     <Link href={`/for/${slug}`} className={`your-page your-page-${variant}`}>
       <span className="your-page-label">Your page</span>
-      <span aria-hidden="true"> · </span>
+      <span aria-hidden="true">·</span>
       <span className="sr-only">, </span>
       <span className="your-page-name">{people[slug]}</span>
     </Link>

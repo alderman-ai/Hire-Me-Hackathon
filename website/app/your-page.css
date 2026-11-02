@@ -4,6 +4,7 @@
 .your-page {
   display: inline-flex;
   align-items: center;
+  gap: 0.375rem; /* flex drops the spaces around the dot */
   min-height: 40px;
   padding: 0.5rem 0.9375rem;
   border: 1px solid var(--av-lilac-200);
