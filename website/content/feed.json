@@ -3,7 +3,7 @@
   "posts": [
     {
       "id": "status",
-      "at": "2026-11-02T15:15",
+      "at": "2026-11-02T16:30",
       "kind": "Status",
       "title": "What's being built today",
       "blocks": [
@@ -581,6 +581,12 @@
           "session": "S08",
           "start": 0
         }
+      ],
+      "roles": [
+        "COO",
+        "CEO",
+        "CSO",
+        "RevOps"
       ]
     },
     {
@@ -600,6 +606,114 @@
           "height": 1600,
           "alt": "A scruffy ginger-and-white terrier lying on a wooden hallway floor, looking to the side, with backpacks, a scooter and shoes by the door behind it.",
           "caption": "The reason for the break, waiting by the door."
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "at": "2026-11-02T15:17",
+      "session": "S09",
+      "kind": "Session",
+      "title": "Three calls: one name per agent, the company's look, one disclaimer",
+      "roles": [
+        "CMO",
+        "CEO",
+        "CTO",
+        "COO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "S09 is a short working session in which Alex makes three calls that shape the rest of the day."
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "One name, one session.",
+              "text": "When an agent hands over to a fresh one, the old one has to go, so there's never any doubt which session is the real one. Orchestration made this a standing rule at 15:22.",
+              "quote": {
+                "text": "The only thing that exists are the sessions with the canonical names in the registry we built, and so the process of restarting one is seamless. Like, I should just always see a session there with plenty of context.",
+                "source": "S09 at 03:06"
+              }
+            },
+            {
+              "lead": "The site takes on the company's look.",
+              "text": "Alex sends the website agent and its helpers to rebuild the site in the company's own branding and structure, from its public website. Only what really fits goes in. That's a big job, so the website is left alone to work on it until 16:30.",
+              "quote": {
+                "text": "If what we have so far doesn't naturally fit one of their sections, don't try to just create that section just for kicks.",
+                "source": "S09 at 11:27"
+              }
+            },
+            {
+              "lead": "One disclaimer, once.",
+              "text": "A single line in red above the top menu says this is an unofficial job application, not affiliated with the company.",
+              "quote": {
+                "text": "Just have it in red once at the top of the top menu bar, and then everything else normal. That's enough disclaimer.",
+                "source": "S09 at 18:37"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-lands",
+      "at": "2026-11-02T15:40",
+      "kind": "Update",
+      "title": "Alex's research lands, and the demos move",
+      "roles": [
+        "CEO",
+        "COO",
+        "CMO",
+        "RevOps",
+        "CSO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex chose to do one part of the build himself: the research on the company, partly because it meant handling API keys off camera."
+        },
+        {
+          "type": "quote",
+          "text": "That's not something I wanted to delegate. I really want to do that myself, because it has a bunch of secret tokens and API keys.",
+          "source": "S08 at 05:55",
+          "href": "https://youtu.be/MyYnFOQCagc?t=350"
+        },
+        {
+          "type": "p",
+          "text": "His research landed at about 15:34, and within minutes four pieces of work picked it up:"
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "The site starts to look like the company's.",
+              "text": "A brand pass from the company's own public website began at 15:33, on Alex's word, and the new look was finished at 16:29."
+            },
+            {
+              "lead": "The outbound demo proposes its grid.",
+              "text": "It has 33 workflows: four ideal customer profiles, the languages each needs, and three approaches. Its routing was tested offline on a made-up sample of 12 leads, and by 16:28 all 33 workflows were built."
+            },
+            {
+              "lead": "The scraping demo has its input.",
+              "text": "Its section on the site can now be built from Alex's results."
+            },
+            {
+              "lead": "Every demo gets its own page.",
+              "text": "At Alex's request, the status board now links to a page per demo, /d1 to /d10."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The blog pipeline also had its first rehearsal, on the transcript of one of today's recordings. Its prompts were tuned so a post reads as written, not transcribed."
+        },
+        {
+          "type": "quote",
+          "text": "A lot of things I'm really happy to make judgment calls of, like, look, this doesn't need my attention, this can run without me.",
+          "source": "S08 at 04:31",
+          "href": "https://youtu.be/MyYnFOQCagc?t=268"
         }
       ]
     }

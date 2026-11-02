@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "15:15",
-  "as_of_line": "As of 15:15 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "16:30",
+  "as_of_line": "As of 16:30 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Thirteen pieces of work, run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come ten demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -44,25 +44,25 @@
       "n": 1,
       "demo": "Scraping and research on the Apify API",
       "what": "Scraping and researching prospects at scale on the Apify API. It goes first, because other demos use what it finds.",
-      "status": "Plan reworked on the research. With Alex for approval."
+      "status": "Alex's results are in. Its section is being drafted."
     },
     {
       "n": 2,
       "demo": "Company and stakeholder research",
       "what": "Deep research on the company and the people likely to be involved in hiring.",
-      "status": "Alex is on it, with his own agent since 14:42."
+      "status": "First pass done at about 15:34. It feeds the outbound, scraping, brand and website work."
     },
     {
       "n": 3,
       "demo": "Outbound automation in GetSales",
       "what": "10 ideal customer profiles, each with its own drip sequence, and a classifier that sends each lead to the right one. The first message is personalized before import. Shown as a video clipped from these recordings.",
-      "status": "Groundwork drafted. Waiting on demo 2."
+      "status": "33 demo workflows built. Routing tested on a made-up sample of 12 leads."
     },
     {
       "n": 4,
       "demo": "Blog pipeline",
       "what": "15 minutes of Alex talking turns into a near-finished blog post. He does the last 10%.",
-      "status": "First post format and a sample post built. Its questions are with Alex."
+      "status": "Rehearsed on a real recording. Prompts tuned. Its questions are with Alex."
     },
     {
       "n": 5,
@@ -74,19 +74,19 @@
       "n": 6,
       "demo": "LinkedIn templates in Canva",
       "what": "Pixel-perfect, on-brand visual templates for LinkedIn.",
-      "status": "Plan drafted."
+      "status": "Five templates rendered in the company's brand."
     },
     {
       "n": 7,
       "demo": "LinkedIn content",
       "what": "LinkedIn posts written in the company's own voice.",
-      "status": "Plan drafted."
+      "status": "Running. Its drafting method and checks are built."
     },
     {
       "n": 8,
       "demo": "This website",
       "what": "A page for each key stakeholder, and a running picture of the project.",
-      "status": "Live. Its plan, reworked on the research, is with Alex for approval."
+      "status": "Live in the company's look since 16:29, with a page per demo."
     },
     {
       "n": 9,
