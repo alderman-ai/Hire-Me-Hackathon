@@ -34,7 +34,6 @@ Read this file at startup, and again before you message a session you haven't me
 | `s-d1-scraping` | `scraping\` | S-D1 Scraping research demo: presents Alex's own scraping and research on the site, behind his gate on what the section shows. | Launched by `orchestration`, 2 Nov, after its preflight (DI-6) was answered. |
 | `addvery-research` | `Addvery Research\` | Alex's own Addvery research session: the company, its six key people and its brand capture. He works with it directly; it has no spec. The folder is git-ignored. | Launched by `orchestration` at Alex's request, 2 Nov. |
 | `s-d3-getsales` | `getsales\` | S-D3 GetSales outbound demo: the alert to the six from Alex's sender profile behind his pre-send gate, then the ICP workflows demo. Waits silently for his six in `Addvery Research\`. | Launched by `orchestration`, 2 Nov 14:49, for the alert groundwork; its spec's launch gate was met by DI-6. |
-| `s-d4-blog-pipeline` | `blog-pipeline\` | S-D4 Blog pipeline: turns 15 minutes of Alex's dictation into a near-final blog post. Part 1 (method, prompts, scripts, post format) runs now; part 2 waits for its own intake, which it watches with no pokes. | Launched by `orchestration`, 2 Nov 14:52, on SPEC READY. |
 | `s-d6-canva-templates` | `canva-templates\` | S-D6 Canva LinkedIn templates: part 1 groundwork on Alex's brand capture (template grid and branded layouts as files ready to import, no Canva login). Its intake stays held in its SPEC.md Appendix A until `orchestration` says go. | Launched by `orchestration`, 2 Nov 15:48, on SPEC READY (session e692a845). |
 | `s-d7-linkedin-content` | `linkedin-content\` | S-D7 LinkedIn content creation demo: part 1 voice rules, writing and scoring set-up and draft posts, nothing published. Its intake stays held in its SPEC.md Appendix A until `orchestration` says go. | Launched by `orchestration`, 2 Nov 15:48, on SPEC READY (session 6a355ef8). |
 | `s-d5-blog-articles` | `blog-articles\` | S-D5 Blog articles: two articles, not three (Alex's note in the blog research approval, 16:40), their base and their visuals, groundwork only; its intake stays held and no article questions go to Alex. | Launched by `orchestration`, 2 Nov 16:41 (session 1bffb92f). |
@@ -53,6 +52,7 @@ Spec sessions that have done their job and stopped. Their rows stay, so every sp
 | Session | Folder it started in | Spec | Finished |
 | --- | --- | --- | --- |
 | `s0-bootstrap` | `bootstrap\` | S0 Bootstrap | Done and stopped on 2 Nov; all 10 steps ticked, check passed. |
+| `s-d4-blog-pipeline` | `blog-pipeline\` | S-D4 Blog pipeline | Retired by Alex on 2 Nov, about 16:45 (DI-8 question 1: "The only deliverable is blogs"); D4, DoD-14 and the S-D4 row retired in the charter (C12). Part 1's kit (prompts, scripts, post format, runbook) handed to `s-d5-blog-articles`, which now owns `blog-pipeline\`. Stopped 17:15. |
 
 ## Not sessions
 
