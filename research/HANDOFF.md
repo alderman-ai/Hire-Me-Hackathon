@@ -1,86 +1,50 @@
 # S1 handoff
 
-Written by the first `s1-research` session at 15:00 Prague, 2 Nov, at forking gate G2 (L-01's synthesis is in DIRECTORY.md). You are now the active S1 session, under the same name. Read CLAUDE.md, then SPEC.md in full (it has been updated all afternoon: sections 1, 3, 5, 6, 7, 8 and 9), then this file, then DIRECTORY.md.
+State as of 17:22 Prague, 2 Nov, written by the second `s1-research` session (00877038). It isn't a fork yet: it keeps this file current, so a successor or a session recovery starts from here. Read CLAUDE.md, then SPEC.md (sections 5 and 8 changed this afternoon), then this file, then DIRECTORY.md.
 
-## State of every list
+## Where S1 stands
 
-| List | State | What you do next |
-| --- | --- | --- |
-| L-01 parent (every wave-2 spec) | **Done** 15:00. 7 reports and the synthesis in `research\global\`, all accepted and indexed. FINDINGS sent to `orchestration`; every running reader told. | Nothing. Answer reader questions from DIRECTORY.md. |
-| L-02 scraping (S-D1) | **Parked.** `s-d1-scraping` declined it: Alex runs the scraping himself. | Nothing, unless Alex asks for it. Don't push it to him. |
-| L-03 blog (S-D4, S-D5) | **With Alex**: `Operator tasks\Archive\Approve - research for the blog pipeline.md` (OT-04), created 14:57, TASK line sent, desk said "task shown". Framed as non-blocking: the blog spec drafts first and revises (DI-8 Q5). | Watch the gate (below). On APPROVED, run it into `research\global\` (it's parent level: two readers). |
-| L-04 GetSales (S-D3) and L-06 website (S-D8) | **With Alex, one gate**: `Operator tasks\Archive\Approve - research for the GetSales demo and website.md` (OT-03), created 14:54, TASK line sent, "task shown". Both requesters want findings by 16:30. L-04 has only R1 and R4 left (A6.4 dropped R2 and R3). L-06 has R1 to R3. | Watch the gate. On APPROVED, run both at once: L-04 into `research\getsales\`, L-06 into `research\website\`. That's 5 items plus 6 wildcards, then 2 syntheses. |
-| L-05 brand assets (S-D6, S-D7, S-D10) | **Draft**, not requested yet. | Wait for a `RESEARCH` request. |
-| S-D9 | Asked for L-01 only, no list of its own. | Nothing. |
+**No research is running or queued.** `orchestration`'s RESTART (17:13) says: after L-03, start no new research unless Alex asks for it. Alex's reset rules (`..\answer-desk\ASKING.md`, top, 17:00) also apply: no research list goes to him as a gate, easy calls are S1's own (decide, log in SPEC.md section 8), and there's no 18:00 cut-off ("We're working all night").
 
-## Open gates and pokes
+| List | State |
+| --- | --- |
+| L-01 parent | Done 15:05. On every reader's reading list (C07). |
+| L-02 scraping | Parked: Alex runs the scraping himself. |
+| L-03 blog | Done 17:21. 10 reports and the synthesis in `global\`, indexed. FINDINGS sent to `orchestration [51e560]` at 17:22. Reader: S-D5 only (S-D4 retired 16:48). |
+| L-04 GetSales, L-06 website | Withdrawn 17:03 (OT-03 withdrawn unticked); never run. S-D3 and `website` told, both old and new sessions. |
+| L-05 brand assets | Done 16:45. 7 reports and the synthesis in `global\`, indexed. FINDINGS sent; going through propagate as C11, with S-D5 added as a reader for R1. S-D6, S-D7, S-D10 told. |
 
-- No desk question is open. S1's last ASK was S1-Q6, answered at 14:06. The next free id is **S1-Q7**.
-- OT-03 is open since 14:54, with no poke yet. The first poke is due at about **15:09**.
-- OT-04 is open since 14:57, with no poke yet. The first poke is due at about **15:12**.
-- Poke both together in one line if they're both still open: `POKE S1: waiting on you for <file names>`.
-- **Re-arm the watch at once.** My Monitor tasks die with me. Run `python -I orchestration\check_gate.py "<file>"` from the repo root every 300 seconds with Monitor. It exits 0 on APPROVED or CHANGES and 1 while OPEN.
-- **When a gate closes:**
-  1. On CHANGES, apply them to the list, commit, refreeze the snapshot in the gate file and its hash, and wait again.
-  2. Set the list's `Approved by` line and its Status to running.
-  3. Run the list (BRIEFS.md; see "How I ran L-01" below).
-  4. Send `answer-desk` `TASK DONE S1: <file name>`.
-  5. Send `orchestration` `ARCHIVE <file name>: readers <spec ids>`.
+## Open items
 
-## Queue behind the gates
+- **Desk:** no question open; the next id is S1-Q7. No TASK lines open. Don't poke: rule 7 pokes only when work is blocked.
+- **Waiting on a reply:** `s-d5-blog-articles [b32408]` was asked at 17:22 to confirm it got the L-03 synthesis. Re-send if nothing comes (it handed off at 17:16; the old id is being removed).
+- **Monitors:** none running. The gate-watch script is in the job's temp folder and isn't needed: no gates are open.
 
-Empty. No `RESEARCH` request is waiting. If one arrives, the drafts are in `lists\`. A topic L-01 already covers gets the reader added, not a new item.
+## Answers applied this session
 
-## Answers not yet applied
+- OT-09 (L-05): ticked with changes; applied (R1 narrowed to one cloned repo; R4 gained a leader's-personal-brand sub-question). The Ivana direction went to `orchestration` and S-D7, settled there as local only.
+- OT-04 (L-03): unticked, changes applied (R5 the blog skill, R6 and R7 the two articles' research bases). The copywriting-skill rule, two articles not three, and the visuals went to `orchestration`, S-D4 and S-D5.
+- Alex's feedback-section rule (desk, 16:36): an approval includes whatever he wrote in its feedback. Recorded in SPEC.md section 5.
 
-None. Every Alex answer so far (S1-Q5, S1-Q6, OT-01) is applied in SPEC.md and the lists.
+## Decisions (also in SPEC.md section 8)
 
-## Decisions since launch (also in SPEC.md section 8)
+- 16:32: L-05 ran on OT-09 ticked with changes, with no second freeze.
+- 16:36: L-03 ran on OT-04 unticked, from his note's own "start researching".
 
-- **14:41, forking gate G1 deferred to G2.** L-01's subagents report to the session that launched them, so I forked only after the synthesis.
-- **Not logged as decisions, because they follow rules:**
-  - L-03 got its own gate, OT-04, because OT-03 had already been shown to Alex.
-  - L-04 and L-06 share one gate (OT-03), because Alex is swamped ("we need to remove blockers") and both are due at 16:30.
-  - L-02 was parked without being put to Alex.
-  - The 24 post-research questions in the L-01 synthesis were **not** sent to Alex. Each spec session folds its own into its next gate; `orchestration` was told.
+## How to run a list again (only if Alex asks)
 
-## How I ran L-01 (repeat it)
+- One `general-purpose` subagent per item, all in one message in the background, briefed from BRIEFS.md (item verbatim, DoD ids, exact report path, "item k of n", a 15-minute target, the shared rules). Wildcards get the other items verbatim and the other two lenses.
+- Review each report as it lands (headings, citations, inference marked, no secrets); tick it with the `tick.py` pattern (Python with raw strings, never `sed` on Windows paths); commit report and list together; send time-critical findings to the reader straight away.
+- Then the synthesis, DIRECTORY entries plus the reverse index, close the list, `FINDINGS` to `orchestration`, and tell each reader.
+- Reports took about 5 to 8 minutes each this afternoon; a synthesis about 5.
 
-- **Briefs:** one `general-purpose` subagent per item, all started in one message in the background, briefed from `BRIEFS.md`. Each brief carries:
-  - the item verbatim;
-  - the DoD ids it serves (real ones now: DoD-1 to DoD-22 in `..\orchestration\DOD-DRAFT.md`);
-  - the exact report path;
-  - "item k of n";
-  - a 40-minute target;
-  - the shared rules.
-- **Wildcards** get the other items verbatim and the other two lenses.
-- **Review:** headings (header, method, verdict, evidence, gaps, recommendations as options, sources), the count of links, and that inference is marked.
-- **When each report is accepted:** tick it on the list with its path and commit the report together with the list.
-- **After the last report:** launch the synthesis brief, write DIRECTORY.md entries (verdicts, governs, read-this-when, caveats) and the reverse index, close the list, send `orchestration` the FINDINGS line naming every reader, then tell each running reader session what to read first.
-- **Time-critical findings:** relay them to the owning session before the synthesis, marked as reviewed with the synthesis to follow. I did this for the 15:30 alert.
-- **Timing:** reports took about 9 to 12 minutes, and the synthesis about 7.
+## Rules learned this session
 
-## Rules learned the hard way
+- Sessions hand off often. Before messaging, check ListAgents: when two rows share a name, use the newest `[ref]`. `orchestration` is `[51e560]` since 16:44.
+- `orchestration` edits `research\` files (archive paths, CLAUDE.md reading item 10) and says so afterwards. Re-read a file before editing it.
+- Long inline Python in a Bash heredoc can fail to parse; write the script to the job's temp folder and run it with `python -I`.
 
-- **Gate files follow Alex's legibility rule** (SPEC.md section 5):
-  - a plain name with its meaning in the first 35 characters;
-  - a "What this is" section first, with the reading time, the deadline and what ticking starts;
-  - no codes in the body;
-  - ids in the front matter only.
-- **`orchestration` has two refs after its 14:44 handoff.** Address the local one as `orchestration [fe6fa8]` if the bare name is ambiguous. `website` handed off at 14:53 under the same name.
-- **Paths:** don't use `sed` on lines containing Windows paths, because it eats backslashes. Use Python with raw strings (`r"..."`), or Edit.
-- **Committing:** gate files in `..\Operator tasks\` are committed on their own, path-limited, with the `[research]` prefix. `orchestration` (S2) may edit `research\` and tells you afterwards (it did, for the DoD ids and the archive paths).
-- **Alex's state:** he reads only the desk, and he's swamped. Keep each gate to one tick and a 2 to 3 minute read.
+## Forking gates from here
 
-## Your forking gates from here
-
-- G3: shortly before 18:00, or when Alex says he's leaving.
-- G4: half your context.
-
-Fork the same way:
-1. Write HANDOFF.md and commit.
-2. Launch from `research\`: `claude --bg -n s1-research "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."`
-3. Update S1's row in `..\SESSIONS.md` with the handoff time, and commit it on its own with `[roster]`.
-4. Stop the old session by its exact id.
-
-Don't fork while research subagents are running; they report to the session that launched them.
+- G3 (shortly before 18:00) no longer has its reason, since Alex works through the night and nothing is queued; fork only at G4 (half context; 34% at 16:47) or if `orchestration` asks.
+- How: rewrite this file, commit, launch from `research\` with `claude --bg -n s1-research "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."`, update S1's row in `..\SESSIONS.md` (commit it alone with `[roster]`), then stop the old session by its exact id. Don't fork while research subagents are running.
