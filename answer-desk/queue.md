@@ -878,6 +878,7 @@ TASK website: Claude Doc "Six stakeholder pages: text for your edit" is waiting 
 From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-5456b0a3ed0bfef495d210300bf66ec0)
 Received: 2026-11-02 17:31 CET (+01:00)
 17:31 CET: alert shown to Alex with a PushNotification (recording ready).
+17:39 CET: s-d3-getsales handed off to a fresh session (2a7fc2a1) under the same name; task stands.
 
 ```
 TASK S-D3: GetSales demo 2, "classifying leads into ICPs", is ready to record. It's about a minute, terminal only, nothing to set up in GetSales.
@@ -902,6 +903,7 @@ Order: after blog dictation 1 (https://claude.ai/artifact/3jZqfh9wfu8whexxYsxJQH
 From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-5456b0a3ed0bfef495d210300bf66ec0)
 Received: 2026-11-02 17:35 CET (+01:00)
 17:35 CET: alert shown to Alex; no PushNotification (one went out for demo 2 at 17:31).
+17:39 CET: s-d3-getsales handed off to a fresh session (2a7fc2a1) under the same name; task stands.
 
 ```
 TASK S-D3: GetSales demo 1, "36 workflows, one variable", is ready to record (about 3 minutes, one take):
@@ -920,5 +922,14 @@ Received: 2026-11-02 17:36 CET (+01:00)
 
 ```
 TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick: https://claude.ai/artifact/SWcsiYUQpJUkZ18mQA2sWj
+```
+
+## TASK s-d6-canva-templates: Canva templates brand sign-off (Doc) — open
+From: s-d6-canva-templates (uds:\.\pipe\LOCAL\cc-msg-25f0dd64a465fb0250b238bab03124d4)
+Received: 2026-11-02 17:42 CET (+01:00)
+17:42 CET: alert shown to Alex; no PushNotification (sender: nothing else waits on it).
+
+```
+TASK s-d6-canva-templates: the five Addvery LinkedIn templates are ready for your brand sign-off: https://claude.ai/artifact/CFuMcU2Qpxfp1ciRVhJoxX. Comment approve, or the changes you want, on the Doc. About 5 minutes. Nothing else waits on it: the Canva build and your on-camera asset pack go ahead meanwhile.
 ```
 
