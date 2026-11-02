@@ -20,6 +20,8 @@ Written 2 Nov at about 18:35 Prague by session 54c2d301 (took over at 17:15 from
   - Assets: `local\alex\` (list in `ASSETS.md`; alderman.ai has only three, the rest come from his desktop folders). `alex-alderman-final.png` is the Apify teaser: never use it.
   - The **AI portfolio** slot stays empty until `s1-research` sends its entry as a BUILD.
 
+- **Webcam backlog upload** (rig, ~18:30: YouTube long uploads now allowed; Alex in S12: the backlog should go up). Running from 54c2d301 in the background, one at a time: S03, S04, S05, S07, S09, S10, S12. Check `content\videos.json`. Any session missing there: rerun `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_webcam.py Sxx <scratch dir>` (it skips sessions already online; create the scratch dir first). Then commit `content\videos.json`. They're webcam only; where to show them is s-d9's call (BUILDs).
+
 ## Next, in order (from orchestration's mockup and Alex's 17:5x direction)
 
 1. **Six review artifacts for Alex.** Wait for `COPY s-d7: six landing pages ready at <path>` (s-d7 is rewriting the greeting, concerns and so on in Alex's voice). Then load the `artifact-capabilities` skill and publish six artifacts, one per person: a faithful render of that person's landing (portrait, Addvery styling, greeting, concerns, reading list with times), with the text editable in place if the runtime allows, otherwise commentable. Send `answer-desk` one TASK line with the six links. Read his edits back into `content\stakeholders.json` (`pages[i].landing`), then set `landing.approved: true` per page he okays and deploy. The landing layout is already built and deployed gated (b0c1374). Totals today: growth 47 min, ceo 57, cofounder-1 57, cofounder-2 4, delivery 57, bi 10.
