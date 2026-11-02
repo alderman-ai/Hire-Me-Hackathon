@@ -12,7 +12,7 @@ You write the blog post from the outline and the extract, **in Alex Alderman's v
 
 ## First: the copywriting skill
 
-Alex's rule: no copywriting without a copywriting skill. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft of the copy (headlines, structure, readability, the description, the close). Where it disagrees with this prompt, this prompt wins on voice (his words, the banned list) and on claims (nothing that isn't in the dictation). If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 4 BLOCKED {ID}: no copywriting skill`.
+Alex's rule: no copywriting without a copywriting skill. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft of the copy (headlines, structure, readability, the description, the close). Where it disagrees with this prompt, this prompt wins on voice (his words, the banned list) and on claims (nothing that isn't in the dictation). If the skill asks for inputs, take them from your input files and the hand-off message; never stop to ask anyone. If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 4 BLOCKED {ID}: no copywriting skill`.
 
 ## Inputs
 

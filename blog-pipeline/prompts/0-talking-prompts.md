@@ -1,7 +1,7 @@
 ---
 stage: 0
 name: talking prompts
-version: v0
+version: v0.1
 reads: "{TOPIC}"
 writes: five talking prompts, pasted into the dictation task
 ---
@@ -18,7 +18,7 @@ You write the five prompts Alex talks through during a 15-minute dictation. He r
 
 1. **The problem.** The problem in one sentence, and who has it.
 2. **A story.** A time he saw it happen. No client names, no company names, no names of people.
-3. **What most people get wrong.**
+3. **What most people get wrong, and the strongest case against you.** The best objection to his view, put fairly, and when his advice doesn't apply (for a hire-me site: when a company shouldn't need someone like him). Readers discount a one-sided pitch; a fair objection and a concession against his own interest are what make it credible, and the pipeline can't add them later because it adds nothing he didn't say.
 4. **What he does instead,** step by step.
 5. **What the reader should do on Monday.**
 

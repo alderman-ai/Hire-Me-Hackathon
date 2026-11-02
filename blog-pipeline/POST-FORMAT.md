@@ -1,8 +1,8 @@
 # Blog post format
 
-Post format v1, 2 Nov 2026 · Owner: S-D4 (`blog-pipeline\`) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
+Post format v1.1, 2 Nov 2026 (v1.1: key points on by default, a diagram block, pull quotes hidden from screen readers, a per-post link-preview image; from the blog research, L-03 R4) · Owner: S-D4 (`blog-pipeline\`) · Used by: the pipeline's Format and Scan stages, S-D5's publish step, and `website`, which builds the template from it
 
-Every blog post is one Markdown file: a block of front matter that says what the post is, then the post itself in plain Markdown with three small additions: pull quotes, a key-points box and notes left for Alex. The pipeline writes the file, Alex finishes it, and the site renders it as it is. This document is the contract between them. A file that passes the checklist in §6 must render; anything this document doesn't define is a validation failure, not something to guess at. The posts are Alex Alderman's, in his name and voice. The site styles them in its own look, but they are never written as a company's posts.
+Every blog post is one Markdown file: a block of front matter that says what the post is, then the post itself in plain Markdown with four small additions: pull quotes, a key-points box, an optional diagram and notes left for Alex. The pipeline writes the file, Alex finishes it, and the site renders it as it is. This document is the contract between them. A file that passes the checklist in §6 must render; anything this document doesn't define is a validation failure, not something to guess at. The posts are Alex Alderman's, in his name and voice. The site styles them in its own look, but they are never written as a company's posts.
 
 ## 1. The file
 
@@ -79,7 +79,7 @@ made:
 | `made.stages` | list of strings | yes | Every stage in the order it ran, lowercase, 1 to 3 words each, as `PIPELINE.md` names them. |
 | `made.checks` | list of strings | yes | The stages from `stages` that check the work rather than write it, in the same order, at least one. In the draft method: `edit` (traces every claim to the dictation) and `scan` (secrets and names). `PIPELINE.md` marks them. |
 
-**Word count.** One rule for `reading_minutes`, `words_spoken`, `words_drafted` and the changed share: split on whitespace and count the tokens that contain at least one letter or digit. For a post, count the body only, after removing HTML comments, link URLs (keep the link text), the tags `[!pull]` and `[!summary]`, list numbers such as `1.`, and pull-quote blocks (they repeat body text). Notes for Alex count.
+**Word count.** One rule for `reading_minutes`, `words_spoken`, `words_drafted` and the changed share: split on whitespace and count the tokens that contain at least one letter or digit. For a post, count the body only, after removing HTML comments, link URLs (keep the link text), the tags `[!pull]`, `[!summary]` and `[!diagram]` with its kind word (`scale` or `flow`), list numbers such as `1.`, and pull-quote blocks (they repeat body text). Notes for Alex and the diagram's caption and labels count.
 
 ## 3. The body
 
@@ -88,8 +88,8 @@ made:
 In this order:
 1. Optional HTML comment lines, only directly after the front matter. They are never rendered.
 2. **The lede:** 1 to 3 paragraphs before the first heading. No heading above it: the title comes from the front matter.
-3. Optional **key-points box** (§3.3), directly before the first `##`.
-4. **4 to 6 sections**, each starting with `## Heading` and its first paragraph. A section may hold up to two `### Sub-heading`s, only after its first paragraph. Nothing deeper.
+3. The **key-points box** (§3.3), directly before the first `##`. On by default: leave it out only when the post has no three claims that stand alone.
+4. **4 to 6 sections**, each starting with `## Heading` and its first paragraph. A section may hold up to two `### Sub-heading`s, only after its first paragraph, and the post may hold one **diagram** (§3.5) inside a section. Nothing deeper.
 5. The last section ends the post. No sign-off, author bio or "How this post was made" text: the template adds those.
 
 **Headings.** Plain text, sentence case, at most 60 characters, unique in the post. No links, emphasis or notes for Alex.
@@ -114,7 +114,7 @@ The callouts use the GitHub alert form, so they degrade gracefully: Obsidian, wh
 - 1 to 3 per post, at most one per section. No attribution: the post is Alex's.
 - Placement: between two blocks, inside the section that holds its sentence or the next one, never directly before or after the paragraph it quotes, never in the lede, never as the post's last block.
 
-### 3.3 Key-points box (optional, at most one)
+### 3.3 Key-points box (on by default, at most one)
 
 ```markdown
 > [!summary]
@@ -122,7 +122,7 @@ The callouts use the GitHub alert form, so they degrade gracefully: Obsidian, wh
 > - Keep the questions on one card, so you never decide what to look at.
 ```
 
-- The first line is exactly `> [!summary]`. Then 3 to 5 bulleted lines, each one sentence of at most 20 words. Nothing else inside.
+- The first line is exactly `> [!summary]`. Then 3 to 5 bulleted lines (3 or 4 is best), each one sentence of at most 20 words. Nothing else inside.
 - It sits directly before the first `##`. The template titles it "Key points".
 
 ### 3.4 Notes for Alex: `[Alex: ...]`
@@ -136,6 +136,22 @@ My longest early attempt lasted [Alex: how many weeks your first try lasted] bef
 - Inline in a paragraph, list item or table cell. A note may be a whole paragraph on its own when the whole paragraph is his to write, such as the closing ask. Never in the front matter, a heading, a pull quote, the key-points box or link text.
 - **Rendering.** In `draft`, `near-final` and `sample` posts, each note renders as `<mark class="alex-marker">` with "Alex:" in bold, clearly highlighted (§5), and a banner above the post says, for example, "Near-final draft · not published · 3 notes for Alex".
 - **Published posts contain none.** The publish step blocks: it refuses to set `status: "published"` while one remains, and never strips them, since stripping would leave a hole where Alex had something to add. As a backstop, the site build fails on a `published` post with a note.
+
+### 3.5 Diagram (optional, at most one)
+
+```markdown
+> [!diagram] scale
+> Where a company sits on the AI-skill scale
+> 1. Build: you design and build your own workflows
+> 2. Maintain: you keep others' workflows running as models change
+> 3. Use: you run workflows other people built
+```
+
+- The first line is exactly `> [!diagram] scale` or `> [!diagram] flow`. `scale` draws the items as a vertical scale, item 1 at the top; `flow` draws them as steps in order, left to right on wide screens.
+- The second line is the caption: one plain sentence or phrase, at most 100 characters, no end period needed.
+- Then 3 to 6 numbered items, `> 1.` onwards, each `Label` or `Label: note`: a label of 1 to 4 words, an optional note of at most 15 words. Plain text only: no links, emphasis or notes for Alex.
+- It draws an idea Alex actually gave (his scale, his steps, his order), never a decoration. Place it between two blocks inside a section, never in the lede and never as the post's last block.
+- The template draws it in the site's look from this text, so there's no image and no design step, and its words stay searchable and readable by screen readers.
 
 ## 4. The "How this post was made" box
 
@@ -179,14 +195,16 @@ Stage names show as written, with a capital first letter.
 - **Byline.** "Alex Alderman · 2 Nov 2026 · 5 min read", from `author`, `date` and `reading_minutes`.
 - **Measure.** Body text at about 65 to 72 characters a line (`max-width: 68ch`, 18px, line-height about 1.6). The site's 720px feed column at 17px runs nearer 85, too wide for a long read.
 - **Heading rhythm.** `##` clearly larger with generous space above (the `.doc h2` and `.doc h3` sizes are a fair start), `###` one step down. Lists, tables and code follow the `.doc` styles.
-- **Pull quotes.** Larger than body text (about 24 to 28px) and set apart with space and the ink rule; they may hang wider than the text column on wide screens. No attribution line.
+- **Pull quotes.** Larger than body text (about 24 to 28px) and set apart with space and the ink rule; they may hang wider than the text column on wide screens. No attribution line. Render each as an `aside` (not a `blockquote`, since it quotes no one else) with `aria-hidden="true"`, so screen readers don't read the sentence twice.
+- **Diagram.** Drawn in HTML and CSS from the §3.5 text, in the site's look: `scale` as a vertical bar with the items stacked from top to bottom, `flow` as numbered steps with arrows that stack on phones. The caption sits under it. Real text, not an image.
 - **Key points.** The `.post-highlight` box, titled "Key points".
 - **Notes for Alex.** Ink text on a light accent-tinted fill with an accent border, impossible to miss when Alex scrolls the preview.
 - **The made box.** Its own panel after the body; the four steps run as a horizontal flow on wide screens and stack on phones.
 - **Index.** `/blog` lists `published` posts newest first by `date` (ties by `title`): title as the link, `cover.subtitle`, date and reading time.
 - **Preview only.** A post with any status but `published` never appears on the production index or at a production URL. Previews and production deploy from the same folder, so the status check is what keeps unfinished posts off production: render them only when `VERCEL_ENV` isn't `production` (preview deployments and `next dev`), with the banner from §3.4 and `noindex`.
-- **Metadata.** `<title>` from `title`, meta and Open Graph description from `description`.
-- **Parsing.** `marked` already renders the docs pages. Read the front matter with a YAML parser, find the callouts as blockquotes whose first line is `[!pull]` or `[!summary]`, and the notes with an inline rule on the §3.4 pattern.
+- **Metadata.** `<title>` from `title`, meta and Open Graph description from `description`, a canonical URL, and Article structured data (JSON-LD: headline, author Alex Alderman, date).
+- **Link-preview image.** A per-post `og:image` at 1200 × 630, generated by the site from the `cover` fields (kicker, title or `title_lines`, the accent phrase, the site's colours), for example with Next.js `opengraph-image.tsx` in the post route. No new front-matter field and no image file per post: a post shared on LinkedIn then shows its cover instead of a bare link.
+- **Parsing.** `marked` already renders the docs pages. Read the front matter with a YAML parser, find the callouts as blockquotes whose first line is `[!pull]`, `[!summary]` or `[!diagram] <kind>`, and the notes with an inline rule on the §3.4 pattern.
 
 ## 6. Validation checklist
 
@@ -206,9 +224,10 @@ A script or a stage checks every post against this list. **F** fails the file; *
 12. **F** No `#` heading and no heading deeper than `###` outside code blocks; no setext headings; every `###` sits inside a `##` section after its first paragraph.
 13. **F** 4 to 6 `##` sections, and at least one lede paragraph before the first.
 14. **F** No raw HTML but comments; no images (`![`); no bare URLs, reference links, footnotes, task lists, strikethrough or horizontal rules.
-15. **F** Every blockquote opens with `[!pull]` or `[!summary]`. 1 to 3 pull quotes, at most one per section, none in the lede, none as the last block, none directly next to the paragraph it quotes. At most one key-points box, directly before the first `##`, holding 3 to 5 bullets.
+15. **F** Every blockquote opens with `[!pull]`, `[!summary]` or `[!diagram] scale|flow`. 1 to 3 pull quotes, at most one per section, none in the lede, none as the last block, none directly next to the paragraph it quotes. At most one key-points box, directly before the first `##`, holding 3 to 5 bullets. At most one diagram, inside a section and not its last block, with a caption of at most 100 characters and 3 to 6 numbered items, each a 1-to-4-word label with an optional note of at most 15 words, no links, emphasis or notes for Alex.
 16. **F** Every pull quote's text occurs word for word in the body outside pull quotes (after the normalising in §3.2), and holds no note, link or emphasis.
 17. **F** Every `[Alex` is a well-formed note; none sits in the front matter, a heading, a callout or link text.
 18. **F** `status: "published"` and any note for Alex: never.
 19. **W** A paragraph over 4 sentences; a pull quote outside 8 to 30 words; more than 5 notes for Alex; a link that isn't `https://` or site-relative.
 20. **W** Body words outside 900 to 1,400 (the Draft stage's target).
+21. **W** No key-points box (it's on by default, §3.3).

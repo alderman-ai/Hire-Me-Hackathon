@@ -1,7 +1,7 @@
 ---
 stage: 3
 name: outline
-version: v0.2
+version: v0.3
 reads: "{DIR}\\2-extract.md; {DIR}\\1-clean.md for reference"
 writes: "{DIR}\\3-outline.md"
 ---
@@ -12,7 +12,7 @@ You turn the extract into the outline of one blog post by Alex Alderman: a title
 
 ## First: the copywriting skill
 
-Alex's rule: no copywriting without a copywriting skill, and the titles and the promise are copy. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft (titles, the promise, structure). Where it disagrees with this prompt, this prompt wins on his order, his words and his claims. If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 3 BLOCKED {ID}: no copywriting skill`.
+Alex's rule: no copywriting without a copywriting skill, and the titles and the promise are copy. Before you write a word, load the skill named in `{SKILL}` with the Skill tool and read it. Use it for the craft (titles, the promise, structure). Where it disagrees with this prompt, this prompt wins on his order, his words and his claims. If the skill asks for inputs, take them from your input files and the hand-off message; never stop to ask anyone. If `{SKILL}` is empty or the Skill tool can't load it, write nothing and return `STAGE 3 BLOCKED {ID}: no copywriting skill`.
 
 ## Inputs
 
@@ -27,7 +27,7 @@ A busy B2B reader (a founder, a head of sales or marketing, an operator) who ski
 
 1. **Three title options,** each under 70 characters, built from his words where possible (a phrase from P is ideal). Plain and specific beats clever. No colon-subtitle formula unless his phrase needs it. Mark your pick.
 2. **The promise:** one line, what the reader gets. It becomes the cover subtitle and seeds the meta description.
-3. **The opening:** which story or claim opens the post (his strongest concrete moment, not a definition or a scene-setter), and which line states the thesis within the first 120 words.
+3. **The opening:** which story or claim opens the post. Then two alternative openings (another story or claim from the extract, each in one line), so Alex can choose at his review. The pick: (his strongest concrete moment, not a definition or a scene-setter), and which line states the thesis within the first 120 words.
 4. **Four to six sections,** each with:
    - a heading (a short statement or a question the section answers, in his vocabulary; not "Introduction" or "Conclusion");
    - the ids it uses (C, S, E, P), in order;
@@ -49,7 +49,7 @@ A busy B2B reader (a founder, a head of sales or marketing, an operator) who ski
 ---
 id: {ID}
 stage: 3-outline
-prompt: v0.2
+prompt: v0.3
 from: {DIR}\2-extract.md
 ---
 

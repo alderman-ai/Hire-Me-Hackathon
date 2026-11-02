@@ -31,7 +31,7 @@ python -I blog-pipeline\scripts\find_in_rig.py --start 15:15 --end 15:35 --out b
 python -I blog-pipeline\scripts\find_in_rig.py --start 15:15 --end 15:35 --against blog-pipeline\dictations\T-01.md > blog-pipeline\drafts\T-01\gaps.txt
 ```
 
-Its `WINDOW` line gives the session id and the minutes spoken, for the "How this post was made" box. If the rig hasn't processed the session yet, don't wait: draft without `rig.txt` and `gaps.txt`, take minutes talked from the slot (or words spoken / 150, rounded), and rerun stage 1 onward later only if `--against` then shows real gaps.
+Scan `rig.txt` before any stage reads it (`scan.py`), like the dictation. If the rig is the only source (no Wispr Flow text), use `rig.txt` as `{DICTATION}` and say so in stage 1's hand-off. Its `WINDOW` line gives the session id and the minutes spoken, for the "How this post was made" box. If the rig hasn't processed the session yet, don't wait: draft without `rig.txt` and `gaps.txt`, take minutes talked from the slot (or words spoken / 150, rounded), and rerun stage 1 onward later only if `--against` then shows real gaps.
 
 ## 2. Stages
 
@@ -39,7 +39,7 @@ Hand each stage to a fresh general-purpose subagent with exactly this message (s
 
 ```
 You are stage <n> of the blog pipeline. Read blog-pipeline\prompts\<n>-<stage>.md and follow it exactly.
-{ID} = T-01   {DICTATION} = blog-pipeline\dictations\T-01.md   {DIR} = blog-pipeline\drafts\T-01   {FORMAT} = blog-pipeline\POST-FORMAT.md   {TOPIC} = <topic>   {SKILL} = <the copywriting skill>
+{ID} = T-01   {DICTATION} = blog-pipeline\dictations\T-01.md   {DIR} = blog-pipeline\drafts\T-01   {FORMAT} = blog-pipeline\POST-FORMAT.md   {TOPIC} = <topic>   {SKILL} = marketing:content-creation
 Work from the repo root C:\Users\alder\Desktop\Hire me hackaton. Write only the files the prompt names. Don't commit.
 Return the prompt's "Return" block and nothing else.
 ```
@@ -54,7 +54,7 @@ Return the prompt's "Return" block and nothing else.
 | 6 | format | `post.md` | `validate.py` exits 0 |
 | 7 | scan | `7-scan.md`; `post.md` set to `near-final` | `scan.py` exits 0 on everything |
 
-**No copywriting without a copywriting skill** (Alex, 2 Nov). Stages 3 to 6 (outline, draft, edit, format) load the skill in `{SKILL}` first and stop with `BLOCKED` without one. The blog research (L-03 R5) names the skill; `orchestration` turns it on. Until then, run stages 1 and 2 only.
+**No copywriting without a copywriting skill** (Alex, 2 Nov). Stages 3 to 6 (outline, draft, edit, format) load the skill in `{SKILL}` first and stop with `BLOCKED` without one. The skill is `marketing:content-creation`, picked from the blog research (L-03 R5) and confirmed on by `orchestration` (2 Nov, ~17:00). A voice-matching editor (`humanizer`) for the edit stage is Alex's call in the morning; until then the edit stage runs on the same skill.
 
 Stages run one after another (each needs the last one's output). **Timing,** from a rehearsal on a 13-minute rig transcript (2,040 words): clean 2.6 min, extract 4.5, outline 3.9, draft 3.7, edit 4.5, format 2.0, scan 2.2. About 25 minutes from captured dictation to a near-final post, so book Alex's review at least 30 minutes after his dictation ends, plus the preview deploy. The checks are yours, the running session's: read the stage's return line and the file's header; a failed check means fix the prompt and rerun, never hand-edit.
 
@@ -81,7 +81,7 @@ The three articles use their own spec id (`BUILD S-D5-B<n>: ...`).
 
 ## 5. Alex's review and the last 10%
 
-Freeze the post into a gate approval (`Approve - ...` in `Operator tasks\`, from `orchestration\_templates\Gate approval template.md`): what this is in plain words, a five-line summary, the preview URL, the post in full, the numbers, and the list of `[Alex: ...]` notes. Wait on it with `python -I orchestration\check_gate.py "<file>"` every 300 seconds. When it says `APPROVED`, still read the changes fence: whatever Alex wrote there is part of the approval (his rule, 2 Nov 16:36), so apply it before moving on.
+Freeze the post into a gate approval (`Approve - ...` in `Operator tasks\`, from `orchestration\_templates\Gate approval template.md`): what this is in plain words, a five-line summary, the preview URL, the post in full, the numbers, the list of `[Alex: ...]` notes, and the outline's other two titles and two openings for him to pick from. Optional, his call: a cold read by a subagent playing a sceptical agency leader before his last 10% (blog research W3). Wait on it with `python -I orchestration\check_gate.py "<file>"` every 300 seconds. When it says `APPROVED`, still read the changes fence: whatever Alex wrote there is part of the approval (his rule, 2 Nov 16:36), so apply it before moving on.
 
 Publishing (the three articles' step, not this pipeline's): Alex fills the notes, then
 
