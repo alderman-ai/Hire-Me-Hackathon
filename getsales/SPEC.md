@@ -126,15 +126,15 @@ getsales\
 
 ## 5. Definition of done
 
-Aligned at the 17:13 restart with the charter's DoD-12 and DoD-13 as reworded by S2 (C06): 36 workflows, nothing sends from GetSales, no classifier trained, the alert to the six goes by hand outside the demo. The earlier criteria (the alert through GetSales, the pre-send gate, only the six enrolled) are retired with DI-7 A7.1.
+Aligned at the 17:13 restart with the charter's DoD-12 and DoD-13 as reworded by S2 (C06), and again at 17:50 for C14 (A10.7: two blog-style demo entries): 36 workflows, nothing sends from GetSales, no classifier trained, the alert to the six goes by hand outside the demo. The earlier criteria (the alert through GetSales, the pre-send gate, only the six enrolled) are retired with DI-7 A7.1.
 
 | # | Criterion | Traces to |
 | --- | --- | --- |
 | 1 | The folder "Hackathon demo · Addvery", apart from Alex's own flows, holds the 36 workflows (4 ICPs × English, Czech, German × 3 tactics). Each opens with `{{custom_message_1}}`, a lead field imported with the CSV. Every flow is read back by id and its id is in `ids.md`. | DoD-12 |
 | 2 | No workflow has a lead, none is started, nothing sends from GetSales, and no classifier is trained. How Jev would route a lead into one workflow is explained in `routing\`, shown on a fictional sample only. | DoD-12 |
 | 3 | The copy of all 36 has had a copywriting-skill pass and sits in one Claude Doc Alex can skim and edit. The top workflow is ready to open on camera with its first messages. | DoD-12 |
-| 4 | The pipeline for the six is shown up to each person's computed first message (the six from his research, the CSV, enrichment, `custom message 1`) on one recordable screen, with no import into GetSales. `live-run.md` gives each stage's time. | DoD-13 |
-| 5 | Alex has recorded the walkthrough; `s-d9-legibility` has the CLIP line (times, cue words, the folder name) and its clip is in the D3 section, which `website` built from `site\section.md`. | DoD-13 (with S-D9) |
+| 4 | Two recordable demos are ready, each with talking points in a Claude Doc: demo 1, about 3 minutes (classification tools, the 36 workflows, the one variable), and demo 2, a short capture of leads classified into ICPs (`routingoute.py` on the fictional sample). The six appear only as the variable's source, if Alex wants that beat; nothing about them is imported. | DoD-13 |
+| 5 | Both entries are on the site's GTM demos list, each a video clipped by `s-d9-legibility` from his rig recording with a summary of its transcript below, built by `website` from S-D3's BUILD requests, live before his meeting on 3 Nov. | DoD-13 (with S-D9) |
 | 6 | No tracked file, page or clip shows a secret, the Apify proposal or Alex's own outbound outside the demo folder. The six's data and messages stay in git-ignored `live\`. | DoD-22 |
 
 ## 6. Research step
