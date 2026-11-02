@@ -1,21 +1,21 @@
 # S1 Research: executable spec
 
-Status: draft, waiting on preflight answers · Row: S1 — Research (meta) · Folder: `s1-research\` · Session: `research` (both as proposed; S0's directory plan confirms them)
+Status: draft, waiting on preflight answers · Row: S1 — Research (meta) · Folder: `s1-research\` · Session: `s1-research` (both as proposed; S0's directory plan confirms them)
 
 This spec sets how research is chosen, sized, run, stored and indexed. It does not choose topics, depths or budgets. Alex does, through the preflight below, because the charter's research reading list says: "do not attempt to do this without the operator in the loop -- he will override and micromanage the research part." Anything Alex tells the research session directly overrides this spec and every default in it.
 
 ## 1. Operator preflight (P3)
 
-All four questions go out at once, one ASK message each, to `answer-desk` in the `answer-desk\ASKING.md` format. Recordings needed: none. No research task runs before S1-Q1 is answered, except as S1-Q4 allows.
+The preflight is decision intake DI-3 (`Operator tasks\DI-3 S1 Research preflight.md`), which Alex answers in Obsidian. It holds all four questions, as Q3.1 to Q3.4 for S1-Q1 to S1-Q4, and none of them goes through the answer desk. **Launch gate:** the S1 session isn't launched until Alex says "DI-3 is ready". Recordings needed: none. No research task runs before S1-Q1 is answered, except as S1-Q4 allows.
 
 | ID | Question | Critical | Default if unanswered | Answer |
 | --- | --- | --- | --- | --- |
-| S1-Q1 | Which topics go on the reading list, at which tier, with which research details? | yes | Nothing is researched. Machinery only; the list is re-sent under a new id in Alex's next block. | — |
+| S1-Q1 | Which topics go on the reading list, at which tier, with which research details? | yes | Nothing is researched. Machinery only; the question stays open in DI-3 and is raised at Alex's next block. | — |
 | S1-Q2 | What may research spend, and in what unit? | no | No deep run starts. Light and standard topics run as approved. | — |
-| S1-Q3 | Which Addvery research is S1's (shared, done once) and which stays with S-D2? | no | S1 owns brand capture; S-D2 keeps company and stakeholder research. | — |
+| S1-Q3 | Which Addvery research is S1's (shared, done once) and which stays with S-D2? | no | S1 owns brand capture. Company research follows DI-2 Q2.2 (owner of the `Addvery Research` folder), otherwise it stays with S-D2. | — |
 | S1-Q4 | Charter conflict: may research start on a default when Alex is away (P5 against the reading-list rule)? | no | No. Nothing unapproved starts. | — |
 
-After this round, S1 interrupts Alex only for something critical (P5). Topic requests that arrive later from other specs reach him batched, in one non-critical ASK (section 6). The full ASK text goes out in the meta-spec round; answers are recorded in the table above as `A S1-Qn`.
+Answers are read from DI-3's fences into the Answer column above. An empty fence means that question's default, which is logged in section 8. After this round, S1 interrupts Alex only for something critical (P5). Questions that come up while S1 runs, such as topic requests from other specs, go through the answer desk (section 6).
 
 ## 2. Place, neighbours and folder (spec contract items 1, 2 and 6)
 
@@ -23,7 +23,7 @@ After this round, S1 interrupts Alex only for something critical (P5). Topic req
 - **Depends on** S0. **Runs in parallel with** S2.
 - **Feeds** S-D1, S-D2 and S-D4 directly (spec outline), and every spec that reads findings through the research reading list. If S1-Q3 gives S1 brand capture, it also feeds S-D6, S-D7 and S-D8.
 - **Works with S2.** S1 never edits the charter or another folder (GIT.md, ownership). When an index row is added or changes, S1 messages the S2 session (name per S0's plan), whose skills update the charter's research reading list and the readers' CLAUDE.md lists.
-- **One session, one role (P2).** `research` orchestrates and reviews; it does not research itself (P7). Each worker session runs exactly one task.
+- **One session, one role (P2).** `s1-research` orchestrates and reviews; it does not research itself (P7). Each worker session runs exactly one task.
 
 Folder tree:
 
@@ -38,13 +38,13 @@ s1-research\
 ```
 
 The CLAUDE.md that S0 writes for this folder must hold this reading list, in order: `CHARTER.md`, `GIT.md`, `answer-desk\ASKING.md`, `s1-research\SPEC.md`, `s1-research\HANDOFF.md` if it exists, `s1-research\findings\INDEX.md`. It must also hold two role lines:
-- A session named `research` or `research-<n>` is the S1 spec orchestrator and follows this spec.
+- A session named `s1-research` or `s1-research-<n>` is the S1 spec orchestrator and follows this spec.
 - A session named `rw-T<nn>` is a worker. It reads only CLAUDE.md, section 4 of this spec and its own task file. It writes only its task's output path, never commits, and sends questions to the active research session, never to the desk.
 
 ## 3. How the session runs
 
 1. Read the reading list. If `HANDOFF.md` exists, resume from it.
-2. Send any unsent preflight ASKs, all at once (P3). Record each answer in section 1 as it arrives.
+2. Read DI-3's answers and apply them; log any default taken.
 3. While waiting, build the machinery only: the `tasks\` and `findings\` folders and an empty `INDEX.md`. Commit (P1, GIT.md).
 4. When S1-Q1 is answered, write one task file per approved topic. Its `Approved by` field carries Alex's answer id. No task exists without one, except under S1-Q4's answer.
 5. Start tasks in priority order (section 7), as many at once as the budget allows (P1). Subagents run Light and Standard tasks. A worker session runs Deep tasks, and any task long enough to crowd the orchestrator's context (P7). Launch a worker from `s1-research\`: `claude --bg -n rw-T<nn> "Read CLAUDE.md, then tasks\T-<nn>-<slug>.md. Do only that task."`
@@ -144,7 +144,7 @@ The active session forks at the first of these:
 How it forks (unless S0 sets a project-wide format; then use that):
 
 1. Write `HANDOFF.md`: task states, running workers, open ASK ids and their deadlines, answers not yet applied, decisions since the last fork, and budget spent. Commit the folder (GIT.md).
-2. From `s1-research\`, launch the next generation: `claude --bg -n research-<n+1> "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."` The first session is `research`; the next is `research-2`.
+2. From `s1-research\`, launch the next generation: `claude --bg -n s1-research-<n+1> "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."` The first session is `s1-research`; the next is `s1-research-2`.
 3. Wait for its reply that it has read the handoff.
 4. Announce `ACTIVE S1: <old> -> <new>. Send S1 messages, answers to S1-Q*, FINDINGS replies and RESEARCH requests to <new>.` to `answer-desk`, `orchestration`, the S2 session, every running `rw-` worker, and every session with an open request.
 5. The old session stops.
