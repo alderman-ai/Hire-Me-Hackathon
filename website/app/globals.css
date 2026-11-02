@@ -95,6 +95,185 @@ body {
   .dot-live { animation: none; }
 }
 
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Start here: the explainer link and the plan documents */
+.start-here {
+  width: 100%;
+  max-width: 900px;
+  padding: 16px 20px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.start-here-lead {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.docs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.docs-list li {
+  margin-bottom: 6px;
+}
+
+.docs-list a {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* The live feed, newest on top. Posts are 900px wide; their text stays at 720px. */
+.feed {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.feed > h2 {
+  margin: 0 0 4px;
+  font-size: clamp(24px, 3.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.feed-intro {
+  max-width: 720px;
+  margin: 0 0 8px;
+}
+
+.post {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.post > p,
+.post > ul,
+.post-quote,
+.post-highlight {
+  max-width: 720px;
+}
+
+.post p {
+  margin: 0 0 12px;
+  text-wrap: pretty;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px !important;
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-kind {
+  padding: 1px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.post-kind-update,
+.post-kind-explainer {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.post-kind-status {
+  background: var(--live);
+  border-color: var(--live);
+  color: #ffffff;
+}
+
+.post-title {
+  margin: 0 0 12px;
+  font-size: clamp(21px, 2.6vw, 26px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.post-list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.post-list li {
+  margin-bottom: 8px;
+}
+
+.post-doc-link a {
+  font-weight: 700;
+}
+
+.post .video-frame {
+  margin: 16px 0;
+}
+
+.post-quote {
+  margin: 16px 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--rule);
+}
+
+.post-quote blockquote {
+  margin: 0;
+}
+
+.post-quote blockquote p {
+  margin: 0 0 6px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.post-quote figcaption {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.post-highlight {
+  margin: 20px 0 8px;
+  padding: 16px 18px 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+}
+
+.post-highlight h4 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
 .video-empty {
   height: 100%;
   display: flex;
@@ -108,34 +287,26 @@ body {
 
 .video-frame {
   width: 100%;
-  max-width: 1100px;
   aspect-ratio: 16 / 9;
   background: var(--frame);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.video-frame iframe,
-.video-frame video {
+.video-frame iframe {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-/* The summary and the build section share one 900px column, text at 720px, so their left edges line up. */
-.summary {
-  width: 100%;
-  max-width: 900px;
-  margin-top: 12px;
-}
-
+/* The S02 explainer's summary, under its video */
 .summary > * {
   max-width: 720px;
 }
 
 .summary-headline {
-  margin: 0 0 16px;
+  margin: 8px 0 16px;
   font-size: clamp(24px, 3.6vw, 34px);
   font-weight: 700;
   line-height: 1.2;
@@ -146,50 +317,24 @@ body {
 .summary p {
   margin: 0 0 16px;
   font-size: 18px;
-  line-height: 1.6;
-  text-wrap: pretty;
 }
 
-/* What's being built today */
-.build {
-  width: 100%;
-  max-width: 900px;
-  margin-top: 24px;
-  padding-top: 28px;
-  border-top: 1px solid var(--rule);
-  font-size: 17px;
-  line-height: 1.6;
-}
-
+/* What's being built today: the status board inside its feed post */
 .build > p,
 .build > ul,
-.build > h2,
-.build > h3 {
+.build > h4 {
   max-width: 720px;
 }
 
-.build h2 {
-  margin: 0 0 4px;
-  font-size: clamp(24px, 3.6vw, 34px);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-
-.build h3 {
-  margin: 32px 0 12px;
-  font-size: 20px;
+.build h4 {
+  margin: 28px 0 12px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.3;
 }
 
-.build p {
-  margin: 0 0 16px;
-  text-wrap: pretty;
-}
-
 .build .as-of {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-size: 15px;
   font-weight: 600;
   font-style: italic;
@@ -240,7 +385,7 @@ body {
 
 .pull-quote {
   max-width: 720px;
-  margin: 32px 0;
+  margin: 28px 0;
   padding: 4px 0 4px 20px;
   border-left: 4px solid var(--ink);
 }
@@ -301,136 +446,101 @@ body {
   .build-table td.num::before {
     content: "Demo ";
   }
+
+  .docs-list span {
+    display: block;
+  }
 }
 
-/* The story so far: a vertical timeline, newest at the bottom */
-.story {
-  width: 100%;
-  max-width: 900px;
-  margin-top: 24px;
-  padding-top: 28px;
-  border-top: 1px solid var(--rule);
+/* The charter and spec pages */
+.doc-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
   font-size: 17px;
   line-height: 1.6;
 }
 
-.story > h2,
-.story > p {
-  max-width: 720px;
-}
-
-.story h2 {
+.doc-back {
   margin: 0 0 8px;
-  font-size: clamp(24px, 3.6vw, 34px);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
 }
 
-.story-intro {
-  margin: 0 0 28px;
-  text-wrap: pretty;
-}
-
-.timeline {
-  max-width: 720px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tl-entry {
-  position: relative;
-  padding: 0 0 32px 28px;
-  border-left: 2px solid var(--ink);
-}
-
-.tl-entry:last-child {
-  padding-bottom: 4px;
-}
-
-.tl-entry::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: -8px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--ink);
-}
-
-.tl-milestone::before {
-  top: 8px;
-  left: -6px;
-  width: 10px;
-  height: 10px;
-  background: var(--bg);
-  border: 2px solid var(--ink);
-}
-
-.tl-meta {
-  margin: 0;
+.doc-note {
+  margin: 0 0 24px;
   font-size: 15px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
+  font-style: italic;
 }
 
-.tl-entry h3 {
-  margin: 2px 0 10px;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
-  text-wrap: balance;
+.doc h1 {
+  font-size: clamp(28px, 4.4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
 }
 
-.tl-entry p {
-  margin: 0 0 12px;
+.doc h2 {
+  margin: 36px 0 12px;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.doc h3 {
+  margin: 28px 0 10px;
+  font-size: 19px;
+}
+
+.doc p,
+.doc li {
   text-wrap: pretty;
 }
 
-.tl-quote {
+.doc table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
   margin: 16px 0;
-  padding-left: 16px;
-  border-left: 3px solid var(--rule);
+  font-size: 15px;
+  line-height: 1.45;
 }
 
-.tl-quote blockquote {
-  margin: 0;
+.doc th,
+.doc td {
+  min-width: 120px;
+  padding: 8px 12px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
 }
 
-.tl-quote blockquote p {
-  margin: 0 0 6px;
-  font-size: 17px;
-  font-style: italic;
-  line-height: 1.55;
+.doc thead th {
+  border-bottom: 2px solid var(--ink);
 }
 
-.tl-quote figcaption {
-  font-size: 14px;
-  font-weight: 600;
+.doc code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 1px 4px;
+  border-radius: 3px;
+  overflow-wrap: anywhere;
 }
 
-.tl-quote a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.tl-quote a:hover {
-  text-decoration-thickness: 2px;
-}
-
-.tl-highlight {
-  margin: 20px 0 8px;
-  padding: 16px 18px 6px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid var(--ink);
+.doc pre {
+  overflow-x: auto;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 6px;
 }
 
-.tl-highlight h4 {
-  margin: 0 0 8px;
-  font-size: 17px;
-  font-weight: 700;
+.doc pre code {
+  background: none;
+  padding: 0;
+}
+
+.doc blockquote {
+  margin: 16px 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--ink);
 }

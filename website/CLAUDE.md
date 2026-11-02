@@ -19,7 +19,11 @@ This session owns the website, and nothing else. Every change to the site goes t
 
 ## What the site shows
 
-The title "The Hire Me Hackathon Begins", a countdown of the 12 hours of recording left, and the session video.
+A live feed, newest on top (Alex, 2 Nov: "like a live feed where new posts go on top"). From the top: the title "The Hire Me Hackathon Begins", the countdown of the 12 hours of recording left, a "start here" box (link to the S02 explainer post, and the charter and specs), then the feed.
+
+- **Feed:** `content\feed.json`, rendered by `app\feed.tsx`, sorted by each post's `at` (newest first). A post has `id`, `at` (`2026-11-02T14:15`), `kind` (Status, Update, Milestone, Insight, Session, Explainer), optional `session`, `title` and `blocks`: `p`, `list`, `quote` (with `source`, optional `href` and `note`), `highlight` (boxed, nested blocks), `video` (`session`, `start` seconds), `summary` (the S02 summary in `content\summary.json`), `status-board`, `doc-link`. Legibility posts become feed posts; a new post just gets a later `at`.
+- **Status board:** `content\build.json` ("What's being built today"), shown in the feed post with id `status`. On a status update, change `build.json`'s `as_of` and move that post's `at` to the same time, so it rises to the top.
+- **Charter and specs:** `/docs/<slug>`, from `content\docs\`. Copy them in with `python scripts\sync_docs.py`, which redacts private details (the Apify proposal, Alex's own GetSales outbound, who the live run targets, names of people at the company) and refuses to write if a deny-listed term survives. Rerun it before a deploy when the charter or a spec changes. The unredacted originals are in the public GitHub repo anyway; the site doesn't link to them.
 
 ## The countdown
 
@@ -52,6 +56,6 @@ Hobby can't buy extra usage. Go over a limit and the service stops until the mon
 
 - Once a session is filed, its webcam files sit in `D:\OBS Outputs\Uploaded\Sxx_webcam\`, listed in that session's `..\OBS\Processed\Sxx_*\manifest.json` (`webcam_folder` and `webcam`). The screen recording is `D:\OBS Outputs\Uploaded\Sxx.mp4`.
 - After each session is filed, upload its webcam with `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_webcam.py Sxx <scratch dir>`. It repackages the MKV to MP4 without re-encoding, uploads it unlisted through the rig's own uploader and sign-in (`..\OBS\rig\.env`), waits for YouTube to finish processing, and writes the id to `content\videos.json`. Rerunning it for a session that's already online does nothing.
-- The page features one session, the one `content\summary.json` names (S02, the project explainer, since 2 Nov), with its summary under the video. Its YouTube id comes from `content\videos.json` at build time, so after uploading a featured session, redeploy. A newer upload doesn't replace it. The sync also publishes `content\videos.json` in `status.json`, which the page uses only if the build has no id. It never uses the rig's own `youtube_id` in `index.json`, because that's the screen recording. The rig's YouTube upload is off anyway (`UPLOAD_TO_YOUTUBE = False`).
+- Videos appear as `video` blocks in feed posts: the S02 explainer (from 62 s, just after "hey Claude, starting now", with its summary under it) and the S06 update. A post's YouTube id comes from `content\videos.json` at build time, so after an upload, add the block and redeploy. The sync also publishes `content\videos.json` in `status.json`; the page no longer reads it. It never uses the rig's own `youtube_id` in `index.json`, because that's the screen recording. The rig's YouTube upload is off anyway (`UPLOAD_TO_YOUTUBE = False`).
 - YouTube caps unverified channels at 15 minutes. Until Alex switches on long uploads at https://www.youtube.com/verify, any session longer than that won't upload.
 - Lip sync in the webcam file (Wave:3 audio on BRIO video) is fine: Alex checked S02 on the live site on 2 Nov.

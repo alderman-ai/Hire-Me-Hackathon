@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "13:51",
-  "as_of_line": "As of 13:51 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "14:15",
+  "as_of_line": "As of 14:15 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Thirteen pieces of work, run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come ten demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -31,12 +31,12 @@
     {
       "piece": "Research",
       "what": "Decides with Alex what gets researched and how deep, so the agents work from findings instead of guesses.",
-      "status": "Running since 13:50. Working out with Alex what gets researched."
+      "status": "Running. Five research lists drafted; the first is with Alex for approval."
     },
     {
       "piece": "Project orchestrator",
       "what": "Keeps the plan consistent: adds deliverables and updates everything that depends on them.",
-      "status": "Spec written. Runs in the main orchestration session."
+      "status": "Definition of done signed off at 14:02. Its tools are built and tested."
     }
   ],
   "demos": [

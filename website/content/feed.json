@@ -1,0 +1,360 @@
+{
+  "intro": "Everything that happens in the hackathon lands here, newest on top. Every working session is recorded and numbered: S01, S02 and so on. Times are Prague time.",
+  "posts": [
+    {
+      "id": "status",
+      "at": "2026-11-02T14:15",
+      "kind": "Status",
+      "title": "What's being built today",
+      "blocks": [
+        {
+          "type": "status-board"
+        }
+      ]
+    },
+    {
+      "id": "research-lists",
+      "at": "2026-11-02T14:10",
+      "kind": "Milestone",
+      "title": "Research gets its first lists",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The research agent drafts five research lists: one for the whole project, and one each for scraping, the blog pipeline, outbound and the brand assets. Each list ends with three \"wildcard\" questions that Alex puts to every plan: can it be executed, can it be delivered, and will it be received? The project-wide list is waiting for Alex's approval. Two of the questions it proposes:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "How do the strongest \"job application as outreach\" sites make the work clear to a non-technical decision maker in under a minute?",
+            "What tips a personalised website built as a job application from impressive to creepy, and what makes the recipient act on it?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Once he approves, one agent per question researches it, all in parallel."
+        }
+      ]
+    },
+    {
+      "id": "definition-of-done",
+      "at": "2026-11-02T14:02",
+      "kind": "Milestone",
+      "title": "The finish line is defined",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The orchestration session drafts the project's definition of done: 22 items, each something a person who wasn't there could check tomorrow morning. Two examples: \"three blog posts are live on the site\", and \"the site shows every deliverable and its status\". Alex signs it off at 14:02 with one change: research no longer needs his approval at every step."
+        },
+        {
+          "type": "p",
+          "text": "Then the project orchestrator builds its tools. It can add a deliverable in one step, change the plan or the definition of done, and push every change to everything that depends on it. Its consistency check was tested on a scratch copy of the project with seven faults planted in it, and it caught all seven."
+        }
+      ]
+    },
+    {
+      "id": "bootstrap-done",
+      "at": "2026-11-02T13:49",
+      "kind": "Milestone",
+      "title": "The first tooling piece is done",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bootstrap finishes. Every piece of work now has its folder, its instructions and its place on the session roster, and bootstrap hands over to the orchestration session, which launches the rest."
+        }
+      ]
+    },
+    {
+      "id": "folders",
+      "at": "2026-11-02T13:45",
+      "kind": "Milestone",
+      "title": "The demos get their folders",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The bootstrap agent creates a working folder for every demo. The agents that build them launch next."
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "at": "2026-11-02T13:33",
+      "session": "S06",
+      "kind": "Update",
+      "title": "It looks quiet, but it isn't",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A two-minute video update at about 13:30. AI work is front-loaded, so for the first hours it can look as if nothing is happening. By now the project charter is written: the goals and everything that has to be delivered today."
+        },
+        {
+          "type": "p",
+          "text": "Agents are breaking each deliverable into a plan they can carry out on their own, including researching how to do it and asking Alex for his judgment where they need it. His goal is to finish everything that needs him by the end of the working day, so the rest runs overnight and he cleans up in the morning."
+        },
+        {
+          "type": "video",
+          "session": "S06",
+          "start": 0
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "at": "2026-11-02T12:40",
+      "session": "S05",
+      "kind": "Session",
+      "title": "The agents take over, and one big mistake",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The plan moves from the chat app to the terminal. An orchestration session takes the charter. Three agents write the three tooling specs in parallel, and the answer desk opens. Alex answers each spec's opening questions in one batch, so the agents can carry on without him."
+        },
+        {
+          "type": "p",
+          "text": "Then, at 13:20, he tries to close one background session he no longer needs, and closes all of them instead."
+        },
+        {
+          "type": "quote",
+          "text": "I just accidentally ended a bunch of sessions, background sessions, they're all working in parallel. I meant to just delete one I didn't need, and turns out if you do that command on the folder, it deletes all of them.",
+          "source": "S05 at 41:31"
+        },
+        {
+          "type": "highlight",
+          "title": "How it was recovered",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "A recovery session brought every session back by about 13:27, each under its old name with its full history. Each one got a note saying exactly where it had stopped and what to pick up. The recording never stopped (the rig and both recorders survived), and nothing that had been committed was lost. Because every session commits its work as it goes, the rest of the project carried on. By 13:50 the fix was saved as recovery scripts in the project, so the next time (a power cut, another wrong click) it's one step."
+            },
+            {
+              "type": "quote",
+              "text": "Hopefully it can spin up all the sessions that were working and just resume, and this is just a 15-minute setback and not an hour-and-a-half setback.",
+              "source": "S05 at 44:24",
+              "note": "It was about seven minutes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "at": "2026-11-02T12:15",
+      "session": "S04",
+      "kind": "Session",
+      "title": "The deliverables, and why go slow at the start",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex lists the ten demos in the status board above. One of them is an agent that watches these recordings and keeps this website up to date, which is how much of this feed gets here. He also explains why he spends the first hours planning instead of building."
+        },
+        {
+          "type": "quote",
+          "text": "Mistakes cascade and they just snowball. You really want to take the time to get it right, because time is no longer the bottleneck, because you can have 20 agents running side by side. The bottleneck is focus. The bottleneck is judgment, discernment.",
+          "source": "S04 at 12:55"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "at": "2026-11-02T11:25",
+      "session": "S03",
+      "kind": "Session",
+      "title": "Writing the plan every agent works from",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex writes the project charter with Claude: the goal, the deliverables, and the rules every agent follows. The rules include the movie-actor rule (everything that needs him gets done first) and one \"answer desk\" window for all of the agents' questions. In between, he takes a break to talk to the humans watching."
+        },
+        {
+          "type": "doc-link",
+          "slug": "charter",
+          "text": "Read the project charter"
+        },
+        {
+          "type": "quote",
+          "text": "The progress of learning AI is not the files you have in your computer. It's the clarity of understanding of how all this stuff works … it's clarity. And then the opposite of that is the ability to clearly share that clarity with the assistant.",
+          "source": "S03 at 18:10"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "at": "2026-11-02T11:06",
+      "session": "S02",
+      "kind": "Explainer",
+      "title": "Why this hackathon exists",
+      "blocks": [
+        {
+          "type": "video",
+          "session": "S02",
+          "start": 62
+        },
+        {
+          "type": "summary"
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "at": "2026-11-02T10:25",
+      "session": "S01",
+      "kind": "Session",
+      "title": "Recording starts",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex switches on a recording rig he built the night before and starts with the first thing followers need: this website. The code is in a public repo from the first commit."
+        },
+        {
+          "type": "quote",
+          "text": "I've never done this screen recording before, but good time to start is when you're under pressure and you've got a 12-hour live project to do.",
+          "source": "S01 at 00:08",
+          "href": "https://youtu.be/mbF291oW_yQ?t=3"
+        }
+      ]
+    },
+    {
+      "id": "insight-spec-size",
+      "at": "2026-11-02T11:40",
+      "session": "S03",
+      "kind": "Insight",
+      "title": "Sizing specs so agents never lose context",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "While writing the charter, Alex sets the rule for how big each spec should be. Specs are split along topic lines (\"semantic cohesion\"), and each is run by one orchestrator session that hands as much as it can to subagents and forks at planned points, so its context stays focused through long unattended runs. Then he asks for specs a little smaller than that limit, so more of them can run in parallel."
+        },
+        {
+          "type": "quote",
+          "text": "Passing off as much as possible to sub-agents so that its context window stays semantically clustered and highly usable, and with strategic forking to make sure that there's no context rot for long-term automated work.",
+          "source": "S03 at 15:39"
+        }
+      ]
+    },
+    {
+      "id": "insight-three-tribes",
+      "at": "2026-11-02T11:45",
+      "session": "S03",
+      "kind": "Insight",
+      "title": "The three tribes of AI practitioners",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Between dictations, Alex lays out his theory that skilled AI practitioners come from one of three tribes. Academics know security but are the least hands-on with commercial AI. Former developers are strong on the deterministic toolkit. Marketers and entrepreneurs like him start with gaps, but bring a fresh view of what's possible and already know go-to-market, where he thinks the need will be. It's also why someone with his CV has to do something like this hackathon to get noticed."
+        },
+        {
+          "type": "quote",
+          "text": "Then you have the former devs who got into AI from coding … they know how to read code and write code. Turned out that's pretty useful for this kind of stuff … a little bit less required than them or the academics would believe, but still more required than the marketers out there think.",
+          "source": "S03 at 19:47"
+        }
+      ]
+    },
+    {
+      "id": "insight-agents-decide",
+      "at": "2026-11-02T11:48",
+      "session": "S03",
+      "kind": "Insight",
+      "title": "When the operator is away, agents decide",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex adds a rule from earlier projects to the charter: a question waiting on him must never stall a build. If a session gets no answer in about 15 minutes, it assumes he's away and makes the call itself, then records the decision, why it's right, and the blast radius if it has to be undone. The agents keep moving, and every judgment call can be reviewed later."
+        },
+        {
+          "type": "quote",
+          "text": "If you don't get a response for 10 minutes, let's say 15 minutes, assume the operator is AFK. And then you get to make the decision.",
+          "source": "S03 at 23:32"
+        }
+      ]
+    },
+    {
+      "id": "insight-pendulum",
+      "at": "2026-11-02T11:53",
+      "session": "S03",
+      "kind": "Insight",
+      "title": "The micromanagement pendulum",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Partway through dictating how every working folder should be laid out, Alex stops himself. He describes a swing he keeps going through: you learn you can give an agent the what and let it work out the how, but after a few rounds the results are worse than when you micromanaged, so you swing back. This time he picks the what: each session gets a good reading list, and the agents set up their own folders."
+        },
+        {
+          "type": "quote",
+          "text": "You realize that basically you can just tell it the what and let it figure out the how, but then you let it do that a couple times and realize that it's a lot worse than if you micromanaged it, and then you just kind of get in this weird pendulum.",
+          "source": "S03 at 28:41"
+        }
+      ]
+    },
+    {
+      "id": "insight-gut-feeling",
+      "at": "2026-11-02T12:35",
+      "session": "S04",
+      "kind": "Insight",
+      "title": "A bad gut feeling, and pressing on",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex finishes the charter draft in the desktop app instead of his usual terminal setup, and admits he has a bad feeling about it: it's split in a way he wouldn't normally choose, and denser than he'd actually read. His rule is that a bad start is almost always worth restarting, but he judges this one not bad enough, with too little time to spare. To limit the risk, he has the agent mark the charter as a rough draft and give the project orchestrator the final sign-off on the specs and the definition of done."
+        },
+        {
+          "type": "quote",
+          "text": "If you don't like the way something starts and you get a bad feeling about it … it's almost always worth starting over … this is one of the key decisions. I don't think it's bad enough that I need to start over and I don't think I have time to start over.",
+          "source": "S04 at 20:01"
+        }
+      ]
+    },
+    {
+      "id": "insight-merges",
+      "at": "2026-11-02T12:41",
+      "session": "S05",
+      "kind": "Insight",
+      "title": "Merges shouldn't wait for Alex's breaks",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "With several agent sessions about to work in the same repository, Alex needs a rule for when their work gets merged. His first idea, merging whenever he stops the recording, he drops on the spot: his breaks say nothing about whether the agents are done. Instead he asks for a watcher session that merges when everything is idle, or every hour or so, and has a subagent research the best way to do it."
+        },
+        {
+          "type": "quote",
+          "text": "Maybe … when the rig stops we try to … merge everything to main. Well no … never mind, because those don't correlate, because that's just when I'm taking a break or when I need to be away from the computer. That doesn't mean that the assistants are done working.",
+          "source": "S05 at 01:27"
+        }
+      ]
+    },
+    {
+      "id": "insight-one-question",
+      "at": "2026-11-02T12:54",
+      "session": "S05",
+      "kind": "Insight",
+      "title": "One question per agent in the queue",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "While setting up the answer desk, the single window where every background session sends its questions, Alex adds a queue rule: each session gets one question waiting at a time, because the answer to one can change the next. That way whatever reaches him is still current. A few minutes later he splits the channel: each spec's opening questions come as one batch he can answer in one go, and the desk is kept for questions that come up along the way."
+        },
+        {
+          "type": "quote",
+          "text": "Only one question per session should be in the queue because the answer to the previous question might change the next question … we need to make sure that anything that hits the answer desk is still current by the time that I'm interacting with it.",
+          "source": "S05 at 14:48"
+        }
+      ]
+    },
+    {
+      "id": "insight-research-first",
+      "at": "2026-11-02T13:08",
+      "session": "S05",
+      "kind": "Insight",
+      "title": "Research comes before the method",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Answering the research spec's opening questions, Alex explains where research sits in his method. Each deliverable first gets its definition of done. Then, before anyone designs how to get there, research checks whether there's already a settled answer, or at least which traps to avoid. Findings go onto the reading list of every spec that needs them, and every research list ends with three wildcard questions."
+        },
+        {
+          "type": "quote",
+          "text": "Make sure that if there's an easy answer, an obvious answer, converged upon answer, we're using it, or if not that we at least know traps and gotchas that we don't fall into. So that when we design the methodology to go from problem to DoD that we have research to guide that process. We're not just using raw training data.",
+          "source": "S05 at 28:27"
+        }
+      ]
+    }
+  ]
+}

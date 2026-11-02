@@ -1,6 +1,7 @@
 import build from "@/content/build.json";
 
-// "What's being built today": content/build.json, sent by s-d9-legibility. Later posts update its statuses.
+// "What's being built today": content/build.json. s-d9-legibility sends status updates; the
+// feed post that shows this board moves to the top at each new as_of time.
 
 type Quote = { text: string; source: string };
 
@@ -15,15 +16,14 @@ function PullQuote({ quote }: { quote: Quote }) {
   );
 }
 
-export default function BuildStatus() {
+export default function StatusBoard() {
   const statusLabel = `Status at ${build.as_of}`;
   return (
-    <section className="build" aria-labelledby="build-heading">
-      <h2 id="build-heading">{build.headline}</h2>
+    <div className="build">
       <p className="as-of">{build.as_of_line}</p>
       <p>{build.intro}</p>
 
-      <h3>How it runs</h3>
+      <h4>How it runs</h4>
       <ul className="how-it-runs">
         {build.how_it_runs.map((item) => (
           <li key={item.lead}>
@@ -34,7 +34,7 @@ export default function BuildStatus() {
 
       <PullQuote quote={build.quotes.after_how_it_runs} />
 
-      <h3>The tooling (first)</h3>
+      <h4>The tooling (first)</h4>
       <table className="build-table">
         <thead>
           <tr>
@@ -54,7 +54,7 @@ export default function BuildStatus() {
         </tbody>
       </table>
 
-      <h3>The demos (then)</h3>
+      <h4>The demos (then)</h4>
       <table className="build-table">
         <thead>
           <tr>
@@ -77,6 +77,6 @@ export default function BuildStatus() {
       </table>
 
       <PullQuote quote={build.quotes.after_demos} />
-    </section>
+    </div>
   );
 }

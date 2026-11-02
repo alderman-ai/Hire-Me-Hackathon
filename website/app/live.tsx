@@ -38,7 +38,9 @@ function useNow(): number {
   return now;
 }
 
-function Countdown({ status }: { status: Status | null }) {
+// The countdown of recorded time left, from status.json (scripts/clock_sync.py).
+export default function Countdown() {
+  const status = useStatus();
   const now = useNow();
   if (!status) {
     return (
@@ -67,39 +69,5 @@ function Countdown({ status }: { status: Status | null }) {
         {label}
       </span>
     </div>
-  );
-}
-
-// startSeconds is where playback begins in the webcam video (skips the setup before the cue).
-export type Featured = { session: string; youtubeId: string | null; startSeconds: number };
-
-// The featured session's webcam recording (scripts/upload_webcam.py). Its id is baked in
-// at build time, so the video stays up even if status.json can't be read.
-function SessionVideo({ status, featured }: { status: Status | null; featured: Featured }) {
-  const youtubeId =
-    featured.youtubeId ?? status?.sessions.find((s) => s.id === featured.session)?.youtube_id ?? null;
-  if (youtubeId) {
-    return (
-      <iframe
-        src={`https://www.youtube-nocookie.com/embed/${youtubeId}?start=${featured.startSeconds}`}
-        title={`Session ${featured.session}, webcam`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      />
-    );
-  }
-  return <div className="video-empty">The {featured.session} recording goes up here soon.</div>;
-}
-
-export default function Live({ featured }: { featured: Featured }) {
-  const status = useStatus();
-  return (
-    <>
-      <Countdown status={status} />
-      <div className="video-frame">
-        <SessionVideo status={status} featured={featured} />
-      </div>
-    </>
   );
 }

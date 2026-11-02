@@ -1,0 +1,33 @@
+{
+  "synced": "14:12",
+  "docs": [
+    {
+      "slug": "charter",
+      "label": "Project charter",
+      "title": "Hire Me Hackathon Charter",
+      "blurb": "Why the project exists, the 13 deliverables, and the rules every agent follows. Start here.",
+      "source": "CHARTER.md"
+    },
+    {
+      "slug": "s0-bootstrap",
+      "label": "S0 Bootstrap spec",
+      "title": "S0 \u2014 Bootstrap: executable spec",
+      "blurb": "Sets up a working folder, instructions and a background session for every piece of work.",
+      "source": "bootstrap/SPEC.md"
+    },
+    {
+      "slug": "s1-research",
+      "label": "S1 Research spec",
+      "title": "S1 Research: executable spec",
+      "blurb": "How the agents decide with Alex what gets researched, and how deep.",
+      "source": "research/SPEC.md"
+    },
+    {
+      "slug": "s2-orchestrator",
+      "label": "S2 Project orchestrator spec",
+      "title": "S2 Project orchestrator: executable spec",
+      "blurb": "Keeps the plan consistent as deliverables are added or changed.",
+      "source": "orchestration/SPEC.md"
+    }
+  ]
+}

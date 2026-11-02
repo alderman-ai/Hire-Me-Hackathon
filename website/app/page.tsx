@@ -1,33 +1,27 @@
-import BuildStatus from "./build-status";
-import Live from "./live";
-import Story from "./story";
-import summary from "@/content/summary.json";
-import videos from "@/content/videos.json";
-
-// The session the page features, with its summary. content/summary.json names it.
-const youtubeIds: Record<string, string | undefined> = videos;
+import Link from "next/link";
+import docsIndex from "@/content/docs/index.json";
+import Feed from "./feed";
+import Countdown from "./live";
 
 export default function Home() {
   return (
     <main className="page">
       <h1 className="title">The Hire Me Hackathon Begins</h1>
-      <Live
-        featured={{
-          session: summary.session,
-          youtubeId: youtubeIds[summary.session] ?? null,
-          startSeconds: summary.start_seconds,
-        }}
-      />
-      {summary.headline && (
-        <section className="summary">
-          <h1 className="summary-headline">{summary.headline}</h1>
-          {summary.paragraphs.map((text, i) => (
-            <p key={i}>{text}</p>
+      <Countdown />
+      <nav className="start-here" aria-label="Start here">
+        <p className="start-here-lead">
+          New here? <a href="#post-s02">Watch the 13-minute explainer</a>, then read the plan the agents work from:
+        </p>
+        <ul className="docs-list">
+          {docsIndex.docs.map((doc) => (
+            <li key={doc.slug}>
+              <Link href={`/docs/${doc.slug}`}>{doc.label}</Link>
+              <span>{doc.blurb}</span>
+            </li>
           ))}
-        </section>
-      )}
-      <BuildStatus />
-      <Story />
+        </ul>
+      </nav>
+      <Feed />
     </main>
   );
 }
