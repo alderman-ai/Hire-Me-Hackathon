@@ -463,6 +463,30 @@
           "text": "Alex also set a rule for everything the agents put in front of him: name it in plain words, open with all the context, and use no internal codes like \"D2\" or \"S1\"."
         }
       ]
+    },
+    {
+      "id": "lunch",
+      "at": "2026-11-02T14:25",
+      "kind": "Update",
+      "title": "Lunch break, 14:25 to 15:00",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex is away from the desk for lunch from 14:25 to 15:00. Nothing is being recorded, so the countdown stands still. The agents keep working in the background."
+        },
+        {
+          "type": "p",
+          "text": "Before heading out, he took a photo of the setup from the other side of the camera:"
+        },
+        {
+          "type": "image",
+          "src": "/setup-2026-11-02.jpg",
+          "width": 2400,
+          "height": 1800,
+          "alt": "Alex's desk from behind his chair: three monitors with terminal sessions and this website, two panel lights, a microphone and a red-lit keyboard.",
+          "caption": "Taken at 14:19. The top screen is the briefing session that keeps Alex up to date, the right one is the answer desk, and the left one shows this site with the S02 explainer. Click to see it full size."
+        }
+      ]
     }
   ]
 }

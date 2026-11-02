@@ -24,6 +24,11 @@ type Block = {
   session?: string;
   start?: number;
   slug?: string;
+  src?: string; // image: a file in public/, shown full width, opens full size on click
+  alt?: string;
+  caption?: string;
+  width?: number;
+  height?: number;
 };
 
 // roles: which stakeholders a post is for (from s-d9-legibility), kept for the stakeholder pages.
@@ -115,6 +120,16 @@ function Blocks({ blocks }: { blocks: Block[] }) {
             );
           case "video":
             return <Video key={i} session={block.session ?? ""} start={block.start ?? 0} />;
+          case "image":
+            return (
+              <figure key={i} className="post-image">
+                <a href={block.src} target="_blank" rel="noopener noreferrer">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={block.src} alt={block.alt ?? ""} width={block.width} height={block.height} loading="lazy" />
+                </a>
+                {block.caption && <figcaption>{block.caption}</figcaption>}
+              </figure>
+            );
           case "summary":
             // The S02 explainer's summary, under its video (Alex, 2 Nov: "an H1 summary").
             return (

@@ -249,6 +249,23 @@ a:hover {
   margin: 16px 0;
 }
 
+.post-image {
+  margin: 16px 0;
+}
+
+.post-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post-image figcaption {
+  max-width: 720px;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
 .post-quote {
   margin: 16px 0;
   padding-left: 16px;
