@@ -10,7 +10,7 @@ Storage (S1-Q5, Alex: "Just store it locally"): every report lives in `research\
 | --- | --- | --- | --- |
 | [L-01 parent](lists/L-01-parent.md) | every wave-2 spec | done 15:05: 7 reports and the synthesis; on every reader's reading list (S2 change C07) | OT-01, Alex, 14:38 |
 | [L-02 scraping](lists/L-02-scraping.md) | (S-D1 declined) | parked: Alex runs the scraping himself | — |
-| [L-03 blog](lists/L-03-blog.md) | S-D4, S-D5 | running since 16:36: R1 to R6 and W1 to W3 in; R7 (the second article's research base) running, then the synthesis | OT-04, changes applied (`Operator tasks\Archive\Approve - research for the blog pipeline.md`) |
+| [L-03 blog](lists/L-03-blog.md) | S-D5 (S-D4 retired) | on hold since 16:47 (orchestration's reset): all 10 reports accepted in `research\global\L-03-*.md`, entries and synthesis to follow on RESTART | OT-04, changes applied (`Operator tasks\Archive\Approve - research for the blog pipeline.md`) |
 | [L-04 GetSales](lists/L-04-getsales.md), [L-06 website](lists/L-06-website.md) | S-D3; S-D8 | with Alex, one gate: `Operator tasks\Approve - research for the GetSales demo and website.md` (OT-03) | — |
 | [L-05 brand assets](lists/L-05-brand-assets.md) | S-D6, S-D7, S-D10 | done 16:47: 7 reports and the synthesis | OT-09, ticked with changes, 16:29 (`Operator tasks\Archive\Approve - Canva and LinkedIn demo research.md`) |
 
