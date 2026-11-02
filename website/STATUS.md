@@ -1,5 +1,5 @@
 # website: status
-As of 20:01, 2 Nov (Prague), written from the folder's own records after the 19:4x crash. Updated at 20:15 by `website`: the clock is running again, the clip batch is complete, and the deploy recipe is fixed.
+As of 20:01, 2 Nov (Prague), written from the folder's own records after the 19:4x crash. Updated at 20:14 by `website`: the clock is running again, the clip batch is complete, and the deploy recipe is fixed.
 
 ## Where it fits in the plan
 
