@@ -187,7 +187,7 @@ Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Ad
 | # | Slot | Roles | x | y | w × h | Max | Lock | Sample copy |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Point number | display-num, `accent-gradient` | 96 | 232 | 280×160 | 2 ch | P | 03 |
-| 2 | Title | headline, `text-primary-dark` | 96 | 424 | 888×144 | 2 lines, 50 ch | P | Start with a small, measured test |
+| 2 | Title | headline, `text-primary-dark` | 96 | 424 | 888×144 | 2 lines, 48 ch | P | Start with a small, measured test |
 | 3 | Markers ×4 | `accent-solid`, 16×16 circle | 96 | item y + 16 | 16×16 | — | L | — |
 | 4 | Items ×4 (hanging indent) | body, `text-body-dark` | 144 | 616 / 744 / 872 / 1000 | 840×96 each | 4 items, 2 lines and 90 ch each | P | Pick one segment of 100 to 200 accounts · Fix one success metric before you start · Read every message in the first week · Scale only what beats your manual baseline |
 
@@ -195,7 +195,7 @@ Sample: p1 cover, p2–p3 numbered points, p4 list, p5 bar chart, p6 closing. Ad
 
 | # | Slot | Roles | x | y | w × h | Max | Lock | Sample copy |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Title | headline, `text-primary-dark` | 96 | 232 | 888×144 | 2 lines, 50 ch | P | Where a manual prospecting week goes |
+| 1 | Title | headline, `text-primary-dark` | 96 | 232 | 888×144 | 2 lines, 48 ch | P | Where a manual prospecting week goes |
 | 2 | Bar labels | body-sm, `text-body-dark` | 96 | 440 / 608 / 776 | 736×40 | 1 line, 36 ch | P | Account research · Writing first messages · CRM updates and admin |
 | 3 | Bars | first `accent-gradient`, others `glass-line-strong`, `radius-sm` | 96 | label y + 56 | (736 × value ÷ max)×56 | 2–3 bars | O | 46 / 32 / 22 |
 | 4 | Values | value, `text-primary-dark` | bar end + 24 | label y + 56 | ≤ 128×56 | 4 ch | P | 46% · 32% · 22% |
@@ -239,6 +239,7 @@ The sample date and event are fictional.
 | Item | Spec |
 | --- | --- |
 | PNG | Exact canvas px at 1× (device scale factor 1; Canva size ×1), sRGB, 8-bit RGB, no alpha (flattened on `bg-base`), no transparent background |
+| Single-page PDFs | Every template also exports a one-page PDF at its canvas size: the import-ready file for Canva, with live, editable text (a PNG imports as a flat picture) |
 | Carousel PDF | 6 pages, each page = canvas: 1080×1350 px (810×1012.5 pt), no bleed, no crop marks, fonts embedded and subset, text live (not outlined), `printBackground` on, zero page margin |
 | File names | `addvery-linkedin-<type>-<w>x<h>.png`: `addvery-linkedin-post-1080x1350.png`, `-stat-1080x1080`, `-quote-1080x1080`, `-event-1200x627`; carousel `addvery-linkedin-carousel-1080x1350-p1.png` to `-p6.png` plus `addvery-linkedin-carousel-1080x1350.pdf` |
 | Where | `local\exports\` until the brand sign-off, then copied to `exports\`. Stress renders (max-length copy) go to `local\exports\stress\` and are never shipped |
