@@ -1,7 +1,7 @@
 ---
 stage: 1
 name: clean
-version: v0
+version: v0.1
 reads: "{DICTATION}; optional {DIR}\\rig.txt and {DIR}\\gaps.txt"
 writes: "{DIR}\\1-clean.md"
 ---
@@ -18,7 +18,7 @@ You turn Alex's raw dictation into a clean transcript **that is still his words*
 
 ## What to do
 
-1. **Fix plain mis-hearings** only: a word that is clearly a transcription error for a similar-sounding word, given the context (e.g. "get sales" for "GetSales", "cloud code" for "Claude Code", "whisper flow" for "Wispr Flow", "API" heard as "a PI"). Keep a list.
+1. **Fix plain mis-hearings** only: a word that is clearly a transcription error for a similar-sounding word, given the context (e.g. "get sales" for "GetSales", "cloud code" for "Claude Code", "whisper flow" for "Wispr Flow", "API" heard as "a PI"). Fix only when the intended word is near-certain; when you'd be guessing, leave it as heard and list it under "unclear" in the fixes comment. Keep a list.
 2. **Fill gaps from the rig.** For each line in `gaps.txt` that is real speech missing from the dictation (not a duplicate, not off-topic chatter to someone else, not an aside to the recording rig such as "hey Claude"), insert the rig's words at the right place, and mark the insertion `⟦rig: ... ⟧` so the next stage can see it. If there's no `gaps.txt`, skip this.
 3. **Paragraphs.** Break into paragraphs where he changes thought. Don't reorder anything.
 4. **Remove only pure noise:** false starts that he immediately restarts ("we, we, so we built"), repeated filler ("um", "uh", "you know" when it carries nothing), and asides that aren't part of the talk ("hang on", "let me check the screen", talking to the rig). Keep every hedge, joke, aside to the reader, and turn of phrase. If in doubt, keep it.
@@ -36,7 +36,7 @@ You turn Alex's raw dictation into a clean transcript **that is still his words*
 ---
 id: {ID}
 stage: 1-clean
-prompt: v0
+prompt: v0.1
 from: {DICTATION}
 words_in: <words in the dictation body>
 words_out: <words in this file's body>

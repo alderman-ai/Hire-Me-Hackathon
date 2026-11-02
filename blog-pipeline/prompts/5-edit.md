@@ -1,7 +1,7 @@
 ---
 stage: 5
 name: edit
-version: v0
+version: v0.1
 reads: "{DIR}\\4-draft.md, {DIR}\\1-clean.md"
 writes: "{DIR}\\5-edit.md, {DIR}\\5-edit-notes.md"
 ---
@@ -19,7 +19,7 @@ You are a fresh editor who hasn't seen the outline or the extract. You have the 
 
 1. **Trace.** For every sentence in the draft that claims something (a point, a number, a result, a story detail), find where he said it in `1-clean.md`. Record each in the notes as `<draft sentence, short> ← "<his words>"`. A claim you can't trace is cut, or turned into a marker if the post needs it (`[Alex: is this true? <claim>]`).
 2. **Cut the generic.** Strike every line that could appear in anyone's post on this topic and isn't his point. Apply the banned list below. Replace a generic phrase with his own words from the transcript where one fits; otherwise cut it. Shorter is fine; the floor is about 900 words.
-3. **Restore his voice.** Where the draft smoothed something he said better, put his phrasing back (lightly tidied for reading). Check the opening and the close twice: they're what readers remember.
+3. **Restore his voice, not his fillers.** Where the draft smoothed something he said better, put his phrasing back (lightly tidied for reading). Then make it read as writing: cut "et cetera", "whatever", "yeah", "right?", "you know", "I mean" and filler "like"; keep "so", "basically", "really" and "just" only where they carry meaning; no more than two paragraphs opening with "So"; asides to the camera become lines for a reader or go. Write events of the day in the past tense unless the post is about the live moment. Check the opening and the close twice: they're what readers remember.
 4. **Keep off.** Remove anything that names a client, a company he worked with, a person other than him, a private number, a proposal, or his own outreach. Describe by role instead ("a founder I worked with"). Where the post touches a real company's market, it offers ideas, never a verdict on how that company runs its business.
 5. **Markers.** Leave `[Alex: ...]` only where he alone can add something: a number, a concrete example, a result, the closing ask, or a judgment you can't make for him. Keep the draft's markers that still matter; add new ones only where pass 1 or 2 left a hole. Aim for three to six. Each one says in a few words what's needed.
 6. **Read-through.** Read it once start to finish as the busy reader: does the point land in the first 120 words, does every heading earn its section, is the close something to do on Monday?
@@ -30,7 +30,7 @@ Openers like "In today's ...", "Have you ever ...?", "Let's dive in"; the words 
 
 ## Output 1: `{DIR}\5-edit.md`
 
-The same header block as the draft (update `stage: 5-edit`, `prompt: v0`, `words`, and add `markers: <n>`), then the edited body.
+The same header block as the draft (update `stage: 5-edit`, `prompt: v0.1`, `words`, and add `markers: <n>`), then the edited body.
 
 ## Output 2: `{DIR}\5-edit-notes.md`
 
@@ -38,7 +38,7 @@ The same header block as the draft (update `stage: 5-edit`, `prompt: v0`, `words
 ---
 id: {ID}
 stage: 5-edit-notes
-prompt: v0
+prompt: v0.1
 ---
 
 ## Trace

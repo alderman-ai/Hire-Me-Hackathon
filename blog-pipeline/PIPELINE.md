@@ -54,7 +54,7 @@ Return the prompt's "Return" block and nothing else.
 | 6 | format | `post.md` | `validate.py` exits 0 |
 | 7 | scan | `7-scan.md`; `post.md` set to `near-final` | `scan.py` exits 0 on everything |
 
-Stages run one after another (each needs the last one's output). The checks are yours, the running session's: read the stage's return line and the file's header; a failed check means fix the prompt and rerun, never hand-edit.
+Stages run one after another (each needs the last one's output). **Timing,** from a rehearsal on a 13-minute rig transcript (2,040 words): clean 2.6 min, extract 4.5, outline 3.9, draft 3.7, edit 4.5, format 2.0, scan 2.2. About 25 minutes from captured dictation to a near-final post, so book Alex's review at least 30 minutes after his dictation ends, plus the preview deploy. The checks are yours, the running session's: read the stage's return line and the file's header; a failed check means fix the prompt and rerun, never hand-edit.
 
 **Stage 6's numbers** go in its hand-off message: minutes talked, words spoken (`counts.py blog-pipeline\dictations\T-01.md`), the rig session id or `null`, the dictation's start (`YYYY-MM-DDTHH:MM`), and `blog pipeline v<n>`.
 
@@ -94,3 +94,4 @@ gives `share_changed_by_alex`; the publish step sets `status: "published"` and t
 | Version | When | Change |
 | --- | --- | --- |
 | v0 | 2 Nov, ~15:15 | First draft from the planned stages and prompts v0, before any run and before the blog research lands |
+| v0 (timing) | 2 Nov, ~15:45 | Stage timings from a rehearsal on a rig transcript; prompts 1, 4 and 5 at v0.1 after it. The rehearsal isn't the test post and isn't committed |

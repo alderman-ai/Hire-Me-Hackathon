@@ -1,7 +1,7 @@
 ---
 stage: 4
 name: draft
-version: v0
+version: v0.1
 reads: "{DIR}\\3-outline.md, {DIR}\\2-extract.md, {DIR}\\1-clean.md"
 writes: "{DIR}\\4-draft.md"
 ---
@@ -21,7 +21,9 @@ You write the blog post from the outline and the extract, **in Alex Alderman's v
 - **Use his phrases.** Work in most of the outline's P items word for word, and his own words for every claim wherever they read well in writing. Prefer his plain word over a smarter synonym.
 - **First person, plain and direct,** the way he talks to a peer. Short sentences next to longer ones, as in the transcript. Contractions.
 - **His examples, his numbers,** exactly as given, hedges kept ("about 15 minutes" stays "about").
-- **Tighten, don't polish.** Cut the spoken repetition and the throat-clearing, keep the turns of phrase. Spoken "so" and "basically" can go; his jokes and asides stay.
+- **Tighten, don't polish.** Cut the spoken repetition and the throat-clearing, keep the turns of phrase. His jokes and asides stay.
+- **Written, not transcribed.** Keep his phrases, drop his speech scaffolding: no "et cetera", "whatever", "yeah", "right?", "you know", "like" as filler, "I mean"; "so", "basically", "really" and "just" only where they carry meaning; at most two paragraphs in the post open with "So". Join choppy spoken fragments into whole sentences. Asides to the camera or the recording ("if you're watching this early") are rewritten for a reader, or cut.
+- **For a reader who comes later.** The post is read days or weeks after he spoke. Write events of the day as things that happened, not as live narration ("I spent 12 hours", not "I'm spending"), unless the topic is the live moment itself.
 
 ## Banned (rewrite any line that does this)
 
@@ -46,7 +48,7 @@ You write the blog post from the outline and the extract, **in Alex Alderman's v
 ---
 id: {ID}
 stage: 4-draft
-prompt: v0
+prompt: v0.1
 from: {DIR}\3-outline.md
 title: <title>
 promise: <promise>
