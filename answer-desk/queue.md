@@ -390,6 +390,7 @@ Recommend (a): it costs you one letter and a time, and your own research session
 From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
 Received: 2026-11-02 14:42 CET (+01:00)
 14:42 CET: alert shown to Alex as low priority; no PushNotification (Alex, 14:38: low priority, don't push it at him).
+16:36 CET: s-d4-blog-pipeline owns this task now (took it over from wave2-specs; new address uds:\.\pipe\LOCAL\cc-msg-9801305620995dd86fbfeb00f490020a). It confirms the feedback-section rule is in blog-pipeline\SPEC.md and its runbook.
 
 ```
 TASK S-D4: Decide - how the blog pipeline should work.md is waiting on you: rewritten in plain words, same 5 decisions, about 5 minutes (where the post's look is built, how you dictate, whether the test dictation counts as the first article, the test slot and topic, what to do if research runs late). Unblocks the blog pipeline and your test dictation. Low priority, as you said: no pokes.
@@ -405,10 +406,11 @@ Received: 2026-11-02 14:42 CET (+01:00)
 TASK S2: Approve - Addvery research is yours, reading lists per demo is waiting on you: two updates to the project plan (the Addvery research and brand capture are your own work, and each demo gets its own reading list). It's low priority now: nothing is blocked on it, so no pokes.
 ```
 
-## TASK S-D1: scraping\Agent request - scraping summary for the site.md — open
+## TASK S-D1: scraping\Agent request - scraping summary for the site.md — done
 From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
 Received: 2026-11-02 14:46 CET (+01:00)
 14:46 CET: alert shown to Alex with the paste line. File is in scraping\, not Operator tasks; Alex's part is the hand-over to his Addvery research session.
+16:37 CET: s-d1-scraping says the request was completed agent-to-agent at 16:26; marked done.
 
 ```
 TASK S-D1: scraping\Agent request - scraping summary for the site.md is waiting on your Addvery research session, not on you: about 10 seconds to hand it over; it unblocks the site's scraping section and the other demos' reading lists of your research files.
