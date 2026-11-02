@@ -667,3 +667,12 @@ Received: 2026-11-02 16:23 CET (+01:00)
 POKE website: waiting on you for Approve - the plan for the website.md, the website's plan (about 3 minutes, nothing blocked; from 18:00 it runs as written).
 ```
 
+## POKE S-D3 — 16:28
+From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-b31a7431253d97f8dd5f0b7f3b09b8aa)
+Received: 2026-11-02 16:28 CET (+01:00)
+16:28 CET: about open TASK S-D3 "Approve - the six alert messages before they send.md"; repeated that alert to Alex; no PushNotification (Alex is at the desk now).
+
+```
+POKE S-D3: waiting on you for Approve - the six alert messages before they send.md (ticking sends the alert to your six; from 16:30 it relies on call 9, which runs this one flow until 18:00; after 18:00 it waits for tomorrow morning)
+```
+
