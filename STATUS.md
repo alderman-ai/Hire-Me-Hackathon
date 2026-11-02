@@ -1,4 +1,4 @@
-# Status: every folder, and the order to finish
+﻿# Status: every folder, and the order to finish
 
 As of 20:08, 2 Nov (Prague). Written by `orchestration` from the twelve folder `STATUS.md` files below, after the crash at 19:4x.
 
@@ -83,8 +83,8 @@ The deadline is tomorrow's meeting with Addvery, plus the six connection notes A
 ## Found in the pass, to fix along the way
 
 - **Doc comments reach nobody now.** Each Claude Doc's comments go only to the session that made it, and those sessions are paused. When Alex finishes a Doc, he says so in chat, and the session he's working with reads it.
-- **The clip upload stopped at 11 of 13,** and no ids were written back. One grading clip (S09-h2) failed to cut.
-- **`website\HANDOFF.md`'s deploy steps leave out /about's images and text.** Following them as written would break /about. Fix that first.
+- **Fixed 20:14 (`website`):** the clip upload is 13 of 13, and both late ids are in `website\content\clips.json` (00e21ae). Still open: one grading clip (S09-h2) failed to cut.
+- **Fixed 20:14 (`website`):** `website\HANDOFF.md`'s deploy steps now carry /about's images and text and keep the welcome off; the export was dry-run with no deploy (f9e6ca7).
 - **The feed's last post went live at 18:25,** so DoD-20's two-hour gap opened at 20:25.
 - **Scene sheet, step 10** (the Canva video) says "Lock position only", which doesn't work in Canva. `canva-video\site\d10.md` repeats it.
 - **/privacy is live but was never approved.**
