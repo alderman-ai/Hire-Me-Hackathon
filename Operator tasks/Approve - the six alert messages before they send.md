@@ -7,7 +7,7 @@ Gate: S-D3 pre-send (the alert to the six)
 Requested by: s-d3-getsales
 Snapshot of: getsales/live/pre-send.md (git-ignored) and getsales/alert/copy.json at commit f5184f1
 Unblocks: the alert sends from Alex's LinkedIn sender to the six; answers DI-7 question 1 if ticked as it stands
-Created: 2026-11-02 15:42 Prague
+Created: 2026-11-02 15:42 Prague (six changed 15:55)
 ---
 
 <!-- File name: "Approve - the six alert messages before they send.md". No ids or codes in the name or the text. -->
@@ -63,16 +63,16 @@ Below, the same messages use role labels instead of names.
 
 ### The six, with role labels and the shared text
 
-The six are, in order: the CEO, both co-founders, the Chief Delivery Officer, the Head of BI and one engagement manager. Their names and their exact lines are in the file above.
+The six are, in order: the CEO, the Chief Growth Officer (labelled Director of Growth), both co-founders (now advisors), the Chief Delivery Officer and the Head of BI. Their names and their exact lines are in the file above. **Changed at 15:55, at your word:** the Chief Growth Officer is in, the engagement manager is out. If you ticked before this change, tick again.
 
 | # | Who | Opening line (characters) | What the line rests on |
 | --- | --- | --- | --- |
-| 1 | CEO | 151 | his own LinkedIn post on a conference talk, 29 Oct |
-| 2 | Co-founder (group) | 175 | his own LinkedIn post on what never to hand to AI, 31 Oct |
-| 3 | Co-founder (agency) | 204 | his own LinkedIn post sharing his new agency's first interview, 14 Oct |
-| 4 | Director of Delivery | 162 | his own LinkedIn hiring post for an AI role, 21 Sep |
-| 5 | Director of BI | 211 | his own LinkedIn post on taking over BI, 8 Jun |
-| 6 | Engagement Manager | 185 | his own LinkedIn post on his podcast episode about the last mile, 5 Oct |
+| 1 | CEO | 151 | own LinkedIn post on a conference talk, 29 Oct |
+| 2 | Director of Growth | 207 | own LinkedIn post after a data and AI governance event, 1 Oct |
+| 3 | Co-founder (group) | 175 | own LinkedIn post on what never to hand to AI, 31 Oct |
+| 4 | Co-founder (agency) | 204 | own LinkedIn post sharing the new agency's first interview, 14 Oct |
+| 5 | Director of Delivery | 162 | own LinkedIn hiring post for an AI role, 21 Sep |
+| 6 | Director of BI | 211 | own LinkedIn post on taking over BI, 8 Jun |
 
 **The same for all six:**
 
