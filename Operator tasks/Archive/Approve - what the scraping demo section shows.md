@@ -2,12 +2,14 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-12
-Task State: Answered (in its feedback section, committed 17:14; read by orchestration as approval with changes; also answers the intake's Q10.6)
+Task State: Archived
 Gate: S-D1 D1 section sign-off (folds in OT-06, the spec-draft gate, which was still open)
 Requested by: s-d1-scraping
 Snapshot of: scraping\draft\d1.md (git-ignored) at SHA-256 0961c7fe33df
 Unblocks: the site's scraping page going live (BUILD S-D1-B1 to the website session)
 Created: 2026-11-02 16:38 Prague
+Archived: 2026-11-02
+Answered: in its feedback section, committed 17:14; read by orchestration as approval with changes; also answers the intake's Q10.6
 Updated: 2026-11-02 16:45 Prague (Alex's 16:41 changes applied; copy pass with the copywriting skill; snapshot refreshed)
 ---
 

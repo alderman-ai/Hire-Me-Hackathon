@@ -1,9 +1,10 @@
 ---
 System Primitive: Intake file
-Intake State: Answered
+Intake State: Archived
 Answered by: decided by orchestration on Alex's instruction ("clear the plate for me"), applied by website at 17:40
 Intake id: DI-9
 Created: 2026-11-02
+Archived: 2026-11-02
 Build goals: []
 ---
 

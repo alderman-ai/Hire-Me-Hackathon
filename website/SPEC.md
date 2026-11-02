@@ -26,7 +26,7 @@ Nothing goes on the site except through this session.
   - the publish check.
 
   It needs nothing from Alex. `orchestration` sends `website` one line: `Read SPEC.md in your folder: you are now the S-D8 spec orchestrator. Run part 1 now (§7 steps 1 to 6); the Addvery parts wait for its intake. Everything in your CLAUDE.md carries on.`
-- **Part 2 is held.** It covers everything that needs his Addvery research: the Addvery branding, the six stakeholder sections, and anything drawn from `..\Addvery Research\`. It waits for decision intake DI-9 (`..\Operator tasks\Decide - the six stakeholder pages on the site.md`, released at 16:46 into the slot DI-7 freed; question 1 was answered by Alex directly).
+- **Part 2 is held.** It covers everything that needs his Addvery research: the Addvery branding, the six stakeholder sections, and anything drawn from `..\Addvery Research\`. It waits for decision intake DI-9 (`..\Operator tasks\Archive\Decide - the six stakeholder pages on the site.md`, released at 16:46 into the slot DI-7 freed; question 1 was answered by Alex directly).
   - That intake stays unreleased until his Addvery research lands. Then `wave2-specs` or `orchestration` releases it.
   - Once it's answered and its answers are applied to this file, `orchestration` sends `website`: `S-D8 part 2: the branding and stakeholder intake is answered and applied in SPEC.md; run §7 from step 7.`
   - From 18:00 Prague, any of its questions still unanswered takes its default, logged in §9.
@@ -70,6 +70,8 @@ Paths are relative to `website\`. Step 1 of the run (§7) confirms each resource
 - `..\answer-desk\ASKING.md`: the desk format, gate approvals, TASK lines, the poke and the 18:00 rule.
 - `..\answer-desk\qa\website.md`: every question this session has asked Alex, with his answers.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers. Never ask again what they settle.
+- `..\Operator tasks\Archive\Decide - the six stakeholder pages on the site.md`: the six stakeholder pages, decided by orchestration on its defaults at 17:13 on Alex's "clear the plate" instruction (named, role-led, live unlinked and noindex; text edited by him in a Claude Doc), verbatim. Read it for wording, never re-ask it.
+- `..\Operator tasks\Archive\Approve - what the scraping demo section shows.md`: Alex's answer on the scraping section (one framed page, his headline, the research artifacts first as a carousel, then the rest), verbatim. Read it for wording, never re-ask it.
 - `..\Operator tasks\Archive\Approve - the plan for the website.md`: Alex's answers to the website's plan and its definition of done (approved on its defaults at 17:03, on his instruction to clear his plate), verbatim. Read them for wording, never re-ask them.
 - `..\Operator tasks\Archive\Approve - research for the GetSales demo and website.md`: Alex's answers to the GetSales and website research lists (withdrawn unticked at 17:03: research is done, so neither list runs), verbatim. Read them for wording, never re-ask them.
 - `CLAUDE.md`: the session's standing duties (clock, video, deploys, Hobby limits). This spec extends it and never overrides it. The changes it needs are listed below.
