@@ -15,8 +15,8 @@ What's waiting on it: the video's section on the site. No deadline beyond tonigh
 | | |
 | --- | --- |
 | When | Whenever suits you tonight, in a recorded rig session |
-| What | An Addvery quote card, 1080 × 1080, built from the asset pack following its quote card mockup, then exported |
-| The pack | `canva-templates\localsset-pack\`: the quote card mockup, a sheet of fonts, colours and sizes, the gradient quote mark and the white logo as PNGs, and the quote's copy |
+| What | An Addvery quote card, 1080 × 1080, built from the asset pack's build sheet to match its mockup, then exported |
+| The pack | `canva-templates\local\asset-pack\`: the quote card mockup, a build sheet with every position, font, colour and size in build order, the quote's copy, and the gradient quote mark and white logo as PNGs |
 | Where | The left monitor only, the one being recorded. Everything else on the 4K monitor |
 | Length | 10 to 12 minutes of designing, never over 15 |
 | Say at the start | "Canva design starts now" |
@@ -35,11 +35,11 @@ About 5 minutes. Type `/pause` first (or do all of this before `/start`).
 5. **Downloads save without asking:** in Chrome, Settings, then Downloads, check that "Ask where to save each file before downloading" is off. If it's on, a save dialog showing a folder's files appears on camera when you export.
 6. **Your own Canva account,** not a client's team. If you belong to more than one Canva team, switch to your own first.
 7. **Make the empty design:** from Canva's home, Create a design, then Custom size, 1080 × 1080 px. Name it "Addvery quote card". This is the only time Canva's home is on screen, and the recording is paused.
-8. **Stage the pack's parts on a second page.** Add a page, then drag the pack's two images (the gradient quote mark and the white logo) from an Explorer window on the 4K monitor onto page 2. That page is your parts tray: on camera you build page 1 from it, so the Uploads panel never needs to open. If Canva opens a panel while it uploads, close it. Go back to page 1.
-9. **Check the brand sections once.** Click any text box, then open the colour picker, the font list and the Text tab on the left. Each can show a brand kit by name, with its colours and fonts. If any shows another client's kit, switch the selector to Addvery's, or plan not to open that panel on camera. Close them again.
-10. **Find Download:** check that the File menu at the top left has Download. If it does, you can export without the Share panel, which lists who has access. Open it once and pick the export settings from Step 2 item 8. If Canva shows an upgrade prompt, your plan doesn't include them: keep the defaults on camera. Close it without downloading.
+8. **Stage the pack's parts on a second page** (the sheet's step 3). Add a page, then drag the pack's two images from an Explorer window on the 4K monitor onto page 2: `images\quote-mark-112x88.png` and `images\logo-white-866x234.png`. For an optional check at the end, drag `mockups\quote-card-1080x1080.png` there too. That page is your parts tray: on camera you build page 1 from it, so the Uploads panel never needs to open. If Canva opens a panel while it uploads, close it. Go back to page 1.
+9. **Check the brand sections once.** On page 1, add a throwaway text box with `T`, then open its colour picker, the font list and the Text tab on the left. Each can show a brand kit by name, with its colours and fonts. If any shows another client's kit, switch the selector to Addvery's, or plan not to open that panel on camera. Close them again and delete the text box.
+10. **Find Download:** check that the File menu at the top left has Download. If it does, you can export without the Share panel, which lists who has access. Open it once and pick the export settings from Step 2 (PNG, size × 1, Compress file off). If Canva shows an upgrade prompt, your plan doesn't include them: keep the defaults on camera. Close it without downloading. If the File menu has no Download, plan to export with the recording paused: the sheet's Share, then Download route opens the Share panel.
 11. **Close the left side panel** if one is open, so the scene starts on the empty page.
-12. **On the 4K monitor:** open the mockup you're following (<mockup file>), the pack's sheet of fonts, colours and sizes (<sheet file>), and the copy (<where the copy is>). Copy and paste the copy from there. Don't open Windows' clipboard history (`Win+V`): it shows past clips.
+12. **On the 4K monitor,** from `canva-templates\local\asset-pack\`, open the build sheet `BUILD-quote-card.md` and the mockup to match, `mockups\quote-card-1080x1080-canva-fonts.png`. The sheet has 12 steps in build order, every element's position, font, size, spacing and colour, and the quote's copy ready to paste; its steps 1 and 3 are done here, paused. The mockup is the card set in Canva's Inter, which is what your build should look like. Copy and paste the copy from the sheet. Don't open Windows' clipboard history (`Win+V`): it shows past clips.
 13. **Full screen:** press `F11` in Chrome. It hides the tabs, the address bar with the design's link, the bookmarks bar and the extension icons.
 14. **Tell the assistants you're filming:** comment "filming now" on this Doc. They keep off your browser until your Step 4 comment.
 15. Type `/pause` again to resume the recording.
@@ -48,7 +48,10 @@ About 5 minutes. Type `/pause` first (or do all of this before `/start`).
 
 1. Say **"Canva design starts now"**.
 2. Say what you're about to make, in one sentence of your own, before you start. The first few seconds carry most of a video's viewing, so the outcome goes first. After that, talk as you go only if it comes naturally.
-3. **Build page 1 from the parts on page 2,** in the mockup's order: the background colour, the gradient quote mark, the quote text box, the name-and-role text box, the hairline, the white logo. Copy or drag the two images across. Add text boxes with `T` and the hairline with `L`, so the Elements panel never opens: its recently-used row can show other work. Set Inter with the sheet's letter-spacing values; Canva text takes a linear gradient, so the quote's highlight can stay gradient. Size and align everything to the mockup. Lock the background and logo once they're placed, if you like.
+3. **Build page 1 from the parts on page 2, following the sheet** from its step 2 to its step 10: the background (`#151515`), the quote mark, the quote, the gradient on "real commitment", the name and role, the hairline, the logo, then the locks.
+   - Bring each image across with `Ctrl+X` on page 2, then `Ctrl+V` on page 1, and type its X, Y, W and H from the sheet into Position.
+   - Add text boxes with `T`. For the hairline, press `R` for a rectangle instead of the sheet's Elements, then Shapes, so the Elements panel never opens: its recently-used row can show other work. If `R` adds nothing, pause and add the square from Elements.
+   - The gradient on "real commitment" hasn't been tried in Canva yet. The sheet's Plan A selects the phrase and gives it the gradient; Plan B, a copy of the text box, has its positions in the sheet too.
 4. **Stay out of these on camera.** They list things from across your whole account:
    - the **Projects**, **Uploads** and **Brand** tabs in the left panel;
    - Canva's home page (the Canva logo or the back arrow at the top left);
@@ -56,10 +59,11 @@ About 5 minutes. Type `/pause` first (or do all of this before `/start`).
    - your profile menu at the top right (it lists your teams);
    - any file picker or Explorer window on this monitor.
 5. **Need something that isn't on page 2?** Type `/pause`, add it, then type `/pause` again. Paused time never reaches the video. Don't crop an image to hide part of it: in a PDF export, the cropped-out part can be recovered by anyone who downloads it.
-6. **Use the pack's copy as given,** the name and role included. No photos of anyone.
-7. **Delete page 2** when page 1 is done, so the export holds only the finished graphic.
-8. **Export** through the File menu: Download, then PNG, quality High, size 1x. If Canva shows an upgrade prompt when you change the quality, keep the defaults. Don't open the downloaded file on camera. Finish on the finished graphic in Canva, zoomed to fit.
-9. Say **"Canva design done"**.
+6. **Use the sheet's copy as given.** The name and role lines are the template's placeholders, "Name Surname" and "Role, Company", so type them as they are. No photos of anyone.
+7. **Check against the mockup, if you like** (the sheet's step 12): move it from page 2 onto page 1 at X 0, Y 0, W 1080, set its transparency to 50, compare, then delete it.
+8. **Delete page 2** when page 1 is done, so the export holds only the finished graphic.
+9. **Export** through the File menu: Download, then PNG, size × 1, with Compress file off (pick High if a quality option shows). If Canva shows an upgrade prompt, keep the defaults. Don't open the downloaded file on camera. Finish on the finished graphic in Canva, zoomed to fit.
+10. Say **"Canva design done"**.
 
 **If something goes wrong**
 - **Something private shows for a moment:** carry on. Write down roughly when, in Step 4. The check before upload blurs or cuts it.
@@ -88,7 +92,8 @@ Your comment on this Doc is all it takes. The assistant waits for the session to
 
 **Placeholders and what fills each** (all from S-D6's pack-ready message; ask S-D6 for anything it leaves out)
 - Filled at 17:32 from S-D6's message. The pack folder is `canva-templates\local\asset-pack\`. The mockup is the quote card at 1080 × 1080, with its build order. The font is Inter with the sheet's letter-spacing, because only Inter of the brand's faces is in Canva's library. Gradient text is allowed. Export is PNG High 1x.
-- Still open, from `READY S-D6`: `<mockup file>`, `<sheet file>` and `<where the copy is>` (the quote's copy, refreshed from S-D7's final post 3). These are local paths: they go in the Doc, which only Alex reads, never in a tracked file.
+- Filled at 18:05 from `READY S-D6` (about 18:00): the sheet `BUILD-quote-card.md` (12 steps; step 3 is the paused staging), the mockup to match `mockups\quote-card-1080x1080-canva-fonts.png` (the signed-off render `mockups\quote-card-1080x1080.png` is the optional overlay), the copy in the sheet and in `copy.md` (S-D7's final post text), and the two images. The pack's relative file names go in this tracked file after all: they aren't secrets, and the pack folder was already named here; no Canva link exists, since the design is made fresh (SPEC §9, 18:05).
+- Where the sheet and this brief differ, the brief wins on screen care: the hairline with `R` (the sheet says Elements, then Shapes), and the export through File, then Download (the sheet says Share, then Download), with a paused export if File has none.
 - The quote card carries a name and a role. Use the pack's copy as given (reset rule 3: public sources are fine; the copy is S-D6's and S-D7's). If no copy comes, write placeholder copy only after invoking `marketing:draft-content`, in `local\copy.md`.
 - No scripted lines for Alex beyond the two cues: what he says on camera is his own (the copywriting rule).
 - No OT number or answer fence: Alex's comment on the Doc is the report (reset rule 4).
