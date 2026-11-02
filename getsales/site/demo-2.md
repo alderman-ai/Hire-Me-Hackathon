@@ -39,12 +39,16 @@ Three rules do most of the work, in this order:
 - A signal under 90 days old makes the lead signal-led. A job post 27 days old counts; an app relaunch 263 days old doesn't.
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png
-> Terminal run, part 1: fictional leads L01 to L06, each decision tagged rule or Jev, ending on its workflow
-> The full run, part 1: violet marks a rule, amber marks a question for Jev
+> Terminal run, part 1: fictional leads L01 to L04, each decision tagged rule or Jev, ending on its workflow
+> The full run, part 1 of 3: violet marks a rule, amber marks a question for Jev
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-2.png
-> Terminal run, part 2: leads L07 to L12, then the summary line: 4 by rules alone, 7 needed Jev, 1 no fit, 12 of 12 match the sample
-> L12 fits no ICP and is logged with its reason; nothing is imported or sent
+> Terminal run, part 2: fictional leads L05 to L08, each decision tagged rule or Jev, ending on its workflow
+> Part 2 of 3: L06 is one of the two hard cases, shown again below
+
+> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-3.png
+> Terminal run, part 3: fictional leads L09 to L12, each decision tagged rule or Jev, ending on its workflow, then the summary
+> Part 3 of 3: L12 fits no ICP and is logged with its reason; nothing is imported or sent
 
 Rules are free, exact, and anyone can read why a lead went where it did.
 
