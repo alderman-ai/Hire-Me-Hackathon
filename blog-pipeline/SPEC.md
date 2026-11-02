@@ -167,6 +167,8 @@ Approving L-03 is S1's gate, not this session's.
 10. **D4's entry.** `BUILD S-D4-B<n>: on the deliverables view, D4's entry: what the pipeline does in three lines, accepted <time>, and a link to /blog. Content: blog-pipeline\SITE.md. Source: the accepted pipeline.`
 11. **Done.** Send `orchestration` `DONE S-D4: test dictation T-01 became a post Alex accepted as near-final in Approve - the blog post the pipeline made.md; runbook blog-pipeline\PIPELINE.md v<n>`. Then stay, idle, to take `PIPELINE FIX S-D5: <what>` from `s-d5-blog-articles`, answering each with a new runbook version. When S-D5 reports done, move S-D4's roster row to Finished (`[roster]` commit, path-limited) and stop.
 
+**Approval plus feedback** (Alex at the desk, 16:36: "Even if I approve something that doesn't include what I mentioned in the feedback section, it's approved along with whatever's in the feedback section"). On every gate, `APPROVED` from `check_gate.py` isn't the end: read the file's changes fence too, and apply whatever he wrote there as part of the approval. On DI-8, read the whole file, not only the answer fences.
+
 **Site requests** go one at a time as `BUILD S-D4-B<n>: ...`, numbered in the order sent. Wait for `BUILT S-D4-B<n>` or `REFUSED S-D4-B<n>` before sending the next.
 
 **Screen care.** The dictation task is on camera, and that's the point. Never open the Apify proposal or Alex's own GetSales outbound. If he says something in a dictation that mustn't be published, the scan cuts it from the post, and S-D4 tells `s-d9-legibility` the clock time so that stretch stays off the site.

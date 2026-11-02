@@ -79,7 +79,7 @@ The three articles use their own spec id (`BUILD S-D5-B<n>: ...`).
 
 ## 5. Alex's review and the last 10%
 
-Freeze the post into a gate approval (`Approve - ...` in `Operator tasks\`, from `orchestration\_templates\Gate approval template.md`): what this is in plain words, a five-line summary, the preview URL, the post in full, the numbers, and the list of `[Alex: ...]` notes. Wait on it with `python -I orchestration\check_gate.py "<file>"` every 300 seconds.
+Freeze the post into a gate approval (`Approve - ...` in `Operator tasks\`, from `orchestration\_templates\Gate approval template.md`): what this is in plain words, a five-line summary, the preview URL, the post in full, the numbers, and the list of `[Alex: ...]` notes. Wait on it with `python -I orchestration\check_gate.py "<file>"` every 300 seconds. When it says `APPROVED`, still read the changes fence: whatever Alex wrote there is part of the approval (his rule, 2 Nov 16:36), so apply it before moving on.
 
 Publishing (the three articles' step, not this pipeline's): Alex fills the notes, then
 
