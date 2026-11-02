@@ -180,16 +180,30 @@ def cmd_nodes():
     return 0
 
 
+def rig_state():
+    # Recording if any file under OBS\Live was written in the last two minutes.
+    live = HERE.parent / "OBS" / "Live"
+    now = datetime.now().timestamp()
+    try:
+        recent = [p for p in live.rglob("*") if p.is_file() and now - p.stat().st_mtime < 120]
+    except OSError:
+        recent = []
+    if not recent:
+        return "not recording"
+    return "recording (" + sorted({p.relative_to(live).parts[0] for p in recent})[-1] + ")"
+
+
 def cmd_stage(text):
     f = HERE / "live-run.md"
     if not f.exists():
         f.write_text("# Alert live run: stage times\n\nWall-clock Prague time of each stage of the alert, for the clip. "
-                     "No names: the six appear only as \"the six\".\n\n| Time (Prague) | Stage |\n| --- | --- |\n",
-                     encoding="utf-8")
+                     "No names: the six appear only as \"the six\". The rig column says whether OBS was writing "
+                     "at that moment.\n\n| Time (Prague) | Stage | Rig |\n| --- | --- | --- |\n", encoding="utf-8")
     now = datetime.now().strftime("%H:%M:%S")
+    rig = rig_state()
     with f.open("a", encoding="utf-8") as fh:
-        fh.write(f"| {now} | {text} |\n")
-    print(f"OK {now} {text}")
+        fh.write(f"| {now} | {text} | {rig} |\n")
+    print(f"OK {now} {text} [{rig}]")
     return 0
 
 
