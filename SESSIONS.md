@@ -25,6 +25,7 @@ Read this file at startup, and again before you message a session you haven't me
 | `briefing` | `briefing\` | Alex's own status session: where everything stands, where he's the blocker, how close to done. Answers from the collector's snapshots and asks no one. Not in the charter. | Launched 2 Nov. |
 | `s-d9-legibility` | `legibility\` | S-D9 Legibility analyzer: finds what's worth showing followers in the filed rig sessions and the project, and sends `website` build requests. Runs on an interim brief until its spec exists. | Started early on Alex's instruction, 2 Nov. Checks every 30 minutes. |
 | `s1-research` | `research\` | S1 Research: sets the research method and fills the research reading list with Alex, within the usage budget. | Launched by `orchestration` after S0, 2 Nov. |
+| `wave2-specs` | repo root | Temporary: writes the wave-2 specs (S-D1, S-D3 to S-D10), gets each one's preflight intake answered, and hands each to `orchestration` for launch. Then stops. | Started by `orchestration`, 2 Nov 14:00. |
 
 ## Planned
 
