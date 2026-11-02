@@ -49,7 +49,7 @@ Paths are relative to `getsales\`. Step 1 of the run confirms that every resourc
 - `..\answer-desk\ASKING.md`: the desk format, gates, the poke and the 18:00 rule. `..\answer-desk\qa\S-D3.md`: S-D3's Q&A record, which exists once the first question has been asked.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers, plus DI-7 once it's archived. Never re-ask what they settle.
 - `SPEC.md` (this file), and `HANDOFF.md` if it exists.
-- `..\orchestration\DOD-DRAFT.md`: the signed-off project DoD, until it's in the charter. Read only.
+- The charter's "Definition of done" (in `..\CHARTER.md`, written in by S2 as change C03): the signed-off project DoD. Read DoD-12, DoD-13 and DoD-22.
 - `..\orchestration\_templates\Gate approval template.md` and `..\orchestration\check_gate.py`: the gate tasks and their 5-minute check.
 - `..\research\DIRECTORY.md`: the index of every report. `..\research\lists\L-04-getsales.md`, `..\research\lists\L-01-parent.md` and R3 of `..\research\lists\L-02-scraping.md` (the scraped-data output contract): S1's lists. Read only.
 - Research findings: S2 adds a line here for each report when S1 sends FINDINGS for L-04, L-01 and L-02 R3.
@@ -58,7 +58,8 @@ Paths are relative to `getsales\`. Step 1 of the run confirms that every resourc
 - `..\legibility\CLAUDE.md` (S-D9's brief until its SPEC.md exists): how S-D9 picks moments and what it never posts. `..\OBS\rig\RUNBOOK.md`: how the rig records, files and cuts clips. `..\website\CLAUDE.md`: what the site shows and how videos get there. All read only.
 - **The GetSales connector** (claude.ai GetSales MCP). Call `get_guide` before creating flows, importing leads or writing messages. Every data call runs against the one team that question 2 names. A preview that returns a `commit_token` is for Alex: it's shown to him and waits for his explicit yes, through a gate task or live on camera (§7), never in this session's own chat. **Never list or search Alex's flows, leads, contacts or inbox,** and never run analytics on anything except the demo flows, read by id. Every tool result lands in the rig's filed Claude Code logs, which S-D9 reads.
 - **Sales Navigator:** Alex's own account, in his browser. On camera, only ever the search or lead-list page.
-- `.gitignore` in this folder (S-D3's own), covering `live\` and `.env*`. It's written before anything goes into `live\`.
+
+**Outputs** (files S-D3 creates; none exist yet, so they aren't resources): everything in the tree below. Its own ignore file, covering the git-ignored live folder and any env file, is written before anything personal is saved.
 
 ```
 getsales\
