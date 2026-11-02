@@ -33,34 +33,34 @@ Sizes checked against the research (L-05, 2 Nov 16:38): LinkedIn publishes no fe
 
 ## 3. Type scale
 
-Font roles: `font-display` (headlines), `font-label` (labels, eyebrows), `font-body` (body and UI). Phone size = canvas px ÷ 2.77 (a 1080px canvas shows about 390pt wide).
+Font roles (from the website's brand kit, the one brand source since 2 Nov 17:15): `font-display` (headlines, the kit's display stand-in at its medium weight), `font-label` (labels, eyebrows: the kit sets them in the display face), `font-numeric` (the kit's stat-counter face, for the T2 number), `font-body` (body and UI). Phone size = canvas px ÷ 2.77 (a 1080px canvas shows about 390pt wide).
 
 | Step | Font role | px | Weight | Line-height px (×) | Tracking | Case | ≈ pt on phone | Used in |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| display | `font-display` | 240 | 600 | 240 (1.00) | −2% | — | 87 | T2 number |
-| display-num | `font-display` | 160 | 600 | 160 (1.00) | −2% | — | 58 | T4 point numbers |
-| headline-xl | `font-display` | 88 | 600 | 96 (1.09) | −2% | Sentence | 32 | T1 headline, T2 claim, T4 cover and closing |
-| headline | `font-display` | 64 | 600 | 72 (1.125) | −2% | Sentence | 23 | T4 page titles |
-| quote | `font-display` | 56 | 600 | 64 (1.14) | −2% | Sentence | 20 | T3 quote |
-| value | `font-display` | 48 | 600 | 56 (1.17) | −2% | — | 17 | T4 chart values |
+| display | `font-numeric` | 240 | 600 | 240 (1.00) | −1.7% | — | 87 | T2 number |
+| display-num | `font-display` | 160 | 500 | 160 (1.00) | −2% | — | 58 | T4 point numbers |
+| headline-xl | `font-display` | 88 | 500 | 96 (1.09) | −2% | Sentence | 32 | T1 headline, T2 claim, T4 cover and closing |
+| headline | `font-display` | 64 | 500 | 72 (1.125) | −2% | Sentence | 23 | T4 page titles |
+| quote | `font-display` | 56 | 500 | 64 (1.14) | −2% | Sentence | 20 | T3 quote |
+| value | `font-display` | 48 | 500 | 56 (1.17) | −2% | — | 17 | T4 chart values |
 | subhead | `font-body` | 40 | 500 | 48 (1.20) | −1% | Sentence | 14.4 | T1 support, T2 context, T3 name, T4 subtitle |
 | body | `font-body` | 36 | 400 | 48 (1.33) | 0 | Sentence | 13 | T4 body and list |
 | cta | `font-body` | 36 | 500 | 40 (1.11) | 0 | Sentence | 13 | CTA pill labels |
 | body-sm | `font-body` | 32 | 400 | 40 (1.25) | 0 | Sentence | 11.6 | T3 role, T4 bar labels |
-| label | `font-label` | 28 | 500 | 32 (1.14) | +8% | UPPERCASE | 10.1 | Eyebrows, swipe cue |
+| label | `font-label` | 28 | 500 | 32 (1.14) | +12% | UPPERCASE | 10.1 | Eyebrows, swipe cue |
 | caption | `font-body` | 28 | 400 | 40 (1.43) | 0 | Sentence | 10.1 | Source lines, page counter, footer caption |
 
-**T5 overrides** (1200 wide, ÷ 3.08): headline 64/72 (20.8pt), subhead 40/48 (13pt), body 36/48 (11.7pt), cta 36/40 (11.7pt), label 32/40 +8% (10.4pt).
+**T5 overrides** (1200 wide, ÷ 3.08): headline 64/72 (20.8pt), subhead 40/48 (13pt), body 36/48 (11.7pt), cta 36/40 (11.7pt), label 32/40 +12% (10.4pt).
 
 **Minimum sizes.** Body text a reader needs is never below **32px** on a 1080 canvas: 32 ÷ 2.77 ≈ 11.6pt, just above 11pt, the smallest size Apple's interface guidelines treat as legible without zoom. Default body is 36px (≈ 13pt). The absolute floor is **28px** (≈ 10.1pt), allowed only for eyebrows (uppercase and tracked, so they read larger), source lines, footer captions and the page counter. On T5 the body minimum is 36px and the floor 32px, since it shrinks more (÷ 3.08).
 
-Canva entry: line spacing = line-height ÷ px; letter spacing −2% = −20, −1% = −10, +8% = 80. Numbers use tabular figures where the font role allows.
+Canva entry: line spacing = line-height ÷ px; letter spacing −2% = −20, −1.7% = −17, −1% = −10, +12% = 120. Numbers use tabular figures where the font role allows.
 
 ## 4. Colour roles
 
 | Element | T1 | T2 | T3 | T4 | T5 |
 | --- | --- | --- | --- | --- | --- |
-| Background | `bg-base` | `bg-base` | `bg-base` | `bg-base` | `bg-base` + gradient panel in `accent-gradient` (angled variant) |
+| Background | `bg-base` | `bg-base` | `bg-base` | `bg-base` | `bg-base` + gradient panel in `accent-gradient-diag` (the kit's card gradient) |
 | Headline / title / quote | `text-primary-dark` | claim: `text-primary-dark` | `text-primary-dark` | `text-primary-dark` | `text-primary-dark` |
 | Big number / point numbers | — | `accent-gradient` | — | `accent-gradient` | — |
 | Key-word highlight | `accent-gradient` | claim only | `accent-gradient` | `accent-gradient` | `accent-gradient` |
@@ -69,7 +69,7 @@ Canva entry: line spacing = line-height ÷ px; letter spacing −2% = −20, −
 | Attribution | — | — | name `text-primary-dark`, role `text-body-dark` | — | — |
 | Caption / source / counter | `text-body-dark` | `text-body-dark` | — | `text-body-dark` | — |
 | Accent bar / mark | `accent-gradient` bar | `accent-gradient` bar | `accent-gradient` mark | `accent-gradient` bar (cover, closing) | — |
-| CTA pill | — | — | — | fill `accent-gradient` (angled variant), label `text-primary-dark` | same as T4 |
+| CTA pill | — | — | — | fill `accent-gradient-button` (the kit's button gradient, from `accent-start-deep`), label `text-primary-dark` | same as T4 |
 | Hairlines | `glass-line` | `glass-line` | `glass-line` | — | — |
 | Progress | — | — | — | track `glass-line-strong`, fill `accent-gradient` | — |
 | Small marks | — | — | — | list markers `accent-solid`, swipe arrow `accent-gradient` | — |
@@ -88,7 +88,7 @@ Rules: the gradient never touches body, caption or label text. One key-word high
 | `text-body-dark` on `glass-fill` over `bg-base` | 8.3:1 | 7:1 | Meets |
 | `accent-gradient` text on `bg-base` | 3.1:1 (violet end) to 5.1:1 (magenta end) | 3:1, large text only | Meets at ≥ 56px only |
 | `accent-solid` marks on `bg-base` | 3.2:1 | 3:1 non-text | Meets |
-| `text-primary-dark` on `accent-gradient` (angled variant, CTA) | 5.8:1 violet, ≈ 5.3:1 label centre, 3.6:1 magenta end | 3:1, label ≥ 24px canvas size | Meets |
+| `text-primary-dark` on `accent-gradient-button` (CTA) | 6.6:1 deep violet (held to 35%), 3.6:1 magenta end | 3:1, label ≥ 24px canvas size | Meets |
 | `glass-line-strong` bars on `bg-base` | 1.9:1 | decorative: every bar also carries its value as text | Meets by labelling |
 
 Canva fallback: if Canva can't fill text with a gradient (R1/R3 check), highlights and numbers take `accent-solid` (3.2:1, still ≥ 3:1 at ≥ 56px).
