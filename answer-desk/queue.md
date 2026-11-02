@@ -57,12 +57,13 @@ Deadline: 13:15
 **Affects:** the S02 video now, and every later webcam upload, which use the same two devices.
 ```
 
-## website-Q2 — withdrawn
+## website-Q2 — answered
 From: website (uds:\.\pipe\LOCAL\cc-msg-a20244c812745d4843b7f744587f9bdb)
 Received: 2026-11-02 13:05 CET (+01:00)
 Resent after website-Q1 was answered; shown to Alex.
 13:06 CET: Alex asked for more time; nothing sent.
 13:19 CET: WITHDRAW website-Q2 received (deadline reached); noted in qa\website.md.
+13:19 CET: Alex answered after the withdrawal; recorded in qa\website.md and sent to website.
 
 ```
 ASK website-Q2

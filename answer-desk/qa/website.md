@@ -29,7 +29,7 @@ Deadline: 13:15
 **Answer:** I have no idea and it's not important. Delete this
 
 ## website-Q2 — Is the lip sync right in the site's S02 video?
-Asked 2026-11-02 13:05 CET · withdrawn at 2026-11-02 13:19 CET
+Asked 2026-11-02 13:05 CET · withdrawn at 2026-11-02 13:19 CET · answered at 2026-11-02 13:19 CET, after the withdrawal
 
 ```
 ASK website-Q2
@@ -52,4 +52,4 @@ Deadline: 13:19
 **Affects:** the S02 video now, and every later webcam upload, which use the same two devices.
 ```
 
-**Answer:** none. Withdrawn by website at the deadline, while Alex had asked for more time.
+**Answer:** Okay yeah. From the live site, yes, the lip syncing is fine
