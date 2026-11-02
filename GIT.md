@@ -21,8 +21,10 @@ All sessions share one working tree on `main`. A command that changes the branch
 
 ## Ownership
 - Each top-level folder belongs to the session started in it: `website\` to `website`, `OBS\` to `rig`, `watcher\` to `watcher`, and each spec folder to its spec session.
+- A folder whose session doesn't exist yet (such as a scaffold S0 creates) belongs to the session that created it until its own session starts.
 - Never edit or commit files in another session's folder. Send that session a message instead.
 - Root-level files (CHARTER.md, GIT.md, the root CLAUDE.md) belong to the `orchestration` session.
+- **Exception:** until the S2 project orchestrator session takes over, `orchestration` may edit and commit files in any folder, without asking that folder's session (Alex, 2 Nov). It tells the owner afterwards. That's a standing instruction from Alex, not a peer's request.
 
 ## Secrets
 - Never commit `.env*`, `client_secret*.json`, tokens or keys. `.gitignore` covers the usual ones; check anyway.
