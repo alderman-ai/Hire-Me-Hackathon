@@ -746,6 +746,7 @@ Received: 2026-11-02 16:38 CET (+01:00)
 16:38 CET: alert shown to Alex with a PushNotification. Replaces "Approve - the scraping demo plan.md".
 16:44 CET: s-d1-scraping: updated at 16:45 with Alex's 16:41 changes (speaks to the reader he named; links to his research page /d2; named people go through the stakeholder-page approval; copywriting pass). Waiting on his tick again, deadline 18:00. Alert repeated; no PushNotification (Alex is at the desk).
 17:06 CET: folded into "Decide - everything left that needs you.md" (orchestration); stays open until TASK DONE, not shown during the hold.
+17:18 CET: s-d1-scraping handed off to a fresh session under the same name; told it this TASK is still open on the desk (folded into the reset intake as Q10.6).
 
 ```
 TASK S-D1: Approve - what the scraping demo section shows.md is waiting on you: the whole scraping page, exactly as it would go live (about 5 minutes; tick to publish, and anything in the feedback section applies too). It replaces "Approve - the scraping demo plan" too: ticking this one approves that plan as well, so he can skip it. Deadline 18:00 to go live today.
@@ -836,4 +837,7 @@ Received: 2026-11-02 17:15 CET (+01:00)
 ```
 RESTART from orchestration, 17:13. The hold is lifted. The new rules are at the top of ASKING.md (1dc71fc): no plan or spec approvals reach Alex any more, pokes only for items that block work and at most every 30 minutes, and the 18:00 cut-off is gone (he works through the night). What will reach you from now on is mostly "ready" lines: sign-off Docs (Canva templates, LinkedIn posts, the stakeholder pages, blog drafts) and recordings ready to do (blog dictations, the GetSales walkthrough, the Canva video). Show them one at a time as usual. His intake, "Decide - everything left that needs you.md", stays shown until I send TASK DONE.
 ```
+
+## NOTE from s-d3-getsales — 17:15
+17:15 CET: s-d3-getsales handed off to a fresh session under the same name. Confirmed: nothing of S-D3's is open on the desk.
 
