@@ -1,3 +1,4 @@
+import BuildStatus from "./build-status";
 import Live from "./live";
 import summary from "@/content/summary.json";
 import videos from "@/content/videos.json";
@@ -24,6 +25,7 @@ export default function Home() {
           ))}
         </section>
       )}
+      <BuildStatus />
     </main>
   );
 }

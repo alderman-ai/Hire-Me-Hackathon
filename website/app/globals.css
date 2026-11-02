@@ -4,6 +4,7 @@
   --ink: #111111;
   --ink-muted: #3a3a3a;
   --live: #b3001b;
+  --rule: rgba(0, 0, 0, 0.28);
 }
 
 *,
@@ -122,10 +123,15 @@ body {
   border: 0;
 }
 
+/* The summary and the build section share one 900px column, text at 720px, so their left edges line up. */
 .summary {
   width: 100%;
-  max-width: 720px;
+  max-width: 900px;
   margin-top: 12px;
+}
+
+.summary > * {
+  max-width: 720px;
 }
 
 .summary-headline {
@@ -142,4 +148,157 @@ body {
   font-size: 18px;
   line-height: 1.6;
   text-wrap: pretty;
+}
+
+/* What's being built today */
+.build {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 24px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.build > p,
+.build > ul,
+.build > h2,
+.build > h3 {
+  max-width: 720px;
+}
+
+.build h2 {
+  margin: 0 0 4px;
+  font-size: clamp(24px, 3.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.build h3 {
+  margin: 32px 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.build p {
+  margin: 0 0 16px;
+  text-wrap: pretty;
+}
+
+.build .as-of {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.how-it-runs {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.how-it-runs li {
+  margin-bottom: 10px;
+  text-wrap: pretty;
+}
+
+.build-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.build-table th,
+.build-table td {
+  padding: 10px 12px 10px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.build-table thead th {
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+}
+
+.build-table tbody th {
+  font-weight: 700;
+}
+
+.build-table .num {
+  font-variant-numeric: tabular-nums;
+}
+
+.build-table .status {
+  font-weight: 600;
+}
+
+.pull-quote {
+  max-width: 720px;
+  margin: 32px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 4px solid var(--ink);
+}
+
+.pull-quote blockquote {
+  margin: 0;
+}
+
+.pull-quote blockquote p {
+  margin: 0 0 8px;
+  font-size: clamp(19px, 2.4vw, 22px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.pull-quote figcaption {
+  font-size: 15px;
+}
+
+.pull-quote figcaption::before {
+  content: "— ";
+}
+
+/* On phones each table row becomes a stacked block, labelled per cell. */
+@media (max-width: 640px) {
+  .build-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .build-table,
+  .build-table tbody,
+  .build-table tr,
+  .build-table th,
+  .build-table td {
+    display: block;
+  }
+
+  .build-table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .build-table th,
+  .build-table td {
+    padding: 2px 0;
+    border: 0;
+  }
+
+  .build-table td::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+  }
+
+  .build-table td.num::before {
+    content: "Demo ";
+  }
 }

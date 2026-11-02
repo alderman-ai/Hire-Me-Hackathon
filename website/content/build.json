@@ -1,0 +1,114 @@
+{
+  "post": "P1",
+  "as_of": "13:50",
+  "as_of_line": "As of 13:50 Prague time, 2 November. The statuses update as the work moves.",
+  "headline": "What's being built today",
+  "intro": "Thirteen pieces of work, run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come ten demos of what a GTM engineer builds, and they all end up on this site.",
+  "how_it_runs": [
+    {
+      "lead": "One plan at the top.",
+      "text": "Alex wrote a project charter in the morning: the goal, the rules every agent follows, and the list of deliverables."
+    },
+    {
+      "lead": "One agent per piece of work.",
+      "text": "Each deliverable gets its own spec, a plan an agent can carry out on its own, and its own background Claude Code session. The sessions run at the same time and message each other."
+    },
+    {
+      "lead": "One window for Alex's input.",
+      "text": "Any agent that needs Alex sends its question to the \"answer desk\", a single window that shows him one question at a time."
+    },
+    {
+      "lead": "Alex first, then overnight.",
+      "text": "Anything that needs Alex (recordings, decisions, sign-offs) happens while he's at the computer today. The rest builds overnight, and a cleanup session follows tomorrow morning."
+    }
+  ],
+  "tooling": [
+    {
+      "piece": "Bootstrap",
+      "what": "Sets up a working folder, instructions and a background session for every other piece.",
+      "status": "Running. Folders for every demo created at 13:45."
+    },
+    {
+      "piece": "Research",
+      "what": "Decides with Alex what gets researched and how deep, so the agents work from findings instead of guesses.",
+      "status": "Spec written, Alex's answers in. Starts after bootstrap."
+    },
+    {
+      "piece": "Project orchestrator",
+      "what": "Keeps the plan consistent: adds deliverables and updates everything that depends on them.",
+      "status": "Spec written. Runs in the main orchestration session."
+    }
+  ],
+  "demos": [
+    {
+      "n": 1,
+      "demo": "Scraping and research",
+      "what": "Scraping and researching prospects at scale. It goes first, because other demos use what it finds.",
+      "status": "Folder ready, next to launch."
+    },
+    {
+      "n": 2,
+      "demo": "Company and stakeholder research",
+      "what": "Deep research on the company and the people likely to be involved in hiring.",
+      "status": "Alex is doing this one himself."
+    },
+    {
+      "n": 3,
+      "demo": "Outbound automation in GetSales",
+      "what": "10 ideal customer profiles, each with its own drip sequence, and a classifier that sends each lead to the right one. The first message is personalized before import. Shown as a video clipped from these recordings.",
+      "status": "Waiting on demo 2."
+    },
+    {
+      "n": 4,
+      "demo": "Blog pipeline",
+      "what": "15 minutes of Alex talking turns into a near-finished blog post. He does the last 10%.",
+      "status": "Folder ready."
+    },
+    {
+      "n": 5,
+      "demo": "Three blog articles",
+      "what": "Three posts made with that pipeline, on the ideas behind this project.",
+      "status": "After demo 4."
+    },
+    {
+      "n": 6,
+      "demo": "LinkedIn templates in Canva",
+      "what": "Pixel-perfect, on-brand visual templates for LinkedIn.",
+      "status": "Folder ready."
+    },
+    {
+      "n": 7,
+      "demo": "LinkedIn content",
+      "what": "LinkedIn posts written in the company's own voice.",
+      "status": "Folder ready."
+    },
+    {
+      "n": 8,
+      "demo": "This website",
+      "what": "A page for each key stakeholder, and a running picture of the project.",
+      "status": "Live."
+    },
+    {
+      "n": 9,
+      "demo": "Legibility analyzer",
+      "what": "An agent that watches the recordings and tells the website what to add. This section is its first post.",
+      "status": "Running since 13:46."
+    },
+    {
+      "n": 10,
+      "demo": "Canva design video",
+      "what": "Alex designing in Canva, on camera, near the end of the day.",
+      "status": "Near the end."
+    }
+  ],
+  "quotes": {
+    "after_how_it_runs": {
+      "text": "Think of it like the expensive movie actor. They fly him out to the scene, they shoot all of his scenes first, even if it's not in chronological order of the movie, because his time is the most expensive.",
+      "source": "Alex, S03 at 11:11 (11:36 Prague), on why everything that needs him is done first"
+    },
+    "after_demos": {
+      "text": "Without being prompted, it should see all this stuff being built and say, okay, these are the deliverables. Let's find a way to put the deliverables on the website so people kind of know what to expect.",
+      "source": "Alex, S04 at 08:23 (12:24 Prague), describing the legibility analyzer"
+    }
+  }
+}
