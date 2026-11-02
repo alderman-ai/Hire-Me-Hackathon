@@ -1,5 +1,5 @@
 # L-02 Research list: S-D1 Scraping research demo
-Status: parked (14:45). The scraping demo's session doesn't need it: Alex runs all the scraping himself in `Addvery Research`. Open to Alex for his own work if he asks; not pushed to him, because he's swamped.
+Status: parked (14:45). The scraping demo's session doesn't need it: Alex runs all the scraping himself in `Addvery Research\`. Open to Alex for his own work if he asks; not pushed to him, because he's swamped.
 Approved by: (not yet)
 Level: child (`research\scraping\`), except R3, which is parent (`research\global\`) because S-D3 reads it too
 Readers: S-D1; S-D3 (R3)
