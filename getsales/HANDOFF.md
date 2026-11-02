@@ -1,6 +1,14 @@
-# S-D3 handoff (written 2 Nov 16:55 Prague, during orchestration's reset hold)
+# S-D3 handoff (written 2 Nov 16:55 Prague; to-do updated at RESTART, 17:15)
 
-Read `CLAUDE.md`, then `SPEC.md` (its decision log, §9, is current to 16:45), then this file. Wait for orchestration's RESTART before doing anything below.
+Read `CLAUDE.md`, then `SPEC.md` (its decision log, §9, is current to 16:45), then this file. **RESTART came at 17:13: start on the to-do below straight away.** First read the reset rules at the top of `..\answer-desk\ASKING.md` (commit 1dc71fc), and `..\Operator tasks\Decide - everything left that needs you.md`. Ask Alex nothing that's already in that file; orchestration relays his answers.
+
+**Rules since the reset:**
+- Easy calls are yours: decide, log it in SPEC §9, carry on.
+- No plan approvals go to Alex.
+- Public sources are fine to show. Only secrets, the Apify proposal and his own outbound outside the demo folder stay off (DoD-22, narrowed).
+- Copy for outside readers is drafted in a Claude Doc: invoke the copy skill first, then `anthropic-skills:docs` before any docs call. His comment on the Doc is his edit or sign-off; nothing waits on it.
+- Skills are ON for this session: `marketing:email-sequence`, `marketing:brand-review`, `marketing:draft-content`, `anthropic-skills:docs`. Name the skill in any subagent's prompt ("invoke marketing:email-sequence first"), or it won't load.
+- In GetSales, call `get_guide` first (`create_flow`, `write_message`), as its rules require.
 
 ## Where things stand
 
@@ -22,14 +30,26 @@ Read `CLAUDE.md`, then `SPEC.md` (its decision log, §9, is current to 16:45), t
 
 The ids are in `ids.md`. Team: Alex's Team (12269). Folder: "Hackathon demo · Addvery", `39931098-c626-489b-a75d-a78153388d56`, empty. Sender: Alex's own, `a44d7e92-2bf5-4784-83ad-11f91b1f7c6e`. Never list his flows, leads, contacts or inbox.
 
-## Next, after RESTART
+## To-do (orchestration, RESTART 17:13), in order
 
-1. **Skill pass:** one subagent, prompt naming `marketing:email-sequence` and `marketing:brand-review` (brand capture in `..\Addvery Research\brand\`), over the four ICP files. It applies the fixes and rebuilds `workflows.json`. Commit.
-2. **Build:** 36 `create_flow` calls in the folder, with his sender, `nodes` and `first_common_node_id: 2` from `workflows.json`, `template_id: "T2"`, and `name` = the workflow name. Never start any of them, never enrol a lead. Delegate in batches to subagents with the GetSales tools: the guides require `get_guide` (`create_flow`, `write_message`) first. Then read each flow back by id and record the ids in `ids.md`.
-3. **Tell Alex** through the desk (a TASK line, or an operator task if orchestration says so) that the folder is ready to record. The top workflow to open is the first one in `workflows.json`.
-4. **The clip:** once he has recorded, send `CLIP S-D3-C1` to `s-d9-legibility` with the session or start and end times, his cue words if any, and the folder name exactly as it shows on screen: "Hackathon demo · Addvery".
-5. **The site:** `BUILD S-D3-B1` to `website` with `site\section.md`, updated to the 36-workflow model and the alert going by hand. Use `marketing:draft-content` for that copy, and name it in the prompt.
-6. **Close** per SPEC §7 step 11, adjusted: no leads anywhere in the folder.
+1. **Copy pass on the 36 workflows, German included.** One subagent invokes `marketing:email-sequence` and `marketing:brand-review` (brand capture in `..\Addvery Research\brand\`), applies the fixes to `icps\<slug>.json` and `.md`, and rebuilds `icps\workflows.json` with `python -I icps\build_workflows.py`. Commit. Then put all 36 workflows' copy in **one Claude Doc** (invoke the copy skill, then `anthropic-skills:docs` first) so Alex can skim and edit it. Nothing waits on his comment.
+2. **Build the 36** in the folder "Hackathon demo · Addvery" (`39931098-c626-489b-a75d-a78153388d56`):
+   - `create_flow` with his sender `a44d7e92-2bf5-4784-83ad-11f91b1f7c6e`, `workspace_uuid`, `name` = the workflow name, `nodes` and `first_common_node_id: 2` from `workflows.json`, `template_id: "T2"`, and a short `user_request`.
+   - No leads, never started. Call `get_guide` (`create_flow`) first.
+   - Delegate in batches to subagents with the GetSales tools.
+   - Read each flow back by id and record every id in `ids.md`. Commit.
+3. **The pipeline for the six, up to each person's computed first message** (his intake's Q10.7 default (b); build it unless orchestration relays (a)). No import into GetSales, nothing sent. **Already done:**
+   - `live\six.json` (the six, enrichment notes from his research, each opening line),
+   - `live\alert.csv` (the CSV, with `custom_message_1`),
+   - `live\pre-send.md` (each person's full first message, revised after the 16:46 skill pass),
+   - stage times in `live-run.md`.
+
+   What's left: make it recordable. A one-screen view of the stages (`alert\sequence.md`'s pipeline table, plus the CSV opened in a viewer) that he can show. Public sources may be shown now (DoD-22 narrowed), but keep it to name, role and the computed message. Check against `..\Operator tasks\Decide - everything left that needs you.md` before deciding what of the six appears on screen.
+4. **When both are ready to record,** send `answer-desk` one line: `TASK s-d3-getsales: the GetSales walkthrough is ready to record: <what he shows, in 3 lines>`.
+5. **After he records:**
+   - `CLIP S-D3-C1` to `s-d9-legibility`, with the session or start and end times, his cue words, and the folder name exactly as it shows: "Hackathon demo · Addvery".
+   - `BUILD S-D3-B1` to `website` with `site\section.md`, rewritten to the 36-workflow model and the alert going by hand. Draft it with `marketing:draft-content`.
+6. Bring SPEC §5 in line with the charter's new DoD-12 and DoD-13. Close per SPEC §7 step 11, adjusted: no leads anywhere in the folder.
 
 ## Open with others
 
