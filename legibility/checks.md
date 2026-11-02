@@ -7,3 +7,4 @@ One line per check: when, what was new, what got posted. A successor starts from
 | 13:48 | S01 to S06 (S07 recording) | 2b35b3c 13:45 | Startup catch-up: all six sessions, the three meta specs, roster, briefing snapshot | P1 sent |
 | 13:50 | none new (S07 still recording) | ceebaf1 13:49 | S0 Bootstrap done and stopped at 13:49 | Added to P2 (queued behind P1) |
 | 14:15 | none new (S07 recording since 13:36) | 0b141e4 14:11 | DoD signed off 14:02; S2 skills built; S1 drafted 5 research lists, OT-01 with Alex | P3 sent |
+| 14:50 | S07 (13:36 to 14:14) | 1ca60d9 14:42 | S07 filed; demo specs drafted 14:22 to 14:34; research approved 14:38; scraping launched 14:39; addvery-research agent 14:42; plain-names rule; Apify may be named; S-D9 SPEC.md draft (wave2-specs) | P4 sent |
