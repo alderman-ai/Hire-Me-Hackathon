@@ -3,7 +3,7 @@
   "posts": [
     {
       "id": "status",
-      "at": "2026-11-02T14:45",
+      "at": "2026-11-02T15:15",
       "kind": "Status",
       "title": "What's being built today",
       "blocks": [
@@ -485,6 +485,69 @@
           "height": 1800,
           "alt": "Alex's desk from behind his chair: three monitors with terminal sessions and this website, two panel lights, a microphone and a red-lit keyboard.",
           "caption": "Taken at 14:19. The top screen is the briefing session that keeps Alex up to date, the right one is the answer desk, and the left one shows this site with the S02 explainer. Click to see it full size."
+        }
+      ]
+    },
+    {
+      "id": "research-in",
+      "at": "2026-11-02T14:59",
+      "kind": "Milestone",
+      "title": "The research is in",
+      "roles": [
+        "CEO",
+        "CMO",
+        "CAIO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alex approved the project-wide research at 14:38. Seven agents researched in parallel, and by 14:59 the seven reports and a synthesis that pulls them together were done and accepted. That took 21 minutes. Every agent building a demo now reads them before it plans, and four have already reworked their plans around them: scraping, the blog pipeline, the website and this feed."
+        },
+        {
+          "type": "p",
+          "text": "Three findings change what you'll see here:"
+        },
+        {
+          "type": "points",
+          "points": [
+            {
+              "lead": "The outcome first, not the tool.",
+              "text": "Each demo should open with what it produces, then a short demo, then a few steps on how it works. A tool name as the headline reads as a toy."
+            },
+            {
+              "lead": "A raw build log is noise, and a curated, dated list of what changed is not.",
+              "text": "So this feed stays curated: one point per post, in plain words."
+            },
+            {
+              "lead": "Hiring managers look for a decision trail.",
+              "text": "The research found that judgment and trade-offs are what a GTM engineer is hired for, and that they're the hardest thing to see from outside. So posts here now lead with the calls Alex makes, and the agents' work is shown as the way he carries them out."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Research reports are drafted by agents and reviewed before they're accepted. Every recommendation in them is an option for Alex, not a decision."
+        }
+      ]
+    },
+    {
+      "id": "handovers",
+      "at": "2026-11-02T15:00",
+      "kind": "Update",
+      "title": "Agents hand over before they get tired",
+      "roles": [
+        "CTO",
+        "CAIO",
+        "COO"
+      ],
+      "blocks": [
+        {
+          "type": "p",
+          "text": "An agent's working memory (its context) fills up over a long day, and a full one gets sloppy. So every agent here has planned handover points. At each one, it writes a handover note, a fresh session takes over under the same name, and nobody's address changes."
+        },
+        {
+          "type": "p",
+          "text": "The first three happened this hour: orchestration at 14:48, the website at 14:53 and research at 15:00. Each one picked up mid-task from its note. On Alex's standing instruction, orchestration also now measures how full every live session's memory is, so a session that's filling up gets handed over in time."
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "14:45",
-  "as_of_line": "As of 14:45 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "15:15",
+  "as_of_line": "As of 15:15 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Thirteen pieces of work, run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come ten demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -31,7 +31,7 @@
     {
       "piece": "Research",
       "what": "Decides with Alex what gets researched and how deep, so the agents work from findings instead of guesses.",
-      "status": "Project-wide research approved at 14:38. Seven agents researching in parallel."
+      "status": "Project-wide research done at 14:59: seven reports and a synthesis. Research for the outbound demo, the website and the blog pipeline is with Alex."
     },
     {
       "piece": "Project orchestrator",
@@ -44,7 +44,7 @@
       "n": 1,
       "demo": "Scraping and research on the Apify API",
       "what": "Scraping and researching prospects at scale on the Apify API. It goes first, because other demos use what it finds.",
-      "status": "Running since 14:39. Alex scrapes, and the agent turns his results into this site's demo section."
+      "status": "Plan reworked on the research. With Alex for approval."
     },
     {
       "n": 2,
@@ -56,13 +56,13 @@
       "n": 3,
       "demo": "Outbound automation in GetSales",
       "what": "10 ideal customer profiles, each with its own drip sequence, and a classifier that sends each lead to the right one. The first message is personalized before import. Shown as a video clipped from these recordings.",
-      "status": "Plan drafted. Waiting on demo 2."
+      "status": "Groundwork drafted. Waiting on demo 2."
     },
     {
       "n": 4,
       "demo": "Blog pipeline",
       "what": "15 minutes of Alex talking turns into a near-finished blog post. He does the last 10%.",
-      "status": "Plan drafted. Its questions are with Alex."
+      "status": "First post format and a sample post built. Its questions are with Alex."
     },
     {
       "n": 5,
@@ -86,13 +86,13 @@
       "n": 8,
       "demo": "This website",
       "what": "A page for each key stakeholder, and a running picture of the project.",
-      "status": "Live, now a feed, newest first."
+      "status": "Live. Its plan, reworked on the research, is with Alex for approval."
     },
     {
       "n": 9,
       "demo": "Legibility analyzer",
       "what": "An agent that watches the recordings and tells the website what to add. This section is its first post.",
-      "status": "Running since 13:46. Has read every session up to S07."
+      "status": "Running. Its plan, reworked on the research, is with Alex for approval."
     },
     {
       "n": 10,
