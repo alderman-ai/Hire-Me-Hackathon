@@ -1,8 +1,8 @@
 # Consumer lending: workflow copy
 
-**Needs a native read.** The Czech and Slovak copy was drafted without a native speaker; have one read every cell before anything is sent.
+**Needs a native read.** The Czech and German copy was drafted without a native speaker; have one read every cell before anything is sent.
 
-ICP: consumer lenders and retail banks, from lead funnel to contract and credit decisioning. Languages CS, SK, EN; three approaches each; 9 workflows. Every workflow runs: connection request (unless already connected), message 1 a day after acceptance (or at once), follow-up 1 three days later, follow-up 2 three days after that. Any reply stops the sequence. Message 1 is custom message 1, written per lead before import from the brief below.
+ICP: consumer lenders and retail banks, from lead funnel to contract and credit decisioning. Languages CS, DE, EN; three approaches each; 9 workflows. Every workflow runs: connection request (unless already connected), message 1 a day after acceptance (or at once), follow-up 1 three days later, follow-up 2 three days after that. Any reply stops the sequence. Message 1 is custom message 1, written per lead before import from the brief below.
 
 ## Notes for the reader
 
@@ -10,8 +10,10 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
   - Home Credit Philippines: lifecycle CRM redesigned on the existing stack (four lifecycle stages, five use cases, lead-to-contract reporting); "Up to +30% projected increase in submitted leads"; "No new platform was needed".
   - Security Bank (Philippines): one approval design for five credit products; "23 data sources reviewed"; a "40+ page requirements blueprint" for loan origination system vendors. These are outputs, so the copy claims no outcome for them.
 - **Honesty about geography.** Both of Addvery's lending cases are in the Philippines. Every line that uses them says so, and the proof-led follow-up 2 says it outright rather than leaving the reader to find out.
-- **Czech greetings carry no name.** A variable can't put a first name into the vocative, and the nominative reads wrong in Czech, so the Czech copy opens with "Dobrý den," alone. Slovak and English use {{first_name}}.
-- **Sender's gender unknown.** Czech and Slovak copy uses the present tense and "we" (jsme, sme) for past work, never a first-person past-tense verb.
+- **Czech greetings carry no name.** A variable can't put a first name into the vocative, and the nominative reads wrong in Czech, so the Czech copy opens with "Dobrý den," alone. German and English use {{first_name}}.
+- **Sender's gender unknown.** Czech copy uses the present tense and "we" (jsme) for past work, never a first-person past-tense verb.
+- **German uses Sie throughout** and opens with "Hallo {{first_name}},". "Projected" is "prognostiziert" or "Prognose", "up to" is "bis zu".
+- **No Slovak copy.** Slovak leads get the Czech workflows.
 - **Two sides of one ICP.** Leads may sit in CRM and marketing (the funnel) or in credit risk (the approval). Message 1 briefs pick the side by role; the follow-ups cover both, funnel first, approval in follow-up 2.
 - **Example leads and companies are fictional** (Microsoft's sample company names: Woodgrove, Contoso, Fabrikam, Northwind).
 
@@ -67,57 +69,57 @@ ICP: consumer lenders and retail banks, from lead funnel to contract and credit 
 
 > Dobrý den, poslední zpráva ode mě. Oba úvěrové projekty, které máme na webu, jsou z Filipín, ne ze střední Evropy, a nebudu předstírat opak. Problémy se ale podobají: pro Security Bank jsme prověřili 23 datových zdrojů a navrhli jeden schvalovací proces pro pět úvěrových produktů. Ve společnosti {{company_name}} by to mohlo znamenat jeden pohled od kliknutí ke smlouvě a jednu odpověď pro každého žadatele. Pokud to není priorita, stačí napsat a už se neozvu.
 
-## Slovak (SK)
+## German (DE)
 
-### Demo · Consumer lending · SK · signal
+### Demo · Consumer lending · DE · signal
 
-**Message 1 brief:** Rest the line on one dated, public trigger at the lead's company from the last 90 days: a new credit product or buy-now-pay-later launch, a loan origination system (LOS) selection or tender, a CRM or marketing-automation rollout, a new CRO, CMO or Head of Retail Lending, or hiring for scoring or CRM roles. Name the trigger plainly with its month, say in one clause why it reopens either the path from lead to signed contract or the approval rules across products, and end with one light question. Do not congratulate, guess at internal problems or numbers, cite any client or result (the follow-ups carry the proof), use private or personal data, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Slovak with vykanie. Open with 'Dobrý deň, <first name>,' using the lead's real first name. The sender's gender is unknown, so use the present tense ('vidím', 'čítam') or 'we' ('sme'), never 'všimol som si'.
+**Message 1 brief:** Rest the line on one dated, public trigger at the lead's company from the last 90 days: a new credit product or buy-now-pay-later launch, a loan origination system (LOS) selection or tender, a CRM or marketing-automation rollout, a new CRO, CMO or Head of Retail Lending, or hiring for scoring or CRM roles. Name the trigger plainly with its month, say in one clause why it reopens either the path from lead to signed contract or the approval rules across products, and end with one light question. Do not congratulate, guess at internal problems or numbers, cite any client or result (the follow-ups carry the proof), use private or personal data, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in German with formal Sie. Open with 'Hallo <first name>,' using the lead's real first name.
 
 **Message 1 example** (fictional lead):
 
-> Dobrý deň, Martin, vidím, že spoločnosť Northwind Credit v októbri spustila nákup na splátky v e-shopoch. Nový produkt znamená nové pravidlá schvaľovania aj novú cestu od leadu k zmluve, takže je to najlacnejší moment zjednotiť ich naprieč produktmi. Je to u vás teraz téma?
+> Hallo Markus, Northwind Kredit hat im Oktober den Ratenkauf in Onlineshops gestartet. Ein neues Produkt bringt neue Regeln für die Kreditentscheidung und einen neuen Weg vom Lead zum Vertrag, also ist jetzt der günstigste Moment, beides über alle Produkte hinweg zu vereinheitlichen. Ist das bei Ihnen gerade Thema?
 
 **Follow-up 1** (3 days after message 1):
 
-> Dobrý deň, {{first_name}}, ešte jedna myšlienka k načasovaniu. Nový produkt, nový systém alebo nové vedenie znamená, že sa pravidlá aj tak prepisujú: ktorý lead sa počíta, kto dostane akú správu, ako sa schvaľuje žiadosť. Lacnejšie sa už cesta od prvého kliknutia k podpísanej zmluve prepojiť nedá. Pre Home Credit na Filipínach sme to urobili na nástrojoch, ktoré už mal, s projektovaným nárastom odoslaných leadov až o 30 %. Stálo by to za 20 minút?
+> Hallo {{first_name}}, noch ein Gedanke zum Timing. Ein neues Produkt, ein neues System oder eine neue Führung bedeutet, dass die Regeln ohnehin neu geschrieben werden: welcher Lead zählt, wer welche Nachricht bekommt, wie ein Antrag genehmigt wird. Günstiger lässt sich der Weg vom ersten Klick bis zum unterschriebenen Vertrag nicht mehr verbinden. Für Home Credit auf den Philippinen haben wir das mit den vorhandenen Tools umgesetzt, mit einer prognostizierten Steigerung der eingereichten Leads um bis zu 30 %. Sind Ihnen das 20 Minuten wert?
 
 **Follow-up 2** (3 days after follow-up 1, last touch):
 
-> Dobrý deň, {{first_name}}, toto je odo mňa posledná správa. Takéto chvíle rýchlo pominú: keď nové nastavenie nabehne, jeho pravidlá zvyčajne vydržia roky. Ak budete chcieť, za 20 minút prejdeme, kde sa v spoločnosti {{company_name}} dnes strácajú leady a kde sa zasekáva schvaľovanie. Ak to teraz nie je priorita, stačí napísať a už sa neozvem.
+> Hallo {{first_name}}, das ist meine letzte Nachricht. Solche Zeitfenster schließen sich schnell: Ist das neue Setup erst live, bleiben seine Regeln meist jahrelang. Wenn es hilft, reichen 20 Minuten, um durchzugehen, wo Leads und Genehmigungen bei {{company_name}} heute hängen bleiben. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 >
 > {{sender_first_name}}
 
-### Demo · Consumer lending · SK · problem
+### Demo · Consumer lending · DE · problem
 
-**Message 1 brief:** No fresh trigger, so rest the line on one problem this ICP has, in the buyer's own words, tied to one public fact about the lead's company (how many credit products it sells, an online application or app, several brands, a point-of-sale or buy-now-pay-later offer). Pick the side that fits the role. CRM, marketing, digital or sales roles: several products talking to the same customers, or online leads that can't be traced through to a contract. Risk, credit or lending-operations roles: two identical applicants should always get the same answer, whatever the product. Put it as an observation about lenders like them or as a question, never as a diagnosis of their company. Do not claim to know internal numbers, cite clients or results, flatter, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Slovak with vykanie. Open with 'Dobrý deň, <first name>,' using the lead's real first name. The sender's gender is unknown, so use the present tense ('vidím', 'čítam') or 'we' ('sme'), never 'všimol som si'.
-
-**Message 1 example** (fictional lead):
-
-> Dobrý deň, Zuzana, Contoso Finance ponúka hotovostné pôžičky, kreditné karty aj nákup na splátky. Pri troch produktoch sa ľahko stane, že každý má vlastné schvaľovacie pravidlá a dvaja rovnakí žiadatelia dostanú rôzne odpovede. Ako to máte ošetrené vy?
-
-**Follow-up 1** (3 days after message 1):
-
-> Dobrý deň, {{first_name}}, obvyklé riešenie je nová platforma alebo ďalší dashboard. Produktové tímy potom ďalej píšu tým istým zákazníkom a lead sa ďalej stráca medzi formulárom a zmluvou. My začíname z druhej strany: jeden životný cyklus zákazníka naprieč produktmi, postavený na nástrojoch, ktoré už máte, a reporting, ktorý sleduje každý lead až k podpisu zmluvy. Pracujeme priamo s vaším tímom, nie cez prezentácie. Oplatí sa na to pozrieť?
-
-**Follow-up 2** (3 days after follow-up 1, last touch):
-
-> Dobrý deň, {{first_name}}, ešte posledná vec. Rovnaká medzera býva aj na strane úverov: každý produkt si časom vytvorí vlastné schvaľovacie pravidlá a dvaja rovnakí žiadatelia potom dostanú rôzne odpovede. To vieme zmapovať raz, naprieč produktmi aj dátovými zdrojmi, skôr než sa kupuje nový systém. Ak v spoločnosti {{company_name}} riešite jedno alebo druhé, za 20 minút zistíme, či vieme pomôcť. Ak to nie je priorita, stačí napísať a už sa neozvem.
-
-### Demo · Consumer lending · SK · proof
-
-**Message 1 brief:** Rest the line on the one Addvery case that fits the lead's role, stated only as Addvery's website states it, and always say it was in the Philippines. CRM, marketing, digital or sales roles: Home Credit Philippines, lifecycle CRM redesigned on tools it already had, 'up to +30% projected increase in submitted leads', 'no new platform was needed'. Risk, credit or lending-operations roles: Security Bank in the Philippines, one approval design for five credit products, 23 data sources reviewed, a 40+ page requirements blueprint for LOS vendors; these are outputs, so claim no outcome. Tie the case to one public fact that makes the lead's company a look-alike (similar products, an online funnel, several credit products), then ask one light question. Do not drop 'up to' or 'projected', add any number, present either case as Central European, tell the whole story (the follow-ups do), add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in Slovak with vykanie; render 'projected' as 'projekcia' or 'projektovaný'. Open with 'Dobrý deň, <first name>,' using the lead's real first name. The sender's gender is unknown, so use the present tense ('vidím', 'čítam') or 'we' ('sme'), never 'všimol som si'.
+**Message 1 brief:** No fresh trigger, so rest the line on one problem this ICP has, in the buyer's own words, tied to one public fact about the lead's company (how many credit products it sells, an online application or app, several brands, a point-of-sale or buy-now-pay-later offer). Pick the side that fits the role. CRM, marketing, digital or sales roles: several products talking to the same customers, or online leads that can't be traced through to a contract. Risk, credit or lending-operations roles: two identical applicants should always get the same answer, whatever the product. Put it as an observation about lenders like them or as a question, never as a diagnosis of their company. Do not claim to know internal numbers, cite clients or results, flatter, list services, add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in German with formal Sie. Open with 'Hallo <first name>,' using the lead's real first name.
 
 **Message 1 example** (fictional lead):
 
-> Dobrý deň, Peter, Fabrikam Credit predáva tri úverové produkty cez jeden online funnel, podobne ako Home Credit na Filipínach. Tam sme na nástrojoch, ktoré už mal, prerobili CRM životného cyklu a projekcia počíta s nárastom odoslaných leadov až o 30 %, bez novej platformy. Oplatí sa pozrieť, čo by to znamenalo pre Fabrikam?
+> Hallo Andrea, Contoso Finanz bietet Barkredite, Kreditkarten und Ratenkauf an. Bei Anbietern mit mehreren Produkten hat oft jedes Produkt eigene Genehmigungsregeln, und zwei gleiche Anträge bekommen unterschiedliche Antworten. Wie halten Sie das heute einheitlich?
 
 **Follow-up 1** (3 days after message 1):
 
-> Dobrý deň, {{first_name}}, v skratke príbeh Home Creditu na Filipínach. Viacero produktových tímov tam oslovovalo tých istých zákazníkov a online leady sa nedali dohľadať až k zmluve. Nastavili sme štyri fázy životného cyklu a päť scenárov na systémoch, ktoré už mali, a k tomu reporting od leadu po zmluvu. Nová platforma nebola potrebná a projekcia počíta s nárastom odoslaných leadov až o 30 %. Stálo by za to venovať 20 minút tomu, ako by to vyzeralo v spoločnosti {{company_name}}?
+> Hallo {{first_name}}, die übliche Lösung ist eine neue Plattform oder noch ein Dashboard. Die Produktteams schreiben danach weiter dieselben Kunden an, und der Lead verschwindet weiter irgendwo zwischen Formular und Vertrag. Wir fangen am anderen Ende an: ein Kundenlebenszyklus über alle Produkte, aufgebaut auf den Tools, die Sie schon nutzen, und ein Reporting, das jeden Lead bis zum unterschriebenen Vertrag verfolgt. Wir arbeiten direkt mit Ihrem Team, nicht mit Foliensätzen. Einen Blick wert?
 
 **Follow-up 2** (3 days after follow-up 1, last touch):
 
-> Dobrý deň, {{first_name}}, posledná správa odo mňa. Oba úverové projekty, ktoré máme na webe, sú z Filipín, nie zo strednej Európy, a nebudem predstierať opak. Problémy sa však podobajú: pre Security Bank sme preverili 23 dátových zdrojov a navrhli jeden schvaľovací proces pre päť úverových produktov. V spoločnosti {{company_name}} by to mohlo znamenať jeden pohľad od kliknutia po zmluvu a jednu odpoveď pre každého žiadateľa. Ak to nie je priorita, stačí napísať a už sa neozvem.
+> Hallo {{first_name}}, eine letzte Sache. Dieselbe Lücke zeigt sich oft auf der Kreditseite: Jedes Produkt entwickelt eigene Genehmigungsregeln, und zwei gleiche Anträge können unterschiedliche Antworten bekommen. Wir bilden das einmal ab, über Produkte und Datenquellen hinweg, bevor jemand ein neues System kauft. Wenn bei {{company_name}} eines der beiden Themen aktuell ist, reichen 20 Minuten, um zu sehen, ob wir helfen können. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
+
+### Demo · Consumer lending · DE · proof
+
+**Message 1 brief:** Rest the line on the one Addvery case that fits the lead's role, stated only as Addvery's website states it, and always say it was in the Philippines. CRM, marketing, digital or sales roles: Home Credit Philippines, lifecycle CRM redesigned on tools it already had, 'up to +30% projected increase in submitted leads', 'no new platform was needed'. Risk, credit or lending-operations roles: Security Bank in the Philippines, one approval design for five credit products, 23 data sources reviewed, a 40+ page requirements blueprint for LOS vendors; these are outputs, so claim no outcome. Tie the case to one public fact that makes the lead's company a look-alike (similar products, an online funnel, several credit products), then ask one light question. Do not drop 'up to' or 'projected', add any number, present either case as Central European, tell the whole story (the follow-ups do), add a link or ask for a call. Addvery's voice: direct, plain, a little bold, never corporate. Length: a greeting plus 2-3 sentences, under 400 characters in all, no exclamation marks. Write in German with formal Sie; render 'projected' as 'prognostiziert' or 'Prognose', and 'up to' as 'bis zu'. Open with 'Hallo <first name>,' using the lead's real first name.
+
+**Message 1 example** (fictional lead):
+
+> Hallo Thomas, Fabrikam Kredit verkauft drei Kreditprodukte über einen Online-Funnel, ähnlich wie Home Credit auf den Philippinen. Dort haben wir das Lifecycle-CRM auf den vorhandenen Tools neu aufgesetzt, mit einer prognostizierten Steigerung der eingereichten Leads um bis zu 30 % und ohne neue Plattform. Einen Blick wert, was das für Fabrikam bedeuten könnte?
+
+**Follow-up 1** (3 days after message 1):
+
+> Hallo {{first_name}}, die Kurzfassung der Geschichte von Home Credit. Auf den Philippinen sprachen mehrere Produktteams dieselben Kunden an, und Online-Leads ließen sich nicht bis zum Vertrag nachverfolgen. Wir haben auf dem vorhandenen Stack vier Lebenszyklusphasen und fünf Use Cases aufgesetzt und dazu ein Reporting vom Lead bis zum Vertrag gebaut. Eine neue Plattform war nicht nötig, und die Prognose liegt bei bis zu 30 % mehr eingereichten Leads. Lohnen sich 20 Minuten, um zu sehen, wie das bei {{company_name}} aussähe?
+
+**Follow-up 2** (3 days after follow-up 1, last touch):
+
+> Hallo {{first_name}}, meine letzte Nachricht. Beide Kreditprojekte auf unserer Website stammen von den Philippinen, nicht aus Europa, und das will ich nicht beschönigen. Die Probleme sind aber übertragbar: Für die Security Bank haben wir 23 Datenquellen geprüft und einen einheitlichen Genehmigungsprozess für fünf Kreditprodukte entworfen. Bei {{company_name}} könnte das einen Blick vom ersten Klick bis zum Vertrag bedeuten und eine Antwort pro Antrag. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 
 ## English (EN)
 

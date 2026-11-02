@@ -80,4 +80,4 @@ GetSales' own "AI condition rules" node can route inside one flow instead. It co
 
 ## Shown on a fictional sample
 
-`sample.csv`: twelve fictional leads, routed offline on 2 Nov 2026: all four ICPs and tactics, two LLM decisions and one no fit, each with its reasons. No real people or companies; nothing imported into GetSales. The sample predates the three-language rule: its two Slovak rows (L04, L06) would now go to CS.
+`sample.csv`: twelve fictional leads, routed offline on 2 Nov 2026: all four ICPs and tactics, two LLM decisions and one no fit, each with its reasons. No real people or companies; nothing imported into GetSales. Its two Slovak leads (L04, L06) go to the Czech workflows under the three-language rule.

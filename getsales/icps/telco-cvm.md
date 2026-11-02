@@ -1,8 +1,8 @@
 # Telco CVM: workflow copy
 
-Status: draft, **needs a native read** (Czech and Slovak above all).
+Status: draft, **needs a native read** (Czech and German above all).
 
-ICP: telco, pay-TV and streaming operators, for customer value management and digital sales. Czech, Slovak and English × signal, problem and proof: 9 workflows. These are Addvery's messages to Addvery's prospects, sent by an Addvery person.
+ICP: telco, pay-TV and streaming operators, for customer value management and digital sales. Czech, German and English × signal, problem and proof: 9 workflows. These are Addvery's messages to Addvery's prospects, sent by an Addvery person.
 
 ## How every workflow runs
 
@@ -17,8 +17,10 @@ Any reply stops the sequence.
 ## Conventions
 
 - Message 1 opens with a greeting and carries no signature; the follow-ups sign off with `{{sender_first_name}}`.
-- Czech and Slovak greet without a name ("Dobrý den," / "Dobrý deň,"). `{{first_name}}` would land in the nominative, where Czech needs the vocative ("Petře", not "Petr"). `{{company_name}}` sits after "ve společnosti" / "v spoločnosti" or "pro" / "pre", so it never has to decline.
-- Formal address throughout (vykání, vykanie). No gendered first-person past tense: Addvery speaks as "we" ("jsme pomohli", "sme namodelovali"), the sender only in the present ("ozývám se", "tomu rozumím").
+- Czech greets without a name ("Dobrý den,"). `{{first_name}}` would land in the nominative, where Czech needs the vocative ("Petře", not "Petr"). `{{company_name}}` sits after "ve společnosti" or "pro", so it never has to decline.
+- German opens with "Hallo {{first_name}}," and uses Sie throughout, as in the retail copy. `{{company_name}}` follows "bei" or "für", so it never has to decline.
+- Formal address throughout (vykání, Sie). No gendered first-person past tense in Czech: Addvery speaks as "we" ("jsme pomohli", "jsme namodelovali"), the sender only in the present ("ozývám se", "tomu rozumím").
+- There is no Slovak copy: Slovak leads get the Czech workflows.
 - The light ask is 20 minutes or "worth a look?"; every Follow-up 2 ends with an easy no.
 
 ## Proof used, as Addvery's site states it
@@ -127,100 +129,100 @@ ještě jeden příběh, tentokrát ze streamingu. Dvě české mediální skupi
 {{sender_first_name}}
 ```
 
-## Slovak (SK)
+## German (DE)
 
-### Demo · Telco CVM · SK · signal
-
-**Message 1 brief** (for the LLM that writes custom message 1)
-
-Write in Slovak. Start with 'Dobrý deň,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on the lead's one dated public trigger from the last 90 days (a new commercial, CVM or online-sales role; CVM or digital-sales hiring; a bundle or streaming launch; a brand merger; a CRM replacement): name it plainly, say in one sentence why that moment matters for turning online interest into orders, and end on one short question. Don't pitch Addvery, cite numbers or clients, ask for a meeting, or use anything private. Use formal vykanie, and no gendered first-person past tense ('videl/a som') or 'rád/rada'.
-
-**Message 1 example** (253 characters). Fictional lead: Head of Digital Sales at Tailwind Mobil (SK operator), which launched a mobile, internet and TV bundle four weeks ago.
-
-```text
-Dobrý deň, spoločnosť Tailwind Mobil práve spustila balík mobilu, internetu a televízie. Pri novom balíku sa ukáže, koľko záujmu z webu sa naozaj zmení na objednávky a koľko skončí v call centre. Vidíte to dnes v jednom prehľade od kampane po aktiváciu?
-```
-
-**Follow-up 1** (3 days later, 449 characters)
-
-```text
-Dobrý deň,
-
-ešte k tomu, čo sa teraz v spoločnosti {{company_name}} mení. Nová rola, nová ponuka alebo spojenie značiek je chvíľa, keď sa dá predajný lievik nastaviť nanovo, skôr než sa usadia staré zvyky. Pre Vodafone CZ sme po 14 workshopoch so 16 ľuďmi z CVM a online predaja namodelovali až 1 660 objednávok mesačne navyše, v lieviku, ktorý už mali. Má zmysel venovať tomu 20 minút a pozrieť sa, kde by to mohlo byť u vás?
-
-{{sender_first_name}}
-```
-
-**Follow-up 2** (3 days after that, 330 characters)
-
-```text
-Dobrý deň,
-
-ozývam sa naposledy. Po veľkej zmene býva kalendár plný, tomu rozumiem. Len jedna poznámka: s tým, čo sa v lieviku nastaví v prvých mesiacoch, sa potom pracuje roky. Ak by sa hodil pohľad zvonku, stačí odpísať a nájdeme 20 minút. Ak to teraz nie je priorita, stačí napísať a prestanem sa ozývať.
-
-{{sender_first_name}}
-```
-
-### Demo · Telco CVM · SK · problem
+### Demo · Telco CVM · DE · signal
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in Slovak. Start with 'Dobrý deň,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent; viewers who don't want several apps), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results. Use formal vykanie, and no gendered first-person past tense ('videl/a som') or 'rád/rada'.
+Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2–3 short sentences, under 400 characters in all. Rest it on the lead's one dated public trigger from the last 90 days (a new commercial, CVM or online-sales role; CVM or digital-sales hiring; a bundle or streaming launch; a brand merger; a CRM replacement): name it plainly, say in one sentence why that moment matters for turning online interest into orders, and end on one short question. Don't pitch Addvery, cite numbers or clients, ask for a meeting, or use anything private.
 
-**Message 1 example** (222 characters). Fictional lead: Head of CVM at Wingtip Net (SK internet and TV operator), no recent trigger.
+**Message 1 example** (321 characters). Fictional lead: Katrin, Head of Digital Sales at Litware Telekom AT (Austrian operator), which launched a mobile, internet and TV bundle four weeks ago.
 
 ```text
-Dobrý deň, Wingtip Net predáva internet aj televíziu cez web, v predajniach aj cez call centrum. Pri takom nastavení má zvyčajne každý tím vlastné čísla, ale jeden pohľad od kampane po aktiváciu chýba. Ako to máte dnes vy?
+Hallo Katrin, Litware Telekom hat vor vier Wochen ein Paket aus Mobilfunk, Internet und TV gestartet. Bei einem neuen Paket zeigt sich schnell, wie viel Interesse aus dem Web wirklich zur Bestellung wird und wie viel doch im Callcenter landet. Sehen Sie das heute in einer Übersicht, von der Kampagne bis zur Aktivierung?
 ```
 
-**Follow-up 1** (3 days later, 460 characters)
+**Follow-up 1** (3 days later, 530 characters)
 
 ```text
-Dobrý deň,
+Hallo {{first_name}},
 
-operátori to väčšinou riešia ďalším dashboardom alebo ďalším nástrojom. Dát potom pribúda, ale odpoveď na otázku, kde sa strácajú objednávky, stále chýba. My začíname inde: dáta zo všetkých systémov prepojíme do jedného lievika, od prvej kampane po aktiváciu. Pre Vodafone CZ to znamenalo šesť fáz lievika a jeden spoločný zdroj pravdy. Dávalo by zmysel prebrať za 20 minút, ako by to vyzeralo v spoločnosti {{company_name}}?
+noch ein Gedanke dazu, was sich bei {{company_name}} gerade verändert. Eine neue Rolle, ein neues Paket oder eine Fusion öffnet ein kurzes Zeitfenster, um den Vertriebsfunnel neu aufzusetzen, bevor sich alte Routinen einschleifen. Bei Vodafone CZ haben wir nach 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert, im Funnel, den es dort schon gab. Lohnen sich 20 Minuten, um zu sehen, wo das bei Ihnen liegen könnte?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 392 characters)
+**Follow-up 2** (3 days after that, 439 characters)
 
 ```text
-Dobrý deň,
+Hallo {{first_name}},
 
-ozývam sa naposledy, tak len jedna otázka na zamyslenie: koľko objednávok, ktoré začnú na webe, nakoniec dotiahne call centrum? A viete, v ktorom kroku sa zákazník rozhodne zavolať? Ak odpoveď nie je poruke, práve tam sa často skrývajú objednávky navyše. Radi to s vami prejdeme za 20 minút. Ak to teraz nie je priorita, stačí napísať a prestanem sa ozývať.
+das ist meine letzte Nachricht. Nach einer großen Veränderung ist der Kalender voll, das verstehe ich. Nur ein Gedanke: Womit das Team die nächsten Jahre arbeitet, wird oft in den ersten Monaten im Funnel festgelegt. Wenn ein Blick von außen hilft, genügt eine kurze Antwort, und wir finden 20 Minuten. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 
 {{sender_first_name}}
 ```
 
-### Demo · Telco CVM · SK · proof
+### Demo · Telco CVM · DE · problem
 
 **Message 1 brief** (for the LLM that writes custom message 1)
 
-Write in Slovak. Start with 'Dobrý deň,' and no name, then 2–3 short sentences, under 400 characters in all. Rest it on the closest look-alike result, worded as Addvery's site has it: for a mobile, fixed or convergent operator, up to 1,660 extra orders a month (modelled) found in a telco's existing funnel; for streaming or pay-TV, 1.8 million customers moved to one new platform on the planned date, when two Czech media groups merged their streaming services. Describe the client by type, not name, add one clause on what it could mean for the lead's company, and end with 'Stálo by to za pohľad?'. Never drop 'up to' or 'modelled', round up, or promise the lead the same result. Use formal vykanie, and no gendered first-person past tense ('videl/a som') or 'rád/rada'.
+Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2–3 short sentences, under 400 characters in all. Rest it on one problem this ICP has, in the buyer's own terms (plenty of data but no single funnel from campaign to activation; online interest that still ends with a call-centre agent; viewers who don't want several apps), tied to one public fact about the company, such as selling online, in stores and by phone, or running several brands. End on one short question about how they handle it today. Don't pitch, cite numbers or clients, or guess at their internal results.
 
-**Message 1 example** (259 characters). Fictional lead: Commercial Director at Litware Mobil (SK mobile operator), selling online and by phone.
+**Message 1 example** (274 characters). Fictional lead: Stefan, Head of CVM at Wide World Kabel (Austrian cable, internet and TV provider), no recent trigger.
 
 ```text
-Dobrý deň, pre českého operátora sme v jeho existujúcom predajnom lieviku našli až 1 660 objednávok mesačne navyše, podľa modelu. Litware Mobil tiež predáva cez web aj call centrum, takže podobný pohľad by mohol ukázať rezervy aj u vás. Stálo by to za pohľad?
+Hallo Stefan, Wide World Kabel verkauft Internet und TV online, in Shops und über das Callcenter. In so einem Setup hat meist jedes Team seine eigenen Zahlen, aber niemand sieht einen durchgehenden Funnel von der ersten Kampagne bis zur Aktivierung. Wie lösen Sie das heute?
 ```
 
-**Follow-up 1** (3 days later, 485 characters)
+**Follow-up 1** (3 days later, 515 characters)
 
 ```text
-Dobrý deň,
+Hallo {{first_name}},
 
-krátko jeden príbeh z telekomunikácií. Vo Vodafone CZ sa väčšina objednávok stále dokončovala cez call centrum. Počas 14 workshopov so 16 ľuďmi z CVM a online predaja vzniklo sedem iniciatív s vyčíslenými nákladmi v jednej roadmape a model ukázal až 1 660 objednávok mesačne navyše, po odpočítaní prekryvov. Pre {{company_name}} by to bol rovnaký pohľad: koľko objednávok už leží vo vašom lieviku a koľko by stálo ich získať. Stálo by to za 20 minút?
+die meisten Betreiber reagieren darauf mit noch einem Dashboard oder noch einem Tool. Die Daten werden mehr, aber die Frage, wo Bestellungen verloren gehen, bleibt offen. Wir setzen woanders an: Wir verbinden die Daten aus allen Systemen zu einem Funnel, von der ersten Kampagne bis zur Aktivierung. Bei Vodafone CZ waren das sechs Funnel-Stufen und eine gemeinsame Datenbasis. Lohnt sich ein 20-minütiges Gespräch darüber, wie das bei {{company_name}} aussehen könnte?
 
 {{sender_first_name}}
 ```
 
-**Follow-up 2** (3 days after that, 458 characters)
+**Follow-up 2** (3 days after that, 488 characters)
 
 ```text
-Dobrý deň,
+Hallo {{first_name}},
 
-ešte jeden príbeh, tentoraz zo streamingu. Dve české mediálne skupiny spojili svoje streamovacie služby do Oneplay a 1,8 milióna zákazníkov bolo treba previesť k verejne ohlásenému dátumu. Jeden tím naprieč 10+ oddeleniami, tri kolá cenových testov a štart 3. marca 2025, podľa plánu. Ak {{company_name}} čaká podobný krok, radi ukážeme, ako sme na to išli. Ak to teraz nie je priorita, stačí napísať a prestanem sa ozývať.
+zum Schluss nur eine Frage zum Nachdenken: Wie viele Bestellungen, die auf Ihrer Website beginnen, werden am Ende im Callcenter abgeschlossen? Und wissen Sie, bei welchem Schritt Kunden zum Telefon greifen? Wenn die Antwort nicht gleich parat ist, stecken genau dort oft die zusätzlichen Bestellungen. Gern gehen wir das in 20 Minuten mit Ihnen durch. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
+
+{{sender_first_name}}
+```
+
+### Demo · Telco CVM · DE · proof
+
+**Message 1 brief** (for the LLM that writes custom message 1)
+
+Write in German with formal Sie. Start with 'Hallo' and the lead's first name, then 2–3 short sentences, under 400 characters in all. Rest it on the closest look-alike result, worded as Addvery's site has it: for a mobile, fixed or convergent operator, up to 1,660 extra orders a month (modelled) found in a telco's existing funnel; for streaming or pay-TV, 1.8 million customers moved to one new platform on the planned date, when two Czech media groups merged their streaming services. Describe the client by type, not name, add one clause on what it could mean for the lead's company, and end with 'Einen Blick wert?'. Never drop 'up to' or 'modelled' ('bis zu', 'modelliert'), round up, or promise the lead the same result.
+
+**Message 1 example** (316 characters). Fictional lead: Jonas, Commercial Director at Adatum Mobilfunk (German mobile operator), selling online and by phone.
+
+```text
+Hallo Jonas, für einen tschechischen Telekommunikationsanbieter haben wir im bestehenden Vertriebsfunnel bis zu 1.660 zusätzliche Bestellungen pro Monat modelliert. Adatum Mobilfunk verkauft ebenfalls online und über das Callcenter, eine ähnliche Analyse könnte also auch bei Ihnen Reserven zeigen. Einen Blick wert?
+```
+
+**Follow-up 1** (3 days later, 545 characters)
+
+```text
+Hallo {{first_name}},
+
+kurz eine Geschichte aus der Telekommunikation. Bei Vodafone CZ liefen die meisten Bestellungen noch über das Callcenter. In 14 Workshops mit 16 Beteiligten aus CVM und Online-Vertrieb entstanden daraus sieben Initiativen mit bezifferten Kosten in einer Roadmap, und das Modell zeigte bis zu 1.660 zusätzliche Bestellungen pro Monat, bereinigt um Überschneidungen. Für {{company_name}} hieße das: Wie viele Bestellungen liegen schon in Ihrem Funnel, und was kostet es, sie zu holen? 20 Minuten wert?
+
+{{sender_first_name}}
+```
+
+**Follow-up 2** (3 days after that, 537 characters)
+
+```text
+Hallo {{first_name}},
+
+noch eine Geschichte, diesmal aus dem Streaming. Zwei tschechische Mediengruppen haben ihre Streamingdienste zu Oneplay zusammengelegt, und 1,8 Mio. Kunden mussten zu einem öffentlich angekündigten Termin umziehen. Ein Team aus 10+ Abteilungen, drei Runden Preistests, Start am 3. März 2025, wie geplant. Steht bei {{company_name}} ein ähnlicher Schritt an, zeigen wir gern, wie wir vorgegangen sind. Wenn das gerade keine Priorität ist, sagen Sie es einfach, dann melde ich mich nicht mehr.
 
 {{sender_first_name}}
 ```
