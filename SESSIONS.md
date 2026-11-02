@@ -9,6 +9,13 @@ Read this file at startup, and again before you message a session you haven't me
 - **Launch a session only under its roster name:** `cd` into its folder, then `claude --bg -n <name> "<prompt>"`.
 - **Keep the roster current.** Whoever launches, renames, forks or stops a session updates its row in the same step and commits this file on its own, path-limited (`git commit -m "[roster] ..." -- SESSIONS.md`). This is the one root file every session may edit, and only its own rows.
 - **A handoff keeps the name** (charter P8). The fresh session takes over under the same name, so nobody's address changes. Note the handoff time in its row.
+- **One session per roster name, always: the old one is ended for good** (Alex, 2 Nov: "the only things that exist are the sessions with the canonical names in the registry ... I should just always see a session there with plenty of context"). Every handoff runs these steps, in order, and the orchestration session checks them:
+  1. The outgoing session writes its handoff note (what's in flight, what's next) where its spec says.
+  2. Launch the successor from the same folder under the same name, with a prompt that tells it to read that note and its CLAUDE.md: `claude --bg -n <name> "<prompt>"`.
+  3. Confirm the successor is live: `claude agents --json` shows a `background` row with that name, the new id, and the right folder.
+  4. End the old one by its exact id: `claude stop <old id>`, then `claude rm <old id>`. `rm` takes it out of agent view and keeps its transcript on disk, so nothing is lost. A stopped session left in agent view is a trap: opening it resumes it, and two sessions answer to one name.
+  5. Check that exactly one session carries the name (`claude agents --json --all`), then put the new id and the handoff time in its row, and commit the roster.
+  A session can't remove itself once it has stopped, so whoever launches the successor (normally `orchestration`) runs step 4. Temporary sessions (forks, builders) are stopped and removed the same way when their job ends, and their rows are deleted.
 - **Folder names carry no spec prefix; session names may** (Alex, DI-2 Q2.1). The table below is the link between a spec, its folder and its session.
 - **Adding a working folder:** create its `CLAUDE.md`, add its row here, then run `python orchestration\sync_claude_excludes.py` from the repo root. That gives the new folder its `.claude\settings.json`, so its session loads only its own CLAUDE.md, and adds the new folder to every sister's exclusions. The root already excludes every child.
 
