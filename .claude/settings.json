@@ -1,7 +1,10 @@
 {
   "claudeMdExcludes": [
-    "**/Hire me hackaton/website/**/CLAUDE.md",
-    "**/Hire me hackaton/website/**/AGENTS.md",
-    "**/Hire me hackaton/OBS/**/CLAUDE.md"
-  ]
+    "**/Hire me hackaton/*/**/CLAUDE.md",
+    "**/Hire me hackaton/*/**/AGENTS.md"
+  ],
+  "worktree": {
+    "bgIsolation": "none",
+    "baseRef": "head"
+  }
 }
