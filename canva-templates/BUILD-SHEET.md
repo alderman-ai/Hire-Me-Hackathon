@@ -77,7 +77,7 @@ Canva entry: line spacing = line-height ÷ px; letter spacing −2% = −20, −
 | Image slot | `glass-fill`, `glass-line` border, `radius-card`; `overlay` only if text ever sits on a photo | — | — | — | — |
 | Logo | `logo-white` on `bg-base` | same | same | same | `logo-white` on the gradient panel |
 
-Rules: the gradient never touches body, caption or label text. One key-word highlight per canvas or page, at most three consecutive words, only on steps of 56px or more. `accent-solid` only where a gradient can't render cleanly (marks under 24px, thin rules). Not used in part 1 (dark mood only): `bg-deep`, `surface-light`, `text-body-light`, `text-primary-light`, `tint-1`, `tint-2`.
+Rules: the gradient never touches body, caption or label text. One key-word highlight per canvas or page, at most three consecutive words, only on steps of 56px or more. A highlight never breaks across lines, so it's capped at 18 characters at `headline-xl` (stress test: 22 characters ran past the margin). `accent-solid` only where a gradient can't render cleanly (marks under 24px, thin rules). Not used in part 1 (dark mood only): `bg-deep`, `surface-light`, `text-body-light`, `text-primary-light`, `tint-1`, `tint-2`.
 
 **Contrast** (WCAG 2.x, computed from the local values):
 
@@ -250,6 +250,7 @@ The sample date and event are fictional.
 | Single-page PDFs | Every template also exports a one-page PDF at its canvas size: the import-ready file for Canva, with live, editable text (a PNG imports as a flat picture) |
 | Carousel PDF | 6 pages, each page = canvas: 1080×1350 px (810×1012.5 pt), no bleed, no crop marks, fonts embedded and subset, text live (not outlined), `printBackground` on, zero page margin |
 | File names | `addvery-linkedin-<type>-<w>x<h>.png`: `addvery-linkedin-post-1080x1350.png`, `-stat-1080x1080`, `-quote-1080x1080`, `-event-1200x627`; carousel `addvery-linkedin-carousel-1080x1350-p1.png` to `-p6.png` plus `addvery-linkedin-carousel-1080x1350.pdf` |
+| From Canva (part 2) | Images: PNG, High quality, 1× (an optional 2× copy if it stays under 5 MB). Carousel: PDF Standard, Flatten on, RGB, no bleed or crop marks, every page the same size. Fonts: Canva library fonts that are free, not Pro, and no Pro elements, so a copy opens cleanly on any plan |
 | Where | `local\exports\` until the brand sign-off, then copied to `exports\`. Stress renders (max-length copy) go to `local\exports\stress\` and are never shipped |
 
 ## 9. Checks a reviewer runs on every export
