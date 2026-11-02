@@ -46,5 +46,19 @@
   ],
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__claude-in-chrome__navigate|mcp__claude-in-chrome__tabs_create_mcp",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"C:/Users/alder/Desktop/Hire me hackaton/orchestration/canva_guard.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   }
 }
