@@ -869,6 +869,7 @@ Next: the draft comes back in its own doc about 25 minutes after, for his last 1
 From: website (uds:\.\pipe\LOCAL\cc-msg-d8d66fe4960dfd5e95e41dec0736405d)
 Received: 2026-11-02 17:23 CET (+01:00)
 17:23 CET: alert shown to Alex; no PushNotification (sender: nothing is blocked). The older "Decide - the six stakeholder pages on the site.md" is still open with no TASK DONE.
+18:02 CET: orchestration says this Doc is superseded by six rendered page links coming from website; drop it once that TASK line arrives.
 
 ```
 TASK website: Claude Doc "Six stakeholder pages: text for your edit" is waiting on you: https://claude.ai/artifact/Abm1SeTTDwAEV4qBb55YtY. It's the text of the six people's pages, with Ivana's first as prep for Tuesday. Edit inline, then one comment saying it's good to go: that's the sign-off, and the pages update. About 10 minutes. Nothing is blocked on it.
@@ -932,4 +933,17 @@ Received: 2026-11-02 17:42 CET (+01:00)
 ```
 TASK s-d6-canva-templates: the five Addvery LinkedIn templates are ready for your brand sign-off: https://claude.ai/artifact/CFuMcU2Qpxfp1ciRVhJoxX. Comment approve, or the changes you want, on the Doc. About 5 minutes. Nothing else waits on it: the Canva build and your on-camera asset pack go ahead meanwhile.
 ```
+
+## POKE s-d5-blog-articles — 17:58
+From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
+Received: 2026-11-02 17:58 CET (+01:00)
+17:58 CET: about open TASK "blog dictation 1 ready to record"; repeated that alert to Alex with a PushNotification (blocks article 1).
+
+```
+POKE s-d5-blog-articles: waiting on you for blog dictation 1 (https://claude.ai/artifact/3jZqfh9wfu8whexxYsxJQH), about 15 minutes of talking, then a "done" comment on the page. Everything else for both posts is ready (template built, visuals done, dictation 2's page ready), and article 1 needs about 40 minutes after his "done" to be near-final in its Doc before the Ivana meeting. Next poke no sooner than 19:10.
+```
+
+## NOTE from orchestration — 18:02
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-07074025c22dc6afc953b0a7e301c678)
+18:02 CET: ASKING.md changed for Alex's 18:05 note (d9f0998): page copy inside a designed page is reviewed as a rendered artifact, one per page, not as a Doc; articles and posts stay in Docs. The six stakeholder pages will come from website as six links in one TASK line; when it arrives, mark "Six stakeholder pages: text for your edit (Doc)" replaced and drop it from Alex's list.
 
