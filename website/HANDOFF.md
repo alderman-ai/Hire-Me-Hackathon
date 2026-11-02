@@ -22,6 +22,9 @@ Written 2 Nov at about 18:35 Prague by session 54c2d301 (took over at 17:15 from
 
 - **Webcam backlog upload** (rig, ~18:30: YouTube long uploads now allowed; Alex in S12: the backlog should go up). Running from 54c2d301 in the background, one at a time: S03, S04, S05, S07, S09, S10, S12. Check `content\videos.json`. Any session missing there: rerun `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_webcam.py Sxx <scratch dir>` (it skips sessions already online; create the scratch dir first). Then commit `content\videos.json`. They're webcam only; where to show them is s-d9's call (BUILDs).
 
+- **Welcome, time picker and summary carousel** at the top of `/`: a subagent of 54c2d301 (since ~18:50). Files: `app\welcome.tsx` and its CSS, a carousel component, `app\page.tsx`, `content\time-paths.json` (path picks plus placeholder intro copy). Paste s-d7's welcome copy into `content\time-paths.json` when `COPY s-d7` sends it.
+- **Fan-out rule (Alex ~18:4x: "We should be really fanning out now"):** run every queued item as a parallel builder subagent on its own files. Copy now comes from `s-d7-linkedin-content` as `COPY s-d7` (the "how this site was built" entry, the welcome and time-path copy, the stakeholder section intro); you only build it. When something ships, tell `orchestration` in one line (it keeps Alex's root tracker, "Open tasks.md").
+
 ## Anti-drift rules (Alex ~18:30: "I'm worried about drift between what's live and what's in the mockup ... The website thing is starting to become very important to me")
 
 1. **The live site is the one source of truth.** Orchestration's mockup is frozen, marked "superseded by the live site". No more mockups.
