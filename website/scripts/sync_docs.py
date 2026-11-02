@@ -37,6 +37,9 @@ REDACTIONS = [
     ("Screen care around the recent proposal", "Screen care"),
     ("keep the Apify proposal and the operator's own GetSales outbound off screen.", "keep private material off screen."),
     ("Never open the Apify proposal or Alex's own GetSales outbound.", "Never open private material."),
+    # DoD-13 and DoD-22, added to the charter by S2's change C03 (2 Nov, 14:25).
+    (" on the six stakeholders through the operator's own sender profile", ""),
+    ("secrets, the Apify proposal or the operator's own GetSales outbound", "secrets or private material"),
 ]
 REDACT_LINES = [
     re.compile(r"^.*\bIvana\b.*\n?", re.MULTILINE),

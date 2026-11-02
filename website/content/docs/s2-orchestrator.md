@@ -23,7 +23,7 @@ The sign-off of the project definition of done gets its own intake once S2 has w
 
 | Item | S2's answer |
 | --- | --- |
-| 1. Its place | Row S2, deliverable M2. Claims `DoD-S2-a` (a charter change takes one step and shows in every dependent place), `DoD-S2-b` (the project DoD exists, every item traced to a deliverable and claimed by a row), `DoD-S2-c` (the spec outline is signed off before wave 2 starts). Placeholders, like S0's and S1's, until S2 writes the DoD (section 6). |
+| 1. Its place | Row S2, deliverable M2. Claims `DoD-6` (a charter change takes one step and shows in every dependent place), `DoD-7` (the project DoD exists, every item traced to a deliverable and claimed by a row, and the spec outline is signed off before wave 2 starts), and, with S1, `DoD-5` (each research report is on the reading list of every spec that needs it). Ids assigned at the DoD sign-off, C03 (section 6). |
 | 2. Its neighbours | Depends on S0. Runs in parallel with S1 (`s1-research`, in `research\`). Feeds every spec (DoD ids, resource lines) and the start of wave 2 (the outline sign-off). Takes requests from the operator, from `s1-research`, and from any spec orchestrator that holds an answer of his. |
 | 3. Operator preflight | Section 1 (DI-4), and the DoD sign-off intake in section 10. |
 | 4. Decision log | Section 9. |
@@ -93,8 +93,8 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 
 | Change | Asked by, with approval | Planned at | One-line summary |
 | --- | --- | --- | --- |
-| C01 | The operator: DI-2 Q2.2, DI-3 Q3.3 | 2 Nov | The S-D2 row becomes operator-owned, in `Addvery Research\`, with no spec, and brand capture goes there too. Touches: the S-D2 row; "Addvery brand capture" in the S-D6 and S-D7 rows; "Run order"; the operator scenes; the brand-capture open question (ticked); resource lines in S-D3, S-D6, S-D7 and S-D8 naming the local path; the S-D2 row of S0's folder plan (no folder made). |
-| C02 | The operator: DI-4 Q4.2 | 2 Nov | The charter's "Research reading list" section becomes a pointer: each executable spec carries its own reading list in its "Routing and resources" section, and findings are indexed by S1 in `research\`. Its bracketed note on the operator steering research stays word for word. |
+
+C01 and C02 went out together as `Operator tasks\OT-02 Gate approval S2 charter changes C01 C02.md` (2 Nov); their records are in `changes\`.
 
 **Dependent places.**
 
@@ -157,7 +157,7 @@ Each skill takes the project root as a parameter (default: the repo root), so it
 - **Who.** S2 writes it, the operator reviews it (the intake in section 10), and S2 gives the final sign-off (charter: "Definition of done").
 - **Drafting.** From the charter alone. Each of M0 to M2 and D1 to D10 gets one to three items. Each item is an outcome someone who wasn't there could check tomorrow morning, for example "the live site has a section for each of the six stakeholders from D2", never an instruction for how to build. Each row: id, item, how it's checked, deliverables it traces to, claiming rows. D2's items are claimed by the operator-owned S-D2 row once C01 applies.
 - **Charter rules.** Ids DoD-1, DoD-2 and so on; every item traces to at least one deliverable; every spec's own definition of done links to items by id; the outline is complete only when every item is claimed.
-- **Sign-off.** On the intake's answer, or its default under the poke rule: write it into the charter with `change-dod`, then swap every placeholder (`DoD-S0-a`, `DoD-S1-a`, `DoD-S2-a` ...) for its real id through `propagate`, keeping the placeholder map in the change record.
+- **Sign-off.** On the intake's answer, or its default under the poke rule: write it into the charter with `change-dod`, then swap every placeholder (`DoD-S<n>-<x>`) for its real id through `propagate`, keeping the placeholder map in the change record.
 - **Outline sign-off.** When `propagate check` is clean, S2 marks the spec outline in the charter `Signed off by S2, <time>`, and the orchestration session may start wave 2. A gap the check finds is fixed first with `change-dod` or `change-outline`.
 - **Later changes** go only through `change-dod`.
 
@@ -165,12 +165,12 @@ Each skill takes the project root as a parameter (default: the repo root), so it
 
 | Criterion | Traces to |
 | --- | --- |
-| A new deliverable can be added in one step and every dependent place shows it (charter, S2 "Done when"): one operator instruction, then `propagate check` reports clean | DoD-S2-a (to be assigned by S2) |
-| The four skills sit in `orchestration\.claude\skills\`, load in the root session, refuse to run in any other session, and each dry run updates every place it should in the table in section 4 | DoD-S2-a |
-| C01 and C02 are applied, and every change has a change record; every change applied on a default has a decision-log row | DoD-S2-a |
-| The project DoD is in the charter as DoD-1 onwards, every item traced to a deliverable, reviewed by the operator or signed off on its default | DoD-S2-b |
-| Every live DoD item is claimed by at least one outline row, and no spec still cites a placeholder | DoD-S2-b |
-| The outline is marked signed off in the charter before wave 2 starts | DoD-S2-c |
+| A new deliverable can be added in one step and every dependent place shows it (charter, S2 "Done when"): one operator instruction, then `propagate check` reports clean | DoD-6 |
+| The four skills sit in `orchestration\.claude\skills\`, load in the root session, refuse to run in any other session, and each dry run updates every place it should in the table in section 4 | DoD-6 |
+| C01 and C02 are applied, and every change has a change record; every change applied on a default has a decision-log row | DoD-6 |
+| The project DoD is in the charter as DoD-1 onwards, every item traced to a deliverable, reviewed by the operator or signed off on its default | DoD-7 |
+| Every live DoD item is claimed by at least one outline row, and no spec still cites a placeholder | DoD-7 |
+| The outline is marked signed off in the charter before wave 2 starts | DoD-7 |
 
 ## 8. Forking gates (P8)
 
@@ -190,7 +190,7 @@ When a default is taken (a passed deadline after 18:00 Prague, or an empty or un
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
-| 2 Nov, DI-4 Q4.2, reading 2: S0 and S1 cite placeholder DoD ids (DoD-S0-a, DoD-S1-a ...), which S2 swaps for DoD-1 onwards at sign-off. | His answer addressed reading lists only. DI-4 is marked ready, so the unaddressed readings take the question's default, A (accepted). | Spec contract item 1 needs DoD ids in every spec, but S0 ran before the DoD existed. Placeholders meet both rules without holding up S0 or S1. | The DoD tables in the S0 and S1 specs. Another id scheme means one `propagate` pass. |
+| 2 Nov, DI-4 Q4.2, reading 2: S0 and S1 cite placeholder DoD ids (`DoD-S<n>-<x>`), which S2 swaps for DoD-1 onwards at sign-off. | His answer addressed reading lists only. DI-4 is marked ready, so the unaddressed readings take the question's default, A (accepted). | Spec contract item 1 needs DoD ids in every spec, but S0 ran before the DoD existed. Placeholders meet both rules without holding up S0 or S1. | The DoD tables in the S0 and S1 specs. Another id scheme means one `propagate` pass. |
 | 2 Nov, DI-4 Q4.2, reading 3: S2 is "in place" once the DoD is signed off and every item is claimed by an outline row; the skills are finished while wave 2 starts. | As above: unaddressed, so the default (accepted). | S-D1 and S-D2 come first in wave 2 because others consume them, and they need DoD ids, not charter-change skills. | Only when wave 2 starts. Waiting for the skills delays S-D1 by about the length of their dry runs; no files change. |
 | 2 Nov, DI-4 Q4.2, reading 4: a split row keeps its id plus a letter (S-D3a, S-D3b); a row with no deliverable of its own gets the id shown in its preview. | As above: unaddressed, so the default (accepted). | It keeps every row traceable to its deliverable, as "Spec IDs mirror deliverable IDs" intends. | None until a row is split. A rename later touches the outline, "Depends on" cells and one folder name. |
 | 2 Nov: the skills go in `orchestration\.claude\skills\`, not the root's `.claude\skills\`. | The Claude Code docs (section 5): root skills load in every session below the root, and nested ones load in the root session once it reads a file in that folder. DI-4 Q4.1 puts the parent's own file tree in `orchestration\`. | It keeps the charter-changing skills out of every other session, as "A spec never edits the charter" asks, and puts them where the operator put the parent's files. | If they fail to load, move the four skill folders to the root's `.claude\skills\`, where the guard step still stops other sessions. Only this spec changes. |

@@ -33,7 +33,7 @@ The preflight was decision intake DI-3 (`Operator tasks\Archive\DI-3 S1 Research
 
 ## 2. Place, neighbours and folder (spec contract items 1, 2 and 6)
 
-- **Place.** Row S1 of the spec outline. It claims the DoD items in section 9, which stay placeholders until S2 assigns real ids.
+- **Place.** Row S1 of the spec outline. It claims the DoD items in section 9, DoD-4 and DoD-5, whose ids S2 assigned at the DoD sign-off (C03).
 - **Depends on** S0. **Runs in parallel with** S2.
 - **Feeds** every wave-2 spec. Each one gets a research list before its methodology is written: S-D1 and S-D4 first (spec outline), then the rest. S-D2 is out of scope, because Addvery research is Alex's own (Q3.3). A spec that needs Addvery material reads it from local disk in `..\Addvery Research\`, never from GitHub.
 - **Works with S2.** S1 never edits the charter or another folder (GIT.md). The one root file it edits is `..\SESSIONS.md`, and only its own rows. Every report stays in `research\` (S1-Q5). S2, which the `orchestration` session runs, writes the reading-list lines pointing at them in each spec that needs them (DI-4 Q4.2: "Reading lists go into the executable specs").
@@ -183,16 +183,16 @@ Research never runs on a default (DI-3 Q3.4): an unapproved list waits for Alex,
 
 ## 9. Definition of done
 
-S2 assigns the real ids; these are placeholders. The charter's done line for S1 is "every topic agreed with the operator has findings at its chosen depth, linked from the reading list". Following DI-4 Q4.2, that reading list is each spec's own.
+S2 assigned the real ids at the DoD sign-off (C03). The charter's done line for S1 is "every topic agreed with the operator has findings at its chosen depth, linked from the reading list". Following DI-4 Q4.2, that reading list is each spec's own.
 
 | Criterion | Traces to |
 | --- | --- |
-| Alex has confirmed the storage reading (S1-Q5) | DoD-S1-a (to be assigned by S2) |
-| Every wave-2 spec has a research list that Alex approved, merged or skipped before its methodology was written | DoD-S1-b (to be assigned by S2) |
-| Every approved list has a report for each item (about four regular items and exactly three wildcards) plus a synthesis | DoD-S1-c (to be assigned by S2) |
-| Every report sits at its level and has a DIRECTORY.md entry | DoD-S1-d (to be assigned by S2) |
-| Every report is on the reading list of each spec that needs it (through S2) | DoD-S1-e (to be assigned by S2) |
-| No research ran without Alex's approval, and the decision log shows no research decided by default | DoD-S1-f (to be assigned by S2) |
+| Alex has confirmed the storage reading (S1-Q5) | DoD-4 |
+| Every wave-2 spec has a research list that Alex approved, merged or skipped before its methodology was written | DoD-4 |
+| Every approved list has a report for each item (about four regular items and exactly three wildcards) plus a synthesis | DoD-5 |
+| Every report sits at its level and has a DIRECTORY.md entry | DoD-5 |
+| Every report is on the reading list of each spec that needs it (through S2) | DoD-5 |
+| No research ran without Alex's approval, and the decision log shows no research decided by default | DoD-4 |
 
 ## 10. Forking gates (P8)
 
