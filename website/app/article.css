@@ -1831,3 +1831,429 @@ html.js .org-block:not([data-in]) .org-grow { transform: scaleX(0); }
 
   .org-list { padding-left: 1rem; }
 }
+
+/* ---------- Stakeholder pages (/for/<slug>, app/for/[slug]/page.tsx) ----------
+   Local drafts until Alex approves them (the gate is app/stakeholders.ts). The demo pages' article
+   dress, plus: the hero's title line, the draft markers, the growth lead's opening and "why now" panel
+   (its amounts reuse the /d2 `.org-growth` and `.org-amount` rules above), the demo cards, the feed
+   moments and the closing notice. No photos anywhere: the hero ring is Addvery's own purple disc. */
+
+.sh-draft-strip {
+  display: inline-block;
+  margin: 0 0 2rem;
+  padding: 0.5rem 0.875rem;
+  border: 1px dashed var(--av-lavender, #d3c3ff);
+  border-radius: var(--av-radius-pill, 999px);
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sh-title {
+  max-width: 820px;
+  margin: 1.5rem 0 0;
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* The note, and its "draft" marker while Alex hasn't rewritten it. */
+.sh-note-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.sh-note-head .art-eyebrow {
+  margin: 0;
+}
+
+.sh-draft {
+  display: inline-flex;
+  padding: 0.375rem 0.75rem;
+  border: 1px dashed var(--av-amethyst, #8b3fcf);
+  border-radius: var(--av-radius-pill, 999px);
+  background: var(--av-lilac-100, #f5f2fa);
+  color: var(--av-plum, #4a1d73);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sh-note.is-draft {
+  padding-left: 1.25rem;
+  border-left: 2px dashed var(--av-amethyst, #8b3fcf);
+}
+
+/* ---------- The growth lead's opening ---------- */
+
+.sh-opening {
+  padding: 6.25rem 0 0;
+  background: var(--av-white, #fff);
+}
+
+.sh-opening-text {
+  max-width: 860px;
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.sh-opening-text.is-after {
+  display: inline-block;
+  margin-top: 2rem;
+  background-image: var(--av-gradient-text, linear-gradient(25deg, #6645eb 35%, #d445eb));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.sh-quote {
+  max-width: 860px;
+  margin: 2rem 0 0;
+  padding: 1.75rem 2rem;
+  background: var(--av-lilac-100, #f5f2fa);
+  border-left: var(--av-border-rule, 2px) solid var(--av-amethyst, #8b3fcf);
+  border-radius: 0 var(--av-radius-lg, 10px) var(--av-radius-lg, 10px) 0;
+}
+
+.sh-quote blockquote {
+  margin: 0;
+}
+
+.sh-quote blockquote p {
+  margin: 0;
+  color: var(--av-plum, #4a1d73);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.sh-quote figcaption {
+  margin-top: 0.75rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+/* ---------- "Why now": Addvery's dark panel, as on /d2 ---------- */
+
+.sh-why-wrap {
+  padding: 5rem 0 0;
+  background: var(--av-white, #fff);
+}
+
+.sh-why {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 3rem 2.75rem 2.5rem;
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-ink, #151515);
+  color: var(--av-white, #fff);
+}
+
+.sh-why::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -60%;
+  right: -30%;
+  width: 75%;
+  aspect-ratio: 1;
+  background: var(--av-glow, radial-gradient(closest-side, rgba(102, 69, 235, 0.55), rgba(102, 69, 235, 0)));
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.sh-why .org-eyebrow {
+  color: var(--av-lavender, #d3c3ff);
+}
+
+.sh-why-h {
+  margin: 0.75rem 0 0;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* ---------- The demos: one card each, the number big on the left ---------- */
+
+.sh-chapter + .sh-chapter {
+  padding-top: 0;
+}
+
+.sh-demos {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sh-demo {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  align-items: start;
+  column-gap: 1.5rem;
+  padding: 1.75rem 1.75rem 1.625rem;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-white, #fff);
+  color: var(--av-ink, #151515);
+  text-decoration: none;
+  transition:
+    border-color var(--av-dur-base, 0.3s) ease,
+    transform 0.2s ease;
+}
+
+.sh-demo:hover,
+.sh-demo:focus-visible {
+  border-color: var(--av-amethyst, #8b3fcf);
+  transform: translateY(-2px);
+}
+
+.sh-demo:focus-visible {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 3px;
+}
+
+.sh-demo-n {
+  background-image: var(--av-gradient-text, linear-gradient(25deg, #6645eb 35%, #d445eb));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--av-font-numeric, "Plus Jakarta Sans", system-ui, sans-serif);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.sh-demo-body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  min-width: 0;
+}
+
+.sh-demo-num {
+  color: var(--av-amethyst, #8b3fcf);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: var(--av-eyebrow-size, 13px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking, 0.12em);
+  text-transform: uppercase;
+}
+
+.sh-demo-name {
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.sh-demo-why {
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.sh-demo-status {
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.sh-demo-go {
+  margin-top: 0.375rem;
+  color: var(--av-amethyst, #8b3fcf);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Moments from the build: rows that link to the feed ---------- */
+
+.sh-moments {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+.sh-moments > li {
+  border-bottom: 1px solid var(--av-lilac-300, #e3dfea);
+}
+
+.sh-moment {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.625rem;
+  padding: 1.5rem 0;
+  color: var(--av-ink, #151515);
+  text-decoration: none;
+}
+
+.sh-moment:focus-visible {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 3px;
+}
+
+.sh-moment-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.875rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.sh-moment-title {
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  transition: color var(--av-dur-base, 0.3s) ease;
+}
+
+.sh-moment:hover .sh-moment-title,
+.sh-moment:focus-visible .sh-moment-title {
+  color: var(--av-amethyst, #8b3fcf);
+}
+
+.sh-moment-line {
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 1rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* ---------- The ask (the purple band) and the closing notice ---------- */
+
+/* The ask is a sentence, so no Title Case. */
+.sh-ask .art-cta-heading {
+  text-transform: none;
+}
+
+.sh-notice {
+  padding: 4.5rem 0 5.5rem;
+  background: var(--av-white, #fff);
+}
+
+.sh-notice-box {
+  max-width: 860px;
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-2xl, 16px);
+  background: var(--av-lilac-100, #f5f2fa);
+}
+
+.sh-notice-box .art-eyebrow {
+  margin: 0 0 1rem;
+}
+
+.sh-notice-box p {
+  max-width: 720px;
+  margin: 0 0 0.75rem;
+  color: var(--av-text-on-light, #5e6873);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.sh-notice-box p:last-child {
+  margin-bottom: 0;
+}
+
+.sh-notice-box strong {
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-weight: 500;
+}
+
+.sh-notice-box a {
+  color: var(--av-amethyst, #8b3fcf);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.sh-notice-box a:hover,
+.sh-notice-box a:focus-visible {
+  color: var(--av-plum, #4a1d73);
+}
+
+@media screen and (max-width: 767px) {
+  .sh-draft-strip { margin-bottom: 1.5rem; }
+  .sh-title { margin-top: 1.125rem; font-size: 1.125rem; }
+
+  .sh-opening { padding-top: 4rem; }
+  .sh-opening-text { font-size: 1.625rem; line-height: 1.3; }
+  .sh-opening-text.is-after { margin-top: 1.5rem; }
+  .sh-quote { margin-top: 1.5rem; padding: 1.25rem; }
+  .sh-quote blockquote p { font-size: 1.375rem; }
+
+  .sh-why-wrap { padding-top: 3.5rem; }
+  .sh-why { padding: 2rem 1.25rem 1.75rem; }
+  .sh-why-h { font-size: 1.625rem; }
+
+  /* The number moves into the eyebrow ("Demo 3"), so the card is one column. */
+  .sh-demo {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.375rem 1.25rem 1.25rem;
+  }
+
+  .sh-demo-n { display: none; }
+
+  .sh-demo-name,
+  .sh-moment-title { font-size: 1.1875rem; }
+
+  .sh-notice { padding: 3.5rem 0 4rem; }
+  .sh-notice-box { padding: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-demo { transition: none; }
+
+  .sh-demo:hover,
+  .sh-demo:focus-visible { transform: none; }
+}
