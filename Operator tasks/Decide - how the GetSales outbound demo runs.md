@@ -1,6 +1,6 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
 Intake id: DI-7
 Created: 2026-11-02
 Build goals: []
@@ -60,7 +60,7 @@ Write A, B or C.
 
 `<operator_answer>`
 ```a-7-1
-
+I'm going to do this manually. This is not going to happen through automation. Don't worry about it. You can kill this 
 ```
 `</operator_answer>`
 
@@ -86,7 +86,7 @@ Write A, B or C.
 
 `<operator_answer>`
 ```a-7-2
-
+We killed this. The deliverable is just going to be a video recorded through OBS, through the rig, with it being set up and then scrolling through it and explaining things 
 ```
 `</operator_answer>`
 
@@ -109,6 +109,6 @@ Write A followed by one line, or B.
 
 `<operator_answer>`
 ```a-7-3
-
+The session can look up typesafe.ai and there's Jev research. Grep for Jev research or just look it up. Not knowing what Jev is is not really an excusable thing at this point 
 ```
 `</operator_answer>`
