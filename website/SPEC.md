@@ -1,6 +1,6 @@
 # S-D8 Website: executable spec
 
-Status: ready for its non-Addvery parts; Addvery-dependent parts wait for intake DI-XX, held until Alex's Addvery research lands · Row: S-D8 — Website · Folder: `website\` · Session: `website`
+Status: ready for its non-Addvery parts; the Addvery look is live (16:29); the six stakeholder pages wait for intake DI-9, released 16:46 · Row: S-D8 — Website · Folder: `website\` · Session: `website`
 
 This spec runs the live site, https://hire-me-hackathon.vercel.app. The site is the project's one outcome: a site in Addvery's branding that works as Alex's outreach job application, with a section for each of Addvery's six key stakeholders. Its readers are those six and anyone following the build.
 
@@ -26,12 +26,12 @@ Nothing goes on the site except through this session.
   - the publish check.
 
   It needs nothing from Alex. `orchestration` sends `website` one line: `Read SPEC.md in your folder: you are now the S-D8 spec orchestrator. Run part 1 now (§7 steps 1 to 6); the Addvery parts wait for its intake. Everything in your CLAUDE.md carries on.`
-- **Part 2 is held.** It covers everything that needs his Addvery research: the Addvery branding, the six stakeholder sections, and anything drawn from `..\Addvery Research\`. It waits for decision intake DI-XX (`..\Operator tasks\Decide - branding and stakeholder pages on the site.md`).
+- **Part 2 is held.** It covers everything that needs his Addvery research: the Addvery branding, the six stakeholder sections, and anything drawn from `..\Addvery Research\`. It waits for decision intake DI-9 (`..\Operator tasks\Decide - the six stakeholder pages on the site.md`, released at 16:46 into the slot DI-7 freed; question 1 was answered by Alex directly).
   - That intake stays unreleased until his Addvery research lands. Then `wave2-specs` or `orchestration` releases it.
   - Once it's answered and its answers are applied to this file, `orchestration` sends `website`: `S-D8 part 2: the branding and stakeholder intake is answered and applied in SPEC.md; run §7 from step 7.`
   - From 18:00 Prague, any of its questions still unanswered takes its default, logged in §9.
 
-| DI-XX question | Question | Default |
+| DI-9 question | Question | Default |
 | --- | --- | --- |
 | 1 | Addvery branding: when, and from what | **Answered by Alex directly at about 15:30** (§9): the site is cloned as closely as possible from Addvery's own website (design, branding, logos, icons, structure and motion), and the words stay his. Whoever releases the intake drops QXX.1 and renumbers nothing. |
 | 2 | What each stakeholder section shows, and how public it is | Named and role-led: the person's name and public title, a note on what the project means for that role, and the demos and moments for that role, under the content rule in §7. Public only after that person has had notice. No photo, and nothing about them beyond name and title. |
@@ -43,7 +43,7 @@ Nothing goes on the site except through this session.
 
 The site's structure isn't asked: part 1 needs it now, and it follows Alex's 14:00 ask for a live feed (§9).
 
-**Operator scenes.** Part 1 has none. Part 2 has one, off camera by default: approving what the six stakeholder sections show before they go live. It takes about 10 minutes, once the draft is ready (timetable: "when the six are confirmed"). DI-XX question 4 sets the slot, and whether the recording is paused.
+**Operator scenes.** Part 1 has none. Part 2 has one, off camera by default: approving what the six stakeholder sections show before they go live. It takes about 10 minutes, once the draft is ready (timetable: "when the six are confirmed"). DI-9 question 4 sets the slot, and whether the recording is paused.
 
 Nothing else needs him. The Vercel and YouTube sign-ins already work, so there are no new keys or logins. YouTube caps each upload at 15 minutes until he verifies his channel. This spec doesn't ask about that; if another spec's preflight gets his answer, the upload flow follows it.
 
@@ -55,7 +55,7 @@ Nothing else needs him. The Vercel and YouTube sign-ins already work, so there a
 | --- | --- |
 | 1. Its place | Row S-D8 — Website. It claims three items:<br>• DoD-18: six stakeholder sections, in Addvery's branding, matching DoD-10's list.<br>• DoD-19: a deliverables view, kept getting clearer without Alex asking. Shared with S-D9.<br>• DoD-22: nothing published shows secrets, the Apify proposal or his own GetSales outbound. Shared with S-D9.<br>It serves DoD-8 (S-D1), DoD-13 (S-D3 and S-D9), DoD-15 (S-D5), DoD-17 (S-D7) and DoD-21 (S-D10) by hosting their site parts when they ask. It serves DoD-6 through the deliverables view. It reads DoD-10 and DoD-11 from `..\Addvery Research\`. |
 | 2. Its neighbours | It depends on S0 (done), on S-D2 (Alex's own: the six and the brand capture) and on S-D9's requests. It runs in parallel with every wave-2 spec. It takes build requests from S-D1, S-D3, S-D4, S-D5, S-D7, S-D9 and S-D10, notices from S2 (`orchestration`) and clock lines from `rig`. S-D1 passes on Alex's answer about naming Apify. S-D3's rules set the D3 clip's blur. It feeds nothing downstream: the site is where the work shows. |
-| 3. Operator preflight | §1 (DI-XX). |
+| 3. Operator preflight | §1 (DI-9). |
 | 4. Decision log | §9. |
 | 5. Forking gates | §8. |
 | 6. Working directory | `website\`, session `website`. The reading list is §3. |
@@ -84,7 +84,7 @@ Paths are relative to `website\`. Step 1 of the run (§7) confirms each resource
   - `..\research\global\L-01-W1-wildcard-executed.md`: whether a dozen background sessions can run through the day and night: usage limits, Windows Update restarts, idle stops. Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-W2-wildcard-delivered.md`: what the six actually get from the alert: the link, the preview card, click timing, and the morning hand-over checklist (C7). Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-W3-wildcard-received.md`: whether AI-made work reads as skill or as a shortcut: the penalty bites on personal lines, not on the machinery. Options for Alex, not decisions. Read only; S1 owns it.
-- `..\Addvery Research\`: Alex's own folder, git-ignored. Read it from the local disk only, never from GitHub, and never edit it. Nothing from it goes into a tracked file beyond what DI-XX question 3 allows. His confirmed six (DoD-10) and brand capture (DoD-11) land here when he's done (§7).
+- `..\Addvery Research\`: Alex's own folder, git-ignored. Read it from the local disk only, never from GitHub, and never edit it. Nothing from it goes into a tracked file beyond what DI-9 question 3 allows. His confirmed six (DoD-10) and brand capture (DoD-11) land here when he's done (§7).
   - Files in it, as Alex's research session listed them at 15:33 (relayed by S-D1 as an OUTPUT line; added by S2 as C08). Read from disk only, never edit, never copy into a tracked file. A file marked expected doesn't exist yet: check for it, don't wait on it.
     - `..\Addvery Research\GetSales six.json` (Alex confirmed the six at 15:55): the six stakeholders, with a `confirmed_by_alex` flag. Only the six marked confirmed go anywhere near the site, and only as far as his gate on the stakeholder pages allows.
     - `..\Addvery Research\Brand capture.md`: Addvery's voice and visual identity, Alex's own brand capture. Still a draft: his review is pending, so treat it as provisional.
@@ -162,11 +162,11 @@ It isn't an application to Addvery yet. It has no Addvery branding, no stakehold
 | Criterion | Traces to |
 | --- | --- |
 | The live site has six stakeholder sections, one for each person on Alex's confirmed list in `..\Addvery Research\`. Each shows only what his gate approval allowed. | DoD-18 |
-| Every page of the site is in Addvery's visual identity, taken from his brand capture or as DI-XX question 1 decides. | DoD-18; reads DoD-11 |
+| Every page of the site is in Addvery's visual identity, taken from his brand capture or as DI-9 question 1 decides. | DoD-18; reads DoD-11 |
 | The deliverables view lists M0 to M2 and D1 to D10, each with a current status. A deliverable that S2 adds shows there within one build. | DoD-19; serves DoD-6 |
 | `builds.md` lists every build request with its asker, what changed, and BUILT or REFUSED. The site's git history has a commit for each BUILT. Together they show the additions came from requests, not only from Alex. | DoD-19 |
 | Every request from S-D1, S-D3, S-D4, S-D5, S-D7, S-D9 and S-D10 got BUILT or REFUSED, so their site parts are live: the D1 demo, the D3 clip, the blog with its three posts, the D7 demo and the Canva video. | serves DoD-8, DoD-13, DoD-15, DoD-17, DoD-21 |
-| `checks.md` holds a publish check of the live site, every video it embeds, and `website\` in the repo. It runs at each forking gate and once more before the morning. It finds no secret, nothing on the Apify proposal or his own GetSales outbound, and nothing from `..\Addvery Research\` in a tracked file beyond what DI-XX question 3 allows. | DoD-22 |
+| `checks.md` holds a publish check of the live site, every video it embeds, and `website\` in the repo. It runs at each forking gate and once more before the morning. It finds no secret, nothing on the Apify proposal or his own GetSales outbound, and nothing from `..\Addvery Research\` in a tracked file beyond what DI-9 question 3 allows. | DoD-22 |
 
 ## 6. Research step
 
