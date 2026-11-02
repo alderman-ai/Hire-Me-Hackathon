@@ -448,6 +448,7 @@ Deadline: 15:07
 From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
 Received: 2026-11-02 14:53 CET (+01:00)
 14:53 CET: alert shown to Alex.
+15:00 CET: s1-research handed off to a fresh session under the same name; it watches this task and sends TASK DONE.
 
 ```
 TASK S1: Approve - research for the GetSales demo and website.md is waiting on you: one tick approves five research questions for the GetSales demo and the website (plus wildcards). About a 3-minute read; answer by about 15:20 so both sessions get findings by 16:30.
@@ -457,8 +458,63 @@ TASK S1: Approve - research for the GetSales demo and website.md is waiting on y
 From: s1-research (uds:\.\pipe\LOCAL\cc-msg-3aa9a16fd57a7b6ed7d9c5d40f11494b)
 Received: 2026-11-02 14:54 CET (+01:00)
 14:54 CET: alert shown to Alex as low priority; no PushNotification (not blocking; Alex, 14:38: the blog pipeline is low priority).
+15:00 CET: s1-research handed off to a fresh session under the same name; it watches this task and sends TASK DONE.
 
 ```
 TASK S1: Approve - research for the blog pipeline.md is waiting on you: four research questions (plus wildcards) for the blog pipeline and the three articles. About a 2-minute read; not blocking, because the blog session drafts the test post anyway, but findings by 16:00 would shape it.
+```
+
+## TASK S-D9: Approve - the plan for the site's build updates.md — open
+From: s-d9-legibility (uds:\.\pipe\LOCAL\cc-msg-1604f017e0f4acd39e77fbf8793e2008)
+Received: 2026-11-02 15:01 CET (+01:00)
+15:01 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing waits on it).
+
+```
+TASK S-D9: Approve - the plan for the site's build updates.md is waiting on you: how the site's build updates are chosen, and their definition of done. Nothing waits on it, about 5 minutes. It also holds three optional one-line questions with defaults: how the GetSales clip hides the six, whether the site shows how it runs itself, and how the site talks about the AI.
+```
+
+## TASK S-D1: Approve - the scraping demo plan.md — open
+From: s-d1-scraping (uds:\.\pipe\LOCAL\cc-msg-afa5157ce6018f6715ad1a19d3859857)
+Received: 2026-11-02 15:04 CET (+01:00)
+15:04 CET: alert shown to Alex.
+
+```
+TASK S-D1: Approve - the scraping demo plan.md is waiting on you: the plan for the site's scraping page (what done means, result-first layout, and three choices with defaults: LinkedIn, a Clay line, a video); about 3 minutes, and ticking the box takes all defaults; unblocks drafting the page the moment your summary is ready.
+```
+
+## TASK website: Approve - the plan for the website.md — open
+From: website (uds:\.\pipe\LOCAL\cc-msg-c2cdddc2a6d547bc99d718dc7e58bdd5)
+Received: 2026-11-02 15:08 CET (+01:00)
+15:08 CET: alert shown to Alex as low priority; no PushNotification (sender: nothing is blocked).
+
+```
+TASK website: Approve - the plan for the website.md is waiting on you: the website's plan and its definition of done, with four small choices on defaults (stay on the free Vercel plan, no outside cold read, one layout for demo pages, the rule for the six stakeholder pages). About 3 minutes. Nothing is blocked, and from 18:00 the plan runs as written.
+```
+
+## POKE S1 — 15:10
+From: s1-research (uds:\.\pipe\LOCAL\cc-msg-bfa778a2012d9d14758c8ef7790e44f2)
+Received: 2026-11-02 15:10 CET (+01:00)
+15:10 CET: about open TASKs S1 "Approve - research for the GetSales demo and website.md" and "Approve - research for the blog pipeline.md"; repeated both alerts to Alex, PushNotification for the GetSales one only (blog is low priority).
+
+```
+POKE S1: waiting on you for "Approve - research for the GetSales demo and website.md" (open since 14:54; both requesters want findings by 16:30) and "Approve - research for the blog pipeline.md" (open since 14:57; non-blocking, the blog post is drafted first and revised by the findings). One tick each, about a 2-minute read.
+```
+
+## NOTE from wave2-specs — 15:17
+From: wave2-specs (uds:\.\pipe\LOCAL\cc-msg-ccd0e517295a61e395c3e61247fe940b)
+Received: 2026-11-02 15:17 CET (+01:00)
+Alex on break until about 15:46: no answer-expiry defaults, pokes reach no one. Desk sends no PushNotifications until then; alerts are still recorded and shown in the window.
+
+```
+wave2-specs: Alex told me at 15:16, his words: "i'm on break for the next 30 mins, dont let any "answer expiry defaults" go into affect". So until about 15:46 Prague nothing on the desk should be decided on a default, and pokes reach no one. I've asked orchestration to tell every running session.
+```
+
+## NOTE from orchestration — 15:17
+From: orchestration (uds:\.\pipe\LOCAL\cc-msg-9102780f04447e3c5123270a4e6745de)
+Received: 2026-11-02 15:17 CET (+01:00)
+Desk holds pokes that arrive during the break (marked "held") and surfaces those still open from 15:46. One-shot reminder set for 15:46.
+
+```
+Alex is on break until about 15:46 Prague. His words at 15:16, to wave2-specs (checked in its transcript): "i'm on break for the next 30 mins, dont let any 'answer expiry defaults' go into affect". Until at least 15:46: no question, intake or gate takes its default on a passed deadline, whatever its own rule says; anything waiting on him waits; nothing that needs his yes goes ahead. Hold pokes that come in during the break and surface them to him from 15:46, if still open.
 ```
 
