@@ -1,52 +1,53 @@
 # S1 handoff
 
-State as of 17:22 Prague, 2 Nov, written by the second `s1-research` session (00877038). It isn't a fork yet: it keeps this file current, so a successor or a session recovery starts from here. Read CLAUDE.md, then SPEC.md (sections 5 and 8 changed this afternoon), then this file, then DIRECTORY.md.
+Written by the second `s1-research` session (00877038) at 19:02 Prague, 2 Nov, at forking gate G4 (context at about half), on `orchestration`'s CONTEXT WATCH. You are now the active S1 session, under the same name. Read CLAUDE.md, then this file, then `portfolio\README.md`. SPEC.md and DIRECTORY.md as needed: no research is running or queued.
+
+## First: watch the AI portfolio review
+
+Alex is reviewing his AI portfolio entry on a private artifact page: **https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J**. The TASK line went to `answer-desk` at 18:52 ("task shown"). `orch-alex-prep` tracks it for Alex.
+
+1. **Watch for his comment.** The page's comment subscription belonged to the old session, so arm your own: load the `ArtifactComments` tool (ToolSearch `select:ArtifactComments`) and use it to watch and read comments on that URL. His answer may also come through `answer-desk` or `orch-alex-prep`. His comment is the sign-off (reset rule 4).
+2. **When it comes:**
+   - Apply his edits to `portfolio\ai-portfolio.md` (the source of truth; the page is built from it). Settle the five `[Alex: ...]` notes by his answers; remove each note once settled. If he says nothing on one, take the safe default and log it in `portfolio\README.md`: keep CB6 unlinked, keep Factor-AI to its two files, drop an unsourced figure.
+   - Load `marketing:content-creation` first if you rewrite any copy (his rule: no copywriting without a copywriting skill).
+   - From the repo root: `python -I blog-pipeline\scripts\validate.py research\portfolio\ai-portfolio.md`. It must show 0 fail (W20, the length warning, is expected).
+   - Set `status` in its front matter to what POST-FORMAT.md uses for a finished entry.
+   - Rebuild the page: `python -I research\portfolio\build_preview.py`, then republish it with the Artifact tool and `url` https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J (read it first with `action: "read"`, as the tool requires for an artifact from another session). Commit.
+3. **Then hand it on:**
+   - `website`: `BUILD S1-B1: add Alex's AI portfolio entry at website\content\demos\ai-portfolio.md, linked from his About-me section. Content: research\portfolio\ai-portfolio.md (POST-FORMAT entry, kind "showcase", validates). Source: Alex's own public repos and his own words, signed off by his comment on the review page; nothing from Addvery Research.` Wait for `BUILT S1-B1` or `REFUSED S1-B1`. The entry ends with its own "How this post was made" text, because the template's box assumes a dictation; tell `website` that.
+   - `s-d1-scraping`: the Markdown source path, for its agent-readable track of the site (D12).
+   - `answer-desk`: `TASK DONE S1: AI portfolio entry`. `orchestration`: `OUTPUT S1: AI portfolio placed, <path>`.
 
 ## Where S1 stands
 
-**No research is running or queued.** `orchestration`'s RESTART (17:13) says: after L-03, start no new research unless Alex asks for it. Alex's reset rules (`..\answer-desk\ASKING.md`, top, 17:00) also apply: no research list goes to him as a gate, easy calls are S1's own (decide, log in SPEC.md section 8), and there's no 18:00 cut-off ("We're working all night").
-
 | List | State |
 | --- | --- |
-| L-01 parent | Done 15:05. On every reader's reading list (C07). |
+| L-01 parent | Done 15:05; on every reader's reading list (C07). |
 | L-02 scraping | Parked: Alex runs the scraping himself. |
-| L-03 blog | Done 17:21. 10 reports and the synthesis in `global\`, indexed. FINDINGS sent to `orchestration [51e560]` at 17:22. Reader: S-D5 only (S-D4 retired 16:48). |
-| L-04 GetSales, L-06 website | Withdrawn 17:03 (OT-03 withdrawn unticked); never run. S-D3 and `website` told, both old and new sessions. |
-| L-05 brand assets | Done 16:45. 7 reports and the synthesis in `global\`, indexed. FINDINGS sent; going through propagate as C11, with S-D5 added as a reader for R1. S-D6, S-D7, S-D10 told. |
+| L-03 blog | Done 17:21: 10 reports and the synthesis. FINDINGS sent; reader S-D5 only (S-D4 retired). |
+| L-04 GetSales, L-06 website | Withdrawn 17:03 (OT-03 withdrawn unticked); never run. |
+| L-05 brand assets | Done 16:45; FINDINGS sent (C11), S-D5 added as a reader for R1. |
 
-## Open items
+`orchestration`'s RESTART (17:13): start no new research unless Alex asks for it. Alex's reset rules (`..\answer-desk\ASKING.md`, top): no gates for plans or research lists, easy calls are yours (decide and log), pokes only when work is blocked (at most every 30 minutes), no 18:00 cut-off. Desk: no question open; the next id is S1-Q7.
 
-- **Desk:** no question open; the next id is S1-Q7. No TASK lines open. Don't poke: rule 7 pokes only when work is blocked.
-- **Replies:** none outstanding. `s-d5-blog-articles` (session 5b465de8) confirmed the L-03 synthesis at 17:23; findings 1 and 3 go into its dictation 2 prompts and its build request S-D5-B1.
-- **AI portfolio (a job from `orchestration`, 18:20; see `portfolio\README.md`):** the draft `portfolio\ai-portfolio.md` is with Alex on the private review page https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J (TASK line sent 18:52, "task shown"). After his comment (read it with the ArtifactComments tool, or it comes through the desk): apply his edits, re-run `validate.py`, rebuild the page with `build_preview.py` (in the job's temp folder; it's short to rewrite), then `BUILD` to `website` (place at `website\content\demos\ai-portfolio.md`, linked from About me), hand `s-d1-scraping` the Markdown source for its agent-readable track (D12), and send `TASK DONE S1` to the desk.
-- **Routing since 18:56:** `orchestration` = handoffs, roster, context, charter, FINDINGS and OUTPUT; `orch-site-map` (site-map\) = the site's layout and scope map; `orch-alex-prep` (alex-prep\) = everything that needs Alex, and tracks the portfolio review. Questions still go to `answer-desk`.
-- **Monitors:** none running. The gate-watch script is in the job's temp folder and isn't needed: no gates are open.
+## Routing (since 18:56)
 
-## Answers applied this session
+- `orchestration`: handoffs, roster, context, charter, FINDINGS and OUTPUT. Alex no longer talks to it.
+- `orch-site-map` (site-map\): the site's layout and scope map.
+- `orch-alex-prep` (alex-prep\): everything that needs Alex, and `Open tasks.md`.
+- Questions to Alex still go through `answer-desk`.
+- Sessions hand off often: when ListAgents shows two rows for one name, use the newest `[ref]`.
 
-- OT-09 (L-05): ticked with changes; applied (R1 narrowed to one cloned repo; R4 gained a leader's-personal-brand sub-question). The Ivana direction went to `orchestration` and S-D7, settled there as local only.
-- OT-04 (L-03): unticked, changes applied (R5 the blog skill, R6 and R7 the two articles' research bases). The copywriting-skill rule, two articles not three, and the visuals went to `orchestration`, S-D4 and S-D5.
-- Alex's feedback-section rule (desk, 16:36): an approval includes whatever he wrote in its feedback. Recorded in SPEC.md section 5.
+## Things Alex should know, already reported to `orchestration`
 
-## Decisions (also in SPEC.md section 8)
+His public repos `cb6-prayer-project` (git history holds a client contact's details, photo GPS data and a Drive link; README links editable Google Docs) and `Factor-AI` (18 raw session transcripts with his email and private folder names) have exposure. Clean-up is his call; the portfolio links around it. The review page's top panel tells him the same.
 
-- 16:32: L-05 ran on OT-09 ticked with changes, with no second freeze.
-- 16:36: L-03 ran on OT-04 unticked, from his note's own "start researching".
+## Rules learned
 
-## How to run a list again (only if Alex asks)
-
-- One `general-purpose` subagent per item, all in one message in the background, briefed from BRIEFS.md (item verbatim, DoD ids, exact report path, "item k of n", a 15-minute target, the shared rules). Wildcards get the other items verbatim and the other two lenses.
-- Review each report as it lands (headings, citations, inference marked, no secrets); tick it with the `tick.py` pattern (Python with raw strings, never `sed` on Windows paths); commit report and list together; send time-critical findings to the reader straight away.
-- Then the synthesis, DIRECTORY entries plus the reverse index, close the list, `FINDINGS` to `orchestration`, and tell each reader.
-- Reports took about 5 to 8 minutes each this afternoon; a synthesis about 5.
-
-## Rules learned this session
-
-- Sessions hand off often. Before messaging, check ListAgents: when two rows share a name, use the newest `[ref]`. `orchestration` is `[51e560]` since 16:44.
-- `orchestration` edits `research\` files (archive paths, CLAUDE.md reading item 10) and says so afterwards. Re-read a file before editing it.
-- Long inline Python in a Bash heredoc can fail to parse; write the script to the job's temp folder and run it with `python -I`.
+- Re-read any file `orchestration` may have edited before you edit it.
+- Don't use `sed` on lines with Windows paths; long inline Python in a Bash heredoc can fail to parse, so write scripts to a file and run them with `python -I`.
+- Never fork while subagents you launched are running; they report to the session that launched them.
 
 ## Forking gates from here
 
-- G3 (shortly before 18:00) no longer has its reason, since Alex works through the night and nothing is queued; fork only at G4 (half context; 34% at 16:47) or if `orchestration` asks.
-- How: rewrite this file, commit, launch from `research\` with `claude --bg -n s1-research "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."`, update S1's row in `..\SESSIONS.md` (commit it alone with `[roster]`), then stop the old session by its exact id. Don't fork while research subagents are running.
+G4 (half context) or when `orchestration` asks. How: rewrite this file and commit it; launch from `research\` with `claude --bg -n s1-research "Read CLAUDE.md, then HANDOFF.md. You are now the active S1 session."`; update S1's row in `..\SESSIONS.md` (commit it on its own with `[roster]`); send `orchestration` `HANDOFF s1-research <new id>`; then stop.
