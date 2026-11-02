@@ -20,6 +20,8 @@ import {
 import { readingPath, type PathItem, type ReadingPath } from "../reading-time";
 import "../../article.css";
 import "../for.css";
+import { NEW_SITE } from "../../flags";
+import { RememberYourPage } from "../../your-page";
 
 // One page per key person at Addvery, addressed to their role: /for/<slug>. The grid at /for opens it.
 //
@@ -426,6 +428,7 @@ export default async function StakeholderPageView({ params }: { params: Promise<
 
   return (
     <main className={landing ? "art art-for for-landing" : "art art-for"}>
+      {NEW_SITE && <RememberYourPage slug={page.slug} />}
       {landing && path ? (
         <>
           {/* ---------- The landing: hello, their likely questions, their reading list ---------- */}

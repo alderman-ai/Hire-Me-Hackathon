@@ -5,6 +5,14 @@ import "./addvery-tokens.css";
 import "./globals.css";
 import { SiteHeader } from "./site-chrome";
 import { SiteFooter } from "./site-footer";
+import stakeholders from "@/content/stakeholders.json";
+import { NEW_SITE } from "./flags";
+import { YourPagePill } from "./your-page";
+
+// The Your page pill's names (slug to first name), on the new site only (app/flags.ts).
+const PEOPLE: Record<string, string> | undefined = NEW_SITE
+  ? Object.fromEntries(stakeholders.pages.map((p) => [p.slug, p.name.split(" ")[0]]))
+  : undefined;
 
 // Addvery's type, as close as open fonts get: Inter Tight 500 for their commercial Neue Haas
 // Grotesk Display headings, Inter for their Haas Roman body cut; Outfit and Plus Jakarta Sans are
@@ -60,11 +68,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip-link" href="#content">
           Skip to content
         </a>
-        <SiteHeader />
+        <SiteHeader people={PEOPLE} />
         <div id="content" className="site-content" tabIndex={-1}>
           {children}
         </div>
         <SiteFooter />
+        {PEOPLE && <YourPagePill people={PEOPLE} variant="bar" />}
         <Analytics />
       </body>
     </html>

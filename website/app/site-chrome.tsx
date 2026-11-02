@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import { usePageScrolled } from "./motion";
 import { CTA, NAV_LINKS } from "./site-links";
+import { YourPagePill } from "./your-page";
 
 
 /** Addvery's north-east arrow, twice, so hover can swap one out diagonally and roll the other in. */
@@ -37,7 +38,8 @@ export function GradientButton({ href, children, className }: { href: string; ch
   );
 }
 
-export function SiteHeader() {
+/** `people` (slug to first name) is set only on the new site (app/flags.ts): it turns on the Your page pill. */
+export function SiteHeader({ people }: { people?: Record<string, string> } = {}) {
   const scrolled = usePageScrolled(0.01);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -83,6 +85,11 @@ export function SiteHeader() {
                   </Link>
                 </li>
               ))}
+              {people && (
+                <li className="your-page-item">
+                  <YourPagePill people={people} variant="inline" />
+                </li>
+              )}
             </ul>
           </nav>
           <GradientButton href={CTA.href} className="nav-cta">

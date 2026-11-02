@@ -1,0 +1,56 @@
+/* "Your page" (app/your-page.tsx): a pill in the menu bar on wide screens, a bar at the bottom of the
+   screen below 992 px. White on the menu's ink, outlined in lilac (#ebdcff on #151515 is 14:1). */
+
+.your-page {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.5rem 0.9375rem;
+  border: 1px solid var(--av-lilac-200);
+  border-radius: var(--av-radius-pill);
+  color: var(--av-white);
+  font-family: var(--av-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--av-dur-base, 200ms) ease;
+}
+
+.your-page:hover {
+  background: rgba(235, 220, 255, 0.14);
+}
+
+.your-page-name {
+  color: var(--av-lilac-200);
+}
+
+.nav-links .your-page-item {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.your-page-bar {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .your-page-bar {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 60;
+    display: flex;
+    justify-content: center;
+    min-height: 48px;
+    background: var(--av-ink);
+  }
+
+  /* The open menu sheet has its own links. */
+  html.menu-open .your-page-bar {
+    display: none;
+  }
+}

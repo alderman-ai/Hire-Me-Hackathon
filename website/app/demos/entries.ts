@@ -48,6 +48,8 @@ export type Entry = {
   video?: { youtube_id: string; start: number };
   /** Site path of an image in public/ (or an https URL), for the index thumbnail. */
   poster?: string;
+  /** The content library's id for this piece (orchestration/local/library), for content/recommend.json. */
+  library_id?: string;
   tags: string[];
   reading_minutes?: number;
   made?: Made;
@@ -63,7 +65,7 @@ export type Entry = {
 // (kind, deliverable, video, poster) are optional. The site checks keys and types, not the order.
 const TOP_KEYS = [
   "title", "slug", "description", "author", "date", "status", "kind", "deliverable",
-  "cover", "video", "poster", "tags", "reading_minutes", "made",
+  "cover", "video", "poster", "tags", "reading_minutes", "made", "library_id",
 ] as const;
 const MAP_KEYS: Record<string, readonly string[]> = {
   cover: ["kicker", "title_lines", "subtitle", "accent"],
@@ -337,6 +339,7 @@ function validate(file: string, data: Raw, body: string): Entry {
     },
     video,
     poster: (poster as string | undefined) ?? undefined,
+    library_id: typeof data.library_id === "string" ? data.library_id : undefined,
     tags,
     reading_minutes: (reading as number | undefined) ?? undefined,
     made,

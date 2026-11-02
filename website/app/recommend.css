@@ -1,0 +1,15 @@
+/* The recommend carousel (app/recommend-carousel.tsx) reuses the summary carousel's styles
+   (summary-carousel.css). This adds only the marker on a placeholder list, which a production build
+   never shows (app/recommend.ts). */
+
+.rc-placeholder {
+  align-self: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0.125rem 0.5rem;
+  border: 1px dashed var(--av-amethyst);
+  border-radius: var(--av-radius-pill);
+  color: var(--av-plum);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}

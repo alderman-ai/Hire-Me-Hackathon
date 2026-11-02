@@ -4,6 +4,10 @@ import Feed from "./feed";
 import Countdown from "./live";
 import { Reveal, RotateIn } from "./motion";
 import { ArrowSwap } from "./site-chrome";
+import { RecommendCarousel } from "./recommend-carousel";
+import { LIST_SLUGS, RECOMMEND_ON, recommendFor } from "./recommend";
+
+const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");
 
 // The home page, after addvery.com: their hero (the H1 slides in from the left, and the countdown
 // and the "start here" box take the place of their two photo cards, rotating in from opposite
@@ -69,6 +73,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {RECOMMEND_ON && (
+        // The interim home (VERDICT.md W7): the default list above the feed. The heading is a working
+        // label until alex-voice words it.
+        <RecommendCarousel heading="Recommended for you" cards={recommendFor("default")} people={PAGE_SLUGS} />
+      )}
       <Feed />
     </main>
   );
