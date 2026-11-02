@@ -28,13 +28,13 @@ Read this file at startup, and again before you message a session you haven't me
 | `s-d1-scraping` | `scraping\` | S-D1 Scraping research demo: presents Alex's own scraping and research on the site, behind his gate on what the section shows. | Launched by `orchestration`, 2 Nov, after its preflight (DI-6) was answered. |
 | `addvery-research` | `Addvery Research\` | Alex's own Addvery research session: the company, its six key people and its brand capture. He works with it directly; it has no spec. The folder is git-ignored. | Launched by `orchestration` at Alex's request, 2 Nov. |
 | `s-d3-getsales` | `getsales\` | S-D3 GetSales outbound demo: the alert to the six from Alex's sender profile behind his pre-send gate, then the ICP workflows demo. Waits silently for his six in `Addvery Research\`. | Launched by `orchestration`, 2 Nov 15:00, for the alert groundwork; its spec's launch gate was met by DI-6. |
+| `s-d4-blog-pipeline` | `blog-pipeline\` | S-D4 Blog pipeline: turns 15 minutes of Alex's dictation into a near-final blog post. Part 1 (method, prompts, scripts, post format) runs now; part 2 waits for its own intake, which it watches with no pokes. | Launched by `orchestration`, 2 Nov 15:08, on SPEC READY. |
 
 ## Planned
 
 | Session | Folder it starts in | Spec | When |
 | --- | --- | --- | --- |
 | none | `orchestration\` | S2 Project orchestrator | Run by `orchestration` after S0. There's no separate S2 session (DI-4). |
-| `s-d4-blog-pipeline` | `blog-pipeline\` | S-D4 Blog pipeline | Wave 2, after S1. |
 | `s-d5-blog-articles` | `blog-articles\` | S-D5 Three blog articles | After S-D4. |
 | `s-d6-canva-templates` | `canva-templates\` | S-D6 Canva LinkedIn templates | Wave 2, once Alex's brand capture is in `Addvery Research\`. |
 | `s-d7-linkedin-content` | `linkedin-content\` | S-D7 LinkedIn content creation demo | Wave 2, once Alex's brand capture is in `Addvery Research\`. |
