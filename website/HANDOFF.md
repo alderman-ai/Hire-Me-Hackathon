@@ -36,6 +36,10 @@ Written 2 Nov at about 17:25 Prague at orchestration's RESTART (17:13), by the s
    - one `design:ux-copy` pass on copy already live: the demo pages' "what this is" lines, the reskin's UI labels, and the /d2 headings;
    - screenshots of the stakeholder pages at 390 and 1440 px.
 
+6. **From s1-research (17:28; L-06 won't run, so keep the L-01 method):**
+   - `research\global\L-03-W2-wildcard-delivered.md`: shared post links preview as the homepage, because every page inherits the layout's Open Graph tags. Add per-page `generateMetadata` tags (title, description, url), and a per-post card image where it matters (blog posts and demo pages).
+   - `research\global\L-05-W2-wildcard-delivered.md` and `L-05-synthesis.md` line 3: "anyone can fill them in" isn't true of the Canva templates as built, so reword the D6 claim wherever the site makes it (`content\deliverables.json` d6, `build.json`).
+
 ## State of the site (live: https://hire-me-hackathon.vercel.app, last deploy 17:21, `ccb54b4`)
 
 - **Addvery look** since 16:29 (`4a8099f`), on Alex's word at about 15:30 ("as cloned as possible to the Addvery website…").
