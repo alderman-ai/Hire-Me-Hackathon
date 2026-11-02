@@ -39,3 +39,4 @@ Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting
 
 - 17:36: the Comfy ideas Doc is made from `comfy-motion\IDEAS.md` (link in `local\comfy-doc.md`), and `TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick` went to `answer-desk`, which showed it. Waiting on Alex's pick as a Doc comment (B3).
 - Waiting, with no polling, for `READY S-D6` (run step 3).
+- 17:38, `orchestration` (00c57cf): `frontend-design` is now installed for `canva-video\`. For the cut (run step 7), invoke it as `frontend-design:frontend-design`. It isn't in da2b38ac's skill list (installed after launch); if it doesn't resolve, read `~\.claude\plugins\cache\claude-plugins-official\frontend-design\ea10b213686c\skills\frontend-design\SKILL.md`, follow it, and log that in SPEC §9.
