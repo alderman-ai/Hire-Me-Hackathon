@@ -94,9 +94,11 @@ export function EntryEnd({ current, lists, people }: { current: string; lists: R
       )}
       {rail.length > 0 && <RecommendCarousel heading="Recommended for you" cards={rail} forSlug={who ?? undefined} people={people} />}
       {who && (
-        <p className="art-container ne-back">
-          <Link href={`/for/${who}`}>← Back to your page</Link>
-        </p>
+        <div className="art-container">
+          <p className="ne-back">
+            <Link href={`/for/${who}`}>← Back to your page</Link>
+          </p>
+        </div>
       )}
     </>
   );
