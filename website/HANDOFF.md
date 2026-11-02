@@ -16,12 +16,12 @@ If the old session ended before they reported, check the working tree: their fil
 
 | Work | Files it touches | Status when written |
 | --- | --- | --- |
-| **S-D7-B1** entry "LinkedIn posts in Addvery's voice, graded blind", then **S-D5-B2** inline `[!video]` clips in entries | `app\demos\*`, `content\demos\*`, `public\demos\linkedin-voice\` (git-ignored), `.gitignore` | Running. The `/demos` template itself (S-D5-B1) is built and was BUILT on preview to s-d5; production ships with the first published entry. Reply `BUILT S-D7-B1` to `s-d7-linkedin-content` and `BUILT S-D5-B2` to `s-d5-blog-articles`. |
+| **Time fix** (Alex 18:3x: "All times should just be Prague times ... time (Prague) ... Fix it throughout the entire website"): Prague time of day only, no session-offset clocks | `content\*.json`, `content\demos\*.md`, helpers in `app\` (not `app\for\*`, not `content\docs\`) | Running. Then ship it, and send `s-d9-legibility` the source-format line the subagent reports. |
 | **Landing layout** for `/for/<slug>`: greeting on top, "What I'm guessing you're concerned with", a numbered reading list with times and a running total, per-person preview card | `app\for\*`, `app\stakeholders.ts` | Running. Gated: renders only in `next dev` or when that page's `landing.approved === true` in `content\stakeholders.json`. |
 
-`app\demos\_og\glow.jpg` is derived from Addvery's images: git-ignore it (the S-D7 subagent was told to add it to `.gitignore`).
+Git-ignored but deployed (copy them into a clean export): `public\addvery\`, `public\people\`, `public\demos\linkedin-voice\`, `app\demos\_og\glow.jpg`, `local\org-diagrams.json`, `local\research\`.
 
-Done since this file was drafted: **S-D1-B1** `/d1` (BUILT, 983449a, live); the **inventory** (`content\inventory.json`, 75 items, ~204 min; 308970e); **C16** synced (c34923a). The purple band's text is white (AA), and the S01 video is embedded.
+Done since this file was drafted: **S-D7-B1 and S-D5-B2** (`/demos` live with its first entry, menu "GTM demos", the template has clips, feature quotes and figures; 76b48f9); **S-D9's four day-one clips** uploaded unlisted (`content\clips.json`, `scripts\upload_clip.py`; 35d777c); **COPY s-d7 About-me** received at `..\linkedin-content\local\about\about-me.md` (keep his " -- "; drop the ARTICLE-2-LINK line until article 2 is live); **S-D1-B1** `/d1` (BUILT, 983449a, live); the **inventory** (`content\inventory.json`, 75 items, ~204 min; 308970e); **C16** synced (c34923a). The purple band's text is white (AA), and the S01 video is embedded.
 
 ## Next, in order
 
