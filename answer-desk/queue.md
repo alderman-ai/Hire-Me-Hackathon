@@ -969,3 +969,15 @@ Received: 2026-11-02 18:15 CET (+01:00)
 TASK S-D9: the day-one story (Doc) is waiting on you for your last 10%: https://claude.ai/artifact/Qs2nBb9ienSKxRe7nthJ3c. It's your "story of day one" article, about 1,240 words in your voice, built from your four hours on camera, every quote word for word, with six webcam clips between the sections. Fill the two notes marked [Alex: …], edit anything inline, then comment "approve" or the changes you want. About 10 minutes. Your comment puts it on the site as an entry in the GTM demos list. Nothing else waits on it.
 ```
 
+## TASK s-d5-blog-articles: taste-capture article review (rendered page) — open
+From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
+Received: 2026-11-02 18:26 CET (+01:00)
+18:26 CET: alert shown to Alex; no PushNotification (Alex is active at the desk). If Alex answers it at the desk, relay his words to s-d5-blog-articles.
+
+```
+TASK s-d5-blog-articles: your taste-capture article is ready to review: https://claude.ai/artifact/PkSgwgetjps3sVoNST26ma
+What: your "vectors of refinement" demo turned into a GTM demos entry in Addvery's look, "How to refine AI slop into AI ops". It opens on the Road to Hell hook with "??" for the two emojis and the three options shuffled (A car-fire, B fire-car, C road-fire), then the silhouettes (redrawn, all three pairs, winner on different sides), before and after, hook-first, and the answer with your reasoning.
+How: comment on the page with changes, or "approved" to publish (use the comment's "send to Claude" so it reaches me, or tell the desk). About 5 minutes.
+Next: on his OK it goes live at /demos as part of the LinkedIn content demo. The two blog drafts follow in their own Docs within the hour.
+```
+
