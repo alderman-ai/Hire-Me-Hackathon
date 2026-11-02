@@ -47,7 +47,7 @@ The stakeholders come from D2. Still open: the exact hours of today's operator w
 The project covers the three meta deliverables and ten client-facing deliverables listed below, and nothing else unless M2 adds it.
 
 - **In:** M0 to M2 and D1 to D10.
-- **Out:** real data running through the demos (the one exception is the D3 live run on six stakeholders), automations actually sending, and connecting anyone else's LinkedIn account.
+- **Out:** real data running through the demos (the one exception is D3's first messages, computed for the six stakeholders), automations actually sending, and connecting anyone else's LinkedIn account.
 - **Deferred to Claude Code:** the definition of done, the operator's research details, and the wave-2 specs themselves.
 
 ## Shared vocabulary
@@ -68,7 +68,7 @@ Every spec uses these terms with exactly these meanings.
 
 ## Deliverables
 
-The project has ten client-facing deliverables plus three meta deliverables, in two waves. Every client-facing deliverable is a demonstration in the Addvery brand: legibility matters more than function, and no real data runs through it except where noted. Each one becomes its own spec, except D2, which the operator runs himself.
+The project has ten client-facing deliverables (one of them, D4, retired on 2 Nov) plus three meta deliverables, in two waves. Every client-facing deliverable is a demonstration in the Addvery brand: legibility matters more than function, and no real data runs through it except where noted. Each one becomes its own spec, except D2, which the operator runs himself.
 
 **Wave 1: meta (runs first).**
 
@@ -84,9 +84,9 @@ The project has ten client-facing deliverables plus three meta deliverables, in 
 | --- | --- | --- |
 | D1 | Scraping research demo | Shows the scraping and research capability on the Apify API. It comes early because its output feeds several other specs. |
 | D2 | Company and stakeholder research | Researches Addvery and identifies its top six stakeholders. It runs in parallel with the others and feeds D3 and the website. |
-| D3 | GetSales outbound demo | Shows 10 ICPs with a drip sequence each, and a classifier that routes each lead to the right automation. Pipeline: Sales Navigator, then CSV export, then enrichment from D2, then a computed first-message variable, then import into GetSales. Live run: the six stakeholders from D2 go through the operator's own sender profile. The output is a video clipped from the rig recordings. |
-| D4 | Blog pipeline | Turns 15 minutes of operator dictation into a good-looking blog post that he finishes off (the last 10%). Likely built in the Claude design app. |
-| D5 | Three blog articles | Three posts produced through D4. |
+| D3 | GetSales outbound demo | 36 workflows (four ICPs, by English, Czech and German, by three tactics) in a GetSales folder apart from the operator's own, each opening with a custom first message, a variable imported as a field of the lead CSV. Nothing is tooled to run, nothing sends and no classifier is trained: the operator screen-records himself scrolling through the 36, explaining how a classifier could route leads into them, and opening the top one to show its first messages. The pipeline is demonstrated up to the first message: the six stakeholders from D2, the CSV, enrichment and the computed first message for each. The output is a video clipped from the rig recordings. The operator alerts the six by hand, outside this demo. |
+| D4 | Blog pipeline (retired) | Retired on 2 Nov by the operator (DI-8): there is no blog pipeline separate from the blogs, and the only deliverable is the blog posts (D5). Its tooling stays in `blog-pipeline\` for D5 to use. |
+| D5 | Two blog articles | Two posts, each from 15 minutes of operator dictation, brought to near-final for him to finish off (the last 10%). |
 | D6 | Canva LinkedIn templates | LinkedIn visual asset templates in Canva, in Addvery's brand. A redo of an earlier pixel-perfect branded-assets demo (reference on the operator's GitHub). |
 | D7 | LinkedIn content creation demo | Shows LinkedIn content creation in Addvery's voice. References the operator's subjective brand capture repo on GitHub. |
 | D8 | Website | The live site, with a section per key stakeholder. A website subdirectory already exists, and this builds it out with more functionality. Without being prompted, it keeps getting clearer about what is being built, for example by showing the deliverables so visitors know what to expect. |
@@ -118,17 +118,17 @@ Signed off by Alex in DI-5 on 2 Nov, with DoD-4 loosened at his request, and wri
 | DoD-9 | The scraping demo's research output exists in a form other specs read, and is on their reading lists. | The output files exist; the specs that consume it name them in "Routing and resources". | D1 | S-D1 | live |
 | DoD-10 | Addvery's top six stakeholders are identified and confirmed by the operator. | The six are listed in `Addvery Research\` and marked confirmed by Alex. | D2 | S-D2 (operator-owned) | live |
 | DoD-11 | An Addvery brand capture (voice and visual identity) exists for the LinkedIn templates and content demos to use. | The capture is in `Addvery Research\`, and S-D6 and S-D7 name it as a resource. | D6, D7 | S-D2 (operator-owned) | live |
-| DoD-12 | Ten ICPs, each with a drip sequence, and a classifier that routes each lead to the right automation are set up in GetSales, with no automation sending except the live run. | GetSales shows the ten sequences and the classifier; no send outside the live run. | D3 | S-D3 | live |
-| DoD-13 | The full pipeline (Sales Navigator, CSV export, enrichment from D2, a computed first-message variable, import into GetSales) ran live on the six stakeholders through the operator's own sender profile, and a video clipped from the rig recordings shows it. | The clip exists and is on the site; it shows each pipeline stage. | D3, D9 | S-D3, S-D9 | live |
-| DoD-14 | Fifteen minutes of operator dictation turns into a good-looking, near-final blog post, with only the last 10% left to him. | One test dictation produced a post Alex accepted as near-final. | D4 | S-D4 | live |
-| DoD-15 | Three blog posts, each from a 15-minute dictation through the blog pipeline and finished by the operator, are published on the site. | The three posts are live on the site. | D5, D8 | S-D5 | live |
+| DoD-12 | 36 workflows (four ICPs, by English, Czech and German, by three tactics), each opening with a custom first message, sit in a GetSales folder apart from the operator's own, with no automation sending. Nothing is tooled to run and no classifier is trained. | GetSales shows the folder and the 36 workflows, the top one with its first messages; nothing sends from GetSales. | D3 | S-D3 | live |
+| DoD-13 | The pipeline is demonstrated up to the computed first message (the six stakeholders identified from the operator's research, the CSV, enrichment, and custom message 1 for each), together with a walkthrough of the 36 workflows in GetSales, and a video clipped from the operator's rig recording shows both. | The clip exists and is on the site; it shows each stage up to the first message, and the walkthrough. | D3, D9 | S-D3, S-D9 | live |
+| DoD-14 | Fifteen minutes of operator dictation turns into a good-looking, near-final blog post, with only the last 10% left to him. | One test dictation produced a post Alex accepted as near-final. | D4 | S-D4 | retired |
+| DoD-15 | Two blog posts, each from a 15-minute dictation and finished by the operator, are published on the site. | The two posts are live on the site. | D5, D8 | S-D5 | live |
 | DoD-16 | LinkedIn visual asset templates in Canva, in Addvery's brand, have the operator's brand sign-off. | The templates exist in Canva; Alex's sign-off is recorded. | D6 | S-D6 | live |
 | DoD-17 | A demo of LinkedIn content created in Addvery's voice, built on the operator's brand capture repo, has his brand sign-off and is shown on the site. | The demo is on the site; Alex's sign-off is recorded. | D7, D8 | S-D7 | live |
 | DoD-18 | The live site, in Addvery's branding, has a section for each of the six stakeholders from D2. | Six stakeholder sections on the live site, matching DoD-10's list. | D8, D2 | S-D8 | live |
 | DoD-19 | The site shows every deliverable and its status, so visitors know what to expect, and kept getting clearer through the day without the operator asking. | The site has a deliverables view; the site's history shows additions made from build requests, not only from Alex's instructions. | D8, D9 | S-D8, S-D9 | live |
 | DoD-20 | Every processed rig session was reviewed, and its most valuable moments reached the site through build requests to the website session, at least every two hours while sessions were being filed. | `legibility\posted.md` covers every filed session; the gaps between posts while filing never exceed two hours. | D9 | S-D9 | live |
 | DoD-21 | A recording of the operator designing in Canva, made near the end, is on the site. | The video is live on the site. | D10, D8 | S-D10 | live |
-| DoD-22 | Nothing published (the site, its videos, the public repo) shows secrets, the Apify proposal or the operator's own GetSales outbound. | A check of the site, the published videos and the repo finds none of them. | D1 to D10 | S-D8, S-D9 | live |
+| DoD-22 | Nothing published (the site, its videos, the public repo) shows secrets, the Apify proposal, or the operator's own GetSales outbound outside the demo folder. | A check of the site, the published videos and the repo finds none of them displayed; the charter and specs may name them. Material from public sources, the six stakeholders' public profiles included, may be shown. | D1 to D10 | S-D8, S-D9 | live |
 
 ## Spec outline
 
@@ -145,9 +145,9 @@ Spec IDs mirror deliverable IDs: S0 to S2 for M0 to M2, and S-D1 to S-D10 for D1
 | S2 — Project orchestrator (meta) | Owns the skills that change this charter and propagate each change to everything dependent on it. | S0 | Nothing beyond review |
 | S-D1 — Scraping research demo | Demonstrates scraping and research on the Apify API. Early, because others consume its output. | S1; S-D2 (the operator's own scraping and summary, in `Addvery Research\`) | Screen care around the recent proposal |
 | S-D2 — Company and stakeholder research (operator-owned) | Operator-owned, with no spec or session (DI-2 Q2.2, DI-3 Q3.3): the operator researches Addvery, finds its top six stakeholders and captures its brand himself, one-on-one, in `Addvery Research\`, which is local and git-ignored. He runs the scraping for it there too, and S-D1 presents his scraping summary (DI-6). | — | All of it: he runs it himself, one-on-one |
-| S-D3 — GetSales outbound demo | 10 ICPs and sequences, a lead classifier, and the full Sales Navigator to GetSales pipeline, run live on the six stakeholders. Delivered as a video. | S-D2; rig recordings; S-D9 for the clip | Running the live setup on camera |
-| S-D4 — Blog pipeline | Turns 15 minutes of dictation into a near-final blog post. | S1 | One test dictation |
-| S-D5 — Three blog articles | Three posts through the S-D4 pipeline. | S-D4 | Three 15-minute dictations and the last 10% of each post |
+| S-D3 — GetSales outbound demo | 36 workflows (four ICPs, three languages, three tactics) in a GetSales folder apart from the operator's own, each opening with a custom first message, explained in his screen-recorded walkthrough, and the pipeline up to the computed first message for the six. Nothing sends. Delivered as a video. | S-D2; rig recordings; S-D9 for the clip | Recording the walkthrough of the 36 workflows on camera |
+| S-D4 — Blog pipeline (retired) | Retired on 2 Nov (DI-8 Q8.1): no blog pipeline separate from the blogs. Its tooling stays in `blog-pipeline\` for S-D5. | S1 | Nothing |
+| S-D5 — Two blog articles | Two posts, each from a 15-minute dictation, brought to near-final. | S1 | Two 15-minute dictations and the last 10% of each post |
 | S-D6 — Canva LinkedIn templates | Addvery-branded LinkedIn templates in Canva, redoing the earlier pixel-perfect assets demo. | Addvery brand capture, from S-D2 (the operator's own, in `Addvery Research\`) | Brand sign-off |
 | S-D7 — LinkedIn content creation demo | LinkedIn content in Addvery's voice, built on the subjective brand capture repo. | Addvery brand capture, from S-D2 (the operator's own, in `Addvery Research\`) | Brand sign-off |
 | S-D8 — Website | Builds out the existing website subdirectory: stakeholder sections, and a growing, legible picture of the project. | S0; S-D2; requests from S-D9 | Periodic review |
@@ -211,11 +211,11 @@ S0 runs alone; after it, everything with its inputs ready runs at once. Work tha
 3. **S-D1 Scraping and S-D2 Addvery research**, first in wave 2, because others consume them. S-D2 has no session: the operator runs it himself in `Addvery Research\`.
 4. **Everything else as its inputs arrive:**
    - S-D2, from `Addvery Research\`, feeds S-D1 (his scraping summary), S-D3 (GetSales) and S-D8 (website).
-   - S-D4 (blog pipeline) feeds S-D5 (three articles).
+   - S-D5 (two articles) runs on the operator's two dictations, with the retired blog pipeline's tooling.
    - Brand capture, part of S-D2 and also in `Addvery Research\`, feeds S-D6 (Canva templates) and S-D7 (LinkedIn content). S-D6 feeds S-D10 (Canva video).
    - S-D9 (legibility analyzer) runs continuously off the rig and feeds S-D8.
 
-**Operator scenes to shoot today:** the S0 directory approval, S1 research details, his own S-D2 work in `Addvery Research\` (Addvery, the six stakeholders and brand capture), the S-D3 live run, the S-D4 test dictation and the three S-D5 dictations, brand sign-off, and the S-D10 Canva recording.
+**Operator scenes to shoot today:** the S0 directory approval, S1 research details, his own S-D2 work in `Addvery Research\` (Addvery, the six stakeholders and brand capture), the S-D3 walkthrough of the 36 workflows, the two S-D5 dictations, brand sign-off, and the S-D10 Canva recording.
 
 ## Standing decisions and constraints
 
@@ -247,7 +247,7 @@ The biggest risk is something sensitive showing up in a recording that gets publ
 - **Two copies of the charter.** After the handoff, the Markdown file in the project root is the source of truth, and this app doc is a snapshot. S2's skills edit the file.
 - **Rig spec is not in the folder.** The Hackathon Capture Rig Spec is a Claude app doc that terminal sessions can't open. Export it into the project root, or point S-D9 at `rig\RUNBOOK.md`.
 
-- [ ] Does Ivana still get a view-only GetSales account, or does the D3 video replace it?
+- [x] Does Ivana still get a view-only GetSales account, or does the D3 video replace it? Answered: the video replaces it, with no view-only login (A7.2, DI-7).
 - [ ] What is D3's second custom message? The first carries the variable computed before import.
 - [x] Who owns Addvery brand capture: S1 as shared research, or S-D2? Answered: the operator, as part of S-D2, which he runs himself in `Addvery Research\` with no spec (DI-2 Q2.2, DI-3 Q3.3).
 - [ ] What are the exact hours of today's operator window?
