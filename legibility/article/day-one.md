@@ -14,7 +14,7 @@ cover:
 tags: ["ai-agents", "gtm-engineering", "build-in-public"]
 reading_minutes: 6
 ---
-<!-- Drafted by s-d9-legibility from the rig transcripts S01 to S11 and the project's logs (legibility\local\article\). Clip ids from website (contentips.json). -->
+<!-- Drafted by s-d9-legibility from the rig transcripts S01 to S11 and the project's logs (legibility\local\article\). Clip ids from website (website\content\clips.json). -->
 
 On 2 November I applied for a job by building the work live. For one day I recorded myself directing about 15 Claude Code sessions, each with one job, while they built demos for Addvery, the company I was applying to, and a public site told anyone following along what was happening. I'd spent six months building my own way of working with AI. That day I left most of it in the drawer, to see if it still gave me an edge.
 
