@@ -14,14 +14,15 @@
       "what_this_is": "Good outreach starts with knowing the company and who makes the decisions. This demo is deep research on one company and the people likely to be involved in hiring. Alex is running it himself today, and what it finds feeds the outbound demo and this website."
     },
     "d3": {
-      "what_this_is": "Outbound that gets the right message to the right person without anyone sorting leads by hand. Every lead is matched to the customer profile it fits, and gets the sequence made for that profile, opening with a first message personalized for that lead.",
-      "pending": "This demo is being built today. Its video lands here when it's ready."
+      "what_this_is": "Outbound that gets the right message to the right person without anyone sorting leads by hand. 36 workflows cover four customer profiles, three languages and three approaches, and each one opens with a first message written for that lead before it's imported.",
+      "pending": "Alex's recorded walkthrough of the 36 workflows lands here when it's ready."
     },
     "d4": {
-      "what_this_is": "Most experts don't have time to write. This pipeline turns 15 minutes of Alex talking into a near-finished blog post, and he does the last 10% himself."
+      "what_this_is": "Alex retired this demo at 16:45. There's no blog pipeline apart from the posts themselves, so the two blog articles (demo 5) are the deliverable, and this pipeline's tools went to them.",
+      "pending": "Nothing more lands here. The articles are demo 5."
     },
     "d5": {
-      "what_this_is": "The proof that the blog pipeline works: three articles made with it, on the ideas behind this project. They follow the pipeline, so they come later in the day.",
+      "what_this_is": "Most experts don't have time to write. Each of these two posts starts as 15 minutes of Alex talking and is brought to near-final. He writes the last 10% himself.",
       "pending": "The articles land here as each one is finished."
     },
     "d6": {

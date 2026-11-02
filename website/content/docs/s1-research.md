@@ -113,7 +113,7 @@ For scale, the earlier reports ran about 275 to 480 lines for literature researc
 - Read-only live probes of connected tools (the GetSales and Vercel MCPs). No Apify connector is attached; Apify comes from its public docs.
 
 **Rules for every item.**
-- Screen care: assume anything on screen can be published. Never open private material. No real data beyond the charter's scope.
+- Screen care: assume anything on screen can be published. Never open the Apify proposal or Alex's own GetSales outbound. No real data beyond the charter's scope.
 - `..\Addvery Research\` is read from disk only where an approved item needs it. Nothing from it is copied into a tracked file.
 - Each topic is researched once. A second spec that needs it is added to the readers, not given a new item.
 
@@ -148,6 +148,10 @@ Readers: <spec ids>      Drawn from: <problem, scope, DoD ids>
 5. Then send `TASK DONE S1: <file name>` to `answer-desk`, and `ARCHIVE <file name>: readers <spec ids>` to `orchestration`.
 
 `Approved by` reads `OT-<nn>`, or `Alex, direct`.
+
+**Superseded at 17:00 by Alex's reset rules** (`..\answer-desk\ASKING.md`, top): no research list goes to Alex as a gate any more, easy calls are S1's own (decided and logged in section 8), and there's no 18:00 cut-off ("We're working all night"). `orchestration`'s RESTART at 17:13 adds: after L-03, start no new research unless Alex asks for it. So the steps above apply only if Alex himself asks for a new list. L-04 and L-06 were withdrawn unticked at 17:03 and don't run.
+
+**The feedback section counts** (Alex at the desk, 16:36: "Even if I approve something that doesn't include what I mentioned in the feedback section, it's approved along with whatever's in the feedback section"). An approval includes whatever he wrote in the changes fence, so a ticked box with a note runs with the note applied, with no second freeze. An unticked box with a note that tells S1 to start runs the same way, logged in section 8. Non-research parts of a note go to `orchestration` and the owning spec verbatim, never acted on by S1.
 
 ## 6. Findings store and index
 
@@ -184,6 +188,8 @@ Research never runs on a default (DI-3 Q3.4): an unapproved list waits for Alex,
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
 | 14:41, no ASK (forking gate G1). G1 was reached at 14:38 (S1-Q5 answered, the first list approved). The fork is deferred to G2, when the first list's synthesis is in DIRECTORY.md. | The seven L-01 subagents started at 14:40 report their results to this session. A successor wouldn't receive those notices. The findings are due to `orchestration` by 16:00. | Forking mid-run would add a handoff right before a deadline, and the review would have to work from files with no subagent replies. Context is still well under half (G4 is the backstop). | Small. If this session's context runs short first, G4 forces the fork anyway, and the reports are on disk for the successor to review. |
+| 16:32, no ASK (OT-09). Alex ticked "I approve" and also wrote changes. S1 applied them and ran L-05 at once, without re-freezing the snapshot and waiting for a second tick (section 5 step 4). | His note ends "Look take whatever you need from this and just run. Go, go, go", and the box is ticked. The changes narrow R1 to one repo and add a lower-priority R4 sub-question, both applied verbatim in the list's `Approved by` line. The Ivana direction (S-D7 scope) was relayed to `orchestration` and S-D7, not acted on. | A second round would block a list he explicitly told S1 to run, before his 16:45 brand sign-off, and he's swamped. The list format already allows "changes applied" as approval. | Small. If he meant something else by a change, one item is re-run (about 15 minutes); the other six are unaffected. |
+| 16:36, no ASK (OT-04). Alex left the box unticked but wrote changes; S1 ran L-03 with them applied (R5, the best skill to write blogs with; R6, the research base for the first article) and relayed the rest (the copywriting-skill rule, two articles not three, the LinkedIn imagery) to `orchestration` and S-D4. | His note says "you can start researching for the base of the articles" and "you can get working on that one"; his desk rule of 16:36 makes the feedback section part of the approval. | It follows his words; waiting for a tick he didn't think he needed would hold the research behind a dictation he may give soon. | Small. If he wanted R1 to R4 dropped, four reports are spare; nothing outside `research\` changed. |
 
 ## 9. Definition of done
 

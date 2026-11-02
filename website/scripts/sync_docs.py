@@ -1,11 +1,11 @@
-"""Copy the charter and the meta specs into the site, with private material redacted.
+"""Copy the charter and the meta specs into the site, refusing anything shaped like a secret.
 
     python scripts\\sync_docs.py
 
 Reads the project's own files (never edits them) and writes content/docs/<slug>.md plus
-content/docs/index.json. Each doc gets its redactions, then a deny-list check: if any
-deny-listed term survives (because a source was reworded), nothing is written and the
-script exits 1, so a changed source can't leak through. Run it, check, then deploy.
+content/docs/index.json. Each doc gets a secrets check: if anything shaped like a key or
+token appears, nothing is written and the script exits 1 (it prints the file and line,
+never the match). Run it, check, then deploy.
 """
 import json
 import re
@@ -28,33 +28,21 @@ DOCS = [
      "blurb": "Keeps the plan consistent as deliverables are added or changed."},
 ]
 
-# The charter's risk rule: keep the Apify proposal and Alex's own GetSales outbound off
-# screen. Also no names of people at the company, and nothing about who the live run targets.
-REDACTIONS = [
-    (" (the one exception is the D3 live run on six stakeholders)", ""),
-    (" Live run: the six stakeholders from D2 go through the operator's own sender profile.", ""),
-    (", run live on the six stakeholders", ""),
-    ("Screen care around the recent proposal", "Screen care"),
-    ("keep the Apify proposal and the operator's own GetSales outbound off screen.", "keep private material off screen."),
-    ("Never open the Apify proposal or Alex's own GetSales outbound.", "Never open private material."),
-    # DoD-13 and DoD-22, added to the charter by S2's change C03 (2 Nov, 14:25).
-    (" on the six stakeholders through the operator's own sender profile", ""),
-    ("secrets, the Apify proposal or the operator's own GetSales outbound", "secrets or private material"),
+# Since Alex's reset rules (2 Nov, 17:00) the only hard exclusions are DoD-22's three:
+# secrets, the Apify proposal, and his own GetSales outbound outside the demo folder.
+# DoD-22 lets the charter and specs *name* them, and public facts (names of people at the
+# company included) may be shown, so no wording is redacted any more. What the copies must
+# never carry is a secret, or the text of the proposal or of his own outbound, which the
+# specs don't hold. The check below stops the write if anything shaped like a secret appears.
+DENY_PATTERNS = [
+    re.compile(r"vercel_blob_rw_[A-Za-z0-9_]{8,}"),
+    re.compile(r"\bsk-(?:ant-)?[A-Za-z0-9_-]{20,}"),
+    re.compile(r"\bgh[pousr]_[A-Za-z0-9]{20,}"),
+    re.compile(r"\bapify_api_[A-Za-z0-9]{10,}"),
+    re.compile(r"\bAIza[0-9A-Za-z_-]{30,}"),
+    re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"),
+    re.compile(r"(?i)\b(?:api[_-]?key|secret|token|password)\s*[=:]\s*['\"]?[A-Za-z0-9_\-]{16,}"),
 ]
-REDACT_LINES = [
-    re.compile(r"^.*\bIvana\b.*\n?", re.MULTILINE),
-    # Change-log and decision table rows about the risk rule itself (S2's C04/C05, 16:3x).
-    re.compile(r"^\|.*\b(?:proposal|own GetSales outbound)\b.*\n?", re.MULTILINE | re.IGNORECASE),
-]
-DENY = ["proposal", "ivana", "sender profile", "own getsales outbound", "live run on"]
-
-
-def redact(text: str) -> str:
-    for old, new in REDACTIONS:
-        text = text.replace(old, new)
-    for pattern in REDACT_LINES:
-        text = pattern.sub("", text)
-    return text
 
 
 def title_of(text: str, fallback: str) -> str:
@@ -68,15 +56,14 @@ def main() -> int:
     out, problems = {}, []
     for doc in DOCS:
         source = ROOT / doc["source"]
-        text = redact(source.read_text(encoding="utf-8"))
-        lower = text.lower()
-        for term in DENY:
-            for m in re.finditer(re.escape(term), lower):
+        text = source.read_text(encoding="utf-8")
+        for i, pattern in enumerate(DENY_PATTERNS):
+            for m in pattern.finditer(text):
                 line = text[: m.start()].count("\n") + 1
-                problems.append(f"{doc['source']}:{line}: '{term}' survived redaction")
+                problems.append(f"{doc['source']}:{line}: something shaped like a secret (pattern {i})")
         out[doc["slug"]] = (doc, text)
     if problems:
-        print("Not written. Add a redaction for each of these, then rerun:")
+        print("Not written. Remove the secret from each source, then rerun:")
         print("\n".join(problems))
         return 1
     OUT.mkdir(parents=True, exist_ok=True)
