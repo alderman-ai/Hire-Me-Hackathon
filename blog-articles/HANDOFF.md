@@ -1,45 +1,43 @@
-# S-D5 handoff, 2 Nov 17:15 Prague
+# S-D5 handoff, 2 Nov 19:02 Prague
 
-From session 1bffb92f (launched 16:41, groundwork only) to the fresh `s-d5-blog-articles`. Why: `orchestration`'s RESTART at 17:13 asked for a handoff first, so the new session loads `frontend-design` and the Claude Docs connector.
+From session 5b465de8 (17:16 to 19:02) to the fresh `s-d5-blog-articles`. Why: forking gate F2 (context about half full, orchestration's context watch at 19:00), while nothing is in flight.
 
-## Read first, in this order
-1. `CLAUDE.md`, then the **reset rules at the top of `..\answer-desk\ASKING.md`** (Alex, 17:00). They override older text in `SPEC.md`: easy calls are yours (decide and log), no intakes or plan approvals go to Alex, public sources are fine, written work goes in Claude Docs, design work needs a design skill, and one brand source for visuals. Pokes only when blocked, at most every 30 minutes. No 18:00 cut-off.
-2. `SPEC.md`: §1a (Alex's OT-04 decisions, verbatim), §7a (the visuals plan) and §9 (decision log). Parts of §1, §6 to §8 and Appendix A predate the reset and S-D4's retirement; the to-do below says what to change.
-3. This file.
+## First: watch Alex's three reviews
 
-## What orchestration decided at RESTART (17:13): log these in §9 first
-- The held intake (Appendix A) is **dropped**. No intake goes to Alex.
-- C10 is applied: the charter's D5 and DoD-15 now say **two posts**.
-- `blog-pipeline\` is **S-D5's now**: use and edit it directly. `s-d4-blog-pipeline` is stopping.
-- **Dictation:** when ready, send `answer-desk` one line: `TASK s-d5-blog-articles: blog dictation 1 is ready to record: <topic and the talking prompts, 3 lines>`. The same for 2.
-- **Drafts go in a Claude Doc.** Invoke the copy skill first, then `anthropic-skills:docs` before any Docs call. Alex does his last 10% in the Doc, and **his comment on it is the sign-off**; the comment reaches the session that made the Doc. Then read the final text back into the repo. Posts go live after his comment.
-- **Article 1's rung and where the ask goes are S-D5's call,** logged. My recommendation, for both articles alike: the conclusion lands on "someone inside who can maintain and extend it" (L-03 W3 C4 A, which fits a job application), and the interest is named once, plainly, in the opening, with no ask at the end (C5 C), since the site's own ask carries the pitch. Article 2's outline already recommends C5 C.
-- **No ComfyUI run:** coded visuals only. The `humanizer` skill is for the morning.
-- **Skills on** (SKILL ON, 17:13): `marketing:content-creation`, `marketing:brand-review`, `frontend-design`, `design:design-critique`, `anthropic-skills:docs`. Name the skill in every subagent prompt that writes copy or does design, with the instruction to invoke it first.
+All three entries are with Alex for his last 10% / sign-off. **Comments on a Doc reach the session that made it, which was me, so they may not reach you.** Check them yourself: at startup, then about every 10 minutes while you're otherwise idle (`mcp__claude_ai_Claude_Docs__query`, object `utterance`, under each body id), and run `ArtifactComments` `watch` on the taste-capture page so comments sent to Claude wake you.
+
+| Entry | Link | Doc id | Body id | Near-final source |
+| --- | --- | --- | --- | --- |
+| Article 1: "AI workflows are always a managed service" | https://claude.ai/artifact/6dbQjnECpGbtQw54cHhJMp | 2d99acab-0fdb-4591-9b95-c537a04eb4fb | 58269e1b-76ee | `drafts\A-01\post.md` (8babe9e) |
+| Article 2: "If AI won't replace half your team, put it in your pipeline" | https://claude.ai/artifact/17rFReWZZesyLe94msLskk | 00f4d02e-c0db-4c39-9920-9eb99c64ca49 | d76b2d5c-51f0 | `drafts\A-02\post.md` (f3feb55) |
+| Taste-capture: "How to refine AI slop into AI ops" (kind showcase, deliverable d7) | https://claude.ai/artifact/PkSgwgetjps3sVoNST26ma (a rendered review page, not a Doc) | n/a | n/a | `posts\03-how-to-refine-ai-slop-into-ai-ops.md` and `posts\assets\how-to-refine-ai-slop-into-ai-ops\` (0d333b9) |
+
+Both Docs were sent at rev 4. Each has "Before you edit" on top (five notes, title and opening options, the cold read's marks, how to sign off), then the line **"The post starts below this line"**, then the post: its title as H2, sections as H3. `local\docs\DOCS.md` (git-ignored) repeats the ids and the readback mapping.
+
+`orch-alex-prep` tracks all three for Alex (sent 18:58). The desk showed all three TASK lines. No pokes are out.
+
+## On each sign-off ("approved", or edits plus a comment)
+
+1. Reply in his comment thread (a doc comment under that root, per the Docs connector's rules), saying what happens next.
+2. Read the Doc back from "The post starts below this line" and map it to POST-FORMAT v1.5: H3 to `##`; "Key points" plus bullets to `> [!summary]`; a blockquote ending in an italic "Alex Alderman, ..." line to `> [!quote]` (quotation line, then attribution line); "Pull quote:" blockquote to `> [!pull]`; article 1's bold "Diagram, drawn on the site as a vertical scale ..." paragraph plus its numbered list to `> [!diagram] scale` (caption after the colon); bold `[Alex: ...]` notes must be gone (or ask him in the thread). Keep the front matter from `drafts\A-0n\post.md`; if he changed the title, update title, slug, `title_lines` and `accent`.
+3. Write `posts\0n-<slug>.md`: `status: "published"`, today's date, `share_changed_by_alex` from `python -I blog-pipeline\scripts\counts.py --changed blog-articles\drafts\A-0n\post.md <posts file>`. Run `validate.py` (exit 0) and `scan.py` (read the hits: a run of years read as a phone number and "About Me" read as a name are known false positives). Commit.
+4. `BUILD S-D5-B<n>` to `website` (B1 and B2 are BUILT; the next is **B3**): copy the posts file unchanged to `website\content\demos\<slug>.md` (and, for the taste-capture entry, `posts\assets\<slug>\` to `website\public\demos-assets\<slug>\`), serve at `/demos/<slug>`. For article 2, ask to link it with the short version s-d7 writes for the site's About-me section (orchestration, about 18:15). Wait for BUILT, then curl the live page's head (its own og:title, og:url, og:image) before anything is shared. Log it in `PUBLISHED.md`.
+5. For the taste page: if he asks for changes, edit `posts\03-...md` or the figures (sources and rebuild scripts in `local\taste\src\` and `local\taste\tools\`: `build_figures.py`, `build_review.py --linked` for the publishable review page), then republish the review page with the Artifact tool to the same URL. Open notes from its builder: "AI ops" can be misread as AIOps; the builder added a link to his public taste-capture repo (cut if he says); on the site the flow diagram's step padding is overridden by a `website` CSS rule (tell `website` if it shows on the preview).
+6. When all are live: `DONE S-D5: <URLs>` to `orchestration`, roster row to Finished, stop.
 
 ## State
-| Article | Topic (Alex's, §1a) | Brief | Dictation | Draft | Published |
-| --- | --- | --- | --- | --- | --- |
-| 1 | AI workflows are always a managed service; the vertical AI-skill slider | `briefs\A-01-base.md`, committed be9b1f6, from L-03 R6 and W3. About 1,200 words. | Not yet | — | — |
-| 2 | GTM engineers answer the AI era's jobs question; AI pays through revenue | `briefs\A-02-outline.md`, committed ef2ae6a, from Alex's note. L-03 R7 (its research base) accepted 17:16: `..\research\global\L-03-R7-article-2-base.md`, not yet folded in. | Not yet | — | — |
 
-**Visuals** (`local\visuals\`, git-ignored; `local\visuals\README.md` has the details): six coded mockups plus `out\contact-sheet.png` (sent to Alex 17:05). Per article: a 1080×1350 teaser, a 1200×630 link card and a 1080×1350 diagram card. Backdrop plus slot map plus AI text in `content\A-0n.json`, with budgets measured by binary search. Render with `node "blog-articles\local\visuals\tools\render.mjs"` (`--measure`, `--stress`). **They use S-D6's canva-templates tokens (Inter), which are no longer the brand source**: reset rule 6 makes `website\local\addvery\brand\` (`BRAND.md`, `tokens.css`; Outfit body, Inter Tight display, the violet-to-orchid gradient leading) the one source. Open points: check the slider's rung order (Alex's top is "external building"; the frameworks put in-house building on top); the link card uses 96px margins on every side; "labor" is spelled as in Alex's note.
-
-**ComfyUI:** never run, nothing spent (§9, 16:58).
-
-**In flight:** nothing at the desk, and no monitors, loops or crons. Pending from others: the L-03 synthesis from `s1-research` (about 17:26, written for S-D5 alone now that S-D4 has retired), and FINDINGS for L-05 R1 coming onto the reading list from `orchestration`.
-
-**R7 in brief** (from `s1-research`, 17:16): the promise and the practice split (AI is the most-cited reason for announced US job cuts in 2026, yet most executives surveyed say it hasn't changed their headcount). "ROI comes from cost or revenue" holds, and the revenue side mostly backs Alex (McKinsey, PwC). The weakest link: no independent study backs "GTM engineers keep the whole team growing"; vendors often sell GTM engineering as an SDR-team replacement. Several figures are "snippet only" and must be checked against the originals before they go in a post. No EU or Czech data.
-
-## To-do, in order
-1. **Log** the RESTART decisions above in §9, and update §1, Appendix A (dropped), §6 and §8 (no `s-d4-blog-pipeline` in the announcement list). Decide and log the rung and the ask. Commit.
-2. **Visuals:** invoke `frontend-design`, then re-skin the templates from `website\local\addvery\brand\` (link to it, never copy values into a tracked file), re-render, and run `design:design-critique` and `design:accessibility-review`. Write `VISUALS.md` (tracked, role names only: formats, slots and budgets, the text used, how to re-render). Commit.
-3. **Briefs:** already committed. Refresh `briefs\A-02-outline.md` into a base from R7 (and the L-03 synthesis when it lands), under `marketing:content-creation`, with the same rules as article 1's base: the facts are options for Alex to say aloud, and the objection R7 flags (GTM engineering sold as an SDR replacement) becomes one he answers. Commit.
-4. **BUILD S-D5-B1** to `website`: the blog template. The text is in `..\blog-pipeline\PIPELINE.md` §4, plus per-post preview tags and the `og:image` from the cover (POST-FORMAT v1.1 §5; L-01 W2 says previews must be right before anyone shares a link). It should use the Addvery brand tokens the site already carries (`website\app\addvery-tokens.css`). Wait for `BUILT` or `REFUSED`.
-5. **Dictation 1:** write the dictation task per `..\blog-pipeline\PIPELINE.md` steps 1 and 2 (stage 0 talking prompts from `briefs\A-01-base.md`, plus its extra prompts), then send the desk the TASK line above. Then dictation 2 the same way.
-6. **After each dictation:** run the pipeline's stages (`..\blog-pipeline\prompts\`, `{SKILL}` = `marketing:content-creation`), put the post in a Claude Doc (copy skill, then `anthropic-skills:docs`), tell the desk it's ready for his last 10%, wait for his comment, read the final text back into `posts\`, run the scan, and publish with a BUILD. The share of words he changed still goes on the post (§9).
+- **Spec:** `SPEC.md` §9 logs every decision since the RESTART (intake dropped; Docs; rung and ask; slider order; posts written from Alex's recorded words; block quotes and figures in the format; the third entry; a clock note: my logged times between 17:50 and 18:55 ran ahead, commit times are exact). The "Run steps since the RESTART" list in §7 is current.
+- **Pipeline:** `..\blog-pipeline\` is S-D5's. PIPELINE v1 (compiled-source mode, cold read), POST-FORMAT v1.5 (`kind`, `deliverable`, `video`, `poster`; titles at most 64, kickers at most 28; `[!video]`, `[!quote]`, `[!figure]`; `made` required only for articles; the site's `[!post]`/`[!carousel]` noted). validate.py and counts.py match.
+- **Sources:** `local\sources\A-0n.md` (Alex's own words compiled from rig transcripts S01 to S11, typed messages and written answers) and every stage file in `local\drafts\A-0n\` stay local: rig transcripts are kept out of the public repo.
+- **Site:** template BUILT (`/demos`, "GTM demos", entries `/demos/<slug>` from `website\content\demos\`); B2 BUILT (video clips, feature quotes, figures). `/demos` is live.
+- **Visuals:** six LinkedIn companion images re-skinned to the website's Addvery kit (`VISUALS.md`, 9d53496). Their text is redone from each finished post; the teasers' lower half is empty glow (open point), and "Read it on the blog" becomes the section's name ("GTM demos").
+- **Dictation pages:** optional now (marked on both pages); fold in only if Alex records one.
+- **Skills:** `frontend-design:frontend-design` should load by name in a fresh session (orchestration installed it per project); before that it was followed from its SKILL.md and logged. Copy work: `marketing:content-creation` first, then `anthropic-skills:docs` before any Docs call.
 
 ## Messages since the last fork
-- `orchestration`: SKILL ON at 16:47 (content-creation), HOLD at 16:47, RESTART at 17:13. My STATUS replies at about 17:00 and 17:06.
-- `s1-research`: R6 accepted at 16:52, used for article 1's base; R7 accepted at 17:16; the synthesis follows.
-- `s-d4-blog-pipeline`: PIPELINE v0 at 621cd01, then retired (Alex in DI-8 question 1: "Anything about blog pipelines is dead. The only deliverable is blogs.").
+
+- `orchestration`: RESTART decisions; C13 notes (fixed); DI-10 Q10.10 (shared entry template) and Q10.5 (article 1 before the Ivana meeting); write from transcripts (about 18:15); the taste-capture article; fan out; split into three at 18:56 (`orchestration` master, `orch-site-map`, `orch-alex-prep` for everything that needs Alex); context watch at 19:00.
+- `website`: B1 BUILT (shared entry template), B2 BUILT with both amendments (76b48f9).
+- `s1-research`: the L-03 synthesis (confirmed received).
+- `answer-desk`: every TASK shown; dictations marked optional and the 18:40 poke withdrawn.
