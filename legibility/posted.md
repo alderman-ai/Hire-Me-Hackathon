@@ -4,7 +4,7 @@ Every post sent to the website, and every item deliberately left out.
 
 | Id | What | Source | Why it's worth showing | Live at |
 | --- | --- | --- | --- | --- |
-| P1 | "What's being built today": how the project runs, the 3 tooling pieces and 10 demos, each with a status at 13:50 | S04 at 08:23; CHARTER.md; SESSIONS.md; git log | The site only had the intro video. Alex asked on camera (S04 08:23) for the deliverables on the site "so people kind of know what to expect". | 13:50 (website e07e790), content in website\contentuild.json |
+| P1 | "What's being built today": how the project runs, the 3 tooling pieces and 10 demos, each with a status at 13:50 | S04 at 08:23; CHARTER.md; SESSIONS.md; git log | The site only had the intro video. Alex asked on camera (S04 08:23) for the deliverables on the site "so people kind of know what to expect". | 13:50 (website e07e790), content in website\content\build.json |
 | P2 | "The story so far": timeline S01 to S06 with one quote each, the 13:20 deletion and its recovery, bootstrap done; P1 statuses updated to 13:51 | S01 to S06 transcripts; 13:27 recovery notice; git log ea9017e, 0619773, 80c145a | Followers see the best moments in Alex's own words without watching hours of video, and the incident shows how the setup recovers. | sent 13:51, waiting for BUILT |
 
 ## Left out
