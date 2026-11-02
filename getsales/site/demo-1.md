@@ -47,7 +47,7 @@ The workflows sit in their own GetSales folder. The four ICPs come from Addvery'
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflows-folder.png
 > Ten of the 36 workflows in the GetSales demo folder, each named Demo, ICP, language and tactic, every one switched off
-> One naming scheme, so the folder sorts itself: Demo · ICP · language · tactic
+> Every toggle is off: none of the 36 is running
 
 Each ICP has three tactics. Signal: something just happened at their company. Problem: a known pain, tied to one fact about them. Proof: an Addvery case that looks like them.
 
@@ -69,7 +69,7 @@ The first message is written before import, one lead at a time, from the routing
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/custom-field.png
 > The GetSales custom contact field custom_message_1, with a contacts count of 0
-> An ordinary custom field, filled per lead at import; no contact has one yet
+> Filled per lead before import by the client's own LLM, then a person checks a sample
 
 The leads in the video are fictional, with one public fact each and nothing private. Two of them, as the CSV carries them:
 

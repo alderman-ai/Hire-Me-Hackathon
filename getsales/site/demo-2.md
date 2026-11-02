@@ -39,12 +39,12 @@ Three rules do most of the work, in this order:
 - A signal under 90 days old makes the lead signal-led. A job post 27 days old counts; an app relaunch 263 days old doesn't.
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png
-> Terminal run, part 1: fictional leads L01 to L06 sorted into workflows, each decision tagged rule in violet or Jev in amber
+> Terminal run, part 1: fictional leads L01 to L06, each decision tagged rule or Jev, ending on its workflow
 > The full run, part 1: violet marks a rule, amber marks a question for Jev
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-2.png
 > Terminal run, part 2: leads L07 to L12, then the summary line: 4 by rules alone, 7 needed Jev, 1 no fit, 12 of 12 match the sample
-> Part 2: twelve leads, 4 placed by rules alone, 7 with a Jev question, 1 no fit
+> L12 fits no ICP and is logged with its reason; nothing is imported or sent
 
 Rules are free, exact, and anyone can read why a lead went where it did.
 
@@ -55,7 +55,7 @@ An industry label like "Financial Services" says too little. So Jev gets one que
 An answer counts only at 0.75 or above and 0.25 ahead of the next; otherwise a person decides. The same kind of question picks proof or problem. A streaming service looks like Addvery's Oneplay case; a domestic courier looks like nothing yet.
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-hard-cases.png
-> Terminal output for the two leads whose industry label is too vague for a rule, each settled by a Jev question and its probabilities
+> Terminal output for L06 and L11, whose industry labels are too broad for a rule: each shows its Jev question and the answer a person labelled
 > The two hard cases, where a rule can't decide the ICP
 
 Jev isn't called in this recording. The answers on screen are labels a person gave, and that's how a model like this starts: the labels are what tune it.
