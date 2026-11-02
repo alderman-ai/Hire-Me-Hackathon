@@ -23,3 +23,6 @@ __pycache__/
 
 # Kept out of the public repo (Alex, 2 Nov). Only this one folder.
 /Addvery Research/
+
+# The briefing collector's snapshots hold session text the public repo shouldn't carry.
+/briefing/data/
