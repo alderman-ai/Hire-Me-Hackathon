@@ -1,0 +1,5 @@
+# The six's personal data and the exact pre-send text stay on this computer (DoD-22).
+live/
+# Never commit an env file or key.
+.env
+.env.*
