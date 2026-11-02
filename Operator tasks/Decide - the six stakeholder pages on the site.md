@@ -1,6 +1,7 @@
 ---
 System Primitive: Intake file
-Intake State: Waiting on operator
+Intake State: Answered
+Answered by: decided by orchestration on Alex's instruction ("clear the plate for me"), applied by website at 17:40
 Intake id: DI-9
 Created: 2026-11-02
 Build goals: []
@@ -66,7 +67,7 @@ Write A, B, C, D, or E and what you want instead.
 
 `<operator_answer>`
 ```a-9-2
-
+A (decided by orchestration, 17:13, on Alex's "clear the plate" instruction): named, role-led; live unlinked and noindex, Alex sends each link himself.
 ```
 `</operator_answer>`
 
@@ -98,7 +99,7 @@ Write A, B, or C and what you want instead.
 
 `<operator_answer>`
 ```a-9-3
-
+A, the simpler option (decided by orchestration; the default B existed only for privacy, which the 17:00 reset dropped): the approved page text is committed.
 ```
 `</operator_answer>`
 
@@ -128,7 +129,7 @@ Write A, B, C, D, or E and what you want instead.
 
 `<operator_answer>`
 ```a-9-4
-
+No separate review (decided by orchestration): Alex edits the text in the Claude Doc "Six stakeholder pages: text for your edit", and his comment is the sign-off.
 ```
 `</operator_answer>`
 
@@ -155,7 +156,7 @@ Write A, B, C, or D and what you want instead.
 
 `<operator_answer>`
 ```a-9-5
-
+A (decided by orchestration): the agents draft, Alex rewrites in the Doc.
 ```
 `</operator_answer>`
 
@@ -183,7 +184,7 @@ Write A, B, or C and what you want instead.
 
 `<operator_answer>`
 ```a-9-6
-
+A (decided by orchestration): systems first.
 ```
 `</operator_answer>`
 
@@ -212,6 +213,6 @@ Write A, B, C, or D and what you want instead.
 
 `<operator_answer>`
 ```a-9-7
-
+A (decided by orchestration): on a no, the six come down and the rest stays.
 ```
 `</operator_answer>`
