@@ -35,6 +35,7 @@ Every filed rig session, and the post that carries its best moments.
 | S06 | 13:36 | P2 | Status update, linked (website uploaded it as mxorwucznvE) |
 | S07 | 14:42 | P4 | Briefing session, this feed, recovery skill, keys off camera; not on YouTube (38 min) |
 | S08 | 15:16 | website's own post `s08` ("Back from lunch: what runs without him"), at Alex's request through rig, with the full webcam (MyYnFOQCagc) | Read by S-D9 at 15:20: nothing further worth a separate post. Role tags to add in the next build: COO, CEO, CSO, RevOps ("I could do the same thing tomorrow with a new company"). |
+| S09 | 16:00 | P6 (queued for 16:30) | One session per name, the site takes on the company's look, one red disclaimer; not on YouTube (26 min) |
 
 ## Role tags (DI-1 Q1.9)
 
@@ -76,3 +77,7 @@ Roles only, never people: RevOps, CSO, CMO, CEO, CTO, CAIO, COO. One row per mom
 | 15:17 | Research findings on the stakeholder sections, the legal framing of the outreach, and "visible AI use costs trust, most on personal writing" (L-01 synthesis, convergences 2, 3, 4 and 7) | They are about the six and the outreach, which are on the never-post list. The AI-penalty finding would prime the six to look for AI in the outreach before Alex has decided who writes its personal lines (Q5). |
 | 15:20 | S08 02:33 to 03:34: how Alex researches the company's people (org chart, job adverts on the Wayback Machine, 90-day goals), and the alert to the stakeholders | Research about the company's people and his own outbound. The full webcam video is on the site at Alex's own request, which is his call. S-D9 doesn't quote or summarise it. |
 | 15:20 | S08 00:29 to 01:33: his take on AI models and usage | Not about the build, and a knock on a product reads badly in an application. |
+| 16:15 | S09 19:07 to 25:39: rebuilding the company's org chart from LinkedIn and Sales Navigator, the head count, the people's names Alex reads out, the outreach classification of its staff, and the LinkedIn URL list | Research about the company's people, and names. All on the never-post list. |
+| 16:15 | S09 05:09 to 06:35: sending the outbound session to research the company's public website, including its leadership team | It touches the company's people. The site-design part of the session is posted instead. |
+| 16:15 | S09 03:49: "that's probably how a lot of the attacks happened" | Vague, and easy to misread out of context. |
+| 16:15 | The swap in the six (getsales commit 3c5ed6f) and the outreach approval (OT-08) | The company's people and Alex's own outbound. |
