@@ -27,11 +27,13 @@ From session a841934d to the fresh `s-d6-canva-templates`, at forking gate F3 (c
    - The archived answers are in `..\Operator tasks\Archive\Decide - everything left that needs you.md`.
 7. **Skills:** `frontend-design` didn't load in a841934d; its SKILL.md was read from the plugin cache and followed, and both subagents were told to do the same. `orchestration` has since installed it for this folder: invoke `frontend-design:frontend-design`.
 
-## In flight at handoff
-- **Asset pack** (`local\asset-pack\`), built by a841934d's subagent: mockups, images (logo, quote mark, T1 part), backdrops, `BUILD-quote-card.md` (the second-monitor sheet for Alex's on-camera build), `BUILD-all-templates.md` (every slot and shape for the Canva build of all five), and `copy.md`. If READY S-D6 hasn't gone to `s-d10-canva-video` (check with it), check the pack and send it (format below).
+8. **Asset pack** (`local\asset-pack\`), done and checked:
+   - Contents: mockups (plus a Canva-fonts preview of the quote card), images (logo, quote mark, image slot, swipe arrow, CTA pills and the T5 panel as PNGs, because Canva can't set angled gradients), backdrops, `BUILD-quote-card.md` (12 steps), `BUILD-all-templates.md` (every slot, shape and image for the Canva build of all five, highlight overlay positions included) and `copy.md` (explicit line breaks where Canva wouldn't balance).
+   - Its notes: subhead letter spacing would match better at −48 than −33, and the T2 number at −22 than −50. The brief's values were kept. Revisit them in the Canva build if widths look off.
+   - **READY S-D6 went to `s-d10-canva-video` at about 18:10** with every path.
 
 ## To-do, in order
-1. **READY S-D6 to `s-d10-canva-video`**, if not sent: `READY S-D6: asset pack at canva-templates\local\asset-pack\ (<one line on contents>); scene mockup <path>, 1080×1080; sheet <path to BUILD-quote-card.md>; copy <path to copy.md>; images <list>`. It briefs Alex. **Stay off Claude in Chrome between its SCENE START and SCENE DONE** (two Chrome drivers collide on Windows).
+1. **Stay off Claude in Chrome between `s-d10-canva-video`'s SCENE START and SCENE DONE** (two Chrome drivers collide on Windows). Answer any question it sends about the pack.
 2. **Watch the Doc for Alex's sign-off.** His comment reaches the session that made the Doc, which may be the old one, so query the Doc's comments every 30 minutes (call in `local\handoff-links.md`) and reply in the thread with a doc comment.
    - On "approve": copy `local\exports\` PNGs and the carousel's LinkedIn PDF to `exports\` and commit them (spec Outputs). Send `TASK DONE s-d6-canva-templates: brand sign-off Doc` to `answer-desk` and `ARCHIVE brand sign-off Doc: readers S-D6, S-D10` to `orchestration`.
    - On changes: apply them, re-render, run the three checks, and swap the Doc's images.
