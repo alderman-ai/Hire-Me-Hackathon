@@ -21,7 +21,7 @@ Each loads only its own CLAUDE.md, and this session doesn't load theirs. `claude
 
 The rig messages `website` after each /start, /pause and /stop, so the site's clock follows the recording. Sessions are numbered S01, S02, S03 and so on, with no fixed total.
 
-Every spec and role gets its own sibling folder at the root (charter: standing decisions). Two shared rules apply to every session, and each folder's CLAUDE.md names them in its reading list, because the children don't load this file:
+Every spec and role gets its own sibling folder at the root (charter: standing decisions). These shared rules apply to every session, and each folder's CLAUDE.md names them in its reading list, because the children don't load this file:
 
 - `GIT.md`: how all sessions share one working tree on `main` without clobbering each other. The `watcher` session pushes hourly.
 - `answer-desk\ASKING.md`: every question for Alex goes to the `answer-desk` session in that format, never into a session's own chat (charter P4).
