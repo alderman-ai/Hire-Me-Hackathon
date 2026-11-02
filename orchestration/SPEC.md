@@ -96,6 +96,10 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 
 C01 and C02 went out together as `Operator tasks\OT-02 Gate approval S2 charter changes C01 C02.md` (2 Nov); their records are in `changes\`.
 
+| Change | Asked by, with approval | Planned at | One-line summary |
+| --- | --- | --- | --- |
+| C04 | Alex: A website-Q3, 14:25 ("a": the repo stays as it is, since the charter and specs only mention the proposal) | 2 Nov | DoD-22's check reads "shows" as displaying the proposal or the outbound, not mentioning them: the charter and specs may name them. Goes out in the next preview after OT-02 is answered. |
+
 **Dependent places.**
 
 | Place | Where | Who writes it |
