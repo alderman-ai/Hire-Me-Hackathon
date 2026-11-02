@@ -9,3 +9,6 @@ next-env.d.ts
 
 .env*.local
 .clock/
+
+# S-D8: git-ignored material that still deploys (SPEC.md §3)
+local/
