@@ -136,6 +136,8 @@ This is the decomposition, not the specs themselves. Each row is one future exec
 
 Spec IDs mirror deliverable IDs: S0 to S2 for M0 to M2, and S-D1 to S-D10 for D1 to D10. This whole outline is a rough draft. S2 (Project orchestrator) can still edit every row, and it owns the final sign-off on when the list of executable specs is fully decomposed and ready to run.
 
+**Signed off by S2, 2 Nov 16:32 Prague:** the outline is fully decomposed. `propagate check` is clean (0 gaps), and every live DoD item is claimed by a spec or by the operator-owned S-D2 row. Wave 2 had already started spec by spec as each preflight was answered, on Alex's 14:38 "we need to remove blockers" (S2's decision log).
+
 | Spec | Outline | Depends on | Needs the operator for |
 | --- | --- | --- | --- |
 | S0 — Bootstrap (meta) | Rolls out every sister working directory with its file tree and CLAUDE.md reading list, sets up the sessions, and ports the answer desk. | Charter handed to Claude Code | Approving the directory plan |
