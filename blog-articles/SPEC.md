@@ -1,25 +1,38 @@
 # S-D5 Three blog articles: executable spec
 
-Status: draft; preflight DI-XX waiting on Alex · Row: S-D5 — Three blog articles · Folder: `blog-articles\` · Session: `s-d5-blog-articles`
+Status: groundwork running since 2 Nov 16:42 (launched by `orchestration` on groundwork only); the preflight intake stays held (Appendix A), with no article questions to Alex until he's ready · Row: S-D5 — Three blog articles · Folder: `blog-articles\` · Session: `s-d5-blog-articles`
 
-S-D5 produces three blog posts, each from about 15 minutes of Alex's dictation, drafted by the S-D4 pipeline, finished by Alex (his last 10%) and published on the site (DoD-15). They're written for Addvery's audience, in Alex's voice and under his name. On the site they're the blog at `/blog`: one page per post in the template S-D4 had built, each with its "How this post was made" box.
+**Two articles, not three** (Alex, OT-04 note, about 16:40: "we'll do two articles"). The charter row and DoD-15 still say three until `orchestration` applies change C10; this spec works to two from now (§9). Both topics are his, verbatim in §1a, and he asked for visuals to go with them (§7a).
+
+S-D5 produces two blog posts, each from about 15 minutes of Alex's dictation, drafted by the S-D4 pipeline, finished by Alex (his last 10%) and published on the site (DoD-15). They're written for Addvery's audience, in Alex's voice and under his name. On the site they're the blog at `/blog`: one page per post in the template S-D4 had built, each with its "How this post was made" box.
 
 ## 1. Operator preflight (P3)
 
-The preflight is decision intake DI-XX (`..\Operator tasks\Decide - your three blog posts, topics and timing.md`). Whether S-D4's test dictation is article 1 is S-D4's question, in its own preflight intake DI-8 (`..\Operator tasks\Decide - how the blog pipeline should work.md`, question 3); this intake is written for either answer.
+The preflight is decision intake DI-XX (`..\Operator tasks\Decide - your two blog posts, timing.md`), still held (Appendix A). Its topics question is gone: Alex gave both topics himself in his OT-04 note (§1a). Whether S-D4's test dictation is article 1 is S-D4's question, in its own preflight intake DI-8 (`..\Operator tasks\Decide - how the blog pipeline should work.md`, question 3); with both topics fixed, the test can count only if it was on one of them.
 
 | DI-XX question | Question | Default |
 | --- | --- | --- |
-| 1 | The topics: two, or three if the test dictation isn't article 1 | The first proposals the test didn't take, in list order |
-| 2 | The dictation slots | 15:50–16:10 and 16:20–16:40, plus 17:00–17:20 if a third is needed; the morning cleanup session if still empty at 18:00 |
+| ~~1~~ | ~~The topics~~ | Answered by Alex in OT-04 (§1a); not asked |
+| 2 | The dictation slots | Rechecked against the clock when the intake is released; the morning cleanup session if still empty at 18:00 |
 | 3 | When Alex does the last 10% | Today's gaps first, the rest in the morning cleanup session (A) |
 | 4 | When each post goes live | As soon as he finishes it (A) |
 
-**Launch gate.** The session launches once DI-XX is answered and its answers are applied. From 18:00 Prague an unanswered question takes its default, logged in §9.
+**Launch gate.** Met differently: `orchestration` launched the session at 16:42 on groundwork only (bases, outline, visuals), with the intake held. The dictation and finish steps (§7 steps 3 to 8) wait for the intake. From 18:00 Prague an unanswered question takes its default, logged in §9.
 
 **Operator scenes.**
-- **Two dictations** (three if the test dictation isn't article 1), about 15 minutes each, on camera: proposed for 15:50–16:10 and 16:20–16:40, and 17:00–17:20 for a third, a slot that opened when the GetSales outreach moved to 15:30 (question 2). They're shot before the pipeline is accepted (P3, the movie-actor rule): drafting comes later.
+- **Two dictations**, about 15 minutes each, on camera, scheduled later through the held intake (Alex, 16:40: "I really don't want to talk any more about articles right now"). Each talks from its brief in `briefs\` (§7a). They're shot before the pipeline is accepted (P3, the movie-actor rule): drafting comes later.
 - **The last 10% of each post**, about 10 minutes each, when question 3 says. It's Alex's own edit in an operator task, not a gate.
+
+### 1a. Alex's decisions in his OT-04 note (verbatim, 2 Nov about 16:40)
+
+Source: `..\Operator tasks\Archive\Approve - research for the blog pipeline.md`, the changes box. Never re-ask these.
+
+- **Count.** "we'll do two articles."
+- **Article 1.** "One is about how there's no such thing as building something like an AI workflow as a product. It's always a managed service because the models always change. / Add to it that every company is going to have to decide what level of AI skill they want their company to have. Do they want to be able to just use workflows other people build? Do they want to be able to maintain them themselves or to build them themselves? You can imagine a sliding scale that's vertical: at the bottom is the training and at the top is the external building. They're going to have to find out where on the slider they are because they're either going to need to get trained how to do it themselves or they're going to have to bring in someone external or hire someone external. Still they're going to need to compensate someone else for whatever they build with the training to actually use it."
+- **Article 2.** "The second article will be about how, basically, GTM engineers are the solution to the biggest social question of the AI era. A lot of companies are saying that AI is not a way for them to fire half their company. For AI to save a company any money there has to be some return on that investment. If it's not lowering their labor costs then it has to be increasing their revenue. / That means GTM engineers who focus AI on their pipeline are actually the ones that are helping companies keep their promise: that AI is a way to do more business and have their whole team grow together, rather than replace half their team. GTM engineers have a really crucial role to play in this AI transformation and you use that as a base. We'll fill in more of the details later."
+- **Visuals.** "you can draft some LinkedIn imagery or whatever. While you do that you can do some mockups of what the LinkedIn content might use. Use whatever frontend code or any kind of design choices they've scraped from LinkedIn content. Take that and then we can create it the same way we did the Appify one, where there's a template in the background and then the generative AI text on top." And: "You can go ahead and do some workshopping on what the visual assets that go with them might look like. We can also create something in Comfy. There's a Comfy UI repo on desktop that knows how to build things. Make a spec for all that or plan in the spec for all that."
+- **Copywriting.** "Do not do any copywriting without identifying which skill you need to turn on, telling the orchestrator to turn it on for you. Do not do any copywriting without a copywriting skill."
+- **No more article questions now.** "I really don't want to talk any more about articles right now."
 
 **Off camera.** Nothing.
 
@@ -52,7 +65,19 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
 - `..\research\DIRECTORY.md`: the index of every research report. Read only.
 - `..\research\lists\L-03-blog.md` (S-D4's list, with S-D5 offered merged) and `..\research\lists\L-01-parent.md`. Read only; S1 owns them.
 - Research findings: S2 adds a line here for each report when S1 sends FINDINGS for L-03 and L-01.
-- `..\Operator tasks\Archive\Approve - research for the blog pipeline.md`: Alex's answer on the blog research list (OT-04), verbatim, with his long note: the copywriting-skill rule, two articles and their topics, and visuals for them. Read it for wording, never re-ask it.
+- `..\Operator tasks\Archive\Approve - research for the blog pipeline.md`: Alex's answer on the blog research list (OT-04), verbatim, with his long note: the copywriting-skill rule, two articles and their topics, and visuals for them. Read it for wording, never re-ask it. Its decisions are in §1a.
+- **L-03 findings** (blog research; S-D5 is a reader). Read only; S1 owns them. Options for Alex, not decisions.
+  - `..\research\global\L-03-R6-article-1-base.md`: the research base for article 1 (facts, sources, counterarguments, no copy). "Models always change" is strongly backed; "no such thing as a product" is the weakest part; the slider only partly fits existing frameworks. Feeds `briefs\A-01-base.md`.
+  - `..\research\global\L-03-W3-wildcard-received.md`: how article 1's argument reads from a job applicant, and what raises its credibility (part (c), C1 to C8). Applies to article 2 as well.
+  - `..\research\global\L-03-R5-blog-writing-skill.md`: the copywriting skill to use. `marketing:content-creation` is on (SKILL ON from `orchestration`, 16:47); `humanizer` is Alex's call, for tomorrow.
+  - `..\research\global\L-03-R1-transcript-to-draft.md`: reuse Alex's spoken words, trace every claim to the transcript.
+  - `..\research\global\L-03-R4-finished-b2b-post.md`: informative visuals over decorative ones, one diagram, a link-preview image; behind POST-FORMAT v1.1.
+  - L-03 R7, article 2's research base: S1 sends it when reviewed; it feeds `briefs\A-02-outline.md`.
+- **Visuals resources** (§7a), read only:
+  - `..\research\global\L-05-R1-pixel-perfect-demo.md`: Alex's earlier Apify demo, the "backdrop plus slot map, AI text on top" method, its render flags and traps.
+  - `..\canva-templates\BUILD-SHEET.md`: S-D6's Addvery grid, type scale and colour roles, by role name only.
+  - `..\canva-templates\local\` (git-ignored): S-D6's brand tokens, fonts and render pattern, provisional until Alex's brand sign-off. Linked by relative path from `local\visuals\`, never copied into a tracked file.
+  - `C:\Users\alder\Desktop\Comfy UI\`: Alex's ComfyUI repo, for optional generated backdrops. Its own CLAUDE.md and BOUNDARIES.md govern any run; S-D5 never edits it.
 - **L-01 findings** (S1's parent research, approved by Alex as OT-01; added by S2 as C07): for this spec, read the synthesis first, then R1, W3, R2.
   - `..\research\global\L-01-synthesis.md`: S1's synthesis of the parent research: the strongest findings, recommendations per spec, and 24 one-line questions for Alex, each naming the spec it blocks. Start here: take this spec's section, and fold the questions that name it into your next gate. Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-R1-legibility.md`: making the work legible: outcome first, a short demo, a 3 to 4 step how-it-works; what reads as a toy or as noise; AI labels. Options for Alex, not decisions. Read only; S1 owns it.
@@ -75,8 +100,12 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
 
 ```
 blog-articles\
-  CLAUDE.md, SPEC.md, HANDOFF.md
-  TOPICS.md              the three articles: topic, angle, slot, and whether article 1 came from S-D4
+  CLAUDE.md, SPEC.md, HANDOFF.md, .gitignore (ignores local\)
+  TOPICS.md              the two articles: topic, angle, slot, and whether article 1 came from S-D4
+  briefs\A-01-base.md    article 1's research-backed base: thesis, skeleton, facts he can say, objections, talking prompts
+  briefs\A-02-outline.md article 2's outline, from his note (its base follows when L-03 R7 lands)
+  VISUALS.md             the visuals plan and method, brand roles by name only (§7a)
+  local\visuals\         git-ignored: backdrops, templates, slot maps, AI text, renders, ComfyUI backdrops
   dictations\A-0<n>.md   each dictation, as Wispr Flow typed it
   drafts\A-0<n>\         the pipeline's stage outputs and post.md, per runbook version
   posts\<nn>-<slug>.md   the finished posts: the site's content
@@ -88,7 +117,8 @@ blog-articles\
 **The problem.** D5 is three real posts that show the pipeline works more than once, on topics Addvery's audience reads, finished by Alex and live on the site. Each costs him about 15 minutes of talking and 10 of finishing, and his time is the bottleneck (P3), so everything else is done for him: the topic brief, the task to dictate into, the draft, the checks and the publishing.
 
 **In scope.**
-- `TOPICS.md` and a talking brief per article.
+- `TOPICS.md` and a talking brief per article: article 1's base from L-03 R6, article 2's outline from Alex's note (and its base from R7).
+- The visuals workshop (§7a): local mockups of each article's LinkedIn imagery, backdrop plus AI text on top, optionally with ComfyUI backdrops. Nothing published until Alex says.
 - The dictation tasks, and capturing each dictation.
 - Running S-D4's runbook on each dictation, and taking over article 1 from S-D4 if Alex counts the test.
 - One finish task per post, and publishing each through `website` with its changed-words share.
@@ -101,15 +131,15 @@ blog-articles\
 
 ## 5. Definition of done
 
-Written before research and methodology.
+Written before research and methodology. Two, not three, throughout this table (Alex, OT-04; charter change C10 pending in `orchestration`).
 
 | Criterion | Traces to |
 | --- | --- |
-| Three topics fixed by Alex (picked, approved or defaulted and logged) are in `TOPICS.md` | DoD-15 |
-| Three dictations of about 15 minutes each were captured, one of them S-D4's test if Alex counted it | DoD-15 |
+| Two topics fixed by Alex are in `TOPICS.md` (done: his OT-04 note, §1a) | DoD-15 |
+| Two dictations of about 15 minutes each were captured, one of them S-D4's test if Alex counted it | DoD-15 |
 | Each was drafted by S-D4's runbook at an accepted version, with no hand edits by this session | DoD-15 |
 | Alex finished each post in its finish task (`Done` ticked), and the share of words he changed is recorded in `PUBLISHED.md` and on the post | DoD-15; serves DoD-14 |
-| All three are live at `/blog/<slug>` and listed on `/blog`, each with a `BUILT` reply from `website` and a check of the live page | DoD-15 |
+| Both are live at `/blog/<slug>` and listed on `/blog`, each with a `BUILT` reply from `website` and a check of the live page | DoD-15 |
 | Every post passed the scan before its BUILD: no secrets, nothing of the Apify proposal or Alex's own GetSales outbound, nothing from `Addvery Research\`, no `[Alex: ...]` marker left | DoD-22 (served) |
 
 ## 6. Research step
@@ -120,6 +150,8 @@ At launch the session sends `s1-research` exactly one line:
 
 Approving the list is S1's gate, not this session's.
 
+**Not sent (16:45):** S1 already runs L-03 with S-D5 as a reader, on Alex's OT-04 note, and added R6 (article 1's base) and R7 (article 2's base) for this spec. It sends each report as it's reviewed (R6 arrived 16:52), so the line would only duplicate it.
+
 **Goes ahead meanwhile:** `TOPICS.md`, the dictation tasks, and capturing the dictations. None of them depends on findings.
 
 **Waits for FINDINGS:** the check that S-D5 needs nothing beyond S-D4's runbook (§7, gates). The findings reach the drafts mostly through S-D4's runbook, which S-D4 revises on them.
@@ -128,15 +160,16 @@ Approving the list is S1's gate, not this session's.
 
 ## 7. Methodology and steps
 
-**Draft methodology**, confirmed once L-03's synthesis lands. S-D5's drafting is S-D4's accepted runbook, run three times. Around it sit four steps of its own:
-- **Brief.** Per article, one line on the angle and who it's for, and S-D4's five talking prompts fitted to the topic.
+**Draft methodology**, confirmed once L-03's synthesis lands. S-D5's drafting is S-D4's accepted runbook, run twice. Around it sit four steps of its own:
+- **Brief.** Per article, its base in `briefs\` (article 1 from L-03 R6, article 2 from Alex's note and then R7): the thesis in his words, a section skeleton that maps onto POST-FORMAT, facts he can choose to say aloud, the strongest objections for him to answer, and the extra talking prompts. The dictation task carries S-D4's stage-0 talking prompts plus those extras. A base is a brief, not a draft: the pipeline adds no claim he doesn't say.
+- **Copywriting skill** (Alex's rule, §1a). Any step that writes text a reader outside the project will see sends `orchestration` `SKILL S-D5: <skill> for <what>` first and waits for `SKILL ON`, then names the skill in every subagent prompt that writes copy, with the pipeline's no-invented-claims rule winning where they conflict. On: `marketing:content-creation` (16:47) for both bases, both outlines and the mockups' text. The pipeline's own stages use S-D4's `{SKILL}`.
 - **Capture.** As S-D4 does it: Wispr Flow into a dictation task, the rig as backup (S-D4's preflight, question 2).
 - **Finish.** The post goes to Alex as an operator task with the post copied in. He edits it in place and ticks `Done`.
 - **Publish.** The edited post is copied back, measured against the pipeline's draft, scanned, and published through `website`.
 
 **Gates.** S-D5's own DoD maps one-to-one onto DoD-15, which Alex signed off in DI-5, and its drafting is S-D4's runbook, which Alex approves at S-D4's gates. So S-D5 has a spec-draft gate only if its methodology must differ from S-D4's accepted runbook (a stage added, dropped or changed). Then it freezes this SPEC.md into `..\Operator tasks\Approve - how the three blog posts get made.md` from the gate template (`## What this is` and summary in plain words), commits it, sends `TASK S-D5: Approve - how the three blog posts get made.md is waiting on you: a change to how your blog posts are drafted`, waits with Monitor running `python -I orchestration\check_gate.py "Operator tasks\Approve - how the three blog posts get made.md"` from the repo root every 300 seconds, pokes after 15 minutes, applies any `CHANGES`, and then sends `TASK DONE S-D5: Approve - how the three blog posts get made.md` and `ARCHIVE Approve - how the three blog posts get made.md: readers S-D5`. Finishing isn't a gate: it's Alex's own edit.
 
-**Coherency check:** "If we execute this methodology, will DoD-15 be satisfied?" Criterion by criterion against §5: topics (step 2), three dictations (steps 3 to 5), drafted at an accepted version with no hand edits (step 6), finished by Alex with the share recorded (steps 7, 8), live and checked (step 8), scanned (step 8). A criterion with no step is a gap, fixed before drafting.
+**Coherency check:** "If we execute this methodology, will DoD-15 be satisfied?" Criterion by criterion against §5: topics (step 2, done by Alex in §1a), two dictations (steps 3 to 5), drafted at an accepted version with no hand edits (step 6), finished by Alex with the share recorded (steps 7, 8), live and checked (step 8), scanned (step 8). A criterion with no step is a gap, fixed before drafting.
 
 **Run steps.** Commit after every finished step, path-limited: `git commit -m "[blog-articles] <message>" -- blog-articles/...`, and S-D5's operator tasks with `-- "Operator tasks/<file>"`.
 
@@ -153,6 +186,26 @@ Approving the list is S1's gate, not this session's.
 **Site requests** go one at a time as `BUILD S-D5-B<n>: ...`, numbered in the order sent. Wait for `BUILT S-D5-B<n>` or `REFUSED S-D5-B<n>` before sending the next. The post template is S-D4's request; if it isn't built yet, S-D5 waits for it.
 
 **Screen care.** The dictation tasks are on camera, and that's the point. Never open the Apify proposal or Alex's own GetSales outbound. If he says something in a dictation that mustn't be published, the scan cuts it from the post, and S-D5 tells `s-d9-legibility` the clock time so that stretch stays off the site.
+
+## 7a. Visuals plan (Alex, OT-04)
+
+Alex asked for visuals to go with the two articles: LinkedIn imagery made "the same way we did the Appify one, where there's a template in the background and then the generative AI text on top", in the design choices captured from Addvery's LinkedIn, and optionally something in ComfyUI. Everything here is a **local mockup**: nothing is published, uploaded or put into Canva until Alex says so, at a time the held intake sets.
+
+**Three layers per article,** each with one owner:
+
+| Visual | What it is | Made by | Where |
+| --- | --- | --- | --- |
+| In-post diagram | Article 1: the AI-skill slider as a `[!diagram] scale` (external building at the top, training at the bottom). Article 2: a `[!diagram] flow` from AI spend to revenue growth, the labour-cost road not taken. Drawn by the site template from text, so no image. | The pipeline's Format stage, from the brief's diagram block | POST-FORMAT v1.1 §3.5 (S-D4's) |
+| Link-preview card | The 1200×630 image a shared link shows, generated by the site from the post's `cover` fields | `website` (S-D4's template request) | POST-FORMAT v1.1 §5 |
+| LinkedIn companion images | Per article: a 1080×1350 single-image teaser, a 1200×630 card mock and a 1080×1350 diagram card. A backdrop (the template in the background: base colour, glow, fixed chrome) plus coded text slots with measured character budgets, filled by AI-written text (the "generative AI text on top") | S-D5, in `local\visuals\` | §7a below |
+
+**Method** (L-05 R1, Alex's Apify demo): one backdrop per canvas; a slot map per format (x, y, w, h, type step, colour role, measured character budget); the text in a separate content file per article, written under `marketing:content-creation` from Alex's words only; headless Chrome renders; every render checked for size, loaded fonts and each slot's edges and corners; text that doesn't fit is rewritten, never trimmed. Brand values come from S-D6's provisional tokens in `..\canva-templates\local\` (Addvery's look, from Alex's brand capture), linked, never copied into a tracked file, so Alex's brand sign-off restyles both. No Addvery logo: the posts are Alex's, in Addvery's look (§9).
+
+**ComfyUI, optional** (not run as of 16:58: needs a work order inside his Comfy UI repo, §9). Text-free abstract backdrops per article (article 1 a rising scale of light, article 2 a widening stream), dark where text sits, run by Alex's ComfyUI repo's own rules, at most six generations, and only if it runs without a login or payment. They swap in as the backdrop layer. Prompts, model, seeds and cost go in `local\visuals\backdrops\comfy\prompts.md`.
+
+**Tracked vs local.** `VISUALS.md` (tracked) holds the plan, the formats, the slot names and budgets by role name, the text used, and how to re-render. Everything holding a brand value, and every image, stays in `local\visuals\` (git-ignored), since it derives from Alex's own Addvery research.
+
+**What happens next, later.** When Alex is ready to talk about articles: he looks at the contact sheet, picks a backdrop (coded or ComfyUI), and says whether the images go to S-D6 (Canva), S-D7 (LinkedIn posts) or the site. The text on them is redone from the finished post once he has done his last 10%, so the images never say more than the post.
 
 ## 8. Forking gates (P8)
 
@@ -181,8 +234,20 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov, drafting (wave2-specs): topics are proposed from Alex's own expertise and today's build; no Addvery research is read. | Addvery research is his own (DI-3 Q3.3), and nothing from `Addvery Research\` may reach a tracked file. | He picks or swaps; nothing leaks from his folder. | `TOPICS.md` and the dictation tasks. |
 | 2 Nov, drafting (wave2-specs): each post shows the share of words Alex changed. | It turns "the last 10%" (DoD-14, which S-D5 serves) into a number a visitor can see. | It's honest evidence, whatever the number turns out to be. | The front matter and S-D4's template box. |
 | 2 Nov, drafting (wave2-specs): finish-task pokes go out only inside the times Alex picks in DI-XX question 3. | A poke during a recorded scene or overnight helps no one. | It respects P4 and P5 without letting tasks go quiet in his window. | Step 7 only. |
+| 2 Nov 16:50 (OT-04): **two articles, not three**, ahead of the charter. | Alex: "we'll do two articles." `orchestration` queued C10 to change the row and DoD-15. | It's his explicit call. Working to three until the charter catches up would spend a dictation he said he won't give. | §5, §7, Appendix A. If C10 is refused, one more topic and dictation come back through the intake. |
+| 2 Nov 16:50 (OT-04): **both topics are Alex's, verbatim** (§1a); the intake's topics question is dropped. | He gave both in his note; ASKING.md says never re-ask what's answered. | It saves him a question while he's asked for none. | Appendix A loses question 1; `TOPICS.md`. |
+| 2 Nov 16:50 (orchestration's launch brief): **groundwork now, intake held, no article questions to Alex.** The bases, outline and visual mockups run now; dictations and his last 10% wait for the intake. | Alex: "I really don't want to talk any more about articles right now." | P3 and P4: everything not needing him gets done first, so his later 30 minutes buy two finished posts. | Steps 3 to 8 start later; nothing built now is lost. |
+| 2 Nov 16:50 (OT-04): **a brief is a base, not a draft.** Facts from R6 and R7 go in the brief as things Alex can choose to say aloud, never into a post. | The pipeline adds no claim he didn't say (S-D4's runbook; L-03 R1). | It keeps every published claim his and traceable, while giving him the evidence to talk from. | `briefs\` only. |
+| 2 Nov 16:50 (OT-04): **visuals in three layers** (in-post diagram, site link card, LinkedIn companion images), and only the third is S-D5's to build. | POST-FORMAT v1.1 already has the diagram and the site-made link card (S-D4, from L-03 R4). | No duplicate work with S-D4 or `website`; S-D5 builds only what nobody else owns. | §7a; a format added later is one more template. |
+| 2 Nov 16:50 (OT-04): **companion images use Addvery's look from S-D6's provisional tokens, with no Addvery logo, byline Alex.** Mockups and brand values stay in git-ignored `local\`. | Alex: "Use whatever ... design choices they've scraped from LinkedIn content." The posts are his, not Addvery's (decision above). The values derive from his own Addvery research. | Same look as the site and the Canva templates, without putting words in Addvery's mouth or leaking his research into git. | Re-render after the brand sign-off; adding a logo is one slot. |
+| 2 Nov 16:50 (OT-04): **no spec-draft gate for the visuals or the bases.** | Neither changes how posts are drafted (the gate rule, §7); both are local groundwork Alex sees later. | It keeps him free of gates while he's asked for no article questions. | One gate if he wants to approve the visuals plan before anything is published. |
+| 2 Nov 16:50 (OT-04): **ComfyUI optional, capped:** at most six generations, only without a login or payment, run by his repo's own rules. | Alex: "We can also create something in Comfy." It costs credits and the coded backdrop already works without it. | It tries his tool without spending or logging in on his behalf. | `local\visuals\backdrops\comfy\` only. |
+| 2 Nov 16:58: **ComfyUI not run.** The trial stopped before generating: his repo runs everything on Comfy Cloud (signed in), and its rules make any job a work order logged inside that repo (provenance ledger, run README, runs index, KB step), which S-D5 may not edit. No credits spent. | `Comfy UI\BOUNDARIES.md` and `comfy.yaml`, read by the trial helper. | Running it from here would break his repo's own rules. | Options for Alex later: a session inside the Comfy UI repo runs it as a work order (about 13 to 20 credits for 4 to 6 images, under its 75-credit no-ask limit; its fixed 896×1152 size means the 1200×630 crops come from portrait); or he adds an exemption to BOUNDARIES.md. The coded backdrop stands meanwhile. |
+| 2 Nov 16:58 (S-D4, relaying Alex in DI-8 question 1: "Anything about blog pipelines is dead. The only deliverable is blogs."): **S-D4 is retired; the blogs are entirely S-D5's.** No test dictation, no article 1 handover, no template request will come from S-D4. Its runbook v0, prompts, POST-FORMAT v1.1, sample and scripts are S-D5's to use as tooling, copied into `blog-articles\` (GIT.md keeps S-D5 out of `blog-pipeline\`). The site's blog template request becomes `BUILD S-D5-B1` (text in `..\blog-pipeline\PIPELINE.md` §4, plus preview tags and the og:image). | Alex's DI-8 answer; S-D4's hand-off message. | The deliverable is the blogs, so the session that owns them owns the tooling and the template. | §3 inputs, §7 steps 5 and 6 (no handover; S-D5 runs the stages itself), §8 announcements (no `s-d4-blog-pipeline`). Re-planned after the 16:47 HOLD lifts; nothing changed yet. |
 
 ## Appendix A. Held preflight intake
+
+**Rework before release (16:58).** Alex has since given both topics and set two articles (§1a), and S-D4 is retired (§9), so there's no test dictation to count. Before releasing: drop QXX.1 (answered); change "three" to "two" throughout and rename the file to `Decide - your two blog posts, timing.md`; remove every reference to the blog pipeline's test dictation and its decision file; recheck every time against the clock; point each dictation at its brief in `briefs\`; and consider folding in L-03 W3's open choices (which rung article 1 lands on, where the ask goes) only if Alex is ready for article questions again. The text below is the earlier draft, kept for its form.
 
 This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** the blog pipeline's own intake (Decide - how the blog pipeline should work.md) is answered, because this one's topic count and slots follow its answer on whether the test dictation counts as the first article. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - your three blog posts, topics and timing.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D5: Decide - your three blog posts, topics and timing.md is waiting on you: <what it decides and unblocks>`.
 
