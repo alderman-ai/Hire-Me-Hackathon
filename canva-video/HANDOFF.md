@@ -1,8 +1,8 @@
 # S-D10 handoff
 
-Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting acc0550f) for forking gate F0. F0 now fires when the brainstorm draft is in (SPEC §8, 17:35). The F0 section at the bottom is filled in at the fork.
+Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting acc0550f) for forking gate F0. F0 now fires when the brainstorm draft is in (SPEC §8, 17:26). The F0 section at the bottom is filled in at the fork.
 
-## Where things stand (17:35, 2 Nov)
+## Where things stand (17:26, 2 Nov)
 
 - **Reset, 17:13** (`orchestration` RESTART; Alex's reset rules at the top of `..\answer-desk\ASKING.md`). No intakes for Alex: easy calls are yours, decided and logged in SPEC §9. Written work for him goes in Claude Docs. The held intake (SPEC Appendix A) is dropped; never release it.
 - **DI-10, Alex at 17:23** (verbatim in `..\Operator tasks\Archive\Decide - everything left that needs you.md`):
@@ -23,14 +23,14 @@ Written by the outgoing `s-d10-canva-video` session (launched 16:39, id starting
 3. On Alex's comment that the scene is done: `TASK DONE s-d10-canva-video: the Canva video`. Tell `s-d6-canva-templates` it can use Chrome again. Note the times here. Take F1 (run step 5).
 4. Then run steps 6 to 10: the clip from `s-d9-legibility`, the cut (`frontend-design` first), the screen-care check, `site\d10.md` through `design:ux-copy`, `BUILD S-D10-B1`, `DONE S-D10`.
 
-## Since 17:35
+## Since 17:26
 
 - **S-D11** (C15, S2): this session also runs S-D11, the brand motion demo with Comfy (D11, DoD-23). Its plan is at the end of SPEC.md (B1 to B7): ideas Doc, his pick into `comfy-motion\PICK.md`, his own Comfy work, frame check and design review, `site\d11.md` through `design:ux-copy`, `BUILD S-D11-B1`. Generate nothing and spend no credits.
-- **The quote card** (S-D6, 17:44): the scene mockup is the quote card, 1080 × 1080, in `canva-templates\local\asset-pack\`. It's built from a background colour, the gradient quote mark PNG, a quote text box, a name-and-role text box, a hairline and the white logo PNG. Inter is the only one of the brand's faces in Canva, so the sheet gives Inter with letter-spacing values. Canva text takes linear gradients. The copy is being refreshed from S-D7's final post 3. `SCENE.md` is filled in for all of this; `READY S-D6` still owes the mockup, sheet and copy file paths.
-- **SCENE START / SCENE DONE** (S-D6, 17:44, agreed): S-D6 uses Chrome until the scene. Send it `SCENE START` when Alex comments "filming now" on the scene Doc (brief Step 1 item 14), and `SCENE DONE` on his Step 4 comment.
+- **The quote card** (S-D6, 17:31): the scene mockup is the quote card, 1080 × 1080, in `canva-templates\local\asset-pack\`. It's built from a background colour, the gradient quote mark PNG, a quote text box, a name-and-role text box, a hairline and the white logo PNG. Inter is the only one of the brand's faces in Canva, so the sheet gives Inter with letter-spacing values. Canva text takes linear gradients. The copy is being refreshed from S-D7's final post 3. `SCENE.md` is filled in for all of this; `READY S-D6` still owes the mockup, sheet and copy file paths.
+- **SCENE START / SCENE DONE** (S-D6, 17:31, agreed): S-D6 uses Chrome until the scene. Send it `SCENE START` when Alex comments "filming now" on the scene Doc (brief Step 1 item 14), and `SCENE DONE` on his Step 4 comment.
 
 ## F0
 
-- Brainstorm draft in at 17:43; committed in 3a389e4 with the S-D11 plan.
-- READY S-D6: not yet, at 17:48.
-- Successor launched at <time>; `HANDOFF s-d10-canva-video, <time>` sent to `orchestration`, which stops and removes the old id.
+- Brainstorm draft in at 17:30; committed in 3a389e4 with the S-D11 plan.
+- READY S-D6: not yet, at 17:34.
+- Successor da2b38ac launched at 17:34; `HANDOFF s-d10-canva-video, 17:34` sent to `orchestration`, which stops and removes the old id.
