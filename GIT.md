@@ -24,8 +24,9 @@ All sessions share one working tree on `main`. A command that changes the branch
 - A folder whose session doesn't exist yet (such as a scaffold S0 creates) belongs to the session that created it until its own session starts.
 - Never edit or commit files in another session's folder. Send that session a message instead.
 - Root-level files (CHARTER.md, GIT.md, the root CLAUDE.md) belong to the `orchestration` session.
-- **Exception:** until the S2 project orchestrator session takes over, `orchestration` may edit and commit files in any folder, without asking that folder's session (Alex, 2 Nov). It tells the owner afterwards. That's a standing instruction from Alex, not a peer's request. When S2 takes over orchestration, this right passes to S2.
-- **`CHARTER.md`** is changed only through S2's skills (charter: "S2's skills edit the file"), and S2 may do that before it takes over orchestration. No other session edits it.
+- **Exception:** `orchestration` may edit and commit files in any folder, without asking that folder's session (Alex, 2 Nov). It tells the owner afterwards. That's a standing instruction from Alex, not a peer's request. `orchestration` is also the S2 project orchestrator; there is no separate S2 session (DI-4, 2 Nov).
+- **`CHARTER.md`** is changed only through S2's skills (charter: "S2's skills edit the file"), which `orchestration` runs. No other session edits it.
+- `orchestration\` is the orchestration session's own folder.
 
 ## Secrets
 - Never commit `.env*`, `client_secret*.json`, tokens or keys. `.gitignore` covers the usual ones; check anyway.

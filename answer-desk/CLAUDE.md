@@ -30,6 +30,15 @@ The asker is the part of an id before `-Q`: `S0` for `S0-Q3`, `website` for `web
 
 The desk adds nothing of its own. It edits only files in this folder, and commits this folder per `..\GIT.md` whenever the queue goes clear.
 
+## Pokes
+
+A session that has waited 15 minutes on Alex, for a desk question, an operator task, a decision intake or anything else, sends `POKE <asker>: waiting on you for <what>`. Alex's words (DI-3, 2 Nov): "tell the question desk to alert me that this session name is waiting on me for this."
+
+- A poke isn't a question: it skips the one-question rule and the queue.
+- Add it to `queue.md` as a `POKE` entry with the time, reply `poke shown`, and alert Alex at once. Show `**POKE** <asker> is waiting on you for <what> (since <time>)` above whatever is on screen. If the PushNotification tool is available (load it with ToolSearch `select:PushNotification`), send the same line as a notification too.
+- `list` also shows every poke from the last hour.
+- The asker pokes again every 15 minutes while it's still waiting. Show each repeat the same way.
+
 ## Handing over to a fresh desk
 
 When this session's context gets long, start a new desk from this folder with `claude --bg -n answer-desk "Take over the answer desk from queue.md."`, stop the old one, and run `open-desk.ps1`. The new desk applies the one-question rule and the still-current check to the queue as it stands.
