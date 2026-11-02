@@ -2,6 +2,10 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
+## Update, 00:20 on 3 Nov: the combined version is live
+
+Alex asked at about 22:4x for the best of the three mockups combined and pushed live; he redlines it in the morning on a Claude Design canvas. **Live at 23:40** (https://hire-me-hackathon.vercel.app, deployment from 9e75838; production deploys need all four flags: NEW_SITE, WALL_FULL, VIDEO_WALL, SKILLS_PAGE). The redline canvas is https://claude.ai/artifact/EdXPA75GqZCSFbDub4Ndu2. An article on the method is committed (01e1e1d) and was sent to `website` at 00:17 to publish as an entry. `orchestration\local\overnight\MORNING.md` is rewritten for this state: read it first.
+
 ## Update, 22:35: start here in the morning
 
 The session that took over at 21:52 (e0e1d9d2) changed the plan on Alex's word at about 22:05 (W36 to W54 in `ALEX-WANTS.md`). The structure verdict below is now one input, not the plan. **Read `orchestration\local\overnight\MORNING.md` first** (git-ignored): what's ready, and Alex's morning in order.
