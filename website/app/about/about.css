@@ -1,0 +1,1078 @@
+/* /about (app/about/page.tsx): Alex's background and his LinkedIn wall.
+
+   After Addvery's own pages (local/addvery/frontend/FRONTEND.md, BRAND.md): the hero is their
+   team-detail page (portrait card beside the name, on black with their glow), the story sits beside an
+   "At a glance" box as in their case-study client grid (study_client, study_meta), the belief band is
+   their lilac quote band (study_quote), and the wall uses their card outline on white. Values are the
+   --av-* tokens (app/addvery-tokens.css). Everything sits under `.about` or `.wall-*`, so nothing here
+   reaches another page if this stylesheet stays loaded after a client-side navigation. */
+
+.about {
+  background: var(--av-white);
+  color: var(--av-ink);
+  font-family: var(--av-font-sans);
+  overflow-x: clip;
+  --focus: var(--av-amethyst);
+}
+
+.about-container {
+  width: 100%;
+  max-width: var(--av-container-narrow);
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.about-h2 {
+  margin: 0;
+  color: var(--av-ink);
+  font-family: var(--av-font-display);
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-editorial-tracking);
+  text-wrap: balance;
+}
+
+/* ---------- Hero: their team-detail page, on black with the hero glow ---------- */
+
+/* It runs up under the see-through menu, as the home hero does (the header's contract in globals.css). */
+.about-hero {
+  position: relative;
+  isolation: isolate;
+  margin-top: calc(-1 * var(--av-nav-height));
+  padding: calc(var(--av-nav-height) + 4.75rem) 0 6.875rem;
+  background: var(--av-black);
+  color: var(--av-text-on-dark);
+  --focus: var(--av-lavender);
+}
+
+.about-hero::before,
+.about-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background: url("/addvery/glow-hero.avif") 0 0 / auto no-repeat;
+}
+
+.about-hero::before {
+  top: 0;
+  left: 0;
+  width: min(1100px, 100%);
+  height: 760px;
+  opacity: 0.9;
+}
+
+/* A second glow behind the portrait, as behind their hero photos. */
+.about-hero::after {
+  right: 4%;
+  top: 18%;
+  width: 521px;
+  height: 471px;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.75;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  align-items: center;
+  column-gap: 6.25rem;
+}
+
+.about-hero-copy {
+  min-width: 0;
+}
+
+.about-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin: 0 0 2rem;
+}
+
+.about-eyebrow-line {
+  flex: none;
+  width: 1.625rem;
+  height: 1px;
+  background: var(--av-lavender);
+}
+
+.about-eyebrow {
+  margin: 0;
+  color: var(--av-lavender);
+  font-family: var(--av-font-display);
+  font-size: var(--av-eyebrow-size);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking);
+  text-transform: uppercase;
+}
+
+.about-h1 {
+  margin: 0;
+  color: var(--av-white);
+  font-family: var(--av-font-display);
+  font-size: var(--av-editorial-h1-size);
+  font-weight: 500;
+  line-height: var(--av-editorial-h1-lh);
+  letter-spacing: var(--av-editorial-h1-tracking);
+  text-wrap: balance;
+}
+
+/* Their podcast hero's lead: lilac on dark, 22 px. #ebdcff on #000 is 16:1. */
+.about-lead {
+  max-width: 34rem;
+  margin: 1.75rem 0 0;
+  color: var(--av-lilac-200);
+  font-size: var(--av-lead-size);
+  font-weight: 300;
+  line-height: var(--av-lead-lh);
+  text-wrap: pretty;
+}
+
+.about-lead strong {
+  font-weight: 400;
+}
+
+.about-cta {
+  margin-top: 2.5rem;
+}
+
+/* The portrait as their team card: 1 px #7b7b7b outline, 15 px radius. */
+.about-portrait {
+  margin: 0;
+  min-width: 0;
+}
+
+/* The file is the whole alderman.ai headshot (about 2:3); the 4:5 frame is CSS, head near the top. */
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border: 1px solid var(--av-border-photo);
+  border-radius: var(--av-radius-xl);
+  background: var(--av-plum-900);
+}
+
+/* ---------- The story beside "At a glance" (their study_client grid) ---------- */
+
+.about-story {
+  padding: 6.875rem 0;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  align-items: start;
+  column-gap: 6.25rem;
+}
+
+/* The box is first in the markup (facts first on phones); on wide screens it takes the right column. */
+.about-story-grid > .about-aside {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.about-story-grid > .about-prose {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.about-prose {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5rem;
+  max-width: var(--av-measure);
+  min-width: 0;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.125rem;
+}
+
+.about-section .about-h2 {
+  margin-bottom: 0.25rem;
+}
+
+.about-section p,
+.about-belief p {
+  margin: 0;
+  color: var(--av-text-on-light);
+  font-size: var(--av-rich-size);
+  line-height: var(--av-rich-lh);
+  text-wrap: pretty;
+}
+
+.about-section strong,
+.about-belief strong {
+  color: var(--av-ink);
+  font-weight: 500;
+}
+
+.about-section a,
+.about-belief a {
+  color: var(--av-plum);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+/* Sticky beside the story on wide screens, so the facts stay in view while you read. */
+.about-aside {
+  position: sticky;
+  top: calc(var(--av-nav-height) + 3rem);
+  min-width: 0;
+}
+
+.about-glance {
+  padding: 2rem 1.875rem;
+  background: var(--av-white);
+  border: 1px solid var(--av-lilac-300);
+  border-radius: var(--av-radius-2xl);
+}
+
+.about-glance-title {
+  margin: 0 0 1.5rem;
+  color: var(--av-amethyst);
+  font-family: var(--av-font-display);
+  font-size: var(--av-eyebrow-size);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: var(--av-eyebrow-tracking);
+  text-transform: uppercase;
+}
+
+.about-glance dl {
+  margin: 0;
+}
+
+.about-glance-row {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding: 0.875rem 0;
+  border-top: 1px solid var(--av-lilac-300);
+}
+
+.about-glance-row dt {
+  color: var(--av-text-on-light);
+  font-family: var(--av-font-body-haas);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.about-glance-row dd {
+  margin: 0;
+  color: var(--av-ink);
+  font-family: var(--av-font-display);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+/* Quiet link cards under the facts: alderman.ai, and the AI-portfolio slot (profile.ts), which shows
+   only once it names a published entry. */
+.about-links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--av-lilac-300);
+}
+
+.about-link-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 1rem 0.75rem 0.75rem;
+  border: 1px solid var(--av-lilac-300);
+  border-radius: var(--av-radius-lg);
+  background: var(--av-lilac-100);
+  color: var(--av-ink);
+  text-decoration: none;
+  transition: border-color var(--av-dur-base) ease;
+}
+
+.about-link-card:hover {
+  border-color: var(--av-amethyst);
+}
+
+.about-link-card:hover .about-link-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* His logo has white letters, so it sits on an ink tile. */
+.about-site-logo {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--av-radius-md);
+  background: var(--av-ink);
+}
+
+.about-site-logo img {
+  display: block;
+  width: auto;
+  height: 2.5rem;
+}
+
+.about-link-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.125rem;
+  min-width: 0;
+}
+
+.about-link-title {
+  font-family: var(--av-font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.about-link-note {
+  color: var(--av-text-on-light);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.about-portfolio {
+  padding-left: 1rem;
+}
+
+.about-portfolio-label {
+  color: var(--av-amethyst);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ---------- The belief band (their study_quote, lilac) ---------- */
+
+.about-belief {
+  padding: 6.875rem 0 7.5rem;
+  background: var(--av-lilac-100);
+}
+
+.about-belief-inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  max-width: calc(820px + 5rem);
+}
+
+.about-belief-title {
+  margin-bottom: 0.75rem;
+  font-size: var(--av-editorial-h2-size);
+  line-height: var(--av-editorial-h2-lh);
+}
+
+.about-belief-inner > p {
+  max-width: var(--av-measure);
+  color: #4d4a55;
+  font-size: 1.1875rem;
+}
+
+/* Alex's own words: a real blockquote in a figure, as the demos' [!quote] (app/demos/demos.css): ink
+   display type, the amethyst opening mark hanging in the margin, the name under a short amethyst rule. */
+.about-quote {
+  position: relative;
+  margin: 1.75rem 0 2rem;
+}
+
+.about-quote::before {
+  content: "\201C" / "";
+  position: absolute;
+  top: -1.375rem;
+  left: -4.5rem;
+  color: var(--av-amethyst);
+  font-family: var(--av-font-sans);
+  font-size: 7rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.about-quote blockquote {
+  margin: 0;
+}
+
+.about .about-quote blockquote p {
+  margin: 0;
+  max-width: none;
+  color: var(--av-ink);
+  font-family: var(--av-font-display);
+  font-size: clamp(1.5rem, 1.05rem + 1.3vw, 2.125rem);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: var(--av-editorial-tracking);
+  text-wrap: pretty;
+}
+
+.about-quote figcaption {
+  margin-top: 1.25rem;
+  color: var(--av-text-on-light);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.about-quote figcaption::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+  background: var(--av-amethyst);
+}
+
+.about-quote-name {
+  color: var(--av-ink);
+  font-family: var(--av-font-display);
+  font-weight: 500;
+}
+
+/* ---------- The LinkedIn wall ---------- */
+
+.about-wall {
+  padding: 6.875rem 0 7.5rem;
+}
+
+.about-wall-inner {
+  max-width: var(--av-container);
+}
+
+.about-wall-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  column-gap: 2.5rem;
+  row-gap: 0.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.about-wall-head .about-h2 {
+  grid-column: 1 / -1;
+  font-size: var(--av-editorial-h2-size);
+  line-height: var(--av-editorial-h2-lh);
+}
+
+.about-wall-dek {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--av-text-on-light);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.about-wall-follow {
+  margin: 0;
+}
+
+.about-wall-follow a {
+  color: var(--av-plum);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.about-wall-follow a:hover {
+  color: var(--av-amethyst);
+}
+
+.wall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+  align-items: start;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* With JavaScript and two or more columns (wall.tsx): rows of 4 px, each card spanning its height. */
+.wall-grid[data-masonry] {
+  grid-auto-rows: 4px;
+  row-gap: 0;
+}
+
+.wall-grid > li {
+  min-width: 0;
+}
+
+.wall-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  padding: 1.125rem 1.25rem 0;
+  background: var(--av-white);
+  border: 1px solid var(--av-lilac-300);
+  border-radius: var(--av-radius-lg);
+}
+
+.wall-head,
+.wall-dialog-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* The headshot file, unaltered, framed on his face: scaled up and shifted inside a round window. */
+.wall-avatar {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--av-lilac-300);
+}
+
+.wall-avatar-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.wall-avatar img {
+  position: absolute;
+  left: -13%;
+  top: -40%;
+  width: 140%;
+  max-width: none;
+  height: auto;
+}
+
+.wall-byline {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+}
+
+.wall-name {
+  margin: 0;
+  color: var(--av-ink);
+  font-family: var(--av-font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.wall-date {
+  color: var(--av-text-on-light);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+/* His text, verbatim: line breaks kept, long links wrap. */
+.wall-text {
+  margin: 0;
+  color: #2b2930;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+/* Small text links and buttons: the focus ring hugs the words, and a ::after layer stretches the hit
+   area to about 44 px tall without moving anything (or overlapping the text around it). */
+.wall-more,
+.wall-out,
+.about-wall-follow a {
+  position: relative;
+}
+
+.wall-more::after,
+.wall-out::after,
+.about-wall-follow a::after {
+  content: "";
+  position: absolute;
+  inset: -11px -8px;
+}
+
+/* "Read more" */
+.wall-more {
+  align-self: flex-start;
+  margin: -0.25rem 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--av-plum);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.wall-more:hover {
+  color: var(--av-amethyst);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* No JavaScript: the <details> shows the whole post in place of the opening. */
+.wall-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.wall-details > summary {
+  list-style: none;
+}
+
+.wall-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.wall-details[open] > summary {
+  order: 2;
+  margin-top: 0.5rem;
+}
+
+.wall-details:not([open]) .wall-more-open,
+.wall-details[open] .wall-more-closed {
+  display: none;
+}
+
+.wall-card:has(.wall-details[open]) .wall-collapsed {
+  display: none;
+}
+
+.wall-media {
+  position: relative;
+  margin: 0.25rem 0 0;
+}
+
+.wall-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--av-lilac-300);
+  border-radius: var(--av-radius-md);
+  background: var(--av-lilac-100);
+}
+
+.wall-media-more {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--av-radius-pill);
+  background: var(--av-badge-bg);
+  color: var(--av-white);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* A PDF carousel: its title in a box that opens the post on LinkedIn. */
+.wall-doc,
+.wall-video {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-top: 0.25rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--av-lilac-300);
+  border-radius: var(--av-radius-md);
+  background: var(--av-lilac-100);
+  color: var(--av-ink);
+  text-decoration: none;
+  transition: border-color var(--av-dur-base) ease;
+}
+
+.wall-doc:hover,
+.wall-video:hover {
+  border-color: var(--av-amethyst);
+}
+
+.wall-doc-icon {
+  flex: none;
+  display: inline-flex;
+  color: var(--av-amethyst);
+}
+
+.wall-doc-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.125rem;
+  min-width: 0;
+}
+
+.wall-doc-title {
+  font-family: var(--av-font-display);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.wall-doc-note,
+.wall-video-note {
+  color: var(--av-text-on-light);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.wall-video {
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 0 0.75rem;
+  overflow: hidden;
+}
+
+.wall-video img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wall-video-note {
+  padding: 0 1rem;
+}
+
+.wall-video-play {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 56px;
+  height: 56px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: var(--av-badge-bg);
+}
+
+.wall-video-play::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 17px;
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent var(--av-white);
+}
+
+.wall-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+  margin-top: 0.125rem;
+  padding: 0.75rem 0 0.875rem;
+  border-top: 1px solid var(--av-lilac-300);
+}
+
+.wall-counts {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.875rem;
+  margin: 0;
+  color: var(--av-text-on-light);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+/* "View on LinkedIn": 13 px type, so its hit area reaches a little further. */
+.wall-out::after {
+  inset: -13px -8px;
+}
+
+.wall-out {
+  margin-left: auto;
+  line-height: 1.4;
+  color: var(--av-plum);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.wall-out:hover {
+  color: var(--av-amethyst);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- The full post, in a native modal dialog ---------- */
+
+html.wall-dialog-open {
+  overflow: hidden;
+}
+
+html.wall-dialog-open body {
+  padding-right: var(--wall-scrollbar, 0px);
+}
+
+.wall-dialog {
+  width: min(680px, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 3rem);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: var(--av-radius-2xl);
+  background: var(--av-white);
+  color: var(--av-ink);
+  font-family: var(--av-font-sans);
+  box-shadow: var(--av-shadow-soft);
+  overflow: hidden;
+  overscroll-behavior: contain;
+  --focus: var(--av-amethyst);
+}
+
+.wall-dialog::backdrop {
+  background: rgba(21, 21, 21, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+.wall-dialog[open] {
+  animation: wall-dialog-in 220ms var(--ease-out-quart);
+}
+
+.wall-dialog[open]::backdrop {
+  animation: wall-backdrop-in 220ms linear;
+}
+
+@keyframes wall-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+}
+
+@keyframes wall-backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.wall-dialog-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 3rem);
+}
+
+.wall-dialog-head {
+  flex: none;
+  padding: 1.25rem 1.25rem 1rem 1.75rem;
+  border-bottom: 1px solid var(--av-lilac-300);
+}
+
+.wall-dialog-head .wall-byline {
+  flex: 1;
+}
+
+.wall-dialog-head .wall-name {
+  font-size: 1rem;
+}
+
+/* The heading takes focus when the dialog opens (for screen readers); it isn't a control. */
+.wall-dialog-head .wall-name:focus {
+  outline: none;
+}
+
+.wall-close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--av-lilac-300);
+  border-radius: 50%;
+  background: var(--av-white);
+  color: var(--av-ink);
+  cursor: pointer;
+  transition: border-color var(--av-dur-base) ease, background-color var(--av-dur-base) ease;
+}
+
+.wall-close:hover {
+  border-color: var(--av-amethyst);
+  background: var(--av-lilac-100);
+}
+
+.wall-dialog-body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1.5rem 1.75rem 1.75rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* The body scrolls, so it takes keyboard focus (arrow keys scroll it); its ring sits inside the panel. */
+.wall-dialog-body:focus-visible {
+  outline-offset: -3px;
+}
+
+.wall-dialog-body .wall-text {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.wall-dialog-foot {
+  flex: none;
+  margin: 0;
+  padding: 0.875rem 1.75rem;
+}
+
+/* ---------- Responsive (their breakpoints) ---------- */
+
+@media screen and (max-width: 991px) {
+  .about-container {
+    padding: 0 1.5rem;
+  }
+
+  .about-hero {
+    padding: calc(var(--av-nav-height) + 3.5rem) 0 5rem;
+  }
+
+  .about-hero::after {
+    right: -30%;
+    top: auto;
+    bottom: 0;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 3.5rem;
+  }
+
+  .about-portrait {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .about-story {
+    padding: 5rem 0;
+  }
+
+  .about-story-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 3.5rem;
+  }
+
+  .about-story-grid > .about-aside,
+  .about-story-grid > .about-prose {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .about-aside {
+    position: static;
+    max-width: var(--av-measure);
+  }
+
+  .about-belief,
+  .about-wall {
+    padding: 5rem 0;
+  }
+
+  .about-quote::before {
+    left: -3.75rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-h2 {
+    font-size: 1.875rem;
+  }
+
+  .about-hero {
+    padding-bottom: 4rem;
+  }
+
+  .about-eyebrow-row {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-cta {
+    margin-top: 2rem;
+  }
+
+  .about-quote::before {
+    position: static;
+    display: block;
+    height: 2.75rem;
+    font-size: 5rem;
+  }
+
+  .about-wall-head {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.5rem;
+  }
+
+  .about-wall-head .about-h2 {
+    margin-bottom: 0.25rem;
+  }
+
+  .wall-dialog {
+    width: calc(100% - 1.5rem);
+    max-height: calc(100dvh - 1.5rem);
+  }
+
+  .wall-dialog-panel {
+    max-height: calc(100dvh - 1.5rem);
+  }
+
+  .wall-dialog-head {
+    padding: 0.875rem 0.875rem 0.875rem 1.25rem;
+  }
+
+  .wall-dialog-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .wall-dialog-foot {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .about-container {
+    padding: 0 1.25rem;
+  }
+
+  .about-glance {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .about-glance-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.25rem;
+  }
+
+  .about-section p,
+  .about-belief-inner > p {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wall-dialog[open],
+  .wall-dialog[open]::backdrop {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .wall-card,
+  .about-glance,
+  .wall-dialog {
+    border: 1px solid CanvasText;
+  }
+}

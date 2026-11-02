@@ -1,0 +1,196 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { entryUrl, findEntry } from "../demos/entries";
+import { Reveal, RotateIn } from "../motion";
+import { GradientButton } from "../site-chrome";
+import { readAboutCopy, type CopyBlock } from "./copy";
+import { AI_PORTFOLIO_SLUG, FACTS, LINKS, SHOW_ZERO_COUNTS } from "./profile";
+import { LinkedInWall } from "./wall";
+import { wallCards, wallSpan } from "./wall-data";
+import "./about.css";
+
+// /about: who Alex is. Alex, 2 Nov: "one section of the website should be my background ... from my
+// live website, alderman.ai. It's got my headshot and my background", and "a wall of LinkedIn posts
+// ... It starts with the collapsed version like you would see on LinkedIn. The 'Read more' would
+// basically do a popup of the full version ... it just shows that I've been posting nonstop about AI."
+//
+// Built to orchestration's mockup (About.dc.html on the "Hire Me site mockup" canvas): the dark hero
+// with the headshot (Addvery's team-detail page), the story beside an "At a glance" box (their
+// case-study client grid), his belief as a lilac quote band (their study_quote), then the wall.
+//
+// Sources: the copy is local/about/about-me.md (./copy.ts), the posts content/linkedin-wall.json
+// (./wall-data.ts), the settings ./profile.ts, the images public/about/ (scripts/about_assets.py makes
+// them all; local/ and public/about/ are git-ignored and deploy from the working tree).
+
+const TITLE = "About Alex Alderman";
+const DESCRIPTION =
+  "Alex Alderman, a marketer turned GTM engineer in Prague: his background, the job he wants, and a wall of his LinkedIn posts about AI.";
+
+// The preview image is ./opengraph-image.tsx (the headshot beside the title, in the site's card template).
+export const metadata: Metadata = {
+  title: `${TITLE} · Hire Me Hackathon`,
+  description: DESCRIPTION,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "profile",
+    firstName: "Alex",
+    lastName: "Alderman",
+    url: "/about",
+    siteName: "Hire Me Hackathon",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+};
+
+function Blocks({ blocks }: { blocks: CopyBlock[] }) {
+  return blocks.map((b, i) =>
+    b.kind === "quote" ? (
+      <figure key={i} className="about-quote">
+        <blockquote>
+          <p dangerouslySetInnerHTML={{ __html: b.html }} />
+        </blockquote>
+        <figcaption>
+          <span className="about-quote-name">{b.by}</span>
+        </figcaption>
+      </figure>
+    ) : (
+      <p key={i} dangerouslySetInnerHTML={{ __html: b.html }} />
+    ),
+  );
+}
+
+/** The quiet link to Alex's AI portfolio (an entry under /demos), once AI_PORTFOLIO_SLUG names one. */
+function PortfolioCard() {
+  if (!AI_PORTFOLIO_SLUG) return null;
+  const entry = findEntry(AI_PORTFOLIO_SLUG);
+  if (!entry) return null;
+  return (
+    <Link href={entryUrl(entry.slug)} className="about-link-card about-portfolio">
+      <span className="about-link-text">
+        <span className="about-portfolio-label">My AI portfolio</span>
+        <span className="about-link-title">{entry.title}</span>
+        {entry.cover.subtitle && <span className="about-link-note">{entry.cover.subtitle}</span>}
+      </span>
+    </Link>
+  );
+}
+
+export default function AboutPage() {
+  const copy = readAboutCopy();
+  const story = copy.sections.slice(0, -1);
+  const belief = copy.sections[copy.sections.length - 1];
+  const posts = wallCards();
+
+  return (
+    <main className="about">
+      <section className="about-hero" aria-labelledby="about-title">
+        <div className="about-container about-hero-grid">
+          <Reveal variant="left" onLoad className="about-hero-copy">
+            <div className="about-eyebrow-row">
+              <span className="about-eyebrow-line" aria-hidden="true" />
+              <p className="about-eyebrow">About me</p>
+            </div>
+            <h1 id="about-title" className="about-h1">
+              Alex Alderman
+            </h1>
+            <p className="about-lead" dangerouslySetInnerHTML={{ __html: copy.leadHtml }} />
+            <GradientButton href="#linkedin" className="about-cta">
+              Read my LinkedIn posts
+            </GradientButton>
+          </Reveal>
+          <RotateIn as="figure" from="bottom-right" angle={10} onLoad delay={150} className="about-portrait">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/about/alex-headshot-800.webp"
+              srcSet="/about/alex-headshot-480.webp 480w, /about/alex-headshot-800.webp 800w"
+              sizes="(max-width: 991px) min(88vw, 420px), 420px"
+              width={800}
+              height={1215}
+              alt="Alex Alderman"
+              fetchPriority="high"
+            />
+          </RotateIn>
+        </div>
+      </section>
+
+      <section className="about-story" aria-label="My background">
+        <div className="about-container about-story-grid">
+          {/* The box comes first in the page, so on phones the facts sit right under the hero; on wide
+              screens the grid puts it in the right-hand column (about.css). */}
+          <aside className="about-aside" aria-labelledby="about-glance">
+            <div className="about-glance">
+              <h2 id="about-glance" className="about-glance-title">
+                At a glance
+              </h2>
+              <dl>
+                {FACTS.map((f) => (
+                  <div key={f.term} className="about-glance-row">
+                    <dt>{f.term}</dt>
+                    <dd>{f.detail}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="about-links">
+                <a className="about-link-card" href={LINKS.site.href} target="_blank" rel="noopener noreferrer">
+                  <span className="about-site-logo">
+                    {/* His logo from alderman.ai, as is (local/alex/brand/). White letters, so on a dark tile. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/about/alderman-ai-stacked-logo-v1.svg" width={27} height={41} alt="" />
+                  </span>
+                  <span className="about-link-text">
+                    <span className="about-link-title">{LINKS.site.label}</span>
+                    <span className="about-link-note">
+                      {LINKS.site.note}
+                      <span className="sr-only"> (new tab)</span>
+                    </span>
+                  </span>
+                </a>
+                <PortfolioCard />
+              </div>
+            </div>
+          </aside>
+          <div className="about-prose">
+            {story.map((s) => (
+              <section key={s.id} className="about-section" aria-labelledby={s.id}>
+                <h2 id={s.id} className="about-h2">
+                  {s.title}
+                </h2>
+                <Blocks blocks={s.blocks} />
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="about-belief" aria-labelledby={belief.id}>
+        <div className="about-container about-belief-inner">
+          <h2 id={belief.id} className="about-h2 about-belief-title">
+            {belief.title}
+          </h2>
+          <Blocks blocks={belief.blocks} />
+        </div>
+      </section>
+
+      <section className="about-wall" aria-labelledby="linkedin">
+        <div className="about-container about-wall-inner">
+          <header className="about-wall-head">
+            <h2 id="linkedin" className="about-h2">
+              From my LinkedIn
+            </h2>
+            <p className="about-wall-dek">
+              {posts.length} of my posts from {wallSpan(posts)}, newest first, as I wrote them. Read more opens the
+              whole post.
+            </p>
+            <p className="about-wall-follow">
+              <a href={LINKS.linkedin.href} target="_blank" rel="noopener noreferrer">
+                Follow me on LinkedIn<span className="sr-only"> (new tab)</span>
+              </a>
+            </p>
+          </header>
+          <LinkedInWall posts={posts} showZeroCounts={SHOW_ZERO_COUNTS} />
+        </div>
+      </section>
+    </main>
+  );
+}

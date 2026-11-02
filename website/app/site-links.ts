@@ -5,6 +5,7 @@ export const NAV_LINKS = [
   { href: "/#status", label: "What's being built" },
   { href: "/demos", label: "GTM demos" },
   { href: "/for", label: "For Addvery" },
+  { href: "/about", label: "About Alex" },
   { href: "/docs/charter", label: "The plan" },
 ];
 
