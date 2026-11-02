@@ -6,12 +6,13 @@ This session runs the OBS capture rig, and nothing else. It is the background se
 - **Not my job:** the website (`..\website`). Don't edit anything there. The `website` session owns it.
 - **Sessions are numbered in order with no total:** S01, S02, S03, and so on. Never say "S02 of 6" or guess how many are left. S01 was recorded on 2 Nov.
 - **No test mode.** It was removed on 2 Nov. Every run writes to the real folders.
-- **Repo:** all work on `main`, no branches. Commit or push only when Alex asks.
+- **Repo:** all work on `main`, no branches. Commit your own folder after every finished step, per `..\GIT.md`; don't push, the watcher does.
 
 ## Boot reading
 
 - `rig\RUNBOOK.md`: the four commands and what the voice alerts mean. Read it at startup.
 - `rig\HANDOFF.md` and `rig\RIG_NOTES.md`: read them before changing rig code, not before.
+- Before your first commit, read `..\GIT.md`; it's how all sessions share one working tree.
 
 ## The website clock
 
