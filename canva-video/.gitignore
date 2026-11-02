@@ -5,3 +5,5 @@ out/
 *.mp4
 *.mkv
 *.mov
+# Entry figures: copies of the signed-off art, which carries Addvery's logo; website copies them to public/demos-assets/<slug>/ (kept out of the public repo, as public/addvery/ is)
+site/assets/
