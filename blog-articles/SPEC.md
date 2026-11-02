@@ -1,27 +1,18 @@
-# S-D5 Three blog articles: executable spec
+# S-D5 Two blog articles: executable spec
 
-Status: groundwork running since 2 Nov 16:42 (launched by `orchestration` on groundwork only); the preflight intake stays held (Appendix A), with no article questions to Alex until he's ready · Row: S-D5 — Three blog articles · Folder: `blog-articles\` · Session: `s-d5-blog-articles`
+Status: running since the RESTART (17:13); dictation 1 on the desk at 17:30, no intake (dropped, §9) · Row: S-D5 — Two blog articles · Folder: `blog-articles\` · Session: `s-d5-blog-articles`
 
-**Two articles, not three** (Alex, OT-04 note, about 16:40: "we'll do two articles"). The charter row and DoD-15 still say three until `orchestration` applies change C10; this spec works to two from now (§9). Both topics are his, verbatim in §1a, and he asked for visuals to go with them (§7a).
+**Two articles, not three** (Alex, OT-04 note, about 16:40: "we'll do two articles"). C10 is applied: the charter's D5 and DoD-15 say two (§9). Both topics are his, verbatim in §1a, and he asked for visuals to go with them (§7a).
 
-S-D5 produces two blog posts, each from about 15 minutes of Alex's dictation, drafted by the S-D4 pipeline, finished by Alex (his last 10%) and published on the site (DoD-15). They're written for Addvery's audience, in Alex's voice and under his name. On the site they're the blog at `/blog`: one page per post in the template S-D4 had built, each with its "How this post was made" box.
+S-D5 produces two blog posts, each from about 15 minutes of Alex's dictation, drafted by the blog pipeline's stages (`..\blog-pipeline\`, S-D5's own since S-D4 retired), finished by Alex (his last 10%, in a Claude Doc) and published on the site (DoD-15). They're written for Addvery's audience, in Alex's voice and under his name. On the site they're the blog at `/blog`: one page per post in the template S-D5 asks `website` for (BUILD S-D5-B1), each with its "How this post was made" box.
 
 ## 1. Operator preflight (P3)
 
-The preflight is decision intake DI-XX (`..\Operator tasks\Decide - your two blog posts, timing.md`), still held (Appendix A). Its topics question is gone: Alex gave both topics himself in his OT-04 note (§1a). Whether S-D4's test dictation is article 1 is S-D4's question, in its own preflight intake DI-8 (`..\Operator tasks\Decide - how the blog pipeline should work.md`, question 3); with both topics fixed, the test can count only if it was on one of them.
-
-| DI-XX question | Question | Default |
-| --- | --- | --- |
-| ~~1~~ | ~~The topics~~ | Answered by Alex in OT-04 (§1a); not asked |
-| 2 | The dictation slots | Rechecked against the clock when the intake is released; the morning cleanup session if still empty at 18:00 |
-| 3 | When Alex does the last 10% | Today's gaps first, the rest in the morning cleanup session (A) |
-| 4 | When each post goes live | As soon as he finishes it (A) |
-
-**Launch gate.** Met differently: `orchestration` launched the session at 16:42 on groundwork only (bases, outline, visuals), with the intake held. The dictation and finish steps (§7 steps 3 to 8) wait for the intake. From 18:00 Prague an unanswered question takes its default, logged in §9.
+**No intake** (dropped at the RESTART, 17:13, §9). Under Alex's reset rules (`..nswer-desk\ASKING.md`, 17:00), easy calls are this session's, decided and logged in §9; his only sign-off is the last 10% of each post. His reset intake (`..\Operator tasks\Decide - everything left that needs you.md`) already told him: "the two blog dictations (ready now)" and "each blog post's draft, in a Doc, for your last 10%".
 
 **Operator scenes.**
-- **Two dictations**, about 15 minutes each, on camera, scheduled later through the held intake (Alex, 16:40: "I really don't want to talk any more about articles right now"). Each talks from its brief in `briefs\` (§7a). They're shot before the pipeline is accepted (P3, the movie-actor rule): drafting comes later.
-- **The last 10% of each post**, about 10 minutes each, when question 3 says. It's Alex's own edit in an operator task, not a gate.
+- **Two dictations**, about 15 minutes each, on camera. Each is a Claude Doc with the topic, the decided landing and ask, eight talking prompts and a "Dictate below this line" heading. He dictates into it with Wispr Flow and comments "done". The desk alerts him with a `TASK s-d5-blog-articles: blog dictation <n> is ready to record: <link> ...` line.
+- **The last 10% of each post**, about 10 minutes each, in a Claude Doc holding the near-final draft. His comment on it is the sign-off; the post then goes live.
 
 ### 1a. Alex's decisions in his OT-04 note (verbatim, 2 Nov about 16:40)
 
@@ -36,14 +27,14 @@ Source: `..\Operator tasks\Archive\Approve - research for the blog pipeline.md`,
 
 **Off camera.** Nothing.
 
-**Runtime questions** go to the desk as asker `S-D5`, ids `S-D5-Q1` onwards, one at a time (`..\answer-desk\ASKING.md`). After 15 minutes waiting on Alex, send `answer-desk` `POKE S-D5: waiting on you for <what>`, and again every 15 minutes, except where §7 step 7 says otherwise. Before 18:00 Prague, keep waiting and keep doing anything that doesn't depend on the answer. From 18:00, decide on the default and log it (§9).
+**Runtime questions** go to the desk as asker `S-D5`, ids `S-D5-Q1` onwards, one at a time (`..\answer-desk\ASKING.md`), and only for a real blocker (reset rule 1). Pokes only while work is blocked on him, at most every 30 minutes: `POKE S-D5: waiting on you for <what>` (reset rule 7). No 18:00 cut-off (reset rule 8).
 
 ## 2. Spec contract
 
 | Item | S-D5's answer |
 | --- | --- |
 | 1. Its place | Row S-D5 — Three blog articles (deliverable D5). Claims DoD-15. Serves DoD-14 (each post's changed-words share shows what the last 10% was) and DoD-19 (the blog grows on the site through the day). Serves DoD-22 (every post passes the scan before it's published). Reads the L-03 and L-01 findings. |
-| 2. Its neighbours | Depends on S-D4 (the runbook, the post template, and possibly article 1). Uses `website` (S-D8) to publish. Runs in parallel with S-D1, S-D3, S-D6, S-D7 and S-D9, and with S-D4 while S-D4's gates are open. Feeds S-D8 (the posts) and S-D9 (each dictation's clock times, as clip candidates). |
+| 2. Its neighbours | Depends on S1 (L-03 findings). Owns S-D4's retired kit in `..\blog-pipeline\`. Uses `website` (S-D8) for the post template and to publish. Runs in parallel with S-D1, S-D3, S-D6, S-D7 and S-D9. Feeds S-D8 (the posts) and S-D9 (each dictation's clock times, as clip candidates). |
 | 3. Operator preflight | §1 (DI-XX). |
 | 4. Decision log | §9. |
 | 5. Forking gates | §8. |
@@ -56,7 +47,7 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
 - `..\CHARTER.md`: the parent context. Read only, never edit.
 - `..\SESSIONS.md`: the roster. Message sessions only by these names; edit only S-D5's own row.
 - `..\GIT.md`: the shared-tree rules. Commit only `blog-articles\` and S-D5's own operator tasks, path-limited.
-- `..\answer-desk\ASKING.md`: the desk format, TASK lines, gate approvals, the poke and the 18:00 rule.
+- `..\answer-desk\ASKING.md`: the desk format, TASK lines, the poke, and Alex's reset rules at the top (17:00), which override older text here.
 - `..\answer-desk\qa\S-D5.md`: S-D5's own Q&A record, once the desk creates it.
 - `..\Operator tasks\Archive\INDEX.md`: Alex's earlier answers; never re-ask them. DI-1: dictation is Wispr Flow, and `/process` runs only when he types it.
 - `..\Operator tasks\Decide - your three blog posts, topics and timing.md` (in `..\Operator tasks\Archive\` once filed): this spec's preflight answers, verbatim.
@@ -72,7 +63,8 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
   - `..\research\global\L-03-R5-blog-writing-skill.md`: the copywriting skill to use. `marketing:content-creation` is on (SKILL ON from `orchestration`, 16:47); `humanizer` is Alex's call, for tomorrow.
   - `..\research\global\L-03-R1-transcript-to-draft.md`: reuse Alex's spoken words, trace every claim to the transcript.
   - `..\research\global\L-03-R4-finished-b2b-post.md`: informative visuals over decorative ones, one diagram, a link-preview image; behind POST-FORMAT v1.1.
-  - L-03 R7, article 2's research base: S1 sends it when reviewed; it feeds `briefs\A-02-outline.md`.
+  - `..\research\global\L-03-R7-article-2-base.md`: article 2's research base (accepted 17:16). Feeds `briefs\A-02-base.md`.
+  - `..\research\global\L-03-synthesis.md`: S1's synthesis of all ten L-03 reports, written for S-D5 alone (about 17:35). Start with "Tonight, in five lines"; its recommendations 1 to 26 and the calls in "(b)" are logged in §9.
 - **Visuals resources** (§7a), read only:
   - `..\research\global\L-05-R1-pixel-perfect-demo.md`: Alex's earlier Apify demo, the "backdrop plus slot map, AI text on top" method, its render flags and traps.
   - `..\canva-templates\BUILD-SHEET.md`: S-D6's Addvery grid, type scale and colour roles, by role name only.
@@ -94,7 +86,7 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
 - Tools: general-purpose subagents, SendMessage and Monitor (load SendMessage, ListAgents and Monitor with ToolSearch at startup).
 - Not read: `..\Addvery Research\`. Topics come from Alex.
 
-**Inputs from S-D4, consumed in §7 once S-D4 produces them:** its runbook, post format, prompts and scripts in `..\blog-pipeline\` (steps 4, 6 and 8), the post template on the site (step 8), and article 1 if the test counts (step 5). S-D5 reads and runs them and never edits them. A problem goes to `s-d4-blog-pipeline` as `PIPELINE FIX S-D5: <what>`.
+**The blog kit in `..\blog-pipeline\`** (S-D4's, S-D5's since the RESTART): the runbook `PIPELINE.md`, `POST-FORMAT.md`, the stage prompts, the sample post and the scripts. S-D5 runs them and edits them directly when a stage's output is wrong (fix the prompt, bump its version, rerun from that stage), committing as `[blog-pipeline] ...`.
 
 **Outputs.** What S-D5 creates, in `blog-articles\`. Its operator tasks go in `..\Operator tasks\` (§7).
 
@@ -158,6 +150,8 @@ Approving the list is S1's gate, not this session's.
 
 **If findings are late,** nothing here waits on them: the dictations go ahead, and drafting follows whatever runbook version S-D4 announces. S-D4's preflight (its question 5) decides whether S-D4 drafts before its findings land.
 
+**Since the RESTART (17:13):** L-03 is complete. R6 (16:52) and R7 (17:16) are accepted, and the synthesis landed at about 17:35 (§3). L-01's findings stay on the reading list. Nothing waits on research any more.
+
 ## 7. Methodology and steps
 
 **Draft methodology**, confirmed once L-03's synthesis lands. S-D5's drafting is S-D4's accepted runbook, run twice. Around it sit four steps of its own:
@@ -170,6 +164,16 @@ Approving the list is S1's gate, not this session's.
 **Gates.** S-D5's own DoD maps one-to-one onto DoD-15, which Alex signed off in DI-5, and its drafting is S-D4's runbook, which Alex approves at S-D4's gates. So S-D5 has a spec-draft gate only if its methodology must differ from S-D4's accepted runbook (a stage added, dropped or changed). Then it freezes this SPEC.md into `..\Operator tasks\Approve - how the three blog posts get made.md` from the gate template (`## What this is` and summary in plain words), commits it, sends `TASK S-D5: Approve - how the three blog posts get made.md is waiting on you: a change to how your blog posts are drafted`, waits with Monitor running `python -I orchestration\check_gate.py "Operator tasks\Approve - how the three blog posts get made.md"` from the repo root every 300 seconds, pokes after 15 minutes, applies any `CHANGES`, and then sends `TASK DONE S-D5: Approve - how the three blog posts get made.md` and `ARCHIVE Approve - how the three blog posts get made.md: readers S-D5`. Finishing isn't a gate: it's Alex's own edit.
 
 **Coherency check:** "If we execute this methodology, will DoD-15 be satisfied?" Criterion by criterion against §5: topics (step 2, done by Alex in §1a), two dictations (steps 3 to 5), drafted at an accepted version with no hand edits (step 6), finished by Alex with the share recorded (steps 7, 8), live and checked (step 8), scanned (step 8). A criterion with no step is a gap, fixed before drafting.
+
+**Run steps since the RESTART (17:13).** These replace steps 2 to 9 below wherever they differ; the old steps are kept for their detail on scans and the BUILD wording.
+
+1. **Brief.** `briefs\A-01-base.md` and `briefs\A-02-base.md` (from R7 and the synthesis).
+2. **Dictation Doc** per article, via `anthropic-skills:docs`: what this is, the topic in his words with the narrower claim offered, the decided landing and ask, stage 0's five prompts plus the brief's extras, the strongest facts only, and `## Dictate below this line` last. Send `answer-desk` `TASK s-d5-blog-articles: blog dictation <n> is ready to record: <link> ...`. Alex comments "done" on the Doc.
+3. **Capture.** Read the Doc back from the heading down into `dictations\A-0<n>.md`, run `scan.py`, commit, tell `s-d9-legibility` the clock times. While waiting, check the Doc every 5 minutes (synthesis rec 8); the rig transcript is a backup, not a wait.
+4. **Draft.** Run stages 1 to 7 from `..\blog-pipeline\prompts\` (`PIPELINE.md` §2), one fresh subagent per stage, `{SKILL}` = `marketing:content-creation`, output in `drafts\A-0<n>\`. After stage 5, one fresh cold-read subagent under `marketing:brand-review`, briefed as a sceptical agency leader, marks but changes nothing (rec 15).
+5. **Finish Doc.** Load the copy skill, then `anthropic-skills:docs`. One Doc per post: a short block on top (two or three title and opening options, the `[Alex: ...]` markers, the cold-read marks, what the post page will show), then the post. Send `TASK s-d5-blog-articles: blog post <n> is ready for your last 10%: <link>`. His comment on the Doc is the sign-off.
+6. **Publish.** Read the final text back into `posts\<nn>-<slug>.md`, compute the share of words changed with `counts.py --changed`, run `validate.py` and `scan.py`, commit, then `BUILD S-D5-B<n>` to `website`. After `BUILT`, curl the page head (its own `og:title`, `og:url`, `og:image`) before the link goes anywhere (rec 24). Log it in `PUBLISHED.md`.
+7. **Done.** Both live: `DONE S-D5: two posts live at <URLs>` to `orchestration`, roster row to Finished, stop.
 
 **Run steps.** Commit after every finished step, path-limited: `git commit -m "[blog-articles] <message>" -- blog-articles/...`, and S-D5's operator tasks with `-- "Operator tasks/<file>"`.
 
@@ -211,19 +215,19 @@ Alex asked for visuals to go with the two articles: LinkedIn imagery made "the s
 
 | Gate | When |
 | --- | --- |
-| F1 | Shortly before 18:00 Prague (about 17:50), so the overnight starts clean (P6). Open finish tasks stay open for the morning cleanup session. |
+| F1 | Retired at the RESTART: there's no 18:00 cut-off any more (reset rule 8). |
 | F2 | The session's context is about half full, whatever else is happening. |
 
 How it forks:
 1. Write `HANDOFF.md`: each article's state (topic, dictation, draft version, finish task, published), open questions and tasks with their times, pokes sent, BUILDs awaiting a reply, and decisions since the last fork. Commit it.
 2. From `blog-articles\`, launch the successor under the same name: `claude --bg -n s-d5-blog-articles "Read CLAUDE.md, then HANDOFF.md. You are now the active S-D5 session."`
 3. Update S-D5's row in `..\SESSIONS.md` with the handoff time and commit it on its own: `git commit -m "[roster] ..." -- SESSIONS.md`.
-4. Announce it to `s-d4-blog-pipeline`, `website`, `answer-desk` and `s1-research`: `HANDOFF s-d5-blog-articles, <time>: a fresh session has taken over under the same name. Re-send anything that got no reply since <time>.`
+4. Announce it to `website`, `answer-desk` and `s1-research` (`s-d4-blog-pipeline` has stopped): `HANDOFF s-d5-blog-articles, <time>: a fresh session has taken over under the same name. Re-send anything that got no reply since <time>.`
 5. The old session stops itself with `claude stop` and its own exact id.
 
 ## 9. Decision log (P5)
 
-Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decide on the default, log it here, and send `WITHDRAW <id>` for a desk question. Start each decision with the time and the question id.
+Since the RESTART, easy calls are decided here at once (reset rule 1); a passed deadline on a real blocker means one poke, then decide and log (reset rule 8). Start each decision with the time and the question id.
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
@@ -244,155 +248,20 @@ Before 18:00 Prague, a passed deadline means poke, not decide. From 18:00, decid
 | 2 Nov 16:50 (OT-04): **ComfyUI optional, capped:** at most six generations, only without a login or payment, run by his repo's own rules. | Alex: "We can also create something in Comfy." It costs credits and the coded backdrop already works without it. | It tries his tool without spending or logging in on his behalf. | `local\visuals\backdrops\comfy\` only. |
 | 2 Nov 16:58: **ComfyUI not run.** The trial stopped before generating: his repo runs everything on Comfy Cloud (signed in), and its rules make any job a work order logged inside that repo (provenance ledger, run README, runs index, KB step), which S-D5 may not edit. No credits spent. | `Comfy UI\BOUNDARIES.md` and `comfy.yaml`, read by the trial helper. | Running it from here would break his repo's own rules. | Options for Alex later: a session inside the Comfy UI repo runs it as a work order (about 13 to 20 credits for 4 to 6 images, under its 75-credit no-ask limit; its fixed 896×1152 size means the 1200×630 crops come from portrait); or he adds an exemption to BOUNDARIES.md. The coded backdrop stands meanwhile. |
 | 2 Nov 16:58 (S-D4, relaying Alex in DI-8 question 1: "Anything about blog pipelines is dead. The only deliverable is blogs."): **S-D4 is retired; the blogs are entirely S-D5's.** No test dictation, no article 1 handover, no template request will come from S-D4. Its runbook v0, prompts, POST-FORMAT v1.1, sample and scripts are S-D5's to use as tooling, copied into `blog-articles\` (GIT.md keeps S-D5 out of `blog-pipeline\`). The site's blog template request becomes `BUILD S-D5-B1` (text in `..\blog-pipeline\PIPELINE.md` §4, plus preview tags and the og:image). | Alex's DI-8 answer; S-D4's hand-off message. | The deliverable is the blogs, so the session that owns them owns the tooling and the template. | §3 inputs, §7 steps 5 and 6 (no handover; S-D5 runs the stages itself), §8 announcements (no `s-d4-blog-pipeline`). Re-planned after the 16:47 HOLD lifts; nothing changed yet. |
+| 2 Nov 17:13 (orchestration, RESTART): **the held intake is dropped**; no intake goes to Alex. Its questions are decided below or answered by his reset intake ("the two blog dictations (ready now)"; "each blog post's draft, in a Doc, for your last 10%"). | Alex's reset rules, 17:00: "If things are an easy judgment please clear the plate for me." | His only blog sign-off is the last 10% (reset rule 2); everything else here is an easy call. | Appendix A; §1. An intake comes back only if he asks for one. |
+| 2 Nov 17:13 (orchestration): **C10 is applied**: the charter's D5 and DoD-15 say two posts. | The change `orchestration` queued at 16:50. | Closes the 16:50 row's open end. | None. |
+| 2 Nov 17:13 (orchestration): **`..\blog-pipeline\` is S-D5's, used and edited in place**; `s-d4-blog-pipeline` has stopped. This replaces the 16:58 row's "copied into `blog-articles\`". A bad stage output means S-D5 fixes the prompt, bumps its version and reruns. | S-D4 is retired (DI-8); orchestration may hand folders over (GIT.md). | One copy of the kit, owned by the session that uses it. | Commits under `[blog-pipeline]`; §3, §7, §8. |
+| 2 Nov 17:13 (orchestration; reset rule 4): **drafts go in a Claude Doc**, one per post, and Alex's comment on it is the sign-off. The final text is read back into `posts\`, and the share of words he changed is computed against `drafts\A-0n\post.md` and shown on the post. Replaces the finish operator tasks of old steps 7 and 8. | Alex: "writen work shoudl be done there, it's a good last mile editing surface". | He edits where he already reviews written work, and the comment reaches this session. | Old steps 7 and 8; the "Run steps since the RESTART" list in §7. |
+| 2 Nov 17:13 (orchestration; reset intake): **no ComfyUI run, coded visuals only; `humanizer` waits for the morning.** | Alex's reset intake: "Blog visuals are coded, with no paid Comfy run. The humanizer plugin waits for later." | His call. | §7a's ComfyUI line; `local\visuals\backdrops\comfy\` stays empty. |
+| 2 Nov 17:20 (reset rule 6): **the visuals take the website's Addvery kit** (`website\local\addvery\brand\`), linked by relative path, not S-D6's canva-templates tokens. Re-skin under `frontend-design`, then `design:design-critique` and `design:accessibility-review`; `VISUALS.md` carries role names only. | Reset rules 5 and 6: one brand source, and no design work without a design skill. | One look across the site, the posts and the images. | `local\visuals\` only, plus `VISUALS.md`. |
+| 2 Nov 17:20 (W3 C4; orchestration's recommendation; L-03 synthesis (b)): **both articles land on someone inside who can maintain and extend what's built**, not on an outside vendor. | It fits a job application, and it's the rung the evidence backs best ("someone always has to maintain it"). | An outside-builder ending reads as a vendor pitch; a neutral one wastes the application. | Each dictation Doc's "Already decided" list and its prompt 8; he can override aloud or in a comment. |
+| 2 Nov 17:20 (W3 C5 C; synthesis (b)): **his interest is named once, plainly, in the opening; no ask at the end**, in both posts. The site's own ask carries the pitch. | Saying it first defuses "a GTM engineer selling GTM engineers" (A-02's objection 3). | A closing ask on a thought piece reads as a sales page. | The dictation Docs; the edit stage's notes. |
+| 2 Nov 17:20 (synthesis conflict 3): **the slider keeps Alex's order**: training at the bottom, external building at the top. The dictation Doc notes that published frameworks put in-house building on top and invites one sentence on why his differs. | It's his diagram, and the pipeline adds nothing he didn't say. | He decides the framing aloud; the research point is in front of him. | The in-post diagram, the diagram card in `local\visuals\`. |
+| 2 Nov 17:22: **each dictation lands in a Claude Doc**, not an operator task file: topic, decided landing, prompts, facts and a "Dictate below this line" heading; Alex comments "done". Capture tips from L-03 R3 are on the page (two or three Wispr stretches of 5 to 7 minutes; Alt+Shift+Z or History to recover). | Reset rule 4 and his reset intake ("coming to you as links, with no files to fill in"); the comment reaches this session without a file watch. DI-8 question 2 (where dictations land) was never answered. | One surface for his writing and talking; no Obsidian file to find. | If Wispr Flow can't type into the Doc, he pastes from anywhere, or the rig transcript is the source (`PIPELINE.md` §1). A task file takes two minutes to write. |
+| 2 Nov 17:30: **dictation 1 first** (its base was ready); dictation 2 once `briefs\A-02-base.md` is refreshed from R7 and the synthesis. | P3: shoot his scenes first; article 1's base needed nothing new. | His next free minutes go to a ready dictation, not a half-ready one. | Order only. |
+| 2 Nov 17:38 (L-03 synthesis): **its 13 calls in "(b)" are taken on its defaults**: the narrower claim offered next to his strong one; only the strongest facts in front of him (R6 facts 1 to 3 and 5; the Menlo and BCG figures left off dictation 1's page); IBM against Klarna offered for article 2's lead, flagged as one CEO's word; the EU AI Act only if he says it, in the July 2026 wording; the share of words changed shown as measured; two or three title and opening options in each finish Doc; one cold read per post under `marketing:brand-review`; companion images local until a post is live; search basics in the morning. | S1's synthesis, written for S-D5 alone; every call is assistant-actionable. | Easy calls under reset rule 1, each with an evidence trail. | Per call; each is one edit to a Doc, a prompt or a brief. |
+| 2 Nov 17:38 (synthesis (a)): **its two questions for Alex aren't sent yet.** Q1 (do the posts reach Addvery's six through his hand-over or his own LinkedIn) blocks nothing until a post is live. Q2 (Post Inspector on a sub-page) is optional and covered by curling the page head after `BUILT` (rec 24). | Reset rule 1: only real blockers go to him. | It keeps his screen on the dictations. | Q1 goes to the desk once post 1 is live, if it's still open. |
 
-## Appendix A. Held preflight intake
+## Appendix A. Held preflight intake (dropped)
 
-**Rework before release (16:58).** Alex has since given both topics and set two articles (§1a), and S-D4 is retired (§9), so there's no test dictation to count. Before releasing: drop QXX.1 (answered); change "three" to "two" throughout and rename the file to `Decide - your two blog posts, timing.md`; remove every reference to the blog pipeline's test dictation and its decision file; recheck every time against the clock; point each dictation at its brief in `briefs\`; and consider folding in L-03 W3's open choices (which rung article 1 lands on, where the ask goes) only if Alex is ready for article questions again. The text below is the earlier draft, kept for its form.
-
-This spec's preflight intake is drafted but not yet in front of Alex (Alex, 14:38: "i'm swamped we need to remove blockers"; orchestration: at most two wave-2 preflight intakes open at once, none new while he's on his Addvery research). **Release it when** the blog pipeline's own intake (Decide - how the blog pipeline should work.md) is answered, because this one's topic count and slots follow its answer on whether the test dictation counts as the first article. Whoever releases it (`wave2-specs` while it runs, then this spec's session if it's running, otherwise `orchestration`): take the next free DI number from the `Intake id:` lines in `..\Operator tasks\` and `..\Operator tasks\Archive\`, replace `XX` in the forms `DI-XX`, `QXX.`, `AXX.` and `a-XX-` with it, and save the text below as `..\Operator tasks\Decide - your three blog posts, topics and timing.md`. Recheck any times in it against the clock first. Commit it path-limited, put the DI number into §1 and the status line, and send `answer-desk` `TASK S-D5: Decide - your three blog posts, topics and timing.md is waiting on you: <what it decides and unblocks>`.
-
-~~~~markdown
----
-System Primitive: Intake file
-Intake State: Waiting on operator
-Intake id: DI-XX
-Created: 2026-11-02
-Build goals: []
----
-
-<!-- File name: "Decide - your three blog posts, topics and timing.md" -->
-
-# Decide: your three blog posts, topics and timing
-
-## What this is
-
-The whole site is a personalised job application to Addvery, built live in a 12-hour recorded hackathon. This part is **three blog posts** on the site. Each one starts as about 15 minutes of you talking, gets drafted by the blog pipeline into a nearly finished post, and is finished by you, the last 10%. On the site they show your thinking in your own voice, and they show the blog pipeline works more than once.
-
-**What you're asked:** four things. The topics; when you dictate; when you do your last 10% on each post; and whether each post goes live as soon as you finish it.
-
-**What happens once you answer:** the blog posts session starts. Before each dictation it writes you a short task to dictate into, with the topic and five prompts to talk through. Once the blog pipeline is accepted, each draft comes back to you as a task with the whole post in it, for your edit. When you tick Done, it's published through the website session.
-
-**Waiting on this right now:** the dictation slots, the first proposed for 15:50.
-
-**On camera:** two dictations of about 15 minutes each, or three if the blog pipeline's test dictation doesn't count as the first post (you decide that in the blog pipeline's decision file, `Decide - how the blog pipeline should work.md`). Then about 10 minutes per post for your last 10%, on camera or not.
-
-**Time to answer:** about 5 minutes. **Deadline:** about 15:40, so the first dictation can happen at 15:50. Anything still empty at 18:00 takes its default.
-
-**Timetable change:** the GetSales outreach to Addvery's six stakeholders now goes out by 15:30 instead of a live run at 17:00 (your answer at 14:30), so 17:00–17:30 is free.
-
-This intake holds 4 decisions. Each question carries its own context, so you can answer them in any order. An empty fence means not answered. The full plan for this part is at `blog-articles\SPEC.md` for reference, but you needn't read it. Say "DI-XX is ready" when you're done.
-
-# QXX.1 The topics
-
-The facts:
-- The posts are in your voice and under your name, written for Addvery's audience and shown on the site in its Addvery look. Each runs about 900 to 1,400 words from 15 minutes of talking.
-- Which topics Addvery's audience reads is your own research, in Addvery Research, and nothing from that folder goes into the project's files. So the proposals below come only from your own expertise and today's build. Swap any of them for one you know their readers want.
-- The blog pipeline's decision file asks whether its test dictation counts as the first post, and offers this same list for the test's topic. If it counts, you pick two topics here; if not, three. Don't repeat the test's topic.
-
-Proposed topics:
-1. The movie-actor rule: when your time is the bottleneck, shoot your scenes first and let ten AI sessions build around you.
-2. From B2B marketing consultant to GTM engineer: what changed in the work, and what didn't.
-3. Executable specs: how to brief AI agents so that parallel work doesn't fall apart.
-4. Route before you sequence: why outbound needs a lead classifier before it needs more sequences.
-5. Dictate, don't type: fifteen minutes from expertise to a publishable post.
-
-I recommend topic 1 for the test (as the blog pipeline's decision file suggests), then 2 and 3 here, and 4 if you need a third. Topic 2 is the story behind your application, topic 3 explains how the site itself was built, and topic 4 ties to the GetSales demo.
-
-If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes the first topics on the list that the test didn't take, in list order, and logs it.
-
-This answer sets what each dictation task asks you to talk about, and what gets published.
-
-Write two topic numbers (three if the test doesn't count), your own topics, or a mix.
-
-## AXX.1
-
-`<operator_answer>`
-```a-XX-1
-
-```
-`</operator_answer>`
-
-# QXX.2 The dictation slots
-
-The facts:
-- Each dictation is about 15 minutes of talking into a task file written for you: the topic, five prompts to talk through, and a Done box. It happens on camera, during a recorded rig session. The blog pipeline needn't be ready, because a dictation is raw input that's drafted afterwards (the rule that your time is shot first, before the build, like a film's most expensive actor).
-- Today's timetable: the blog pipeline's test dictation at 15:15–15:35; the GetSales outreach by 15:30; blog dictations at 15:50–16:10 and 16:20–16:40; the brand sign-off at 16:45; 17:00–17:30 free; the Canva recording at 17:30. If the test doesn't count as the first post, a third dictation takes 17:00–17:20, and nothing else moves.
-
-Your options:
-- **A. As proposed:** 15:50–16:10 and 16:20–16:40, and 17:00–17:20 if a third is needed.
-- **B. All in the morning cleanup session.** Frees 40 to 60 minutes today, and the posts go live tomorrow.
-- **C. Times you name.**
-
-I recommend A. A dictation needs nothing but you, so it belongs in today's window, and drafting then runs while you do other scenes. The charter: "Work that needs the operator is scheduled into the hours he is at the computer."
-
-If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it moves the dictations to the morning cleanup session and logs it.
-
-This answer sets when you dictate, and so when the posts can be drafted and go live.
-
-Write A, B, or C with your times.
-
-## AXX.2
-
-`<operator_answer>`
-```a-XX-2
-
-```
-`</operator_answer>`
-
-# QXX.3 When you do the last 10%
-
-The facts:
-- Each post comes to you as a task file with the whole post copied in, the spots marked where only you can add something (a number, an example, the closing ask), and a Done box. You edit it in place, about 10 minutes per post (an estimate). It isn't an approval: ticking Done means finished.
-- Drafts reach you only after you've accepted the blog pipeline's test post as near-final, so you never polish a draft the pipeline is about to change. If the day runs to plan, the first ones are ready between about 16:10 and 17:00.
-- Today's gaps: about 16:10–16:20, 16:40–16:45, 17:00–17:30 (unless a third dictation takes 17:00–17:20) and 17:55–18:00.
-- The charter: "Everything else is set up to run autonomously overnight, so that the morning cleanup session has little to clean."
-
-Your options:
-- **A. Gaps first, the morning for the rest.** The desk alerts you when a post is ready and pokes only inside those gaps. Whatever's left waits for the morning cleanup session.
-- **B. All in the morning cleanup session.** No alerts today, and all three posts go live tomorrow.
-- **C. A block you name,** for example 17:00–17:30, or 18:00–18:30 if you stay on.
-
-I recommend A. Each post you finish today goes live today, and nothing interrupts your scenes.
-
-If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
-
-This answer sets when the desk alerts and pokes you about posts, and when they can go live.
-
-Write A, B, or C with your block.
-
-## AXX.3
-
-`<operator_answer>`
-```a-XX-3
-
-```
-`</operator_answer>`
-
-# QXX.4 When each post goes live
-
-The facts:
-- Publishing goes only through the website session: a build request, a deploy, and a check of the live page, about 5 to 10 minutes.
-- The definition of done you signed off earlier today: "Three blog posts, each from a 15-minute dictation through the blog pipeline and finished by the operator, are published on the site." It also asks that the site "kept getting clearer through the day".
-- Before any post goes out, it's checked for secrets, the Apify proposal and your own GetSales outbound, and that none of your edit marks is left. If your own edit trips the check, you get one desk question before anything is published.
-
-Your options:
-- **A. As soon as you finish each one.** Ticking Done publishes it.
-- **B. All three together,** once the third is finished.
-- **C. Each waits for one more look** on a preview link before it goes live. That's an extra check for you per post.
-
-I recommend A. Ticking Done is already your go-ahead, and the site grows through the day.
-
-If the fence is empty: before 18:00 Prague the session keeps waiting and pokes you every 15 minutes; from 18:00 it takes A and logs it.
-
-This answer decides whether ticking Done publishes a post, and the order the posts appear on the site.
-
-Write A, B or C.
-
-## AXX.4
-
-`<operator_answer>`
-```a-XX-4
-
-```
-`</operator_answer>`
-~~~~
+Dropped at the RESTART, 17:13 (`orchestration`; §9): no intake goes to Alex. The held draft (topics, slots, finish times, go-live) is in git history at `b77b869`; every question in it is now decided in §9 or answered by Alex's reset intake.
