@@ -23,7 +23,7 @@ Read this file at startup, and again before you message a session you haven't me
 
 | Session | Folder it starts in | Role | Notes |
 | --- | --- | --- | --- |
-| `orchestration` | repo root | Parent session: owns the dependency map, launches spec sessions, and runs S2 (`orchestration\SPEC.md`). Its own files live in `orchestration\`. | Handed over to a fresh session (edd8f64b) at 14:44 Prague on 2 Nov, at forking gate F2; then to ab58b0bf at 16:44 (F2, with F1 and F3 merged in). The fresh session removes edd8f64b. |
+| `orchestration` | repo root | Parent session: owns the dependency map, launches spec sessions, and runs S2 (`orchestration\SPEC.md`). Its own files live in `orchestration\`. | Handed over to a fresh session (edd8f64b) at 14:44 Prague on 2 Nov, at forking gate F2; then to ab58b0bf at 16:44 (F2, with F1 and F3 merged in). ab58b0bf stopped and removed edd8f64b at 16:45; one `orchestration` row left. |
 | `website` | `website\` | The Vercel site (S-D8). | Runs S-D8 (SPEC.md) since 14:50. Handed off to a fresh session (b25f14b0) at 14:53 (gate F3). |
 | `rig` | `OBS\` | The OBS recording rig: /start, /pause, /stop, /process. | |
 | `answer-desk` | `answer-desk\` | Every question for Alex, one at a time; the poke. | |
