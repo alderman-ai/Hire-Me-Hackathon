@@ -14,7 +14,7 @@ Before:
 ```
 After:
 ```
-    - `..\website\local\addvery\brand\BRAND.md`, `..\website\local\addvery\brand\tokens.css` and `..\website\public\addvery\` (24 files: logos, favicons, 10 icons, glows): the website session's brand kit, read from Addvery's public site (OUTPUT S-D8; added by S2 as C09). Each value carries its source URL and a confidence note; the tokens file holds the CSS variables (--av-*). Fonts: Outfit and Plus Jakarta Sans exact; Inter Tight stands in for the commercial heading face, Inter for body. It agrees with Alex's brand capture, which comes first where they differ. Git-ignored, local only: read it, never copy it into a tracked file.
+    - `..\website\local\addvery\brand\BRAND.md`, `..\website\local\addvery\brand\tokens.css` and `..\website\public\addvery\` (24 files: logos, favicons, 10 icons, glows): the website session's brand kit, read from Addvery's public site (OUTPUT S-D8; added by S2 as C09). Each value carries its source URL and a confidence note; the tokens file holds the CSS variables (--av-*). Fonts: the two free families are exact, and free stand-ins cover the commercial heading face and the body face (names in BRAND.md, never in tracked files). It agrees with Alex's brand capture, which comes first where they differ. Git-ignored, local only: read it, never copy it into a tracked file.
 ```
 
 ### 2. `linkedin-content\SPEC.md`, Routing and resources, after the C08 logo line (line 67)
@@ -25,9 +25,13 @@ Before:
 ```
 After:
 ```
-    - `..\website\local\addvery\brand\BRAND.md`, `..\website\local\addvery\brand\tokens.css` and `..\website\public\addvery\` (24 files: logos, favicons, 10 icons, glows): the website session's brand kit, read from Addvery's public site (OUTPUT S-D8; added by S2 as C09). Each value carries its source URL and a confidence note; the tokens file holds the CSS variables (--av-*). Fonts: Outfit and Plus Jakarta Sans exact; Inter Tight stands in for the commercial heading face, Inter for body. It agrees with Alex's brand capture, which comes first where they differ. Git-ignored, local only: read it, never copy it into a tracked file.
+    - `..\website\local\addvery\brand\BRAND.md`, `..\website\local\addvery\brand\tokens.css` and `..\website\public\addvery\` (24 files: logos, favicons, 10 icons, glows): the website session's brand kit, read from Addvery's public site (OUTPUT S-D8; added by S2 as C09). Each value carries its source URL and a confidence note; the tokens file holds the CSS variables (--av-*). Fonts: the two free families are exact, and free stand-ins cover the commercial heading face and the body face (names in BRAND.md, never in tracked files). It agrees with Alex's brand capture, which comes first where they differ. Git-ignored, local only: read it, never copy it into a tracked file.
 ```
 
 ## Verify
 
 The three paths exist on disk (checked 16:00; `website\publicddvery\` holds 24 files and is git-ignored). Read back: the line sits after the C08 logo line in both specs. propagate check compared with the C08 run: four new gaps, all false: bare file names in backticks (tokens.css, Brand capture.md) read as paths. Fixed as a mechanical follow-on by dropping the backticks; the check then matched the C08 run. Told: s-d6-canva-templates and s-d7-linkedin-content at 16:01.
+
+## Follow-on, 16:35
+
+`s-d6-canva-templates` flagged that the line named four font families, against its spec's rule that brand values (hex codes, font names) stay out of tracked files in the public repo. Reworded to roles in both specs. The names were in commits be00c70 and 4809186; they are Addvery's public web fonts, and history isn't rewritten (no force push, GIT.md).
