@@ -8,6 +8,7 @@ import { SiteFooter } from "./site-footer";
 import stakeholders from "@/content/stakeholders.json";
 import { NEW_SITE } from "./flags";
 import { YourPagePill } from "./your-page";
+import { NEW_NAV_LINKS } from "./site-links";
 
 // The Your page pill's names (slug to first name), on the new site only (app/flags.ts).
 const PEOPLE: Record<string, string> | undefined = NEW_SITE
@@ -68,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip-link" href="#content">
           Skip to content
         </a>
-        <SiteHeader people={PEOPLE} />
+        <SiteHeader people={PEOPLE} nav={NEW_SITE ? NEW_NAV_LINKS : undefined} hideCta={NEW_SITE} />
         <div id="content" className="site-content" tabIndex={-1}>
           {children}
         </div>

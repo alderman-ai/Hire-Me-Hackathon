@@ -39,7 +39,12 @@ export function GradientButton({ href, children, className }: { href: string; ch
 }
 
 /** `people` (slug to first name) is set only on the new site (app/flags.ts): it turns on the Your page pill. */
-export function SiteHeader({ people }: { people?: Record<string, string> } = {}) {
+export function SiteHeader({
+  people,
+  nav,
+  hideCta,
+}: { people?: Record<string, string>; nav?: { href: string; label: string }[]; hideCta?: boolean } = {}) {
+  const links = nav ?? NAV_LINKS;
   const scrolled = usePageScrolled(0.01);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -78,7 +83,7 @@ export function SiteHeader({ people }: { people?: Record<string, string> } = {})
           </Link>
           <nav className="nav-links" aria-label="Main">
             <ul>
-              {NAV_LINKS.map((l) => (
+              {links.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="nav-link">
                     {l.label}
@@ -92,9 +97,11 @@ export function SiteHeader({ people }: { people?: Record<string, string> } = {})
               )}
             </ul>
           </nav>
-          <GradientButton href={CTA.href} className="nav-cta">
-            {CTA.label}
-          </GradientButton>
+          {!hideCta && (
+            <GradientButton href={CTA.href} className="nav-cta">
+              {CTA.label}
+            </GradientButton>
+          )}
           <button
             type="button"
             className="hamburger"
@@ -112,7 +119,7 @@ export function SiteHeader({ people }: { people?: Record<string, string> } = {})
       <div id="mobile-menu" className="menu-sheet">
         <nav aria-label="Main, mobile">
           <ul>
-            {NAV_LINKS.map((l) => (
+            {links.map((l) => (
               <li key={l.href}>
                 <Link href={l.href} onClick={() => setOpen(false)}>
                   {l.label}
@@ -125,11 +132,13 @@ export function SiteHeader({ people }: { people?: Record<string, string> } = {})
               </Link>
             </li>
           </ul>
-          <div onClick={() => setOpen(false)}>
-            <GradientButton href={CTA.href} className="menu-cta">
-              {CTA.label}
-            </GradientButton>
-          </div>
+          {!hideCta && (
+            <div onClick={() => setOpen(false)}>
+              <GradientButton href={CTA.href} className="menu-cta">
+                {CTA.label}
+              </GradientButton>
+            </div>
+          )}
         </nav>
       </div>
     </header>

@@ -11,6 +11,12 @@ import { ArrowSwap } from "../site-chrome";
 import { redirect } from "next/navigation";
 import { movedTo } from "../redirects";
 import "../article.css";
+import { NEW_SITE } from "../flags";
+import { Crumb, REACH_GROUP } from "../crumb";
+import { EntryEnd, MarkSeen } from "../demos/entry-end";
+import { LIST_SLUGS, recommendAll } from "../recommend";
+
+const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");
 
 // One page per demo, /d1 to /d10. The name, "what you'll see" and status come from content/build.json
 // (the same rows as the status board); the page copy from content/deliverables.json; the posts are the
@@ -93,13 +99,19 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
               <img src="/addvery/hero-circle.webp" alt="" width={472} height={460} />
             </RotateIn>
             <div className="art-container">
-              <p className="art-back">
-                <Link href="/">← Back to the live feed</Link>
-              </p>
-              <div className="art-eyebrow-row">
-                <span className="art-eyebrow-line" aria-hidden="true" />
-                <p className="art-eyebrow is-lavender">Demo {demo.n}</p>
-              </div>
+              {NEW_SITE ? (
+                <Crumb group={REACH_GROUP} />
+              ) : (
+                <>
+                  <p className="art-back">
+                    <Link href="/">← Back to the live feed</Link>
+                  </p>
+                  <div className="art-eyebrow-row">
+                    <span className="art-eyebrow-line" aria-hidden="true" />
+                    <p className="art-eyebrow is-lavender">Demo {demo.n}</p>
+                  </div>
+                </>
+              )}
               <h1 id="demo-title" className="art-h1">
                 {demo.name}
               </h1>
@@ -119,6 +131,7 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
                   </div>
                 )}
               </div>
+              {!NEW_SITE && (
               <aside className="art-meta" aria-labelledby="at-a-glance">
                 <h2 id="at-a-glance" className="art-eyebrow">
                   At a glance
@@ -135,6 +148,7 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
                 </dl>
                 <p className="art-meta-note">{build.as_of_line}</p>
               </aside>
+              )}
             </div>
           </section>
 
@@ -186,6 +200,14 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
         </>
       )}
 
+      {NEW_SITE && (
+        <>
+          <MarkSeen href={`/${demo.slug}`} />
+          <EntryEnd current={`/${demo.slug}`} lists={recommendAll()} people={PAGE_SLUGS} />
+        </>
+      )}
+
+      {!NEW_SITE && (
       <nav className="art-cta" aria-label="Other demos">
         <div className="art-container art-cta-grid">
           <div className="art-cta-copy">
@@ -216,6 +238,7 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
           </ul>
         </div>
       </nav>
+      )}
 
       {posts.length > 0 && (
         <section className="art-related" aria-labelledby="from-the-feed">
@@ -230,7 +253,7 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
               ))}
             </div>
             <p className="art-related-actions">
-              <Link href="/" className="btn-gradient">
+              <Link href={NEW_SITE ? "/log" : "/"} className="btn-gradient">
                 View the live feed <ArrowSwap />
               </Link>
             </p>

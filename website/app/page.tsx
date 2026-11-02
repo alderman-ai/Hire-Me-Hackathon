@@ -6,6 +6,7 @@ import { Reveal, RotateIn } from "./motion";
 import { ArrowSwap } from "./site-chrome";
 import { RecommendCarousel } from "./recommend-carousel";
 import { LIST_SLUGS, RECOMMEND_ON, recommendFor } from "./recommend";
+import { NEW_SITE } from "./flags";
 
 const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");
 
@@ -14,6 +15,7 @@ const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");
 // corners on load), then the live feed.
 
 export default function Home() {
+  if (NEW_SITE) return <InterimHome />;
   return (
     <main className="home">
       <section className="hero on-dark" aria-labelledby="hero-title">
@@ -73,12 +75,21 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {RECOMMEND_ON && (
-        // The interim home (VERDICT.md W7): the default list above the feed. The heading is a working
-        // label until alex-voice words it.
-        <RecommendCarousel heading="Recommended for you" cards={recommendFor("default")} people={PAGE_SLUGS} />
-      )}
       <Feed />
+    </main>
+  );
+}
+
+/**
+ * The interim home on the new site (VERDICT.md W7), until the restack (W11): no countdown, no "Begins",
+ * no start-here box and no status board; the default recommend list on top of the feed.
+ */
+function InterimHome() {
+  return (
+    <main className="home">
+      <h1 className="sr-only">Hire Me Hackathon</h1>
+      {RECOMMEND_ON && <RecommendCarousel heading="Recommended for you" cards={recommendFor("default")} people={PAGE_SLUGS} />}
+      <Feed hideStatus />
     </main>
   );
 }

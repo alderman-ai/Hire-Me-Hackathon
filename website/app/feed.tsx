@@ -271,8 +271,13 @@ function Column({ posts }: { posts: Post[] }) {
   );
 }
 
-export default function Feed() {
-  const [newest, ...older] = feedPosts();
+/**
+ * `hideStatus`: the new site drops the status board (VERDICT.md 2.7). `asPage`: on /log, the feed is
+ * the page, so its heading is the page's h1.
+ */
+export default function Feed({ hideStatus = false, asPage = false }: { hideStatus?: boolean; asPage?: boolean } = {}) {
+  const [newest, ...older] = feedPosts().filter((p) => !(hideStatus && isStatus(p)));
+  const Heading = asPage ? "h1" : "h2";
   const featuredIsStatus = newest ? isStatus(newest) : false;
 
   // Split the older posts into runs of cards, with the status band (if it's among them) between.
@@ -292,9 +297,9 @@ export default function Feed() {
         <div className="container">
           <Reveal>
             <p className="eyebrow">Newest on top</p>
-            <h2 id="feed-heading" className="feed-heading">
+            <Heading id="feed-heading" className="feed-heading">
               Live feed
-            </h2>
+            </Heading>
             <p className="feed-intro">{feed.intro}</p>
           </Reveal>
           {newest && !featuredIsStatus && <FeaturedPost post={newest} />}

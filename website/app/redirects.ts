@@ -5,6 +5,16 @@ import { NEW_SITE } from "./flags";
 const MOVED: Record<string, string> = {
   // W5: the 36 workflows are capability piece C2 now.
   d3: "/demos/36-outbound-workflows-and-the-one-variable-behind-them",
+  // W7: the placeholders go; the LinkedIn demo has its entry.
+  d4: "/demos",
+  d5: "/demos",
+  d6: "/demos",
+  d7: "/demos/linkedin-posts-in-addverys-voice-graded-blind",
+  d8: "/demos",
+  d9: "/demos",
+  d10: "/demos",
+  d11: "/demos",
+  d12: "/demos",
 };
 
 /** Where an old demo page now lives on the new site, or undefined. */

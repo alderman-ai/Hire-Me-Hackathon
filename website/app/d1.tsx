@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import d1 from "@/content/d1.json";
 import { Carousel, type CarouselSlide } from "./carousel";
 import "./d1.css";
+import { NEW_SITE } from "./flags";
+import { Crumb, REACH_GROUP } from "./crumb";
 
 // The /d1 page (BUILD S-D1-B1): one framed page in the order of scraping\site\d1.md, read top to
 // bottom. The eyebrow, headline and intro, then the research boards on the same dark stage, then
@@ -90,12 +92,17 @@ export function D1Article() {
     <>
       <section className="art-hero d1-stage" aria-labelledby="d1-title">
         <div className="art-container">
-          <p className="art-back">
-            <Link href="/">← Back to the live feed</Link>
-          </p>
+          {NEW_SITE ? (
+            <Crumb group={REACH_GROUP} />
+          ) : (
+            <p className="art-back">
+              <Link href="/">← Back to the live feed</Link>
+            </p>
+          )}
           <div className="art-eyebrow-row">
             <span className="art-eyebrow-line" aria-hidden="true" />
-            <p className="art-eyebrow is-lavender">{d1.eyebrow}</p>
+            {/* The new site never says "Demo N" (VERDICT.md 2.7): the prefix goes, the rest stays. */}
+            <p className="art-eyebrow is-lavender">{NEW_SITE ? d1.eyebrow.replace(/^Demo \d+\s*·\s*/, "") : d1.eyebrow}</p>
           </div>
           <h1 id="d1-title" className="art-h1 d1-h1">
             {d1.title}

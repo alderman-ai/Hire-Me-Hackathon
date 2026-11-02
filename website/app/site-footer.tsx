@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { allDemos } from "./deliverables";
-import { NAV_LINKS } from "./site-links";
+import { NAV_LINKS, NEW_FOOTER_LINKS, NEW_NAV_LINKS } from "./site-links";
+import { NEW_SITE } from "./flags";
 
 // Addvery's footer (#151515, logo first, then columns of links that turn into gradient text on
 // hover), with our links only.
 
 export function SiteFooter() {
-  const demos = allDemos();
+  // The new site drops the twelve demo links (VERDICT.md 2.7) and adds the log, the plan and the repo.
+  const demos = NEW_SITE ? [] : allDemos();
   const half = Math.ceil(demos.length / 2);
-  const columns = [demos.slice(0, half), demos.slice(half)];
+  const columns = NEW_SITE ? [] : [demos.slice(0, half), demos.slice(half)];
+  const links = NEW_SITE ? [...NEW_NAV_LINKS, ...NEW_FOOTER_LINKS] : NAV_LINKS;
   return (
     <footer className="site-footer on-dark">
       <div className="footer-inner">
@@ -22,11 +25,17 @@ export function SiteFooter() {
           <nav className="footer-col" aria-label="Site">
             <p className="footer-head">The project</p>
             <ul>
-              {NAV_LINKS.map((l) => (
+              {links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="footer-link">
-                    {l.label}
-                  </Link>
+                  {l.href.startsWith("/") ? (
+                    <Link href={l.href} className="footer-link">
+                      {l.label}
+                    </Link>
+                  ) : (
+                    <a href={l.href} className="footer-link">
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
               <li>

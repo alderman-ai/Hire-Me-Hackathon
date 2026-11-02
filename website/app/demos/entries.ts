@@ -388,7 +388,9 @@ export function allEntries(): Entry[] {
 /** The entries this build may show: published only, unless this is `next dev` or a preview. */
 export function visibleEntries(): Entry[] {
   const all = allEntries();
-  return showUnpublished() ? all : all.filter((e) => e.status === "published");
+  // The new site never shows the template's sample entries (VERDICT.md 2.7).
+  const shown = NEW_SITE ? all.filter((e) => e.status !== "sample") : all;
+  return showUnpublished() ? shown : shown.filter((e) => e.status === "published");
 }
 
 export function findEntry(slug: string): Entry | undefined {
