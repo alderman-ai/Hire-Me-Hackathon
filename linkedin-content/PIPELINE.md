@@ -1,6 +1,6 @@
 # How the LinkedIn posts are written and scored
 
-Status: draft method (2 Nov, 16:00 Prague), on both of Alex's brand capture repos. The research on his repos and on what LinkedIn rewards now (L-05 R1 and R4) hasn't landed; this file is revised when it does. Brand-specific content (the voice criteria, the word lists) lives in `local\rubric.md`, git-ignored, because it is drawn from Alex's Addvery capture. This file names those criteria by id only.
+Status: draft method (2 Nov, 16:38 Prague), on both of Alex's brand capture repos, read by this session with `gh` (Alex's research gate at 16:32 took his two repos out of L-05 R1). The research on what LinkedIn rewards now (L-05 R4) hasn't landed; this file is revised when it does. Brand-specific content (the voice criteria, the word lists) lives in `local\rubric.md`, git-ignored, because it is drawn from Alex's Addvery capture. This file names those criteria by id only.
 
 ## The method, from Alex's repos
 
@@ -13,7 +13,8 @@ Both repos (`alderman-ai/brand-voice-capture-demo-linkedin` and its earlier twin
 5. **Arithmetic, not judgment.** Line lengths and character ranges are counted by a script (`preflight.py`), never eyeballed. Classify the hook's format first, then count.
 6. **A naive baseline.** The repo's corpus included zero-skill generations so the bottom tier had honest material. Here one baseline post, from a plain prompt with no rubric, is scored by the same judge.
 7. **Hook first.** The repo's rewrite notes moved "the hook is the body's thesis" into the writing side: the writer drafts the hook before the body.
-8. **Honest limits, stated up front.** Alex's rubric was induced from graded posts and tested blind. This brand layer is constructed from a short capture, with no graded Addvery posts behind it. It's a directional instrument, and the demo says so.
+8. **The fingerprint guard.** The repo tests every voice criterion against real posts by people it shouldn't fit. Here the brand criteria were tested against the voice owner's own company-page posts, to find which ones describe the page and which describe an assumption. Two (short sentences, one wry aside) describe the leaders' posts the capture is drawn from, not the page; they stay, on purpose, and Alex decides at the sign-off.
+9. **Honest limits, stated up front.** Alex's rubric was induced from graded posts and tested blind. This brand layer is constructed from a short capture, with no graded Addvery posts behind it. It's a directional instrument, and the demo says so.
 
 ## The rubric for this demo
 
@@ -43,7 +44,7 @@ The four-tier scale is the one Alex's repo README describes (Postable added as t
 3. **Write**: one writer subagent per post, in parallel. Each gets the rubric, this file, its topic and its format, writes the hook first, runs `preflight.py` on its draft, and fixes what the counts show before handing in.
 4. **Baseline**: one subagent writes one post on topic 1 from the plain prompt below, with no rubric and no other context.
 5. **Judge**: one subagent that wrote none of them scores all six, blind, in the rubric's evaluation order, with `preflight.py`'s counts.
-6. **Rewrite**: posts below Good go back to a writer with the judge's misses; re-judged blind. At most three rounds.
+6. **Rewrite**: posts below Good go back to a writer with the judge's misses; re-judged blind by a fresh judge, letters reshuffled. At most three rounds. Set-level rules apply too: across the five posts, no two openers, click lines, asides or closers share a construction.
 7. **Sign-off**: Alex sees the posts, the baseline, the scores and this method in one approval, and settles the capture's open points there.
 
 ## Formats
@@ -95,5 +96,5 @@ Don't read anything else in linkedin-content\local\drafts\ and don't open any ot
 
 ## What's still a draft
 
-- The method itself waits on L-05 R1 (what the repos do and how they score, read in full) and the format notes on R4. If neither lands by 16:00, the posts go ahead on this draft (the intake's question 3 recommends it) and later findings are applied as changes Alex sees.
+- The format notes wait on L-05 R4. The posts went ahead on this draft (the intake's question 3 recommends it); later findings are applied as changes Alex sees.
 - Which repo the demo credits waits on Alex's answer (question 1 of the intake). Until then it uses both; they share the rubric.
