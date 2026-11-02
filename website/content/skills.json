@@ -16,7 +16,7 @@
           "moment": {
             "time": "15:13",
             "session": "S08",
-            "text": "\"so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run\""
+            "text": "so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run"
           }
         },
         {
@@ -35,7 +35,7 @@
           "moment": {
             "time": "15:40",
             "session": "S09",
-            "text": "\"set up a JEV classification that determines whether they are someone sending cold outreach, right?\""
+            "text": "set up a JEV classification that determines whether they are someone sending cold outreach, right?"
           }
         },
         {
@@ -62,7 +62,7 @@
           "moment": {
             "time": "16:36",
             "session": "S10",
-            "text": "\"So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12.\""
+            "text": "So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12."
           },
           "path": "getsales\\icps\\build_workflows.py"
         },
@@ -77,7 +77,7 @@
           "moment": {
             "time": "11:17",
             "session": "S02",
-            "text": "\"you're going to get proof of what i can do you don't need a cv\""
+            "text": "you're going to get proof of what i can do you don't need a cv"
           }
         },
         {
@@ -102,7 +102,7 @@
           "moment": {
             "time": "18:02",
             "session": "S12",
-            "text": "\"just like a wall of linkedin posts like as many as like 20 to 40 of them\""
+            "text": "just like a wall of linkedin posts like as many as like 20 to 40 of them"
           },
           "path": "scraping\\build_wall.py"
         }
@@ -124,7 +124,7 @@
           "moment": {
             "time": "14:12",
             "session": "S07",
-            "text": "\"do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator\""
+            "text": "do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator"
           }
         }
       ]
@@ -139,7 +139,7 @@
           "moment": {
             "time": "11:36",
             "session": "S03",
-            "text": "\"they shoot all of his scenes first even if it's not in chronological order of the movie\""
+            "text": "they shoot all of his scenes first even if it's not in chronological order of the movie"
           },
           "path": "CHARTER.md"
         },
@@ -150,7 +150,7 @@
           "moment": {
             "time": "13:44",
             "session": "S07",
-            "text": "\"Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.\""
+            "text": "Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix."
           },
           "path": "answer-desk\\ASKING.md"
         },
