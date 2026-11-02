@@ -43,6 +43,7 @@ He says the bottleneck is always, always, always human: not the amount of work t
 - `li-2026-06-26-bottlenecked-by-doing` (pairs-with): his post: plan the whole job first, then fan out
 - `S10-k` (follows from): (link from S10-k)
 - `S10-l` (leads into): (link from S10-l)
+- `S11-b` (leads into): (link from S11-b)
 
 ## Could serve as
 

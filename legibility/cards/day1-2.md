@@ -41,6 +41,7 @@ He says the day is stressful, partly by design (he set it up to be stressed so h
 - `clip-day1-3-closed-every-session` (leads-into): 13:21, the accident it foreshadows
 - `li-2026-10-28-legibility-bottleneck` (pairs-with): his post on legibility as the bottleneck
 - `S01-c` (follows from): (link from S01-c)
+- `S05-m` (leads into): (link from S05-m)
 - `S07-a` (leads into): (link from S07-a)
 - `S08-a` (pairs with): (link from S08-a)
 - `day1-3` (leads into): (link from day1-3)

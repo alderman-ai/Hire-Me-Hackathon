@@ -1,6 +1,6 @@
 # Side cards: index
 
-One card per moment Alex graded G (great) or Y (yes) in `legibility\grading\grades.jsonl`: 53 cards, 34 G and 19 Y. A grade means the moment is acceptable raw material, not that it becomes content; greats win ties over yeses. Each card says what the moment is, what it could serve as and what to watch for, so a builder can decide what goes together. Cards are internal notes, written plainly; quotes are verbatim from the machine transcript. `cards.json` holds the same data.
+One card per moment Alex graded G (great) or Y (yes) in `legibility\grading\grades.jsonl`: 72 cards, 44 G and 28 Y. A grade means the moment is acceptable raw material, not that it becomes content; greats win ties over yeses. Each card says what the moment is, what it could serve as and what to watch for, so a builder can decide what goes together. Cards are internal notes, written plainly; quotes are verbatim from the machine transcript. `cards.json` holds the same data.
 
 ## Theme vocabulary
 
@@ -38,6 +38,7 @@ Every card uses only these tags, most central first.
 | [S02-i](S02-i.md) | G | 58 s | He says it isn't free: beyond his own service it costs tokens. | ai-managed-service, hiring-pitch | medium |
 | [S02-j](S02-j.md) | G | 71 s | He lists what the site will hold: his background, live demos and, instead of a page per service, a page with a customised pitch for every stakeholder he thinks might be involved in hiring him, built from deep research of the company's org chart with scraping tools. | hiring-pitch, personalisation-at-scale, research-method, build-in-public | medium |
 | [S02-k](S02-k.md) | Y | 20 s | Wrapping up the S02 explainer, he says articles will explain why his skills are worth a lot and touches on what he'll ask to be paid (flagged, see watch-outs). | build-in-public, personality, hiring-pitch | medium |
+| [S03-d](S03-d.md) | Y | 34 s | Starting the charter in a doc app instead of his usual terminal, he says he wants to try it, partly because it will be more visually interesting on camera than a black box (the terminal) or Obsidian's white box. | ai-craft, build-in-public | low |
 | [S03-e](S03-e.md) | Y | 75 s | Stating the second principle for the document his executable specs will be built from, Alex says his own time is the main bottleneck, so every pre-flight check and anything that needs a human should surface at the start of each spec. | orchestration, human-bottleneck | medium |
 | [S03-f](S03-f.md) | G | 78 s | Alex adds the next principle: if his time is the bottleneck, his focus is an even tighter one. | human-bottleneck, orchestration | medium |
 | [S03-g](S03-g.md) | Y | 55 s | Continuing a principle he has just named, semantic cohesion (in the context line before), Alex says each spec is run by one orchestrator session that passes as much as possible to subagents, so its context window stays semantically clustered and usable, with strategic forking so there is no context rot in long automated work. | orchestration, ai-craft | medium |
@@ -49,15 +50,20 @@ Every card uses only these tags, most central first.
 | [S04-i](S04-i.md) | G | 57 s | He says that once you know the leverage of running lots of things in parallel, it's hard to take the time to get everything right first, but experience shows it's far more time-efficient to do the beginning well, because mistakes cascade and snowball. | human-bottleneck, orchestration, ai-craft | high |
 | [S04-k](S04-k.md) | G | 53 s | He gives another rule of AI work: if you get a bad feeling about how something starts, it's almost always worth starting over, and admits he has that feeling now about "that document". | ai-craft, failure-and-recovery, personality, build-in-public | medium |
 | [S05-b](S05-b.md) | Y | 90 s | He dictates the instruction that starts the first parallel work: understand the charter, then fork, and have the forked session spin up three Opus subagents, one per initial spec, each writing its spec and running a pre-flight check with him. | orchestration, personality | low |
+| [S05-d](S05-d.md) | Y | 58 s | He dictates the opening of the research spec: a really deep research session on a target company, because a live hackathon showing what a GTM engineer can do includes prospect research pipelines, demonstrated on the company the hackathon is for. | research-method, orchestration | low |
 | [day1-2](day1-2.md) | G | 44 s | He says the day is stressful, partly by design (he set it up to be stressed so he'd focus more), but now uncomfortably so. | failure-and-recovery, personality, human-bottleneck, build-in-public | high |
 | [S05-g](S05-g.md) | Y | 65 s | He dictates how the spec writers' opening questions should reach him: each spec's questions go into the question part of a decision intake, one document per spec, in an "operator tasks" folder, so he can answer the batch all at once. | orchestration, human-bottleneck | medium |
+| [S05-i](S05-i.md) | Y | 59 s | A warning comes up (read out at the start; garbled in the transcript) that the hackathon's git repo is public and the watcher pushes commits hourly, so research on real people could go public unchecked. | research-method, build-in-public | medium |
 | [S05-j](S05-j.md) | Y | 37 s | Pointing an agent at the research section of his own executable-specs repo (the context lines set this up), he explains where research sits in his method: first the definition of done for each thing, then research before the methodology is decided. | ai-craft, orchestration, research-method | medium |
+| [S05-m](S05-m.md) | G | 16 s | Sixteen seconds of screen at 13:20: he says he doesn't need something any more and is going to get rid of anything that is out of (he breaks off there; the rest is unclear in the transcript), then swears in disbelief, then says "Oh, it's fun to do things on camera." Per the clip index and the library record, this is the moment every session (ten of them) disappears on screen. | failure-and-recovery, personality, build-in-public | low |
 | [day1-3](day1-3.md) | G | 33 s | Seconds after the accident he says "So that was bad" and explains it: he was trying to end one session he didn't need anymore and ended all of them, including the ones that handle the recording. | failure-and-recovery, personality, build-in-public | medium |
 | [S05-n](S05-n.md) | G | 54 s | Straight after closing every session, he dictates what happened to an AI session (a fresh one, per the clip index): he meant to delete one session he didn't need and ended a bunch of background sessions that were all working in parallel, because that command on the folder deletes all of them. | failure-and-recovery, orchestration, ai-craft | medium |
 | [S06-b](S06-b.md) | Y | 51 s | In a short status update around 13:30, he explains the plan: agents take the project charter (named in the context lines just before) and break it into pieces, turning each deliverable into a plan they execute autonomously, including researching how to do it and asking him, the operator, for feedback and judgment. | orchestration, human-bottleneck, build-in-public | medium |
 | [S07-a](S07-a.md) | G | 44 s | He asks for something the charter doesn't mention: a new subdirectory and session that watches everything and talks mainly to him. | human-bottleneck, orchestration | medium |
 | [S07-b](S07-b.md) | G | 57 s | He defines done for the site: he just builds and works, and the website gets additions because something reads the transcripts for interesting things to post. | build-in-public, orchestration | medium |
+| [S07-c](S07-c.md) | G | 34 s | He moves the answer desk onto the recorded monitor and explains it: one separate window where all the running sessions ask him questions when they need him. | orchestration, human-bottleneck, build-in-public | medium |
 | [S07-d](S07-d.md) | G | 35 s | He asks for a skill that fixes all this again if it ever happens again, whether the power goes out or anything else: a background session recovery skill. | reusable-skills, failure-and-recovery, orchestration | medium |
+| [S07-g](S07-g.md) | Y | 50 s | Admitting some of this is boring, he checks whether anything is actually running and says it's too many things. | orchestration, human-bottleneck, personality | low |
 | [S07-i](S07-i.md) | G | 32 s | He marks a decision intake as done and asks for a life cycle for them. | orchestration, reusable-skills | low |
 | [S07-k](S07-k.md) | G | 46 s | He sets a rule for gates: whenever a spec is waiting for his approval, such as a research list or the definition of done, it should be forked at whatever stage it's in into an operator task of a "gate approval" kind. | orchestration, human-bottleneck | low |
 | [S07-m](S07-m.md) | G | 63 s | He tells the website session (the context lines show he first asked the wrong session) to add a couple of things: what's being built will pick out important things from processed clips, and the site should update to include them. | build-in-public, orchestration | medium |
@@ -67,6 +73,9 @@ Every card uses only these tags, most central first.
 | [S08-c](S08-c.md) | G | 66 s | He tours what runs without him. | orchestration, build-in-public, human-bottleneck | medium |
 | [S08-d](S08-d.md) | Y | 33 s | He says he has a couple of key blockers now, mostly the research, which is blocked because it's not something he wanted to delegate: it involves a bunch of secret tokens and API keys. | build-in-public, human-bottleneck, orchestration | medium |
 | [S09-b](S09-b.md) | Y | 81 s | He dictates a message for the GetSales session ("GitSales" in the transcript): it can research anything it wants from the company's public website, where all the ICP material is, and doesn't need to be blocked. | research-method, orchestration, icp-filtering | medium |
+| [S09-c](S09-c.md) | Y | 45 s | Checking whether the live site is being updated, he can't believe it's still grey after all this time. | personality, build-in-public | low |
+| [S09-d](S09-d.md) | Y | 65 s | He tells a session that the website should be as close a clone of the company's own website as possible: have a subagent scrape as much of the front-end code as it can, use their branding, logos and icons, and start designing the site to look like theirs. | voice-and-taste, personalisation-at-scale, build-in-public | medium |
+| [S09-e](S09-e.md) | Y | 56 s | Following up the order to rebuild the site in the company's look, he says the site should start looking like theirs: where their website has sections that fit what he's doing, place his material there, but don't create a section just for kicks if nothing of his fits it. | voice-and-taste, personalisation-at-scale, orchestration | low |
 | [S09-f](S09-f.md) | Y | 80 s | Answering an agent about the company's visual assets and a disclaimer (what the agent proposed is unclear beyond its suggested wording), he says the assets are public, but if the agent prefers it can put all the branding being pulled into a subdirectory and git-ignore it; just don't block anything. | build-in-public, human-bottleneck, research-method | medium |
 | [S09-i](S09-i.md) | G | 73 s | Having asked (in the context line just before) for the company's org chart and a scrape of every person's LinkedIn, he says what he wants: a Jev classification that decides whether each person is someone sending cold outreach, to see if the session can rebuild the company's sales team, though he wonders if that's over-engineering. | research-method, icp-filtering, ai-craft | medium |
 | [S10-b](S10-b.md) | G | 69 s | Dictating the topic of the first of two blog articles (the context lines set that up), he says there's no such thing as building an AI workflow as a product: it's always a managed service, because the models always change. | ai-managed-service, gtm-thesis | high |
@@ -78,37 +87,38 @@ Every card uses only these tags, most central first.
 | [day1-5](day1-5.md) | G | 51 s | He says the bottleneck is always, always, always human: not the amount of work the agents can focus on, but the person, and he's paying the price for jumping in too early. | human-bottleneck, orchestration, failure-and-recovery | high |
 | [S10-l](S10-l.md) | Y | 38 s | He asks a session for a focus session (it can fork as needed) to go one by one through the deliverables: how each will be built and what has actually been done on it. | human-bottleneck, orchestration, failure-and-recovery | medium |
 | [S11-a](S11-a.md) | G | 37 s | In an aside, he calls it funny that his sense of how big a context window is is always too small: almost a superstition from working in AI two years ago, when context windows really were small and you needed a feel for when context rot set in. | ai-craft, personality | medium |
+| [S11-b](S11-b.md) | G | 29 s | In his evening check-in he says there's a human context window, as he calls it: there's only so much a person can hold, so either you decide what you offload to the AI or you keep the velocity at a certain amount. | human-bottleneck, ai-craft, orchestration | medium |
+| [S12-a](S12-a.md) | G | 41 s | Seven hours in, he says he's starting to talk to only one agent, and everything is 75% plus done. | human-bottleneck, personality | medium |
+| [S12-d](S12-d.md) | G | 65 s | He orders the clip job: after the backlog of unlisted session videos is uploaded, one or two subagents go through the sessions and clip them, maybe as part of the legibility spec alongside the cool quotes. | build-in-public, orchestration, hiring-pitch | low |
+| [S12-e](S12-e.md) | G | 19 s | Briefing the clip job, he admits he's a bit of a rambly talker, so a little rambling in the clips is fine: taking out everything that rambles would leave very little. | personality, build-in-public | high |
+| [S12-f](S12-f.md) | G | 20 s | Planning the site's video section, he says he wants some clips to stand alone, because the company has a podcast with the Czech version covered, and he wants to be the person doing the English version. | hiring-pitch, build-in-public | medium |
+| [S12-g](S12-g.md) | Y | 16 s | He tells the site session to cite every public image it picked of people, preferably from their own website, so there's no issue with posting images of them online without their permission. | research-method | medium |
+| [S12-i](S12-i.md) | G | 61 s | He separates the stakeholders from the research section and describes it in the visitor's words: as part of his research into the company he tried to identify the stakeholders and their main objections, and each of them can click their picture for a list of what he thinks they'd find most interesting or would answer their biggest concerns. | personalisation-at-scale, research-method, hiring-pitch | medium |
+| [S12-j](S12-j.md) | G | 63 s | He asks for one blog post that tells the story of day one: the key things, how important it is to set things up well with guiding documents, the highs and lows, the scary point of closing all the sessions at once and recovering, and mixing up the way he normally does things, with some of the new ways turning out pretty cool. | build-in-public, failure-and-recovery, orchestration | low |
+| [S12-m](S12-m.md) | G | 34 s | Briefing his About section, he restates something he said earlier in the transcripts: GTM is the role that lets companies keep their promise that they're not going to replace half their staff with robots, because the only way to get AI's leverage without dropping half your team is to also leverage the amount of new work you're getting. | gtm-thesis, hiring-pitch | medium |
+| [S12-n](S12-n.md) | Y | 66 s | He asks a session to scrape his LinkedIn and build a wall of 20 to 40 of his most insightful posts, avoiding the super edgy ones but showing he has a personality. | hiring-pitch, build-in-public, personality | medium |
 
 ## By theme
 
 Main theme first; cards in brackets carry the theme as a secondary tag.
 
-- **gtm-thesis**: S02-f, S10-c (S02-b, S02-c, S02-h, S10-b)
-- **personalisation-at-scale**: S02-c, S02-d, S02-h (S01-d, S02-b, S02-j, S08-b, S10-e)
+- **gtm-thesis**: S02-f, S10-c, S12-m (S02-b, S02-c, S02-h, S10-b)
+- **personalisation-at-scale**: S02-c, S02-d, S02-h, S12-i (S01-d, S02-b, S02-j, S08-b, S09-d, S09-e, S10-e)
 - **icp-filtering**: S10-e (S09-b, S09-i)
 - **ai-managed-service**: S02-i, S10-b
-- **orchestration**: S01-c, S03-e, S03-g, S03-n, S05-b, S05-g, S06-b, S07-i, S07-k, S08-a, S08-c (S01-f, S03-f, S03-m, S04-i, S05-j, S05-n, S07-a, S07-b, S07-d, S07-m, S07-n, S08-d, S09-b, S10-h, S10-k, day1-5, S10-l)
-- **human-bottleneck**: S03-f, S03-m, S04-i, S07-a, S10-h, S10-k, day1-5, S10-l (S03-e, day1-2, S05-g, S06-b, S07-k, S08-a, S08-c, S08-d, S09-f)
+- **orchestration**: S01-c, S03-e, S03-g, S03-n, S05-b, S05-g, S06-b, S07-c, S07-g, S07-i, S07-k, S08-a, S08-c (S01-f, S03-f, S03-m, S04-i, S05-d, S05-j, S05-n, S07-a, S07-b, S07-d, S07-m, S07-n, S08-d, S09-b, S09-e, S10-h, S10-k, day1-5, S10-l, S11-b, S12-d, S12-j)
+- **human-bottleneck**: S03-f, S03-m, S04-i, S07-a, S10-h, S10-k, day1-5, S10-l, S11-b, S12-a (S03-e, day1-2, S05-g, S06-b, S07-c, S07-g, S07-k, S08-a, S08-c, S08-d, S09-f)
 - **reusable-skills**: S07-d (S02-d, S07-i, S10-i)
-- **failure-and-recovery**: day1-2, day1-3, S05-n (S03-n, S04-k, S07-d, S10-h, day1-5, S10-l)
-- **research-method**: S08-b, S09-b, S09-i (S02-j, S05-j, S09-f, S10-k)
-- **ai-craft**: S01-f, S03-h, S03-i, S04-k, S05-j, S10-i, S11-a (S01-c, S03-g, S03-m, S03-n, S04-i, S05-n, S09-i)
-- **hiring-pitch**: S02-b, S02-e, S02-j, S03-j (S01-e, S02-i, S02-k, S03-i, S10-c)
-- **build-in-public**: S01-d, S01-e, S02-k, S07-b, S07-m, S07-n, S08-d, S09-f (S02-b, S02-d, S02-j, S03-h, S03-j, S04-k, day1-2, day1-3, S06-b, S08-c, S10-e)
-- **voice-and-taste**:  (S10-i)
-- **personality**:  (S02-d, S02-f, S02-k, S04-k, S05-b, day1-2, day1-3, S08-a, S11-a)
+- **failure-and-recovery**: day1-2, S05-m, day1-3, S05-n (S03-n, S04-k, S07-d, S10-h, day1-5, S10-l, S12-j)
+- **research-method**: S05-d, S05-i, S08-b, S09-b, S09-i, S12-g (S02-j, S05-j, S09-f, S10-k, S12-i)
+- **ai-craft**: S01-f, S03-d, S03-h, S03-i, S04-k, S05-j, S10-i, S11-a (S01-c, S03-g, S03-m, S03-n, S04-i, S05-n, S09-i, S11-b)
+- **hiring-pitch**: S02-b, S02-e, S02-j, S03-j, S12-f, S12-n (S01-e, S02-i, S02-k, S03-i, S10-c, S12-d, S12-i, S12-m)
+- **build-in-public**: S01-d, S01-e, S02-k, S07-b, S07-m, S07-n, S08-d, S09-f, S12-d, S12-j (S02-b, S02-d, S02-j, S03-d, S03-h, S03-j, S04-k, day1-2, S05-i, S05-m, day1-3, S06-b, S07-c, S08-c, S09-c, S09-d, S10-e, S12-e, S12-f, S12-n)
+- **voice-and-taste**: S09-d, S09-e (S10-i)
+- **personality**: S09-c, S12-e (S02-d, S02-f, S02-k, S04-k, S05-b, day1-2, S05-m, day1-3, S07-g, S08-a, S11-a, S12-a, S12-n)
 
 ## Graded G or Y, no card yet
 
-At the last pass over `grades.jsonl`, 10 G or Y moments had no card yet, and 13 moments were still ungraded. A fresh session picks these up with the same fields and the same theme vocabulary. The tooling used for these cards (BRIEF.md for the card-writing agents, vocab.md, prep.py for the per-moment packets, render.py for validation and these files) is in `C:/Users/alder/AppData/Local/Temp/clipart/cards/` on this machine.
+At the last pass over `grades.jsonl`, 0 G or Y moments had no card yet, and 1 moments were still ungraded. A fresh session picks these up with the same fields and the same theme vocabulary. The tooling used for these cards (BRIEF.md for the card-writing agents, vocab.md, prep.py for the per-moment packets, render.py for validation and these files) is in `C:/Users/alder/AppData/Local/Temp/clipart/cards/` on this machine.
 
-- S11-b (G)
-- S12-a (G)
-- S12-d (G)
-- S12-e (G)
-- S12-f (G)
-- S12-g (Y)
-- S12-i (G)
-- S12-j (G)
-- S12-m (G)
-- S12-n (Y)
+- None.

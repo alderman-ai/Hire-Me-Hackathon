@@ -85,6 +85,11 @@
      "id": "S02-k",
      "rel": "pairs with",
      "note": "(link from S02-k)"
+    },
+    {
+     "id": "S12-a",
+     "rel": "leads into",
+     "note": "(link from S12-a)"
     }
    ],
    "could_serve_as": [
@@ -180,6 +185,11 @@
      "id": "S07-b",
      "rel": "pairs with",
      "note": "(link from S07-b)"
+    },
+    {
+     "id": "S12-d",
+     "rel": "leads into",
+     "note": "(link from S12-d)"
     }
    ],
    "could_serve_as": [
@@ -362,6 +372,11 @@
      "note": "fits the morning section"
     },
     {
+     "id": "S03-d",
+     "rel": "leads into",
+     "note": "(link from S03-d)"
+    },
+    {
      "id": "S04-k",
      "rel": "leads into",
      "note": "(link from S04-k)"
@@ -370,6 +385,11 @@
      "id": "S11-a",
      "rel": "leads into",
      "note": "(link from S11-a)"
+    },
+    {
+     "id": "S12-j",
+     "rel": "pairs with",
+     "note": "(link from S12-j)"
     }
    ],
    "could_serve_as": [
@@ -724,6 +744,11 @@
      "id": "copy-for-shared-blocks",
      "rel": "pairs-with",
      "note": "shared block: open to employment, freelance or a mix"
+    },
+    {
+     "id": "S12-f",
+     "rel": "pairs with",
+     "note": "(link from S12-f)"
     }
    ],
    "could_serve_as": [
@@ -829,6 +854,11 @@
      "id": "S10-c",
      "rel": "repeated by",
      "note": "(link from S10-c)"
+    },
+    {
+     "id": "S12-m",
+     "rel": "repeated by",
+     "note": "(link from S12-m)"
     }
    ],
    "could_serve_as": [
@@ -917,6 +947,11 @@
      "id": "stakeholder-landing-pages",
      "rel": "pairs-with",
      "note": "the effortful-looking asset itself"
+    },
+    {
+     "id": "S09-d",
+     "rel": "supported by",
+     "note": "(link from S09-d)"
     }
    ],
    "could_serve_as": [
@@ -1115,6 +1150,11 @@
      "id": "S08-b",
      "rel": "pairs with",
      "note": "(link from S08-b)"
+    },
+    {
+     "id": "S12-i",
+     "rel": "leads into",
+     "note": "(link from S12-i)"
     }
    ],
    "could_serve_as": [
@@ -1210,6 +1250,93 @@
    ],
    "standalone": "medium",
    "standalone_why": "needs one line that the site was built live in public"
+  },
+  {
+   "id": "S03-d",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S03",
+   "prague": "11:32:48 to 11:33:24",
+   "range_in_recording": "7:32 to 8:07",
+   "length": "34 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S03-d.mp4",
+    "session_video": "M38hI3M3Heo",
+    "session_video_from_s": 449.6,
+    "session_video_to_s": 484.6
+   },
+   "gist": "Starting the charter in a doc app instead of his usual terminal, he says he wants to try it, partly because it will be more visually interesting on camera than a black box (the terminal) or Obsidian's white box. He admits it isn't that much better, but calls it \"google docs 2.0\": it writes with you, and you can comment, highlight text and have it give you things to approve. The context lines show he usually does this in a terminal with his own specific methodology.",
+   "points": [
+    "He's trying a different tool for the charter than his usual terminal setup (context lines: he normally has a specific methodology for this).",
+    "Part of the reason is the camera: it should be more visually interesting than a black box or Obsidian's white box.",
+    "He concedes it isn't that much better.",
+    "What he likes: it's \"basically google docs 2.0\", it writes with you.",
+    "You can comment on it, highlight text and have it give you things to approve."
+   ],
+   "his_words": [
+    "i think going to be a lot more visually interesting than just a black box and obsidian which is just the white box",
+    "it's basically google docs 2.0 and um you can have it yeah basically it'll write with you",
+    "you can kind of um comment on it you can highlight text you can have it uh uh give you things to approve, whatever."
+   ],
+   "themes": [
+    "ai-craft",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "S01-f",
+     "rel": "follows-from",
+     "note": "10:31: he leaves his own way of working behind to test it"
+    },
+    {
+     "id": "NUGGETS #12",
+     "rel": "supports",
+     "note": "breaking his own habits on purpose"
+    },
+    {
+     "id": "S04-k",
+     "rel": "leads-into",
+     "note": "12:35: the bad feeling about how the charter started"
+    },
+    {
+     "id": "feed-insight-gut-feeling",
+     "rel": "leads-into",
+     "note": "feed post: the draft finished in the desktop app, not his terminal"
+    },
+    {
+     "id": "NUGGETS #44",
+     "rel": "pairs-with",
+     "note": "terminal over the desktop app (flagged as a knock)"
+    },
+    {
+     "id": "feed-s03",
+     "rel": "supports",
+     "note": "11:25 feed post on writing the charter"
+    },
+    {
+     "id": "copy-docs-charter",
+     "rel": "leads-into",
+     "note": "the charter this doc became"
+    }
+   ],
+   "could_serve_as": [
+    "supporting clip in the day-one story's morning of planning: the charter's first minutes on screen",
+    "supporting clip inside an article on leaving his own method at home for a day (NUGGETS #12)",
+    "b-roll under a line about writing the charter with an AI that writes with you"
+   ],
+   "watch_outs": [
+    "Starts mid-sentence (\"i think going to be\"); the sentence begins at 7:26 (\"it's also\"), in a context line.",
+    "Mild knocks at tools: the terminal as \"a black box\", Obsidian as \"the white box\", and \"i guess this isn't that much better\" about the app he's using; the context line before adds \"i don't know how much i like this\".",
+    "Names products (Obsidian, Google Docs).",
+    "Screen clip (cam: screen): the doc on screen needs Alex's OK before publishing.",
+    "Filler (\"uh uh\", \"um\") and a trailing \"whatever. Okay.\"",
+    "Needs a line of setup: he's starting the project charter in a doc app instead of his usual terminal."
+   ],
+   "standalone": "low",
+   "standalone_why": "a passing remark about a tool; needs the charter-writing setup and the screen"
   },
   {
    "id": "S03-e",
@@ -1404,6 +1531,11 @@
      "id": "S07-a",
      "rel": "leads into",
      "note": "(link from S07-a)"
+    },
+    {
+     "id": "S07-c",
+     "rel": "leads into",
+     "note": "(link from S07-c)"
     },
     {
      "id": "S08-c",
@@ -2074,6 +2206,11 @@
      "note": "(link from S03-f)"
     },
     {
+     "id": "S11-b",
+     "rel": "supported by",
+     "note": "(link from S11-b)"
+    },
+    {
      "id": "day1-5",
      "rel": "repeated by",
      "note": "(link from day1-5)"
@@ -2169,6 +2306,11 @@
      "note": "20 minutes later: too many new things at once"
     },
     {
+     "id": "S03-d",
+     "rel": "follows from",
+     "note": "(link from S03-d)"
+    },
+    {
      "id": "S08-a",
      "rel": "leads into",
      "note": "(link from S08-a)"
@@ -2261,6 +2403,11 @@
      "id": "S01-c",
      "rel": "follows from",
      "note": "(link from S01-c)"
+    },
+    {
+     "id": "S05-d",
+     "rel": "leads into",
+     "note": "(link from S05-d)"
     }
    ],
    "could_serve_as": [
@@ -2276,6 +2423,93 @@
    ],
    "standalone": "low",
    "standalone_why": "a dictated prompt full of project terms; it lands as the launch beat inside the story"
+  },
+  {
+   "id": "S05-d",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S05",
+   "prague": "12:49:23 to 12:50:21",
+   "range_in_recording": "9:17 to 10:16",
+   "length": "58 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S05-d.mp4",
+    "session_video": "EoLyMiV77R0",
+    "session_video_from_s": 554.7,
+    "session_video_to_s": 613.7
+   },
+   "gist": "He dictates the opening of the research spec: a really deep research session on a target company, because a live hackathon showing what a GTM engineer can do includes prospect research pipelines, demonstrated on the company the hackathon is for. The document will list all the research needed, the tech stack, where things should go, and the sibling working directories the research will feed. Per the clip index, the spec fills in on screen as he talks.",
+   "points": [
+    "The research session is meant as a really deep research session on a target company.",
+    "Context for the agent: a live hackathon that demonstrates what a GTM engineer can do, and part of that is prospect research pipelines.",
+    "It will be demonstrated on the company the hackathon is for (he notes the dictation spelled the name correctly).",
+    "The document lists all the research to do, the tech stack, and where things should go.",
+    "It also needs a general awareness of the sibling working directories the research will feed and interact with."
+   ],
+   "his_words": [
+    "this is going to be a really deep research session of a target company",
+    "the context is we're doing a live hackathon that demonstrates what a gtm engineer can do and so part of that is um prospect research pipelines",
+    "document is going to list out all the research we need to do",
+    "a general awareness of um other sibling working directories that this research will feed and interact with"
+   ],
+   "themes": [
+    "research-method",
+    "orchestration"
+   ],
+   "related": [
+    {
+     "id": "S05-b",
+     "rel": "follows-from",
+     "note": "12:44: three agents write the tooling specs in parallel"
+    },
+    {
+     "id": "S05-j",
+     "rel": "leads-into",
+     "note": "13:08: research before method, answering this spec's questions"
+    },
+    {
+     "id": "copy-docs-specs",
+     "rel": "leads-into",
+     "note": "the S1 research spec as published"
+    },
+    {
+     "id": "research-desk",
+     "rel": "leads-into",
+     "note": "the budgeted research method that came out of S1"
+    },
+    {
+     "id": "feed-insight-research-first",
+     "rel": "leads-into",
+     "note": "13:08 feed post"
+    },
+    {
+     "id": "feed-research-lands",
+     "rel": "leads-into",
+     "note": "the company research later became Alex's own job"
+    },
+    {
+     "id": "S09-b",
+     "rel": "leads-into",
+     "note": "15:22: a session mines the company's public website"
+    }
+   ],
+   "could_serve_as": [
+    "b-roll of a spec being dictated and filling in, inside an article on running a team of AI sessions from specs",
+    "supporting clip in the day-one story's handoff to the agents",
+    "short demo of \"prospect research pipelines\" as part of the GTM engineer's toolkit"
+   ],
+   "watch_outs": [
+    "Screen clip (cam: screen): the spec on screen needs Alex's OK before publishing.",
+    "Names the target company (spelled \"advery\" in the transcript); \"spelled correctly wonderful\" is an aside about the dictation.",
+    "The plan he dictates changed: the charter's S1 later has no company topics, and the company research became his own git-ignored work (feed-research-lands, S05-i at 13:01).",
+    "Dictation to an agent, with pauses (9:40 to 9:49 and 9:56 to 10:07); best with the screen visible.",
+    "Ends at the end of the dictation; the next lines (about how things are going) are context."
+   ],
+   "standalone": "low",
+   "standalone_why": "dictation to an agent; works as b-roll with the screen, not alone"
   },
   {
    "id": "day1-2",
@@ -2359,6 +2593,11 @@
      "id": "S01-c",
      "rel": "follows from",
      "note": "(link from S01-c)"
+    },
+    {
+     "id": "S05-m",
+     "rel": "leads into",
+     "note": "(link from S05-m)"
     },
     {
      "id": "S07-a",
@@ -2459,6 +2698,11 @@
      "note": "by 16:58 he's still asked every five minutes"
     },
     {
+     "id": "S07-c",
+     "rel": "leads into",
+     "note": "(link from S07-c)"
+    },
+    {
      "id": "S07-i",
      "rel": "leads into",
      "note": "(link from S07-i)"
@@ -2482,6 +2726,94 @@
    ],
    "standalone": "medium",
    "standalone_why": "the batch-vs-rolling idea is clear once the viewer knows agents are asking him questions"
+  },
+  {
+   "id": "S05-i",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S05",
+   "prague": "13:01:08 to 13:02:11",
+   "range_in_recording": "21:02 to 22:02",
+   "length": "59 s",
+   "camera": "screen to 21:12, then webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S05-i.mp4",
+    "session_video": "EoLyMiV77R0",
+    "session_video_from_s": 1259.9,
+    "session_video_to_s": 1319.9
+   },
+   "gist": "A warning comes up (read out at the start; garbled in the transcript) that the hackathon's git repo is public and the watcher pushes commits hourly, so research on real people could go public unchecked. He starts to dismiss it as public information, then agrees: they might not like that. He has the company research folder git-ignored, saying it's all public information but he doesn't want them to have any bad feeling about it, so it stays off the public repo.",
+   "points": [
+    "The warning: the repo is public and the watcher pushes commits hourly, so research on real people could go public unchecked (garbled in the transcript).",
+    "His first reaction is to dismiss it: it's public information.",
+    "Then he concedes the point: \"They might not like that.\"",
+    "He has the company research subdirectory git-ignored, even though it is all public information.",
+    "The reason is courtesy: he doesn't want them to have any bad feeling about it.",
+    "He starts asking for a note in that folder's CLAUDE.md (cut off; the rest is in context lines)."
+   ],
+   "his_words": [
+    "so research on real people could go public unchecked.",
+    "They might not like that. It is public information",
+    "let's uh git ignore the ad very research subdirectory it is all public information but um i don't want them to have any bad feeling about that so let's just get ignore that so it's not on the public repo"
+   ],
+   "themes": [
+    "research-method",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "NUGGETS #24",
+     "rel": "same-moment",
+     "note": "courtesy over what's technically allowed"
+    },
+    {
+     "id": "S12-g",
+     "rel": "pairs-with",
+     "note": "17:45: cite every public photo, from their own website"
+    },
+    {
+     "id": "S09-f",
+     "rel": "pairs-with",
+     "note": "15:34: \"all public information\", one disclaimer, don't block"
+    },
+    {
+     "id": "S10-k",
+     "rel": "pairs-with",
+     "note": "16:56: stop freezing me over public information"
+    },
+    {
+     "id": "feed-research-lands",
+     "rel": "leads-into",
+     "note": "the company research became his own"
+    },
+    {
+     "id": "demo-d2-company-research",
+     "rel": "leads-into",
+     "note": "what that research became on the site"
+    },
+    {
+     "id": "publish-leak-scan",
+     "rel": "pairs-with",
+     "note": "the later pre-publish checks"
+    }
+   ],
+   "could_serve_as": [
+    "supporting clip on the stakeholder pages or in a LinkedIn post on research ethics: public isn't the same as polite",
+    "supporting clip inside an article on how he researches a company (what stays private and why)",
+    "pull quote: \"i don't want them to have any bad feeling about that\""
+   ],
+   "watch_outs": [
+    "The opening warning is garbled (\"your hackathon gif up is public and the new watcher pushes every such commits their hourly\"); it seems to be an agent's message read out, which is unclear in the transcript.",
+    "Screen clip for the first 10 s (to 21:12), then webcam; the screen part needs Alex's OK.",
+    "A 12 s silence at 21:28; jump-cut it.",
+    "Names the target company (\"ad very\") and refers to research on its people; no person is named.",
+    "Ends mid-sentence (\"and then um make\"); the request continues in context lines.",
+    "Needs one line of setup: the repo is public, and the folder holds his research on the company he's applying to."
+   ],
+   "standalone": "medium",
+   "standalone_why": "the courtesy point is clear, but the garbled warning needs a caption or a setup line"
   },
   {
    "id": "S05-j",
@@ -2552,6 +2884,11 @@
      "note": "14:59: the research is in"
     },
     {
+     "id": "S05-d",
+     "rel": "follows from",
+     "note": "(link from S05-d)"
+    },
+    {
      "id": "S09-i",
      "rel": "pairs with",
      "note": "(link from S09-i)"
@@ -2570,6 +2907,98 @@
    ],
    "standalone": "medium",
    "standalone_why": "the idea is clear once 'DoD' is glossed and the viewer knows he's briefing an agent"
+  },
+  {
+   "id": "S05-m",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S05",
+   "prague": "13:20:05 to 13:20:21",
+   "range_in_recording": "39:59 to 40:16",
+   "length": "16 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S05-m.mp4",
+    "session_video": "EoLyMiV77R0",
+    "session_video_from_s": 2396.9,
+    "session_video_to_s": 2413.9
+   },
+   "gist": "Sixteen seconds of screen at 13:20: he says he doesn't need something any more and is going to get rid of anything that is out of (he breaks off there; the rest is unclear in the transcript), then swears in disbelief, then says \"Oh, it's fun to do things on camera.\" Per the clip index and the library record, this is the moment every session (ten of them) disappears on screen.",
+   "points": [
+    "He's tidying up: \"we don't need that anymore\".",
+    "He starts to say he'll get rid of anything that is out of (the rest is cut off by his reaction).",
+    "His reaction is a sworn \"are you kidding me?\".",
+    "He shrugs it off: \"Oh, it's fun to do things on camera.\"",
+    "What was deleted (all ten sessions) comes from the clip index, not the transcript."
+   ],
+   "his_words": [
+    "Yeah, we're, we don't need that anymore.",
+    "I'm going to get rid of anything that is out of, no, are you fucking kidding me?",
+    "Oh, it's fun to do things on camera."
+   ],
+   "themes": [
+    "failure-and-recovery",
+    "personality",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "clip-c-s05-deletion-live",
+     "rel": "same-moment",
+     "note": "the held screen cut of this moment"
+    },
+    {
+     "id": "NUGGETS #13",
+     "rel": "same-moment",
+     "note": "the closed-every-session arc; this is its on-screen beat"
+    },
+    {
+     "id": "day1-2",
+     "rel": "follows-from",
+     "note": "12:55: too many new things at once"
+    },
+    {
+     "id": "day1-3",
+     "rel": "leads-into",
+     "note": "seconds later: \"So that was bad\""
+    },
+    {
+     "id": "S05-n",
+     "rel": "leads-into",
+     "note": "13:21: a fresh session is asked to bring them back"
+    },
+    {
+     "id": "S07-d",
+     "rel": "leads-into",
+     "note": "13:44: the recovery becomes a skill"
+    },
+    {
+     "id": "S12-j",
+     "rel": "pairs-with",
+     "note": "he asks for \"the scary point of closing all of them\" in the day-one story"
+    },
+    {
+     "id": "art-day-one",
+     "rel": "supports",
+     "note": "its 13:20 section"
+    }
+   ],
+   "could_serve_as": [
+    "the on-screen beat of the closed-every-session arc in the day-one story, right before day1-3",
+    "cold open for a LinkedIn post or short on the accident, followed by day1-3 and S05-n",
+    "pull quote: \"Oh, it's fun to do things on camera.\""
+   ],
+   "watch_outs": [
+    "Swearing at 40:05 (\"are you fucking kidding me?\"): needs a bleep-or-keep call from Alex.",
+    "Screen clip (cam: screen), held: needs Alex's OK and a check of what the session list shows.",
+    "The transcript never says what was deleted; it needs the screen or a caption (ten sessions, per the clip index).",
+    "The context line before (\"okay, don't, don't do that, wait\") is unclear in the transcript.",
+    "Only 16 s; makes no sense without setup or the clips around it."
+   ],
+   "standalone": "low",
+   "standalone_why": "only lands next to day1-3 and S05-n, or with a caption saying what just vanished"
   },
   {
    "id": "day1-3",
@@ -2646,6 +3075,11 @@
      "id": "feed-s05",
      "rel": "supports",
      "note": "the live feed already tells the accident and the recovery"
+    },
+    {
+     "id": "S05-m",
+     "rel": "follows from",
+     "note": "(link from S05-m)"
     },
     {
      "id": "S07-b",
@@ -2747,6 +3181,11 @@
      "id": "operator-attention-controls",
      "rel": "leads-into",
      "note": "the recovery skill that came out of this"
+    },
+    {
+     "id": "S05-m",
+     "rel": "follows from",
+     "note": "(link from S05-m)"
     }
    ],
    "could_serve_as": [
@@ -2937,6 +3376,11 @@
      "note": "18:50: one orchestration session holds too much, split by meaning"
     },
     {
+     "id": "S07-g",
+     "rel": "leads into",
+     "note": "(link from S07-g)"
+    },
+    {
      "id": "S08-c",
      "rel": "leads into",
      "note": "(link from S08-c)"
@@ -3048,6 +3492,11 @@
      "id": "S07-m",
      "rel": "leads into",
      "note": "(link from S07-m)"
+    },
+    {
+     "id": "S12-d",
+     "rel": "leads into",
+     "note": "(link from S12-d)"
     }
    ],
    "could_serve_as": [
@@ -3065,6 +3514,98 @@
    ],
    "standalone": "medium",
    "standalone_why": "the idea is clear, but 'done' needs one line of setup"
+  },
+  {
+   "id": "S07-c",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S07",
+   "prague": "13:43:30 to 13:44:06",
+   "range_in_recording": "7:09 to 7:44",
+   "length": "34 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S07-c.mp4",
+    "session_video": "NULD_WteCRM",
+    "session_video_from_s": 426.4,
+    "session_video_to_s": 461.4
+   },
+   "gist": "He moves the answer desk onto the recorded monitor and explains it: one separate window where all the running sessions ask him questions when they need him. It takes up his third monitor at all times, so he has to remember to look at it, and the questions drip in one by one. Now that the sessions can talk to each other, they can ask it questions on another session's behalf (unclear in the transcript).",
+   "points": [
+    "He moves the desk to the monitor being recorded so viewers can see it.",
+    "One separate window: every running session asks him its questions there when it needs him.",
+    "It sits on his third monitor at all times.",
+    "The catch: he has to remember to go and look at it.",
+    "Questions drip in one by one.",
+    "Sessions can now talk to each other, so they can ask it questions on its behalf (who \"it\" is is unclear in the transcript)."
+   ],
+   "his_words": [
+    "basically i've got this one separate window and all of the sessions that are running will ask me questions here when it needs me",
+    "i have this just taking up my third monitor uh at all times so i do have to remember to go look at it",
+    "and they drip in one by one and again now the sessions can talk to each other"
+   ],
+   "themes": [
+    "orchestration",
+    "human-bottleneck",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "clip-c-s07-answer-desk",
+     "rel": "same-moment",
+     "note": "the held screen cut of this moment"
+    },
+    {
+     "id": "S03-f",
+     "rel": "follows-from",
+     "note": "11:37: the answer desk is born in the charter"
+    },
+    {
+     "id": "S05-g",
+     "rel": "follows-from",
+     "note": "12:57: opening questions batched; the desk is for rolling ones"
+    },
+    {
+     "id": "NUGGETS #33",
+     "rel": "supports",
+     "note": "one question per session in the queue"
+    },
+    {
+     "id": "operator-attention-controls",
+     "rel": "supports",
+     "note": "the answer desk as a reusable tool"
+    },
+    {
+     "id": "S07-g",
+     "rel": "leads-into",
+     "note": "13:57: the control room in one breath"
+    },
+    {
+     "id": "S08-c",
+     "rel": "repeats",
+     "note": "15:12: the control room explained after lunch"
+    },
+    {
+     "id": "feed-reset",
+     "rel": "pairs-with",
+     "note": "16:44: too many questions waiting on him"
+    }
+   ],
+   "could_serve_as": [
+    "supporting clip inside an article on running many agent sessions with one human (the answer desk section)",
+    "the answer desk shown on screen, in the day-one story's control-room part",
+    "visual for the operator-attention-controls skill entry"
+   ],
+   "watch_outs": [
+    "Screen clip (cam: screen), held: needs Alex's OK; the library record suggests an optional blur of a local id.",
+    "Starts mid-sentence (\"more questions so you can't see it I can I\"); start at \"basically i've got\" (about 7:14).",
+    "\"they can ask it questions on its behalf\" is unclear in the transcript.",
+    "Irony to handle with care: by 16:44 the desk's queue had swamped him (feed-reset), so present this as the design, not the outcome."
+   ],
+   "standalone": "medium",
+   "standalone_why": "clear explanation of the desk, but needs one line on why so many sessions have questions"
   },
   {
    "id": "S07-d",
@@ -3144,6 +3685,11 @@
      "id": "art-day-one",
      "rel": "supports",
      "note": "a close for its 13:20 section"
+    },
+    {
+     "id": "S05-m",
+     "rel": "follows from",
+     "note": "(link from S05-m)"
     }
    ],
    "could_serve_as": [
@@ -3161,6 +3707,88 @@
    ],
    "standalone": "medium",
    "standalone_why": "clear with one line about the 13:20 accident"
+  },
+  {
+   "id": "S07-g",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S07",
+   "prague": "13:57:14 to 13:58:05",
+   "range_in_recording": "20:51 to 21:42",
+   "length": "50 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S07-g.mp4",
+    "session_video": "NULD_WteCRM",
+    "session_video_from_s": 1248.6,
+    "session_video_to_s": 1299.6
+   },
+   "gist": "Admitting some of this is boring, he checks whether anything is actually running and says it's too many things. Sorting his windows on screen (the watcher, his questions, the briefing session), he sums up the setup: one thing monitoring everything that's happening and giving him summaries, and one thing feeding him questions from the other sessions.",
+   "points": [
+    "\"some of this is boring\", and that's okay.",
+    "He needs to check whether anything is actually running; it's too many things.",
+    "He arranges windows by name (watcher, questions, briefing); several lines here are garbled.",
+    "One thing monitors everything that's happening and gives him summaries.",
+    "One thing feeds him questions from the other sessions."
+   ],
+   "his_words": [
+    "some of this is boring",
+    "i need to check to see if anything's actually running it's too many that's not that's too many things",
+    "so I've got one thing just kind of monitoring everything that's happening it's gonna give me summaries"
+   ],
+   "themes": [
+    "orchestration",
+    "human-bottleneck",
+    "personality"
+   ],
+   "related": [
+    {
+     "id": "S07-a",
+     "rel": "follows-from",
+     "note": "13:38: he asks for a briefing session"
+    },
+    {
+     "id": "S07-c",
+     "rel": "follows-from",
+     "note": "13:43: the answer desk on camera"
+    },
+    {
+     "id": "S08-c",
+     "rel": "repeats",
+     "note": "15:12: the control room explained cleanly"
+    },
+    {
+     "id": "feed-s07-control-room",
+     "rel": "supports",
+     "note": "feed post: Alex builds himself a control room"
+    },
+    {
+     "id": "operator-attention-controls",
+     "rel": "supports",
+     "note": "the controls as a reusable tool"
+    },
+    {
+     "id": "img-alex-photos",
+     "rel": "pairs-with",
+     "note": "his desk at 14:19: three monitors, briefing session, answer desk"
+    }
+   ],
+   "could_serve_as": [
+    "quick b-roll of the control room being set up, in the day-one story",
+    "honest texture for an article on running many sessions: \"too many things\"",
+    "a lesser alternative to S08-c, which explains the same setup cleanly"
+   ],
+   "watch_outs": [
+    "Mild swearing (\"jesus christ\" at about 21:26).",
+    "Screen clip (cam: screen): needs Alex's OK.",
+    "Garbled stretches: \"you didn't exist as\", \"they open a terminal window between\", \"I'll do it 1408\"; unclear in the transcript.",
+    "A long pause between 21:26 and 21:40, and the end trails off (\"from the other sessions i\").",
+    "Thinking out loud; needs context on what the windows are."
+   ],
+   "standalone": "low",
+   "standalone_why": "scattered and half-garbled; S08-c says it better"
   },
   {
    "id": "S07-i",
@@ -3411,6 +4039,11 @@
      "id": "art-how-content-gets-picked",
      "rel": "leads-into",
      "note": "the article on how the feed picked its posts"
+    },
+    {
+     "id": "S09-c",
+     "rel": "leads into",
+     "note": "(link from S09-c)"
     }
    ],
    "could_serve_as": [
@@ -3596,6 +4229,16 @@
      "id": "NUGGETS #15",
      "rel": "leads-into",
      "note": "17:09: grades his guiding documents B plus, maybe B minus"
+    },
+    {
+     "id": "S11-b",
+     "rel": "pairs with",
+     "note": "(link from S11-b)"
+    },
+    {
+     "id": "S12-j",
+     "rel": "pairs with",
+     "note": "(link from S12-j)"
     }
    ],
    "could_serve_as": [
@@ -3796,6 +4439,16 @@
      "note": "his desk at 14:19 with the briefing session and the answer desk on screen"
     },
     {
+     "id": "S07-c",
+     "rel": "repeated by",
+     "note": "(link from S07-c)"
+    },
+    {
+     "id": "S07-g",
+     "rel": "repeated by",
+     "note": "(link from S07-g)"
+    },
+    {
      "id": "S08-d",
      "rel": "leads into",
      "note": "(link from S08-d)"
@@ -3988,6 +4641,11 @@
      "id": "S08-b",
      "rel": "pairs-with",
      "note": "15:09: his research method in his own words"
+    },
+    {
+     "id": "S05-d",
+     "rel": "follows from",
+     "note": "(link from S05-d)"
     }
    ],
    "could_serve_as": [
@@ -4007,6 +4665,247 @@
    ],
    "standalone": "medium",
    "standalone_why": "needs one line on which AI sessions he's directing"
+  },
+  {
+   "id": "S09-c",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S09",
+   "prague": "15:24:04 to 15:24:49",
+   "range_in_recording": "6:38 to 7:24",
+   "length": "45 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S09-c.mp4",
+    "session_video": "cNI9EgxHUbk",
+    "session_video_from_s": 395.6,
+    "session_video_to_s": 441.6
+   },
+   "gist": "Checking whether the live site is being updated, he can't believe it's still grey after all this time. After a long silence on screen he catches himself: \"this is narcissism you don't have to do this\", argues back (\"okay no i want to see\") and settles it: \"yeah i'm not doing this on camera\". What he is doing on the site is unclear in the transcript; the clip index says he finds himself playing on it.",
+   "points": [
+    "He checks whether the site is being updated; time is going.",
+    "He can't believe it's still grey after all this time (\"last update 515\" as transcribed).",
+    "He calls what he's doing narcissism and tells himself he doesn't have to do it.",
+    "He argues with himself (\"okay no i want to see\"), then decides he's not doing it on camera."
+   ],
+   "his_words": [
+    "can't believe it's still gray after all this time",
+    "cool this is narcissism you don't have to do this",
+    "yeah i'm not doing this on camera"
+   ],
+   "themes": [
+    "personality",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "S07-m",
+     "rel": "follows-from",
+     "note": "14:08: the site becomes a live feed"
+    },
+    {
+     "id": "S09-d",
+     "rel": "leads-into",
+     "note": "a minute later: the grey site is ordered rebuilt in the company's look"
+    },
+    {
+     "id": "S12-e",
+     "rel": "pairs-with",
+     "note": "self-aware humour: \"a bit of a rambly talker\""
+    },
+    {
+     "id": "NUGGETS #43",
+     "rel": "pairs-with",
+     "note": "self-aware humour: \"this is a job interview\""
+    },
+    {
+     "id": "feed-s09",
+     "rel": "supports",
+     "note": "feed post on S09's three calls"
+    }
+   ],
+   "could_serve_as": [
+    "light-relief beat in the day-one story, just before the site gets its new look (S09-d)",
+    "short for a blooper or personality reel",
+    "pull quote: \"this is narcissism you don't have to do this\""
+   ],
+   "watch_outs": [
+    "A 23 s silence from 6:51 to 7:14; jump-cut it.",
+    "Screen clip (cam: screen) of the live site: needs Alex's OK.",
+    "What he's looking at or doing is unclear in the transcript; the joke needs the screen.",
+    "Opens on \"relax\", which follows \"just chill\" said to something off-mic in the context lines; unclear in the transcript.",
+    "\"last update 515\" is unclear (probably a timestamp)."
+   ],
+   "standalone": "low",
+   "standalone_why": "the joke only lands with the screen or a setup line"
+  },
+  {
+   "id": "S09-d",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S09",
+   "prague": "15:25:26 to 15:26:31",
+   "range_in_recording": "8:01 to 9:07",
+   "length": "65 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S09-d.mp4",
+    "session_video": "cNI9EgxHUbk",
+    "session_video_from_s": 478.6,
+    "session_video_to_s": 544.6
+   },
+   "gist": "He tells a session that the website should be as close a clone of the company's own website as possible: have a subagent scrape as much of the front-end code as it can, use their branding, logos and icons, and start designing the site to look like theirs. He sketches the structure (the feed as the home page, then places for the deliverables) and has one subagent first recreate a branding guide from their website. Per the clip index, the screen shows the grey \"before\".",
+   "points": [
+    "The site should be as cloned as possible to the company's website.",
+    "A subagent scrapes as much of the front-end code as it can.",
+    "The site may use their branding, logos and icons.",
+    "Structure: the feed is the home page, then places broken off for the deliverables.",
+    "First step: one subagent recreates a branding guide from their website."
+   ],
+   "his_words": [
+    "So our website is going to be like as cloned as possible to the AdVary website.",
+    "Basically just scrape as much of the front end code as you can.",
+    "you can use their branding you can use their logos their icons everything",
+    "have one subagent basically recreate a branding guide from their website"
+   ],
+   "themes": [
+    "voice-and-taste",
+    "personalisation-at-scale",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "S09-c",
+     "rel": "follows-from",
+     "note": "a minute earlier: \"still gray after all this time\""
+    },
+    {
+     "id": "brand-clone-tokens",
+     "rel": "leads-into",
+     "note": "the reusable brand-clone method"
+    },
+    {
+     "id": "other-addvery-reference-images",
+     "rel": "leads-into",
+     "note": "the company's logos, icons and captures the site uses"
+    },
+    {
+     "id": "S09-f",
+     "rel": "leads-into",
+     "note": "15:34: one red disclaimer on the cloned look"
+    },
+    {
+     "id": "feed-s09",
+     "rel": "supports",
+     "note": "feed post: the company's look is one of S09's three calls"
+    },
+    {
+     "id": "S02-h",
+     "rel": "supports",
+     "note": "\"so good AI that it looks human\""
+    },
+    {
+     "id": "S09-e",
+     "rel": "leads into",
+     "note": "(link from S09-e)"
+    }
+   ],
+   "could_serve_as": [
+    "before-and-after opener for an entry on the brand-clone method (grey site to the company's look)",
+    "supporting clip inside an article on making outreach feel personal: the application wears the prospect's brand",
+    "b-roll in the day-one story's afternoon"
+   ],
+   "watch_outs": [
+    "Screen clip (cam: screen) showing the grey \"before\" site: needs Alex's OK.",
+    "Names the company and instructs copying its branding, logos and icons; frame it next to the disclaimer (S09-f) so it doesn't read as impersonation.",
+    "Dictation with pauses (8:39 to 8:59); ends at a natural break, with the tool question in the context lines.",
+    "Needs one line: the site is a job application to that company."
+   ],
+   "standalone": "medium",
+   "standalone_why": "the instruction is clear, but needs the one line on whose site and why"
+  },
+  {
+   "id": "S09-e",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S09",
+   "prague": "15:28:35 to 15:29:32",
+   "range_in_recording": "11:10 to 12:07",
+   "length": "56 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S09-e.mp4",
+    "session_video": "cNI9EgxHUbk",
+    "session_video_from_s": 667.6,
+    "session_video_to_s": 724.6
+   },
+   "gist": "Following up the order to rebuild the site in the company's look, he says the site should start looking like theirs: where their website has sections that fit what he's doing, place his material there, but don't create a section just for kicks if nothing of his fits it. What he does want is their motion, like an image rotating as it comes into frame. All the design, branding, style and structure will come from their website, so the session should fan out a bunch of subagents to do it. Per the clip index, the screen shows the company's public site.",
+   "points": [
+    "The website should start looking like theirs.",
+    "Where their site has sections that fit what he's doing, his material goes there.",
+    "If nothing he has fits one of their sections, don't create that section just for kicks.",
+    "He does want their motion, such as an image rotating as it comes into frame.",
+    "All the design, branding, style and structure come from their website.",
+    "The session should fan out a bunch of subagents for it (context lines: it must work on mobile and desktop, and he leaves the orchestration to the agent)."
+   ],
+   "his_words": [
+    "if you look at their website and you have things there that kind of fit what we're doing you can kind of place our stuff in there",
+    "if what we have so far doesn't naturally fit one of their sections like don't try to just create that section just for kicks",
+    "what i do want is stuff like their um their motions uh like when a image rotates when it becomes in frame",
+    "basically all the design branding and style and structure is going to come from their website so fan out a bunch of sub agents and take care of that"
+   ],
+   "themes": [
+    "voice-and-taste",
+    "personalisation-at-scale",
+    "orchestration"
+   ],
+   "related": [
+    {
+     "id": "S09-d",
+     "rel": "follows-from",
+     "note": "3 minutes earlier: rebuild the site in the company's look"
+    },
+    {
+     "id": "brand-clone-tokens",
+     "rel": "leads-into",
+     "note": "the brand-clone method, motion included"
+    },
+    {
+     "id": "other-addvery-reference-images",
+     "rel": "leads-into",
+     "note": "the company's site captures the clone used"
+    },
+    {
+     "id": "S09-f",
+     "rel": "leads-into",
+     "note": "15:34: one red disclaimer on the cloned look"
+    },
+    {
+     "id": "feed-s09",
+     "rel": "supports",
+     "note": "feed post: the company's look is one of S09's three calls"
+    }
+   ],
+   "could_serve_as": [
+    "the \"after\" half of a before-and-after with S09-d, in an entry on the brand-clone method",
+    "supporting clip on design taste: borrow a brand's motion and structure only where the content fits",
+    "b-roll in the day-one story's afternoon"
+   ],
+   "watch_outs": [
+    "Screen clip (cam: screen) of the company's public site: needs Alex's OK.",
+    "Starts mid-sentence (\"the website to start uh looking like theirs\"); the sentence starts in the context lines (\"basically i want\").",
+    "A pause at 11:51 to 11:56 (\"but\" then silence).",
+    "Copying another company's design: frame it with the disclaimer (S09-f) and the fact that the site is an application to them.",
+    "Needs S09-d or a setup line to make sense."
+   ],
+   "standalone": "low",
+   "standalone_why": "a follow-up brief; makes sense only after S09-d"
   },
   {
    "id": "S09-f",
@@ -4077,9 +4976,29 @@
      "note": "17:23: public research, shown off"
     },
     {
+     "id": "S05-i",
+     "rel": "pairs with",
+     "note": "(link from S05-i)"
+    },
+    {
+     "id": "S09-d",
+     "rel": "follows from",
+     "note": "(link from S09-d)"
+    },
+    {
+     "id": "S09-e",
+     "rel": "follows from",
+     "note": "(link from S09-e)"
+    },
+    {
      "id": "S10-k",
      "rel": "leads into",
      "note": "(link from S10-k)"
+    },
+    {
+     "id": "S12-g",
+     "rel": "pairs with",
+     "note": "(link from S12-g)"
     }
    ],
    "could_serve_as": [
@@ -4374,6 +5293,11 @@
      "id": "page-for-ceo",
      "rel": "leads-into",
      "note": "the CEO page's economics in two lines"
+    },
+    {
+     "id": "S12-m",
+     "rel": "repeated by",
+     "note": "(link from S12-m)"
     }
    ],
    "could_serve_as": [
@@ -4752,6 +5676,11 @@
      "id": "q-show-it-off",
      "rel": "supports",
      "note": "17:23: show the public research off"
+    },
+    {
+     "id": "S05-i",
+     "rel": "pairs with",
+     "note": "(link from S05-i)"
     }
    ],
    "could_serve_as": [
@@ -4858,6 +5787,11 @@
      "id": "S10-l",
      "rel": "leads into",
      "note": "(link from S10-l)"
+    },
+    {
+     "id": "S11-b",
+     "rel": "leads into",
+     "note": "(link from S11-b)"
     }
    ],
    "could_serve_as": [
@@ -5031,6 +5965,11 @@
      "id": "li-2026-07-21-fable-vs-opus",
      "rel": "pairs-with",
      "note": "his post on how much context he trusts"
+    },
+    {
+     "id": "S11-b",
+     "rel": "leads into",
+     "note": "(link from S11-b)"
     }
    ],
    "could_serve_as": [
@@ -5049,6 +5988,882 @@
    ],
    "standalone": "medium",
    "standalone_why": "funny to anyone who uses AI, but a stranger needs 'context window' explained"
+  },
+  {
+   "id": "S11-b",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S11",
+   "prague": "17:09:59 to 17:10:26",
+   "range_in_recording": "2:50 to 3:20",
+   "length": "29 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S11-b.mp4",
+    "session_video": "iXr-pKhseB8",
+    "session_video_from_s": 167.7,
+    "session_video_to_s": 197.7
+   },
+   "gist": "In his evening check-in he says there's a human context window, as he calls it: there's only so much a person can hold, so either you decide what you offload to the AI or you keep the velocity at a certain amount. You can get a bit more leverage by taking the time to write good guiding documents at the beginning, and he grades his own \"a b plus maybe b minus\". The line just before the moment (context) is \"humans have like ram too\", after saying the question desk got overloaded with too many things at once.",
+   "points": [
+    "Humans have a context window too (he leads in with \"humans have like ram too\" in the context line).",
+    "There's only so much a person can hold.",
+    "Either you decide what you're offloading to the AI, or you keep the velocity at a certain amount.",
+    "Good guiding documents written at the beginning buy a bit more leverage.",
+    "He grades his own guiding documents \"a b plus maybe b minus\".",
+    "Context lines: the question desk concept was cool and would work on other projects, but here too many things at once overloaded it and he was blocking things without realising."
+   ],
+   "his_words": [
+    "there's a human context window when i call it",
+    "either you decide you're offloading to the ai or like you have to keep the velocity at a certain amount",
+    "you can get a little bit more leverage if you really take the time to write good guiding documents",
+    "i'm gonna like a b plus maybe b minus"
+   ],
+   "themes": [
+    "human-bottleneck",
+    "ai-craft",
+    "orchestration"
+   ],
+   "related": [
+    {
+     "id": "q-human-context-window",
+     "rel": "same-moment",
+     "note": "the site's quote of this line"
+    },
+    {
+     "id": "NUGGETS #15",
+     "rel": "same-moment",
+     "note": "ranked nugget: humans have a context window too"
+    },
+    {
+     "id": "feed-s11",
+     "rel": "same-moment",
+     "note": "inside the full S11 video on the feed"
+    },
+    {
+     "id": "S11-a",
+     "rel": "follows-from",
+     "note": "a minute earlier: context windows \"like floppy disks\""
+    },
+    {
+     "id": "day1-5",
+     "rel": "follows-from",
+     "note": "16:58: \"the bottleneck is always human\""
+    },
+    {
+     "id": "S04-i",
+     "rel": "supports",
+     "note": "12:28: the bottleneck is focus"
+    },
+    {
+     "id": "S08-a",
+     "rel": "pairs-with",
+     "note": "15:07: the charter paid off by lunch"
+    },
+    {
+     "id": "spec-driven-agent-team",
+     "rel": "supports",
+     "note": "the guiding-documents method he's grading"
+    },
+    {
+     "id": "S12-a",
+     "rel": "leads into",
+     "note": "(link from S12-a)"
+    },
+    {
+     "id": "S12-j",
+     "rel": "pairs with",
+     "note": "(link from S12-j)"
+    }
+   ],
+   "could_serve_as": [
+    "anchor clip for an article or LinkedIn post on the human context window",
+    "the close of the day-one story (NUGGETS #15 suggests it)",
+    "pull quote: \"there's a human context window\"",
+    "supporting clip inside an article on running many agents with one human, next to day1-5"
+   ],
+   "watch_outs": [
+    "The hook \"humans have like ram too\" sits in the context line at 2:45, a few seconds before the moment; start the cut there (mid-line, after \"um i know but\").",
+    "Ends mid-sentence (\"i think i intended to\"); cut after \"b minus\".",
+    "\"when i call it\" reads oddly (machine transcript); quotes keep it as is.",
+    "Jargon (context window, guiding documents): a stranger needs one line.",
+    "Already quoted on the site (q-human-context-window) and inside the full S11 video on the feed."
+   ],
+   "standalone": "medium",
+   "standalone_why": "a sharp idea, but \"context window\" needs one line for a stranger"
+  },
+  {
+   "id": "S12-a",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "17:35:44 to 17:36:32",
+   "range_in_recording": "1:33 to 2:14",
+   "length": "41 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-a.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 89.6,
+    "session_video_to_s": 130.6
+   },
+   "gist": "Seven hours in, he says he's starting to talk to only one agent, and everything is 75% plus done. What's left is mostly design, which is perfect timing: design is a different part of his brain, and the part that does AI is pretty done, so he'll do some low-energy moving pixels around, which he likes.",
+   "points": [
+    "He's starting to talk to only one agent.",
+    "Everything is 75% plus done.",
+    "What's left is a lot of design.",
+    "Design uses a different part of his brain; the AI part is pretty done.",
+    "So he'll do low-energy pixel-moving work, which matches where he's at, and he likes that kind of work."
+   ],
+   "his_words": [
+    "basically I'm starting to talk only to one agent",
+    "everything is 75% plus done now",
+    "design is a different part of my brain and the part of my brain that's AI is like pretty done",
+    "I'm gonna just do some like low energy moving pixels around stuff cuz that's kind of like where I'm at"
+   ],
+   "themes": [
+    "human-bottleneck",
+    "personality"
+   ],
+   "related": [
+    {
+     "id": "S01-c",
+     "rel": "follows-from",
+     "note": "10:28: \"if I get 75% done\""
+    },
+    {
+     "id": "NUGGETS #37",
+     "rel": "supports",
+     "note": "aim high, 75% is still good; names this callback"
+    },
+    {
+     "id": "NUGGETS #38",
+     "rel": "repeats",
+     "note": "12:29: design is a different part of his brain"
+    },
+    {
+     "id": "S11-b",
+     "rel": "follows-from",
+     "note": "17:09: the human context window"
+    },
+    {
+     "id": "S12-d",
+     "rel": "leads-into",
+     "note": "17:42: he orders the clip job"
+    },
+    {
+     "id": "session-s12",
+     "rel": "supports",
+     "note": "the whole S12 session"
+    }
+   ],
+   "could_serve_as": [
+    "callback to S01-c in the day-one story: the morning's \"75% is still good\" against the evening's \"75% plus done\"",
+    "supporting clip on managing his own energy, next to S11-b",
+    "intro beat for the Canva design video (NUGGETS #38 suggests the same pairing)"
+   ],
+   "watch_outs": [
+    "Ends mid-thought (\"which is cool looks I like that kind of stuff let me I guess a lot of like editing\"); cut after \"where I'm at\" or \"I like that kind of stuff\".",
+    "The next context lines ask about his account verification off camera; keep the hard end.",
+    "\"75% plus done\" was his feeling at 17:35; the crash and course change came later, so don't present it as the day's real progress.",
+    "Tired, low-energy delivery."
+   ],
+   "standalone": "medium",
+   "standalone_why": "relatable alone, but the 75% callback needs S01-c or a setup line"
+  },
+  {
+   "id": "S12-d",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "17:42:01 to 17:43:06",
+   "range_in_recording": "7:50 to 8:55",
+   "length": "65 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-d.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 466.6,
+    "session_video_to_s": 531.6
+   },
+   "gist": "He orders the clip job: after the backlog of unlisted session videos is uploaded, one or two subagents go through the sessions and clip them, maybe as part of the legibility spec alongside the cool quotes. He wants video clips of whatever would be interesting \"as a GTM engineer trying to show his value\", with Jev (a decision model, per the library) helping decide what's likely to be a cool clip, aiming for one and a half to three or four minutes, maybe one or two of five to six.",
+   "points": [
+    "First, the backlog of unlisted videos gets uploaded.",
+    "Then one or two subagents go through the sessions and clip them, maybe as part of the legibility spec (\"where it's like cool quotes\").",
+    "He wants video clips of really interesting moments.",
+    "The test of interesting: what shows the value of a GTM engineer.",
+    "Jev is brought in to classify what's likely to be a cool clip.",
+    "Target length: one and a half to three or four minutes, maybe one or two of five to six minutes."
+   ],
+   "his_words": [
+    "one or two sub agents to basically be going through those sessions and like clipping",
+    "i want some some video clips right so if there's like a really interesting clip",
+    "as a GTM engineer trying to show his value",
+    "try to aim for like the one and a half to three four minute variety"
+   ],
+   "themes": [
+    "build-in-public",
+    "orchestration",
+    "hiring-pitch"
+   ],
+   "related": [
+    {
+     "id": "S01-d",
+     "rel": "follows-from",
+     "note": "10:29: he predicted agents would find the moments"
+    },
+    {
+     "id": "S07-b",
+     "rel": "follows-from",
+     "note": "13:41: done means the site gets additions"
+    },
+    {
+     "id": "S12-e",
+     "rel": "leads-into",
+     "note": "seconds later: \"a bit of a rambly talker\""
+    },
+    {
+     "id": "other-grading-clips",
+     "rel": "leads-into",
+     "note": "the 126 short cuts this job became"
+    },
+    {
+     "id": "taste-grading-booth",
+     "rel": "leads-into",
+     "note": "the booth where Alex grades them"
+    },
+    {
+     "id": "NUGGETS #40",
+     "rel": "leads-into",
+     "note": "grading his own clips to train a rubric"
+    },
+    {
+     "id": "art-how-content-gets-picked",
+     "rel": "supports",
+     "note": "how content gets picked"
+    },
+    {
+     "id": "idea-clip-rubric-article",
+     "rel": "pairs-with",
+     "note": "the planned article on refining the clip rubric"
+    },
+    {
+     "id": "S12-a",
+     "rel": "follows from",
+     "note": "(link from S12-a)"
+    },
+    {
+     "id": "S12-f",
+     "rel": "leads into",
+     "note": "(link from S12-f)"
+    }
+   ],
+   "could_serve_as": [
+    "origin clip for an entry or article on how the clips were picked and graded",
+    "supporting clip inside an article on the legibility pipeline: recordings into content",
+    "pull quote: \"as a GTM engineer trying to show his value\""
+   ],
+   "watch_outs": [
+    "Starts mid-sentence (\"go through the backlog of uploading\"); the sentence starts at 7:44, after a context line about his account being verified.",
+    "Names a decision model, Jev, twice; a stranger needs one line on what it is.",
+    "Run-on dictation to an agent with fillers; ends on \"um\".",
+    "Talks about himself in the third person as an instruction (\"his value\"); fine as context, odd as a pull quote without setup.",
+    "The lengths he asks for (1.5 to 6 minutes) differ from the short moments that were actually graded."
+   ],
+   "standalone": "low",
+   "standalone_why": "an instruction to an agent; it explains the clips only next to them"
+  },
+  {
+   "id": "S12-e",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "17:43:10 to 17:43:33",
+   "range_in_recording": "8:58 to 9:18",
+   "length": "19 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-e.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 534.6,
+    "session_video_to_s": 554.6
+   },
+   "gist": "Briefing the clip job, he admits he's a bit of a rambly talker, so a little rambling in the clips is fine: taking out everything that rambles would leave very little. If a chunk of interesting dialogue clips cleanly between two pieces, that's fine too, and the whole job doesn't need him at all.",
+   "points": [
+    "He calls himself a bit of a rambly talker.",
+    "A little rambling in the clips is okay.",
+    "Cutting everything that rambles would leave very little.",
+    "Clipping an interesting chunk cleanly between two pieces is also fine.",
+    "The clip job doesn't need him at all."
+   ],
+   "his_words": [
+    "i'm a bit of a rambly talker so like it's okay if there's a little bit of that in there",
+    "because um taking out everything that rambles is going to leave very little left",
+    "i think that's something that doesn't need me at all"
+   ],
+   "themes": [
+    "personality",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "NUGGETS #42",
+     "rel": "same-moment",
+     "note": "self-aware humour: the rambler"
+    },
+    {
+     "id": "S12-d",
+     "rel": "follows-from",
+     "note": "seconds earlier: he orders the clip job"
+    },
+    {
+     "id": "S12-f",
+     "rel": "leads-into",
+     "note": "about a minute later: clips to show he could host the podcast"
+    },
+    {
+     "id": "S09-c",
+     "rel": "pairs-with",
+     "note": "self-aware humour: \"this is narcissism\""
+    },
+    {
+     "id": "NUGGETS #43",
+     "rel": "pairs-with",
+     "note": "self-aware humour: \"this is a job interview\""
+    },
+    {
+     "id": "art-how-content-gets-picked",
+     "rel": "supports",
+     "note": "what the picking agent keeps and drops"
+    }
+   ],
+   "could_serve_as": [
+    "intro to the site's video section (NUGGETS #42 suggests it)",
+    "short personality clip",
+    "pull quote: \"i'm a bit of a rambly talker\"",
+    "light opener for an article on how the clips were picked"
+   ],
+   "watch_outs": [
+    "Ends mid-sentence (\"just upload the videos\" runs on into \"kind of process them again\"); cut after \"doesn't need me at all\".",
+    "Self-deprecating; fine as humour, but don't let it frame the whole video section as rambling."
+   ],
+   "standalone": "high",
+   "standalone_why": "self-aware and short; makes sense with no setup"
+  },
+  {
+   "id": "S12-f",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "17:44:40 to 17:44:59",
+   "range_in_recording": "10:28 to 10:49",
+   "length": "20 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-f.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 624.6,
+    "session_video_to_s": 645.6
+   },
+   "gist": "Planning the site's video section, he says he wants some clips to stand alone, because the company has a podcast with the Czech version covered, and he wants to be the person doing the English version. The clips should show he's competent at that.",
+   "points": [
+    "Some clips should stand alone (context lines: others go inside or at the top of the blog posts).",
+    "The company has a podcast, and its Czech version is covered.",
+    "He wants to be the person doing the English version.",
+    "The video clips are meant to show competency in that."
+   ],
+   "his_words": [
+    "some of them just to stand alone",
+    "they have the Czech version of the podcast covered but I want to be the person doing the English version of the podcast",
+    "And so I want this video clip stuff to show competency in that."
+   ],
+   "themes": [
+    "hiring-pitch",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "NUGGETS #30",
+     "rel": "same-moment",
+     "note": "he wants to host the English version of their podcast"
+    },
+    {
+     "id": "S12-e",
+     "rel": "follows-from",
+     "note": "about a minute earlier: \"a bit of a rambly talker\""
+    },
+    {
+     "id": "S12-d",
+     "rel": "follows-from",
+     "note": "17:42: the clip job"
+    },
+    {
+     "id": "S02-e",
+     "rel": "pairs-with",
+     "note": "11:12: \"I don't want there to be a next company\""
+    },
+    {
+     "id": "copy-about",
+     "rel": "supports",
+     "note": "the About page's pitch"
+    },
+    {
+     "id": "other-grading-clips",
+     "rel": "leads-into",
+     "note": "the clips he then graded"
+    }
+   ],
+   "could_serve_as": [
+    "intro to the site's video section: why there are clips at all (NUGGETS #30 suggests it)",
+    "a line in the About page or a stakeholder page on what he'd do in the job",
+    "pull quote: \"I want to be the person doing the English version of the podcast\""
+   ],
+   "watch_outs": [
+    "His own pitch for a role; the legibility notes left it for him to decide whether to show it.",
+    "Starts mid-sentence (\"some of them just to stand alone because\"); the sentence starts in the context lines about the video section.",
+    "Hard end: the next line names a stakeholder and a meeting time; keep it out.",
+    "Refers to the company's own podcast; check the facts about it before quoting on the site."
+   ],
+   "standalone": "medium",
+   "standalone_why": "the ask is clear, but whose podcast needs one line"
+  },
+  {
+   "id": "S12-g",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "17:45:58 to 17:46:19",
+   "range_in_recording": "11:46 to 12:03",
+   "length": "16 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-g.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 702.6,
+    "session_video_to_s": 719.6
+   },
+   "gist": "He tells the site session to cite every public image it picked of people, preferably from their own website, so there's no issue with posting images of them online without their permission. If a photo comes from their website it's obviously fine (the context lines go on: a previous company's website is fine too, and he wants a summary of sources to make a judgment call).",
+   "points": [
+    "Every public image picked must be cited.",
+    "He'd prefer each one came from their own website when possible.",
+    "The reason: no issue with posting images of them online without their permission.",
+    "From their own website, it's obviously fine.",
+    "Context lines: a previous company's website is fine too, and he wants a summary of where each came from so he can make a judgment call."
+   ],
+   "his_words": [
+    "Make sure for any public image that we picked to cite it.",
+    "And I would prefer it came from their own website when possible.",
+    "That way there's no issue with like posting images of them online without their permission."
+   ],
+   "themes": [
+    "research-method"
+   ],
+   "related": [
+    {
+     "id": "img-stakeholder-portraits",
+     "rel": "leads-into",
+     "note": "six portraits, each credited to its public source"
+    },
+    {
+     "id": "S05-i",
+     "rel": "pairs-with",
+     "note": "13:01: research kept off the public repo, out of courtesy"
+    },
+    {
+     "id": "NUGGETS #24",
+     "rel": "pairs-with",
+     "note": "courtesy over what's technically allowed"
+    },
+    {
+     "id": "S09-f",
+     "rel": "pairs-with",
+     "note": "15:34: \"all public information\""
+    },
+    {
+     "id": "S12-i",
+     "rel": "leads-into",
+     "note": "17:50: click your picture for your reading list"
+    }
+   ],
+   "could_serve_as": [
+    "supporting clip in a LinkedIn post or article section on researching people politely from public sources",
+    "footnote clip on the stakeholder pages explaining the photo credits",
+    "pull quote: \"Make sure for any public image that we picked to cite it.\""
+   ],
+   "watch_outs": [
+    "Refers to the stakeholders' photos (\"images of them\"); no one is named, but it's about real people.",
+    "Ends mid-sentence (\"if it's from like a previous\"); cut after \"without their permission.\" or let it run into the context line.",
+    "Needs one line: whose images, and that the site has a page for each of them.",
+    "Only 16 s."
+   ],
+   "standalone": "medium",
+   "standalone_why": "the rule is clear, but whose photos needs a setup line"
+  },
+  {
+   "id": "S12-i",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "17:50:12 to 17:51:20",
+   "range_in_recording": "15:58 to 17:00",
+   "length": "61 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-i.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 954.8,
+    "session_video_to_s": 1016.8
+   },
+   "gist": "He separates the stakeholders from the research section and describes it in the visitor's words: as part of his research into the company he tried to identify the stakeholders and their main objections, and each of them can click their picture for a list of what he thinks they'd find most interesting or would answer their biggest concerns. Each gets an individual reading list ordered from most to least important, so they decide how many links to go through, from a couple of minutes to the whole list. He ends on wanting to invite them in the morning.",
+   "points": [
+    "The stakeholders get their own section, separate from research.",
+    "The pitch to them: as part of his research into the company, he tried to identify who the stakeholders are and their main objections.",
+    "Each person clicks their picture to get a list of things he thinks they'd find most interesting or that answer their biggest concerns.",
+    "It's an individual reading list, ordered from most to least important.",
+    "They decide how many links to go through: a couple of minutes, or the whole list.",
+    "He wants to invite them in the morning (the moment ends there)."
+   ],
+   "his_words": [
+    "as part of my research into your company i try to identify who the stakeholders are and like what your main objections are",
+    "if you click on your picture i've got a list of things i think you would find most interesting or would answer your biggest concerns",
+    "their own individualized like reading list and make it most important to least important",
+    "basically they can decide how many links they want to go to go through before they're done"
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "research-method",
+    "hiring-pitch"
+   ],
+   "related": [
+    {
+     "id": "S02-j",
+     "rel": "follows-from",
+     "note": "11:17: a page per stakeholder from org-chart research"
+    },
+    {
+     "id": "stakeholder-landing-pages",
+     "rel": "leads-into",
+     "note": "the reusable landing-page pipeline"
+    },
+    {
+     "id": "copy-for-intro",
+     "rel": "leads-into",
+     "note": "the /for intro: a page for each of you"
+    },
+    {
+     "id": "buying-committee-map",
+     "rel": "supports",
+     "note": "objections per decision-maker"
+    },
+    {
+     "id": "NUGGETS #28",
+     "rel": "pairs-with",
+     "note": "design for the visitor's time"
+    },
+    {
+     "id": "S12-g",
+     "rel": "pairs-with",
+     "note": "17:45: cite every public photo"
+    },
+    {
+     "id": "img-stakeholder-portraits",
+     "rel": "pairs-with",
+     "note": "the pictures they click"
+    }
+   ],
+   "could_serve_as": [
+    "anchor clip for an entry on the stakeholder pages: how each page was meant to work",
+    "supporting clip inside an article on personalisation at scale (one page per decision-maker)",
+    "pull quote: \"what your main objections are\""
+   ],
+   "watch_outs": [
+    "Hard end: the last line moves into inviting the stakeholders (his own outreach) and the next lines continue it; cut before \"and maybe yes I want to invite them\".",
+    "Rules changed later: RULES.md (20:45) says recommend articles, never reading lists of demos, and no minute counters; present this as the plan at 17:50, not how the pages work now.",
+    "Talks about the six stakeholders as a group; no one is named.",
+    "Garbled stretch (\"the cup topple topple top couple\").",
+    "Needs one line: the site is a job application, and the stakeholders are the people at the company who'd decide."
+   ],
+   "standalone": "medium",
+   "standalone_why": "the idea is clear, but who the stakeholders are needs one line"
+  },
+  {
+   "id": "S12-j",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "17:55:03 to 17:56:06",
+   "range_in_recording": "20:52 to 21:56",
+   "length": "63 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-j.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 1248.8,
+    "session_video_to_s": 1312.8
+   },
+   "gist": "He asks for one blog post that tells the story of day one: the key things, how important it is to set things up well with guiding documents, the highs and lows, the scary point of closing all the sessions at once and recovering, and mixing up the way he normally does things, with some of the new ways turning out pretty cool. One subagent should go through the transcripts and build a narrative arc of everything so far as an article, with video clips between the writing.",
+   "points": [
+    "One blog post: the story of day one.",
+    "It covers the key things and the importance of setting things up well with guiding documents.",
+    "It covers the highs and lows, including the scary point of closing all the sessions at once and recovering.",
+    "It covers mixing up the way he normally does things, and some of the new ways being pretty cool.",
+    "Method: one subagent goes through the transcripts and builds a narrative arc of everything so far.",
+    "Video clips go in between the writing; he calls it a clean piece of content."
+   ],
+   "his_words": [
+    "I want one blog being like the story of day one, you know, talking about some of the key things",
+    "the importance of setting things up well with guiding documents",
+    "talking about the highs and lows, the scary point of closing all of them, the sessions at once and recovering,",
+    "have one sub-agent really go through the transcripts and like build a narrative arc of everything up until now as an article"
+   ],
+   "themes": [
+    "build-in-public",
+    "failure-and-recovery",
+    "orchestration"
+   ],
+   "related": [
+    {
+     "id": "art-day-one",
+     "rel": "leads-into",
+     "note": "the day-one article this asked for"
+    },
+    {
+     "id": "quote-bank-arc-rig",
+     "rel": "leads-into",
+     "note": "the day's arc, quotes and clips from the rig"
+    },
+    {
+     "id": "other-arc-backstage",
+     "rel": "leads-into",
+     "note": "what the agents did, for the same story"
+    },
+    {
+     "id": "NUGGETS #13",
+     "rel": "supports",
+     "note": "the closed-every-session arc he names here"
+    },
+    {
+     "id": "S05-m",
+     "rel": "pairs-with",
+     "note": "13:20: the scary point itself, on screen"
+    },
+    {
+     "id": "S08-a",
+     "rel": "pairs-with",
+     "note": "15:07: the guiding documents paid off"
+    },
+    {
+     "id": "S01-f",
+     "rel": "pairs-with",
+     "note": "10:31: mixing up the way he normally works"
+    },
+    {
+     "id": "S11-b",
+     "rel": "pairs-with",
+     "note": "17:09: guiding documents graded B plus"
+    }
+   ],
+   "could_serve_as": [
+    "opening or closing clip of the day-one story itself: the brief behind it, in his words",
+    "supporting clip inside an article on how the site's content was made from the recordings",
+    "pull quote: \"the scary point of closing all of them\""
+   ],
+   "watch_outs": [
+    "A production brief to an agent; on its own it's a to-do list, not a story.",
+    "Run-on with a false start (\"some of them are actually basically go through\").",
+    "Ends on filler (\"day one um yeah okay\"); cut after \"clean piece of content\" or \"day one\".",
+    "Refers to events (closing all the sessions) a stranger hasn't seen; needs the article or the clips around it."
+   ],
+   "standalone": "low",
+   "standalone_why": "works as the frame of the day-one story, not alone"
+  },
+  {
+   "id": "S12-m",
+   "grade": "G",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "18:01:50 to 18:02:23",
+   "range_in_recording": "27:37 to 28:12",
+   "length": "34 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-m.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 1653.8,
+    "session_video_to_s": 1688.8
+   },
+   "gist": "Briefing his About section, he restates something he said earlier in the transcripts: GTM is the role that lets companies keep their promise that they're not going to replace half their staff with robots, because the only way to get AI's leverage without dropping half your team is to also leverage the amount of new work you're getting. He wants that to be his personal profile: who he is as a GTM engineer and what he thinks about AI.",
+   "points": [
+    "He mentioned it somewhere earlier in the transcripts.",
+    "GTM is the role that lets companies keep their promise not to replace half their staff with robots.",
+    "The only way to get AI's leverage without dropping half your team is to also leverage the amount of new work coming in.",
+    "He wants this to be his personal profile: who he is as a GTM engineer and what he thinks about AI."
+   ],
+   "his_words": [
+    "gtm is kind of the role that lets companies keep their promise that um they're not just going to replace half their staff of robots",
+    "because the only way to get the leverage of AI and not need to drop half your team is if you're also leveraging the amount of new work you're getting.",
+    "And I want that kind of be my personal profile is who I am as a GTM engineer,"
+   ],
+   "themes": [
+    "gtm-thesis",
+    "hiring-pitch"
+   ],
+   "related": [
+    {
+     "id": "NUGGETS #2",
+     "rel": "same-moment",
+     "note": "GTM engineers keep AI's promise; lists S12-m"
+    },
+    {
+     "id": "S10-c",
+     "rel": "repeats",
+     "note": "16:33: the same thesis as article two's topic"
+    },
+    {
+     "id": "clip-c-s10-gtm-engineers",
+     "rel": "repeats",
+     "note": "the uploaded cut of S10-c"
+    },
+    {
+     "id": "S02-f",
+     "rel": "repeats",
+     "note": "11:13: AI in the pipeline first, upskill rather than fire"
+    },
+    {
+     "id": "q-keep-the-promise",
+     "rel": "repeats",
+     "note": "the site's quote of the thesis"
+    },
+    {
+     "id": "art-pipeline-promise",
+     "rel": "supports",
+     "note": "article two"
+    },
+    {
+     "id": "copy-about",
+     "rel": "leads-into",
+     "note": "the About page built on this thesis"
+    },
+    {
+     "id": "S12-n",
+     "rel": "leads-into",
+     "note": "seconds later: the LinkedIn wall"
+    }
+   ],
+   "could_serve_as": [
+    "supporting clip inside article two (art-pipeline-promise), as the third time he says it that day",
+    "clip for the About page next to its thesis line",
+    "pull quote: \"the only way to get the leverage of AI and not need to drop half your team\""
+   ],
+   "watch_outs": [
+    "Starts mid-sentence (\"thing i mentioned somewhere in the transcripts\"); the sentence starts in a context line (\"and my personal\").",
+    "It's an instruction to an agent about his own profile; the thesis is cleaner in S10-c, which is already cut.",
+    "The context lines before mention the company hiring a specific AI role (his application); keep them out.",
+    "\"replace half their staff of robots\" is transcribed as said."
+   ],
+   "standalone": "medium",
+   "standalone_why": "the thesis lands, but it opens mid-sentence and is framed as a brief"
+  },
+  {
+   "id": "S12-n",
+   "grade": "Y",
+   "alex_note": "",
+   "session": "S12",
+   "prague": "18:02:29 to 18:03:35",
+   "range_in_recording": "28:18 to 29:25",
+   "length": "66 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "local_cut": "legibility\\grading\\clips\\S12-n.mp4",
+    "session_video": "lo486cSVBcM",
+    "session_video_from_s": 1694.8,
+    "session_video_to_s": 1761.8
+   },
+   "gist": "He asks a session to scrape his LinkedIn and build a wall of 20 to 40 of his most insightful posts, avoiding the super edgy ones but showing he has a personality. It should show he's been building with Claude Code (\"cloud code\" in the transcript) every day for six months, with a depth of constant posting: each post starts collapsed as on LinkedIn, and \"read more\" opens the full version in a pop-up, showing he's been posting non-stop about AI.",
+   "points": [
+    "Scrape his LinkedIn and pick as many insightful posts as possible.",
+    "Avoid the super edgy ones, but show he has a personality.",
+    "Show he's been building with Claude Code every day for six months, and the depth of constant posting.",
+    "Format: a wall of 20 to 40 posts.",
+    "Each starts collapsed as on LinkedIn; \"read more\" opens the full post in a pop-up.",
+    "The point: he's been posting non-stop about AI."
+   ],
+   "his_words": [
+    "show that i have a personality right",
+    "it should show that i've been building of cloud code every day for six months right",
+    "just like a wall of linkedin posts like as many as like 20 to 40 of them",
+    "it just like shows that i've been posting non-stop about ai"
+   ],
+   "themes": [
+    "hiring-pitch",
+    "build-in-public",
+    "personality"
+   ],
+   "related": [
+    {
+     "id": "S12-m",
+     "rel": "follows-from",
+     "note": "seconds earlier: the thesis for his profile"
+    },
+    {
+     "id": "linkedin-wall-builder",
+     "rel": "leads-into",
+     "note": "the reusable wall tool"
+    },
+    {
+     "id": "img-linkedin-wall-live",
+     "rel": "leads-into",
+     "note": "34 posts on the wall on /about"
+    },
+    {
+     "id": "img-linkedin-wall-missing",
+     "rel": "leads-into",
+     "note": "the 60 posts left off, 17 as edgy"
+    },
+    {
+     "id": "li-left-off-wall",
+     "rel": "leads-into",
+     "note": "the posts left off the wall"
+    },
+    {
+     "id": "copy-about",
+     "rel": "leads-into",
+     "note": "the About section the wall sits in"
+    }
+   ],
+   "could_serve_as": [
+    "origin clip for the LinkedIn wall on the About page",
+    "supporting clip for the linkedin-wall-builder skill entry",
+    "pull quote: \"it just like shows that i've been posting non-stop about ai\""
+   ],
+   "watch_outs": [
+    "\"avoid the super edgy ones\" was reversed at 20:45: RULES.md rule 7 says the wall shows every post, edgy ones included. Don't use this clip to explain what's on the wall now.",
+    "\"cloud code\" is the machine transcript's spelling of Claude Code; captions may need fixing, quotes keep it.",
+    "Instruction to an agent, with fillers (\"like\", \"uh\", \"you know\").",
+    "Self-promotional by design; fine on the About page."
+   ],
+   "standalone": "medium",
+   "standalone_why": "clear ask, but it's a brief to an agent; works next to the wall itself"
   }
  ]
 }

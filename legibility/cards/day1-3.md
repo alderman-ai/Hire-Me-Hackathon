@@ -38,6 +38,7 @@ Seconds after the accident he says "So that was bad" and explains it: he was try
 - `clip-c-s05-deletion-live` (pairs-with): the screen seconds before; held (screen, a swear)
 - `art-day-one` (supports): its 13:20 'closed every session' section
 - `feed-s05` (supports): the live feed already tells the accident and the recovery
+- `S05-m` (follows from): (link from S05-m)
 - `S07-b` (leads into): (link from S07-b)
 
 ## Could serve as
