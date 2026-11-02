@@ -1,7 +1,7 @@
 {
   "post": "P1",
-  "as_of": "17:45",
-  "as_of_line": "As of 17:45 Prague time, 2 November. The statuses update as the work moves.",
+  "as_of": "19:10",
+  "as_of_line": "As of 19:10 Prague time, 2 November. The statuses update as the work moves.",
   "headline": "What's being built today",
   "intro": "Fourteen pieces of work (one since retired), run by AI agents working in parallel, with Alex steering. First comes the tooling that lets the agents work on their own. Then come the demos of what a GTM engineer builds, and they all end up on this site.",
   "how_it_runs": [
@@ -44,7 +44,7 @@
       "n": 1,
       "demo": "Scraping and research on the Apify API",
       "what": "Scraping and researching prospects at scale on the Apify API. It goes first, because other demos use what it finds.",
-      "status": "Signed off by Alex at 17:14, with one change: the research it produced goes first, as a carousel. Being built."
+      "status": "Live since 19:05: the briefing, with the four research boards in a carousel."
     },
     {
       "n": 2,
@@ -91,7 +91,7 @@
     {
       "n": 9,
       "demo": "Legibility analyzer",
-      "what": "An agent that watches the recordings and tells the website what to add. This section is its first post.",
+      "what": "An agent that watches the recordings and tells the website what to add, and writes the long-form “day one” story, with video clips between the sections.",
       "status": "Running. Its plan was approved at 17:03."
     },
     {
