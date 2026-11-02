@@ -6,7 +6,7 @@ This spec builds a demo of LinkedIn content written in Addvery's voice. It appli
 
 ## 1. Operator preflight (P3)
 
-The intake is DI-XX (`..\Operator tasks\DI-XX S-D7 LinkedIn content preflight.md`).
+The intake is DI-XX: `..\Operator tasks\Decide - how the LinkedIn content demo works.md`.
 
 | Question (DI-XX) | Question | Default |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ The intake is DI-XX (`..\Operator tasks\DI-XX S-D7 LinkedIn content preflight.md
 
 **Launch gate.** The session launches once DI-XX is answered and its answers are applied. From 18:00 Prague, an unanswered question takes its default, logged in §9.
 
-**Operator scene.** The brand sign-off, proposed for 16:45–17:00, on camera, together with S-D6's sign-off (question 4). It takes about 10 minutes. Alex reviews a gate-approval operator task holding the posts, the baseline and the scores.
+**Operator scene.** The brand sign-off, proposed for 16:45–17:00, on camera, together with S-D6's sign-off (question 4). It takes about 10 minutes. It stays there although the GetSales live run moved to before 15:30 (Alex, 14:30): research and about 45 minutes of writing come first. Alex reviews a gate-approval operator task holding the posts, the baseline and the scores.
 
 **Off camera.** Nothing. The demo needs no keys, logins or connectors.
 
@@ -64,7 +64,7 @@ Step 1 of the run confirms every resource is reachable and turns anything ambigu
 - `demo\voice.md`: only if question 3 allows; a fresh summary of the voice.
 - `local\`: git-ignored; the rubric, drafts, judge notes.
 - `.gitignore`: covers `local/`.
-- In `..\Operator tasks\`: the spec-draft and brand sign-off gate tasks.
+- In `..\Operator tasks\`: the two gate tasks, `Approve - the plan for the LinkedIn posts demo.md` and `Approve - the LinkedIn posts in the Addvery voice.md`.
 
 ## 4. Problem and scope
 
@@ -120,19 +120,19 @@ Approving the list is S1's gate, not this session's.
 
 **Coherency check:** "if we execute this methodology, will that DoD be satisfied?" Rubric: steps 1 and 2. Scored posts and baseline: steps 3 to 6. Sign-off: run step 7. The site: run step 8. Nothing posted, nothing leaked: the rules below and run step 9. Run it again after the synthesis; any gap becomes a change before the spec-draft gate.
 
-**How a gate runs** (`..\answer-desk\ASKING.md`). Freeze the document into `..\Operator tasks\OT-<nn> Gate approval S-D7 <gate>.md`, written from the gate approval template, with the next free OT number (check `Operator tasks\` and `Operator tasks\Archive\` just before writing), and the whole document copied in. Commit that file first, on its own and path-limited, so the snapshot names a commit. Send `answer-desk` `TASK S-D7: <file name> is waiting on you: <what it decides and unblocks>`. While blocked, wait with the Monitor tool running `python -I orchestration\check_gate.py "Operator tasks\<file>"` from the repo root every 300 seconds until it exits 0. Poke after 15 minutes. On `CHANGES`, apply them, refresh the snapshot and wait again. Then send `TASK DONE S-D7: <file name>` to `answer-desk` and `ARCHIVE <file name>: readers <spec ids>` to `orchestration`.
+**How a gate runs** (`..\answer-desk\ASKING.md`, Alex's readability rule of 2 Nov). Freeze the document into `..\Operator tasks\Approve - <what, in plain words>.md`, written from the gate approval template. Each gate's plain name is in its step below. The next free OT number (check `Operator tasks\` and `Operator tasks\Archive\` just before writing) goes in the front matter only. The file opens with `## What this is`: in plain words, with no codes (no spec, DoD or OT ids, no session names), what the posts demo is for in the job application, what he's approving, what happens next, what's waiting on it, about how long it takes him, and the deadline. The frozen document follows, copied in whole. Commit that file first, on its own and path-limited, so the snapshot names a commit. Send `answer-desk` `TASK S-D7: <plain file name> is waiting on you: <what it decides and unblocks>`. While blocked, wait with the Monitor tool running `python -I orchestration\check_gate.py "Operator tasks\<plain file name>"` from the repo root every 300 seconds until it exits 0. Poke after 15 minutes. On `CHANGES`, apply them, refresh the snapshot and wait again. Then send `TASK DONE S-D7: <plain file name>` to `answer-desk` and `ARCHIVE <plain file name>: readers <spec ids>` to `orchestration`.
 
 **Run steps.** Commit after every finished step, path-limited: `git commit -m "[linkedin-content] <message>" -- linkedin-content/...`.
 1. Read the reading list, and `HANDOFF.md` if it exists. Confirm every resource is reachable. Create `.gitignore` (`local/`) and `local\`. Apply DI-XX's answers. Commit.
 2. Send the RESEARCH line (§6). Meanwhile, delegate (P7) the groundwork: one subagent sets up the pipeline skeleton and writes the baseline. When the capture lands, the session reads its voice part from the local disk. Commit.
 3. When the synthesis lands, or at the question 4 cutoff: confirm or revise the methodology, run the coherency check, and finish `PIPELINE.md`. Commit.
-4. **Gate: spec draft.** Freeze the whole SPEC.md (problem, scope, its own DoD, the research verdicts, the methodology) into `OT-<nn> Gate approval S-D7 spec draft.md`, as above. Under question 4's A, writing goes ahead on the frozen methodology while the gate is open, and changes from the gate are applied to the posts they touch. From 18:00, an open spec-draft gate means proceed on the checked methodology and log it.
+4. **Gate: spec draft.** Freeze the whole SPEC.md (problem, scope, its own DoD, the research verdicts, the methodology) into `Approve - the plan for the LinkedIn posts demo.md`, as above, with a five-line plain summary first. Under question 4's A, writing goes ahead on the frozen methodology while the gate is open, and changes from the gate are applied to the posts they touch. From 18:00, an open spec-draft gate means proceed on the checked methodology and log it.
 5. Write and judge, delegated (P1, P7): writer subagents in parallel, one per post, then a judge subagent that wrote none of them, each handed only the rubric, `PIPELINE.md` and its own inputs. Commit `demo\`.
 6. Send `s-d6-canva-templates` and `s-d10-canva-video` `COPY S-D7: posts in ..\linkedin-content\demo\posts.md (<draft or signed off>); free to use as sample copy`.
-7. **Gate: brand sign-off** (DoD-17), in the question 4 slot. `OT-<nn> Gate approval S-D7 brand sign-off.md` holds the posts, the baseline, the scores, `demo\method.md`, and `demo\voice.md` if question 3 allows it. Tell `s-d6-canva-templates` when its TASK line is sent, so both arrive together. Wait as above. On `CHANGES`, rewrite, re-score and refresh. Then TASK DONE, and `ARCHIVE <file name>: readers S-D7`. From 18:00, an open sign-off stays open for the morning cleanup session while the rest carries on.
-8. **Site request.** If S-D6's previews exist by then, in `..\canva-templates\exports\` (read only), say in the request which post pairs with which template. Send `website`: `BUILD S-D7-B1: add a D7 section, LinkedIn content in Addvery's voice, in the deliverables area: the posts as LinkedIn-style cards with their scores, the generic baseline beside one of them, and a short how-it-was-made panel. Content: linkedin-content\demo\. Source: posts written by S-D7 in Addvery's voice and signed off by Alex in OT-<nn>; <question 3's answer, quoted, if it allows the voice summary>; no research from Addvery Research.` Wait for `BUILT S-D7-B1` or `REFUSED S-D7-B1` before any next request.
+7. **Gate: brand sign-off** (DoD-17), in the question 4 slot. `Approve - the LinkedIn posts in the Addvery voice.md` holds the posts, the baseline, the scores, `demo\method.md`, and `demo\voice.md` if question 3 allows it. Tell `s-d6-canva-templates` when its TASK line is sent, so both arrive together. Wait as above. On `CHANGES`, rewrite, re-score and refresh. Then `TASK DONE S-D7: Approve - the LinkedIn posts in the Addvery voice.md`, and `ARCHIVE Approve - the LinkedIn posts in the Addvery voice.md: readers S-D7`. From 18:00, an open sign-off stays open for the morning cleanup session while the rest carries on.
+8. **Site request.** If S-D6's previews exist by then, in `..\canva-templates\exports\` (read only), say in the request which post pairs with which template. Send `website`: `BUILD S-D7-B1: add a D7 section, LinkedIn content in Addvery's voice, in the deliverables area: the posts as LinkedIn-style cards with their scores, the generic baseline beside one of them, and a short how-it-was-made panel. Content: linkedin-content\demo\. Source: posts written by S-D7 in Addvery's voice and signed off by Alex in Approve - the LinkedIn posts in the Addvery voice.md; <question 3's answer, quoted, if it allows the voice summary>; no research from Addvery Research.` Wait for `BUILT S-D7-B1` or `REFUSED S-D7-B1` before any next request.
 9. A subagent checks every committed file for text copied from the capture, real names, links to Alex's accounts and secrets. Fix and commit.
-10. When §5 is met, send `orchestration` `DONE S-D7: <posts and baseline on the site, OT-<nn> approved, BUILT S-D7-B1>`.
+10. When §5 is met, send `orchestration` `DONE S-D7: <posts and baseline on the site, their brand sign-off approved, BUILT S-D7-B1>`.
 
 **Screen care (every step).** Assume anything on screen can be published. The session never opens LinkedIn, Alex's or anyone's. The capture is read from disk and never shown or quoted in a tracked file. Never open the Apify proposal or Alex's own GetSales outbound.
 
