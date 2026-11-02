@@ -62,7 +62,55 @@
         "heading": "When we meet on Tuesday, could we start with which piece you'd want working first?",
         "body": "If one stands out before then, a demo number in reply to my message is plenty."
       },
-      "sources": "Its facts come only from Addvery's public website, your public job title, and your public posts on the 1 billion CZK goal, including your reply to my comment."
+      "sources": "Its facts come only from Addvery's public website, your public job title, and your public posts on the 1 billion CZK goal, including your reply to my comment.",
+      "landing": {
+        "approved": false,
+        "greeting": "Hi Ivana. Before we meet on Tuesday, I did some research on Addvery and on who would want a say in a role like this. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "concerns": [
+          {
+            "q": "I already run 14 agents. What would you add?",
+            "a": "I'd extend them, not replace them: from your agents' flag to a drafted first touch in your approval queue, then the booked meeting, the CRM stage and the attribution report."
+          },
+          {
+            "q": "Can it prove pipeline, or is it theatre?",
+            "a": "Nothing here sends, so it can't show pipeline yet. I'd propose a pilot measured in your terms: accounts enriched, replies, meetings, MQL to SQL."
+          },
+          {
+            "q": "Who answers for each agent, and what does it cost?",
+            "a": "Every agent in this build has a written spec, one owner and a human approval step. Cost per agent gets logged from day one."
+          },
+          {
+            "q": "A lot of this runs in Czech.",
+            "a": "My Czech is B1 to B2. I'd start with the English lanes (DACH, Asia, group-level buyers), and Czech copy goes through your review step."
+          }
+        ],
+        "reading_list": [
+          {
+            "title": "Outbound in GetSales: the 36 workflows and how leads get sorted into them",
+            "href": "/d3"
+          },
+          {
+            "title": "The scraping briefing: what research looks like before a pitch",
+            "href": "/d1"
+          },
+          {
+            "title": "How I read Addvery: org charts and the research itself",
+            "href": "/d2"
+          },
+          {
+            "title": "Why this hackathon exists: my explainer video",
+            "href": "/#post-s02"
+          },
+          {
+            "title": "LinkedIn posts in Addvery's voice, graded blind",
+            "href": "/demos"
+          },
+          {
+            "title": "The plan the agents worked from",
+            "href": "/docs/charter"
+          }
+        ]
+      }
     },
     {
       "slug": "ceo",
@@ -99,6 +147,50 @@
         "short": "The demo you'd want first",
         "heading": "Which of these would you want working at Addvery first?",
         "body": "A demo number in reply to my LinkedIn message is enough. No reply is a fine answer too."
+      },
+      "landing": {
+        "approved": false,
+        "greeting": "Hi Stepan. I've done some research on Addvery, and I know a role like this would need your yes. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "concerns": [
+          {
+            "q": "Is this another AI-buzz hire?",
+            "a": "You've said a role at Addvery isn't a ride on the AI buzz. This site is the work itself, built in one recorded day, not a CV."
+          },
+          {
+            "q": "Where's something running that others can see?",
+            "a": "The site runs live: a dozen agents working from one written plan, with every decision logged in the open."
+          },
+          {
+            "q": "Can he swim without a lifeguard?",
+            "a": "The day ran on agents making the easy calls and me making the hard ones, and the log shows which was which."
+          },
+          {
+            "q": "Czech and work authorisation.",
+            "a": "Ten years in the Czech Republic, long-term residency and a trade licence. My Czech is B1 to B2."
+          }
+        ],
+        "reading_list": [
+          {
+            "title": "The day in short: the summary videos at the top of the live feed",
+            "href": "/"
+          },
+          {
+            "title": "Outbound in GetSales: the 36 workflows",
+            "href": "/d3"
+          },
+          {
+            "title": "“The bottleneck is always human”: what the day taught me about running agents",
+            "href": "/#post-insight-bottleneck"
+          },
+          {
+            "title": "The legibility analyzer: an agent that reports what changed",
+            "href": "/d9"
+          },
+          {
+            "title": "The plan the agents worked from",
+            "href": "/docs/charter"
+          }
+        ]
       }
     },
     {
@@ -137,6 +229,46 @@
         "short": "Whether one fits the group",
         "heading": "Is one of these worth a look for the group?",
         "body": "If so, reply to my LinkedIn message with its number. If none is, that's useful to know too."
+      },
+      "landing": {
+        "approved": false,
+        "greeting": "Hi Pavel. I've done some research on Addvery, and as a co-founder you'd want a say in a hire like this. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "concerns": [
+          {
+            "q": "What goes into the model?",
+            "a": "Public prospect data only. No client data in GTM tools, and no secrets in prompts or on screen. This whole build ran that way, on camera."
+          },
+          {
+            "q": "Process first, then tools.",
+            "a": "Every piece of this build started as a written spec before any agent ran."
+          },
+          {
+            "q": "Do AI builders belong at Skygena, not Addvery?",
+            "a": "I'm open to either. The same pipeline could route each lead to whichever group company fits it."
+          }
+        ],
+        "reading_list": [
+          {
+            "title": "The plan the agents worked from: process before tools",
+            "href": "/docs/charter"
+          },
+          {
+            "title": "“API keys never move on camera”: how secrets stayed out of the recording",
+            "href": "/#post-insight-api-keys"
+          },
+          {
+            "title": "Outbound in GetSales, and how routing works",
+            "href": "/d3"
+          },
+          {
+            "title": "The legibility analyzer: AI past the pilot stage",
+            "href": "/d9"
+          },
+          {
+            "title": "The day in short: the summary videos at the top of the live feed",
+            "href": "/"
+          }
+        ]
       }
     },
     {
@@ -175,6 +307,42 @@
         "short": "The demo that would suit a client",
         "heading": "Which of these would you want to see working for an iMEDIATIC client?",
         "body": "One line in reply to my LinkedIn message is plenty."
+      },
+      "landing": {
+        "approved": false,
+        "greeting": "Hi Lukáš. I've done some research on Addvery and iMEDIATIC, and as a co-founder you'd want a say in a hire like this. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "concerns": [
+          {
+            "q": "We don't pay for a seat that sits idle.",
+            "a": "I'm open to a fixed-scope, paid pilot first, shaped like iMEDIATIC's own Health Check, with the deliverables named up front."
+          },
+          {
+            "q": "What pipeline has this generated?",
+            "a": "None yet: nothing here sends. A pilot would be measured in meetings and pipeline."
+          },
+          {
+            "q": "Czech clients, Czech team.",
+            "a": "My Czech is B1 to B2. I'd start where English works, and Czech copy goes through a native reviewer."
+          }
+        ],
+        "reading_list": [
+          {
+            "title": "LinkedIn posts in Addvery's voice, graded blind",
+            "href": "/demos"
+          },
+          {
+            "title": "LinkedIn templates in Canva, built from the brand",
+            "href": "/d6"
+          },
+          {
+            "title": "Two blog articles, each from 15 minutes of talking",
+            "href": "/d5"
+          },
+          {
+            "title": "Outbound in GetSales: the 36 workflows",
+            "href": "/d3"
+          }
+        ]
       }
     },
     {
@@ -212,6 +380,46 @@
         "short": "Where a live project page helps",
         "heading": "Where would a live project page like this help on a client project, and where would it get in the way?",
         "body": "A couple of lines in reply to my LinkedIn message would shape what I build next."
+      },
+      "landing": {
+        "approved": false,
+        "greeting": "Hi Milos. I've done some research on Addvery, and anything like this would pass your bar for delivery. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "concerns": [
+          {
+            "q": "Native Czech or Slovak, and Czech work authorisation.",
+            "a": "Ten years in the Czech Republic, long-term residency and a trade licence. My Czech is B1 to B2, and the role I'd do builds systems rather than Czech client deliverables."
+          },
+          {
+            "q": "Has it run in production?",
+            "a": "This site has run live all day, built by a dozen agents from one written plan. A pilot would have one stated deliverable within weeks, your own bar."
+          },
+          {
+            "q": "Who's accountable for agent output?",
+            "a": "Every agent here has a written spec, one owner and a human approval step, and every decision it took is logged."
+          }
+        ],
+        "reading_list": [
+          {
+            "title": "How this site was built and kept current",
+            "href": "/d8"
+          },
+          {
+            "title": "The legibility analyzer: progress without a status call",
+            "href": "/d9"
+          },
+          {
+            "title": "“Agents hand over before they get tired”: how long runs stay reliable",
+            "href": "/#post-handovers"
+          },
+          {
+            "title": "The plan the agents worked from",
+            "href": "/docs/charter"
+          },
+          {
+            "title": "The day in short: the summary videos at the top of the live feed",
+            "href": "/"
+          }
+        ]
       }
     },
     {
@@ -250,6 +458,42 @@
         "short": "Where the numbers should land",
         "heading": "Where would you want the pipeline's numbers to land?",
         "body": "Name the tool or the report in reply to my LinkedIn message, and I'll build toward it."
+      },
+      "landing": {
+        "approved": false,
+        "greeting": "Hi David. I've done some research on Addvery, and any GTM system would feed the data your team owns. Here's what I'm guessing you'd want answered, and the parts of this site that answer it.",
+        "concerns": [
+          {
+            "q": "Where does the data come from, and is it GDPR-safe?",
+            "a": "Public sources only, and every number on the research pages names its source. Minimum data, with opt-outs handled."
+          },
+          {
+            "q": "Is he a data person?",
+            "a": "I'm a GTM engineer, not a data scientist. I'd want the pipeline's numbers to land in the tools your team already uses, not in a new one."
+          },
+          {
+            "q": "Brno works in Czech.",
+            "a": "My Czech is B1 to B2. I'm in Prague and can travel."
+          }
+        ],
+        "reading_list": [
+          {
+            "title": "The scraping briefing: data pulled at scale, with sources",
+            "href": "/d1"
+          },
+          {
+            "title": "How I read Addvery: org charts as counts, never names",
+            "href": "/d2"
+          },
+          {
+            "title": "Outbound in GetSales: the segments a pipeline report would break down by",
+            "href": "/d3"
+          },
+          {
+            "title": "The legibility analyzer: unstructured recordings in, structured updates out",
+            "href": "/d9"
+          }
+        ]
       }
     }
   ],

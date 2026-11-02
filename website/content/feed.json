@@ -214,6 +214,11 @@
           "text": "I've never done this screen recording before, but good time to start is when you're under pressure and you've got a 12-hour live project to do.",
           "source": "S01 at 00:08",
           "href": "https://youtu.be/mbF291oW_yQ?t=3"
+        },
+        {
+          "type": "video",
+          "session": "S01",
+          "start": 0
         }
       ]
     },
