@@ -82,4 +82,4 @@ GetSales' own "AI condition rules" node can route inside one flow instead. It co
 
 `sample.csv`: twelve fictional leads, routed offline on 2 Nov 2026: all four ICPs and tactics, two LLM decisions and one no fit, each with its reasons. No real people or companies; nothing imported into GetSales. Its two Slovak leads (L04, L06) go to the Czech workflows under the three-language rule.
 
-`route.py` runs the rules on those twelve and prints each decision with what settled it: a rule, or the narrow question Jev would get. Jev isn't called in the demo, so its questions show the answer a person labelled. `python -I routingoute.py` from `getsales\`; it reproduces the sample 12 of 12.
+`route.py` runs the rules on those twelve and prints each decision with what settled it: a rule, or the narrow question Jev would get. Jev isn't called in the demo, so its questions show the answer a person labelled. `python -I routing\route.py` from `getsales\`; it reproduces the sample 12 of 12.
