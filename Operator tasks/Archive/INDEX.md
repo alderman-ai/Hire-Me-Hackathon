@@ -13,6 +13,7 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | OT-01 | Approve - research plan for the whole project | s1-research (S1) | 2026-11-02 | OT-01 Approved the parent research list (four questions plus three wildcards) as it stood, with no changes; ticked at 14:38 on his instruction, relayed by `briefing`: "let's just approve ot1 -- i'm swamped we need to remove blockers". | S1 (`research\CLAUDE.md`, `research\lists\L-01-parent.md`), S2 (`orchestration\SPEC.md`), S-D1 (`scraping\SPEC.md`) |
 | OT-02 | Approve - Addvery research is yours, reading lists per demo | S2 (orchestration) | 2026-11-02 | OT-02 Approved both charter changes: the company and stakeholder research, brand capture included, is his own, run one-on-one in `Addvery Research\` with no spec; and the charter's research reading list becomes a pointer to each spec's own. His condition: fold in whatever his research session had since superseded, with no second approval ("Do whatever you need to it and let's clear this out"). Applied 16:30 with the fold-ins: he runs the scraping in his own folder, so his research depends on nothing and feeds the scraping demo. | S2 (`orchestration\SPEC.md`) |
 | OT-09 | Approve - Canva and LinkedIn demo research | s1-research (S1), for S-D6 and S-D7 | 2026-11-02 | OT-09 Approved with changes: of his earlier repos, read only the one closest to the pixel-perfect branded-assets demo, by cloning it and going through it. For the LinkedIn demo he'd like, at lower priority, a possible personal branding strategy for one of Addvery's people rather than for the company. "Take whatever you need from this and just run. Go, go, go". | S-D6 (`canva-templates\SPEC.md`), S-D7 (`linkedin-content\SPEC.md`), S-D10 (`canva-video\SPEC.md`) |
+| OT-04 | Approve - research for the blog pipeline | s1-research (S1), for S-D4 | 2026-11-02 | OT-04 Box unticked, with a long note that S1 took as approval to start (feedback-box rule, 16:36). Research: the best skill to write blogs with, and the base for the first article. Rule for every session: no copywriting without a copywriting skill, switched on through orchestration. Two articles, not three: AI workflows are always a managed service, never a product, with a company's AI-skill level as a vertical slider from training to external building; and GTM engineers as the answer to the AI-era jobs question, since AI must pay through revenue, not layoffs. Workshop visuals for them (a template behind AI text, possibly ComfyUI) and plan it in a spec. He doesn't want more article questions now. | S-D4 (`blog-pipeline\SPEC.md`), S-D5 (`blog-articles\SPEC.md`) |
 
 ## By topic
 
@@ -20,7 +21,7 @@ Every decision intake (DI) and operator task (OT) that Alex has answered, and wh
 | --- | --- |
 | Folders and naming | Q2.1, Q4.1 |
 | `Addvery Research\` ownership | Q2.2, Q3.3, OT-02 |
-| Research method and budget | Q3.1, Q3.2, OT-01, OT-09 |
+| Research method and budget | Q3.1, Q3.2, OT-01, OT-09, OT-04 |
 | Scraping demo and Apify | Q6.1, Q6.3, Q6.5 |
 | GetSales outbound and the six | Q6.2, Q6.4 |
 | Orchestration and reading lists | Q4.1, Q4.2, OT-02 |

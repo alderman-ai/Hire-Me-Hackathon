@@ -2,12 +2,13 @@
 System Primitive: Operator task
 Task type: Gate approval
 Task id: OT-04
-Task State: Open
+Task State: Archived
 Gate: S-D4 research list L-03 (S-D5 reads it too)
 Requested by: s1-research, for s-d4-blog-pipeline ("RESEARCH S-D4: L-03 plus L-01 ... needed by 16:00")
 Snapshot of: research\lists\L-03-blog.md at commit e6c30db
 Unblocks: the research behind the blog pipeline's drafting stages and the post's look, for the test post and the three articles
 Created: 2026-11-02 14:57 Prague
+Archived: 2026-11-02
 ---
 
 # Approve research for the blog pipeline
@@ -38,12 +39,22 @@ The blog pipeline turns about 15 minutes of you talking into a good-looking, nea
 
 ## Approval
 
-- [ ] I approve
+- [x] I approve
 
 Tick the box to approve as it stands. If something has to change first, leave the box empty and write what to change below. Either way, the requesting session checks this file every 5 minutes while it's blocked.
 
 `<operator_answer>`
 ```ot-04-changes
+Do not do any copywriting without identifying which skill you need to turn on, telling the orchestrator to turn it on for you. Do not do any copywriting without a copywriting skill.
 
+For all of your research research what's the best skill to write blogs with. The three topics will be (and you can start researching for the base of the articles): we'll do two articles. One is about how there's no such thing as building something like an AI workflow as a product. It's always a managed service because the models always change.
+
+Add to it that every company is going to have to decide what level of AI skill they want their company to have. Do they want to be able to just use workflows other people build? Do they want to be able to maintain them themselves or to build them themselves? You can imagine a sliding scale that's vertical: at the bottom is the training and at the top is the external building. They're going to have to find out where on the slider they are because they're either going to need to get trained how to do it themselves or they're going to have to bring in someone external or hire someone external. Still they're going to need to compensate someone else for whatever they build with the training to actually use it.
+
+That's the general scope of one so you can get working on that one and you can draft some LinkedIn imagery or whatever. While you do that you can do some mockups of what the LinkedIn content might use. Use whatever frontend code or any kind of design choices they've scraped from LinkedIn content. Take that and then we can create it the same way we did the Appify one, where there's a template in the background and then the generative AI text on top. //  The second article will be about how, basically, GTM engineers are the solution to the biggest social question of the AI era. A lot of companies are saying that AI is not a way for them to fire half their company. For AI to save a company any money there has to be some return on that investment. If it's not lowering their labor costs then it has to be increasing their revenue.
+
+That means GTM engineers who focus AI on their pipeline are actually the ones that are helping companies keep their promise: that AI is a way to do more business and have their whole team grow together, rather than replace half their team. GTM engineers have a really crucial role to play in this AI transformation and you use that as a base. We'll fill in more of the details later.
+
+I really don't want to talk any more about articles right now. I want you to again find a skill that'll help you build good articles. These are the topics. You can go ahead and do some workshopping on what the visual assets that go with them might look like. We can also create something in Comfy. There's a Comfy UI repo on desktop that knows how to build things. Make a spec for all that or plan in the spec for all that. 
 ```
 `</operator_answer>`

@@ -52,6 +52,7 @@ Paths are relative to `blog-articles\`. Step 1 of the run confirms every resourc
 - `..\research\DIRECTORY.md`: the index of every research report. Read only.
 - `..\research\lists\L-03-blog.md` (S-D4's list, with S-D5 offered merged) and `..\research\lists\L-01-parent.md`. Read only; S1 owns them.
 - Research findings: S2 adds a line here for each report when S1 sends FINDINGS for L-03 and L-01.
+- `..\Operator tasks\Archive\Approve - research for the blog pipeline.md`: Alex's answer on the blog research list (OT-04), verbatim, with his long note: the copywriting-skill rule, two articles and their topics, and visuals for them. Read it for wording, never re-ask it.
 - **L-01 findings** (S1's parent research, approved by Alex as OT-01; added by S2 as C07): for this spec, read the synthesis first, then R1, W3, R2.
   - `..\research\global\L-01-synthesis.md`: S1's synthesis of the parent research: the strongest findings, recommendations per spec, and 24 one-line questions for Alex, each naming the spec it blocks. Start here: take this spec's section, and fold the questions that name it into your next gate. Options for Alex, not decisions. Read only; S1 owns it.
   - `..\research\global\L-01-R1-legibility.md`: making the work legible: outcome first, a short demo, a 3 to 4 step how-it-works; what reads as a toy or as noise; AI labels. Options for Alex, not decisions. Read only; S1 owns it.
