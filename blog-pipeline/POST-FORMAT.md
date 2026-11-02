@@ -43,7 +43,7 @@ reading_minutes: 5
 made:
   minutes_talked: 15
   words_spoken: 2140
-  words_drafted: 1063
+  words_drafted: 1093
   share_changed_by_alex: null
   dictated: "2026-11-02T15:15"
   rig_session: "S08"
@@ -179,11 +179,11 @@ Stage names show as written, with a capital first letter.
 **Formatting.** Numbers of 1,000 and up take a comma (2,140). The stage count is the length of `stages`, as a word from one to nine ("seven") and in digits from 10. Use "1 minute" in the singular.
 
 **Example, finished** (the sample's numbers, share 9):
-> Alex talked this post through for 15 minutes (2,140 words). The blog pipeline drafted it from his dictation in his words, in seven checked stages (1,063 words); Alex edited and approved it, changing 9% of the words.
+> Alex talked this post through for 15 minutes (2,140 words). The blog pipeline drafted it from his dictation in his words, in seven checked stages (1,093 words); Alex edited and approved it, changing 9% of the words.
 >
-> Input: Alex's dictation, 15 minutes, 2,140 words · Prompts: Clean → Extract → Outline → Draft → Format · Checks: Edit → Scan · Output: this post, 1,063 words
+> Input: Alex's dictation, 15 minutes, 2,140 words · Prompts: Clean → Extract → Outline → Draft → Format · Checks: Edit → Scan · Output: this post, 1,093 words
 
-**Example, near-final:** "... in seven checked stages (1,063 words)."
+**Example, near-final:** "... in seven checked stages (1,093 words)."
 
 ## 5. Rendering notes for the template
 

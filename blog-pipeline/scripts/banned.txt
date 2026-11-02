@@ -1,0 +1,119 @@
+# banned.txt: the blog pipeline's banned list, as data, for lint.py.
+#
+# One rule per line:  <pattern> | <what to write instead>
+# The separator is " | " (a pipe with a space on each side); inside a pattern,
+# write alternations without spaces around the pipe: (?:a|b).
+# Patterns are Python regexes, matched case-insensitively, one block at a time
+# (a paragraph, list item, heading or table row), with ^ at the start of each
+# line. lint.py straightens curly quotes and drops * before matching, so write
+# apostrophes straight ('). Where two rules hit the same words, the first one
+# in this file wins, so specific rules come before general ones.
+# "#" starts a comment line. Blank lines are ignored.
+#
+# Sources: prompts\4-draft.md and prompts\5-edit.md ("Banned" and "Written, not
+# transcribed"), then Wikipedia's "Signs of AI writing" page
+# (https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), read 2 Nov 2026.
+# Counted rules (em dashes per 300 words, "So" openers, "It's not X, it's Y"
+# more than once, section-opening rhetorical questions) are in lint.py itself.
+
+# ---------- Openers (4-draft.md) ----------
+^In today's | start with his concrete moment instead
+^In the world of | start with his concrete moment instead
+^In a world where | start with his concrete moment instead
+^Have you ever\b | open on what happened to him, not a question to the reader
+\blet's (?:dive|delve|explore|unpack|break (?:it|this) down)\b | cut it; start with the first real point
+^Picture this\b | describe the scene he actually gave
+^Imagine (?:a world|if|this)\b | describe the scene he actually gave
+\b(?:dictionary defines|is defined as|defines \w+ as|according to (?:the )?(?:merriam-webster|webster|oxford(?: english)? dictionary))\b | open on his moment, not a dictionary definition
+
+# ---------- Words (4-draft.md, 5-edit.md) ----------
+\bdeep dives?\b | a close look, or say what he looked at
+\bdelv(?:e|es|ed|ing)\b | look at, dig into, or cut
+\bunlock(?:s|ed|ing)?\b | say what it lets him or the reader do
+\bunleash(?:es|ed|ing)?\b | say plainly what happens
+\bleverag(?:e|es|ed|ing)\b | use, or name what he did with it (the noun is fine only in his own words)
+\bgame[- ]?chang(?:er|ers|ing)\b | say what changed, and for whom
+\blandscapes?\b | name the market, the field or the companies in it
+\brealms?\b | name the field, or cut
+\brobust(?:ly)?\b | solid, reliable, or the test it passed
+\bseamless(?:ly)?\b | say what the reader no longer has to do, or cut
+\bsupercharg(?:e|es|ed|ing)\b | give the number: faster or more, by how much
+\belevat(?:e|es|ed|ing)\b | improve, raise, or say what got better
+\bnavigat(?:e|es|ed|ing)\b | handle, deal with, get through (fine only for real maps and menus)
+\bharness(?:es|ed|ing)?\b | use
+\bempower(?:s|ed|ing|ment)?\b | let, help, or say what they can now do
+\brich tapestry\b | name the actual mix of things, or cut
+\btapestr(?:y|ies)\b | name the actual mix of things, or cut
+\b(?:stands?|stood|serves?|served|is|was) (?:as )?(?:a )?testament\b | shows, proves, or give the evidence
+\btestaments?\b | proof, or give the evidence
+\bplay(?:s|ed|ing)? (?:a|an) (?:\w+ )?(?:crucial|pivotal|vital|significant|key|important|central|critical) role\b | say what it does
+\bcrucial(?:ly)?\b | important, or say what breaks without it
+\bpivotal\b | say what it changed
+\btransformative\b | say what changed, with his before and after
+\bcutting[- ]edge\b | new, or say what's new about it
+\bat the end of the day\b | in the end, or cut and state the point
+
+# ---------- Patterns (4-draft.md, 5-edit.md) ----------
+\bhere's the thing\b | cut it and state the thing
+\bthe truth is\b | cut it and state it
+\b(?:in conclusion|in summary|to sum up|to summari[sz]e)\b | cut it; end on what to do on Monday
+\b(?:studies|research|data|surveys) (?:show|shows|showed|have shown|has shown|suggest|suggests|prove|proves)\b | cut it, or name the source he cited (only if he cited one)
+
+# ---------- Written, not transcribed (4-draft.md, 5-edit.md) ----------
+\bet cetera\b|\betc\b\.? | name the next item, or cut
+\bwhatever\b | name the thing he meant, or cut
+\byeah\b | cut
+[,.]\s*right\? | cut the tag question; end the sentence on a full stop
+\byou know(?=[,.?!])|(?:^|(?<=, ))you know\b(?! (?:what|how|why|when|where|who|that|it|the|this)) | cut the filler "you know"
+\bI mean(?=,)|(?:^|(?<=[.!?] ))I mean\b | cut the filler "I mean"; state the point
+\blike, | cut the filler "like" (keep "like" meaning "such as")
+\b(?:if )?you(?:'re| are) watching(?: this)?\b|\bwatching this(?: video)?\b | rewrite the aside for a reader ("if you read this early"), or cut it
+
+# ---------- Wikipedia "Signs of AI writing": significance and puffery ----------
+\b(?:serves?|served|serving|stands?|stood|standing) as\b | is, or say what it does
+\ba (?:powerful |stark |timely |constant )?reminder (?:of|that)\b | say the fact plainly
+\b(?:in )?(?:the|an|this) ever[- ](?:evolving|changing|shifting)\b|\bever[- ](?:evolving|changing|shifting)\b | name what changed and when, or cut
+\bin today's (?:\w+[- ])?(?:world|age|era|economy|market|climate)\b | name the year or the change he means, or cut
+\bfast[- ]paced\b | say how fast, or cut
+\b(?:underscor(?:e|es|ed|ing))\b | shows, or say what it shows
+\b(?:highlighting|emphasi[sz]ing|symboli[sz]ing)\b | cut the "-ing" comment; say what it shows in its own sentence
+\bshowcas(?:e|es|ed|ing)\b | show
+\bfoster(?:s|ed|ing)?\b | build, encourage, or say what grows
+\bboast(?:s|ed|ing)?\b | has
+\bvibrant\b | say what's lively about it, or cut
+\bmeticulous(?:ly)?\b | careful, or say what he checked
+\bintricac(?:y|ies)\b|\bintricate\b | name the parts, or say complicated
+\binterplay\b | say how the two affect each other
+\bgarner(?:s|ed|ing)?\b | got, won
+\benduring\b | lasting, or say how long
+\bbolster(?:s|ed|ing)?\b | strengthen, support
+\bvaluable insights?\b | say what he learned
+\bgroundbreaking\b | new, first, or say what's new
+\brenowned\b | known, or cut
+\b(?:diverse|wide|vast|rich) (?:array|range|variety)\b | name them, or say many
+\bset(?:s|ting)? the stage for\b | leads to, or say what came next
+\b(?:indelible|lasting) mark\b | say what changed
+\bdeeply rooted\b | old, or say since when
+\b(?:key )?turning point\b | say what changed then
+\bfocal point\b | center, or name it
+\b(?:reflects|reflecting) (?:a )?broader\b|\bbroader (?:trends?|context|implications)\b | cut it; stay on his example
+\bcommitment to\b | say what he does, or cut
+\bexemplif(?:y|ies|ied)\b | shows, is an example of
+\bmultifaceted\b | name the sides
+\bresonat(?:e|es|ed|ing) with\b | say who it fits and why
+\bin the heart of\b | in, at
+\bnestled\b | is, sits
+\bquietly\b | cut it, or say what actually happened
+
+# ---------- Wikipedia: negative parallelisms and transitions ----------
+\bnot (?:only|just|merely)\b[^.!?\n]*?\bbut(?: also)?\b | say both things plainly, in two sentences if needed
+\bno \w+(?: \w+)?, no \w+(?: \w+)?, just\b | say what it is, plainly
+(?:^|(?<=[.!?] ))(?:additionally|moreover|furthermore)\b | cut it, or use "also" or "and" inside the sentence
+(?:^|(?<=[.!?] ))overall\b,? | cut it; the last point doesn't need a label
+\b(?:it(?:'s| is) )?(?:worth noting|important to (?:note|remember)|worth mentioning)\b | cut it and state the point
+
+# ---------- Wikipedia: vague attribution and chat leftovers ----------
+\b(?:experts|observers|critics|analysts) (?:say|argue|agree|have (?:cited|noted))\b|\bindustry reports\b | name who said it, or cut (no invented sources)
+\bdespite (?:these|its|the) challenges\b|\bfuture outlook\b | cut it; say what he will do next
+\bI hope this helps\b|\bcertainly!|\bof course!|\bgreat question\b|\byou're absolutely right\b | cut it; this is a post, not a chat reply
+\bas of my (?:last|latest) (?:knowledge |training )?update\b | cut it

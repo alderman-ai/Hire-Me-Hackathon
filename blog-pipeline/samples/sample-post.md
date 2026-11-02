@@ -15,7 +15,7 @@ reading_minutes: 5
 made:
   minutes_talked: 15
   words_spoken: 2140
-  words_drafted: 1063
+  words_drafted: 1093
   share_changed_by_alex: 9
   dictated: "2026-11-02T15:15"
   rig_session: null
@@ -77,6 +77,12 @@ Copy mine to start with, then change one question a month at most. A card that c
 ## The fifteen minutes, step by step
 
 I set a timer, because without one the review quietly grows back into an hour. Then I go through the same five steps in the same order every week.
+
+> [!diagram] flow
+> The fifteen-minute review, in order
+> 1. Look back: the landing place and the last seven days
+> 2. Look ahead: the next two weeks
+> 3. Choose: three things that would make next week good
 
 1. **Empty the landing place (three minutes).** Everything I noted during the week goes onto one list. I don't sort it yet.
 2. **Look back at the calendar (three minutes).** I scroll through the past seven days and note anything that needs a follow-up: a thank-you, a reply, a booking.

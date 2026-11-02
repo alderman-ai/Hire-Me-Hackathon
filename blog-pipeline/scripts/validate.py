@@ -1,11 +1,17 @@
-r"""Validate a blog post file against POST-FORMAT.md §6, checklist items 1 to 20.
+r"""Validate a blog post file against POST-FORMAT.md v1.1 §6, checklist items 1 to 21.
 
 Usage:  python -I blog-pipeline\scripts\validate.py blog-pipeline\drafts\T-01\post.md
         python -I blog-pipeline\scripts\validate.py blog-pipeline\samples\sample-post.md
 
 Prints one line per problem, "F<n> <message>" for a failure and "W<n> <message>"
 for a warning, where <n> is the checklist item, then
-"VALID <file>: <f> fail, <w> warn". Exit codes:
+"VALID <file>: <f> fail, <w> warn". v1.1 adds the diagram callout
+("> [!diagram] scale" or "> [!diagram] flow", §3.5: at most one, inside a ##
+section after its first paragraph, not a section's or the post's last block, a
+caption of at most 100 characters, then 3 to 6 items "N. Label" or
+"N. Label: note" numbered from 1, label 1 to 4 words, note at most 15 words, no
+links, emphasis or code; a note for Alex in any callout is an F17) and W21 (no
+key-points box). Exit codes:
   0  no F lines (warnings allowed): the file renders
   1  at least one F line: fix the stage that wrote it and rerun
   2  ERROR: the file is missing or unreadable
@@ -47,6 +53,8 @@ HR = re.compile(r"^ {0,3}([-*_])(?:[ \t]*\1){2,}[ \t]*$")
 SETEXT = re.compile(r"^ {0,3}(=+|-+)[ \t]*$")
 LINK = re.compile(r"\[((?:[^\[\]\n]|\[[^\[\]\n]*\])*)\]\(([^)\s]*)[^)]*\)")
 INLINE_CODE = re.compile(r"`[^`\n]*`")
+DIAGRAM = re.compile(r"> \[!diagram\] (?:scale|flow)")
+DIAGRAM_ITEM = re.compile(r"^(\d+)\.\s+(\S.*)$")
 
 
 class Bare(str):
@@ -259,6 +267,11 @@ def plain(s: str) -> str:
     return LINK.sub(lambda m: m.group(1), s)
 
 
+def inline_markup(s: str) -> bool:
+    """A link, * emphasis, _emphasis_ or inline code: not allowed in plain-text callouts."""
+    return bool(LINK.search(s) or "*" in s or "`" in s or re.search(r"(?<!\w)_[^_]+_(?!\w)", s))
+
+
 def sentences(s: str) -> int:
     s = NOTE.sub("note", s)
     s = re.sub(r"\b(e\.g|i\.e|etc|vs|Mr|Ms|Mrs|Dr|St|approx)\.", "abbr", s, flags=re.I)
@@ -419,7 +432,7 @@ def validate(raw: bytes):
     content = [b for b in blocks if b["kind"] != "comment"]
     first_h2 = next((k for k, b in enumerate(content) if b["kind"] == "heading" and b["level"] == 2), None)
     section, para_seen, h3_count, h2s = 0, False, 0, 0
-    pulls, summaries = [], []
+    pulls, summaries, diagrams = [], [], []
     for k, b in enumerate(content):
         b["section"] = section
         if b["kind"] == "heading":
@@ -455,8 +468,12 @@ def validate(raw: bytes):
                 pulls.append(k)
             elif first == "> [!summary]":
                 summaries.append(k)
+            elif DIAGRAM.fullmatch(first):
+                diagrams.append(k)
+            elif "[!diagram]" in first:
+                P.append(("F", 15, f"line {b['start']}: a diagram's first line must be exactly '> [!diagram] scale' or '> [!diagram] flow'"))
             else:
-                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull] or [!summary]"))
+                P.append(("F", 15, f"line {b['start']}: a plain blockquote; every blockquote must open with [!pull], [!summary] or [!diagram] scale|flow"))
             if "[Alex" in "\n".join(b["lines"]):
                 P.append(("F", 17, f"line {b['start']}: a note for Alex inside a callout"))
 
@@ -511,6 +528,54 @@ def validate(raw: bytes):
             P.append(("F", 15, f"line {b['start']}: the key-points box holds something other than '- ' bullets"))
         if not 3 <= len(bullets) <= 5:
             P.append(("F", 15, f"line {b['start']}: the key-points box holds {len(bullets)} bullets (3 to 5)"))
+    if not summaries:
+        P.append(("W", 21, "no key-points box (it's on by default, §3.3)"))
+
+    # 15: the diagram (§3.5)
+    if len(diagrams) > 1:
+        P.append(("F", 15, f"{len(diagrams)} diagrams (at most one)"))
+    for k in diagrams:
+        b = content[k]
+        at = f"line {b['start']}"
+        nxt = content[k + 1] if k + 1 < len(content) else None
+        prev = content[k - 1] if k else None
+        if b["section"] == 0:
+            P.append(("F", 15, f"{at}: a diagram in the lede; it goes inside a ## section"))
+        elif prev is not None and prev["kind"] == "heading":
+            P.append(("F", 15, f"{at}: a diagram directly under a heading; it goes between two blocks, after the section's first paragraph"))
+        if nxt is None:
+            P.append(("F", 15, f"{at}: a diagram is the post's last block"))
+        elif nxt["kind"] == "heading" and nxt["level"] <= 2 and b["section"] > 0:
+            P.append(("F", 15, f"{at}: a diagram is its section's last block"))
+        inner = [re.sub(r"^\s*>\s?", "", line).strip() for line in b["lines"][1:]]
+        inner = [x for x in inner if x]
+        caption = inner[0] if inner else ""
+        items = inner[1:]
+        if not caption or DIAGRAM_ITEM.match(caption):
+            P.append(("F", 15, f"{at}: a diagram's second line must be its caption"))
+            if caption:
+                items = inner
+        elif len(caption) > 100:
+            P.append(("F", 15, f"{at}: the diagram caption is {len(caption)} characters (at most 100)"))
+        if not 3 <= len(items) <= 6:
+            P.append(("F", 15, f"{at}: the diagram holds {len(items)} items (3 to 6)"))
+        for n, item in enumerate(items, 1):
+            m = DIAGRAM_ITEM.match(item)
+            if not m:
+                P.append(("F", 15, f"{at}: diagram item {n} isn't 'N. Label' or 'N. Label: note': \"{item[:40]}\""))
+                continue
+            if int(m.group(1)) != n:
+                P.append(("F", 15, f"{at}: diagram item {n} is numbered {m.group(1)} (number them 1, 2, 3 ...)"))
+            label, colon, note = m.group(2).partition(":")
+            lw, nw = len(label.split()), len(note.split())
+            if not 1 <= lw <= 4:
+                P.append(("F", 15, f"{at}: diagram item {n}'s label is {lw} words (1 to 4)"))
+            if colon and nw == 0:
+                P.append(("F", 15, f"{at}: diagram item {n} has a ':' but no note"))
+            if nw > 15:
+                P.append(("F", 15, f"{at}: diagram item {n}'s note is {nw} words (at most 15)"))
+        if any(inline_markup(x) for x in inner):
+            P.append(("F", 15, f"{at}: the diagram holds a link, emphasis or code; plain text only"))
 
     # 14, 17, 19 inline checks, outside code
     for b in content:

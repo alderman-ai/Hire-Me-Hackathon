@@ -12,7 +12,8 @@ In pipeline order:
 | Wait for the dictation | `check_done.py` |
 | Capture it | `join.py` |
 | Fill gaps from the rig | `find_in_rig.py` |
-| Count words, and the share Alex changed | `counts.py` |
+| Count words, the share kept from his transcript, and the share Alex changed | `counts.py` |
+| Check a draft or post for banned wording and the counted style rules | `lint.py` (+ `banned.txt`) |
 | Check the post file against POST-FORMAT.md | `validate.py` |
 | Safety scan before every commit | `scan.py` (+ `deny-local.txt`) |
 
@@ -67,18 +68,43 @@ Exit: 0 found (with `--against`, whatever the gaps); 1 `NONE` (no filed session 
 
 ## counts.py
 
-Word counts by POST-FORMAT.md §2's one rule (body only; whitespace tokens holding a letter or digit; no front matter, comments, link URLs, `[!pull]`/`[!summary]` tags, list numbers or pull-quote blocks; notes for Alex count). Gives `reading_minutes`, `words_spoken`, `words_drafted`. `--changed` gives `share_changed_by_alex`: 1 − matched words (difflib) / the longer word list, ignoring case, punctuation and `*`.
+Word counts by POST-FORMAT.md v1.1 §2's one rule (body only; whitespace tokens holding a letter or digit; no front matter, comments, link URLs, `[!pull]`/`[!summary]` tags, the `[!diagram]` tag with its kind word, list numbers or pull-quote blocks; notes for Alex and the diagram's caption, labels and notes count). Gives `reading_minutes`, `words_spoken`, `words_drafted`. `--changed` gives `share_changed_by_alex`: 1 − matched words (difflib) / the longer word list, ignoring case, punctuation and `*`.
+
+`--kept <transcript> <post>` measures how much of the post's wording is still Alex's own (the blog research found reusing his spoken words beats asking a model to imitate his style): the share of the post's body words that sit inside a run of 4 or more consecutive words also found, in that order, in the transcript (the body of `1-clean.md`, by the same rule, so front matter and comments drop out). Words are compared lowercased, curly quotes straightened, surrounding punctuation and `*` removed. Notes for Alex count in the total and never match. Run it on the Draft and Edit outputs against `1-clean.md`; a fall between stages means a stage rewrote him.
 
 ```powershell
 python -I blog-pipeline\scripts\counts.py blog-pipeline\drafts\T-01\post.md
 python -I blog-pipeline\scripts\counts.py --changed blog-pipeline\drafts\T-01\post.md <Alex's finished post.md>
+python -I blog-pipeline\scripts\counts.py --kept blog-pipeline\drafts\T-01\1-clean.md blog-pipeline\drafts\T-01\post.md
 ```
 
-Prints `WORDS <file>: <n>` or `CHANGED <before> -> <after>: <pct>% of words changed (<a> words before, <b> after)`; `--json` prints one JSON object instead. Exit: 0 ok; 2 file missing or bad arguments.
+Prints `WORDS <file>: <n>`, `CHANGED <before> -> <after>: <pct>% of words changed (<a> words before, <b> after)` or `KEPT <post> from <transcript>: <pct>% of words in 4-word runs he said (<k> of <n>)`; `--json` prints one JSON object instead. Exit: 0 ok; 2 file missing or bad arguments.
+
+## lint.py
+
+The counted style rules from the Draft and Edit prompts as a script, so no stage counts by eye. Runs on a post or any stage file (`4-draft.md`, `5-edit.md`). It reads the prose only: front matter, HTML comments, code, pull-quote blocks, link URLs and notes for Alex are skipped; headings, lists, tables, the key-points box and the diagram are linted. Curly quotes are straightened and `*` dropped before matching.
+
+```powershell
+python -I blog-pipeline\scripts\lint.py blog-pipeline\drafts\T-01\4-draft.md
+python -I blog-pipeline\scripts\lint.py blog-pipeline\drafts\T-01\post.md --max-dash-per-300 1 --max-so-openers 2
+```
+
+One line per hit, in file order, then `LINT <file>: <n> hits`:
+- `BANNED <file>:<line>: "<match>" -> <what to write instead>`: a `banned.txt` rule hit.
+- `DASH`: an em dash that puts more than `--max-dash-per-300` (default 1) into some 300 consecutive words. ` -- ` and a spaced en dash count as em dashes.
+- `SO`: a paragraph opening with "So" beyond `--max-so-openers` (default 2).
+- `NOTX`: an "It's not X, it's Y" or "not X but Y" construction after the first one.
+- `RHETORICAL`: the opening paragraph, or the first paragraph after a heading, whose first or last sentence is a question.
+
+`--banned <file>` uses another list. Exit: 0 no hits; 1 hits; 2 file missing, or a bad `banned.txt` line.
+
+## banned.txt
+
+The banned list as data, for `lint.py`: every banned opener, word and pattern from `prompts\4-draft.md` and `5-edit.md`, their "written, not transcribed" fillers, and the AI tells from Wikipedia's "Signs of AI writing" page that fit a blog post. One rule per line, `<pattern> | <what to write instead>`, `#` for comments. The separator is a pipe with a space on each side; inside a pattern, write alternations without spaces (`(?:a|b)`). Patterns are Python regexes, matched case-insensitively per block with `^` at each line start; write apostrophes straight. Where two rules hit the same words, the first in the file wins, so put a specific rule (`\brich tapestry\b`) above the general one (`\btapestr(?:y|ies)\b`). The rules lint.py counts itself (dashes, "So", "not X, it's Y", rhetorical questions) aren't in the file. To ban a new word, add a line; no code change.
 
 ## validate.py
 
-Checks a post file against POST-FORMAT.md §6, checklist items 1 to 20, including the front matter (parsed for exactly the YAML subset §2 allows). Run it after the Format stage and before every preview.
+Checks a post file against POST-FORMAT.md v1.1 §6, checklist items 1 to 21, including the front matter (parsed for exactly the YAML subset §2 allows). v1.1 adds the diagram (§3.5, item 15): at most one `> [!diagram] scale` or `> [!diagram] flow` callout, inside a `##` section after its first paragraph, not a section's or the post's last block, a caption line of at most 100 characters, then 3 to 6 items `N. Label` or `N. Label: note` numbered from 1 (label 1 to 4 words, note at most 15), no links, emphasis or code (a note for Alex inside is an F17, as in any callout). W21 warns when the key-points box is missing. Run it after the Format stage and before every preview.
 
 ```powershell
 python -I blog-pipeline\scripts\validate.py blog-pipeline\drafts\T-01\post.md
