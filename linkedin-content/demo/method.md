@@ -18,6 +18,6 @@ The same AI model, asked for a post on post 1's topic in Addvery's brand voice, 
 ## Honest limits
 
 - The score shows the posts follow the 21 rules. It isn't proof that they sound like Addvery to Addvery's own team: that takes a person from Addvery reading them.
-- Alex's own rubric was induced from posts he graded and tested in about 1,560 blind judgments. This brand layer comes from a short capture of Addvery's public voice, with no graded Addvery posts behind it. It's a directional check, not a validated one.
+- Alex's own rubric was induced from posts he graded himself. This brand layer comes from a short capture of Addvery's public voice, with no graded Addvery posts behind it. It's a directional check, not a validated one.
 - The register follows how Addvery's leaders write (short sentences, one dry aside), on the company page.
 - Every number in the posts is illustrative, framed as how such projects usually go. None is a client result.
