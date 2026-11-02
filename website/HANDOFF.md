@@ -1,6 +1,6 @@
 # Handoff: website (S-D8)
 
-Written 2 Nov at about 16:45 Prague, at forking gate F3 (context about 53%, on orchestration's context watch). The session that took over at 14:53 hands over again here, after its stakeholder-pages subagent returned. Read CLAUDE.md first, then this file, then SPEC.md (§6, §7 with its "(L-01)" revisions, §9 for every decision since 15:00, and Appendix A).
+Written 2 Nov at about 16:55 Prague, during orchestration's 16:47 HOLD (a full reset on Alex's instruction). Context is about 60%; the handoff happens as part of the RESTART. The session that took over at 14:53 wrote this after its stakeholder-pages subagent returned. Read CLAUDE.md first, then this file, then SPEC.md (§6, §7 with its "(L-01)" revisions, §9 for every decision since 15:00, and Appendix A).
 
 ## State of the site (live: https://hire-me-hackathon.vercel.app)
 
@@ -21,7 +21,7 @@ Written 2 Nov at about 16:45 Prague, at forking gate F3 (context about 53%, on o
 - **`/privacy`:** the S-D3 text, unlinked and `noindex` until Alex ticks S-D3's pre-send gate.
 - **Analytics:** Web Analytics is on (aggregate). Query it with `vercel api "/v1/query/web-analytics/visits/count?projectId=prj_rT9kFM97a02ouvSsMrZZRYqJi4jo&teamId=team_m6QeC9FHcO8dk7PvEHtfkAod&since=…&until=…"`. At about 16:00 it showed 5 visitors and 9 views.
 - **Videos:** S01, S02, S06 and S08 are webcams on YouTube; S08 was posted in full on Alex's word. S03 to S05, S07 and S09 are over 15 minutes and wait on channel verification.
-- **Last deploy:** 16:37 (`5c201ae`, the C01/C02 docs re-sync). The publish check is clean (`checks.md`, 16:30).
+- **Last deploy:** 16:49 (`9a86a97`, S-D9-B7). The publish check is clean (`checks.md`, 16:30). Since then, B2 (`e1fee58`) and the stakeholder route (`ce5d5f6`) are committed but not deployed.
 
 ## How to deploy while uncommitted work sits in the tree
 
@@ -44,7 +44,37 @@ Once the tree is clean (nothing uncommitted except git-ignored files), a plain `
 
 ## Stakeholder pages (part 2, orchestration's go at about 16:05)
 
-- A subagent drafted them, local only. [Fill in from its report: slugs, files, the gate proof, the copy pass.] The route is `app\for\[slug]\page.tsx` plus `app\stakeholders.ts`, with content in `local\stakeholders.json` (`"approved": false`) and `local\stakeholders-draft.md`. The route renders only in dev, or when `approved === true`. In production it 404s, and `/for/ceo` and `/for/growth` returned 404 live at 16:39.
+- **Drafted, local only:** the route is `app\for\[slug]\page.tsx` with `app\stakeholders.ts`, and its styles are the `.sh-` block at the end of `app\article.css` (committed `ce5d5f6`; the code holds no names). Content is in git-ignored `local\stakeholders.json` (`approved: false`, every note `note_is_draft: true`) and `local\stakeholders-draft.md` (a five-line summary, each page in full, local URLs `http://localhost:3100/for/<slug>`).
+- **Slugs:** `growth` (Chief Growth Officer, the addressee), `ceo`, `cofounder-1`, `cofounder-2`, `delivery`, `bi`.
+- **Demos per role** (demo numbers in the order shown on each page):
+  - growth: 3, 1, 4, 7
+  - ceo: 3, 9, 4
+  - cofounder-1: 3, 9, 1
+  - cofounder-2: 6, 7, 4
+  - delivery: 9, 8, 4
+  - bi: 1, 3, 9
+
+  Demo 2 (the company research) is left off on purpose. Each page shows up to three feed moments, chosen by role tags.
+- **Gate:** a page renders only in `next dev`, or when `approved === true` AND that page's note is no longer marked draft. Otherwise `generateStaticParams` returns `[]`, `dynamicParams = false`, and `notFound()` runs. Pages are always `noindex`, with role-only tab titles, and nothing links to `/for/`. This was proved with a real `next build` in a copy: no `/for/` output while unapproved, and no names in 356 output files. A `/* turbopackIgnore: true */` stops the JSON from being bundled.
+- `.vercelignore` now also excludes `local/stakeholders.json` and `local/stakeholders-draft.md` (`081ba4d`). **On approval, remove those two lines**, or the Vercel build won't see the content.
+- **Copy:** done with `design:ux-copy` (headings, labels, the note line, the asks, all six as questions) and `marketing:draft-content` (the role notes, still marked draft, the growth lead's "why now", the one-line demo reasons).
+- **Still to do before the gate:**
+  - screenshots at 390 and 1440 px, headless only;
+  - `marketing:brand-review` against `Addvery Research\Brand capture.md`;
+  - `design:accessibility-review`.
+- **Flags from the drafting subagent:**
+  - The growth page's sources line must also cite her public posts (the 1B CZK goal, the "why now", her reply).
+  - "Two days ago" goes stale, so recheck it on send day.
+  - Both co-founders' titles include their other CEO roles, as in their public titles.
+  - The "why now" ends with one line of Alex's framing.
+- **The working tree is clean at 16:55.** A plain `vercel deploy --prod --yes` from `website\` is safe again: `.vercelignore` keeps the stakeholder drafts out, and the git-ignored brand and research files go up. B2 (the research docs on `/d2`, `e1fee58`) is committed but **not yet deployed**, because of the HOLD; deploy it first after the RESTART.
+- **Decisions put to Alex in chat at 16:47, at his request** ("What do you need my decision on?"). He's asked to reply "all defaults" or with exceptions:
+  - **A:** OT-07's plan and its four defaults (Hobby plan; no cold read; the demo page layout; the stakeholder rule).
+  - **B1 to B6:** DI-9's questions 2 to 7, defaults a, b, a, a, a, a.
+  - **C:** keep the profiles' "likely objections" sections off public pages.
+  - **D:** keep the per-function AI outreach rating and the growth lead's start date off `/d2`.
+
+  Write his answers into the two task files verbatim, then send `TASK DONE` and `ARCHIVE`.
 - **Copy rule** (Alex, about 16:40, now in ASKING.md): no copywriting without a copywriting skill switched on through orchestration. `SKILL ON website` came at about 16:44 for `design:ux-copy` (microcopy) and `marketing:draft-content` (longer copy). Before the stakeholder gate, run `marketing:brand-review` against `Addvery Research\Brand capture.md`; the site's words stay Alex's voice. Copy already live (the demo pages' "what this is" lines, the reskin's UI labels, the `/d2` headings) gets one pass through `design:ux-copy` the next time it's touched.
 - **Next:**
   1. Brand review.
@@ -53,7 +83,7 @@ Once the tree is clean (nothing uncommitted except git-ignored files), a plain `
   4. On APPROVED, set `approved: true`, add the links (start-here box) and deploy.
 
   Alex's 16:41 words (via s-d1-scraping) want the research artifacts shown "as it is"; per-person material goes through this gate so he sees exactly what's published. His rule from 16:36: an approval includes whatever he writes in its feedback fence.
-- **DI-9**, "Decide - the six stakeholder pages on the site": six questions (2 to 7). Question 1 (branding) was answered directly by Alex. The draft is at `C:\Users\alder\.claude\jobs\b25f14b0\tmp\DI-9-draft.md`. If the job tmp is gone, rebuild it with `tmp\make_di9.py` from SPEC Appendix A, minus QXX.1, using the narrowed Q3 in `tmp\q3_new.md`. Release it to `Operator tasks\Decide - the six stakeholder pages on the site.md` the moment DI-7 ("Decide - how the GetSales outbound demo runs") or DI-8 ("Decide - how the blog pipeline should work") closes. Orchestration allows at most two intakes in front of Alex, and this one is first in line. If neither has closed by 17:15, tell orchestration. Then commit, send `TASK website: Decide - the six stakeholder pages on the site.md is waiting on you: …`, and put the DI number in SPEC §1 and the status line.
+- **DI-9** was RELEASED at 16:46 (`2219b78`) into the slot DI-7 freed, with the TASK line sent; the desk showed it, and SPEC §1 and the status line now say DI-9. Earlier notes follow. "Decide - the six stakeholder pages on the site": six questions (2 to 7). Question 1 (branding) was answered directly by Alex. The draft is at `C:\Users\alder\.claude\jobs\b25f14b0\tmp\DI-9-draft.md`. If the job tmp is gone, rebuild it with `tmp\make_di9.py` from SPEC Appendix A, minus QXX.1, using the narrowed Q3 in `tmp\q3_new.md`. Release it to `Operator tasks\Decide - the six stakeholder pages on the site.md` the moment DI-7 ("Decide - how the GetSales outbound demo runs") or DI-8 ("Decide - how the blog pipeline should work") closes. Orchestration allows at most two intakes in front of Alex, and this one is first in line. If neither has closed by 17:15, tell orchestration. Then commit, send `TASK website: Decide - the six stakeholder pages on the site.md is waiting on you: …`, and put the DI number in SPEC §1 and the status line.
 
 ## Gates and desk
 
@@ -75,9 +105,9 @@ Once the tree is clean (nothing uncommitted except git-ignored files), a plain `
 
 - **Clock loop:** pid 27164 (`pythonw`), alive. S10 started recording at about 16:24 ("recording S10, 8.53 h left").
 - **Dev server** on :3100: restarted by a subagent at about 15:45, logging to `C:\Users\alder\.claude\jobs\b25f14b0\tmp\dev-c.log`. If it dies, start it hidden: `Start-Process cmd.exe -ArgumentList '/c','npx next dev -p 3100' -WorkingDirectory <website> -WindowStyle Hidden`.
-- **Monitors** (they die with this session; re-arm in the successor):
+- **Monitors:** all stopped for the HOLD at 16:47. Re-arm after the RESTART:
   - the OT-07 `check_gate` loop;
-  - the DI-7/DI-8 close watch (checks `Intake State:` in both files every 2 minutes).
+  - the DI-9 answer watch, the same `Intake State:` check on "Decide - the six stakeholder pages on the site.md". The DI-7 and DI-8 close watch is no longer needed.
 
 ## Working notes
 
