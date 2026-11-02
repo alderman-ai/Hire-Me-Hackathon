@@ -592,6 +592,14 @@
         {
           "type": "p",
           "text": "Alex is out walking the dog from 15:45 to 16:00. Nothing is being recorded, so the countdown stands still. The agents keep working in the background."
+        },
+        {
+          "type": "image",
+          "src": "/dog-walk-2026-11-02.jpg",
+          "width": 1200,
+          "height": 1600,
+          "alt": "A scruffy ginger-and-white terrier lying on a wooden hallway floor, looking to the side, with backpacks, a scooter and shoes by the door behind it.",
+          "caption": "The reason for the break, waiting by the door."
         }
       ]
     }
