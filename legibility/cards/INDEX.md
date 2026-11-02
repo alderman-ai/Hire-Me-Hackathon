@@ -1,6 +1,6 @@
 # Side cards: index
 
-One card per moment Alex graded G (great) or Y (yes) in `legibility\grading\grades.jsonl`: 72 cards, 44 G and 28 Y. A grade means the moment is acceptable raw material, not that it becomes content; greats win ties over yeses. Each card says what the moment is, what it could serve as and what to watch for, so a builder can decide what goes together. Cards are internal notes, written plainly; quotes are verbatim from the machine transcript. `cards.json` holds the same data.
+One card per moment Alex graded G (great), Y (yes) or M (maybe) in `legibility\grading\grades.jsonl`: 74 cards, 44 G, 28 Y and 2 M (Maybe). A grade means the moment is acceptable raw material, not that it becomes content; greats win ties over yeses. Each card says what the moment is, what it could serve as and what to watch for, so a builder can decide what goes together. Cards are internal notes, written plainly; quotes are verbatim from the machine transcript. `cards.json` holds the same data.
 
 ## Theme vocabulary
 
@@ -29,6 +29,7 @@ Every card uses only these tags, most central first.
 | [S01-d](S01-d.md) | Y | 38 s | He says he'll keep talking so the transcripts come out full (the start of that sentence sits just before the moment). | build-in-public, personalisation-at-scale | medium |
 | [S01-e](S01-e.md) | Y | 30 s | He keeps his terminal off to the side so none of his credentials show up on the recording. | build-in-public, hiring-pitch | high |
 | [S01-f](S01-f.md) | Y | 39 s | Before making the day's plan, he explains that when he builds with AI he gives it everything it needs in a fairly complex document, and that he spent six months building his own methodology for this. | ai-craft, orchestration | medium |
+| [S01-h](S01-h.md) | M | 19 s | Right after the first deploy, he checks there are no secrets in what went up, sees that the site exists, and says he wants to put a video on it. | build-in-public, personality | low |
 | [S02-b](S02-b.md) | Y | 87 s | The opening of his intro video: what the hackathon is and why he's reaching out. | hiring-pitch, personalisation-at-scale, gtm-thesis, build-in-public | high |
 | [S02-c](S02-c.md) | G | 75 s | He explains knowledge arbitrage: things are valuable because you know something before other people (the sentence starts just before the moment). | personalisation-at-scale, gtm-thesis | high |
 | [S02-d](S02-d.md) | G | 48 s | Following on from people being able to tell personal outreach from a shotgun blast, he calls that a very costly signal, and says this 12-hour build in public for one company is costly too: he can't do it for 30 companies a day yet, because he's building it for the first time. | personalisation-at-scale, reusable-skills, build-in-public, personality | medium |
@@ -78,6 +79,7 @@ Every card uses only these tags, most central first.
 | [S09-e](S09-e.md) | Y | 56 s | Following up the order to rebuild the site in the company's look, he says the site should start looking like theirs: where their website has sections that fit what he's doing, place his material there, but don't create a section just for kicks if nothing of his fits it. | voice-and-taste, personalisation-at-scale, orchestration | low |
 | [S09-f](S09-f.md) | Y | 80 s | Answering an agent about the company's visual assets and a disclaimer (what the agent proposed is unclear beyond its suggested wording), he says the assets are public, but if the agent prefers it can put all the branding being pulled into a subdirectory and git-ignore it; just don't block anything. | build-in-public, human-bottleneck, research-method | medium |
 | [S09-i](S09-i.md) | G | 73 s | Having asked (in the context line just before) for the company's org chart and a scrape of every person's LinkedIn, he says what he wants: a Jev classification that decides whether each person is someone sending cold outreach, to see if the session can rebuild the company's sales team, though he wonders if that's over-engineering. | research-method, icp-filtering, ai-craft | medium |
+| [S09-j](S09-j.md) | M | 14 s | Looking at his sessions late in the day, he sees a queue of things and says everything is waiting on him. | human-bottleneck, personality | low |
 | [S10-b](S10-b.md) | G | 69 s | Dictating the topic of the first of two blog articles (the context lines set that up), he says there's no such thing as building an AI workflow as a product: it's always a managed service, because the models always change. | ai-managed-service, gtm-thesis | high |
 | [S10-c](S10-c.md) | G | 56 s | Dictating the topic of the second blog article (the context lines set that up), he says GTM engineers are the solution to the biggest social question of the AI era. | gtm-thesis, hiring-pitch | high |
 | [S10-e](S10-e.md) | Y | 106 s | He lays out the design of a demo (the outbound demo, per the packet and library): 36 workflows in a folder apart from his own, from four main ICPs times three languages (English, Czech, German) times three tactics. | icp-filtering, personalisation-at-scale, build-in-public | medium |
@@ -107,15 +109,15 @@ Main theme first; cards in brackets carry the theme as a secondary tag.
 - **icp-filtering**: S10-e (S09-b, S09-i)
 - **ai-managed-service**: S02-i, S10-b
 - **orchestration**: S01-c, S03-e, S03-g, S03-n, S05-b, S05-g, S06-b, S07-c, S07-g, S07-i, S07-k, S08-a, S08-c (S01-f, S03-f, S03-m, S04-i, S05-d, S05-j, S05-n, S07-a, S07-b, S07-d, S07-m, S07-n, S08-d, S09-b, S09-e, S10-h, S10-k, day1-5, S10-l, S11-b, S12-d, S12-j)
-- **human-bottleneck**: S03-f, S03-m, S04-i, S07-a, S10-h, S10-k, day1-5, S10-l, S11-b, S12-a (S03-e, day1-2, S05-g, S06-b, S07-c, S07-g, S07-k, S08-a, S08-c, S08-d, S09-f)
+- **human-bottleneck**: S03-f, S03-m, S04-i, S07-a, S09-j, S10-h, S10-k, day1-5, S10-l, S11-b, S12-a (S03-e, day1-2, S05-g, S06-b, S07-c, S07-g, S07-k, S08-a, S08-c, S08-d, S09-f)
 - **reusable-skills**: S07-d (S02-d, S07-i, S10-i)
 - **failure-and-recovery**: day1-2, S05-m, day1-3, S05-n (S03-n, S04-k, S07-d, S10-h, day1-5, S10-l, S12-j)
 - **research-method**: S05-d, S05-i, S08-b, S09-b, S09-i, S12-g (S02-j, S05-j, S09-f, S10-k, S12-i)
 - **ai-craft**: S01-f, S03-d, S03-h, S03-i, S04-k, S05-j, S10-i, S11-a (S01-c, S03-g, S03-m, S03-n, S04-i, S05-n, S09-i, S11-b)
 - **hiring-pitch**: S02-b, S02-e, S02-j, S03-j, S12-f, S12-n (S01-e, S02-i, S02-k, S03-i, S10-c, S12-d, S12-i, S12-m)
-- **build-in-public**: S01-d, S01-e, S02-k, S07-b, S07-m, S07-n, S08-d, S09-f, S12-d, S12-j (S02-b, S02-d, S02-j, S03-d, S03-h, S03-j, S04-k, day1-2, S05-i, S05-m, day1-3, S06-b, S07-c, S08-c, S09-c, S09-d, S10-e, S12-e, S12-f, S12-n)
+- **build-in-public**: S01-d, S01-e, S01-h, S02-k, S07-b, S07-m, S07-n, S08-d, S09-f, S12-d, S12-j (S02-b, S02-d, S02-j, S03-d, S03-h, S03-j, S04-k, day1-2, S05-i, S05-m, day1-3, S06-b, S07-c, S08-c, S09-c, S09-d, S10-e, S12-e, S12-f, S12-n)
 - **voice-and-taste**: S09-d, S09-e (S10-i)
-- **personality**: S09-c, S12-e (S02-d, S02-f, S02-k, S04-k, S05-b, day1-2, S05-m, day1-3, S07-g, S08-a, S11-a, S12-a, S12-n)
+- **personality**: S09-c, S12-e (S01-h, S02-d, S02-f, S02-k, S04-k, S05-b, day1-2, S05-m, day1-3, S07-g, S08-a, S09-j, S11-a, S12-a, S12-n)
 
 ## Graded G or Y, no card yet
 
