@@ -1,46 +1,52 @@
-# S-D9 handoff — 2 Nov, 17:16 Prague (forking gate G3)
+# S-D9 handoff — 2 Nov, ~18:50 Prague (forking gate G3), from session 3020a577
 
-**First, before anything else: start the 30-minute loop.** Run `/loop 30m` with this prompt: "Run the S-D9 30-minute check from legibility\SPEC.md section 7: check ..\OBS\Processed\index.json for sessions filed since the last line of checks.md and read each new one; look at what changed in the project since then (specs, SESSIONS.md, git log, the clock); read the titles in ..\website\content\feed.json so nothing goes up twice; post anything a follower should know (one BUILD S-D9-B<n> at a time, only after the last one is BUILT); log the check in checks.md and commit legibility\. If nothing changed, end the turn straight away." The old loop (cron `d3d4dcf3`) was deleted at 16:52 for orchestration's reset hold, so no old loop is running.
+**First, before anything else: start the 30-minute loop.** Run `/loop 30m` with this prompt: "Run the S-D9 30-minute check from legibility\SPEC.md section 7: check ..\OBS\Processed\index.json for sessions filed since the last line of checks.md and read each new one; look at what changed in the project since then (specs, SESSIONS.md, git log, the clock); read the titles in ..\website\content\feed.json so nothing goes up twice; post anything a follower should know (one BUILD S-D9-B<n> at a time, only after the last one is BUILT); log the check in checks.md and commit legibility\. If nothing changed, end the turn straight away." The old loop is cron `ea3b62dc` in session 3020a577; the old session deletes it before stopping.
 
-Then read, in order: `CLAUDE.md` (the reading list), `SPEC.md` (the job; the reset-rules block at the top of section 7 overrides the rest), `..\answer-desk\ASKING.md` (the reset rules at its top), `posted.md` and the last ten lines of `checks.md`.
+Then read: `CLAUDE.md`, `SPEC.md` (§7 top block: reset rules, one-sitting rule; §9: newest decisions first), `..\answer-desk\ASKING.md` (reset rules at the top), `posted.md`, the last ten lines of `checks.md`, and this file to the end.
 
 ## Where things stand
 
-- **Last check line:** 17:06, on HOLD. The hold ended at 17:13 with orchestration's RESTART.
-- **Posts:** P1 to P7 are live. The last, P7 (`S-D9-B7`), went live at **16:49** (website 9a86a97). Nothing is in flight with `website`.
-- **Two-hour floor (DoD-20):** the next post must be live by **18:49**. Post a status refresh by about 18:29 even if nothing new is filed.
-- **Next post id:** P8, sent as `BUILD S-D9-B8`.
-- **Filed sessions covered:** S01 to S09 (see "Sessions covered" in `posted.md`). **S10** (recording since 16:24) and **S11** aren't filed yet. Read them when they are, oldest first.
-- **The status board** (feed post `status`) is at as_of 16:45. The rows are in `..\website\content\build.json`. Refresh it with the next post.
-- **Feed format:** `..\website\content\feed.json`, newest on top. Kinds: Status, Update, Milestone, Insight, Session, Explainer. Blocks: p, list, quote, highlight, points, video. `website` stores the role tags as `roles` on each post. Also check the feed for posts `website` wrote itself (s06, s08, the lunch and dog-walk breaks, the 8 Insights from S03 to S05) so nothing goes up twice.
+- **Posts:** P1 to P10 live. P10 "The day so far" (first summary post, `"summary": true`) went live at 18:25 (website e07350a). **Next post due by 20:25** (two-hour floor). Next id: P11, sent as `BUILD S-D9-B11`. Nothing in flight with `website`.
+- **Filed sessions covered:** S01 to S11 (posted.md "Sessions covered"). S12 has been recording since 17:34; read it when it's filed.
+- **How posts read now (Alex, 17:5x):** for a reader going through the feed in one sitting: fewer, denser posts, about one build every two hours, and a summary post (`"summary": true` plus a one-sentence `summary_line`) at each milestone. The carousel at the top shows the summaries; s11, s08, s06 and s02 are tagged.
+- **Time format (Alex, 18:3x; website's format, 18:24):** Prague time only. Quote sources read "Alex, S04, 12:24" (session plus Prague clock time); written answers "Alex, written answer, 17:23". A video position only as "from 2:45 into the video". Never an offset next to a clock time.
+- **Copy:** invoke `marketing:draft-content` before each post. Draft posts in the running Doc "Feed posts from the build" (https://claude.ai/artifact/CZvgGu1jYK2jQGYuZqFSNL, doc 5dad67d6-35e5-4726-bf25-5f0964db0209, body node 0d17f38e-191a), newest on top, then `posts\P<n>.md`, then BUILD. Nothing waits on Alex; his comment becomes an edit build.
 
-## Open clip request
+## The day-one story (DoD-24) — waiting on Alex's comment
 
-- **CLIP S-D3-C1** isn't sent yet. Since 16:44 it's **Alex's own walkthrough** of the 36 GetSales demo workflows, not a live run: Alex sends the alert to the six by hand. `s-d3-getsales` sends the CLIP once the folder is built and he has recorded it, with the session or times, the cue words and the folder's exact on-screen name (asked at 16:50).
-- **No Alex gate any more** (reset rule 2; told S-D3 at 17:14). Cut it with ffmpeg into `clips\` (git-ignored) to SPEC section 7's clip spec. Check one frame every 2 seconds against DoD-22: secrets, the Apify proposal, and his own outbound outside the demo folder. That means cutting his own campaigns, the inbox, other folders and sender settings. Blur any of the six if they appear (Q4 default). Then reply `CLIPPED S-D3-C1: <paths>`. S-D3 places it on the site.
-- **Design rule 5** treats caption cards as visual work. Ask orchestration for a design skill (`frontend-design`) before making any.
-- **S-D3 handed over at 17:17.** The fresh `s-d3-getsales` has the 17:14 note: blur the six by default, and the clip approval is S-D9's. Reply to the CLIP at its `from` address.
+- File: `article\day-one.md` (POST-FORMAT v1.5, `kind: "showcase"`, `deliverable: "d9"`, validated 0 fail, 0 warn).
+- Doc for his last 10%: https://claude.ai/artifact/Qs2nBb9ienSKxRe7nthJ3c (doc c13e795a-41ab-4f3a-a48a-80f9a7f6558b, body node 25871391-05a2). TASK sent; the desk showed it at 18:15. Two `[Alex: …]` notes (proudest afternoon moment; closing line).
+- **When he comments:** read the Doc back into `article\day-one.md` (his words win; remove the notes he filled), set `status: "published"` only if the format allows for a showcase (check validate.py), validate, then `BUILD S-D9-B<n>` to `website`: a new /demos entry from `legibility\article\day-one.md`. Then `TASK DONE S-D9: the day-one story` to `answer-desk`.
+- **Clip swaps pending in the article** (do them when the batch ids come back): `pyFHE1JHMV8` → id of `day1-2-too-much-at-once-v2`; `FMYWlkGWdeY` → id of `day1-5-bottleneck-human-v2`; `MyYnFOQCagc 240 277` → id of `c-s08-same-thing-tomorrow` (no start or end; the old start fell inside a line that stays out). Update the Doc's clip links to match.
 
-## Gates and pokes
+## The clip index and the batch
 
-- **OT-05** ("Approve - the plan for the site's build updates") is closed: approved on its defaults at 17:03 by S2, on Alex's word, and archived (55d81e5). The defaults now stand: Q4 blur; Q8 show the orchestration layer in the feed as his skill; Q18 posts framed as "Alex directs and decides, the agents carry out". `website` and `s-d3-getsales` were told at 17:14.
-- **No pokes are pending, and no desk question is open** (no `S-D9-Q` was ever asked). Poke only when work is truly blocked, at most every 30 minutes.
+- `clip-index.md` (public, committed 0421158): every clip-worthy moment in S01 to S11, classified. Path sent to `orchestration` for Alex's tracker. The partial indexes with private details are in git-ignored `local\clip-index\`.
+- **15 clips cut** in `clips\` (git-ignored) from `local\clip-index\cuts.json` with `tools\cut_batch.py`: 12 new, 2 replacements (`day1-2-…-v2`, `day1-5-…-v2`), 1 S08 recut. Two are **screen cuts, held** for Alex's OK (`c-s05-deletion-live`, `c-s07-answer-desk`); his rule is webcam only on the site, and orchestration relays his answer.
+- **Frame check:** a subagent was checking all 15 at ~18:50. If its result isn't in this file, re-run the check: look at each `clips\<name>_sheet.jpg` (and every frame of the two screen cuts).
+- **Upload batch:** send `website` one message with the passing webcam clips (and the screen cuts only once Alex says yes): path, YouTube title (in `cuts.json`), unlisted. Record the ids it sends back in `clip-index.md` (status `cut`, id) and swap them into the article.
 
-## Decisions and rules since 13:48, in short
+## "How content gets picked" (orchestration, 18:2x)
 
-- **Reset rules (17:00).** These override earlier rules:
-  - **Never post:** only DoD-22's three hard exclusions, plus `do-not-post.md`, which is still empty. Public sources may be published. The older "left out" entries in `posted.md` were taste or the old rules, not bans now.
-  - **Easy calls:** decide and log them in SPEC section 9.
-  - **No 18:00 cut-off.**
-- **Copywriting rule (16:40).** Invoke `marketing:draft-content` before writing each post. `design:ux-copy` and `anthropic-skills:docs` are also on since 17:13.
-- **Rule 4, Claude Docs:** written work for outside readers is drafted in a Claude Doc. My recommendation for feed posts (decide and log it): draft each post in a Doc after loading the copy skill and then the docs skill, and publish at once without waiting for Alex's comment. If he comments later, send an edit build. If that slows posting below the two-hour floor, keep posts in `posts\` and log why.
-- **Approvals (16:36):** a tick approves the file plus whatever its feedback fence holds. That only matters if a gate comes back.
-- **Framing (research, W3 and 9.3):** posts lead with Alex's judgment calls and with what broke and how it was handled. Write "Alex decides, the agents carry out", never "the agents take over". Plain words, one point per post. Every number comes from a source.
-- **Apify may be named** (DI-6 Q6.3). Anything Alex said near the proposal (S04, 09:23 to 09:31) stays out.
-- **Quotes:** take exact times from `segments.jsonl`. A helper script is in the old job's tmp folder; it's simple to rewrite: match the text, then print `video_start` and `wall_start`. The webcam starts about 2.5 s after the screen, so YouTube links use t = screen time minus about 5 s. On YouTube: S01 `mbF291oW_yQ`, S02 `qrBNOsSYGrQ`, S06 `mxorwucznvE`, S08 `MyYnFOQCagc`. Sessions over 15 minutes aren't uploaded.
-- **Shell gotcha:** Python heredocs turn `\r`, `\b` and `\f` inside Windows paths into control characters. Use the Edit tool, or `chr(92)`, for backslash paths in `posted.md` and `checks.md`.
-- **Git:** commit only `legibility\`, path-limited. If `index.lock` exists, wait and retry; never delete it.
+- A GTM demos entry (`kind: "showcase"`, `deliverable: "d9"`), written by a subagent to `article\how-content-gets-picked.md` (POST-FORMAT v1.5). It uses `PENDING0001` (S04, 12:22, "the legibility analyzer is born": clip `c-s04-legibility-born`) and `PENDING0002` (S07, 13:41, "done means additions": clip `c-s07-done-means-additions`); swap in their ids from the batch.
+- Then: a **rendered review artifact for Alex** (an Artifact page rendering the entry; load `artifact-design` first), then `BUILD` to `website`. Orchestration's rule (ASKING.md, d9f0998): page copy inside a designed page is reviewed as a rendered artifact; articles stay in Docs.
 
-## For the old session
+## Open clip requests
 
-Deleted: the loop `d3d4dcf3`, every poke cron, and the gate Monitor. Orchestration removes the old session id after the "HANDOFF s-d9-legibility" line.
+- **CLIP S-D3-C1** (demo 1, about 3 min: classification tools, the "Hackathon demo · Addvery" folder with 36 workflows, the one variable) and **CLIP S-D3-C2** (demo 2: a short terminal capture of leads classified into ICPs). They come from `s-d3-getsales` once Alex has recorded. CLIPPED must carry the transcript for the range (`clip-transcripts\<id>.md`). Frame check: nothing outside the demo folder.
+- **CLIP S-D10-C1** (the Canva scene: from the last "Canva design starts now" to "Canva design done", screen plus webcam). The scene is now a quote card from S-D6's asset pack. Comes from `s-d10-canva-video` once the session is filed.
+- Tool: `python -I legibility\tools\cut_clip.py <Sxx> <start> <end> <name> [--pad 3] [--screen] [--blur FROM:TO]`.
+
+## Decisions since 17:16 (all in SPEC §9)
+
+- Feed posts drafted in one running Claude Doc; nothing waits on Alex.
+- Clip gate dropped (reset rules); never-post narrowed to DoD-22's three plus `do-not-post.md`.
+- One-sitting readers: fewer, denser posts, summary flag agreed with `website`.
+- Day-one story as a showcase entry, d9; "the scary point" is 13:20, not the 16:47 hold.
+- Clips webcam by default; screen cuts held for Alex's OK.
+
+## Gotchas
+
+- **Clocks:** other sessions stamp times up to 12 minutes ahead. Use `date` or commit times.
+- **Backslashes:** Python heredocs turn `\a`, `\f`, `\b` and `\c` (via sed) into control characters. Use the Edit tool, `chr(92)`, or a file for any Windows path.
+- **Git:** commit only `legibility\`, path-limited. Wait out `index.lock`; never delete it.
