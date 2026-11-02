@@ -74,7 +74,7 @@ orchestration\                  the parent session's own files (the session itse
 **What S2 accepts.** S2 changes the charter only on a request from:
 1. the operator himself;
 2. a session that quotes the operator's answer approving it, as `S2 REQUEST <session>: <change> (approved: A <id>: <answer>)`, sent to `orchestration`;
-3. `s1-research` (S1), for resource lines: its `FINDINGS T-<nn> ready: <path>` messages, whose tasks already carry the operator's approval;
+3. `s1-research` (S1), for resource lines: its `FINDINGS <list id> ready: <staging paths>; home: <path>; readers: <spec ids>` messages, whose research lists already carry the operator's approval;
 4. S2's own DoD and outline work under the charter's mandate.
 
 Anything else gets one reply: "Take it to the answer desk first." A spec never edits the charter, and a conflict goes to the desk (charter, spec contract). Overnight (P6), a request without an operator answer is filed in `changes\` as `held`, and the morning cleanup session takes it to him. The asking session carries on with its own logged decision (P5), so nothing halts.
@@ -119,7 +119,7 @@ Anything else gets one reply: "Take it to the answer desk first." A spec never e
 **Reading lists (DI-4 Q4.2).** Modelled on the operator's `alderman-ai/knowledge-work-executable-spec-research` repo (stage 06, "Routing and resources" and its pre-flight check):
 - Every executable spec carries its own reading list in a "Routing and resources" section: each resource as a path or URL, with one line on what it is and how to treat it.
 - A spec's pre-flight confirms every resource is reachable before work starts, and turns anything ambiguous in it into a preflight question.
-- Research findings enter as resources. On `FINDINGS T-<nn> ready: <path>`, `propagate` adds a resource line to each reader spec named in the finding's Feeds. A spec not written yet gets the line when its SPEC.md appears; until then the line is held in the change record, and check mode lists it.
+- Research findings enter as resources. On `FINDINGS <list id> ready: <staging paths>; home: <path>; readers: <spec ids>` (the format in `research\SPEC.md`), `propagate` moves each report from S1's staging folder to its home, then adds a resource line to each reader spec named in `readers`. A spec not written yet gets the line when its SPEC.md appears; until then the line is held in the change record, and check mode lists it.
 - Subagents read nothing they weren't handed: a spec orchestrator passes the resources a task needs in its dispatch prompt (reference spec, "M1 · Fan-out contract").
 - The charter holds only a pointer to this (C02).
 

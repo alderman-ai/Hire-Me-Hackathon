@@ -9,8 +9,9 @@ files, including any in its own subfolders, stay loaded. The root's settings
 exclude every child with one pattern, so new children are covered there
 automatically. Rerun this whenever a top-level folder is added or renamed.
 
-Other settings keys, and any exclude pattern that isn't about this repo's
-folders, are kept as they are. --check reports what would change and writes
+A settings file without a `worktree` block gets the shared-tree one
+(bgIsolation none, baseRef head). Other settings keys, and any exclude
+pattern that isn't about this repo's folders, are kept as they are. --check reports what would change and writes
 nothing.
 """
 import json
@@ -20,6 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PREFIX = f"**/{ROOT.name}/"
 ROOT_PATTERNS = [f"{PREFIX}*/**/CLAUDE.md", f"{PREFIX}*/**/AGENTS.md"]
+# Every session works in the one shared tree on main (GIT.md).
+WORKTREE = {"bgIsolation": "none", "baseRef": "head"}
 
 
 def top_level_folders() -> list[Path]:
@@ -44,9 +47,10 @@ def update(settings_path: Path, generated: list[str], check: bool) -> str:
         data = json.loads(settings_path.read_text(encoding="utf-8"))
     kept = [p for p in data.get("claudeMdExcludes", []) if not p.startswith(PREFIX)]
     new = generated + kept
-    if data.get("claudeMdExcludes") == new:
+    if data.get("claudeMdExcludes") == new and "worktree" in data:
         return "unchanged"
     data["claudeMdExcludes"] = new
+    data.setdefault("worktree", dict(WORKTREE))
     if not check:
         settings_path.parent.mkdir(parents=True, exist_ok=True)
         settings_path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8", newline="\n")
