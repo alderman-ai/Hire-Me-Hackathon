@@ -12,10 +12,11 @@ Run logs, with every grade and the grader's written findings, are in `.claude\sk
 | 4 | Day one: what broke, what worked and what I'd keep | `day-one-what-broke-what-worked-and-what-id-keep.md` | Good | LEN-27, SPOK-35 | 3 (2) | 2 |
 | 5 | Knowledge arbitrage: you don't have to pick anymore | `knowledge-arbitrage.md` | Good | LEN-27 | 3 (3) | 1 |
 | 6 | So good AI that it looks human | `so-good-ai-that-it-looks-human.md` | Good | LEN-27 | 3 (3) | 0 |
+| 7 | Best of three, instead of redlining everything one by one | `best-of-three-instead-of-redlining.md` | Good | GATE-11 | 3 (3) | 0 (2 `[fact: ...]` for orchestration) |
 
 ## Notes
 
-- **Grades by attempt.** 1: Unpublishable (FACT-37), Good, Good. 2: Unpublishable (FACT-37), Good, Good. 3: Good, Good, Good. 4: Good, Good, Unpublishable (FACT-37), so attempt 2 is the one delivered. 5: Good, Good, Good. 6: Good, Good, Good.
+- **Grades by attempt.** 1: Unpublishable (FACT-37), Good, Good. 2: Unpublishable (FACT-37), Good, Good. 3: Good, Good, Good. 4: Good, Good, Unpublishable (FACT-37), so attempt 2 is the one delivered. 5: Good, Good, Good. 6: Good, Good, Good. 7 (added 23:xx, W61, the night's rebuild as a method): Unpublishable (FACT-37), Good (LEN-27), Good (GATE-11). Its two `[fact: ...]` markers (go-live time, pages recaptured onto the Claude Design canvas) are for orchestration, not Alex.
 - **LEN-27 failed on almost every attempt**, including drafts within 5% of their target length. It seems to read "make the one point and stop" strictly on these multi-section articles. That's worth a look in the rubric before a 5-attempt rerun.
 - **Pre-flight vs the post format.** The THRD-30 check fires on every `[Alex: ...]` marker, because the marker starts with "Alex". The markers were kept, as asked, and each run log records it. The taste article also trips EMOJ-43 (9 emojis), all inside the LinkedIn exhibits and the emoji riddle the piece is about.
 - **Article 2's title.** Kept "If AI won't replace half your team, put it in your pipeline", which is closer to his words. The other name, "GTM engineers and the AI jobs promise", is in its front matter as `alt_title`.
