@@ -33,6 +33,6 @@ The six at Addvery each have their own page. Some of them know Alex personally, 
 
 ## Where things are
 
-- **Content library:** every piece of content that exists, listed and described. It's being built now; `orchestration` adds its path here when it's ready.
+- **Content library:** every piece of content that exists, listed and described: `orchestration\local\library\` (git-ignored, on this machine). `written.md`, `video.md` and `skills.md` for reading; the `.json` files for looking up ids. `live-site.md` is what's live, page by page.
 - **Alex's verbatim wants:** `orchestration\local\ALEX-WANTS.md` (git-ignored, on this machine only).
-- **The copywriting skill:** `.claude\skills\alex-voice\`, being built now.
+- **The copywriting skill:** `.claude\skills\alex-voice\` (load it with the Skill tool as `alex-voice`).

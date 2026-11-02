@@ -35,3 +35,7 @@ __pycache__/
 
 # alex-voice skill: run logs, calibration copies and any private voice material (third parties, drafts)
 /.claude/skills/alex-voice/local/
+
+# Site-structure proposals and verdict: they quote private context on the six
+/orchestration/assembly/proposal-*.md
+/orchestration/assembly/VERDICT.md
