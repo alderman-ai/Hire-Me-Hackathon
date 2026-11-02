@@ -22,7 +22,6 @@ Read this file at startup, and again before you message a session you haven't me
 | `answer-desk` | `answer-desk\` | Every question for Alex, one at a time; the poke. | |
 | `watcher` | `watcher\` | Hourly git sweep and push. | |
 | `s0-bootstrap` | `bootstrap\` | S0 Bootstrap: rolls out the sister folders, their CLAUDE.md files and roster rows. | Launched 13:39 Prague on 2 Nov. |
-| `meta-specs` | repo root | Temporary: a fork of `orchestration` that writes the S0, S1 and S2 specs. | Stops once S0 is launched and S1 and S2 are final. |
 | `accidental-session-kill-recovery` | `OBS\` | Temporary: Alex's recovery session from 13:20 on 2 Nov. | |
 
 ## Planned
