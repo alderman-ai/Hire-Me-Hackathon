@@ -176,7 +176,7 @@ When several requests are waiting, S-D1 comes first, because its output feeds se
 
 ## 8. Decision log (P5)
 
-Research never runs on a default (DI-3 Q3.4): an unapproved list waits for Alex, even overnight. Before 18:00 Prague, a passed deadline on any question means poke, not decide. From 18:00, a non-research question past its deadline is decided by the active S1 session, which logs it here and sends `WITHDRAW <id>`, freeing S1's one desk slot. If Alex's answer arrives later, the session reconciles and logs that too. Start each Decision with the time and the ASK id it closes.
+Research never runs on a default (DI-3 Q3.4): an unapproved list waits for Alex, even overnight. That's a working rule, not a DoD item: Alex took it out of the DoD and may relax it if time runs short (DI-5). Until he says so, it stands. Before 18:00 Prague, a passed deadline on any question means poke, not decide. From 18:00, a non-research question past its deadline is decided by the active S1 session, which logs it here and sends `WITHDRAW <id>`, freeing S1's one desk slot. If Alex's answer arrives later, the session reconciles and logs that too. Start each Decision with the time and the ASK id it closes.
 
 | Decision | Justification | Why it's the right call | Blast radius if changed |
 | --- | --- | --- | --- |
@@ -188,11 +188,11 @@ S2 assigned the real ids at the DoD sign-off (C03). The charter's done line for 
 | Criterion | Traces to |
 | --- | --- |
 | Alex has confirmed the storage reading (S1-Q5) | DoD-4 |
-| Every wave-2 spec has a research list that Alex approved, merged or skipped before its methodology was written | DoD-4 |
+| Every wave-2 spec that needs research has a research list, shaped with Alex's input | DoD-4 |
 | Every approved list has a report for each item (about four regular items and exactly three wildcards) plus a synthesis | DoD-5 |
 | Every report sits at its level and has a DIRECTORY.md entry | DoD-5 |
 | Every report is on the reading list of each spec that needs it (through S2) | DoD-5 |
-| No research ran without Alex's approval, and the decision log shows no research decided by default | DoD-4 |
+| Each list notes Alex's input where he gave it (its `Approved by` line), and any research started on a decision instead is in the decision log | DoD-4 |
 
 ## 10. Forking gates (P8)
 
