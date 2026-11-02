@@ -282,12 +282,15 @@ class Job:
             report.append(f"- {self.id}: {len(patches)} lines came from the backup audio.")
 
     def claude_logs(self) -> None:
-        """R17: logs active during the session, leaving out the OBS control session."""
+        """R17: logs active during the session, leaving out the OBS control session.
+
+        The skills live in OBS\\.claude, so the control session runs from OBS or OBS\\rig.
+        """
         target = self.data_dir / "claude-code"
         root = Path.home() / ".claude" / "projects"
         copied = 0
         for project in root.iterdir():
-            if not project.is_dir() or project.name.endswith("-OBS-rig"):
+            if not project.is_dir() or project.name.endswith(("-OBS", "-OBS-rig")):
                 continue
             for log in project.rglob("*.jsonl"):
                 info = log.stat()

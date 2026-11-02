@@ -83,7 +83,7 @@ One 15-minute session replaces the separate read-aloud and rehearsal, so he only
 He runs this himself, in a new terminal:
 
 ```powershell
-cd "C:\Users\alder\Desktop\Hire me hackaton\OBS\rig"
+cd "C:\Users\alder\Desktop\Hire me hackaton\OBS"
 $env:RIG_TEST = '1'
 claude
 ```
@@ -112,7 +112,7 @@ Then check, from `rig\run\test\process_report.md`, the manifest and the media:
 - `find_clip --cut` on 5 sentences gives clips that hold each whole sentence, and webcam clips that have audio.
 - Real bitrate, from the session's files. Set `PLAN_GB_PER_HOUR` in `preflight.py` from it.
 - Skipped frames, from the OBS log's lines at recording stop. NVENC ran around 65% and peaked at 94% on a still screen. If frames drop, lower the webcam to 720p first.
-- The control session's log folder ends in `-OBS-rig`, so R17 leaves it out.
+- The control session's log folder ends in `-OBS` (or `-OBS-rig`), so R17 leaves it out.
 - Closing the window didn't stop the recording: no gap in the manifest around that moment.
 - A second `/process` changes nothing.
 

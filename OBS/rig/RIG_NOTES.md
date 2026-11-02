@@ -54,7 +54,7 @@ Exact ffmpeg dshow names:
 
 - Location: `%USERPROFILE%\.claude\projects\<project-slug>\<session-id>.jsonl`
 - Hackathon project slug: `C--Users-alder-Desktop-Hire-me-hackaton`
-- The OBS control session, once run from `OBS\rig\`, should get its own slug ending in `-OBS-rig`. R17 excludes it. Confirm the slug when the first session runs there.
+- The OBS control session runs from `OBS\` (slug ending `-OBS`) or `OBS\rig\` (slug ending `-OBS-rig`). R17 excludes both. Confirm the slug when the first session runs there.
 - 78 project folders exist, using about 4.7 GB in total.
 
 ### Software already present
@@ -172,7 +172,7 @@ Set up and read back from OBS: `Wave3 mic` on `Mic In (Elgato Wave:3)` on tracks
 
 - **Spans:** session.json logs each unbroken stretch of recording. Pauses and crash gaps are the spaces between spans, and /process turns spans into the three-clock map.
 - **Test mode:** `RIG_TEST=1` sends everything to `D:\OBS Outputs\_test` and `OBS\_test`, so trials can't take the real S01. **Delete both before hackathon day.**
-- **Skills:** run with `shell: powershell`, a relative path so the rig's spaces don't matter, and `--skill`, which always exits 0, because a failing skill command is aborted and Alex would lose the message. The docs don't define `PowerShell(...)` in `allowed-tools`, but it worked with no prompt.
+- **Skills:** live in `OBS\.claude\skills\` (moved on 2 Nov, see the decisions log) and run with `shell: powershell`, an absolute quoted path to the rig's Python and `rig.py`, and `--skill`, which always exits 0, because a failing skill command is aborted and Alex would lose the message. The docs don't define `PowerShell(...)` in `allowed-tools`, but it worked with no prompt.
 - **Proof:** all four skills ran through separate `claude -p` processes. Recording kept going with no Claude process attached. Interactive typing is confirmed in Task 12.
 - **After /stop, OBS stays open in the tray**, so the next /start takes about 4 seconds.
 - **The session's first 3 seconds have no webcam,** because the BRIO takes that long to deliver its first frame.
@@ -326,6 +326,8 @@ Alex's answers change the spec. Where this section and the spec disagree, this s
 The `videos.insert` docs (updated 15 Oct 2026) say videos from unverified API projects "are not restricted to private viewing mode", and the quota is 100 calls per day at 1 unit each. The plan stands. Task 9's first test upload confirms it in practice.
 
 ## Decisions log
+
+- **Skills location (2 Nov 2026):** Alex found no skills in his new session. They were in `OBS\rig\.claude\skills\`, which Claude Code only loads for sessions started in `OBS\rig\`, while `OBS\CLAUDE.md` says they belong at the `OBS\` level. Moved them to `OBS\.claude\skills\` with absolute paths. Claude Code also loads skills from parent folders, so they now work from `OBS\` and `OBS\rig\` (tested with `claude -p "/pause"` from both), but not from the project root. R17 now leaves out log folders ending `-OBS` as well as `-OBS-rig`.
 
 Open questions go through `Operator tasks\DI-1 Capture rig decisions.md`. Any left unanswered when a task needs them use the spec's default, logged here.
 

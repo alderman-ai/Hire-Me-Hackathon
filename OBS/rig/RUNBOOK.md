@@ -2,7 +2,7 @@
 
 ## Before the first session
 
-1. Open a new terminal, not the one from the rehearsal, start a Claude Code session in `C:\Users\alder\Desktop\Hire me hackaton\OBS\rig\`, and leave it in the background. If `/start` ever prints `TEST MODE`, type `/stop` and open a new terminal.
+1. Open a new terminal, not the one from the rehearsal, start a Claude Code session in `C:\Users\alder\Desktop\Hire me hackaton\OBS\`, and leave it in the background. `OBS\rig\` works too. If `/start` ever prints `TEST MODE`, type `/stop` and open a new terminal.
 2. Keep your work on the left monitor, the only one being recorded.
 3. Leave the Wave:3's gain knob where it is. Its level is set for the current position.
 
