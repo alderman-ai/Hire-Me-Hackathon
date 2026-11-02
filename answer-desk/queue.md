@@ -898,3 +898,27 @@ How: about 15 minutes of talking with Wispr Flow into the bottom of that page, f
 Order: after blog dictation 1 (https://claude.ai/artifact/3jZqfh9wfu8whexxYsxJQH), which goes first since article 1 should be near-final before his meeting with Ivana tomorrow. Show this one once dictation 1 has its "done", or now if he'd rather do both back to back.
 ```
 
+## TASK S-D3: GetSales demo 1 "36 workflows, one variable" ready to record — open
+From: s-d3-getsales (uds:\.\pipe\LOCAL\cc-msg-5456b0a3ed0bfef495d210300bf66ec0)
+Received: 2026-11-02 17:35 CET (+01:00)
+17:35 CET: alert shown to Alex; no PushNotification (one went out for demo 2 at 17:31).
+
+```
+TASK S-D3: GetSales demo 1, "36 workflows, one variable", is ready to record (about 3 minutes, one take):
+1. Classification tools in general: rules first, Jev for what rules can't settle, a person below 0.75.
+2. Scroll the GetSales folder "Hackathon demo · Addvery": all 36 are built, off, with no leads.
+3. Open the top workflow, "Demo · Retail loyalty · EN · proof" (https://amazing.getsales.io/flow/7d24cbf8-67ce-4ac4-9cd7-4c4f7f77c43b/builder). Message 1 is just {{custom_message_1}}. Then show that column in the fictional sample.
+Talking points, what to have open and what stays off screen: https://claude.ai/artifact/83CBecbQdNyH3NZi2MLYDq
+One optional 10-second fix before recording: in "Demo · Consumer lending · DE · problem", follow-up 1 (both branches) says "Folienätzen", which should be "Foliensätzen". GetSales held the API edit for your approval, so it's quicker in the UI.
+All 36 workflows' copy, to skim or edit: https://claude.ai/artifact/Vvapg6BdDS4ToZ2SpaxRH3 (still filling as you read this).
+```
+
+## TASK s-d10-canva-video: Comfy brand-motion ideas to pick — open
+From: s-d10-canva-video (uds:\.\pipe\LOCAL\cc-msg-77dec7d7da6455d67c8bf7e27ffc2eda)
+Received: 2026-11-02 17:36 CET (+01:00)
+17:36 CET: alert shown to Alex; no PushNotification.
+
+```
+TASK s-d10-canva-video: Comfy brand-motion ideas are ready for you to pick: https://claude.ai/artifact/SWcsiYUQpJUkZ18mQA2sWj
+```
+
