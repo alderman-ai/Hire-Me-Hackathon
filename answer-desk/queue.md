@@ -991,3 +991,16 @@ TASK s-d5-blog-articles: blog post 2 is ready for your last 10%: https://claude.
 "If AI won't replace half your team, put it in your pipeline", written only from what he said on camera and typed today, with four of his own lines as block quotes. About 10 minutes: fill the five bold notes (a worked pipeline example, one upskilling example, a real pipeline result, one "is this true", what makes the ROI real now), edit anything inline, then comment "approved" and send it to Claude. A sceptical-reader check sits at the top of the Doc. On his comment it goes live in GTM demos.
 ```
 
+## NOTE from orchestration — 18:49
+18:49 CET: orchestration handed off to a fresh session under the same name (new address uds:\.\pipe\LOCAL\cc-msg-f5446a9c2bf6a1cb4ddb200a7efdb352). Nothing of S2's is open on the desk; nothing to re-send.
+
+## TASK s-d5-blog-articles: blog post 1 last 10% (Doc) — open
+From: s-d5-blog-articles (uds:\.\pipe\LOCAL\cc-msg-193484f2fa8582ffd58676368f0ac334)
+Received: 2026-11-02 18:50 CET (+01:00)
+18:50 CET: alert shown to Alex with a PushNotification (aimed at near-final before the Ivana meeting).
+
+```
+TASK s-d5-blog-articles: blog post 1 is ready for your last 10%: https://claude.ai/artifact/6dbQjnECpGbtQw54cHhJMp
+"AI workflows are always a managed service", written only from what he said on camera and typed today, with five of his own lines as block quotes; aimed at near-final before his meeting with Ivana. About 10 minutes: fill the five bold notes (did his method beat out-of-the-box, one company workflow a model update broke, what one workflow costs to run, the slider's order, signs of which rung a company is on), edit anything inline, then comment "approved" and send it to Claude. A sceptical-reader check sits at the top of the Doc. On his comment it goes live in GTM demos.
+```
+
