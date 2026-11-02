@@ -40,7 +40,7 @@ Alex is reviewing his AI portfolio entry on a private artifact page: **https://c
 
 ## Things Alex should know, already reported to `orchestration`
 
-His public repos `cb6-prayer-project` (git history holds a client contact's details, photo GPS data and a Drive link; README links editable Google Docs) and `Factor-AI` (18 raw session transcripts with his email and private folder names) have exposure. Clean-up is his call; the portfolio links around it. The review page's top panel tells him the same.
+His public repos `cb6-prayer-project` and `Factor-AI` each needs a clean-up decision from Alex; the details are with him privately. Clean-up is his call; the portfolio links around it. The review page's top panel tells him the same.
 
 ## Rules learned
 

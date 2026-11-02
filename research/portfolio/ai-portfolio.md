@@ -35,7 +35,7 @@ My first full run on a real brief was in late July: a bilingual fundraising camp
 
 So the judgment had to go in first. A pre-flight pass caught a dead deploy token, an unconnected design tool and seven ambiguities. I answered eight questions up front, and the agent logged 12 judgment calls of its own, flagging the one it couldn't settle for me.
 
-**Proof:** cb6-prayer-project: the spec. Intent, answers, logged calls and the definition of done in one document. [Alex: CB6 repo link held until its git history is cleaned (old commits hold a client contact's details, photo GPS data and a Drive link; the README links editable Google Docs). Link it, or keep it unlinked?]
+**Proof:** cb6-prayer-project: the spec. Intent, answers, logged calls and the definition of done in one document. [Alex: CB6 repo link held until you decide on the repo's clean-up. Link it, or keep it unlinked?]
 
 The checks did their job. The spec had the agent test skill-guided copy against a plain prompt chain, and the plain chain lost because it "fabricated a deductibility inducement and two fund-handling claims." The final copy says US gifts aren't tax-deductible, per the research.
 

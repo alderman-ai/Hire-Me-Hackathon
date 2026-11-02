@@ -54,7 +54,7 @@ Rules he added after that:
 ## Alex's open calls (ask only if he brings it up, or once, briefly)
 
 1. **Screen clips:** may they go public if each one passes a frame check for secrets, the proposal and his own outbound? Until he answers, they're cut and held.
-2. **His two old public repos,** `alderman-ai/cb6-prayer-project` and `alderman-ai/Factor-AI`, outside this project. cb6's history holds a client contact's name and email, photo GPS data and a Drive link; its README links three Google Docs anyone can edit, and its spec has Canva edit links. Factor-AI has 18 raw session transcripts in `_THE SHIP/SatNav/Incoming Transmissions/`. Options: "quick fixes" (he sets the links to view-only; a session deletes the transcript folder in a normal commit; the portfolio doesn't link cb6), "rewrite both" (a force push, only on his explicit go) or "leave them".
+2. **His two old public repos,** `alderman-ai/cb6-prayer-project` and `alderman-ai/Factor-AI`, outside this project. Each needs a clean-up decision from Alex; the details are with him privately (in `Open tasks.md`, git-ignored). Options: "quick fixes" (he tightens the shared links; a session removes the exposed files in a normal commit; the portfolio doesn't link cb6), "rewrite both" (a force push, only on his explicit go) or "leave them".
 3. **The stray private artifact** https://claude.ai/artifact/AW6Ld5n5CKuBHBX7JR3tj2: delete it only if he says so.
 4. Optional: re-add any of the three left-out LinkedIn posts (14 May, 19 Oct, 27 Oct).
 5. A public-history line in `linkedin-content\SPEC.md` (commit b979ed6) named the CGO beside the personal-brand proposal. The current file is fixed; I recommended leaving the history alone. Only act if he says "scrub it".

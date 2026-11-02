@@ -18,7 +18,7 @@ The repo holds a bilingual (English and Czech) fundraising campaign (an email, a
 - **Non-commercial:** this is Alex's own description. The repo has no fee, invoice, contract or pricing wording (grep over all `.md` files). It still calls the church "client" throughout (SPEC:35, 159; commit `1833da9` "Client-facing cleanup"). Payment status cannot be confirmed from the repo.
 - **Shareable:**
   - The repo is public and has no LICENSE file (`gh repo view`: `licenseInfo: null`), so anyone can view it but no reuse rights are granted.
-  - Alex scrubbed it for sharing in October 2026: commits `7f442dd`, `da974de` ("Remove personal names and email addresses") and `3404e4e` ("Remove client Drive link, photo GPS/EXIF metadata, and unrelated template").
+  - Alex scrubbed it for sharing in October 2026. Its older history still needs a clean-up decision from Alex; the details are with him privately.
 
 ## 2. Dates
 
@@ -139,20 +139,5 @@ Attribution of 4 and 5: they were added in commit `02aab8c` (2026-07-27 02:32), 
 
 ## 7. Keep off a public page (flagged, not quoted)
 
-- **A private individual's name and email:** the client contact, removed in `7f442dd` and `da974de` but still readable in the public git history (e.g. SPEC.md at `a6c2e24`).
-- **Old git history:**
-  - Photo GPS/EXIF data: removed from `before.jpg` and `01_current-building-exterior-photo.jpg` in `3404e4e`; the original blobs are still in history (per the commit message; not re-checked).
-  - The client's Drive-folder link: removed from `PICTURES NOTE.md` in `3404e4e`; still in history.
-  - An unrelated "Theological Debate Research Template.md": added 2026-08-28 (`192631d`), removed in `3404e4e`, still in history.
-- **Editable links:**
-  - README:39-41 links three Google Docs marked "Anyone with the link can edit".
-  - SPEC:176-178 holds Canva edit links and a Canva folder link.
-  - Don't link to either from the page.
-- **The church's details:**
-  - Its bank account and variable symbol (SPEC:139; `resources/brand/BRAND NOTES.md`:108), its role email addresses (README:116 and the deliverables) and its funding figures. Alex took the figures out of the README intro in `02aab8c`.
-  - One inconsistency: one of those emails was redacted in SPEC:139 but still appears in README:116 and all the copy files.
-- **The architect's renders:** README:80 says permission to reuse them is "assumed but not documented", so don't reproduce them. Two AI-generated images in `resources/updated-pictures/` are flagged do-not-use (`PICTURES NOTE.md`).
-- **LENS internals:** local file paths, session transcript IDs (LENS:18-26) and one frustrated operator quote (LENS:28). Quote selectively.
-- **Vercel IDs:** `site/vercel-projects.json` holds Vercel org and project IDs. They are not secrets, but they are not page material either.
-- **Outcome claims:** make none. The campaign was never sent or scored (REVIEW:261), and the destination decision (⚑1) was still open at DOD (SPEC:137, 168).
-- **Secrets:** a grep found no tokens, keys or passwords, and `.env*` and `.vercel` are gitignored (`site/.gitignore`).
+- **Old git history and some shared links:** the repo needs a clean-up decision from Alex; the details are with him privately. Don't link the repo, its history or its shared documents from any page until he decides.
+- **The church's details:** its bank and contact details and its funding figures stay off the page.

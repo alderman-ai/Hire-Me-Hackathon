@@ -74,12 +74,7 @@ The assistant wrote this one, not Alex, so label it if it's used: "A constraint 
 
 ## 6. Keep off the public page
 
-- **`_THE SHIP/SatNav/Incoming Transmissions/`** holds 18 raw Claude Code session transcripts, about 39,800 lines, pulled out by `pumpjack.py`. They contain:
-  - Alex's email address, 4 times;
-  - local folder listings that name other private projects: a client-demo project, and the private repo this brief says to keep off;
-  - claude.ai artifact links, one titled for that client demo;
-  - full tool and system output.
-  Don't link, quote or screenshot them. They are already public in the repo. Whether to remove them is Alex's call.
+- **Raw session transcripts in the repo:** they needs a clean-up decision from Alex; the details are with him privately. Don't link, quote or screenshot them.
 - **No credentials found.** A scan for API-key, token and password patterns came back empty. `.mcp.json` has an empty `mcpServers` and `.gitignore` excludes `.env` and `*.key`. Session IDs (Ship's Computer frontmatter) and `Claude-Session` URLs (commit trailers) aren't secrets but add nothing to the page.
 - **Apify.** There is nothing about the proposal in this repo. The only trace is that one folder name inside a transcript (above). Not quoted here.
 - **Tone calls for Alex (not secret):**

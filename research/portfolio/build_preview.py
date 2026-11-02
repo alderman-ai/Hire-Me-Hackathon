@@ -72,7 +72,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 36px 0; }
     <p>Your AI portfolio entry, as it will read on the site (placed at <code>/demos/ai-portfolio</code>, linked from About me). Comment on this page to sign it off or to ask for changes. Yellow marks are the five points only you can settle.</p>
     <ul>
       <li>Some lines come from your work-samples email (the "junior and senior" line, "passion project", "looks insane", "50/50", "improved since"). The person it went to and the role are not mentioned anywhere. Fine to use these lines publicly?</li>
-      <li>Two of your public repos have exposure in their history: older commits in <code>cb6-prayer-project</code> still hold a client contact's details, photo GPS data and a Drive link, and its README links editable Google Docs. <code>Factor-AI</code> holds 18 raw session transcripts with your email address and private folder names. So the entry doesn't link the CB6 repo, and links only the two Factor-AI files you already share.</li>
+      <li>Two of your public repos need a clean-up decision from you: <code>cb6-prayer-project</code> and <code>Factor-AI</code> (the details are in your private task list). So the entry doesn't link the CB6 repo, and links only the two Factor-AI files you already share.</li>
       <li>Open from the brand review: no closing invitation yet, no cost or return figure, and "GTM" isn't spelled out.</li>
     </ul>
   </section>
