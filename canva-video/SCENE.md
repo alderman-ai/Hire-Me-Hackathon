@@ -36,7 +36,7 @@ About 5 minutes. Type `/pause` first (or do all of this before `/start`).
 7. **Open the design by its link,** not from Canva's home or projects: the link is in `canva-video\local\link.md`, a local file kept out of git. It opens straight into the editor.
 8. **Check the brand sections once.** Click any text box, then open the colour picker, the font list and the Text tab on the left. Each can show a brand kit by name, with its colours and fonts. If any shows another client's kit, switch the selector to Addvery's, or plan not to open that panel on camera. Close them again.
 9. **The title at the top** is on screen the whole time: make sure it names only Addvery or the template.
-10. **Find Download:** check that the File menu at the top left has Download. If it does, you can export without the Share panel, which lists who has access.
+10. **Find Download:** check that the File menu at the top left has Download. If it does, you can export without the Share panel, which lists who has access. Open it once and pick the export settings from Step 2 item 8. If Canva shows an upgrade prompt, your plan doesn't include them: keep the defaults on camera. Close it without downloading.
 11. **Close the left side panel** if one is open, so the scene starts on the design itself.
 12. **Have the copy ready on the 4K monitor:** <where the copy is>. Copy and paste from there. Don't open Windows' clipboard history (`Win+V`): it shows past clips.
 13. **Full screen:** press `F11` in Chrome. It hides the tabs, the address bar with the design's link, the bookmarks bar and the extension icons.
