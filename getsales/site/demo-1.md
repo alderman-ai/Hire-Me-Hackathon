@@ -14,7 +14,7 @@ cover:
 tags: ["outbound", "getsales", "classification"]
 reading_minutes: 4
 ---
-<!-- Video slot: when s-d9-legibility sends CLIPPED S-D3-C1, set kind to "video", add video (youtube_id, start) after deliverable, and rewrite this summary against the transcript. Words: Claude Doc e50390db (GetSales demo entries). Figures: getsales/site/assets/36-outbound-workflows-and-the-one-variable-behind-them/. -->
+<!-- Video slot: when s-d9-legibility sends CLIPPED S-D3-C1, set kind to "video", add video (youtube_id, start) after deliverable, and rewrite this summary against the transcript. Words: Claude Doc e50390db (GetSales demo entries). Figures: getsales/site/assets/36-outbound-workflows-and-the-one-variable-behind-them/. message-1-variable.png is a placeholder: replace it with a still from the recording (the builder at about 1:40), cropped to the title bar and node #6, screen-checked. -->
 
 Outbound at Addvery's size isn't one campaign. It's buyer types times languages times angles, and every lead has to land in exactly one of them.
 
@@ -46,8 +46,8 @@ Below 0.75, or when two answers are too close to call, a person decides. Those d
 The workflows sit in their own GetSales folder. The four ICPs come from Addvery's own website: retail loyalty, telco customer value, consumer lending and last-mile logistics. Each runs in Czech, German and English, and Slovak leads get Czech.
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflows-folder.png
-> Ten of the 36 workflows in the GetSales demo folder, each named Demo, ICP, language and tactic, every one switched off
-> Every toggle is off: none of the 36 is running
+> Six of the 36 workflows in the GetSales demo folder, named Demo, ICP, language and tactic, each switched off with 0 contacts
+> Every toggle off and every count at 0: none of the 36 is running
 
 Each ICP has three tactics. Signal: something just happened at their company. Problem: a known pain, tied to one fact about them. Proof: an Addvery case that looks like them.
 
