@@ -23,7 +23,11 @@ The preflight was decision intake DI-3 (`Operator tasks\DI-3 S1 Research preflig
 
 **Questions at runtime** go to the answer desk, one at a time (`..\answer-desk\ASKING.md`). Ids continue from S1-Q5.
 - **S1-Q5, the first question: answered 13:59, "Just store it locally."** Read as option C: every report stays in `research\`, split into `global\` and per-spec subfolders, and nothing moves to other folders (section 6). The reading was put to Alex inside S1-Q6, with the alternative "keep research off GitHub" offered.
-- **Then one question per research list,** to approve it (section 5).
+- **S1-Q6: answered 14:06.** Alex: "Let whatever sessions ask you for my approval of a research list. Anything that needs me to look at something needs to be in operator tasks. … I get alerted here that a document's waiting for me but I'm going to solve it in operator tasks." From then on:
+  - **Lists are pulled, not pushed.** A list goes to Alex only when a session asks for it (`RESEARCH`, section 6). Drafting ahead is fine.
+  - **Approvals are intakes, not desk questions.** Each list goes to Alex as a decision intake in `..\Operator tasks\`, plus a `TASK S1:` line to `answer-desk` (ASKING.md), and a `TASK DONE S1:` line once he has answered. A TASK alert doesn't use S1's one desk slot.
+  - Alex didn't object to the S1-Q5 reading, so it stands: reports are committed in `research\` like any other file.
+  - `orchestration` was told the same day that every approval gate in the specs it builds is an operator task (Alex asked for "just the orchestrator").
 
 **Waiting on Alex.** After 15 minutes waiting on him for anything (a desk question, an operator task or a decision intake), S1 sends `answer-desk` the line `POKE <asker>: waiting on you for <what>` (`answer-desk\ASKING.md`; S1's asker is `S1`). It sends the poke again every 15 minutes while it's still waiting. Before 18:00 Prague, it keeps waiting and works on anything that doesn't depend on the answer, such as drafting the next list or indexing. From 18:00, non-research decisions follow P5 (section 8). Research still waits for Alex.
 
@@ -57,8 +61,8 @@ The CLAUDE.md that S0 writes for this folder must hold this reading list, in ord
 
 1. Read the reading list. If `HANDOFF.md` exists, resume from it.
 2. Apply DI-3's answers as recorded in section 1, and build the empty `lists\` and `DIRECTORY.md`. Commit (P1, GIT.md).
-3. Send S1-Q5 (section 1). While it's open, draft the first research lists (section 7).
-4. Put each drafted list to Alex as its own desk question. A list runs only after he approves it, and its `Approved by` line carries his answer id.
+3. Send S1-Q5 (section 1). While it's open, draft the first research lists (section 7). Done: L-01 to L-05.
+4. When a session asks for research (`RESEARCH`, section 6), put its list to Alex as a decision intake in `..\Operator tasks\` (section 5) and send `answer-desk` the `TASK S1:` line the same minute. A list runs only after he approves it, and its `Approved by` line carries the intake answer id (`A<n>.1`). Then send `TASK DONE S1: <file name>`.
 5. Run an approved list's items in parallel, one subagent per item (P1). An item Alex marks for deep research runs as the deep-research skill in a worker session, launched from `research\` with `claude --bg -n rw-L<nn>-<item> "Read CLAUDE.md, then lists\L-<nn>-<scope>.md. Do only item <item>."` In the same step, S1 adds the worker's row to `..\SESSIONS.md` and commits that file on its own, path-limited: `git commit -m "[roster] ..." -- SESSIONS.md`. When the worker stops, S1 updates its row the same way.
 6. Review each report against section 4. Accept it, or send it back once with the gap named. Tick its box and commit.
 7. When every item is ticked, run the synthesis, write the directory entries and commit. Then send `orchestration`, which runs S2, `FINDINGS <list id> ready: <report paths in research\>; readers: <spec ids>`, and tell each reader's session that's running.
@@ -81,7 +85,7 @@ The CLAUDE.md that S0 writes for this folder must hold this reading list, in ord
   - If not, what are the traps and gotchas?
   - What would change the planned approach?
 
-  Each names the DoD item or items it serves. One the session can't tie to a DoD item is flagged to Alex in the approval question.
+  Each names the DoD item or items it serves. One the session can't tie to a DoD item is flagged to Alex in the approval intake.
 - **Exactly three wildcards.** Each is told every other item on the list, including the other wildcards' lenses, and reads the spec and the charter. It then researches "the biggest open question NOT being researched" within its lens. The lenses come from the Client Demo wildcard's own finding that its list never asked whether the project can be "executed, delivered, or received":
   - W1: can it be executed?
   - W2: can it be delivered?
@@ -119,8 +123,8 @@ For scale, the earlier reports ran about 275 to 480 lines for literature researc
 
 ```
 # L-<nn> Research list: <spec ids>
-Status: draft | on the desk (S1-Q<n>) | approved | running | synthesised | done
-Approved by: A S1-Q<n> | Alex, direct
+Status: draft | with Alex (DI-<n>) | approved | running | synthesised | done
+Approved by: DI-<n> A<n>.1 | Alex, direct
 Level: child (<spec folder>\research\) | parent (orchestration\research\)
 Readers: <spec ids>      Drawn from: <problem, scope, DoD ids>
 - [ ] R1 <questions, verbatim as approved> · serves <DoD ids> · tools: <...> · deep: no | yes
@@ -133,7 +137,9 @@ Readers: <spec ids>      Drawn from: <problem, scope, DoD ids>
 - [ ] DIRECTORY.md entries for every report above
 ```
 
-The approval question shows Alex the whole list and offers three options: approve it, edit it, or merge or skip it.
+**How a list goes to Alex (S1-Q6).** As a decision intake, `..\Operator tasks\DI-<n> S1 <scope> research list.md`, following `..\orchestration\_templates\Decision intake template.md` exactly, with `Intake State: Waiting on operator`. Take the next free DI number and check the folder again just before writing, because other sessions write there too. The intake holds one question, which shows the whole list verbatim and offers: approve it, edit it, or merge or skip it. Alongside it, send `answer-desk` the line `TASK S1: <file name> is waiting on you: <what it decides and unblocks>`. Commit the intake on its own, path-limited (`git commit -m "[research] ..." -- "Operator tasks/<file>"`). Watch the file for his answer. Once he has answered, send `TASK DONE S1: <file name>`. After 15 minutes waiting on it, poke as usual.
+
+`Approved by` reads `DI-<n> A<n>.1`, or `Alex, direct`.
 
 ## 6. Findings store and index
 
@@ -149,16 +155,19 @@ The approval question shows Alex the whole list and offers three options: approv
   4. Alex's directives outrank everything.
 - **Overrides.** A finding Alex overrides is edited in place, marked `Overridden by Alex, <time>`, and its readers are told.
 - **New requests.** A session asks for research with a message to the active S1 session: `RESEARCH <spec id>: <topic>, <why>, <needed by>`. If the topic exists, S1 adds the spec to its readers. If not, it's queued for that spec's next list. Nothing new runs before Alex approves it.
-- **One question on the desk at a time** (`answer-desk\ASKING.md`). S1 never sends a second ASK while one is open. Lists, topic requests and worker questions that arrive meanwhile wait in the queue. The next ASK goes out only once the open one is answered or withdrawn. It is rewritten in light of that answer and folds in everything queued. If something queued can't wait, S1 sends `REPLACE <id>` with a block that folds it in, never a new ASK.
+- **One question on the desk at a time** (`answer-desk\ASKING.md`). S1 never sends a second ASK while one is open. Topic requests and worker questions that need Alex and arrive meanwhile wait in the queue. Research lists don't use the desk slot; they go as intakes (section 5). The next ASK goes out only once the open one is answered or withdrawn. It is rewritten in light of that answer and folds in everything queued. If something queued can't wait, S1 sends `REPLACE <id>` with a block that folds it in, never a new ASK.
 
 ## 7. Priority order
 
-1. S1-Q5, the storage reading.
-2. A parent-level list, if Alex wants one: research that shapes how every spec goes from problem to DoD.
-3. S-D1's list, because its output feeds several specs. Then S-D4's, which also waits on S1.
-4. The rest in run order: S-D3, S-D6 and S-D7 (offered as one merged list), S-D5 (may merge with S-D4), S-D8, S-D9, S-D10 (may merge with S-D6).
+Since S1-Q6, lists go to Alex in the order sessions ask for them. Drafts wait in `lists\` until then:
+- L-01 parent: every wave-2 spec. Offered to `orchestration`, which builds the specs.
+- L-02 S-D1 scraping.
+- L-03 S-D4 blog pipeline, with S-D5 merged in.
+- L-04 S-D3 GetSales.
+- L-05 S-D6, S-D7 and S-D10, merged.
+- Not drafted yet: S-D8 and S-D9. Both sessions are already running.
 
-Alex's order wins. Approved lists run in parallel (P1).
+When several requests are waiting, S-D1 comes first, because its output feeds several specs; then S-D4. Alex's order wins. Approved lists run in parallel (P1).
 
 ## 8. Decision log (P5)
 
