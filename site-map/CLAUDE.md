@@ -7,6 +7,7 @@ This session is the background session named `orch-site-map`, started in this fo
 | `orchestration` (repo root) | The master orchestrator. It handles the other sessions: handoffs, context, roster, the charter (S2). It checks your context too. | No |
 | `orch-site-map` (this one) | The website's layout and structure, and the scope map | Yes, directly in this chat |
 | `orch-alex-prep` (`alex-prep\`) | Fills the boxes that need Alex: preps him for every recording, sign-off and review | Yes, directly in this chat |
+| `orch-briefing` (`briefing\`, called `briefing` until 18:59) | Monitors everything; answers "what should I do next?". It tells you in one line when it sees a layout item missed. | Yes |
 
 Alex talks to you here, in parallel with `orch-alex-prep`. So answer him in this chat. That's his instruction, and it overrides the charter's P4 for this session only. Other sessions still send their questions to `answer-desk`.
 
@@ -32,7 +33,7 @@ Alex, verbatim: "It will be just about the website layout structure, everything 
    - drop the "superseded" banner
    - put the legend "Scope map: green = live, amber = missing, BLUE border = needs Alex" at the top of every board
    - give every item in `..\Open tasks.md` its slot
-   - blue borders on: the LinkedIn posts sign-off, the Canva templates sign-off, the day-one story Doc, the taste-capture review (https://claude.ai/artifact/PkSgwgetjps3sVoNST26ma), articles 1 and 2 in their Docs (article 1: https://claude.ai/artifact/6dbQjnECpGbtQw54cHhJMp), the AI portfolio review (https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J), the GetSales demo 1 and 2 recordings, the Canva video recording, the Comfy pick, the screen-clips call, the six stakeholder page reviews (website sent them to the desk at about 18:58), and the new clip grading (yes, maybe or no on the day's 106 clip moments, then notes in Notion on the top 30) for "How content gets picked" (D9)
+   - blue borders on: the LinkedIn posts sign-off, the Canva templates sign-off, the day-one story Doc, the taste-capture review (https://claude.ai/artifact/PkSgwgetjps3sVoNST26ma), articles 1 and 2 in their Docs (article 1: https://claude.ai/artifact/6dbQjnECpGbtQw54cHhJMp), the AI portfolio review (https://claude.ai/artifact/McVKMTRVxsW3qa3kFq1Z6J), the GetSales demo 1 and 2 recordings, the Canva video recording, the Comfy pick, the screen-clips call, the six stakeholder page reviews (website sent them to the desk shortly before 18:56), and the new clip grading (yes, maybe or no on the day's 106 clip moments, then notes in Notion on the top 30) for "How content gets picked" (D9)
    - what's live since 18:45: /about (headshot, his story, the 34-post LinkedIn wall), the /for intro "A page for each of you", the six landings in his voice (in the data, gated), and the LinkedIn demo entry (`/demos/linkedin-posts-in-addverys-voice-graded-blind`)
    - still being built: the welcome, the time picker (5, 10, 20 or 60+ minutes) and the summary carousel at the top of `/` (the welcome on top, the feed below), the "How this site was built" entry, the D12 person/agent toggle and agent track, and the GetSales demo entries
    - mirror the live site's real copy and images, and keep Alex's 9 edits

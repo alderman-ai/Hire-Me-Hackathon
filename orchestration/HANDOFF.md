@@ -2,6 +2,8 @@
 
 Written 2 Nov, 18:47 Prague, by the outgoing `orchestration` session (id `ab58b0bf`), at forking gate F2 (context about 48%). Read this, then `orchestration\SPEC.md`, then **`Open tasks.md` at the repo root**. You are the parent session and the S2 project orchestrator. Take every time from the clock (`Get-Date`); never guess one.
 
+**Update, 18:59, by the fresh session (cc2ff5a3): orchestration is split in four** (Alex). This session is now the master: sessions only, and Alex doesn't talk to it. The scope map and the scope-map subagent's unfinished brief went to `orch-site-map`. `Open tasks.md`, the open calls and the clip grading went to `orch-alex-prep`. `briefing` became `orch-briefing`. See SPEC section 9, the last row. Where this file says "your duty" for the scope map or `Open tasks.md`, read it as theirs.
+
 ## First, in this order
 
 1. Wait until `claude agents --json --all` shows your row live. Then run `claude stop ab58b0bf` and `claude rm ab58b0bf`, and check that exactly one `orchestration` row is left. Put your id and the handoff time in the `orchestration` row of `SESSIONS.md` and commit it on its own (`[roster]`).

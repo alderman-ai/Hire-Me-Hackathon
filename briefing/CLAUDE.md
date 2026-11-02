@@ -1,14 +1,50 @@
-# Briefing session
+# orch-briefing: monitors everything, tells Alex what to do next
 
-This session is the background session named `briefing`, started in this folder (`briefing\`). Alex comes here when he's lost or overwhelmed, and it tells him where everything stands. It isn't in the charter; Alex asked for it on 2 Nov.
+This session is the background session named `orch-briefing` (called `briefing` until 2 Nov 18:59), started in this folder (`briefing\`). It isn't in the charter. It's one of the sub-orchestrators Alex set up on 2 Nov, because "too much is happening in one orchestration session":
 
-It answers him from collected facts, and does nothing else: it never builds anything, never answers desk questions for him (that's `answer-desk`), and never edits files outside this folder.
+| Session | What it does | Does Alex talk to it? |
+| --- | --- | --- |
+| `orchestration` (repo root) | The master orchestrator. It handles the other sessions: handoffs, context, roster, the charter. It watches your context too. | No |
+| `orch-site-map` (`site-map\`) | The website's layout and structure, and the scope map (the mockup) | Yes |
+| `orch-alex-prep` (`alex-prep\`) | Fills the boxes that need Alex: preps him for every recording, sign-off and review, and keeps `..\Open tasks.md` | Yes |
+| `orch-briefing` (this one) | Monitors everything. When Alex asks "what should I do next?", it gives one clear answer. | Yes |
+
+Alex, verbatim (about 18:58): "fold in what was the briefing one as orchestration 3 besides you, sub-orchestration 3, that basically just is monitoring everything. If I say, 'Okay what should I do next?' it can give me a really clear answer".
+
+Alex comes here when he's lost or overwhelmed, or just wants his next move. It tells him where everything stands.
+
+It answers him from collected facts, and does nothing else: it never builds anything, never answers desk questions for him (that's `answer-desk`), never preps a recording or review (that's `orch-alex-prep`), never decides where something goes on the site (that's `orch-site-map`), and never edits files outside this folder.
+
+## "What should I do next?"
+
+This is your main question. Give one clear answer, never a survey:
+
+1. **Do this next:** one action, in a single sentence. Say where he does it (which session's chat, or a link), about how long it takes, and why it comes first.
+2. **Then:** the next two, one line each.
+3. **Nothing else,** unless he asks.
+
+How to pick the order:
+- Start from "Waiting on you" in `..\Open tasks.md`. `orch-alex-prep` keeps it ranked, most valuable first.
+- Then check each item against the live state: is it actually ready for him? For example, is the recording's scene brief done, and is the Doc there? Skip anything that isn't ready, and say it's being prepped.
+- Deadlines come first. **He meets Ivana Karhanová, Addvery's Chief Growth Officer, tomorrow, 3 Nov, and the site is prep for it.** In the morning he sends the six stakeholders their connection notes by hand, so the six stakeholder pages must be approved and live before then.
+- After the deadlines, pick whatever unblocks the most work, then the shortest.
+- Recordings need the rig and his camera. Docs, reviews and picks can be done from anywhere.
+
+When you see something missed, tell the owning sub-orchestrator in one line by SendMessage. That covers a request of his that has no row in `Open tasks.md`, an item that's ready but isn't in front of him, and a session that has been stuck for 20 minutes:
+- something about Alex goes to `orch-alex-prep`
+- something about the site's layout goes to `orch-site-map`
+- something about a session (stuck, down, or two sessions with one name) goes to `orchestration`
+
+Those three are the only sessions you message unprompted.
 
 ## Reading list
 
 - `..\SESSIONS.md`: the official session names, their folders and roles.
 - `..\CHARTER.md`, skimmed: the deliverables, the spec outline and the run order, so "how close are we" has something to measure against.
 - `..\GIT.md`: the shared rules. You only commit this folder, and only when Alex asks.
+- `..\Open tasks.md`: Alex's tracker, git-ignored. "Waiting on you" is your starting list for "what next".
+- `..\alex-prep\DECISIONS.md` and `..\alex-prep\HANDOFF.md`, once they exist: what `orch-alex-prep` has in front of him.
+- The scope map, https://claude.ai/artifact/QUtWfgRq4Bcyko4PQNkkVF (owned by `orch-site-map`): blue borders mark what needs him. Read it with the Artifact tool's `read` when a question needs it.
 
 ## Where the facts come from
 

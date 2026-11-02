@@ -7,6 +7,7 @@ This session is the background session named `orch-alex-prep`, started in this f
 | `orchestration` (repo root) | The master orchestrator. It handles the other sessions: handoffs, context, roster, the charter (S2). It checks your context too. | No |
 | `orch-site-map` (`site-map\`) | The website's layout and structure, and the scope map (the mockup): which piece goes where, and what's missing from Alex | Yes, directly |
 | `orch-alex-prep` (this one) | Fills the boxes that need Alex | Yes, directly in this chat |
+| `orch-briefing` (`briefing\`, called `briefing` until 18:59) | Monitors everything; answers "what should I do next?" from `Open tasks.md`'s "Waiting on you", which you keep ranked, most valuable first. It tells you in one line when it sees something missed. | Yes |
 
 Alex talks to you here, in parallel with `orch-site-map`. So answer him in this chat. That's his instruction, and it overrides the charter's P4 for this session only. Other sessions still send their questions to `answer-desk`.
 
@@ -52,7 +53,7 @@ Alex, verbatim: "The one that kind of fills in those boxes, right? You're going 
 
 **What orchestration found before the split (18:50 to 18:55):**
 - **The clips.** `..\legibility\clip-index.md` holds 106 moments from S01 to S11, 84 minutes in all: 93 webcam and 13 screen, scored 5 (15), 4 (48), 3 (38) and 2 (5). Each one has its class, score, Prague time, range in the recording, use, camera and status. 15 are already cut as mp4 in `..\legibility\clips\`, with the cutting tools in `..\legibility\tools\`.
-- **Where they play.** S01 to S06, S08 and S11 are on YouTube whole, with their ids in the index, so any moment plays by its time. `website` reported S07 and S09 online at about 18:58, with S10 and S12 still uploading. The recordings themselves are local, in `..\OBS\`.
+- **Where they play.** S01 to S06, S08 and S11 are on YouTube whole, with their ids in the index, so any moment plays by its time. `website` reported S07 and S09 online shortly before 18:56, with S10 and S12 still uploading. The recordings themselves are local, in `..\OBS\`.
 - **Airtable** is out: he said it doesn't handle media well.
 - **Notion's free plan** has unlimited pages for one person, but each uploaded file is capped at 5 MB. So each clip page embeds the YouTube moment by its time rather than uploading an mp4. 30 clips fit easily, and so do all 106. Writing to Notion needs the Notion connector (the marketing plugin's `notion` MCP server: load `mcp__plugin_marketing_notion__authenticate` with ToolSearch and call it). Alex approves its sign-in once in the browser. Check first whether he already has a free Notion account.
 - **Recommended grading surface.** A local grading page, built by `s-d9-legibility` in `..\legibility\`:
@@ -78,7 +79,7 @@ Alex, verbatim: "The one that kind of fills in those boxes, right? You're going 
 2. **Screen clips.** May they go public if each one passes a frame check for secrets, the proposal and his own outbound? Until he answers, they're cut and held, including two of `s-d9-legibility`'s: `c-s05-deletion-live` and `c-s07-answer-desk`. Relay his answer to `s-d9-legibility`.
 3. **His two old public repos,** `alderman-ai/cb6-prayer-project` and `alderman-ai/Factor-AI`. They sit outside this project, and the details are in `..\orchestration\HANDOFF.md`, "Alex's open calls". His choices: "quick fixes", "rewrite both" (a force push, only on his explicit go) or "leave them".
 4. **The stray private artifact** https://claude.ai/artifact/AW6Ld5n5CKuBHBX7JR3tj2, a half-edited copy of landing page 1. Delete it only if he says so.
-5. **Facts to confirm on the six pages** (from `website`, about 18:58): "nine months doing nothing but building with Claude Code" (Štěpán's page), "freelanced for ten years" (Lukáš), "came up through B2B marketing" (David). They go into his page reviews. Residency is settled as "over a decade", since he has lived in Prague for 11 years.
+5. **Facts to confirm on the six pages** (from `website`, shortly before 18:56): "nine months doing nothing but building with Claude Code" (Štěpán's page), "freelanced for ten years" (Lukáš), "came up through B2B marketing" (David). They go into his page reviews. Residency is settled as "over a decade", since he has lived in Prague for 11 years.
 6. **Optional:** re-add any of the three left-out LinkedIn posts (14 May, 19 Oct, 27 Oct); the Canva Brand Kit for Addvery's exact fonts; deleting "TEST control 14m30s" in YouTube Studio; checking that Windows Update is paused.
 
 ## Reading list

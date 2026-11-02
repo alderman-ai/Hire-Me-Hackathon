@@ -10,6 +10,13 @@ The charter below is the parent context for the whole project. It is never execu
 
 The root session is the parent session, named `orchestration`. It coordinates and doesn't build. It may edit and commit any session's files directly, without asking that session, and tells the owner afterwards (Alex, 2 Nov).
 
+**Since 2 Nov 18:56 it's the master orchestrator, and Alex doesn't talk to it** (his words: "too much is happening in one orchestration session ... there's a lot of semantic directions going and it's hurting our results"). It handles the other sessions only: handoffs, context, the roster and the charter (S2). Three sub-orchestrators take the rest, and Alex talks to each one directly in its own chat:
+- `orch-site-map`, in `site-map\`: the site's layout and structure, and the scope map
+- `orch-alex-prep`, in `alex-prep\`: everything that needs Alex, and `Open tasks.md`
+- `orch-briefing`, in `briefing\` (renamed from `briefing` at 18:59): monitors everything and answers "what should I do next?"
+
+This session watches their context like every other session's.
+
 It is also the S2 project orchestrator: there is no separate S2 session (DI-4, 2 Nov). It stays at the root, runs `orchestration\SPEC.md` itself once S0 is done, and keeps its own file tree in `orchestration\`. Root files that only this session uses live in `orchestration\`: `_templates\` moved to `orchestration\_templates\` (S0-Q1, 13:43). `website\`, `OBS\` and every other working folder stay where they are.
 
 Reading list for this session as S2, after the charter: `answer-desk\qa\S2.md`, `orchestration\SPEC.md`, `Operator tasks\Archive\DI-4 S2 Orchestrator preflight.md` (Alex's S2 preflight answers, verbatim), `orchestration\HANDOFF.md` if it exists, then the newest records in `orchestration\changes\`. Two background sessions own the work:

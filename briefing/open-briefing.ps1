@@ -29,13 +29,13 @@ Set-Location $PSScriptRoot
 function Find-Desk {
     # Assign first: Windows PowerShell 5.1 passes a parsed JSON array down the pipe as one object.
     $all = (claude agents --json 2>$null | Out-String) | ConvertFrom-Json
-    $all | Where-Object { $_.name -eq 'briefing' -and $_.kind -eq 'background' } | Select-Object -First 1
+    $all | Where-Object { $_.name -eq 'orch-briefing' -and $_.kind -eq 'background' } | Select-Object -First 1
 }
 
 $desk = Find-Desk
 if (-not $desk) {
     Write-Host 'No briefing session is running. Starting one...'
-    claude --bg -n briefing 'Read your CLAUDE.md, check the collector is alive, then wait for Alex.' | Out-Host
+    claude --bg -n orch-briefing 'Read your CLAUDE.md, check the collector is alive, then wait for Alex.' | Out-Host
     Start-Sleep -Seconds 5
     $desk = Find-Desk
 }

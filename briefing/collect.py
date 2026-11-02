@@ -358,7 +358,7 @@ def flags_for(snap: dict) -> list[str]:
     flags = []
     names = {s["name"] for s in snap["sessions"]}
     for s in snap["sessions"]:
-        if s.get("name") == "briefing":
+        if s.get("name") in ("briefing", "orch-briefing"):
             continue  # briefing only relays other sessions' blockers; its own state isn't one
         if s.get("needs"):
             flags.append(f"BLOCKED {s['name']}: needs {s['needs']}")
@@ -485,7 +485,7 @@ def render(snap: dict, recent: list[str], next_at: datetime, fast_until: datetim
         if i["waiting_on_alex"]:
             needs.append(f"- intake {i['file']}: {i['state']}, {i['empty_answer_fences']} empty answer fences")
     for s in snap["sessions"]:
-        if s.get("needs") and s.get("name") != "briefing":
+        if s.get("needs") and s.get("name") not in ("briefing", "orch-briefing"):
             needs.append(f"- session {s['name']} blocked: {s['needs']}")
     L += needs or ["- Nothing waiting on Alex in the desk queue, intakes or session states."]
     L.append("\n## Health flags")
