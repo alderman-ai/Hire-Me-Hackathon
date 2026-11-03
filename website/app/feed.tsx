@@ -31,6 +31,7 @@ export type Block = {
   blocks?: Block[];
   session?: string;
   start?: number;
+  end?: number; // video: where the embed stops (seconds), when a recording's tail is cut
   slug?: string;
   src?: string; // image: a file in public/, shown full width, opens full size on click
   alt?: string;
@@ -58,13 +59,17 @@ const youtubeIds: Record<string, string | undefined> = videos;
 // Anchors the menu links to: "Watch the explainer" goes to /#s02.
 const ANCHORS: Record<string, string> = { s02: "s02" };
 
-function Video({ session, start }: { session: string; start: number }) {
+function Video({ session, start, end }: { session: string; start: number; end?: number }) {
   const id = youtubeIds[session];
+  const q = new URLSearchParams();
+  if (start) q.set("start", String(start));
+  if (end) q.set("end", String(end));
+  const qs = q.toString();
   return (
     <RotateIn className="video-frame">
       {id ? (
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${id}${start ? `?start=${start}` : ""}`}
+          src={`https://www.youtube-nocookie.com/embed/${id}${qs ? `?${qs}` : ""}`}
           title={`Session ${session}, webcam`}
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -140,7 +145,7 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
               </div>
             );
           case "video":
-            return <Video key={i} session={block.session ?? ""} start={block.start ?? 0} />;
+            return <Video key={i} session={block.session ?? ""} start={block.start ?? 0} end={block.end} />;
           case "image":
             return (
               <figure key={i} className="post-image">
