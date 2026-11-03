@@ -156,11 +156,6 @@
           "text": "Alex writes the project charter with Claude: the goal, the deliverables, and the rules every agent follows. The rules include the movie-actor rule (everything that needs him gets done first) and one \"answer desk\" window for all of the agents' questions. In between, he takes a break to talk to the humans watching."
         },
         {
-          "type": "doc-link",
-          "slug": "charter",
-          "text": "Read the project charter"
-        },
-        {
           "type": "quote",
           "text": "The progress of learning AI is not the files you have in your computer. It's the clarity of understanding of how all this stuff works … it's clarity. And then the opposite of that is the ability to clearly share that clarity with the assistant.",
           "source": "Alex, S03, 11:43"
@@ -428,11 +423,6 @@
         {
           "type": "p",
           "text": "Before the research can start, the project needs API keys, and everything on screen is recorded and published. So Alex stops the recording before he moves them, and gives the agent doing the move a rule: no keys move while the rig is recording."
-        },
-        {
-          "type": "quote",
-          "text": "I'm going to definitely turn off recording while I push, pull all the secret keys over, just in case … Do not move any secret keys if the rig is recording an OBS session. Require it to stop first and alert operator.",
-          "source": "Alex, S07, 14:12"
         }
       ]
     },

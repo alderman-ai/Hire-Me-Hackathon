@@ -626,7 +626,7 @@
     },
     {
       "key": "sessions",
-      "label": "Whole sessions",
+      "label": "Full recordings",
       "tiles": [
         {
           "id": "session-s01",

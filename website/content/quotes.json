@@ -116,17 +116,6 @@
     "len": "0:57"
    },
    {
-    "card": "S07-n",
-    "time": "14:11",
-    "session": "S07",
-    "text": "\"do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator\"",
-    "youtube": "NULD_WteCRM",
-    "start": 2126,
-    "end": 2180,
-    "still": "/videos/S07-n.webp",
-    "len": "0:53"
-   },
-   {
     "card": "S08-a",
     "time": "15:07",
     "session": "S08",
@@ -277,17 +266,6 @@
     "len": "0:50"
    },
    {
-    "card": "S03-f",
-    "time": "11:37",
-    "session": "S03",
-    "text": "\"if operator time is the bottleneck, what's even tighter bottleneck is operator focus.\"",
-    "youtube": "M38hI3M3Heo",
-    "start": 725,
-    "end": 804,
-    "still": "/videos/S03-f.webp",
-    "len": "1:18"
-   },
-   {
     "card": "S04-k",
     "time": "12:35",
     "session": "S04",
@@ -315,17 +293,6 @@
     "end": 510,
     "still": "/videos/S07-d.webp",
     "len": "0:35"
-   },
-   {
-    "card": "S07-n",
-    "time": "14:11",
-    "session": "S07",
-    "text": "\"do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator\"",
-    "youtube": "NULD_WteCRM",
-    "start": 2126,
-    "end": 2180,
-    "still": "/videos/S07-n.webp",
-    "len": "0:53"
    },
    {
     "card": "S10-h",

@@ -208,7 +208,7 @@ export function Machine36() {
     <Band tone="ink" id="machine" labelledBy="machine-title">
       <EyebrowRow>{t("home.machine.1")}</EyebrowRow>
       <h2 id="machine-title" className="bx-h2">
-        36 outbound workflows and the one variable behind them
+        How to send every lead a first message written for them
       </h2>
       <p className="bx-lead">
         Outbound at Addvery&rsquo;s size isn&rsquo;t one campaign. It&rsquo;s buyer types times languages times angles, and every lead has to land in exactly one of them.
