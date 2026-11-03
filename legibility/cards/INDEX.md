@@ -124,3 +124,54 @@ Main theme first; cards in brackets carry the theme as a secondary tag.
 At the last pass over `grades.jsonl`, 0 G or Y moments had no card yet, and 1 moments were still ungraded. A fresh session picks these up with the same fields and the same theme vocabulary. The tooling used for these cards (BRIEF.md for the card-writing agents, vocab.md, prep.py for the per-moment packets, render.py for validation and these files) is in `C:/Users/alder/AppData/Local/Temp/clipart/cards/` on this machine.
 
 - None.
+
+## Day 2 cards (3 Nov): proposed grades
+
+27 cards from the Day 2 rig sessions S17 to S20. The grades are proposed by an agent (`grade_by: agent`); Alex has not graded them and the blind booth was not run. Same theme vocabulary as above.
+
+| Id | Grade | Length | Gist | Themes | Standalone |
+| --- | --- | --- | --- | --- | --- |
+| [S17-a](S17-a.md) | M (proposed) | 28 s | He opens day two, a bit self-conscious on camera, with coffee. | personality, build-in-public | medium |
+| [S17-b](S17-b.md) | Y (proposed) | 70 s | He has always struggled with websites and was scared of the output at the end of day one. | reusable-skills, personalisation-at-scale, failure-and-recovery, ai-craft | medium |
+| [S17-c](S17-c.md) | Y (proposed) | 52 s | He explains why he didn't port his existing demos: they're hundreds of hours of work, so recreating them in the hackathon would be impressive, and he got pretty close. | build-in-public, hiring-pitch | medium |
+| [S17-d](S17-d.md) | M (proposed) | 62 s | With a heavy image and video generation page on screen, he says he didn't build it by hand: AI built it and he designed it conceptually. | ai-craft, build-in-public | low |
+| [S17-e](S17-e.md) | Y (proposed) | 26 s | He wants to build a version of the site that an agent can navigate, for people who are good with AI and don't want to spend 20 minutes going through a website. | ai-craft, personalisation-at-scale, build-in-public | medium |
+| [S17-f](S17-f.md) | G (proposed) | 58 s | He says this is what outreach looks like in 2026, based on knowledge arbitrage: it's still high cost now, in a 12-hour hackathon, but the skills repeat. | gtm-thesis, personalisation-at-scale, hiring-pitch | high |
+| [S18-c1](S18-c1.md) | G (proposed) | 33 s | Opening the walkthrough, he says outbound sequencing is a specific skill AI is bad at. | personalisation-at-scale, ai-craft, gtm-thesis | high |
+| [S18-c2](S18-c2.md) | Y (proposed) | 57 s | Instead of one drip sequence, even one per ICP, he says you can have all three languages, all ICPs and unlimited approaches. | personalisation-at-scale, icp-filtering, research-method | medium |
+| [S18-c3](S18-c3.md) | G (proposed) | 67 s | A new hire's job advert holds a 90-day roadmap, so collecting adverts from target accounts gives you the timeline of when to reach out. | personalisation-at-scale, research-method, ai-craft | high |
+| [S18-c4](S18-c4.md) | M (proposed) | 59 s | He introduces Jev, a classification model rather than an LLM, which outputs likelihoods or judgment calls instead of text. | icp-filtering, ai-craft, personalisation-at-scale | medium |
+| [S18-c5](S18-c5.md) | Y (proposed) | 37 s | With 120 drip sequences, you ask the classifier which one will do best, then compare with real results. | orchestration, gtm-thesis, reusable-skills | medium |
+| [S18-c6](S18-c6.md) | G (proposed) | 25 s | Closing the walkthrough, he stresses that building the system is a phase, not the deliverable. | gtm-thesis, hiring-pitch, orchestration | high |
+| [S18-x1](S18-x1.md) | Y (proposed) | 13 s | He imagines a prospect saying they can't believe he put all this effort in just to pitch them. | personalisation-at-scale, hiring-pitch, gtm-thesis | medium |
+| [S18-x2](S18-x2.md) | M (proposed) | 17 s | He says the biggest knowledge arbitrage in sales right now is that he can make it look like he took days out of his life to get your attention and show you are his number one priority. | personalisation-at-scale, hiring-pitch | low |
+| [S18-x3](S18-x3.md) | Y (proposed) | 82 s | Before going after a VIP, the metric is mutual connections. | personalisation-at-scale, research-method, ai-craft | medium |
+| [S19-a](S19-a.md) | Y (proposed) | 40 s | He says he can't run screen recording and video generation at the same time or everything crashes, so he'll have to subtract time from the counter by hand. | failure-and-recovery, build-in-public, personality | medium |
+| [S19-b](S19-b.md) | Y (proposed) | 30 s | He says he's finishing approving content that is about 90% done, mostly videos and articles. | human-bottleneck, orchestration, build-in-public | low |
+| [S19-c](S19-c.md) | G (proposed) | 44 s | He wants to give all his website feedback at once, on a screen-scroll video, but doesn't want an agent combing it frame by frame. | ai-craft, reusable-skills, human-bottleneck | high |
+| [S20-a](S20-a.md) | Y (proposed) | 69 s | Hackathon time pressure stops him working his normal way. | ai-craft, build-in-public, reusable-skills | high |
+| [S20-b](S20-b.md) | Y (proposed) | 24 s | He explains that agent view and background sessions are more than a way to avoid eight tabs: sessions now have relationships beyond parent and child and can message each other. | orchestration, ai-craft, human-bottleneck | medium |
+| [S20-c](S20-c.md) | G (proposed) | 32 s | Instead of worrying about context windows, context rot and handovers, he has one orchestrator session that hands over roughly every 30 minutes. | orchestration, reusable-skills, human-bottleneck | high |
+| [S20-d](S20-d.md) | G (proposed) | 41 s | Explaining the core problem content distribution solves: LinkedIn content for salespeople falls in a gap between sales and marketing. | gtm-thesis, personalisation-at-scale, personality | high |
+| [S20-e](S20-e.md) | Y (proposed) | 26 s | He admits bias from years of frustration with the topic, then says most salespeople shouldn't write LinkedIn content. | gtm-thesis, personalisation-at-scale, ai-managed-service | high |
+| [S20-f](S20-f.md) | G (proposed) | 44 s | He says people like him can build a tool where salespeople create their own posts and it only outputs what fits marketing guidelines. | gtm-thesis, ai-craft, ai-managed-service | medium |
+| [S20-g](S20-g.md) | M (proposed) | 39 s | On how often a post can be reused, he says people fear someone will notice the same post twice in six months. | personalisation-at-scale, voice-and-taste, personality | medium |
+| [S20-h](S20-h.md) | Y (proposed) | 76 s | Reviewing article one, he says one paragraph annoys him. | ai-craft, failure-and-recovery, voice-and-taste | low |
+| [S20-i](S20-i.md) | G (proposed) | 60 s | Tired and not editing three articles himself, he tells the agents to do a judgment pass on the finished articles. | human-bottleneck, reusable-skills, ai-craft | medium |
+
+### Day 2 by theme
+
+- **gtm-thesis**: S17-f, S18-c1, S18-c5, S18-c6, S18-x1, S20-d, S20-e, S20-f
+- **personalisation-at-scale**: S17-b, S17-e, S17-f, S18-c1, S18-c2, S18-c3, S18-c4, S18-x1, S18-x2, S18-x3, S20-d, S20-e, S20-g
+- **icp-filtering**: S18-c2, S18-c4
+- **ai-managed-service**: S20-e, S20-f
+- **orchestration**: S18-c5, S18-c6, S19-b, S20-b, S20-c
+- **human-bottleneck**: S19-b, S19-c, S20-b, S20-c, S20-i
+- **reusable-skills**: S17-b, S18-c5, S19-c, S20-a, S20-c, S20-i
+- **failure-and-recovery**: S17-b, S19-a, S20-h
+- **research-method**: S18-c2, S18-c3, S18-x3
+- **ai-craft**: S17-b, S17-d, S17-e, S18-c1, S18-c3, S18-c4, S18-x3, S19-c, S20-a, S20-b, S20-f, S20-h, S20-i
+- **hiring-pitch**: S17-c, S17-f, S18-c6, S18-x1, S18-x2
+- **build-in-public**: S17-a, S17-c, S17-d, S17-e, S19-a, S19-b, S20-a
+- **voice-and-taste**: S20-g, S20-h
+- **personality**: S17-a, S19-a, S20-d, S20-g

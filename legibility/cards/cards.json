@@ -6988,6 +6988,1962 @@
    ],
    "standalone": "medium",
    "standalone_why": "clear ask, but it's a brief to an agent; works next to the wall itself"
+  },
+  {
+   "id": "S17-a",
+   "grade": "M",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S17",
+   "prague": "10:07:38 to 10:08:06",
+   "range_in_recording": "0:19 to 0:47",
+   "length": "28 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "NeASfMN1Kcc",
+    "session_video": "NeASfMN1Kcc",
+    "session_video_from_s": 19.0,
+    "session_video_to_s": 47.0
+   },
+   "gist": "He opens day two, a bit self-conscious on camera, with coffee. The build ran overnight and he's happy with where it is, with about three hours left, which he calls the highest-impact time because AI is front-loaded.",
+   "points": [
+    "Joking that a camera makes people act weird",
+    "The build ran overnight and he's happy with it",
+    "About three hours left to build",
+    "Day two is the highest-impact time",
+    "AI is very front-loaded"
+   ],
+   "his_words": [
+    "You just put a camera in front of someone and they start acting weird.",
+    "So the build ran overnight. Pretty happy with where we're at so far.",
+    "We're kicking off about three hours left to build."
+   ],
+   "themes": [
+    "personality",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "S17-b",
+     "rel": "leads-into",
+     "note": "next minute: how he fixed the site structure"
+    },
+    {
+     "id": "day1-3",
+     "rel": "pairs-with",
+     "note": "another self-aware, human moment from day one"
+    }
+   ],
+   "could_serve_as": [
+    "opening beat of a day-two recap",
+    "personality clip on the About page",
+    "start of the day-two story"
+   ],
+   "watch_outs": [
+    "Starts mid-sentence at 19 s ('don't know why I'm being weird'); trim to 'You just put a camera' (about 22 s).",
+    "Ends on 'highest impact time' trailing into the next segment; end there.",
+    "Needs context that it is day two of a 12-hour hackathon."
+   ],
+   "standalone": "medium",
+   "standalone_why": "Self-explaining as a sign-on, but low on content.",
+   "score": 3,
+   "why": "Day 2 opener: awkward good-morning, the build ran overnight, three hours left.",
+   "jobs": [
+    "personality",
+    "hook"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "humour"
+  },
+  {
+   "id": "S17-b",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S17",
+   "prague": "10:08:14 to 10:09:24",
+   "range_in_recording": "0:55 to 2:05",
+   "length": "70 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "NeASfMN1Kcc",
+    "session_video": "NeASfMN1Kcc",
+    "session_video_from_s": 55.0,
+    "session_video_to_s": 125.0
+   },
+   "gist": "He has always struggled with websites and was scared of the output at the end of day one. Then he labelled every chunk of content (LinkedIn posts, the team's site, hours of transcripts, video clips) with metadata, and asked the AI for three versions of the site with a narrative for each stakeholder page. It did a really good job, and it's something new he'll reuse.",
+   "points": [
+    "Websites have always been his weak spot",
+    "He was scared of the site at the end of day one",
+    "Labelled all content chunks: posts, transcripts, video clips",
+    "Asked for three versions of the structure instead of fixing it by hand",
+    "Used the labels to build a story per stakeholder page"
+   ],
+   "his_words": [
+    "i've always had trouble putting together like websites",
+    "So I labeled all of the",
+    "it did a really good job"
+   ],
+   "themes": [
+    "reusable-skills",
+    "personalisation-at-scale",
+    "failure-and-recovery",
+    "ai-craft"
+   ],
+   "related": [
+    {
+     "id": "S17-c",
+     "rel": "leads-into",
+     "note": "next topic: which demos to port"
+    },
+    {
+     "id": "S12-m",
+     "rel": "supports",
+     "note": "the stakeholder pages the labels were built for"
+    },
+    {
+     "id": "S09-i",
+     "rel": "pairs-with",
+     "note": "same habit: classify content, then use the classes"
+    }
+   ],
+   "could_serve_as": [
+    "proof clip for the labelling method on a skills or method page",
+    "method story for the delivery or growth page",
+    "article on labelling content so AI can build a narrative"
+   ],
+   "watch_outs": [
+    "Starts at 55 s on 'I've always had trouble' mid-flow, check the cut.",
+    "Ends about 125 s on 'really good job'; the sentence continues ('and you know a lot of the stuff'), so trim there.",
+    "Semantic labelling is explained loosely; needs one line of context.",
+    "Mentions the audience's own content ('your team, your website'): fine, no names."
+   ],
+   "standalone": "medium",
+   "standalone_why": "Clear idea, but half-explained and spoken fast.",
+   "score": 4,
+   "why": "He labels all the content once, then has AI draft three site structures with a story per stakeholder page.",
+   "jobs": [
+    "method",
+    "proof"
+   ],
+   "serves": [
+    "growth"
+   ],
+   "class": "turning point"
+  },
+  {
+   "id": "S17-c",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S17",
+   "prague": "10:09:53 to 10:10:45",
+   "range_in_recording": "2:34 to 3:26",
+   "length": "52 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "NeASfMN1Kcc",
+    "session_video": "NeASfMN1Kcc",
+    "session_video_from_s": 154.0,
+    "session_video_to_s": 206.0
+   },
+   "gist": "He explains why he didn't port his existing demos: they're hundreds of hours of work, so recreating them in the hackathon would be impressive, and he got pretty close. He'll give it a real try, but he also wants to get hired, so he can't show something that doesn't work, and he'll write up whatever gets left out.",
+   "points": [
+    "He chose not to port his existing demos",
+    "His main demos are hundreds of hours of work",
+    "He got pretty close recreating them",
+    "Wants it built in the hackathon, but it has to work",
+    "Will write up what he ports instead"
+   ],
+   "his_words": [
+    "i chose not to just port over a lot of the demos",
+    "hundreds of hours of work",
+    "want to get hired"
+   ],
+   "themes": [
+    "build-in-public",
+    "hiring-pitch"
+   ],
+   "related": [
+    {
+     "id": "S17-a",
+     "rel": "follows-from",
+     "note": "same recording, the state of the build"
+    },
+    {
+     "id": "S10-e",
+     "rel": "pairs-with",
+     "note": "the demo plans this is weighing against"
+    }
+   ],
+   "could_serve_as": [
+    "honest trade-off beat for a day-two story",
+    "credibility clip for the About page"
+   ],
+   "watch_outs": [
+    "Begins with a false start ('a lot of the demos that i thought so i i chose'); begin at 'I chose not to just port'.",
+    "Ends about 206 s on 'doesn't work'; do not run into 'so i'll do a write-up'.",
+    "Earlier demos referred to without naming any client or product."
+   ],
+   "standalone": "medium",
+   "standalone_why": "The trade-off is clear but needs context on the earlier demos.",
+   "score": 3,
+   "why": "He chose to build from scratch rather than port his demos, but he wants to get hired so it has to work.",
+   "jobs": [
+    "credibility",
+    "thesis"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S17-d",
+   "grade": "M",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S17",
+   "prague": "10:11:45 to 10:12:47",
+   "range_in_recording": "4:26 to 5:28",
+   "length": "62 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "NeASfMN1Kcc",
+    "session_video": "NeASfMN1Kcc",
+    "session_video_from_s": 266.0,
+    "session_video_to_s": 328.0
+   },
+   "gist": "With a heavy image and video generation page on screen, he says he didn't build it by hand: AI built it and he designed it conceptually. He tells people to look at what image and video gen can do now, and says he rents a GPU for a few euros an hour. He'll show a bit of it, though it's not the most relevant to the service he's pitching.",
+   "points": [
+    "Image and video gen has changed hugely in recent months",
+    "Most people are on the LLM side; he's on both",
+    "He rents a GPU for a few euros an hour",
+    "Not the most relevant to the service he's pitching",
+    "Can lift a brand and its content"
+   ],
+   "his_words": [
+    "if you haven't checked in what's possible with image and video",
+    "it's only you know a few euros an hour",
+    "it's not the most relevant to the service i'm"
+   ],
+   "themes": [
+    "ai-craft",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "S17-a",
+     "rel": "follows-from",
+     "note": "same recording"
+    },
+    {
+     "id": "S17-e",
+     "rel": "leads-into",
+     "note": "the plan for the day follows"
+    }
+   ],
+   "could_serve_as": [
+    "supporting clip for the brand-motion demo (D11)",
+    "short on image and video gen"
+   ],
+   "watch_outs": [
+    "screen: needs Alex's OK (a heavy site is open, he says he can't scroll); the camera here is webcam only, so check what shows.",
+    "Starts with 'yeah this no I didn't build this' as he talks to himself; begin at 'conceptually'.",
+    "Garbled 'not he doesn't require but i choose to' around 279-285 s.",
+    "Ends about 328 s; 'cool' trails into the plan."
+   ],
+   "standalone": "low",
+   "standalone_why": "Depends on a screen the webcam doesn't show.",
+   "score": 3,
+   "why": "Image and video gen has moved fast; he rents a GPU for a few euros an hour.",
+   "jobs": [
+    "personality",
+    "credibility"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S17-e",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S17",
+   "prague": "10:13:26 to 10:13:51",
+   "range_in_recording": "6:07 to 6:32",
+   "length": "26 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "NeASfMN1Kcc",
+    "session_video": "NeASfMN1Kcc",
+    "session_video_from_s": 367.0,
+    "session_video_to_s": 392.5
+   },
+   "gist": "He wants to build a version of the site that an agent can navigate, for people who are good with AI and don't want to spend 20 minutes going through a website. The visitor's own agent summarises it and, from a short conversation, picks the top three pages that might interest them.",
+   "points": [
+    "Wants an agentically navigable version of the site",
+    "Aimed at people who are good with AI",
+    "Skips the 20 minutes of browsing",
+    "The visitor's agent summarises and picks the top three pages",
+    "Based on a short conversation with the agent"
+   ],
+   "his_words": [
+    "don't want",
+    "you can have your agent"
+   ],
+   "themes": [
+    "ai-craft",
+    "personalisation-at-scale",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "S17-f",
+     "rel": "leads-into",
+     "note": "'what outreach looks like in 2026' follows within seconds"
+    },
+    {
+     "id": "S17-d",
+     "rel": "follows-from",
+     "note": "same recording"
+    }
+   ],
+   "could_serve_as": [
+    "intro to the agent view page",
+    "supporting clip for D12",
+    "short on letting your AI read my site"
+   ],
+   "watch_outs": [
+    "Starts with a grammar slip ('a agentically'); trim.",
+    "End at 392.5 s is approximate, mid-sentence in the source; end after 'interesting to you'.",
+    "llms.txt is not live yet; this is a plan, not a demo."
+   ],
+   "standalone": "medium",
+   "standalone_why": "Clear idea, but a plan rather than a demo.",
+   "score": 3,
+   "why": "He wants an agent-navigable version of the site for people who'd rather have their AI skim it.",
+   "jobs": [
+    "thesis",
+    "method"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S17-f",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S17",
+   "prague": "10:13:57 to 10:14:55",
+   "range_in_recording": "6:38 to 7:36",
+   "length": "58 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "NeASfMN1Kcc",
+    "session_video": "NeASfMN1Kcc",
+    "session_video_from_s": 398.0,
+    "session_video_to_s": 456.0
+   },
+   "gist": "He says this is what outreach looks like in 2026, based on knowledge arbitrage: it's still high cost now, in a 12-hour hackathon, but the skills repeat. The goal is something costing one to three or four euros, about 98 percent automated, that anyone receiving it thinks makes them a top one or two account, because no one else would put in that effort, while he can send it to as many people as he wants for a couple of euros each.",
+   "points": [
+    "This is what outreach looks like in 2026",
+    "Core principle: knowledge arbitrage, still high cost now",
+    "Skills built here can be repeated",
+    "Goal: one to four euros, about 98 percent automated",
+    "The recipient thinks they're a top one or two account",
+    "Can be sent to as many people as he wants for a couple of euros each"
+   ],
+   "his_words": [
+    "So I think this is what outreach looks like in 2026.",
+    "of knowledge arbitrage",
+    "have this something that costs one to three or four euros",
+    "able to send it to as many people as you want for a couple euros a piece"
+   ],
+   "themes": [
+    "gtm-thesis",
+    "personalisation-at-scale",
+    "hiring-pitch"
+   ],
+   "related": [
+    {
+     "id": "S17-e",
+     "rel": "follows-from",
+     "note": "right after the agent-view idea"
+    },
+    {
+     "id": "S12-m",
+     "rel": "pairs-with",
+     "note": "another statement of the thesis"
+    },
+    {
+     "id": "S02-f",
+     "rel": "supports",
+     "note": "the GTM argument this puts a price on"
+    }
+   ],
+   "could_serve_as": [
+    "thesis clip on the home page or the CEO and growth pages",
+    "anchor clip for an article on cost per personalised touch",
+    "closer for the day-two recap"
+   ],
+   "watch_outs": [
+    "Rough middle: 'but the part that's per per anyway the goal is is to' (423-432 s).",
+    "Ends about 456 s on 'a couple euros a piece'; cut before 'so just from a cost perspective'.",
+    "The cost recap (457-486 s) and 'if you need a better way to do that let me know' (492-500 s) are left out on purpose: the latter reads as an ask (RULES 11).",
+    "'Knowledge arbitrage' is only named, not explained."
+   ],
+   "standalone": "high",
+   "standalone_why": "A complete thesis with numbers in under a minute.",
+   "score": 5,
+   "why": "The goal: a 1 to 4 euro, 98% automated outreach asset that makes each recipient feel like a top account.",
+   "jobs": [
+    "thesis",
+    "hook",
+    "proof"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "turning point"
+  },
+  {
+   "id": "S18-c1",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:15:47 to 11:16:19",
+   "range_in_recording": "0:35 to 1:08",
+   "length": "33 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "ppGVU8sNvDo",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 35.62,
+    "session_video_to_s": 68.42,
+    "clip": "s18-c1"
+   },
+   "gist": "Opening the walkthrough, he says outbound sequencing is a specific skill AI is bad at. When everyone is blasting you, differentiation is the only thing that gets a message read, and AI is literally trained on convergence, the opposite. So he still writes many of his sequences by hand.",
+   "points": [
+    "Outbound sequencing is a specific skill set",
+    "When everyone blasts you, only differentiation gets a message read",
+    "AI can't do differentiation because it is trained on convergence",
+    "He still hand-writes a lot of his sequences",
+    "Writing them is not the hard or impressive part"
+   ],
+   "his_words": [
+    "because ai is terrible at this",
+    "the only thing that makes you read them is differentiation",
+    "it's literally trained on convergence right the exact opposite"
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "ai-craft",
+    "gtm-thesis"
+   ],
+   "related": [
+    {
+     "id": "S18-c2",
+     "rel": "leads-into",
+     "note": "the same session moves from hand-written to scaled sequences"
+    },
+    {
+     "id": "S18-c3",
+     "rel": "pairs-with",
+     "note": "differentiation made concrete with a job advert"
+    }
+   ],
+   "could_serve_as": [
+    "hook for a GTM or ICP page",
+    "pull quote on why AI outbound reads the same",
+    "opener for the walkthrough video"
+   ],
+   "watch_outs": [
+    "Original clip start 36.82 cut into 'it's a very specific skill set'; moved to 35.62 so the sentence starts cleanly, and end moved from 68.72 to 68.42 (original cut mid 'a lot of them').",
+    "Original flag: Screen: needs Alex's OK (frames not checked; he blurs parts of the screen in this recording, so check for GetSales UI outside the demo folder).",
+    "Starts mid-conversation ('and then yeah'); a stranger needs one line of context that this is a pitch to a prospect.",
+    "Mild knock at AI tools in general, not at a named product."
+   ],
+   "standalone": "high",
+   "standalone_why": "A complete argument in about 30 seconds with no setup needed.",
+   "score": 4,
+   "why": "Sharpest outreach line in the session: AI is trained on convergence, but only differentiation gets a message read.",
+   "jobs": [
+    "hook",
+    "thesis"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S18-c2",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:17:31 to 11:18:28",
+   "range_in_recording": "2:20 to 3:17",
+   "length": "57 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "zeoPMc_xNVY",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 140.03,
+    "session_video_to_s": 197.08,
+    "clip": "s18-c2"
+   },
+   "gist": "Instead of one drip sequence, even one per ICP, he says you can have all three languages, all ICPs and unlimited approaches. What matters is who gets put into which sequence, and the first message is always custom, built from public information scraped with Apify tools, since agents can't browse LinkedIn.",
+   "points": [
+    "Not one sequence per ICP: all languages, all ICPs, any number of approaches",
+    "The count doesn't matter; who goes into which sequence does",
+    "The first message is always custom",
+    "Custom info comes from public scraping with Apify tools",
+    "LinkedIn won't let agents browse it, scraping makes this possible"
+   ],
+   "his_words": [
+    "it matters who gets put",
+    "the first message is always custom",
+    "the first message is always completely"
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "icp-filtering",
+    "research-method"
+   ],
+   "related": [
+    {
+     "id": "S18-c1",
+     "rel": "follows-from",
+     "note": "why he wrote sequences by hand"
+    },
+    {
+     "id": "S18-c4",
+     "rel": "leads-into",
+     "note": "the classifier decides who goes into which sequence"
+    },
+    {
+     "id": "S10-c",
+     "rel": "pairs-with",
+     "note": "Day 1 thesis clip on AI in the pipeline"
+    }
+   ],
+   "could_serve_as": [
+    "proof clip for the 36 workflows",
+    "explainer under the GetSales demo entry",
+    "clip for a growth or delivery page"
+   ],
+   "watch_outs": [
+    "Original clip start 139.73 was on the tail of 'whatever'; moved to 140.03 ('so instead of having'); end moved from 197.38 to 197.08 so it ends on 'custom'.",
+    "This stretch follows his blur and fumble (98-139 s); the clip itself is clean speech. Screen: needs Alex's OK (frames not checked; he blurs parts of the screen in this recording, so check for GetSales UI outside the demo folder).",
+    "'you can see on the website' refers to the hire-me site, so it needs context.",
+    "Names Apify as a tool (a tool only, nothing about the Apify proposal)."
+   ],
+   "standalone": "medium",
+   "standalone_why": "Needs a line saying what the 36 workflows are.",
+   "score": 4,
+   "why": "The scale idea (ICP x language x tactic) and the always-custom first message in one stretch.",
+   "jobs": [
+    "proof",
+    "method"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "demo"
+  },
+  {
+   "id": "S18-c3",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:22:00 to 11:23:06",
+   "range_in_recording": "6:48 to 7:55",
+   "length": "67 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "V7VgtPe8BVk",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 408.87,
+    "session_video_to_s": 475.53,
+    "clip": "s18-c3"
+   },
+   "gist": "A new hire's job advert holds a 90-day roadmap, so collecting adverts from target accounts gives you the timeline of when to reach out. He speaks an example message timed to the six month mark ('redesign this system'), mentions their conference and new job, and ends with the coffee ask.",
+   "points": [
+    "Job adverts spell out what is expected in the first quarter, month by month",
+    "Collecting them costs nothing and can run from the CRM's key accounts",
+    "Skip junior roles; take the relevant ones",
+    "The advert gives you the best time to reach out",
+    "Spoken example of a first message built from it, ending on a coffee ask"
+   ],
+   "his_words": [
+    "you have the roadmap of what that person's doing",
+    "how powerful that information is",
+    "happy to have a quick coffee"
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "research-method",
+    "ai-craft"
+   ],
+   "related": [
+    {
+     "id": "S18-c2",
+     "rel": "follows-from",
+     "note": "the always-custom first message made concrete"
+    },
+    {
+     "id": "S18-x1",
+     "rel": "pairs-with",
+     "note": "goal: every CRM contact feels this"
+    },
+    {
+     "id": "S10-e",
+     "rel": "supports",
+     "note": "Day 1 personalised outreach material"
+    }
+   ],
+   "could_serve_as": [
+    "centrepiece clip of the GetSales walkthrough",
+    "proof for the CEO or growth page",
+    "method clip for the personalised-outreach story"
+   ],
+   "watch_outs": [
+    "Original start 408.57 sat on 'and' before 'if you have those cvs'; moved to 408.87. Original end 475.7 cut into 'the anyway'; moved to 475.53 after 'right'.",
+    "The first line ('if you have those cvs when that person like') is garbled; a caption fix may help.",
+    "Spoken example is generic ('a conference we met at blah blah'), illustrative, not a real message.",
+    "Earlier in the session he refers to Sales Navigator (outside the clip). Screen: needs Alex's OK (frames not checked; he blurs parts of the screen in this recording, so check for GetSales UI outside the demo folder).",
+    "The spoken example first message ends with a coffee ask. It is an illustration of outreach, but a clip on a page should end before it (rule 11: no page asks anything of the six)."
+   ],
+   "standalone": "high",
+   "standalone_why": "Reads as a self-contained how-to for a GTM leader.",
+   "score": 5,
+   "why": "Best concrete picture of how a first message is personalised and timed from scraped data.",
+   "jobs": [
+    "proof",
+    "method"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "demo"
+  },
+  {
+   "id": "S18-c4",
+   "grade": "M",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:25:47 to 11:26:46",
+   "range_in_recording": "10:36 to 11:35",
+   "length": "59 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "rDUsnHrAwv0",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 636.09,
+    "session_video_to_s": 695.36,
+    "clip": "s18-c4"
+   },
+   "gist": "He introduces Jev, a classification model rather than an LLM, which outputs likelihoods or judgment calls instead of text. It can be trained over time but works out of the box and plugs into Claude. It can look at a profile and say whether this is a good person to reach, which ICP, and so which of a hundred sequences.",
+   "points": [
+    "Calls it one of the coolest AI tools nobody has heard of, because it isn't an LLM",
+    "A classification model: outputs likelihoods and judgment calls, not text",
+    "Trainable over time, fine out of the box, plugs into Claude",
+    "Judges whether a profile is a good target",
+    "Picks the ICP and so the sequence out of a hundred"
+   ],
+   "his_words": [
+    "no one's heard of it because it's not an llm",
+    "it's basically a",
+    "which icp so again you could have a hundred different sequences"
+   ],
+   "themes": [
+    "icp-filtering",
+    "ai-craft",
+    "personalisation-at-scale"
+   ],
+   "related": [
+    {
+     "id": "S18-c2",
+     "rel": "follows-from",
+     "note": "who gets put into which sequence"
+    },
+    {
+     "id": "S18-c5",
+     "rel": "leads-into",
+     "note": "the loop that refines the classifier"
+    },
+    {
+     "id": "S12-m",
+     "rel": "supports",
+     "note": "Day 1 ICP filtering material"
+    }
+   ],
+   "could_serve_as": [
+    "technical heart of the GetSales demo",
+    "bridge clip into the ICP-classification capture",
+    "pull quote on classification vs LLMs"
+   ],
+   "watch_outs": [
+    "Original start 635.75 was on 'good okay'; moved to 636.09 ('this tool'). Original end 695.46 cut into 'and it can be more'; moved to 695.36.",
+    "Screen: needs Alex's OK. He had just said he didn't want to blur another part of the video (625-634 s) and picked a different window; the Jev window may show his own account or data, so may need blur or audio-only.",
+    "Names a tool (Jev), part of the project; nothing about a customer.",
+    "A few filler repeats ('it doesn't output it doesn't output')."
+   ],
+   "standalone": "medium",
+   "standalone_why": "Needs context that the 36 sequences exist; audience may not know ICPs.",
+   "score": 4,
+   "why": "Answers how people get sorted into ICP, language and sequence: a classification model, not an LLM.",
+   "jobs": [
+    "method",
+    "proof"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "demo"
+  },
+  {
+   "id": "S18-c5",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:27:30 to 11:28:07",
+   "range_in_recording": "12:19 to 12:56",
+   "length": "37 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "IEVscs4eg5c",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 739.14,
+    "session_video_to_s": 776.54,
+    "clip": "s18-c5"
+   },
+   "gist": "With 120 drip sequences, you ask the classifier which one will do best, then compare with real results. If it's off, tweak the classifier or kill the worst sequence. He says to think in systems that refine themselves through use, and that nothing in AI is a one-time setup and press play.",
+   "points": [
+    "120 drip sequences, ask the classifier which would do best",
+    "Compare the prediction with real results",
+    "Tweak the classifier or kill the consistently worse sequence",
+    "Think in systems that refine themselves through use",
+    "Nothing in AI is a one-time setup and press play"
+   ],
+   "his_words": [
+    "you have to think in systems here that refine themselves through use",
+    "nothing in ai is just one time setup and press"
+   ],
+   "themes": [
+    "orchestration",
+    "gtm-thesis",
+    "reusable-skills"
+   ],
+   "related": [
+    {
+     "id": "S18-c4",
+     "rel": "follows-from",
+     "note": "the classifier being refined"
+    },
+    {
+     "id": "S18-c6",
+     "rel": "pairs-with",
+     "note": "building is a phase, refining is the work"
+    }
+   ],
+   "could_serve_as": [
+    "method clip for the GTM engineer role",
+    "supporting clip with c6 as a pair",
+    "explainer for a delivery or bi page"
+   ],
+   "watch_outs": [
+    "Original start 739.2 sat on 'so'; moved to 739.14 so 'so you can have 120' is whole; end moved from 776.84 to 776.54 (after 'in all this').",
+    "Starts on 'so', so it needs the c4 context or a title.",
+    "Screen: needs Alex's OK (same Jev window as c4)."
+   ],
+   "standalone": "medium",
+   "standalone_why": "Fine alone but lands better after the classifier is introduced.",
+   "score": 4,
+   "why": "Shows the operating loop: predict, compare with results, refine or kill; nothing in AI is one-time setup.",
+   "jobs": [
+    "method",
+    "thesis"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S18-c6",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:30:14 to 11:30:39",
+   "range_in_recording": "15:03 to 15:28",
+   "length": "25 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "kV7KD1-pRCE",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 903.11,
+    "session_video_to_s": 928.37,
+    "clip": "s18-c6"
+   },
+   "gist": "Closing the walkthrough, he stresses that building the system is a phase, not the deliverable. Refining, maintaining, looking at the data and constantly asking whether the approach works is the main work. It's a systems management role, not a type-things-into-Claude-Code role, though you must be good at Claude Code to make it work.",
+   "points": [
+    "Building is a phase, not the deliverable",
+    "Refining is the main work: maintaining, looking at data, evaluating",
+    "Constantly ask whether the approach works and what to switch",
+    "A systems management role",
+    "Not a type-things-into-Claude-Code role, though you must be good at it"
+   ],
+   "his_words": [
+    "building is a phase refining is the main work",
+    "this is a systems management kind of role"
+   ],
+   "themes": [
+    "gtm-thesis",
+    "hiring-pitch",
+    "orchestration"
+   ],
+   "related": [
+    {
+     "id": "S18-c5",
+     "rel": "pairs-with",
+     "note": "the self-refining loop"
+    },
+    {
+     "id": "S10-c",
+     "rel": "pairs-with",
+     "note": "Day 1 GTM thesis clip"
+    }
+   ],
+   "could_serve_as": [
+    "closer for the GetSales entry",
+    "About or hiring page thesis line",
+    "pull quote"
+   ],
+   "watch_outs": [
+    "Original start 903.0 sat on 'is' before 'i can't stress'; moved to 903.11. End moved from 928.67 to 928.37 (after 'make this work').",
+    "Starts on 'I can't stress this enough'; trim to 'building is a phase' if a tighter cut is wanted.",
+    "Screen: needs Alex's OK (check for the Jev window)."
+   ],
+   "standalone": "high",
+   "standalone_why": "A short complete thesis.",
+   "score": 4,
+   "why": "Short, quotable statement of his GTM engineering thesis: building is a phase, refining is the work.",
+   "jobs": [
+    "thesis",
+    "closer"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S18-x1",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:29:46 to 11:30:00",
+   "range_in_recording": "14:35 to 14:48",
+   "length": "13 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "_vgNB5ubKjA",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 875.35,
+    "session_video_to_s": 888.63
+   },
+   "gist": "He imagines a prospect saying they can't believe he put all this effort in just to pitch them. Then: imagine if you could make everyone in your CRM feel that way. That is his goal and his job as a GTM engineer.",
+   "points": [
+    "Prospect reaction: you put all this effort in to pitch me?",
+    "Imagine everyone in your CRM feeling that way",
+    "That is his goal",
+    "That is his job as a GTM engineer"
+   ],
+   "his_words": [
+    "imagine if you can make everyone your",
+    "that's my job as a gtm engineer"
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "hiring-pitch",
+    "gtm-thesis"
+   ],
+   "related": [
+    {
+     "id": "S18-c3",
+     "rel": "pairs-with",
+     "note": "the example of that effort"
+    },
+    {
+     "id": "S18-c6",
+     "rel": "leads-into",
+     "note": "then the training and refining work"
+    }
+   ],
+   "could_serve_as": [
+    "hiring-pitch closer",
+    "hero quote for a stakeholder page",
+    "bridge from the demo to the role"
+   ],
+   "watch_outs": [
+    "Starts on 'oh my gosh' in his imagined prospect voice, so a viewer may need the lead-in 'what's the highest impact' (from 872.6) to follow it.",
+    "Slightly loose phrasing ('everyone your crm'). Screen: needs Alex's OK (frames not checked; he blurs parts of the screen in this recording, so check for GetSales UI outside the demo folder)."
+   ],
+   "standalone": "medium",
+   "standalone_why": "Needs the idea that this is a prospect's reaction.",
+   "score": 4,
+   "why": "His stated goal in one line: make everyone in a CRM feel the way a key account does.",
+   "jobs": [
+    "closer",
+    "thesis"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S18-x2",
+   "grade": "M",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:28:59 to 11:29:17",
+   "range_in_recording": "13:48 to 14:05",
+   "length": "17 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "_vgNB5ubKjA",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 828.43,
+    "session_video_to_s": 845.6
+   },
+   "gist": "He says the biggest knowledge arbitrage in sales right now is that he can make it look like he took days out of his life to get your attention and show you are his number one priority. Most people don't know that is automatable.",
+   "points": [
+    "Biggest knowledge arbitrage in sales right now",
+    "Can look like days of effort",
+    "Says 'you're my number one priority', not shotgun blasting"
+   ],
+   "his_words": [
+    "knowledge arbitrage in sales right now",
+    "i'm not shotgun blasting here"
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "hiring-pitch"
+   ],
+   "related": [
+    {
+     "id": "S18-x1",
+     "rel": "leads-into",
+     "note": "then the CRM-wide goal"
+    }
+   ],
+   "could_serve_as": [
+    "supporting clip for the proof-of-effort angle",
+    "quote for the hiring pitch"
+   ],
+   "watch_outs": [
+    "Starts on 'the biggest' after a trailing 'but like it's'; trim to 'knowledge arbitrage'.",
+    "Partly about this very site as a prospect pitch, so self-referential and context-dependent.",
+    "Loose wording ('you're my i'm not shotgun'). Screen: needs Alex's OK (frames not checked; he blurs parts of the screen in this recording, so check for GetSales UI outside the demo folder)."
+   ],
+   "standalone": "low",
+   "standalone_why": "Leans on the surrounding talk about the videos and the pitch.",
+   "score": 3,
+   "why": "Knowledge arbitrage: he can make it look like he spent days on the prospect, when it is automatable.",
+   "jobs": [
+    "credibility",
+    "personality"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S18-x3",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S18",
+   "prague": "11:23:53 to 11:25:14",
+   "range_in_recording": "8:42 to 10:03",
+   "length": "82 s",
+   "camera": "screen",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "_vgNB5ubKjA",
+    "session_video": "_vgNB5ubKjA",
+    "session_video_from_s": 522.02,
+    "session_video_to_s": 603.52
+   },
+   "gist": "Before going after a VIP, the metric is mutual connections. He suggests a connection-only campaign aimed at the 200 least senior people connected to the target, since juniors accept more, so after a few weeks you reach the VIP with around 50 mutual connections. It used to be a lot of effort and is now automated.",
+   "points": [
+    "Mutual connections is the number one metric before targeting a VIP",
+    "Run a connection-only campaign to the 200 least senior people around them",
+    "Juniors accept more than other people",
+    "About a month on one account, less if warmed up",
+    "Then the VIP sees 50 mutual connections; formerly effort, now automated"
+   ],
+   "his_words": [
+    "the number one metric is how many mutual connections you've got",
+    "This is gold, giving away gold for free."
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "research-method",
+    "ai-craft"
+   ],
+   "related": [
+    {
+     "id": "S18-c3",
+     "rel": "pairs-with",
+     "note": "another signal-based tactic"
+    }
+   ],
+   "could_serve_as": [
+    "tactic clip for a growth or CEO page",
+    "standalone LinkedIn-tactic short"
+   ],
+   "watch_outs": [
+    "81 s with filler words and a side story about his own network (IT, B2B, nearshoring); trim the middle if a shorter cut is wanted.",
+    "A LinkedIn growth tactic; tone ('giving away gold for free') is informal.",
+    "Not tied to the 36-sequence demo, so it needs a title."
+   ],
+   "standalone": "medium",
+   "standalone_why": "A self-contained tactic but off the main thread.",
+   "score": 3,
+   "why": "A practical trick: connect with 200 juniors around a VIP so you have 50 mutual connections when you reach them.",
+   "jobs": [
+    "method",
+    "personality"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S19-a",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S19",
+   "prague": "11:58:00 to 11:58:40",
+   "range_in_recording": "0:04 to 0:44",
+   "length": "40 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "mBa187jP1rc",
+    "session_video": "mBa187jP1rc",
+    "session_video_from_s": 3.95,
+    "session_video_to_s": 44.23
+   },
+   "gist": "He says he can't run screen recording and video generation at the same time or everything crashes, so he'll have to subtract time from the counter by hand. First video processing is nearly done. Ends on admitting he needs a better computer.",
+   "points": [
+    "Screen recording plus video generation at once crashes everything",
+    "He will manually subtract time from the hackathon counter",
+    "Processing of the first video is almost done",
+    "More can be captured again afterwards",
+    "Admits he needs a better computer"
+   ],
+   "his_words": [
+    "I cannot do the screen recording and the video generation that I'm doing at the same time or else everything crashes",
+    "we're almost done with the video processing",
+    "I need a better computer"
+   ],
+   "themes": [
+    "failure-and-recovery",
+    "build-in-public",
+    "personality"
+   ],
+   "related": [
+    {
+     "id": "S19-b",
+     "rel": "leads-into",
+     "note": "Update continues into what he does next"
+    },
+    {
+     "id": "S10-c",
+     "rel": "pairs-with",
+     "note": "Short webcam talk-to-camera beat"
+    }
+   ],
+   "could_serve_as": [
+    "Honest build-in-public beat in the day-two story",
+    "Humour/candour break between demos"
+   ],
+   "watch_outs": [
+    "Opens on 'Hey, another quick update' so it needs a trim at the start",
+    "Low moment but short and candid; counter-time detail needs context",
+    "No people named"
+   ],
+   "standalone": "medium",
+   "standalone_why": "Clear on its own but only interesting if you know the live counter and the rig.",
+   "score": 3,
+   "why": "Candid low: recording and video generation crash together, so he needs a better computer.",
+   "jobs": [
+    "personality",
+    "credibility"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "low point"
+  },
+  {
+   "id": "S19-b",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S19",
+   "prague": "11:58:42 to 11:59:13",
+   "range_in_recording": "0:46 to 1:16",
+   "length": "30 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "mBa187jP1rc",
+    "session_video": "mBa187jP1rc",
+    "session_video_from_s": 45.53,
+    "session_video_to_s": 76.01
+   },
+   "gist": "He says he's finishing approving content that is about 90% done, mostly videos and articles. Once everything is on the website in some version, he'll run the same semantically labelled cohesion check as before.",
+   "points": [
+    "Approving content that is 90% done, last-mile edits",
+    "Mostly video and articles right now",
+    "Everything goes onto the site in whatever version exists",
+    "Then a semantic labelling and cohesion pass again"
+   ],
+   "his_words": [
+    "I'm finishing up approving a bunch of content that was like 90% done",
+    "I'm going to run the same like semantically labeled, make sure everything is cohesive thing"
+   ],
+   "themes": [
+    "human-bottleneck",
+    "orchestration",
+    "build-in-public"
+   ],
+   "related": [
+    {
+     "id": "S19-a",
+     "rel": "follows-from",
+     "note": "Next beat of the same update"
+    },
+    {
+     "id": "S19-c",
+     "rel": "leads-into",
+     "note": "Banana-cucumber is the last website step"
+    }
+   ],
+   "could_serve_as": [
+    "Progress-update beat in the day-two story",
+    "Context bridge before the banana-cucumber clip"
+   ],
+   "watch_outs": [
+    "Refers to earlier work (the labelling pass) without explaining it; needs context",
+    "Starts on 'Okay, so here's what's happening next'",
+    "No people named"
+   ],
+   "standalone": "low",
+   "standalone_why": "A status update that leans on earlier context.",
+   "score": 3,
+   "why": "What happens next: last-mile approvals, then a semantic cohesion pass over the site.",
+   "jobs": [
+    "method"
+   ],
+   "serves": [
+    "default"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S19-c",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S19",
+   "prague": "11:59:33 to 12:00:17",
+   "range_in_recording": "1:37 to 2:21",
+   "length": "44 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": true,
+    "youtube_id": "mBa187jP1rc",
+    "session_video": "mBa187jP1rc",
+    "session_video_from_s": 96.71,
+    "session_video_to_s": 140.85
+   },
+   "gist": "He wants to give all his website feedback at once, on a screen-scroll video, but doesn't want an agent combing it frame by frame. His fix is a voice marker: say banana, talk about what to change, say cucumber. The tool finds each pair, knows the screen didn't move between them, and grabs a screenshot from any point in between.",
+   "points": [
+    "Wants to give all website feedback at once, on video",
+    "Video is the most convenient surface; agents are good with transcripts",
+    "Say 'banana', talk, say 'cucumber' when finished",
+    "Tool finds all banana/cucumber pairs",
+    "Screen is static between them, so any frame works for a screenshot",
+    "Also makes good video content"
+   ],
+   "his_words": [
+    "basically i want to give feedback all at once of the website all the things i want changed",
+    "i will uh scroll uh through a screen and say banana and",
+    "it knows that i'm not moving the screen between a banana and cucumber",
+    "it's just the most convenient surface area"
+   ],
+   "themes": [
+    "ai-craft",
+    "reusable-skills",
+    "human-bottleneck"
+   ],
+   "related": [
+    {
+     "id": "S19-b",
+     "rel": "follows-from",
+     "note": "Banana-cucumber is the last website step he names"
+    },
+    {
+     "id": "S10-c",
+     "rel": "pairs-with",
+     "note": "Both are short method beats on webcam"
+    }
+   ],
+   "could_serve_as": [
+    "Demo clip of the banana-cucumber feedback method",
+    "Method card in the skills list",
+    "Hook for a later screen-recorded demo"
+   ],
+   "watch_outs": [
+    "Starts mid-thought after a messy lead-in; trim at 'basically i want to give feedback'",
+    "Informal lowercase transcript, a couple of 'um' fillers",
+    "Needs a visual later to land fully",
+    "No people named"
+   ],
+   "standalone": "high",
+   "standalone_why": "Explains the whole idea in under a minute, no prior context needed.",
+   "score": 4,
+   "why": "A small, original feedback method: say banana, talk, say cucumber, and a tool finds the pairs.",
+   "jobs": [
+    "method",
+    "hook"
+   ],
+   "serves": [
+    "default",
+    "delivery"
+   ],
+   "class": "demo"
+  },
+  {
+   "id": "S20-a",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "12:53:41 to 12:54:51",
+   "range_in_recording": "0:15 to 1:24",
+   "length": "69 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 14.78,
+    "session_video_to_s": 84.19
+   },
+   "gist": "Hackathon time pressure stops him working his normal way. After heavy AI use you build a harness and pipelines with high change friction, and he only revisits them when something slows down or breaks. He argues you need a shake-up every few months because the tooling moves so fast.",
+   "points": [
+    "Time pressure means you can't do things your usual way",
+    "Heavy AI users build a harness and pipelines that are costly to change",
+    "He only revisits them when something slows down or breaks",
+    "Shake up the setup every couple of months",
+    "Claude Code changed hugely in the last few months"
+   ],
+   "his_words": [
+    "hackathons are so cool man because once you put yourself in time pressure",
+    "you start building your harness",
+    "you have to have a shake up every six months every couple months"
+   ],
+   "themes": [
+    "ai-craft",
+    "build-in-public",
+    "reusable-skills"
+   ],
+   "related": [
+    {
+     "id": "S10-c",
+     "rel": "pairs-with",
+     "note": "another short reflection on AI at work"
+    },
+    {
+     "id": "S20-b",
+     "rel": "leads-into",
+     "note": "the specific change he means: sessions that message each other"
+    }
+   ],
+   "could_serve_as": [
+    "opener for a build-in-public piece on what a hackathon teaches",
+    "short on why to shake up your AI setup",
+    "About-page beat on how he works"
+   ],
+   "watch_outs": [
+    "Opens with a stumble ('you oops you really can't'); trim so it starts at 'really hackathons'",
+    "Calm, a little tired delivery",
+    "Mentions Claude Code (a product) only as context, no knock"
+   ],
+   "standalone": "high",
+   "standalone_why": "a complete reflective point that needs no context",
+   "score": 4,
+   "why": "Why a hackathon forces you out of your default AI workflow",
+   "jobs": [
+    "thesis",
+    "personality"
+   ],
+   "serves": [
+    "default",
+    "ceo",
+    "cofounder-1"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S20-b",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "12:56:08 to 12:56:32",
+   "range_in_recording": "2:41 to 3:06",
+   "length": "24 s",
+   "camera": "composite",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 161.2,
+    "session_video_to_s": 185.66
+   },
+   "gist": "He explains that agent view and background sessions are more than a way to avoid eight tabs: sessions now have relationships beyond parent and child and can message each other. He uses that to run one orchestrator that knows what everyone is doing, so he talks to it and it passes things along.",
+   "points": [
+    "Background sessions are more than a tidier alternative to eight PowerShell tabs",
+    "Sessions have relationships other than parent-child and can message each other",
+    "One orchestrator knows what every other session is doing",
+    "He talks only to it and does not have to remember who does what"
+   ],
+   "his_words": [
+    "they have different relationships right it's not just parent-child relationships",
+    "now they can message each other it's a big change",
+    "basically i have this orchestrator who knows what everyone's doing"
+   ],
+   "themes": [
+    "orchestration",
+    "ai-craft",
+    "human-bottleneck"
+   ],
+   "related": [
+    {
+     "id": "S20-c",
+     "rel": "leads-into",
+     "note": "next: how the orchestrator keeps context clean"
+    },
+    {
+     "id": "S12-m",
+     "rel": "supports",
+     "note": "orchestration setup described elsewhere"
+    },
+    {
+     "id": "S20-a",
+     "rel": "follows-from",
+     "note": "the change that made it possible"
+    }
+   ],
+   "could_serve_as": [
+    "method clip for an orchestration explainer",
+    "proof that the site was built by a coordinated set of sessions",
+    "supporting clip for a delivery-minded reader"
+   ],
+   "watch_outs": [
+    "The segment before it opens with 'dude no one cares about this okay': start at 'they have different relationships'",
+    "Screen shows his Claude session list and chats: screen: needs Alex's OK",
+    "Fast delivery with a few filler loops",
+    "He cuts the recording shortly after (a 'cut this out in post' aside): end before it"
+   ],
+   "standalone": "medium",
+   "standalone_why": "needs a sense of what 'sessions' are",
+   "score": 4,
+   "why": "Background sessions that message each other, one orchestrator he just talks to",
+   "jobs": [
+    "method",
+    "proof"
+   ],
+   "serves": [
+    "default",
+    "delivery",
+    "cofounder-2"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S20-c",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "12:58:06 to 12:58:37",
+   "range_in_recording": "4:39 to 5:11",
+   "length": "32 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 279.22,
+    "session_video_to_s": 311.0
+   },
+   "gist": "Instead of worrying about context windows, context rot and handovers, he has one orchestrator session that hands over roughly every 30 minutes. It keeps a clean, non-drifting context, doesn't burn tokens, is his one place to interact, and coordinates everything else. He calls it a very different way of working than three months ago.",
+   "points": [
+    "No more worrying about context windows, context rot and handovers",
+    "One orchestrator hands over at set conditions, about every 30 minutes",
+    "Its context stays clean and doesn't drift",
+    "It is the only place he interacts and it coordinates everything else",
+    "Different from how things worked three months ago"
+   ],
+   "his_words": [
+    "I have that one orchestrator session who just basically does a handover at certain conditions",
+    "that's not drifting.",
+    "Like that is a whole different system of working"
+   ],
+   "themes": [
+    "orchestration",
+    "reusable-skills",
+    "human-bottleneck"
+   ],
+   "related": [
+    {
+     "id": "S20-b",
+     "rel": "follows-from",
+     "note": "the setup it describes"
+    },
+    {
+     "id": "S10-e",
+     "rel": "pairs-with",
+     "note": "orchestration seen from another session"
+    },
+    {
+     "id": "S12-m",
+     "rel": "supports",
+     "note": "same system described elsewhere"
+    }
+   ],
+   "could_serve_as": [
+    "method clip for an orchestration or context-hygiene article",
+    "proof clip for the hackathon build system",
+    "closing beat in a how-it-was-built page"
+   ],
+   "watch_outs": [
+    "Starts right after a usage and Sonnet-vs-Opus remark; begin at 'Instead of worrying about'",
+    "Ends cleanly on 'three months ago'; the lines after it ('copium') are looser",
+    "Self-contained"
+   ],
+   "standalone": "high",
+   "standalone_why": "a self-contained explanation with the payoff stated",
+   "score": 5,
+   "why": "One orchestrator that does a clean handover every 30 minutes",
+   "jobs": [
+    "method",
+    "proof",
+    "thesis"
+   ],
+   "serves": [
+    "default",
+    "delivery",
+    "cofounder-1"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S20-d",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "13:01:46 to 13:02:27",
+   "range_in_recording": "8:19 to 9:00",
+   "length": "41 s",
+   "camera": "composite",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 499.34,
+    "session_video_to_s": 540.41
+   },
+   "gist": "Explaining the core problem content distribution solves: LinkedIn content for salespeople falls in a gap between sales and marketing. From past cross-departmental consulting he calls it the zone of plausible deniability. Each side thinks it is the other's job, no one budgets for it, and with no owner it fails.",
+   "points": [
+    "LinkedIn content for sellers sits between sales and marketing",
+    "He calls it the zone of plausible deniability",
+    "Sales thinks it is marketing's job, marketing thinks it is sales'",
+    "No one has it in their budget",
+    "With no ownership it becomes a disaster"
+   ],
+   "his_words": [
+    "I call this the zone of plausible deniability",
+    "Marketing thinks it's sales job and therefore doesn't do it.",
+    "No one has it in their budget."
+   ],
+   "themes": [
+    "gtm-thesis",
+    "personalisation-at-scale",
+    "personality"
+   ],
+   "related": [
+    {
+     "id": "S20-e",
+     "rel": "leads-into",
+     "note": "what he thinks should happen instead"
+    },
+    {
+     "id": "S20-f",
+     "rel": "leads-into",
+     "note": "the pipeline-governance fix"
+    }
+   ],
+   "could_serve_as": [
+    "opening quote for the content distribution article",
+    "standalone short with a memorable term",
+    "pull quote for a marketing-leader reader"
+   ],
+   "watch_outs": [
+    "Content-distribution talk: concept only, no client, company or competitor named (rule 12)",
+    "Dictated to a session as article input, not spoken to a viewer",
+    "Screen is the Claude app with docs: screen: needs Alex's OK",
+    "Starts on 'Yeah, the core problem this solves'; trim the 'Yeah'"
+   ],
+   "standalone": "high",
+   "standalone_why": "a named, complete idea that works without context",
+   "score": 5,
+   "why": "The zone of plausible deniability: LinkedIn content that sales and marketing both decline",
+   "jobs": [
+    "hook",
+    "thesis",
+    "credibility"
+   ],
+   "serves": [
+    "default",
+    "growth",
+    "ceo"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S20-e",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "13:02:56 to 13:03:22",
+   "range_in_recording": "9:30 to 9:56",
+   "length": "26 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 569.85,
+    "session_video_to_s": 596.13
+   },
+   "gist": "He admits bias from years of frustration with the topic, then says most salespeople shouldn't write LinkedIn content. Instead, give them a tool that builds posts with marketing governance built into the pipeline, so nothing marketing wouldn't approve gets created. That is possible and worth building, though it takes time.",
+   "points": [
+    "He is biased by years of frustration on this topic",
+    "Most salespeople shouldn't be writing LinkedIn content",
+    "A tool can build posts with marketing governance in the pipeline",
+    "Nothing marketing wouldn't approve gets created",
+    "Worth building, but it takes time"
+   ],
+   "his_words": [
+    "salespeople should not be writing LinkedIn content, most people.",
+    "So nothing that marketing wouldn't approve would be created.",
+    "And that's like something that's worth building."
+   ],
+   "themes": [
+    "gtm-thesis",
+    "personalisation-at-scale",
+    "ai-managed-service"
+   ],
+   "related": [
+    {
+     "id": "S20-d",
+     "rel": "follows-from",
+     "note": "the problem it answers"
+    },
+    {
+     "id": "S20-f",
+     "rel": "leads-into",
+     "note": "how the guardrails work"
+    },
+    {
+     "id": "S10-c",
+     "rel": "pairs-with",
+     "note": "another short GTM stance"
+    }
+   ],
+   "could_serve_as": [
+    "pull quote and clip for the content distribution article",
+    "short stand-alone take for a growth reader",
+    "thesis beat on a marketing-leader page"
+   ],
+   "watch_outs": [
+    "Content-distribution talk: concept only, no client or company named (rule 12)",
+    "Starts at 'So like, I'm probably biased'; the preceding line is a side remark about services he used to sell, so don't start earlier",
+    "Strong opinion, stated flatly",
+    "Dictated as an article brief"
+   ],
+   "standalone": "high",
+   "standalone_why": "a stated opinion with its reason in under 30 s",
+   "score": 4,
+   "why": "Salespeople should not be writing LinkedIn content",
+   "jobs": [
+    "thesis",
+    "hook"
+   ],
+   "serves": [
+    "default",
+    "growth",
+    "cofounder-2"
+   ],
+   "class": "turning point"
+  },
+  {
+   "id": "S20-f",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "13:04:57 to 13:05:41",
+   "range_in_recording": "11:31 to 12:15",
+   "length": "44 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 690.87,
+    "session_video_to_s": 734.95
+   },
+   "gist": "He says people like him can build a tool where salespeople create their own posts and it only outputs what fits marketing guidelines. Governance moves from quality assurance at the end into the pipeline. That is where the deterministic coding side matters: real guardrails that people can't just ask nicely to get around.",
+   "points": [
+    "Build a tool so salespeople create their own posts",
+    "It only outputs what fits marketing guidelines",
+    "Governance moves from QA at the end into the pipeline",
+    "This leans on deterministic code, not just prompts",
+    "Real guardrails, not asking nicely"
+   ],
+   "his_words": [
+    "lean more into like the deterministic",
+    "you put in real guard rails that people can't just like ask nicely and get",
+    "what they want"
+   ],
+   "themes": [
+    "gtm-thesis",
+    "ai-craft",
+    "ai-managed-service"
+   ],
+   "related": [
+    {
+     "id": "S20-e",
+     "rel": "follows-from",
+     "note": "the stance it supports"
+    },
+    {
+     "id": "S20-g",
+     "rel": "leads-into",
+     "note": "rotation rules as an example of the variables"
+    },
+    {
+     "id": "S20-d",
+     "rel": "follows-from",
+     "note": "the problem"
+    }
+   ],
+   "could_serve_as": [
+    "method clip in the content distribution article",
+    "pull quote on guardrails vs prompts",
+    "proof of how he thinks about reusable skills"
+   ],
+   "watch_outs": [
+    "Content-distribution talk: concept only, no company named (rule 12)",
+    "First line begins mid-sentence ('basically create a tool'); trim or begin a little earlier at 'So now this is a problem'",
+    "Brief pause around 12 s in; a clean cut is possible",
+    "Some filler"
+   ],
+   "standalone": "medium",
+   "standalone_why": "needs the earlier problem statement for full effect",
+   "score": 5,
+   "why": "Move marketing governance from the end into the pipeline",
+   "jobs": [
+    "method",
+    "thesis"
+   ],
+   "serves": [
+    "default",
+    "growth",
+    "delivery"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S20-g",
+   "grade": "M",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "13:05:46 to 13:06:25",
+   "range_in_recording": "12:20 to 12:58",
+   "length": "39 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 739.56,
+    "session_video_to_s": 778.34
+   },
+   "gist": "On how often a post can be reused, he says people fear someone will notice the same post twice in six months. His answer: no one read it the first time, and can you think of a post by a stranger from six months ago? He calls those superstitions and emotional responses to efficiency.",
+   "points": [
+    "People fear a repeated post will be noticed within six months",
+    "No one read it the first time",
+    "Can you think of any post by a stranger from six months ago?",
+    "Superstitions and emotional responses to efficiency"
+   ],
+   "his_words": [
+    "no one read it the first time",
+    "like people have these like superstitions and emotional responses",
+    "of course not"
+   ],
+   "themes": [
+    "personalisation-at-scale",
+    "voice-and-taste",
+    "personality"
+   ],
+   "related": [
+    {
+     "id": "S20-f",
+     "rel": "follows-from",
+     "note": "rotation as a rule set"
+    },
+    {
+     "id": "S20-h",
+     "rel": "pairs-with",
+     "note": "another frustration in the same session"
+    }
+   ],
+   "could_serve_as": [
+    "humour beat in the content distribution article",
+    "pull quote on repeat posting",
+    "personality clip"
+   ],
+   "watch_outs": [
+    "Content-distribution talk: concept only, no client named (rule 12)",
+    "Starts mid-thought ('wants to pay like and it depends on'); trim to 'people think oh my gosh'",
+    "Rambly, needs the reuse-of-posts setup",
+    "Trails off with 'that's again another post'"
+   ],
+   "standalone": "medium",
+   "standalone_why": "funny but needs the reuse-of-posts setup",
+   "score": 3,
+   "why": "Nobody remembers a post from six months ago",
+   "jobs": [
+    "personality",
+    "method"
+   ],
+   "serves": [
+    "default",
+    "growth"
+   ],
+   "class": "humour"
+  },
+  {
+   "id": "S20-h",
+   "grade": "Y",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "13:15:45 to 13:17:02",
+   "range_in_recording": "22:19 to 23:36",
+   "length": "76 s",
+   "camera": "composite",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 1339.0,
+    "session_video_to_s": 1415.5
+   },
+   "gist": "Reviewing article one, he says one paragraph annoys him. A throwaway line about why this is a managed service, not a product (settings, models, legislation, even Anthropic changing how skills work) gets spotlighted by the agent, which then writes a whole paragraph about it. It drives him nuts.",
+   "points": [
+    "One paragraph in article one bothers him",
+    "His throwaway line listed things that can change: settings, models, legislation, skill changes",
+    "The agent got bossy and couldn't find the line",
+    "Spotlighting a throwaway line makes it a whole paragraph",
+    "It drives him crazy"
+   ],
+   "his_words": [
+    "but like you guys do this and it drives me nuts",
+    "a throwaway line",
+    "it drives me crazy when you do that"
+   ],
+   "themes": [
+    "ai-craft",
+    "failure-and-recovery",
+    "voice-and-taste"
+   ],
+   "related": [
+    {
+     "id": "S20-i",
+     "rel": "leads-into",
+     "note": "what he asks for next: a judgment pass"
+    },
+    {
+     "id": "S20-g",
+     "rel": "pairs-with",
+     "note": "another frustration"
+    },
+    {
+     "id": "S02-f",
+     "rel": "pairs-with",
+     "note": "AI-assisted writing pains"
+    }
+   ],
+   "could_serve_as": [
+    "failure-and-recovery beat in a piece on AI editing",
+    "clip on what AI gets wrong when it edits",
+    "personality clip on taste"
+   ],
+   "watch_outs": [
+    "Screen shows the article in the Claude docs app: screen: needs Alex's OK",
+    "Remarks that Anthropic changing how skills work 'messed up a lot of people's workflows': mild knock at a product",
+    "'one of you's got real bossy with me' refers to agents; needs context",
+    "Tired, frustrated tone",
+    "Starts mid-thought at 'one specific paragraph'"
+   ],
+   "standalone": "low",
+   "standalone_why": "needs the article context",
+   "score": 4,
+   "why": "Agents turn a throwaway line into a whole paragraph",
+   "jobs": [
+    "personality",
+    "credibility"
+   ],
+   "serves": [
+    "default",
+    "delivery"
+   ],
+   "class": "insight"
+  },
+  {
+   "id": "S20-i",
+   "grade": "G",
+   "grade_by": "agent",
+   "alex_note": "",
+   "session": "S20",
+   "prague": "13:17:05 to 13:18:05",
+   "range_in_recording": "23:39 to 24:38",
+   "length": "60 s",
+   "camera": "webcam",
+   "video": {
+    "uploaded": false,
+    "youtube_id": null,
+    "session_video": null,
+    "session_video_from_s": 1418.88,
+    "session_video_to_s": 1478.44
+   },
+   "gist": "Tired and not editing three articles himself, he tells the agents to do a judgment pass on the finished articles. He wants an objective definition of a good vs a bad article, then to use Jev or another classifier to ask whether each is good, and fix it if not. He hands all three off.",
+   "points": [
+    "He won't edit three articles himself",
+    "Three articles: two pre-planned and one on content distribution",
+    "Define objectively what makes a good article",
+    "Use Jev or another classifier to judge, and fix failures",
+    "The agents have everything they need, so finish without him"
+   ],
+   "his_words": [
+    "find a way to get these three done without me",
+    "jev or any other classification to say is this a good article",
+    "you have everything you need"
+   ],
+   "themes": [
+    "human-bottleneck",
+    "reusable-skills",
+    "ai-craft"
+   ],
+   "related": [
+    {
+     "id": "S20-h",
+     "rel": "follows-from",
+     "note": "the complaint that led to it"
+    },
+    {
+     "id": "S10-c",
+     "rel": "leads-into",
+     "note": "article two is one of the three"
+    }
+   ],
+   "could_serve_as": [
+    "method clip for the article-judge skill",
+    "closer on how he hands work off when tired",
+    "personality clip about delegating"
+   ],
+   "watch_outs": [
+    "Tired and slightly curt; ends 'cool do that thanks bye'",
+    "Names Jev, a classifier tool: fine",
+    "Content-distribution article mentioned only as 'the one about the content distribution'; no client",
+    "Starts mid-sentence at the second 'i'm not'; trim to 'i'm not editing three articles'",
+    "Includes the earlier 'create the visuals first' instruction; trim if needed"
+   ],
+   "standalone": "medium",
+   "standalone_why": "needs to know 'Jev' and the three articles",
+   "score": 5,
+   "why": "Find a way to say what a good article is, then judge with Jev",
+   "jobs": [
+    "method",
+    "closer"
+   ],
+   "serves": [
+    "default",
+    "delivery",
+    "cofounder-1"
+   ],
+   "class": "turning point"
   }
- ]
+ ],
+ "day2_generated": "2026-11-03",
+ "day2_note": "Cards S17-*, S18-*, S19-*, S20-* have proposed grades set by an agent (grade_by: agent); Alex has not graded them."
 }
