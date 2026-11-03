@@ -36,8 +36,8 @@ The order follows the live entry, so the video and the page tell the same story.
 
 Type the commands in the rig's chat (the Claude Code session in `OBS\`). There's nothing to do in OBS itself: only the left monitor is recorded, with the webcam on top.
 
-1. Nothing is recording now (S16 was the last; it's filed). Set up the four tabs first, so the setup stays off the recording.
-2. `/start`. The rig names the session, probably S17. Record the take, then `/stop`.
+1. Nothing is recording now. S17, your Day 2 check-in (10:07 to 10:16), is filed. Set up the four tabs first, so the setup stays off the recording.
+2. `/start`. The rig names the session, probably S18. Record the take, then `/stop`.
 3. `/process`. It transcribes and files in the background, and you can carry on with other work.
 
 ## After you're done
