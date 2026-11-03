@@ -8,8 +8,12 @@ Written 3 Nov at 08:15 Prague by the `website` session (job 91fdba88, Claude ses
 2. **This morning Alex redlines the live site** on a Claude Design canvas (`orchestration\local\ALEX-WANTS.md` W59, W60; plan in `orchestration\local\overnight\MORNING.md`). Build requests come from `orchestration`, `orch-site-map` and `orch-alex-prep`. Ask the asker whether a change goes to production at once (last night's go-live was given in advance, W58) or to a preview first (RULES.md rule 1). After each request, send the asker one line with the URL and what changed.
    - **Standing rule from `orchestration`, 3 Nov ~08:25:** every build request goes to a preview first (rule 1). Promote a batch to production only on `PROMOTE <request numbers>` from orchestration, after Alex has looked. Each promote gets the leak scan (see "Checks") and all four flags. A request that wants otherwise says so explicitly.
 3. **Rules that bite:** no words without `alex-voice` (rule 2: you place words, you don't write them); **no asks on any page** (rule 11: no one-ask block, no `ask_line`, no questions block); no time picker; nothing about Canva; a No grade comes off.
-4. **Clock:** loop pid 28388 (since 20:02 on 2 Nov), idle, 3.06 h left; last rig line "S16 stopped" (21:13). Rig was resumed for the morning, so expect clock lines (CLAUDE.md, "Clock messages"). Check `.clock\sync.pid` and the tail of `.clock\sync.log` first.
-5. **Budget:** Alex's hard stop is 83 to 85% of the month's usage (W53); 71% was used at 22:43. Be frugal: few subagents, cheap models, no fan-out.
+4. **Clock:** loop pid 9044 (restarted 10:25 on 3 Nov for `finished_at` and `built_seconds`), idle, 2.92 h left; last rig line "S17 stopped" (10:16). Expect clock lines (CLAUDE.md, "Clock messages"). Check `.clock\sync.pid` and the tail of `.clock\sync.log` first.
+5. **Budget (Alex, about 12:00 on 3 Nov: 19% of Claude usage left to finish):**
+   - Use Sonnet subagents for mechanical work: copy swaps, placements, redirects, figure re-renders from given text, leak scans, layout checks, uploads, and builds.md and HANDOFF upkeep. Keep Opus only for real design builds.
+   - Check at both widths only when layout changed. A words-only change gets one quick look.
+   - Keep messages to orchestration to one or two lines.
+   - Fold small fixes, such as the `/day-2` h1 to h3 skip, into the next real change.
 6. Hand off again at about 350k tokens: finish the request you're on, update this file, tell orchestration.
 
 ## What's live
