@@ -64,7 +64,7 @@
   "steps": [
     "**I decided what to find out:** how Addvery wins work and what it's betting on next. A first message only works when it's about you.",
     "**Public sources were read:** AI agents read the website, register and press. On Apify, a cloud scraping service, 6 scrapers read YouTube interviews, the company podcast and public LinkedIn pages, and a classification model sorted the posts and profiles. LinkedIn shows up here only as counts, like the ones on the boards, with no one named.",
-    "**It feeds the next demo:** the [outreach demo](/d3), built in GetSales, uses it to pick whom to write to and to write each personal first line."
+    "**It feeds the next piece:** the [outreach work](/d3), built in GetSales, uses it to pick whom to write to and to write each personal first line."
   ],
   "cta": "**See the research itself:** [the company research page](/d2).",
   "fold": {

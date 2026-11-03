@@ -56,11 +56,11 @@
       "id": "folders",
       "at": "2026-11-02T13:45",
       "kind": "Milestone",
-      "title": "The demos get their folders",
+      "title": "Every project gets its folder",
       "blocks": [
         {
           "type": "p",
-          "text": "The bootstrap agent creates a working folder for every demo. The agents that build them launch next."
+          "text": "The bootstrap agent creates a working folder for every project. The agents that build them launch next."
         }
       ]
     },
@@ -135,7 +135,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Alex lists the demos for the day. One of them is an agent that watches these recordings and keeps this website up to date, which is how much of this feed gets here. He also explains why he spends the first hours planning instead of building."
+          "text": "Alex lists the projects for the day. One of them is an agent that watches these recordings and keeps this website up to date, which is how much of this feed gets here. He also explains why he spends the first hours planning instead of building."
         },
         {
           "type": "quote",
@@ -440,14 +440,14 @@
       "id": "demo-plans",
       "at": "2026-11-02T14:39",
       "kind": "Milestone",
-      "title": "Every demo has a plan",
+      "title": "Every project has a plan",
       "roles": [
         "all"
       ],
       "blocks": [
         {
           "type": "p",
-          "text": "Between 14:22 and 14:34, a temporary agent drafts a plan (a spec) for each demo: scraping, outbound, and the blog pipeline with its three articles. Each plan opens with the questions it needs Alex to answer, so he answers them in one go and the agent carries on without him."
+          "text": "Between 14:22 and 14:34, a temporary agent drafts a plan (a spec) for each project: scraping, outbound, and the blog pipeline with its three articles. Each plan opens with the questions it needs Alex to answer, so he answers them in one go and the agent carries on without him."
         },
         {
           "type": "p",
@@ -455,7 +455,7 @@
         },
         {
           "type": "p",
-          "text": "At 14:39 the scraping demo's agent starts work. Alex runs the scraping himself on the Apify API, and the agent turns his results into a section of this site that a visitor can follow without explanation."
+          "text": "At 14:39 the scraping agent starts work. Alex runs the scraping himself on the Apify API, and the agent turns his results into a section of this site that a visitor can follow without explanation."
         },
         {
           "type": "p",
@@ -500,7 +500,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Alex approved the project-wide research at 14:38. Seven agents researched in parallel, and by 14:59 the seven reports and a synthesis that pulls them together were done and accepted. That took 21 minutes. Every agent building a demo now reads them before it plans, and four have already reworked their plans around them: scraping, the blog pipeline, the website and this feed."
+          "text": "Alex approved the project-wide research at 14:38. Seven agents researched in parallel, and by 14:59 the seven reports and a synthesis that pulls them together were done and accepted. That took 21 minutes. Every agent building a project now reads them before it plans, and four have already reworked their plans around them: scraping, the blog pipeline, the website and this feed."
         },
         {
           "type": "p",
@@ -511,7 +511,7 @@
           "points": [
             {
               "lead": "The outcome first, not the tool.",
-              "text": "Each demo should open with what it produces, then a short demo, then a few steps on how it works. A tool name as the headline reads as a toy."
+              "text": "Each project should open with what it produces, then a short example, then a few steps on how it works. A tool name as the headline reads as a toy."
             },
             {
               "lead": "A raw build log is noise, and a curated, dated list of what changed is not.",
@@ -661,7 +661,7 @@
       "id": "research-lands",
       "at": "2026-11-02T15:40",
       "kind": "Update",
-      "title": "Alex's research lands, and the demos move",
+      "title": "Alex's research lands, and the projects move",
       "roles": [
         "CEO",
         "COO",
@@ -692,11 +692,11 @@
               "text": "A brand pass from the company's own public website began at 15:33, on Alex's word, and the new look was finished at 16:29."
             },
             {
-              "lead": "The outbound demo proposes its grid.",
+              "lead": "The outbound work proposes its grid.",
               "text": "It has 33 workflows: four ideal customer profiles, the languages each needs, and three approaches. Its routing was tested offline on a made-up sample of 12 leads, and by 16:28 all 33 workflows were built."
             },
             {
-              "lead": "The scraping demo has its input.",
+              "lead": "The scraping work has its input.",
               "text": "Its section on the site can now be built from Alex's results."
             }
           ]
@@ -742,7 +742,7 @@
               }
             },
             {
-              "lead": "The outbound demo gets smaller and clearer.",
+              "lead": "The outbound work gets smaller and clearer.",
               "text": "It now has 36 workflows: four customer profiles, three languages (English, Czech and German) and three tactics. Alex will show them in a recorded walkthrough, and none of them will ever run.",
               "quote": {
                 "text": "We're not tooling it up to run. We're not training the classifier agent. We're explaining what all the pieces are.",
@@ -917,7 +917,7 @@
       "id": "site-shape",
       "at": "2026-11-02T17:23",
       "kind": "Update",
-      "title": "Alex settles the site's shape, and adds a demo",
+      "title": "Alex settles the site's shape, and adds a project",
       "roles": [
         "CEO",
         "CMO",
@@ -934,11 +934,7 @@
           "points": [
             {
               "lead": "The site gets a clear shape.",
-              "text": "The live feed stays the home page. Below it comes the background research, then the demos as a list of entries: a video with a written summary, or text alone.",
-              "quote": {
-                "text": "A lot of the demos are baked into the website already.",
-                "source": "Alex, written answer, 17:23"
-              }
+              "text": "The live feed stays the home page. Below it comes the background research, then the projects as a list of entries: a video with a written summary, or text alone."
             },
             {
               "lead": "The scraping page goes live.",
@@ -949,11 +945,11 @@
               }
             },
             {
-              "lead": "The outbound demo becomes two entries.",
+              "lead": "The outbound work becomes two entries.",
               "text": "A three-minute video covers classification tools, the 36 workflows and the one personalized variable. A short screen capture shows leads sorted into customer profiles. Each reads like a blog post, so you can watch it or read it."
             },
             {
-              "lead": "A new demo: brand motion.",
+              "lead": "A new project: brand motion.",
               "text": "One of the company's LinkedIn graphics gets a five-second animation, such as a light shimmer or the graphic building itself, and a one-minute brand video follows. Alex makes both with video generation. An agent brainstorms the ideas for him to pick from.",
               "quote": {
                 "text": "It's just to show that it's possible to add some energy to the brand through video generation.",
@@ -968,7 +964,7 @@
       "id": "workflows-built",
       "at": "2026-11-02T17:34",
       "kind": "Milestone",
-      "title": "The outbound demo's 36 workflows are built",
+      "title": "The 36 outbound workflows are built",
       "roles": [
         "RevOps",
         "CSO",
@@ -978,7 +974,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Between 17:27 and 17:34, the agent built all 36 workflows of the outbound demo in GetSales, in a folder of their own: four customer profiles, in English, Czech and German, with three tactics each. Every workflow opens with a first message written for the lead before import. None is switched on, and none has a lead in it. Next, Alex records the walkthrough."
+          "text": "Between 17:27 and 17:34, the agent built all 36 outbound workflows in GetSales, in a folder of their own: four customer profiles, in English, Czech and German, with three tactics each. Every workflow opens with a first message written for the lead before import. None is switched on, and none has a lead in it. Next, Alex records the walkthrough."
         }
       ]
     },
@@ -1016,7 +1012,7 @@
       "kind": "Update",
       "title": "The day so far",
       "summary": true,
-      "summary_line": "From the first recording at 10:25 to the demos under way: the plan, one big mistake, the research, a reset, and what's built.",
+      "summary_line": "From the first recording at 10:25 to the projects under way: the plan, one big mistake, the research, a reset, and what's built.",
       "roles": [
         "CEO",
         "COO",
@@ -1036,7 +1032,7 @@
           "points": [
             {
               "lead": "The plan comes first (10:25 to 12:40).",
-              "text": "The morning goes into the charter every agent works from: the goal, the rules and the list of demos. Anything that needs Alex is scheduled first, like an expensive actor's scenes.",
+              "text": "The morning goes into the charter every agent works from: the goal, the rules and the list of projects. Anything that needs Alex is scheduled first, like an expensive actor's scenes.",
               "quote": {
                 "text": "Mistakes cascade and they just snowball.",
                 "source": "Alex, S04, 12:28"
@@ -1051,8 +1047,8 @@
               "text": "The project defines done as 22 items anyone could check. Seven research agents work in parallel and report back in 21 minutes."
             },
             {
-              "lead": "The demos move (15:00 to 16:45).",
-              "text": "Alex's own research on the company lands at about 15:34, and four demos pick it up within minutes. By 16:42 every demo has an agent on it."
+              "lead": "The projects move (15:00 to 16:45).",
+              "text": "Alex's own research on the company lands at about 15:34, and four projects pick it up within minutes. By 16:42 every project has an agent on it."
             },
             {
               "lead": "A reset (16:44 to 17:13).",
@@ -1073,15 +1069,15 @@
           "points": [
             {
               "lead": "Live on the site:",
-              "text": "the scraping demo's briefing page (18:02)."
+              "text": "the scraping briefing page (18:02)."
             },
             {
               "lead": "Built:",
-              "text": "the outbound demo's 36 workflows in GetSales, none switched on."
+              "text": "the 36 outbound workflows in GetSales, none switched on."
             },
             {
               "lead": "Waiting on Alex alone:",
-              "text": "a few things only he can do: reviewing the text of the six people's pages, recording the two outbound demos, and picking the brand-motion ideas."
+              "text": "a few things only he can do: reviewing the text of the six people's pages, recording the two outbound walkthroughs, and picking the brand-motion ideas."
             },
             {
               "lead": "Tonight:",

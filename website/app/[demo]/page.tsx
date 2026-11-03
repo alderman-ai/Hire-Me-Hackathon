@@ -160,7 +160,7 @@ export default async function DemoPage({ params }: { params: Promise<{ demo: str
                     01
                   </span>
                   <h2 id="the-demo" className="art-eyebrow">
-                    The demo
+                    The work
                   </h2>
                 </div>
                 <div className="art-chapter-body">

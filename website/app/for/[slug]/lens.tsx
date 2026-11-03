@@ -138,7 +138,7 @@ function CeoLens({ slug }: { slug: string }) {
       title: "36 outbound workflows and the one variable behind them",
       text: "Four ICPs, three languages, three tactics, and one personal first message per lead.",
       href: forHref(entryUrl(C2_SLUG), slug),
-      image: { src: `${C2_ASSETS}/workflows-folder.png`, alt: "Six of the 36 workflows in the GetSales demo folder, each switched off" },
+      image: { src: `${C2_ASSETS}/workflows-folder.png`, alt: "Six of the 36 workflows in the project's GetSales folder, each switched off" },
     });
   }
   if (c1) {
@@ -232,7 +232,7 @@ function Cofounder1Lens({ slug }: { slug: string }) {
       title: "36 outbound workflows and the one variable behind them",
       text: "Message 1 of every workflow is one variable, written for each lead before import.",
       href: forHref(entryUrl(C2_SLUG), slug),
-      image: { src: `${C2_ASSETS}/workflows-folder.png`, alt: "Six of the 36 workflows in the GetSales demo folder, each switched off" },
+      image: { src: `${C2_ASSETS}/workflows-folder.png`, alt: "Six of the 36 workflows in the project's GetSales folder, each switched off" },
     });
   }
   const total = steps.length + 1;
@@ -398,7 +398,7 @@ function BiLens() {
           </li>
         </ol>
         <p className="bx-lead bx-lead-narrow bx-mt-2">
-          Jev, from TypeSafe, answers narrow typed questions, such as &ldquo;which of these four ICPs, or none?&rdquo;, with a probability for each answer, and it writes no text. Those decisions become the labels that tune it. Nothing is trained in this demo.
+          Jev, from TypeSafe, answers narrow typed questions, such as &ldquo;which of these four ICPs, or none?&rdquo;, with a probability for each answer, and it writes no text. Those decisions become the labels that tune it. Nothing is trained here.
         </p>
         <div className="pl-two bx-mt-3">
           <Figure

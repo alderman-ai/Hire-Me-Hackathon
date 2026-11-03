@@ -363,7 +363,7 @@ export function Matrix({ legend, shownLegend = "Retail loyalty, English, proof",
                       ) : (
                         <>
                           {n}
-                          {n === shown && <span className="sr-only"> (the demo workflow: Retail loyalty, EN, proof)</span>}
+                          {n === shown && <span className="sr-only"> (the highlighted workflow: Retail loyalty, EN, proof)</span>}
                         </>
                       )}
                     </td>
@@ -462,7 +462,7 @@ export function limitsDefault(): string[] {
     t("shared.limits.1"),
     "The Czech and German still need a native read.",
     "The leads are fictional, with one public fact each and nothing private.",
-    "Nothing is trained in this demo.",
+    "Nothing is trained here.",
   ];
 }
 

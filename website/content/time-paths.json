@@ -11,7 +11,7 @@
     "choices": {
       "5": {
         "time": "5 min",
-        "label": "One demo, one lesson",
+        "label": "One build, one lesson",
         "promise": "The research briefing I built on Addvery from $1.24 of scraping, and the day's main lesson."
       },
       "10": {
@@ -21,13 +21,13 @@
       },
       "20": {
         "time": "20 min",
-        "label": "Three demos, and me on camera",
-        "promise": "Three demos built for Addvery, your page, and me on camera grading my own day."
+        "label": "Three builds, and me on camera",
+        "promise": "Three builds for Addvery, your page, and me on camera grading my own day."
       },
       "60": {
         "time": "60+ min",
         "label": "The whole build",
-        "promise": "Every finished demo, why I'm doing this, what went wrong, and the full plan the agents worked from."
+        "promise": "Every finished build, why I'm doing this, what went wrong, and the full plan the agents worked from."
       }
     },
     "your_page": {

@@ -11,7 +11,7 @@
       "what_this_is": "Researching prospects one by one takes hours per company. This demo does it at scale: Alex runs the scraping on the Apify API, and an agent turns what comes back into research that anyone can follow without an explanation. It runs first, because other demos build on what it finds."
     },
     "d2": {
-      "what_this_is": "Good outreach starts with knowing the company and who makes the decisions. This demo is deep research on one company and the people likely to be involved in hiring. I ran it myself on Day 1, and what it found fed the outbound demo and this website."
+      "what_this_is": "Good outreach starts with knowing the company and who makes the decisions. This is deep research on one company and the people likely to be involved in hiring. I ran it myself on Day 1, and what it found fed the outbound work and this website."
     },
     "d3": {
       "what_this_is": "Outbound that gets the right message to the right person without anyone sorting leads by hand. 36 workflows cover four customer profiles, three languages and three approaches, and each one opens with a first message written for that lead before it's imported. It comes as two short entries in the GTM demos list, each a video with a summary to read.",

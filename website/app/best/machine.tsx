@@ -167,7 +167,7 @@ export function MachineFigures() {
         src={`${ASSETS}/workflows-folder.png`}
         width={1568}
         height={686}
-        alt="Six of the 36 workflows in the GetSales demo folder, named Demo, ICP, language and tactic, each switched off with 0 contacts"
+        alt="Six of the 36 workflows in the project's GetSales folder, named by ICP, language and tactic, each switched off with 0 contacts"
         caption="Every toggle off and every count at 0: none of the 36 is running"
       />
       <Figure
