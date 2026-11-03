@@ -80,7 +80,7 @@ function Card({ entry }: { entry: Entry }) {
         <h2 className="entry-card-title">
           <Link href={entryUrl(entry.slug)}>{entry.title}</Link>
         </h2>
-        <p className="entry-row-dek">{entry.cover.subtitle}</p>
+        <p className="entry-row-dek">{entry.description}</p>
         <p className="entry-row-info">
           <time dateTime={entry.date}>{formatDate(entry.date)}</time>
           {length && length !== "Video" && <span>{length}</span>}
