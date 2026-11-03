@@ -301,31 +301,31 @@ a {
 }
 
 /*
- * The build strip (app/hack-strip.tsx, 3 Nov): a console line above the disclaimer, set apart from the
- * Addvery look on purpose. Ink, a monospace face, and the site's only green (the dot and the
- * countdown), so the green never meets the violet and orchid below. The button is the bridge back
- * into the brand: Outfit, a lavender outline.
+ * The hackathon menu bar (app/hack-strip.tsx, 3 Nov): a console bar above the disclaimer, twice the old
+ * strip's height on desktop, set apart from the Addvery look on purpose. Ink, a monospace face, and the
+ * site's only green (the dot, the countdown, the menu's underline), so the green never meets the
+ * violet and orchid below. Left: the build's status and the countdown. Right: Day 1's menu, as cells.
  */
 .hack-strip {
   --hack-green: #5ee39b;
   --hack-text: #c9cbd3;
+  --hack-rule: rgba(255, 255, 255, .1);
+  --hack-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   position: relative;
   z-index: 3;
   background: var(--av-ink);
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  border-bottom: 1px solid var(--hack-rule);
   color: var(--hack-text);
-  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  font-size: 13px;
-  line-height: 18px;
+  font-family: var(--hack-mono);
 }
 
 .hack-inner {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   max-width: var(--av-container);
-  min-height: 38px;
+  min-height: 76px;
   margin: 0 auto;
   padding: 0 15px;
   --focus: var(--av-lavender);
@@ -334,9 +334,11 @@ a {
 .hack-line {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   min-width: 0;
   margin: 0;
+  font-size: 17px;
+  line-height: 24px;
 }
 
 .hack-text {
@@ -345,8 +347,10 @@ a {
   white-space: nowrap;
 }
 
+/* The words around the countdown may be cut short; the countdown never is. */
 .hack-split {
   display: flex;
+  align-items: baseline;
   min-width: 0;
 }
 
@@ -357,73 +361,131 @@ a {
   white-space: pre;
 }
 
-.hack-split .hack-count { flex: none; }
+.hack-count {
+  flex: none;
+  color: var(--hack-green);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 28px;
+  font-variant-numeric: tabular-nums;
+}
 
 /* The page's HTML is built ahead of time, so the line waits for the browser's clock before it shows. */
 .hack-strip[data-state="pending"] .hack-text { visibility: hidden; }
 
-.hack-count {
-  color: var(--hack-green);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-}
-
 .hack-dot {
   flex: none;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: var(--hack-green);
+  box-shadow: 0 0 12px rgba(94, 227, 155, .45);
 }
 
-/* Once it's live, the dot breathes. */
+/* Once it's live, the dot breathes and the line turns green. */
 .hack-strip[data-state="live"] .hack-dot { animation: hack-pulse 2s ease-out infinite; }
-.hack-strip[data-state="live"] .hack-text { color: var(--hack-green); }
+.hack-strip[data-state="live"] .hack-text { color: var(--hack-green); font-weight: 600; }
 
 @keyframes hack-pulse {
   0% { box-shadow: 0 0 0 0 rgba(94, 227, 155, .55); }
-  70%, 100% { box-shadow: 0 0 0 7px rgba(94, 227, 155, 0); }
+  70%, 100% { box-shadow: 0 0 0 9px rgba(94, 227, 155, 0); }
 }
+
+/* Day 1's menu: full-height cells, each opening a section of /log. */
+.hack-menu {
+  display: flex;
+  align-items: stretch;
+  flex: none;
+}
+
+.hack-menu-label {
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+  color: var(--hack-text);
+  font-size: 15px;
+}
+
+.hack-menu ul {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-right: 1px solid var(--hack-rule);
+}
+
+.hack-menu li { display: flex; }
+
+.hack-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  border-left: 1px solid var(--hack-rule);
+  color: var(--av-white);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .3s var(--ease-ix);
+}
+
+.hack-item::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 18px;
+  height: 2px;
+  background: var(--hack-green);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .5s var(--ease-ix);
+}
+
+.hack-item:hover,
+.hack-item:focus-visible { background: rgba(94, 227, 155, .08); }
+.hack-item:hover::after,
+.hack-item:focus-visible::after { transform: scaleX(1); }
 
 @media (prefers-reduced-motion: reduce) {
   .hack-strip[data-state="live"] .hack-dot { animation: none; }
+  .hack-item::after { transition: none; }
 }
 
-.hack-button {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 3px 14px;
-  border: 1px solid var(--av-lavender);
-  border-radius: 999px;
-  color: var(--av-white);
-  font-family: var(--av-font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 18px;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color .3s var(--ease-ix), color .3s var(--ease-ix);
+@media (max-width: 1199px) {
+  .hack-line { font-size: 15px; gap: 12px; }
+  .hack-count { font-size: 22px; }
+  .hack-item { padding: 0 16px; font-size: 15px; }
+  .hack-item::after { left: 16px; right: 16px; }
 }
 
-.hack-button:hover,
-.hack-button:focus-visible {
-  background: var(--av-lavender);
-  color: var(--av-ink);
+/* Below the desktop menu: two rows, the status, then Day 1's menu. */
+@media (max-width: 991px) {
+  .hack-inner {
+    flex-direction: column;
+    gap: 0;
+    min-height: 0;
+    padding: 0;
+  }
+  .hack-line { padding: 8px 15px; font-size: 14px; line-height: 20px; }
+  .hack-count { font-size: 18px; line-height: 20px; }
+  .hack-menu {
+    border-top: 1px solid var(--hack-rule);
+    overflow-x: auto;
+  }
+  .hack-menu-label { padding: 0 12px 0 15px; font-size: 13px; }
+  .hack-menu ul { border-right: 1px solid var(--hack-rule); }
+  .hack-item { min-height: 40px; padding: 0 16px; font-size: 14px; }
+  .hack-item::after { bottom: 8px; }
 }
-
-.hack-button-short { display: none; }
 
 @media (max-width: 479px) {
-  .hack-strip { font-size: 12px; }
-  .hack-inner { gap: 10px; padding: 0 12px; }
-  .hack-line { gap: 8px; }
-  .hack-button { padding: 3px 12px; }
-  .hack-button-long { display: none; }
-  .hack-button-short { display: inline; }
-  /* On a phone the line wraps to a second row rather than lose its words. */
-  .hack-inner { padding-top: 5px; padding-bottom: 5px; }
+  .hack-line { gap: 10px; padding: 7px 12px; font-size: 13px; }
+  .hack-dot { width: 10px; height: 10px; }
+  .hack-menu-label { padding-left: 12px; }
+  /* On a phone the status wraps to a second line rather than lose its words. */
   .hack-line { align-items: flex-start; }
   .hack-dot { margin-top: 5px; }
   .hack-text, .hack-split { display: block; white-space: normal; }

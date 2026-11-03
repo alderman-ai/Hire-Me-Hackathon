@@ -12,9 +12,20 @@ import { newNavLinks } from "./site-links";
 import { t } from "./copy";
 import type { HackWords } from "./hack-strip";
 
-// The build strip above the header (app/hack-strip.tsx), on the new site only.
+// The hackathon menu bar above the header (app/hack-strip.tsx), on the new site only. Day 1's menu points
+// into /log's sections; an item shows once its section is on the page (`ready`).
+const HACK_ITEMS = [
+  { href: "/log#highlights", label: "hack.menu.highlights", ready: false },
+  { href: "/log#timelapse", label: "hack.menu.timelapse", ready: false },
+  { href: "/log#feed", label: "hack.menu.feed", ready: true },
+] as const;
 const HACK: HackWords | undefined = NEW_SITE
-  ? { before: t("hack.strip.before"), live: t("hack.strip.live"), button: t("hack.button"), buttonShort: t("hack.button.short") }
+  ? {
+      before: t("hack.strip.before"),
+      live: t("hack.strip.live"),
+      menuLabel: t("hack.menu.label"),
+      items: HACK_ITEMS.filter((i) => i.ready).map((i) => ({ href: i.href, label: t(i.label) })),
+    }
   : undefined;
 
 // The Your page pill's names (slug to first name), on the new site only (app/flags.ts).

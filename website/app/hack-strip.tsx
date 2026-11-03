@@ -1,10 +1,11 @@
 "use client";
 
 /*
- * The build strip (3 Nov, Alex via orchestration M1+M2): a slim console line above the header, on
- * every page. It sits apart from the Addvery look on purpose: ink background, a monospace face, and
- * the only green on the site (the dot and the countdown). Left: the build's status and the countdown
- * to Day 2 going live. Right: the way into Day 1's feed at /log.
+ * The hackathon menu bar (3 Nov; Alex: "treat this new hackathon menu bar as a bar with menu items, and
+ * break day 1 into 2-3 logical menu buttons ... on desktop at least, double its height"). It sits above
+ * the disclaimer on every page and is set apart from the Addvery look on purpose: ink, a monospace face,
+ * and the site's only green (the dot and the countdown). Left: the build's status and the countdown to
+ * Day 2 going live. Right: Day 1's menu.
  *
  * The words come from content/site-copy.json (hack.*) through the layout, so this file holds none.
  */
@@ -18,7 +19,8 @@ import { useEffect, useState } from "react";
  */
 export const LIVE_AT_MS = Date.UTC(2026, 10, 3, 8, 45, 0);
 
-export type HackWords = { before: string; live: string; button: string; buttonShort: string };
+export type HackItem = { href: string; label: string };
+export type HackWords = { before: string; live: string; menuLabel: string; items: HackItem[] };
 
 /** 3,735,000 ms becomes "1:02:15". */
 function hms(ms: number) {
@@ -60,7 +62,7 @@ export function HackStrip({ words }: { words: HackWords }) {
           {isLive ? (
             <span className="hack-text">{words.live}</span>
           ) : (
-            // The words around the countdown may be cut short on a phone; the countdown never is.
+            // The words around the countdown may wrap on a phone; the countdown stays whole.
             <span className="hack-text hack-split">
               {pre && <span className="hack-part">{pre}</span>}
               <span className="hack-count" role="timer">
@@ -70,10 +72,20 @@ export function HackStrip({ words }: { words: HackWords }) {
             </span>
           )}
         </p>
-        <Link href="/log" className="hack-button">
-          <span className="hack-button-long">{words.button}</span>
-          <span className="hack-button-short">{words.buttonShort}</span>
-        </Link>
+        <nav className="hack-menu" aria-label={words.menuLabel}>
+          <span className="hack-menu-label" aria-hidden="true">
+            {words.menuLabel}
+          </span>
+          <ul>
+            {words.items.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hack-item">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </div>
   );
