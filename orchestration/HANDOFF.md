@@ -2,6 +2,31 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
+## Update, about 13:20 on 3 Nov: start here (handoff from 116ccb82, to save usage)
+
+Alex works with orchestration directly in this chat; he's short on time and on usage (19% of the plan left at about 12:00, less now). Be token-conscious: short replies, Sonnet for every subagent except full articles (Opus), no polling. Read `RULES.md`, then `orchestration\local\ALEX-WANTS.md` from W62 (this morning's asks; record each new ask there the same turn). Skip the older sections below unless you need them.
+
+**Your first step:** once `claude agents --json` shows 116ccb82 idle (or after 10 minutes), `claude stop 116ccb82` and `claude rm 116ccb82`, check exactly one `orchestration` is live, update its `SESSIONS.md` row and commit that file on its own (`[roster]`), push. Then send one line to `website`, `rig`, `comfy-collab` and `s-d5-blog-articles [3bdf97]` saying you're the new orchestration (their replies to the old pipe would fail), and tell Alex in one line that you're ready.
+
+**Standing rules from today:**
+- Alex pre-approved shipping ("Push everything through. I trust you. Just make it live."): `website` deploys to production itself after its local check and leak scan; no PROMOTE needed. Production deploys need all four flags.
+- Every visible word goes through `alex-voice` (its grader now runs on Sonnet; Sonnet writer for short copy, Opus for articles). Alt text, mechanical first-person fixes and titles taken verbatim from his words don't need a run.
+- Never show grades ("graded Great") anywhere. No asks on any page (rule 11). Never label pieces "demo". The site itself is the only real demo.
+- Copy files go in `orchestration\local\copy\`; articles in `blog-articlesoice\`; commit them path-limited and push origin yourself (`watcher` is paused).
+- Message sessions by ref when a name is doubled: `website [f88d58]`, `rig [90aa29]`, `s-d5-blog-articles [3bdf97]`.
+
+**Live now (https://hire-me-hackathon.vercel.app):** the hackathon bar (LIVE! / On Break / Finished from the rig clock; menu Day 1 Highlights | Day 1 Feed | Day 2 Feed); `/log` Day 1 page (highlights, the merged DayLanes chart, the 3:38 session-kill clip in three beats, compact feed); `/day-2` (8 posts: S19, S17 Day 2 Update composite NeASfMN1Kcc, the articles, the S18 walkthrough, the Comfy videos post); four new articles (Teaching a machine to sound like me; Label every piece before you build a page; Build it in their brand, with Apify named, your call made; and the S18 one, "36 sequences, and who goes into which one", on the C2 entry with the full 15:49 video `_vgNB5ubKjA` on home, Ivana's page and C2, clips c3 to c6 inline, c1 and c2 on /videos); the LinkedIn voice entry removed; /demos titled Articles. The full LinkedIn wall data and images are committed.
+
+**In flight:**
+1. `website`: publishing article 1, "AI workflows are always a managed service" (155b523, rewritten from today's dictation), with two graphics; it reports in one line.
+2. `s-d5-blog-articles` (83225601, Sonnet): Alex dictates article 2 ("If AI won't replace half your team, put it in your pipeline") there directly, with the `dictate-article` skill (round 2 asks only questions that change the article). It sends you each finished article; you route it to `website` as an article entry.
+3. The spoken redline: Alex `/start`s the rig and scrolls the live site saying "banana" (start of an item) and "cucumber" (end). After `/process`: run `python orchestrationedlineedline_extract.py --session OBS\Processed\<folder>`, then stage 2 from `orchestrationedline\README.md` (Sonnet subagents read the frames), then one batch: layout to `website`, words through `alex-voice`. Then a short write-up of the method as a Day 2 highlight (W110), through `dictate-article`/`alex-voice`, with real numbers from the session.
+4. `comfy-collab` (dbc0300e) and `comfy-video`: Alex approved two videos with it directly ("Is this thing on?", a Day 1 time-lapse of the 41 deploys, and "Keep the promise", about a minute), budget about 2,100 Comfy credits, about 156 spent at 13:10. Blocked, like `website`'s time-lapse, on screenshots of Day 1's protected preview deployments: Alex needs to extend the claude.ai Vercel connector to the `alex-alderman-s-projects` team (asked twice; still open).
+5. Alex meets Ivana at 4 pm today. Her message drafts are in `orchestration\local
+otes\ivana.md`; unknown whether he's sent it.
+
+**Paused today:** `orch-site-map`, `orch-briefing` (usage). `orch-alex-prep` is idle. Low priority, only if there's slack: retire DoD-17 (the LinkedIn content piece was killed) with the `change-dod` skill.
+
 ## Update, about 08:00 on 3 Nov: start here (fresh session, Alex works with you directly)
 
 Alex asked for a fresh orchestration session ("launch a new you and then me and you will get to work"). He talks to orchestration directly this morning: this chat is his one surface. Read `orchestration\local\overnight\MORNING.md` next; it's still the plan (his morning in order, the rough edges, the open facts).
