@@ -37,3 +37,11 @@ Run at every forking gate and once after the night's last build (SPEC.md §7 ste
 - **Leak scan:** 99 expected fails, nothing new: 91 secret-shaped runs on URL lines (89 LinkedIn on `/about`, 2 Addvery's public PDF on `/d2`), 2 contact hits (Addvery's public email on `/d2`), 6 deny hits in the charter.
 - **Grades (orchestration's new rule: no grades as a selling point):** none shown as one. Visible mentions describe his grading process: the best-of-three article's booth paragraph and the grading skill on `/skills`. The rest is one Day 1 feed post on `/log`, which is history.
 - **Not production-ready:** `/log`'s highlights, derby and time-lapse words are still `[words coming]` placeholders.
+
+## 3 Nov, 10:0x · preview 9 (860cc80), the all-in batch for PROMOTE
+
+- **Pages:** 22 routes rendered from the export with the four flags and `VERCEL_ENV=production`, all 200. No `[words coming]` left anywhere.
+- **Audit** (1,440 and 390 px): `/`, `/log`, `/demos`, and the two new articles: one h1 each, no heading skips, no sideways scroll, no broken image, every image with alt text. Article 3's two "placeholder" hits are its own words about the card's placeholder blocks.
+- **Leak scan:** the same 99 expected fails as at 09:12 and nothing new: 91 secret-shaped runs on URL lines (89 LinkedIn on `/about`, 2 Addvery's public PDF on `/d2`), 2 contact hits (Addvery's public email on `/d2`), 6 deny hits in the charter.
+- **Figures:** article 3's side-by-side shows no one but Alex. The Apify branding is the public meetup card from his public repo, not the proposal. Orchestration is checking Apify's name with Alex.
+- **Result:** clean.
