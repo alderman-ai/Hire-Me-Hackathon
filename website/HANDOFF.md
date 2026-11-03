@@ -14,7 +14,9 @@ Written 3 Nov at 08:15 Prague by the `website` session (job 91fdba88, Claude ses
 
 ## What's live
 
-Production deployment `ds72hjxle` (3 Nov 09:2x), from `c496a68`, built with all four flags: the best-of build plus the build strip (M1+M2, `app\hack-strip.tsx`), `/log`'s Day 1 intro, and M3's Day 1 wording with `/d2` down to one h1. Before it: `jzmclzh9z` (09:13, M1+M2) and `hrgw6z0x1` (00:1x, `36da31e`). `builds.md` rows 23:40, 00:1x, 3 Nov 09:13 and 09:2x have the detail.
+Production deployment `ousjonawr` (3 Nov ~10:30, PROMOTE 10), from `6f201fd`, built with all four flags: the hackathon menu bar (still the 09:45-countdown status; the LIVE!/On Break/Finished status is in `09c6685`, not live yet), `/log` as Day 1's page (highlights, derby, compact feed), M5 (the LinkedIn voice entry gone), `/demos` titled Articles, the cofounder-2 lead, and the three M6 articles first in the default carousel. Before it: `ds72hjxle` (09:2x, M3), `jzmclzh9z` (09:13, M1+M2), `hrgw6z0x1` (00:1x). `builds.md` has the detail.
+- **Next to ship:** `/day-2` with S17's "Day 2 Update" (gated on `content\videos.json` S17), the bar's LIVE!/On Break/Finished status, and rig's composite of S17 in place of the webcam upload. Orchestration sends PROMOTE straight after the check (Alex pre-approved, 10:5x).
+- **Finishing the build:** write `.clock\finished.json` as `{"at": <epoch seconds>}` when Alex calls the end; the sync then publishes `finished` and the bar reads "Finished at ... / Built in: ...". The clock loop is now pid 9044 (restarted 10:25 for the new fields).
 
 | Route | What |
 | --- | --- |
