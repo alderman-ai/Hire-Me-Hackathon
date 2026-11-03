@@ -30,3 +30,10 @@ Run at every forking gate and once after the night's last build (SPEC.md §7 ste
 - **Pages:** all 21 routes rendered from the export with the four flags and `VERCEL_ENV=production`, all 200. The two new lines read as sent: `/d2` "I ran it myself on Day 1, and what it found fed..."; `/log` "Day 1 really was costly (I can't do this for 30 companies a day)...". `/d2` and `/log` each have one h1.
 - **Leak scan:** the same 99 expected fails as at 09:12, and nothing new: 91 secret-shaped runs, all on URL lines (89 LinkedIn on `/about`, 2 Addvery's public PDF on `/d2`), 2 contact hits (Addvery's public email on `/d2`), 6 deny hits in the charter. Nothing printed.
 - **Result:** clean for M3.
+
+## 3 Nov, 09:5x · preview 8's build (de1716a): the menu bar, compact feed, highlights with the derby, M5, the /demos fixes
+
+- **Pages:** 20 routes rendered from the export with the four flags and `VERCEL_ENV=production`, all 200 (the LinkedIn voice entry is gone, and its URL redirects to `/demos`).
+- **Leak scan:** 99 expected fails, nothing new: 91 secret-shaped runs on URL lines (89 LinkedIn on `/about`, 2 Addvery's public PDF on `/d2`), 2 contact hits (Addvery's public email on `/d2`), 6 deny hits in the charter.
+- **Grades (orchestration's new rule: no grades as a selling point):** none shown as one. Visible mentions describe his grading process: the best-of-three article's booth paragraph and the grading skill on `/skills`. The rest is one Day 1 feed post on `/log`, which is history.
+- **Not production-ready:** `/log`'s highlights, derby and time-lapse words are still `[words coming]` placeholders.
