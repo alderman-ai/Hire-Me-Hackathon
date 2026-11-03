@@ -345,6 +345,20 @@ a {
   white-space: nowrap;
 }
 
+.hack-split {
+  display: flex;
+  min-width: 0;
+}
+
+.hack-part {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
+.hack-split .hack-count { flex: none; }
+
 /* The page's HTML is built ahead of time, so the line waits for the browser's clock before it shows. */
 .hack-strip[data-state="pending"] .hack-text { visibility: hidden; }
 
@@ -408,6 +422,12 @@ a {
   .hack-button { padding: 3px 12px; }
   .hack-button-long { display: none; }
   .hack-button-short { display: inline; }
+  /* On a phone the line wraps to a second row rather than lose its words. */
+  .hack-inner { padding-top: 5px; padding-bottom: 5px; }
+  .hack-line { align-items: flex-start; }
+  .hack-dot { margin-top: 5px; }
+  .hack-text, .hack-split { display: block; white-space: normal; }
+  .hack-part { white-space: normal; overflow: visible; }
 }
 
 .nav {

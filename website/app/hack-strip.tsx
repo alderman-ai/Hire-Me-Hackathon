@@ -60,12 +60,13 @@ export function HackStrip({ words }: { words: HackWords }) {
           {isLive ? (
             <span className="hack-text">{words.live}</span>
           ) : (
-            <span className="hack-text">
-              {pre}
+            // The words around the countdown may be cut short on a phone; the countdown never is.
+            <span className="hack-text hack-split">
+              {pre && <span className="hack-part">{pre}</span>}
               <span className="hack-count" role="timer">
                 {left === null ? "0:00:00" : hms(left)}
               </span>
-              {post}
+              {post && <span className="hack-part">{post}</span>}
             </span>
           )}
         </p>
