@@ -17,3 +17,10 @@ Run at every forking gate and once after the night's last build (SPEC.md §7 ste
 - **Videos:** unchanged. `qrBNOsSYGrQ` (S02), `mxorwucznvE` (S06) and `MyYnFOQCagc` (S08) are webcam uploads, with no screen recordings.
 - **Public text:** no "TODO", placeholder or "of 6" in `app\`.
 - **Result:** clean.
+
+## 3 Nov, ~09:25 · before promoting M1+M2 (the build strip and /log's intro), on preview 2's build (710fa93)
+
+- **Pages:** all 21 routes rendered from the export at `localhost:3101` with the four flags and `VERCEL_ENV=production` (`scripts\check\render_pages.py`), all 200.
+- **Leak scan** (`..\blog-pipeline\scripts\scan.py`): 99 fails, every one expected. 91 secret-shaped runs, all on URL lines (89 LinkedIn post links on `/about`'s wall, 2 links to Addvery's public privacy PDF on `/d2`). 2 contact hits: Addvery's public info email on `/d2`. 6 deny hits: the charter on `/docs/charter` naming the proposal and his outbound, which DoD-22 allows. 413 NAME warnings (site names, headings). Nothing printed.
+- **Audit** (`audit_page.mjs`, 1,440 and 390 px): `/`, `/log`, `/for/growth`, `/privacy` have one h1 each and no sideways scroll. `/log` keeps its older h1 to h3 skip (post titles).
+- **Result:** clean for M1+M2.
