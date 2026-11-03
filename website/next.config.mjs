@@ -20,6 +20,8 @@ const PAGES = [
   ["/log", "/log"],
   ["/day-2", "/day-2"],
   ["/privacy", "/privacy"],
+  ["/d1", "/d1"],
+  ["/d2", "/d2"],
 ];
 
 /** @type {import('next').NextConfig} */

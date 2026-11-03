@@ -13,6 +13,7 @@ import { t } from "./copy";
 import type { HackWords } from "./hack-strip";
 import videos from "@/content/videos.json";
 import { SITE_META } from "./page-meta";
+import { WebMcp } from "./agent/webmcp";
 
 // The hackathon menu bar above the header (app/hack-strip.tsx), on the new site only. Day 1's menu points
 // into /log's sections; an item shows once its section is on the page (`ready`).
@@ -103,6 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         <SiteFooter />
         {PEOPLE && <YourPagePill people={PEOPLE} variant="bar" />}
+        {NEW_SITE && <WebMcp />}
         <Analytics />
       </body>
     </html>

@@ -10,6 +10,7 @@ import { ResearchDocs, readResearchDocs } from "../research-docs";
 import { ArrowSwap } from "../site-chrome";
 import { redirect } from "next/navigation";
 import { movedTo } from "../redirects";
+import { markdownAlternate } from "../page-meta";
 import "../article.css";
 import { NEW_SITE } from "../flags";
 import { Crumb, REACH_GROUP } from "../crumb";
@@ -38,10 +39,10 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ demo: string }> }): Promise<Metadata> {
   const { demo: slug } = await params;
-  if (slug === "d1") return d1Metadata;
+  if (slug === "d1") return { ...d1Metadata, alternates: { ...d1Metadata.alternates, types: markdownAlternate("/d1") } };
   const demo = findDemo(slug);
   return demo
-    ? { title: `${demo.name} · Hire Me Hackathon`, description: demo.what }
+    ? { title: `${demo.name} · Hire Me Hackathon`, description: demo.what, ...(slug === "d2" ? { alternates: { types: markdownAlternate("/d2") } } : {}) }
     : { title: "Hire Me Hackathon" };
 }
 

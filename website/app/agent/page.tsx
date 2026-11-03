@@ -4,6 +4,7 @@ import { NEW_SITE } from "../flags";
 import { PAGE_LEDE, PAGE_TITLE, SEE_WHAT_IT_READS, SITE_PROMPT } from "./copy";
 import { chatgptUrl, claudeUrl } from "./links";
 import { CopyButton } from "./copy-button";
+import { MCP_ADD } from "@/lib/agent-track/site";
 import "../article.css";
 import "./agent.css";
 
@@ -55,6 +56,9 @@ export default function AgentPage() {
           <p className="agent-map">
             <a href="/llms.txt">{SEE_WHAT_IT_READS}</a>
           </p>
+          <pre className="agent-code" tabIndex={0} aria-label="MCP">
+            <code>{MCP_ADD}</code>
+          </pre>
         </div>
       </section>
     </main>

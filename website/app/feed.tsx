@@ -9,6 +9,7 @@ import { ArrowSwap } from "./site-chrome";
 import FeedOpen from "./feed-open";
 import "./feed-compact.css";
 import { dayOf, dayLabel } from "./day-label";
+import { feedPosts } from "./feed-data";
 
 // The live feed: content/feed.json, newest on top (sorted by `at`). s-d9-legibility sends new posts.
 // Laid out after Addvery's podcast index: the newest post is a wide dark featured block, the rest
@@ -193,12 +194,8 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
   );
 }
 
-// Newest first; with a slug, only the posts tagged with that demo.
-export function feedPosts(deliverable?: string): Post[] {
-  return feed.posts
-    .filter((post) => !deliverable || post.deliverable === deliverable)
-    .sort((a, b) => b.at.localeCompare(a.at));
-}
+// Newest first; with a slug, only the posts tagged with that demo (./feed-data.ts).
+export { feedPosts };
 
 function isStatus(post: Post) {
   return post.id === "status" || post.blocks.some((b) => b.type === "status-board");

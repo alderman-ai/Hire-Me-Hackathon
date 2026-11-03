@@ -110,6 +110,24 @@
   color: var(--av-amethyst, #8b3fcf);
 }
 
+.agent-code {
+  max-width: 860px;
+  margin: 1.25rem 0 0;
+  padding: 0.875rem 1rem;
+  overflow-x: auto;
+  border-radius: var(--av-radius-sm, 8px);
+  background: var(--av-ink, #151515);
+  color: var(--av-white, #fff);
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.agent-code:focus-visible {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 3px;
+}
+
 @media screen and (max-width: 767px) {
   .agent-body {
     padding: 2.5rem 0 4rem;

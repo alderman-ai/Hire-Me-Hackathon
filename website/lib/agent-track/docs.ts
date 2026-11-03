@@ -28,7 +28,22 @@ import {
   NUMBERS,
 } from "@/app/home/home-words";
 import { C1_LINK, C1_SLUG, C2_SLUG, MACHINE, MACHINE_FIGURES, MESSAGES, ROUTING, c2, machineStatLabels, walkthroughWords } from "@/app/best/machine-words";
-import { GROWTH_LENS } from "@/app/for/[slug]/lens-words";
+import {
+  BI_LENS,
+  CEO_LENS,
+  COFOUNDER1_LENS,
+  COFOUNDER2_LENS,
+  DELIVERY_KEEP,
+  COFOUNDER2_CHIPS,
+  FACES_STEP,
+  GROWTH_LENS,
+  P4_CHIPS,
+  biRows,
+  ceoSteps,
+  cofounder1Steps,
+  type Chipped,
+  type LensStep,
+} from "@/app/for/[slug]/lens-words";
 import { CRM_LINE, limitsDefault } from "@/app/best/words";
 import { wallClips, clock } from "@/app/videos/clips";
 import { readAboutCopy } from "@/app/about/copy";
@@ -37,8 +52,14 @@ import { FACTS, LINKS } from "@/app/about/profile";
 import { wallCards, wallSpan } from "@/app/about/wall-data";
 import { fullWallCards } from "@/app/about/wall-full-data";
 import { LLMS_SUMMARY } from "@/app/agent/copy";
+import d1Json from "@/content/d1.json";
+import { findDemo } from "@/app/deliverables";
+import { movedTo } from "@/app/redirects";
+import { RESEARCH_INTRO, readResearchDocs } from "@/app/research-words";
+import { feedPosts } from "@/app/feed-data";
 import { BASE, LLMS_FULL_URL, LLMS_URL, REPO_URL, abs, humanUrl, keyOf, mdUrl, mmss, youtube } from "./site";
 import { articleBodyMd, blockquote, fixLinks, htmlToMd, plainLine, videoLink } from "./md";
+import { MCP_ADD } from "./site";
 
 // The agent track: every page a person can open, as one Markdown doc, built from the same loaders and the
 // same production gates the pages use (published entries only, approved landings only, the four build
@@ -47,8 +68,7 @@ import { articleBodyMd, blockquote, fixLinks, htmlToMd, plainLine, videoLink } f
 // (next.config.mjs), listed in /llms.txt, concatenated in /llms-full.txt.
 //
 // Pages left out on purpose: redirected or cut routes (/docs/*, /d3 to /d12, /demos/*), and /d1 and /d2,
-// the older demo pages (links to them go to the human page). The P3 "lens" blocks of /for/<slug> are
-// still inline JSX (app/for/[slug]/lens.tsx) and aren't in the track yet.
+// Every internal link in a doc points at another doc (or an asset): /d1 and /d2 have docs of their own.
 
 export type Doc = {
   /** "index", "articles", "articles/<slug>", "for/<slug>", ... */
@@ -86,6 +106,8 @@ let keyCache: Set<string> | null = null;
 export function docKeys(): Set<string> {
   if (keyCache) return keyCache;
   const keys = new Set<string>();
+  // Set before the paged docs are counted: paging renders posts, whose links ask for these keys.
+  keyCache = keys;
   if (!NEW_SITE) return (keyCache = keys);
   keys.add("index");
   keys.add("about");
@@ -98,8 +120,15 @@ export function docKeys(): Set<string> {
     for (const p of people()) keys.add(`for/${p.slug}`);
   }
   keys.add("log");
+  day1Pages().forEach((_, i) => keys.add(feedKey(i)));
   if (DAY2_READY) keys.add("day-2");
   keys.add("privacy");
+  wallPages().forEach((_, i) => keys.add(wallKey(i)));
+  if (findDemo("d1") && !movedTo("d1")) keys.add("d1");
+  if (findDemo("d2") && !movedTo("d2")) {
+    keys.add("d2");
+    for (const n of readResearchDocs()) keys.add(`d2/${n.slug}`);
+  }
   return (keyCache = keys);
 }
 
@@ -116,13 +145,13 @@ function link(href: string): string {
 /** A link inside one page ("#machine"): the page's human URL with the anchor. */
 const anchor = (key: string, hash: string) => `${humanUrl(key)}${hash}`;
 
-function frame(key: string, title: string, rawBody: string, next: Next[]): string {
+function frame(key: string, title: string, rawBody: string, next: Next[], human: string): string {
   const body = rawBody.replace(/\n{3,}/g, "\n\n");
   const seen = new Set<string>([key]);
   const list = next.filter((n) => docKeys().has(n.key) && !seen.has(n.key) && seen.add(n.key)).slice(0, 6);
   return [
     `# ${title}`,
-    `Human version: ${humanUrl(key)} · Site map: ${LLMS_URL}`,
+    `Human version: ${human} · Site map: ${LLMS_URL}`,
     body.trim(),
     "## Where next",
     list.map((n) => `- [${n.title}](${mdUrl(n.key)}): ${n.why}`).join("\n"),
@@ -131,8 +160,10 @@ function frame(key: string, title: string, rawBody: string, next: Next[]): strin
 
 const labelled = (label: string, d: Doc): Doc => ({ ...d, label });
 
-function doc(key: string, title: string, note: string, body: string, next: Next[]): Doc {
-  return { key, path: key === "index" ? "/index.md" : `/${key}.md`, title, humanUrl: humanUrl(key), markdown: frame(key, title, body, next), note };
+/** `human` is the page a person opens for this doc, when it isn't the doc's own path ("/about#linkedin"). */
+function doc(key: string, title: string, note: string, body: string, next: Next[], human?: string): Doc {
+  const h = human ? abs(human) : humanUrl(key);
+  return { key, path: key === "index" ? "/index.md" : `/${key}.md`, title, humanUrl: h, markdown: frame(key, title, body, next, h), note };
 }
 
 /** "**bold**" stays bold, "[words](/path)" links go absolute. */
@@ -441,39 +472,96 @@ function aboutDoc(): Doc {
     parts.push(written.map((n) => `- [${n.title}](${mdUrl(n.key)}): ${n.why}`).join("\n"));
   }
 
-  // The LinkedIn wall: every post as written, newest first, with its LinkedIn link.
-  type WallLike = {
-    date: string;
-    dayLong: string;
-    url: string;
-    text: string;
-    document?: { title: string } | null;
-    link?: { title: string; site: string; url: string } | null;
-    poll?: { question: string; options: string[] } | null;
-    quote_of?: { url: string; by_alex: boolean; author: string | null; text?: string } | null;
-  };
-  const posts: WallLike[] = WALL_FULL ? fullWallCards() : wallCards();
+  // The LinkedIn wall has its own docs (wallDocs), so this one stays short.
+  const pages = wallPages();
+  const posts = pages.flat();
   parts.push("## From my LinkedIn");
   parts.push(
-    `${posts.length} of my posts from ${wallSpan(posts)}, newest first, as I wrote them. Profile: [${LINKS.linkedin.href}](${LINKS.linkedin.href})`,
+    `${posts.length} of my posts from ${wallSpan(posts)}, newest first, as I wrote them, on ${pages.length} pages:\n\n` +
+      pages.map((pg, i) => `- [${wallTitle(i, pages.length)}](${mdUrl(wallKey(i))}): ${pg[0].dayLong} back to ${pg[pg.length - 1].dayLong}`).join("\n"),
   );
-  for (const p of posts) {
-    const bits = [`### ${p.dayLong}`, blockquote(p.text)];
-    if (p.document?.title) bits.push(`Document: ${p.document.title}`);
-    if (p.link) bits.push(`Link: [${p.link.title || p.link.site}](${p.link.url})`);
-    if (p.poll) bits.push(`Poll: ${p.poll.question}\n\n${p.poll.options.map((o) => `- ${plainLine(o)}`).join("\n")}`);
-    if (p.quote_of) {
-      const who = p.quote_of.by_alex ? "my earlier post" : p.quote_of.author ? `a post by ${p.quote_of.author}` : "a post";
-      bits.push(`Quoting [${who}](${p.quote_of.url})${p.quote_of.by_alex && p.quote_of.text ? `:\n\n${blockquote(p.quote_of.text)}` : ""}`);
-    }
-    bits.push(`[On LinkedIn](${p.url})`);
-    parts.push(bits.join("\n\n"));
-  }
   return doc("about", TITLE.about(), NOTE.about(), parts.join("\n\n"), [
+    { key: wallKey(0), title: wallTitle(0, pages.length), why: "My LinkedIn posts, word for word, newest first." },
     ...recommended("about").slice(0, 3),
     page("videos"),
     page("for"),
   ]);
+}
+
+// ---------------------------------------------------------------- /about's LinkedIn wall (about/linkedin*.md)
+
+type WallLike = {
+  id: string;
+  date: string;
+  dayLong: string;
+  url: string;
+  text: string;
+  document?: { title: string } | null;
+  link?: { title: string; site: string; url: string } | null;
+  poll?: { question: string; options: string[] } | null;
+  quote_of?: { url: string; by_alex: boolean; author: string | null } | null;
+};
+
+/** LinkedIn's "bold" and "italic" are Unicode maths letters: back to plain letters, so they read and search as text. */
+function plainLetters(s: string): string {
+  return s.replace(/[\u{1D400}-\u{1D7FF}]/gu, (c) => c.normalize("NFKC"));
+}
+
+/** A post's text, clean: plain letters, no trailing spaces, at most one blank line in a row. */
+function cleanPost(text: string): string {
+  return plainLetters(text)
+    .replace(/\r\n?/g, "\n")
+    .split("\n")
+    .map((l) => l.replace(/\s+$/, ""))
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+const WALL_BUDGET = 24000;
+let wallCache: WallLike[][] | null = null;
+
+/** The wall's posts (the same list /about shows), deduplicated, cut into pages of about WALL_BUDGET characters. */
+function wallPages(): WallLike[][] {
+  if (wallCache) return wallCache;
+  const all: WallLike[] = WALL_FULL ? fullWallCards() : wallCards();
+  const seen = new Set<string>();
+  const posts = all.filter((p) => {
+    const k = cleanPost(p.text).toLowerCase().replace(/\s+/g, " ");
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  wallCache = paginate(posts, postWallMd, WALL_BUDGET);
+  return wallCache;
+}
+
+const wallKey = (i: number) => (i === 0 ? "about/linkedin" : `about/linkedin-${i + 1}`);
+const wallTitle = (i: number, n: number) => `From my LinkedIn${n > 1 ? `, page ${i + 1} of ${n}` : ""}`;
+
+function postWallMd(p: WallLike): string {
+  const bits = [`### ${p.dayLong} · [LinkedIn](${p.url})`, cleanPost(p.text)];
+  if (p.document?.title) bits.push(`Document: ${plainLetters(p.document.title)}`);
+  if (p.link) bits.push(`Link: [${plainLetters(p.link.title || p.link.site)}](${p.link.url})`);
+  if (p.poll) bits.push(`Poll: ${plainLetters(p.poll.question)}\n\n${p.poll.options.map((o) => `- ${plainLetters(o)}`).join("\n")}`);
+  if (p.quote_of) {
+    const who = p.quote_of.by_alex ? "my earlier post" : p.quote_of.author ? `a post by ${p.quote_of.author}` : "a post";
+    bits.push(`Quoting [${who}](${p.quote_of.url})`);
+  }
+  return bits.join("\n\n");
+}
+
+function wallDocs(): Doc[] {
+  const pages = wallPages();
+  return pages.map((pg, i) => {
+    const intro = `${pg.length} of my LinkedIn posts, ${pg[0].dayLong} back to ${pg[pg.length - 1].dayLong}, word for word. Profile: [${LINKS.linkedin.href}](${LINKS.linkedin.href})`;
+    const next: Next[] = [];
+    if (i + 1 < pages.length) next.push({ key: wallKey(i + 1), title: wallTitle(i + 1, pages.length), why: "Older posts." });
+    if (i > 0) next.push({ key: wallKey(i - 1), title: wallTitle(i - 1, pages.length), why: "Newer posts." });
+    next.push(page("about"), page("articles"), page("videos"));
+    return doc(wallKey(i), wallTitle(i, pages.length), `${pg.length} posts, ${pg[0].dayLong} back to ${pg[pg.length - 1].dayLong}, word for word.`,
+      [intro, ...pg.map(postWallMd)].join("\n\n"), next, "/about#linkedin");
+  });
 }
 
 // ---------------------------------------------------------------- /for and /for/<slug>
@@ -481,7 +569,8 @@ function aboutDoc(): Doc {
 type QuoteItem =
   | { card: string; time: string; session: string; text: string; also?: string; youtube?: string; start?: number; end?: number }
   | { post_id: string; date: string; text: string; also?: string; url: string };
-const QUOTES = quotesRaw as unknown as { lists: Record<string, QuoteItem[]>; clips: Record<string, QuoteItem> };
+const QUOTES = quotesRaw as unknown as { lists: Record<string, QuoteItem[]>; lens: Record<string, QuoteItem[]>; clips: Record<string, QuoteItem> };
+type Moment = Extract<QuoteItem, { card: string }> & { len?: string };
 
 function quoteItem(q: QuoteItem): string {
   if ("post_id" in q) return `${blockquote(q.text)}\n>\n> [${q.date}, LinkedIn](${q.url})${q.also ? `\n\n${q.also}` : ""}`;
@@ -519,6 +608,101 @@ function forDoc(): Doc {
 
 type Landing = { approved?: boolean; lead?: string; lead_key?: string; note?: string; made_line?: string; sign?: string };
 
+/** A lens block's step cards: title, linked to its doc, then its line. */
+function stepsMd(steps: LensStep[], faces: boolean): string {
+  const all = faces ? [...steps, FACES_STEP] : steps;
+  return all.map((st, i) => `${i + 1}. **[${st.title}](${link(st.href)})**: ${st.text}`).join("\n");
+}
+
+/** Skill chips as one line of links to /skills. */
+function chipsMd(label: string, items: Chipped[]): string {
+  return `**${label}:** ${items.map((c) => `[${c.label}](${link(`/skills#${c.skill}`)})`).join(", ")}`;
+}
+
+/** A clip from content/quotes.json as a video link with what's said in it. */
+function clipMd(card: string, meta?: string): string {
+  const c = QUOTES.clips[card] as Moment | undefined;
+  if (!c?.youtube) return "";
+  return `${videoLink(c.text, c.youtube, c.start, c.end, c.len)}, ${meta ?? `${dayOf(c.session)}, ${c.time}`}`;
+}
+
+/** The P3 lens block of a personal page (app/for/[slug]/lens.tsx), as Markdown. */
+function lensMd(slug: string): string[] {
+  switch (slug) {
+    case "growth":
+      return [`## ${GROWTH_LENS.title}`, GROWTH_LENS.lead, walkthroughMd(), statsMd(), messagesMd(["tailspin", "coho"]), figuresMd(), machineLinksMd()];
+    case "ceo":
+      return [
+        `## ${CEO_LENS.returnTitle}`,
+        `*${t("for-ceo.return.1")}.*`,
+        clipMd("S10-c"),
+        (QUOTES.lens.ceo ?? []).map(quoteItem).join("\n\n"),
+        `${blockquote(CRM_LINE)}\n>\n> ${t("shared.crm.1")}`,
+        `## ${CEO_LENS.evidenceTitle}`,
+        `*${t("for-ceo.evidence.1")}.*`,
+        stepsMd(ceoSteps(), true),
+      ];
+    case "cofounder-1": {
+      const L = COFOUNDER1_LENS;
+      return [
+        `## ${L.pipelineTitle}`,
+        `*${t("for-cofounder-1.pipeline.1")}.*`,
+        stepsMd(cofounder1Steps(), true),
+        `## ${L.sliderTitle}`,
+        `*${t("for-cofounder-1.slider.1")}.*`,
+        clipMd("S10-b", L.managedMeta),
+        `**${L.sliderHead}**\n\n${L.slider.map((x, i) => `${i + 1}. ${x}`).join("\n")}`,
+        quoteWith(L.sliderQuote.text, L.sliderQuote.when, L.sliderQuote.youtube),
+      ];
+    }
+    case "cofounder-2":
+      return [
+        `## ${COFOUNDER2_LENS.title}`,
+        clipMd("S02-h", COFOUNDER2_LENS.clipMeta),
+        t("for-cofounder-2.look.1"),
+        SKILLS_PAGE ? chipsMd("Skills behind this", COFOUNDER2_CHIPS) : "",
+      ];
+    case "bi": {
+      const rows = biRows();
+      const cellCheck = (c: (typeof rows)[number]["check"]) => (c ? `[${c.label}](${link(c.href)})` : "");
+      const f = BI_LENS.figure;
+      return [
+        `## ${t("for-bi.rows.2")}`,
+        `*${t("for-bi.rows.1")}.*`,
+        [
+          `| ${t("for-bi.rows.3")} | ${t("for-bi.rows.4")} | ${t("for-bi.rows.5")} |`,
+          "| --- | --- | --- |",
+          ...rows.map((r) => `| ${r.count} | ${r.how.replace(/\|/g, "\\|")} | ${cellCheck(r.check)} |`),
+        ].join("\n"),
+        `## ${BI_LENS.ruleTitle}`,
+        `*${t("for-bi.rule.1")}.*`,
+        BI_LENS.flow.map((x, i) => `${i + 1}. **${x.what}**: ${x.text}`).join("\n"),
+        BI_LENS.jev,
+        `![${f.alt}](${abs(f.src)})\n\n*${f.caption}*`,
+        clipMd("S09-i"),
+      ];
+    }
+    default:
+      return [];
+  }
+}
+
+/** The blocks after a personal page's quote list: delivery's "What I'd keep", bi's limits. */
+function afterQuotesMd(slug: string): string[] {
+  if (slug === "delivery") {
+    const K = DELIVERY_KEEP;
+    const day = pageHref("art-day-one");
+    return [
+      `## ${K.title}`,
+      `*${K.eyebrow}.*`,
+      K.items.map((it, i) => `${i + 1}. **${it.lead}**${it.rest}`).join("\n"),
+      day ? `[${K.dayLink}](${link(day)})` : "",
+    ];
+  }
+  if (slug === "bi") return [`## ${BI_LENS.limitsTitle}`, `${t("for-bi.limits.1")}:\n\n${limitsDefault().map((l) => `- ${l}`).join("\n")}`];
+  return [];
+}
+
 function personDoc(p: StakeholderPage): Doc {
   const key = `for/${p.slug}`;
   const raw = (stakeholdersRaw.pages as { slug: string; landing?: Landing }[]).find((x) => x.slug === p.slug)?.landing ?? {};
@@ -535,21 +719,16 @@ From: Alex Alderman, ${t("home.hero.10")}`);
     parts.push(raw.note.split(/\n\s*\n/).map((x) => rich(x.trim())).join("\n\n"));
     parts.push(raw.sign ?? "Alex Alderman");
   }
-  if (p.slug === "growth") {
-    parts.push(`## ${GROWTH_LENS.title}`);
-    parts.push(GROWTH_LENS.lead);
-    parts.push(walkthroughMd());
-    parts.push(statsMd());
-    parts.push(messagesMd(["tailspin", "coho"]));
-    parts.push(figuresMd());
-    parts.push(machineLinksMd());
-  }
+  parts.push(...lensMd(p.slug));
   const quotes = QUOTES.lists[p.slug] ?? [];
   const qKey = `for-${p.slug}.quotes.1`;
   if (quotes.length) {
     parts.push(`## ${t(qKey as CopyKey)}`);
     parts.push(quotes.map(quoteItem).join("\n\n"));
   }
+  const chips = P4_CHIPS[p.slug];
+  if (chips && SKILLS_PAGE) parts.push(chipsMd(chips.label ?? "Skills behind this", chips.items));
+  parts.push(...afterQuotesMd(p.slug));
   if (raw.made_line) {
     parts.push("## How this page was made");
     parts.push(`${rich(raw.made_line)}${docKeys().has("skills") ? ` [${t("shared.made.1")}](${mdUrl("skills")})` : ""}`);
@@ -699,9 +878,145 @@ function logDoc(): Doc {
   }
 
   parts.push(`## ${t("log.feed.title")}`);
-  const posts = (feedJson.posts as Post[]).filter((p) => !isStatus(p)).sort((a, b) => b.at.localeCompare(a.at));
-  parts.push(posts.map(postMd).join("\n\n"));
-  return doc("log", TITLE.log(), NOTE.log(), parts.join("\n\n"), [page("day-2"), page("skills"), page("videos"), page("index")]);
+  const feedPages = day1Pages();
+  parts.push(
+    `${day1Posts().length} posts, newest on top, on ${feedPages.length} page${feedPages.length === 1 ? "" : "s"}:\n\n` +
+      feedPages.map((pg, i) => `- [${feedTitle(i, feedPages.length)}](${mdUrl(feedKey(i))}): ${pg[0].at.slice(11, 16)} back to ${pg[pg.length - 1].at.slice(11, 16)}`).join("\n"),
+  );
+  return doc("log", TITLE.log(), NOTE.log(), parts.join("\n\n"), [
+    { key: feedKey(0), title: feedTitle(0, day1Pages().length), why: "Every Day 1 post, newest on top." },
+    page("day-2"),
+    page("skills"),
+    page("videos"),
+    page("index"),
+  ]);
+}
+
+function day1Posts(): Post[] {
+  return (feedJson.posts as Post[]).filter((p) => !isStatus(p)).sort((a, b) => b.at.localeCompare(a.at));
+}
+
+/** Items cut into pages of about `budget` characters of Markdown, so no doc outgrows what a fetcher reads. */
+function paginate<T>(items: T[], render: (x: T) => string, budget = 24000): T[][] {
+  const pages: T[][] = [[]];
+  let size = 0;
+  for (const it of items) {
+    const n = render(it).length + 2;
+    if (size + n > budget && pages[pages.length - 1].length) {
+      pages.push([]);
+      size = 0;
+    }
+    pages[pages.length - 1].push(it);
+    size += n;
+  }
+  return pages;
+}
+
+const feedKey = (i: number) => (i === 0 ? "log/feed" : `log/feed-${i + 1}`);
+const feedTitle = (i: number, n: number) => `${t("log.feed.title")}${n > 1 ? `, page ${i + 1} of ${n}` : ""}`;
+let feedCache: Post[][] | null = null;
+function day1Pages(): Post[][] {
+  return (feedCache ??= paginate(day1Posts(), postMd));
+}
+
+function logFeedDocs(): Doc[] {
+  const pages = day1Pages();
+  return pages.map((pg, i) => {
+    const next: Next[] = [];
+    if (i + 1 < pages.length) next.push({ key: feedKey(i + 1), title: feedTitle(i + 1, pages.length), why: "Earlier posts." });
+    if (i > 0) next.push({ key: feedKey(i - 1), title: feedTitle(i - 1, pages.length), why: "Later posts." });
+    next.push(page("log"), page("day-2"), page("skills"));
+    return doc(feedKey(i), feedTitle(i, pages.length), `${pg.length} Day 1 posts, ${pg[0].at.slice(11, 16)} back to ${pg[pg.length - 1].at.slice(11, 16)}, newest on top.`,
+      pg.map(postMd).join("\n\n"), next, "/log#feed");
+  });
+}
+
+// ---------------------------------------------------------------- /d1 and /d2, the account research pages
+
+const D1 = d1Json as unknown as {
+  unlinked_until_live: string[];
+  eyebrow: string;
+  title: string;
+  intro: string;
+  highlight: string;
+  learned: { lead: string; items: string[] };
+  steps: string[];
+  cta: string;
+  fold: { intro: string; table: { label: string; head: string[]; rows: string[][] }; items: string[] };
+  closing: string[];
+  meta: { description: string };
+  carousel: { label: string; note: string; slides: { title: string; text: string; image?: string; alt?: string; href?: string; link?: string }[] };
+};
+
+/** d1.json's inline text: **bold** stays, [links](/path) go to their doc; a path not live yet is plain words. */
+function d1Rich(text: string): string {
+  const unlinked = new Set(D1.unlinked_until_live);
+  return text.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, words: string, href: string) => (unlinked.has(href) ? words : `[${words}](${link(href)})`));
+}
+
+function d1Doc(): Doc {
+  const parts: string[] = [];
+  parts.push(`*${D1.eyebrow.replace(/^Demo \d+\s*·\s*/, "")}*`);
+  parts.push(D1.intro);
+  parts.push(D1.carousel.note);
+  parts.push(`## ${D1.carousel.label}`);
+  for (const sl of D1.carousel.slides) {
+    const bits = [`### ${sl.title}`, sl.text];
+    if (sl.image) bits.push(`![${sl.alt ?? sl.title}](${abs(`/d1/${sl.image}-1280.webp`)})`);
+    if (sl.href) bits.push(`[${sl.link ?? sl.href}](${link(sl.href)})`);
+    parts.push(bits.join("\n\n"));
+  }
+  // The page's own (screen-reader) headings: "The result" and "How it works".
+  parts.push("## The result");
+  parts.push(D1.highlight);
+  parts.push(`**${D1.learned.lead}**\n\n${D1.learned.items.map((i) => `- ${i}`).join("\n")}`);
+  parts.push("## How it works");
+  parts.push(D1.steps.map((st, i) => `${i + 1}. ${d1Rich(st)}`).join("\n"));
+  parts.push(d1Rich(D1.cta));
+  const tb = D1.fold.table;
+  parts.push(`## ${tb.label}`);
+  parts.push(D1.fold.intro);
+  const cell = (c: string) => d1Rich(c).replace(/\|/g, "\\|").replace(/\n/g, " ");
+  parts.push([`| ${tb.head.map(cell).join(" | ")} |`, `| ${tb.head.map(() => "---").join(" | ")} |`, ...tb.rows.map((r) => `| ${r.map(cell).join(" | ")} |`)].join("\n"));
+  parts.push(D1.fold.items.map((it) => `- ${d1Rich(it)}`).join("\n"));
+  parts.push(D1.closing.join("\n\n"));
+  const posts = feedPosts("d1") as unknown as Post[];
+  if (posts.length) parts.push(`## From the live feed\n\n${posts.map(postMd).join("\n\n")}`);
+  return doc("d1", D1.title, D1.meta.description, parts.join("\n\n"), [
+    { key: "d2", title: findDemo("d2")?.name ?? "d2", why: findDemo("d2")?.what ?? "" },
+    page("for"),
+    page("index"),
+    page("skills"),
+  ]);
+}
+
+function d2Doc(): Doc {
+  const d = findDemo("d2")!;
+  const notes = readResearchDocs();
+  const parts: string[] = [d.what];
+  if (d.whatThisIs) parts.push(`## What this is\n\n${d.whatThisIs}`);
+  if (notes.length) {
+    parts.push(`## The research itself\n\n${RESEARCH_INTRO}`);
+    parts.push(notes.map((n) => `- [${n.title}](${mdUrl(`d2/${n.slug}`)})`).join("\n"));
+  }
+  const posts = feedPosts("d2") as unknown as Post[];
+  if (posts.length) parts.push(`## From the live feed\n\n${posts.map(postMd).join("\n\n")}`);
+  return doc("d2", d.name, d.what, parts.join("\n\n"), [
+    ...notes.slice(0, 2).map((n) => ({ key: `d2/${n.slug}`, title: n.title, why: "One of my research notes on Addvery, as I wrote it." })),
+    { key: "d1", title: D1.title, why: D1.meta.description },
+    page("for"),
+  ]);
+}
+
+function d2NoteDocs(): Doc[] {
+  const notes = readResearchDocs();
+  return notes.map((n, i) => {
+    const raw = n.markdown.replace(/\r\n?/g, "\n").replace(/^# .*\n+/, "").trim();
+    const next: Next[] = [];
+    if (notes[i + 1]) next.push({ key: `d2/${notes[i + 1].slug}`, title: notes[i + 1].title, why: "The next research note." });
+    next.push({ key: "d2", title: findDemo("d2")?.name ?? "d2", why: "Every research note, and what they're for." }, page("for"));
+    return doc(`d2/${n.slug}`, n.title, "One of my research notes on Addvery, as I wrote it.", fixLinks(raw, link), next, `/d2#research-${n.slug}`);
+  });
 }
 
 function day2Doc(): Doc {
@@ -743,12 +1058,14 @@ export function allDocs(): Doc[] {
   const keys = docKeys();
   const docs: Doc[] = [];
   if (keys.has("index")) docs.push(homeDoc());
-  if (keys.has("about")) docs.push(aboutDoc());
+  if (keys.has("about")) docs.push(aboutDoc(), ...wallDocs());
   if (keys.has("articles")) docs.push(articlesDoc(), ...articles().map(articleDoc));
   if (keys.has("videos")) docs.push(videosDoc());
   if (keys.has("for")) docs.push(forDoc(), ...people().map(personDoc));
+  if (keys.has("d1")) docs.push(d1Doc());
+  if (keys.has("d2")) docs.push(d2Doc(), ...d2NoteDocs());
   if (keys.has("skills")) docs.push(skillsDoc());
-  if (keys.has("log")) docs.push(logDoc());
+  if (keys.has("log")) docs.push(logDoc(), ...logFeedDocs());
   if (keys.has("day-2")) docs.push(day2Doc());
   if (keys.has("privacy")) docs.push(privacyDoc());
   cache = docs;
@@ -785,7 +1102,7 @@ export function llmsTxt(): string {
 
 Someone handed you this site. Be their guide, not a summary of everything.
 
-1. Ask what they're after, offering these starting points in one line each:
+1. If they've already said what they want, go straight to the pages that answer it. If they haven't, ask, offering these starting points in one line each:
    - Who Alex is and the job he wants → ${u("about")}
    - How he decides which outbound message each lead gets (ICP routing) → ${routing}
    - What he thinks about AI in go-to-market → ${u("articles")}
@@ -799,12 +1116,12 @@ Someone handed you this site. Be their guide, not a summary of everything.
     const ok = ds.filter((d): d is Doc => !!d);
     if (ok.length) sections.push(`## ${title}\n\n${ok.map(item).join("\n")}`);
   };
-  list("Start here", [by("index"), by("about")]);
+  list("Start here", [by("index"), by("about"), ...docs.filter((d) => d.key.startsWith("about/"))]);
   list("Articles", [by("articles"), ...docs.filter((d) => d.key.startsWith("articles/"))]);
   list("Videos", [by("videos")]);
-  list("For Addvery", [by("for"), ...docs.filter((d) => d.key.startsWith("for/"))]);
+  list("For Addvery", [by("for"), ...docs.filter((d) => d.key.startsWith("for/")), by("d1"), by("d2"), ...docs.filter((d) => d.key.startsWith("d2/"))]);
   list("Skills", [by("skills")]);
-  list("How it was built", [by("log"), by("day-2")]);
+  list("How it was built", [by("log"), ...docs.filter((d) => d.key.startsWith("log/")), by("day-2")]);
   const optional = [
     by("privacy") ? item(by("privacy")!) : "",
     `- [Everything in one file](${LLMS_FULL_URL}): every page above, in this order, in one Markdown file.`,
@@ -815,8 +1132,10 @@ Someone handed you this site. Be their guide, not a summary of everything.
   return sections.join("\n\n") + "\n";
 }
 
-/** More lines for llms.txt's Optional section (the MCP server adds itself here). */
-const EXTRA_OPTIONAL: string[] = [];
+/** More lines for llms.txt's Optional section: the MCP server (app/mcp), POST only, so GET answers 405. */
+const EXTRA_OPTIONAL: string[] = [
+  `- [MCP server](${BASE}/mcp): read-only tools site_map, read_page and search_site over Streamable HTTP (POST). Add it with \`${MCP_ADD}\``,
+];
 
 export function llmsFullTxt(): string {
   return (
