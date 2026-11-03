@@ -76,7 +76,7 @@ Nothing is held. Every commit up to `51f9b11` is live.
   - If an article replaces an existing entry, keep its slug or `library_id` so the carousel spots and links hold.
 - **The spoken-redline batch ("banana cucumber").** Alex scrolls the site, says banana, talks through the change, says cucumber, and a screenshot is taken in between. Expect a batch of numbered changes from orchestration.
 - **Loose ends.**
-  - The YouTube uploads `6FlJ9h3IHzQ` (S17 webcam only) and `NeASfMN1Kcc`'s twin are unused and unlisted. Only Alex can delete them; the rig's sign-in can't.
+  - The YouTube upload `6FlJ9h3IHzQ` (S17 webcam only) is unused and unlisted. Only Alex can delete it; the rig's sign-in can't.
   - `/day-2` has no intro paragraph, only the h1 "Day 2".
 
 ## Tools added today
