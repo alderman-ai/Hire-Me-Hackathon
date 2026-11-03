@@ -12,6 +12,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { usePageScrolled } from "./motion";
 import { CTA, NAV_LINKS } from "./site-links";
 import { YourPagePill } from "./your-page";
+import { HackStrip, type HackWords } from "./hack-strip";
 
 
 /** Addvery's north-east arrow, twice, so hover can swap one out diagonally and roll the other in. */
@@ -43,7 +44,8 @@ export function SiteHeader({
   people,
   nav,
   hideCta,
-}: { people?: Record<string, string>; nav?: { href: string; label: string }[]; hideCta?: boolean } = {}) {
+  hack,
+}: { people?: Record<string, string>; nav?: { href: string; label: string }[]; hideCta?: boolean; hack?: HackWords } = {}) {
   const links = nav ?? NAV_LINKS;
   const scrolled = usePageScrolled(0.01);
   const [open, setOpen] = useState(false);
@@ -70,6 +72,7 @@ export function SiteHeader({
 
   return (
     <header className="site-header" data-scrolled={scrolled ? "" : undefined} data-open={open ? "" : undefined}>
+      {hack && <HackStrip words={hack} />}
       <p className="disclaimer">Unofficial job application by Alex Alderman. Not affiliated with Addvery.</p>
       <div className="nav">
         <div className="nav-color" aria-hidden="true" />

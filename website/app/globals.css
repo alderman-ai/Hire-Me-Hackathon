@@ -300,6 +300,116 @@ a {
   text-align: center;
 }
 
+/*
+ * The build strip (app/hack-strip.tsx, 3 Nov): a console line above the disclaimer, set apart from the
+ * Addvery look on purpose. Ink, a monospace face, and the site's only green (the dot and the
+ * countdown), so the green never meets the violet and orchid below. The button is the bridge back
+ * into the brand: Outfit, a lavender outline.
+ */
+.hack-strip {
+  --hack-green: #5ee39b;
+  --hack-text: #c9cbd3;
+  position: relative;
+  z-index: 3;
+  background: var(--av-ink);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  color: var(--hack-text);
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.hack-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--av-container);
+  min-height: 38px;
+  margin: 0 auto;
+  padding: 0 15px;
+  --focus: var(--av-lavender);
+}
+
+.hack-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+}
+
+.hack-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The page's HTML is built ahead of time, so the line waits for the browser's clock before it shows. */
+.hack-strip[data-state="pending"] .hack-text { visibility: hidden; }
+
+.hack-count {
+  color: var(--hack-green);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.hack-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hack-green);
+}
+
+/* Once it's live, the dot breathes. */
+.hack-strip[data-state="live"] .hack-dot { animation: hack-pulse 2s ease-out infinite; }
+.hack-strip[data-state="live"] .hack-text { color: var(--hack-green); }
+
+@keyframes hack-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(94, 227, 155, .55); }
+  70%, 100% { box-shadow: 0 0 0 7px rgba(94, 227, 155, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hack-strip[data-state="live"] .hack-dot { animation: none; }
+}
+
+.hack-button {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 3px 14px;
+  border: 1px solid var(--av-lavender);
+  border-radius: 999px;
+  color: var(--av-white);
+  font-family: var(--av-font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .3s var(--ease-ix), color .3s var(--ease-ix);
+}
+
+.hack-button:hover,
+.hack-button:focus-visible {
+  background: var(--av-lavender);
+  color: var(--av-ink);
+}
+
+.hack-button-short { display: none; }
+
+@media (max-width: 479px) {
+  .hack-strip { font-size: 12px; }
+  .hack-inner { gap: 10px; padding: 0 12px; }
+  .hack-line { gap: 8px; }
+  .hack-button { padding: 3px 12px; }
+  .hack-button-long { display: none; }
+  .hack-button-short { display: inline; }
+}
+
 .nav {
   position: relative;
   z-index: 2;

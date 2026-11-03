@@ -9,6 +9,13 @@ import stakeholders from "@/content/stakeholders.json";
 import { NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "./flags";
 import { YourPagePill } from "./your-page";
 import { newNavLinks } from "./site-links";
+import { t } from "./copy";
+import type { HackWords } from "./hack-strip";
+
+// The build strip above the header (app/hack-strip.tsx), on the new site only.
+const HACK: HackWords | undefined = NEW_SITE
+  ? { before: t("hack.strip.before"), live: t("hack.strip.live"), button: t("hack.button"), buttonShort: t("hack.button.short") }
+  : undefined;
 
 // The Your page pill's names (slug to first name), on the new site only (app/flags.ts).
 const PEOPLE: Record<string, string> | undefined = NEW_SITE
@@ -69,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip-link" href="#content">
           Skip to content
         </a>
-        <SiteHeader people={PEOPLE} nav={NEW_SITE ? newNavLinks({ videos: VIDEO_WALL, skills: SKILLS_PAGE }) : undefined} hideCta={NEW_SITE} />
+        <SiteHeader people={PEOPLE} nav={NEW_SITE ? newNavLinks({ videos: VIDEO_WALL, skills: SKILLS_PAGE }) : undefined} hideCta={NEW_SITE} hack={HACK} />
         <div id="content" className="site-content" tabIndex={-1}>
           {children}
         </div>

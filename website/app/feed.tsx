@@ -155,7 +155,8 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
             // The S02 explainer's summary, under its video (Alex, 2 Nov: "an H1 summary").
             return (
               <div key={i} className="summary">
-                <h1 className="summary-headline">{summary.headline}</h1>
+                {/* h4 under the post's h3: the page keeps one h1 (on /log, the intro's). */}
+                <h4 className="summary-headline">{summary.headline}</h4>
                 {summary.paragraphs.map((text, j) => (
                   <p key={j}>{text}</p>
                 ))}
@@ -273,9 +274,14 @@ function Column({ posts }: { posts: Post[] }) {
 
 /**
  * `hideStatus`: the new site drops the status board (VERDICT.md 2.7). `asPage`: on /log, the feed is
- * the page, so its heading is the page's h1.
+ * the page, so its heading is the page's h1. `head`: /log's own intro (log.intro.* in site-copy.json),
+ * which takes the place of the "Live feed" heading and the feed's intro line.
  */
-export default function Feed({ hideStatus = false, asPage = false }: { hideStatus?: boolean; asPage?: boolean } = {}) {
+export default function Feed({
+  hideStatus = false,
+  asPage = false,
+  head,
+}: { hideStatus?: boolean; asPage?: boolean; head?: { title: string; body: string } } = {}) {
   const [newest, ...older] = feedPosts().filter((p) => !(hideStatus && isStatus(p)));
   const Heading = asPage ? "h1" : "h2";
   const featuredIsStatus = newest ? isStatus(newest) : false;
@@ -298,9 +304,9 @@ export default function Feed({ hideStatus = false, asPage = false }: { hideStatu
           <Reveal>
             <p className="eyebrow">Newest on top</p>
             <Heading id="feed-heading" className="feed-heading">
-              Live feed
+              {head ? head.title : "Live feed"}
             </Heading>
-            <p className="feed-intro">{feed.intro}</p>
+            <p className="feed-intro">{head ? head.body : feed.intro}</p>
           </Reveal>
           {newest && !featuredIsStatus && <FeaturedPost post={newest} />}
         </div>
