@@ -98,9 +98,8 @@ And yes, you can totally trust me on this, because I'm an AI marketer. Wink, win
 - **The line count.** Your "couple hundred lines" has no documented source (Anthropic's page shows `head -100`, and only for nested references), so the article gives no number of its own. Confirm the wording of your experience ("long", "skimmed", "no longer fully work"). Where: same paragraph.
 - **Your teaching background.** The article leans on it but never says what it is. One line would do. Where: "The bottleneck is always people", after the 2% / 98% quote.
 - **Your software adoption work.** Optional: what you did there, in half a sentence. Where: "The bottleneck is always people", first line.
-- **Diagram order.** Your 3 Nov answer puts vendor building at the bottom and teaching at the top, the reverse of your 2 Nov note (training at the bottom, external building at the top). The diagram follows 3 Nov. Confirm. Where: the slider diagram.
+- **Diagram order.** Your 3 Nov answer puts vendor building at the bottom and teaching at the top, the reverse of your 2 Nov note (training at the bottom, external building at the top). The diagram follows 3 Nov (settled).
 - **Line-manager story.** The lesson is there but no scene. One anonymised detail (no client) would make it land, or leave it as is. Where: "Never make the contractor the line manager", after the quote.
-- **Sabbatical length.** Today you said 9 months; the library flags a nine-or-six conflict elsewhere. Confirm. Where: "Harder than they'll tell you", second paragraph.
 
 ## Media slots
 
