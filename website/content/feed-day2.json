@@ -34,6 +34,18 @@
       ]
     },
     {
+      "id": "day2-videos",
+      "at": "2026-11-03T11:45",
+      "kind": "Update",
+      "title": "Two videos, made today with Comfy",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "I'm making two videos today, and ComfyUI does the motion. \"Is this thing on?\" is Day 1 as a time-lapse of the site's 41 deploys, starting from the gray square that doesn't even look like it's working. \"Keep the promise\" is about a minute on why putting AI in the pipeline first is how companies don't cut their teams. It runs on my own Comfy credits, no new SaaS. Anything showing me or a screen is real footage. Both are in production today. Is this thing on? Yes."
+        }
+      ]
+    },
+    {
       "id": "day2-highlights",
       "at": "2026-11-03T11:19",
       "kind": "Update",
