@@ -1,0 +1,94 @@
+/* /log's compact feed: one row per post (time, kind, title), the body opens on demand. */
+.fc-list {
+  list-style: none;
+  margin: 56px 0 0;
+  padding: 0;
+  max-width: 920px;
+  border-top: 1px solid var(--av-plum-800);
+}
+
+.fc-item { border-bottom: 1px solid var(--av-plum-800); position: relative; }
+
+.fc-item summary {
+  display: grid;
+  grid-template-columns: 3.4rem 6.6rem minmax(0, 1fr) 1.25rem;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 4px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--av-white);
+}
+.fc-item summary::-webkit-details-marker { display: none; }
+
+.fc-time {
+  color: var(--av-mauve-500);
+  font-variant-numeric: tabular-nums;
+  font-size: .9375rem;
+}
+
+.fc-item .post-kind { justify-self: start; }
+
+.fc-title {
+  margin: 0;
+  color: var(--av-white);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.fc-chev {
+  width: 9px;
+  height: 9px;
+  justify-self: end;
+  border-right: 2px solid var(--av-lavender);
+  border-bottom: 2px solid var(--av-lavender);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform .2s ease;
+}
+.fc-item details[open] .fc-chev { transform: rotate(-135deg) translate(-2px, -2px); }
+
+.fc-item summary:focus-visible { outline: 2px solid var(--av-lavender); outline-offset: 2px; border-radius: 4px; }
+
+@media (hover: hover) {
+  .fc-item summary:hover .fc-title { color: var(--av-lavender); }
+}
+
+/* Milestones: a violet-to-orchid bar down the left edge and a heavier title. */
+.fc-milestone::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--av-violet), var(--av-orchid));
+}
+.fc-milestone .fc-title { font-weight: 700; font-size: 1.1875rem; }
+.fc-milestone .post-kind { background: linear-gradient(25deg, var(--av-violet-deep), var(--av-orchid)); }
+
+.fc-body {
+  max-width: 760px;
+  padding: 6px 4px 30px calc(3.4rem + 14px);
+}
+
+@media (max-width: 640px) {
+  .fc-list { margin-top: 36px; }
+  .fc-item summary {
+    grid-template-columns: auto auto minmax(0, 1fr) 1.25rem;
+    grid-template-areas: "t k . c" "ti ti ti ti";
+    row-gap: 6px;
+  }
+  .fc-item summary .fc-time { grid-area: t; }
+  .fc-item summary .post-kind { grid-area: k; }
+  .fc-item summary .fc-chev { grid-area: c; }
+  .fc-item summary .fc-title { grid-area: ti; }
+  .fc-milestone::before { left: -10px; }
+  .fc-body { padding-left: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-chev { transition: none; }
+}

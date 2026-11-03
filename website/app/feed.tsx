@@ -6,6 +6,8 @@ import StatusBoard, { StatusBand } from "./build-status";
 import { findDemo } from "./deliverables";
 import { Reveal, RotateIn } from "./motion";
 import { ArrowSwap } from "./site-chrome";
+import FeedOpen from "./feed-open";
+import "./feed-compact.css";
 
 // The live feed: content/feed.json, newest on top (sorted by `at`). s-d9-legibility sends new posts.
 // Laid out after Addvery's podcast index: the newest post is a wide dark featured block, the rest
@@ -272,6 +274,30 @@ function Column({ posts }: { posts: Post[] }) {
   );
 }
 
+// One row of the compact feed: time, kind and the post's own title; the body opens under it.
+function CompactPost({ post }: { post: Post }) {
+  const anchor = ANCHORS[post.id];
+  const kind = post.kind.toLowerCase();
+  return (
+    <li id={`post-${post.id}`} className={`fc-item fc-${kind}`}>
+      {anchor && <span id={anchor} className="anchor" aria-hidden="true" />}
+      <details>
+        <summary>
+          <time dateTime={post.at} className="fc-time">
+            {post.at.slice(11, 16)}
+          </time>
+          <span className={`post-kind post-kind-${kind}`}>{post.kind}</span>
+          <h3 className="fc-title">{post.title}</h3>
+          <span className="fc-chev" aria-hidden="true" />
+        </summary>
+        <div className="fc-body post-body on-dark">
+          <Blocks blocks={post.blocks} />
+        </div>
+      </details>
+    </li>
+  );
+}
+
 /**
  * `hideStatus`: the new site drops the status board (VERDICT.md 2.7). `asPage`: on /log, the feed is
  * the page, so its heading is the page's h1. `head`: /log's own intro (log.intro.* in site-copy.json),
@@ -284,6 +310,29 @@ export default function Feed({
 }: { hideStatus?: boolean; asPage?: boolean; head?: { title: string; body: string } } = {}) {
   const [newest, ...older] = feedPosts().filter((p) => !(hideStatus && isStatus(p)));
   const Heading = asPage ? "h1" : "h2";
+  if (asPage) {
+    // /log: every post is a row; its body opens on demand (app/feed-compact.css).
+    const rows = feedPosts().filter((p) => !(hideStatus && isStatus(p)));
+    return (
+      <section id="feed" className="feed-head feed-compact on-dark" aria-labelledby="feed-heading">
+        <div className="container">
+          <Reveal>
+            <p className="eyebrow">Newest on top</p>
+            <Heading id="feed-heading" className="feed-heading">
+              {head ? head.title : "Live feed"}
+            </Heading>
+            <p className="feed-intro">{head ? head.body : feed.intro}</p>
+          </Reveal>
+          <ol className="fc-list">
+            {rows.map((post) => (
+              <CompactPost key={post.id} post={post} />
+            ))}
+          </ol>
+          <FeedOpen />
+        </div>
+      </section>
+    );
+  }
   const featuredIsStatus = newest ? isStatus(newest) : false;
 
   // Split the older posts into runs of cards, with the status band (if it's among them) between.
