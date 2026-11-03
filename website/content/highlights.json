@@ -1,6 +1,5 @@
 {
   "comfy_video": null,
-  "comfy_video_shape": "when set: {\"youtube\": \"<id>\", \"start\": 0, \"end\": null, \"length\": \"m:ss\"}. Its label is the word key highlights.comfy.label. Null renders nothing.",
   "day": "2026-11-02",
   "axis": {
     "map_from_hour": 10,
@@ -279,7 +278,6 @@
     "highlights.legend.high": "High point",
     "highlights.legend.low": "Low point",
     "highlights.legend.hint": "The numbers match: a triangle on any chart is the clip with the same number below.",
-    "highlights.comfy.label": "Day 1, the highlight reel",
     "highlights.clip.play": "Watch on YouTube",
     "highlights.table.toggle": "Show the numbers",
     "highlights.scroll.hint": "On a phone, the chart scrolls sideways.",
