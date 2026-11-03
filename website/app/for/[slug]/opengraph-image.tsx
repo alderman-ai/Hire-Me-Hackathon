@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { ImageResponse } from "next/og";
-import { CARD, measure, readFontMetrics } from "../../demos/og-layout";
-import { avToken, gradientStops } from "../../demos/tokens";
+import { CARD, measure, readFontMetrics } from "../../articles/og-layout";
+import { avToken, gradientStops } from "../../articles/tokens";
 import { findStakeholder, firstName, greetingParts, stakeholderSlugs } from "../../stakeholders";
 
 // Each person's link preview, 1200 x 630: what LinkedIn and email show when Alex sends the link.
@@ -57,8 +57,8 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   }
 
   const [font, glow, photo] = await Promise.all([
-    readFile(fromRoot("app", "demos", "_og", "InterTight-Medium.ttf")),
-    readFile(fromRoot("app", "demos", "_og", "glow.jpg")),
+    readFile(fromRoot("app", "articles", "_og", "InterTight-Medium.ttf")),
+    readFile(fromRoot("app", "articles", "_og", "glow.jpg")),
     readOptional(fromRoot("public", "people", `${slug}-og.jpg`)),
   ]);
   if (!photo) console.warn(`/for/${slug} link card: no public/people/${slug}-og.jpg (run scripts/people_og.py)`);

@@ -3,7 +3,7 @@
 export const NAV_LINKS = [
   { href: "/#feed", label: "Live feed" },
   { href: "/#status", label: "What's being built" },
-  { href: "/demos", label: "GTM demos" },
+  { href: "/articles", label: "GTM demos" },
   { href: "/for", label: "For Addvery" },
   { href: "/about", label: "About Alex" },
 ];
@@ -15,7 +15,7 @@ export const CTA = { href: "/#s02", label: "Watch the explainer" };
 // to a 404. Called on the server: the flags aren't in the browser's bundle.
 export function newNavLinks({ videos, skills }: { videos: boolean; skills: boolean }) {
   return [
-    { href: "/demos", label: "Articles" },
+    { href: "/articles", label: "Articles" },
     ...(videos ? [{ href: "/videos", label: "Videos" }] : []),
     ...(skills ? [{ href: "/skills", label: "Skills" }] : []),
     { href: "/about", label: "About me" },

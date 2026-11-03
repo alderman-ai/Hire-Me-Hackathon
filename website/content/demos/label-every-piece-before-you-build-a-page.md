@@ -11,7 +11,7 @@ group: "Content"
 cover:
   kicker: "Content"
   subtitle: "On Day 1's night I had hundreds of pieces and couldn't see what went with what."
-  accent: "every piece"
+  accent: "every stakeholder"
 tags: ["legibility", "personalisation"]
 reading_minutes: 4
 ---

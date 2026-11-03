@@ -13,15 +13,15 @@ import "./demos.css";
 
 const TITLE = "Articles"; // the menu's word for this page (3 Nov)
 const DESCRIPTION =
-  "Alex Alderman's GTM engineering demos, written up or on video: what he built during the Hire Me Hackathon and how it works.";
+  "Alex Alderman's GTM engineering work, written up: outbound, content, and AI your team uses.";
 
 export const metadata: Metadata = {
   title: `${TITLE} · Hire Me Hackathon`,
   description: DESCRIPTION,
-  alternates: { canonical: "/demos" },
+  alternates: { canonical: "/articles" },
   openGraph: {
     type: "website",
-    url: "/demos",
+    url: "/articles",
     siteName: "Hire Me Hackathon",
     title: TITLE,
     description: DESCRIPTION,

@@ -11,7 +11,7 @@ group: "AI in your team"
 cover:
   kicker: "AI in your team"
   subtitle: "The night my own site got away from me, I stopped redlining and had three agents argue instead."
-  accent: "Best of three"
+  accent: "choose"
 tags: ["orchestration", "process"]
 reading_minutes: 4
 ---

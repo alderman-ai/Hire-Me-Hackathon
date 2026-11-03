@@ -11,7 +11,7 @@ group: "Outbound"
 cover:
   kicker: "Outbound"
   subtitle: "Nobody mass-sends a page in your brand with your colleagues' names on it."
-  accent: "their brand"
+  accent: "own brand"
 tags: ["branding", "personalisation"]
 reading_minutes: 4
 ---

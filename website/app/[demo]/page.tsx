@@ -13,7 +13,7 @@ import { movedTo } from "../redirects";
 import "../article.css";
 import { NEW_SITE } from "../flags";
 import { Crumb, REACH_GROUP } from "../crumb";
-import { EntryEnd, MarkSeen } from "../demos/entry-end";
+import { EntryEnd, MarkSeen } from "../articles/entry-end";
 import { LIST_SLUGS, recommendAll } from "../recommend";
 
 const PAGE_SLUGS = LIST_SLUGS.filter((s) => s !== "default");

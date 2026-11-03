@@ -7,7 +7,7 @@ import Link from "next/link";
 export function Crumb({ group }: { group?: string }) {
   return (
     <nav className="art-back entry-crumb" aria-label="Breadcrumb">
-      <Link href="/demos">Articles</Link>
+      <Link href="/articles">Articles</Link>
       {group && (
         <>
           <span className="entry-crumb-sep" aria-hidden="true">

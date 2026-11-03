@@ -4,17 +4,17 @@ import { NEW_SITE } from "./flags";
 // production keeps every page where it is until a checkpoint.
 const MOVED: Record<string, string> = {
   // W5: the 36 workflows are capability piece C2 now.
-  d3: "/demos/36-outbound-workflows-and-the-one-variable-behind-them",
+  d3: "/articles/36-outbound-workflows-and-the-one-variable-behind-them",
   // W7: the placeholders go. The LinkedIn voice entry came off the site on 3 Nov (M5), so d7 goes to the list.
-  d4: "/demos",
-  d5: "/demos",
-  d6: "/demos",
-  d7: "/demos",
-  d8: "/demos",
-  d9: "/demos",
-  d10: "/demos",
-  d11: "/demos",
-  d12: "/demos",
+  d4: "/articles",
+  d5: "/articles",
+  d6: "/articles",
+  d7: "/articles",
+  d8: "/articles",
+  d9: "/articles",
+  d10: "/articles",
+  d11: "/articles",
+  d12: "/articles",
 };
 
 /** Where an old demo page now lives on the new site, or undefined. */

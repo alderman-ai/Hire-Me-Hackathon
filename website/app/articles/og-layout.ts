@@ -127,7 +127,7 @@ export const CARD = {
 } as const;
 
 /** The card's kicker names the section, as the mockup's "Blog · ..." did, when it fits on the line. */
-export const KICKER_PREFIX = "GTM demos · ";
+export const KICKER_PREFIX = "Articles · ";
 
 const NBSP = " ";
 

@@ -7,14 +7,14 @@ import { layoutCard, readFontMetrics } from "./og-layout";
 
 export const size = cardSize;
 export const contentType = "image/png";
-export const alt = "GTM demos by Alex Alderman, from the Hire Me Hackathon";
+export const alt = "Articles by Alex Alderman, from the Hire Me Hackathon";
 
-const TITLE = "GTM demos, written up or on video";
-const ACCENT = "GTM demos";
+const TITLE = "GTM work, written up";
+const ACCENT = "written up";
 
 export default async function Image() {
   const font = readFontMetrics(
-    readFileSync(path.join(/* turbopackIgnore: true */ process.cwd(), "app", "demos", "_og", "InterTight-Medium.ttf")),
+    readFileSync(path.join(/* turbopackIgnore: true */ process.cwd(), "app", "articles", "_og", "InterTight-Medium.ttf")),
   );
   const { lines } = layoutCard(font, { kicker: "Hire Me Hackathon", title: TITLE, accent: ACCENT }, { prefix: false });
   return renderCard({ kicker: "Hire Me Hackathon", lines, accent: ACCENT });

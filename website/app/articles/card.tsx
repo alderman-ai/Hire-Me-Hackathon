@@ -13,7 +13,7 @@ import { avToken, gradientStops } from "./tokens";
 // app/addvery-tokens.css; the font is Inter Tight Medium (Latin subset, OFL) in _og/.
 // The lines come from og-layout.ts, which has already measured them (and failed the build past 3).
 
-const OG = path.join(/* turbopackIgnore: true */ process.cwd(), "app", "demos", "_og");
+const OG = path.join(/* turbopackIgnore: true */ process.cwd(), "app", "articles", "_og");
 
 export const cardSize = { width: CARD.width, height: CARD.height };
 

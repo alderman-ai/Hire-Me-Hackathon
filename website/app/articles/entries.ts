@@ -4,7 +4,7 @@ import { allDemos } from "../deliverables";
 import { layoutCard, readFontMetrics, type FontMetrics } from "./og-layout";
 import { NEW_SITE } from "../flags";
 
-// The GTM demos section (/demos, /demos/<slug>), to blog-pipeline/POST-FORMAT.md v1.5: one shared content-entry template for written posts
+// The GTM demos section (/articles, /demos/<slug>), to blog-pipeline/POST-FORMAT.md v1.5: one shared content-entry template for written posts
 // and videos (Alex, 2 Nov: "like a CMS, like a list of blog entries").
 //
 // Entries are Markdown files in content/demos/, one per entry, in blog-pipeline/POST-FORMAT.md v1.1
@@ -81,7 +81,7 @@ const MAP_KEYS: Record<string, readonly string[]> = {
 };
 
 const DIR = path.join(/* turbopackIgnore: true */ process.cwd(), "content", "demos");
-const FONT = path.join(/* turbopackIgnore: true */ process.cwd(), "app", "demos", "_og", "InterTight-Medium.ttf");
+const FONT = path.join(/* turbopackIgnore: true */ process.cwd(), "app", "articles", "_og", "InterTight-Medium.ttf");
 const PUBLIC = path.join(/* turbopackIgnore: true */ process.cwd(), "public");
 
 export const NOTE_PATTERN = /\[Alex: [^[\]\n]+\]/g;
@@ -256,7 +256,7 @@ function validate(file: string, data: Raw, body: string): Entry {
   const poster = data.poster;
   if (poster !== undefined && poster !== null) {
     if (!isStr(poster) || !(/^\/[^/]/.test(poster) || /^https:\/\//.test(poster))) {
-      fail('poster must be a site path ("/demos/poster.jpg", a file in public/) or an https:// URL');
+      fail('poster must be a site path ("/articles/poster.jpg", a file in public/) or an https:// URL');
     }
     if (poster.startsWith("/") && !existsSync(path.join(PUBLIC, poster))) fail(`poster ${poster} isn't in public/`);
   }
@@ -443,7 +443,7 @@ export function lengthLabel(e: Entry): string | undefined {
 }
 
 export function entryUrl(slug: string): string {
-  return `/demos/${slug}`;
+  return `/articles/${slug}`;
 }
 
 export function demoName(slug: string): { n: number; name: string } | undefined {

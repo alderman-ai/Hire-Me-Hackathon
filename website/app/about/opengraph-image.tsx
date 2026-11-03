@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { ImageResponse } from "next/og";
-import { CARD } from "../demos/og-layout";
-import { avToken, gradientStops } from "../demos/tokens";
+import { CARD } from "../articles/og-layout";
+import { avToken, gradientStops } from "../articles/tokens";
 
 // /about's link preview, 1200 x 630, in the site's card template: the frame, black, glow, font and
 // 64 px margins of app/demos/card.tsx, laid out like the /for cards (title left, the portrait right as
@@ -31,8 +31,8 @@ async function readOptional(file: string): Promise<Buffer | null> {
 
 export default async function Image() {
   const [font, glow, photo] = await Promise.all([
-    readFile(fromRoot("app", "demos", "_og", "InterTight-Medium.ttf")),
-    readFile(fromRoot("app", "demos", "_og", "glow.jpg")),
+    readFile(fromRoot("app", "articles", "_og", "InterTight-Medium.ttf")),
+    readFile(fromRoot("app", "articles", "_og", "glow.jpg")),
     readOptional(fromRoot("public", "about", "alex-headshot-og.jpg")),
   ]);
   if (!photo) console.warn("/about link card: no public/about/alex-headshot-og.jpg (run scripts/about_assets.py)");

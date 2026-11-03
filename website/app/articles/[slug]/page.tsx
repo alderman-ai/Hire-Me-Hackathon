@@ -120,7 +120,7 @@ function jsonLd(entry: Entry): string {
 
 // Entries taken off the site, and where their old links go now (3 Nov, M5: Alex, "that gets killed").
 const RETIRED: Record<string, string> = {
-  "linkedin-posts-in-addverys-voice-graded-blind": "/demos",
+  "linkedin-posts-in-addverys-voice-graded-blind": "/articles",
 };
 
 export default async function EntryPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -190,7 +190,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           {NEW_SITE ? (
             // The crumb: Articles, then its group. Both are working labels until alex-voice words them.
             <nav className="art-back entry-crumb" aria-label="Breadcrumb">
-              <Link href="/demos">Articles</Link>
+              <Link href="/articles">Articles</Link>
               {entry.group && (
                 <>
                   <span className="entry-crumb-sep" aria-hidden="true">
@@ -202,7 +202,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
             </nav>
           ) : (
             <p className="art-back">
-              <Link href="/demos">← All GTM demos</Link>
+              <Link href="/articles">← All GTM demos</Link>
             </p>
           )}
           <div className="entry-kicker-row">
@@ -278,7 +278,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           </div>
           <ul className="art-cta-actions">
             <li>
-              <Link href="/demos" className="art-button">
+              <Link href="/articles" className="art-button">
                 See all GTM demos
               </Link>
             </li>

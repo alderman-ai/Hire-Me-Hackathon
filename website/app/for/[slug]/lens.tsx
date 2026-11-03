@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { t } from "../../copy";
-import { entryUrl, findEntry } from "../../demos/entries";
+import { entryUrl, findEntry } from "../../articles/entries";
 import { SKILLS_PAGE } from "../../flags";
 import { pageHref } from "../../recommend";
 import { forHref } from "./for-href";

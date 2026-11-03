@@ -1,6 +1,6 @@
 import data from "@/content/recommend.json";
 import d1 from "@/content/d1.json";
-import { entryUrl, visibleEntries } from "./demos/entries";
+import { entryUrl, visibleEntries } from "./articles/entries";
 import { findDemo } from "./deliverables";
 import { IS_PRODUCTION_BUILD, NEW_SITE } from "./flags";
 

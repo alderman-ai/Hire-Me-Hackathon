@@ -1,6 +1,6 @@
 import wall from "@/content/video-wall.json";
 import { t } from "../copy";
-import { entryUrl, findEntry, type Entry } from "../demos/entries";
+import { entryUrl, findEntry, type Entry } from "../articles/entries";
 import {
   ArrowLink,
   Band,

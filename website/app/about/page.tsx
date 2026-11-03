@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { entryUrl, findEntry } from "../demos/entries";
+import { entryUrl, findEntry } from "../articles/entries";
 import { Reveal, RotateIn } from "../motion";
 import { GradientButton } from "../site-chrome";
 import { readAboutCopy, type CopyBlock } from "./copy";

@@ -11,7 +11,7 @@ group: "Content"
 cover:
   kicker: "Content"
   subtitle: "Almost every word on this site is written by AI, and every word is supposed to sound like me."
-  accent: "a machine"
+  accent: "sound like you"
 tags: ["copywriting", "process"]
 reading_minutes: 4
 ---

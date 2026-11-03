@@ -4,7 +4,7 @@ import wall from "@/content/video-wall.json";
 import words from "@/content/video-words.json";
 import stakeholders from "@/content/stakeholders.json";
 import { IS_PRODUCTION_BUILD, VIDEO_WALL } from "../flags";
-import { entryUrl, visibleEntries } from "../demos/entries";
+import { entryUrl, visibleEntries } from "../articles/entries";
 import { VideoWall, type WallRow } from "./video-wall";
 import "./videos.css";
 import { dayOf } from "../day-label";
