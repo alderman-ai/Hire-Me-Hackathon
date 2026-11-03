@@ -18,15 +18,23 @@ Written 3 Nov at 08:15 Prague by the `website` session (job 91fdba88, Claude ses
 
 ## What's live
 
-Production deployment `a7zkod9dw` (3 Nov 10:44), from `7c1b688`, built with all four flags. It carries:
-- the hackathon menu bar: status LIVE! / On Break / Finished from the recording clock, with "Day 1 › Highlights | Feed" and a "Day 2 Update" cell;
-- `/log` as Day 1's page: highlights with the merged session chart (`app\log\day-lanes.tsx`; the derby is gone), and the compact feed;
-- `/day-2` with the Day 2 Update, which plays rig's S17 composite `NeASfMN1Kcc` whole, with orchestration's paragraph;
-- M5 (the LinkedIn voice entry gone), and `/demos` titled Articles;
-- the three M6 articles, first in the default carousel.
+Production deployment `5b5w340og` (3 Nov 12:30), from `2071784`, built with all four flags. It carries:
+- **The hackathon bar:** status LIVE! / On Break / Finished from the recording clock, with cells Day 1 Highlights | Day 1 Feed | Day 2 Feed (from `HACK_ITEMS` and the Day 2 group in `app\layout.tsx`).
+- **`/log`, Day 1's page:**
+  - the highlights with the merged session chart `app\log\day-lanes.tsx`;
+  - the low point: rig's 3:38 cut `sBVgT-LbEQo`, in three beats;
+  - the compact feed.
+- **`/day-2`:** a real feed from `content\feed-day2.json`, with 8 posts:
+  - on top, S19's update `mBa187jP1rc`;
+  - then the S18 walkthrough, the Comfy videos post, Day 1's highs and lows, the three articles, and S17's update `NeASfMN1Kcc`.
+- **C2 (`content\demos\getsales-36-workflows.md`):** the S18 article, with its full video `_vgNB5ubKjA`, which also plays on home and Ivana's page; clips c3 to c6; the grid; and the still cropped to the builder. Clips c1 and c2 are on `/videos`.
+- **Articles:** four, under How the day went: teaching-a-machine, label-every-piece, build-it-in-their-brand, ai-workflows-are-always-a-managed-service. Also: M5 (the LinkedIn voice entry is gone), and `/demos` is titled Articles.
 
-Before it: `ousjonawr` (10:30, PROMOTE 10), `ds72hjxle` (09:2x, M3), `jzmclzh9z` (09:13, M1+M2), `hrgw6z0x1` (00:1x). `builds.md` has the detail.
-- **Open:** the time-lapse has code (`app\log\timelapse.tsx`, `scripts\build_timelapse.py`) but no frames. The Vercel MCP can't reach the project's 41 Day 1 deployments, so it needs Alex to grant the connector access or OK a temporary bypass key. Orchestration also wants 1920×1080 frames kept as files, plus `<deployment>.boxes.json`, for comfy-collab. `/day-2` skips from h1 to the post's h3. `6FlJ9h3IHzQ` (S17 webcam only) is unlisted and unused.
+The earlier production deploys are logged in `builds.md`.
+- **Open:**
+  - The time-lapse has code (`app\log\timelapse.tsx`, `scripts\build_timelapse.py`) but no frames. The Vercel MCP can't reach the project's 41 Day 1 deployments, so it needs Alex to grant the connector access or OK a temporary bypass key. Orchestration also wants 1920×1080 frames kept as files, plus `<deployment>.boxes.json`, for comfy-collab.
+  - The YouTube ids `6FlJ9h3IHzQ` (S17 webcam only) are unlisted and unused.
+  - At 12:30, two live sessions answered to the name `orchestration`; that's for orchestration to sort out.
 - **New tools:**
   - `scripts\upload_file.py`: uploads any finished MP4 unlisted under a `content\videos.json` key (`--replace`).
   - `scripts\check\` plus `$CLAUDE_JOB_DIR\tmp\derby_shot.mjs`: CDP viewport shots of an element mid-animation.
