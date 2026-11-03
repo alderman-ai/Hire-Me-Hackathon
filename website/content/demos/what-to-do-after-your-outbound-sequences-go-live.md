@@ -11,7 +11,7 @@ group: "Outbound"
 cover:
   kicker: "Outbound"
   subtitle: "Building is a phase, not the deliverable. Refining is the main work."
-  accent: "after your outbound sequences"
+  accent: "sequences go live"
 tags: ["outbound", "classification", "linkedin"]
 reading_minutes: 4
 video:
@@ -44,7 +44,7 @@ Search for the 200 least senior people connected to the person you actually want
 Meanwhile, keep up on the account's news every week: new hires, new positions. When someone new lands in a role you care about, don't bother them when they first get there. They're busy. Find their job advert instead. It almost always spells out their 90-day goals, so you know what they're working on and when the timing is right.
 
 > [!video] _vgNB5ubKjA 369 433
-> A new hire's job advert spells out their goals for the first 90 days: what they're working on, and when the timing is right
+> A new hire's job advert spells out their goals for the first 90 days, and when the timing is right
 
 ## Then get the cost down
 
@@ -55,7 +55,7 @@ Honestly, I'm not there yet. Right now it's still high cost: what you're looking
 ## Refining is the main work
 
 > [!video] _vgNB5ubKjA 883 926
-> Building is a phase, not the deliverable: refining is the main work, and your salespeople have to be able to run it
+> Building is a phase, not the deliverable: refining is the main work, and your salespeople run it
 
 Maintaining it. Looking at the data. Constantly asking: is our approach working? What do we need to switch? It's a systems management job, not a type-things-into-AI job, and it has to be built so your salespeople, who aren't AI experts, can run it.
 
