@@ -45,3 +45,11 @@ Run at every forking gate and once after the night's last build (SPEC.md §7 ste
 - **Leak scan:** the same 99 expected fails as at 09:12 and nothing new: 91 secret-shaped runs on URL lines (89 LinkedIn on `/about`, 2 Addvery's public PDF on `/d2`), 2 contact hits (Addvery's public email on `/d2`), 6 deny hits in the charter.
 - **Figures:** article 3's side-by-side shows no one but Alex. The Apify branding is the public meetup card from his public repo, not the proposal. Orchestration is checking Apify's name with Alex.
 - **Result:** clean.
+
+## 3 Nov, 10:4x · before the M8 production deploy (7c1b688)
+
+- **Pages:** 23 routes rendered from the export with the four flags and `VERCEL_ENV=production`, all 200, with no `[words coming]` anywhere. `/day-2` embeds the composite `NeASfMN1Kcc`.
+- **Audit** (1,440 and 390 px): `/` and `/log` have one h1, no heading skips and no sideways scroll; the chart box scrolls sideways inside itself on phones. `/day-2` has one h1 and one skip (h1 to the post's h3).
+- **Leak scan:** the same 99 expected fails as at 09:12, nothing new.
+- **YouTube:** the first composite upload (`NeASfMN1Kcc`) went up unblurred before the v2 request arrived; Alex then said "unblurred is fine", and it's the Day 2 Update now. The earlier webcam-only upload (`6FlJ9h3IHzQ`) is unused.
+- **Result:** clean; deployed.
