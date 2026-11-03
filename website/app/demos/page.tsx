@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { t } from "../copy";
 import Link from "next/link";
 import { entryUrl, formatDate, lengthLabel, showUnpublished, STATUS_LABEL, visibleEntries, type Entry } from "./entries";
 import { CoverGlow } from "./parts";
@@ -10,7 +11,7 @@ import "./demos.css";
 // when there is one. A production build lists published entries only; with none, a plain empty state.
 // Not linked from the home page yet: the website session wires the menu when the first entry is live.
 
-const TITLE = "GTM demos";
+const TITLE = "Articles"; // the menu's word for this page (3 Nov)
 const DESCRIPTION =
   "Alex Alderman's GTM engineering demos, written up or on video: what he built during the Hire Me Hackathon and how it works.";
 
@@ -102,7 +103,7 @@ export default function DemosIndex() {
             {TITLE}
           </h1>
           <p className="entry-subtitle">
-            What Alex built during the hackathon, one entry per demo: some written up, some on video. Newest first.
+            {t("demos.intro")}
           </p>
         </div>
       </header>
