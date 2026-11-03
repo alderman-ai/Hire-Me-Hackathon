@@ -19,6 +19,7 @@ export type Status = {
   status: "recording" | "paused" | "idle" | "finished";
   finished_at?: number | null; // epoch seconds, set once the build is called done (clock_sync.py)
   built_seconds?: number; // recorded time used, capped at the budget
+  remaining_seconds?: number; // 0 once finished
   session: string | null;
   hackathon_start: number | null;
   sessions: SessionInfo[];
@@ -27,6 +28,7 @@ export type Status = {
 
 /** Seconds of the budget left at `now` (epoch seconds), and whether the clock is running. */
 export function remaining(s: Status, now: number): { seconds: number; running: boolean; stale: boolean } {
+  if (s.status === "finished") return { seconds: 0, running: false, stale: false };
   let used = s.banked_seconds;
   let running = s.status === "recording" && s.running_since !== null;
   const stale = running && now - s.published_at > STALE_SECONDS;

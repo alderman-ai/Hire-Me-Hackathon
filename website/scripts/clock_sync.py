@@ -118,8 +118,10 @@ def build_status() -> dict:
         finished_at = float(marked["at"])
     elif banked >= BUDGET_SECONDS and status != "recording":
         finished_at = last_end
-    if finished_at is not None and status != "recording":
-        status, current = "finished", None
+    # Once the build is called done (finished.json), it stays done: a later /start from the rig can't
+    # bring the countdown back (Alex, 3 Nov: "0 out the remaining hackathon time. Set the status to Finished").
+    if finished_at is not None and (isinstance(marked, dict) and marked.get("at") or status != "recording"):
+        status, current, running_since = "finished", None, None
     return {
         "budget_seconds": BUDGET_SECONDS,
         "banked_seconds": round(banked, 1),
@@ -130,6 +132,7 @@ def build_status() -> dict:
         "hackathon_start": clock.get("start_epoch"),
         "finished_at": finished_at,
         "built_seconds": round(min(banked, BUDGET_SECONDS), 1),
+        "remaining_seconds": 0 if status == "finished" else round(max(BUDGET_SECONDS - banked, 0), 1),
         "sessions": sessions,
     }
 

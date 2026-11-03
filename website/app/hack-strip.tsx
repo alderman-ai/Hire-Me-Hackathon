@@ -22,7 +22,7 @@ export type HackItem = { href: string; label: string };
 /** A run of menu cells: Day 1's (with its "Day 1" label), then Day 2's (`fresh`: the newest, with a dot). */
 export type HackGroup = { label?: string; fresh?: boolean; items: HackItem[] };
 /** `finished` holds {when}, `built` holds {duration}. */
-export type HackWords = { live: string; onBreak: string; finished: string; built: string; left: string; menuLabel: string; groups: HackGroup[] };
+export type HackWords = { live: string; onBreak: string; finished: string; built: string; left: string; questions: string; email: string; menuLabel: string; groups: HackGroup[] };
 
 /** 11,031 s becomes "3:03:51". */
 function hms(seconds: number) {
@@ -120,6 +120,10 @@ export function HackStrip({ words }: { words: HackWords }) {
               <span className="hack-label">{words.finished.replace("{when}", whenPrague(status.finished_at as number))}</span>
               <span className="hack-sep" aria-hidden="true" />
               <span className="hack-part">{words.built.replace("{duration}", hrsMins(status.built_seconds ?? status.banked_seconds))}</span>
+              <span className="hack-sep" aria-hidden="true" />
+              <span className="hack-part hack-ask">
+                {words.questions} <a href={`mailto:${words.email}`}>{words.email}</a>
+              </span>
             </span>
           ) : (
             <span className="hack-text hack-split">

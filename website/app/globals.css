@@ -358,6 +358,12 @@ a {
 .hack-label { font-size: 20px; font-weight: 700; color: var(--av-white); }
 .hack-sep { align-self: stretch; width: 1px; background: var(--hack-rule); }
 
+.hack-ask a {
+  color: var(--hack-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .hack-part {
   min-width: 0;
   overflow: hidden;
