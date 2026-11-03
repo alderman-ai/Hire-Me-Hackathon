@@ -4,6 +4,11 @@
   "lists": {
     "default": [
       {
+        "id": "art-teaching-a-machine-to-sound-like-me",
+        "why": "",
+        "fallback": null
+      },
+      {
         "id": "art-pipeline-promise",
         "why": "",
         "fallback": "demo-getsales-routing"
