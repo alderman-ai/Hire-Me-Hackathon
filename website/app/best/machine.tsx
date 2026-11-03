@@ -23,7 +23,7 @@ import { dayOf } from "../day-label";
  *   Machine36           the whole block on its own ink band (home, id "machine")
  *   WalkthroughFrame    only the video frame (Ivana's page, home)
  *   MachineStats        the three stats (Ivana's page, home)
- *   Routing             "Rules first": heading, lead, the four-step flow and its caption (home)
+ *   Routing             "Rules first": heading, a paragraph, the four-step flow, a paragraph (home)
  *   MachineMatrix       the 36 matrix with the four landed leads (home; the C2 entry, with legend entry.matrix.1)
  *   MachineMessages     the two custom_message_1 rows, Czech and English (home, Ivana's page)
  *   MachineFigures      the two C2 figures (home, Ivana's page)
@@ -107,7 +107,7 @@ export function MachineStats() {
   );
 }
 
-/** "Rules first, then a decision model" with the four counts and C1's summary line. `id` defaults to "routing". */
+/** "Rules first, then a decision model": how routing works, the four counts, and C1's twelve-lead result. `id` defaults to "routing". */
 export function Routing({ id = "routing" }: { id?: string }) {
   return (
     <>
@@ -115,27 +115,35 @@ export function Routing({ id = "routing" }: { id?: string }) {
         Rules first, then a decision model
       </h3>
       <p className="bx-lead bx-lead-narrow">
-        Most of the sorting is rules: industry, headcount, country and profile language. They&rsquo;re free, exact, and anyone can audit them.
+        Rules do most of the sorting: industry, headcount, country, profile language.{" "}
+        <strong>They&rsquo;re free, exact, and anyone on your team can read why a lead went where.</strong> When a rule can&rsquo;t decide
+        (&ldquo;Financial Services&rdquo; says too little), Jev, a classification model from TypeSafe, gets one narrow question. Under 75% sure, or
+        two answers close? A person decides.
       </p>
       <ol className="bx-flow bx-mt-2" aria-label="How one lead finds its workflow">
         <li>
           <span className="bx-flow-n">4 of 12</span>
-          <b>Rules</b>industry, headcount, country and profile language settle most leads
+          <b>Rules</b>industry, headcount, country and profile language settle most of the calls
         </li>
         <li>
           <span className="bx-flow-n">7 of 12</span>
-          <b>Jev (a classification model)</b>one narrow question when a rule can&rsquo;t decide
+          <b>Jev</b>one narrow question when a rule can&rsquo;t decide
         </li>
         <li>
-          <span className="bx-flow-n">0.75</span>
-          <b>A person</b>decides below 0.75, or when two answers are close
+          <span className="bx-flow-n">75%</span>
+          <b>A person</b>decides when the model is under 75% sure, or two answers are close
         </li>
         <li>
           <span className="bx-flow-n">1 of 36</span>
-          <b>One workflow</b>the lead lands in exactly one of the 36
+          <b>One workflow</b>the lead lands in exactly one of the 36, with its reason
         </li>
       </ol>
-      <p className="bx-flow-cap">12 leads, 4 placed by rules alone, 7 that needed a model&rsquo;s answer for at least one decision, 1 no fit.</p>
+      <p className="bx-lead bx-lead-narrow">
+        A lead that fits lands in exactly one of the 36 workflows, with its reason next to it. I&rsquo;m not running real data through it, so I
+        tested it on twelve fictional leads: 4 placed by rules alone, 7 needed the model at least once, 1 fit nothing. Honest caveat: the model
+        isn&rsquo;t called in this run either, so the hard cases show answers a person labelled. That&rsquo;s how this starts for real anyway: your
+        labels tune the questions.
+      </p>
     </>
   );
 }
@@ -211,7 +219,6 @@ export function Machine36() {
       </div>
       <Routing />
       <MachineMatrix legend={t("home.machine.2")} />
-      <MachineMessages />
       <MachineFigures />
       <MachineLinks />
     </Band>

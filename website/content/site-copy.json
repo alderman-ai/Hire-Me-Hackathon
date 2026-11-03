@@ -98,5 +98,6 @@
   "hack.status.live": "LIVE!",
   "hack.status.break": "On Break",
   "hack.status.finished": "Finished at {when}",
-  "hack.status.built": "Built in: {duration}"
+  "hack.status.built": "Built in: {duration}",
+  "hack.status.left": "{time} left"
 }

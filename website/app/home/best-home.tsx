@@ -65,11 +65,11 @@ export function BestHome() {
           <div>
             <EyebrowRow>{t("home.hero.1")}</EyebrowRow>
             <h1 id="home-title" className="bx-h1">
-              If AI won&rsquo;t replace half your team, put it in your pipeline
+              Two ways to pay for AI: cut labor, or increase revenue
             </h1>
             <p className="bx-lead bh-hero-lead">
-              <strong>GTM engineers who focus AI on the pipeline are the ones helping companies keep their promise:</strong> that AI is a way to do more
-              business and grow the whole team together, not to replace half of it.
+              <strong>GTM engineers who put AI in your pipeline take the second one.</strong> Your people get more done, you bring in more work, and that
+              pays for the AI without dropping half your team.
             </p>
             <div className="bh-byline">
               <span className="bh-byline-photo">

@@ -22,7 +22,7 @@ export type HackItem = { href: string; label: string };
 /** A run of menu cells: Day 1's (with its "Day 1" label), then Day 2's (`fresh`: the newest, with a dot). */
 export type HackGroup = { label?: string; fresh?: boolean; items: HackItem[] };
 /** `finished` holds {when}, `built` holds {duration}. */
-export type HackWords = { live: string; onBreak: string; finished: string; built: string; menuLabel: string; groups: HackGroup[] };
+export type HackWords = { live: string; onBreak: string; finished: string; built: string; left: string; menuLabel: string; groups: HackGroup[] };
 
 /** 11,031 s becomes "3:03:51". */
 function hms(seconds: number) {
@@ -30,6 +30,15 @@ function hms(seconds: number) {
   const h = Math.floor(s / 3600);
   const m = Math.floor((s % 3600) / 60);
   return `${h}:${String(m).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
+}
+
+/** 2,280 s becomes "38 min", 4,500 s "1 hr 15 min"; under a minute is "1 min", so the bar never shows zero. */
+function timeLeft(seconds: number) {
+  const mins = Math.max(1, Math.ceil(seconds / 60));
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h === 0) return `${m} min`;
+  return m === 0 ? `${h} hr` : `${h} hr ${m} min`;
 }
 
 /** "8:32pm on 11 Nov", in Prague time, whatever the visitor's own time zone. */
@@ -115,10 +124,13 @@ export function HackStrip({ words }: { words: HackWords }) {
           ) : (
             <span className="hack-text hack-split">
               {state !== "pending" && <span className="hack-label">{state === "live" ? words.live : words.onBreak}</span>}
-              {state === "live" && clock && (
+              {state === "live" && clock && clock.seconds > 0 && (
                 <span className="hack-count" role="timer">
                   {hms(clock.seconds)}
                 </span>
+              )}
+              {state === "break" && clock && clock.seconds > 0 && (
+                <span className="hack-count">{words.left.replace("{time}", timeLeft(clock.seconds))}</span>
               )}
             </span>
           )}

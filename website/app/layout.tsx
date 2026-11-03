@@ -28,6 +28,7 @@ const HACK: HackWords | undefined = NEW_SITE
       onBreak: t("hack.status.break"),
       finished: t("hack.status.finished"),
       built: t("hack.status.built"),
+      left: t("hack.status.left"),
       menuLabel: "Hire Me Hackathon",
       groups: [
         { items: HACK_ITEMS.filter((i) => i.ready).map((i) => ({ href: i.href, label: t(i.label) })) },
