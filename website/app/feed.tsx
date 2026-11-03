@@ -70,7 +70,7 @@ function Video({ session, start, end }: { session: string; start: number; end?: 
       {id ? (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${id}${qs ? `?${qs}` : ""}`}
-          title={/^S\d+$/.test(session) ? `Session ${session}, webcam` : "Video: Keep the promise"}
+          title={/^S\d+$/.test(session) ? `Session ${session}, webcam` : "Video"}
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
