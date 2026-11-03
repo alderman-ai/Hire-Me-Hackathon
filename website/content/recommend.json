@@ -9,6 +9,11 @@
         "fallback": "demo-getsales-routing"
       },
       {
+        "id": "art-label-every-piece",
+        "why": "",
+        "fallback": null
+      },
+      {
         "id": "knowledge-arbitrage",
         "why": "",
         "fallback": "demo-d1-scraping-briefing"
