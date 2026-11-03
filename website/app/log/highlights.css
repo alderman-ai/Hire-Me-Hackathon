@@ -167,6 +167,7 @@
 .hl-seg-kill { background: var(--av-orchid); }
 .hl-seg-bad { background: #ff8ae0; }
 .hl-seg-recovery { background: var(--av-lavender); }
+.hl-seg-skill { background: #5b45c9; }
 .hl-tick { position: absolute; top: -5px; bottom: -5px; width: 2px; margin-left: -1px; background: var(--av-white); }
 
 .hl-seg-list, .hl-mark-list { display: grid; gap: .75rem 1.5rem; margin: 1rem 0 0; padding: 0; list-style: none; font-size: .9375rem; line-height: 1.45; color: var(--av-text-on-dark); }
@@ -176,6 +177,7 @@
 .hl-seg-list li.hl-seg-kill { border-color: var(--av-orchid); background: none; }
 .hl-seg-list li.hl-seg-bad { border-color: #ff8ae0; background: none; }
 .hl-seg-list li.hl-seg-recovery { border-color: var(--av-lavender); background: none; }
+.hl-seg-list li.hl-seg-skill { border-color: #5b45c9; background: none; }
 .hl-mark-list { grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 .hl-mark-list li { display: grid; gap: .15rem; padding-left: .75rem; border-left: 2px solid var(--av-white); }
 .hl-seg-t { color: var(--av-white); font-family: var(--av-font-numeric); font-weight: 600; font-variant-numeric: tabular-nums; }

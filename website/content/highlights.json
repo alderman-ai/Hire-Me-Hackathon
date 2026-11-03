@@ -214,48 +214,43 @@
       "session": "S05",
       "prague": "13:17:12",
       "minute": 800,
-      "youtube": "EoLyMiV77R0",
-      "start": 2226,
-      "end": 2546,
-      "length": "5:20",
-      "bounds_note": "Starts on 'let's process all those orchestration...' (2226.2 s in the S05 transcript) and ends after 'I need to report on that' (2544.9 s). Source cards: S05-n, day1-3. The kill itself is at about 2402 s (13:20:08); 'So that was bad' at 2449.9 s.",
+      "youtube": "sBVgT-LbEQo",
+      "start": 0,
+      "end": 219,
+      "length": "3:38",
+      "bounds_note": "Rig's self-contained kill-composite.mp4 (218.5 s), played whole from 0 to the end; no offsets into a session recording.",
       "segments": [
         {
-          "key": "weeds",
-          "from": 2226,
-          "to": 2399
-        },
-        {
           "key": "kill",
-          "from": 2399,
-          "to": 2450
-        },
-        {
-          "key": "bad",
-          "from": 2450,
-          "to": 2490
+          "from": 0,
+          "to": 52
         },
         {
           "key": "recovery",
-          "from": 2490,
-          "to": 2546
+          "from": 52,
+          "to": 154
+        },
+        {
+          "key": "skill",
+          "from": 154,
+          "to": 219
         }
       ],
       "marks": [
         {
           "key": "kill",
-          "at": 2402,
-          "prague": "13:20:08"
+          "at": 7,
+          "prague": "13:20"
         },
         {
-          "key": "bad",
-          "at": 2450,
-          "prague": "13:20:55"
+          "key": "back",
+          "at": 143,
+          "prague": "13:4x"
         },
         {
-          "key": "ask",
-          "at": 2491,
-          "prague": "13:21:37"
+          "key": "skill",
+          "at": 161,
+          "prague": "13:44"
         }
       ],
       "quotes": [
@@ -274,7 +269,8 @@
           "time": "13:21:37",
           "source": "S05-n"
         }
-      ]
+      ],
+      "meta": "S05 and S07, 13:20-13:44"
     }
   },
   "words": {
@@ -322,18 +318,17 @@
     "highlights.beat.S12-a.setup": "Seven hours in, I was down to one agent, what was left was mostly design, and the part of my brain that does AI was pretty done.",
     "highlights.centre.kill.title": "One command, every session gone",
     "highlights.centre.kill.setup": "By 13:20 I had Claude Code sessions in the background, all working in parallel on this site, plus the ones that handle the recording. Lost in the weeds, I went to close the one I didn't need, and the command closed every one of them.",
-    "highlights.centre.kill.caption": "Five minutes twenty, uncut. The one swear stays in.",
-    "highlights.centre.kill.scrub": "The clip in four parts",
-    "highlights.centre.kill.seg.weeds": "Lost in the weeds",
+    "highlights.centre.kill.caption": "Three minutes thirty-eight, cut from two recordings. I didn't keep the dead air, but the one swear stays in (it was earned).",
+    "highlights.centre.kill.scrub": "The clip in three parts",
     "highlights.centre.kill.seg.kill": "Closing one, losing all",
-    "highlights.centre.kill.seg.bad": "\"So that was bad,\" and why",
     "highlights.centre.kill.seg.recovery": "Handing the recovery to a fresh session",
     "highlights.centre.kill.mark.kill": "Every session closes",
-    "highlights.centre.kill.mark.bad": "\"So that was bad\"",
-    "highlights.centre.kill.mark.ask": "Asking for every session back",
     "highlights.centre.kill.after": "At 13:44 the whole recovery became a skill, so if it ever happens again, it's an instant fix.",
     "derby.kill.label": "I meant to end one",
-    "derby.scrub.label": "Race clock, 09:45 to 23:45"
+    "derby.scrub.label": "Race clock, 09:45 to 23:45",
+    "highlights.centre.kill.seg.skill": "Turning the fix into a skill",
+    "highlights.centre.kill.mark.back": "Every session is back",
+    "highlights.centre.kill.mark.skill": "Asking for a recovery skill"
   },
   "data": {
     "swimlane": [

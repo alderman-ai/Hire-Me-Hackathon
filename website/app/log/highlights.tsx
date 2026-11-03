@@ -411,7 +411,7 @@ function Centrepiece({ id }: { id: string }) {
         label={title}
         size="hero"
         caption={w(`highlights.centre.${id}.caption`)}
-        meta={`${c.session}, ${c.prague.slice(0, 5)}-13:22`}
+        meta={(c as { meta?: string }).meta ?? `${c.session}, ${c.prague.slice(0, 5)}`}
         className="hl-vid hl-vid-centre"
       />
       <div className="hl-scrub" role="group" aria-label={w(`highlights.centre.${id}.scrub`)}>
