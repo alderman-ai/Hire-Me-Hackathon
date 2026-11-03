@@ -461,6 +461,7 @@ const ORDER = [
   "ai-workflows-are-always-a-managed-service",
   "36-outbound-workflows-and-the-one-variable-behind-them",
   "sorting-twelve-leads-into-36-workflows-rules-first-then-jev",
+  "what-to-do-after-your-outbound-sequences-go-live",
   "teaching-a-machine-to-sound-like-me",
   "build-it-in-their-brand",
   "label-every-piece-before-you-build-a-page",
