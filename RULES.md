@@ -37,3 +37,4 @@ The six at Addvery each have their own page. Of the six, only Ivana knows Alex p
 - **Content library:** every piece of content that exists, listed and described: `orchestration\local\library\` (git-ignored, on this machine). `written.md`, `video.md` and `skills.md` for reading; the `.json` files for looking up ids. `live-site.md` is what's live, page by page.
 - **Alex's verbatim wants:** `orchestration\local\ALEX-WANTS.md` (git-ignored, on this machine only).
 - **The copywriting skill:** `.claude\skills\alex-voice\` (load it with the Skill tool as `alex-voice`).
+12. **Nothing from his earlier client work goes in the public repo or on the site.** (Alex, 3 Nov.) Where he explains a concept from work done under an NDA, we use the concept only and recreate the visuals from his description. No document, screenshot, name or figure from that work is committed, shown or put in a session handoff outside `orchestration\local\`.
