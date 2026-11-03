@@ -1,7 +1,7 @@
 {
   "words": {
     "timelapse.title": "Every version that went live",
-    "timelapse.intro": "Every time a new version of this site went live on Day 1, the home page got a frame here, 10:31 to 18:03. The gap from 12:16 to 13:50 has 13:20 in it."
+    "timelapse.intro": "Every time a new version of this site went live on Day 1, the home page got a frame here, 10:31 to 23:40. The gap from 12:16 to 13:50 has 13:20 in it."
   },
   "deployments": [
     {
@@ -365,6 +365,56 @@
       "file": "/timelapse/1803-QnYQ5GA68.webp",
       "time": "18:03",
       "id": "QnYQ5GA68"
+    },
+    {
+      "file": "/timelapse/1813-YisRe95Ya.webp",
+      "time": "18:13",
+      "id": "YisRe95Ya"
+    },
+    {
+      "file": "/timelapse/1822-vDiSvTBUR.webp",
+      "time": "18:22",
+      "id": "vDiSvTBUR"
+    },
+    {
+      "file": "/timelapse/1823-iBNUBhKBN.webp",
+      "time": "18:23",
+      "id": "iBNUBhKBN"
+    },
+    {
+      "file": "/timelapse/1826-DPhgUtcad.webp",
+      "time": "18:26",
+      "id": "DPhgUtcad"
+    },
+    {
+      "file": "/timelapse/1845-g3fbpWd1k.webp",
+      "time": "18:45",
+      "id": "g3fbpWd1k"
+    },
+    {
+      "file": "/timelapse/1846-PSnbNeBaL.webp",
+      "time": "18:46",
+      "id": "PSnbNeBaL"
+    },
+    {
+      "file": "/timelapse/1849-qpodT36TK.webp",
+      "time": "18:49",
+      "id": "qpodT36TK"
+    },
+    {
+      "file": "/timelapse/1850-zFs9ekt7e.webp",
+      "time": "18:50",
+      "id": "zFs9ekt7e"
+    },
+    {
+      "file": "/timelapse/1857-EGg2w4tqw.webp",
+      "time": "18:57",
+      "id": "EGg2w4tqw"
+    },
+    {
+      "file": "/timelapse/2340-RkksL38pQ.webp",
+      "time": "23:40",
+      "id": "RkksL38pQ"
     }
   ]
 }
