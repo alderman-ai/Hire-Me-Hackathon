@@ -32,9 +32,9 @@ function hms(seconds: number) {
   return `${h}:${String(m).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
 }
 
-/** 2,280 s becomes "38 min", 4,500 s "1 hr 15 min"; under a minute is "1 min", so the bar never shows zero. */
+/** 2,280 s becomes "38 min", 4,500 s "1 hr 15 min"; under two minutes reads "1 min", so the bar never shows zero. */
 function timeLeft(seconds: number) {
-  const mins = Math.max(1, Math.ceil(seconds / 60));
+  const mins = Math.max(1, Math.floor(seconds / 60));
   const h = Math.floor(mins / 60);
   const m = mins % 60;
   if (h === 0) return `${m} min`;
