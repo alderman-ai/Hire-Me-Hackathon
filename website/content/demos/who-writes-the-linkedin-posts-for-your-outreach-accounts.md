@@ -28,6 +28,9 @@ That's one of the things I do as a GTM engineer. I keep every account your team 
 
 LinkedIn content for salespeople lives in a horrible realm somewhere between sales and marketing. Back when I did cross-departmental consulting, I called it **the zone of plausible deniability**.
 
+> [!video] LXkATcU-6mQ
+> The zone of plausible deniability: sales thinks it's marketing's job, marketing thinks it's sales'.
+
 Sales thinks it's marketing's job, so sales doesn't do it. Marketing thinks it's sales' job, so marketing doesn't do it. No one has it in their budget.
 
 I sold LinkedIn-related services for a lot of years, and sometimes the missing content is the whole reason a company doesn't do LinkedIn outreach at all. Which is insane. I'm biased after years of frustration, but **salespeople should not be writing LinkedIn content.** And marketing doesn't want to write it for them either.
