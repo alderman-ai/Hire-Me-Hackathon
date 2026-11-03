@@ -1,18 +1,18 @@
 ---
-title: "36 sequences, and who goes into which one"
+title: "36 sequences, and a first message written for every lead"
 slug: "36-outbound-workflows-and-the-one-variable-behind-them"
-description: "Outbound where every lead lands in the sequence that fits them, opening on a message written for that one person: 36 sequences built for Addvery."
+description: "I built 36 sequences for your four customer types in English, Czech and German, each opening on a message written for that one person."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
 kind: "showcase"
 library_id: "demo-getsales-36-workflows"
-group: "How I'd reach your accounts"
+group: "Outbound"
 video:
   youtube_id: "_vgNB5ubKjA"
   start: 0
 cover:
-  kicker: "How I'd reach your accounts"
+  kicker: "Outbound"
   subtitle: "36 GetSales workflows for Addvery, and a custom first message for every lead."
 tags: ["outbound", "getsales", "classification"]
 reading_minutes: 4

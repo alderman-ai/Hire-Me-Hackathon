@@ -1,15 +1,15 @@
 ---
-title: "Build it in their brand"
+title: "Outreach in your prospect's own brand, lifted from their website"
 slug: "build-it-in-their-brand"
-description: "Outreach built in the prospect's own brand proves at a glance it wasn't sent to everyone, and since a company's website hands over most of its brand guide, an agent can pull it in about an hour."
+description: "Outreach in the prospect's own brand shows at a glance it wasn't sent to everyone, and since their website hands over most of the brand guide, I can pull it in about an hour."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
 kind: "showcase"
 library_id: "art-build-it-in-their-brand"
-group: "How the day went"
+group: "Outbound"
 cover:
-  kicker: "How the day went"
+  kicker: "Outbound"
   subtitle: "Nobody mass-sends a page in your brand with your colleagues' names on it."
   accent: "their brand"
 tags: ["branding", "personalisation"]

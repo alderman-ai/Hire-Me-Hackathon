@@ -207,7 +207,10 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
           )}
           <div className="entry-kicker-row">
             <span className="entry-kicker-bar" aria-hidden="true" />
-            <p className="entry-kicker">{entry.cover.kicker}</p>
+            <p className="entry-kicker">
+              {entry.cover.kicker}
+              {entry.video && <span className="entry-type-tag">Video article</span>}
+            </p>
           </div>
           <CoverTitle entry={entry} id="entry-title" />
           <p className="entry-subtitle">{entry.cover.subtitle}</p>

@@ -1,17 +1,17 @@
 ---
-title: "Who gets which message: rules first, a model for the rest"
+title: "Every lead in the right sequence, and why it's there"
 slug: "sorting-twelve-leads-into-36-workflows-rules-first-then-jev"
-description: "How I make sure every lead gets the right outreach, in the right language, before anyone writes to them: plain rules do most of the sorting, a model handles the rest, and every decision shows its reason."
+description: "Before anyone writes to a lead, I sort it into the right customer type, language and approach, and every decision comes with its reason."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
 kind: "showcase"
 deliverable: "d3"
 library_id: "demo-getsales-routing"
-group: "How I'd reach your accounts"
+group: "Outbound"
 poster: "/demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png"
 cover:
-  kicker: "How I'd reach your accounts"
+  kicker: "Outbound"
   subtitle: "Every lead lands in exactly one workflow, and every decision shows what settled it."
   accent: "rules first"
 tags: ["outbound", "classification"]
@@ -54,7 +54,7 @@ The customer type comes from industry and company size: a grocery chain with 4,2
 **An answer only counts if the model is at least 75% sure and 25 points ahead of its second choice.** Otherwise a person decides. The same kind of question picks the opening. A streaming service looks like your Oneplay case. A domestic courier looks like none of your stories yet, so its message opens on a known pain instead.
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-hard-cases.png
-> Screen output for a Slovak lender and a Czech streaming service, whose labels are too broad for a rule: the question the model gets and the answer a person gave
+> Screen output for a Slovak lender and a Czech streaming service, whose industry labels are too broad for a rule: each shows the question the model gets and the answer a person labelled
 > The two hard cases, where no rule can decide the customer type
 
 Honest caveat: the model isn't called in this run. The hard cases show answers a person labelled, and nothing was imported or sent. That's how this starts for real anyway, right? Your labels are what tune the questions.

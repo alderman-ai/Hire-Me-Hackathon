@@ -1,15 +1,15 @@
 ---
-title: "Best of three, instead of redlining everything one by one"
+title: "Your best people should choose, not correct"
 slug: "best-of-three-instead-of-redlining"
-description: "I have AI build three competing versions of a big piece of work, each arguing its case and naming its weak spot, so the person whose judgment counts picks and combines instead of redlining one draft line by line."
+description: "I have AI build three full versions of a big piece of work, each arguing its case and naming its weak spot, so your senior people pick and combine instead of redlining one draft line by line."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
 kind: "showcase"
 library_id: "art-best-of-three-instead-of-redlining"
-group: "How the day went"
+group: "AI in your team"
 cover:
-  kicker: "How the day went"
+  kicker: "AI in your team"
   subtitle: "The night my own site got away from me, I stopped redlining and had three agents argue instead."
   accent: "Best of three"
 tags: ["orchestration", "process"]

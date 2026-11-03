@@ -1,15 +1,15 @@
 ---
 title: "AI workflows are always a managed service"
 slug: "ai-workflows-are-always-a-managed-service"
-description: "AI workflows break when the models change and stall when people won't use them, so I set them up as a service that keeps working: I build, I teach, or I mix the two, and I stay with your team as the tools move."
+description: "AI workflows break when the models change and stall when nobody uses them, so I build, teach your team, or mix the two, and stay on as the tools move."
 author: "Alex Alderman"
 date: "2026-11-03"
 status: "published"
 kind: "showcase"
 library_id: "art-managed-service"
-group: "How the day went"
+group: "AI in your team"
 cover:
-  kicker: "How the day went"
+  kicker: "AI in your team"
   subtitle: "An AI workflow is never a product but always a managed service"
   accent: "managed service"
 tags: ["managed-service", "adoption"]

@@ -1,5 +1,5 @@
 ---
-title: "Teaching a machine to sound like me"
+title: "Teaching AI to sound like you, so you only proofread"
 slug: "teaching-a-machine-to-sound-like-me"
 description: "I capture how a person writes and talks so AI drafts in their voice and they only proofread, which now takes me about 20% of the time it used to."
 author: "Alex Alderman"
@@ -7,9 +7,9 @@ date: "2026-11-02"
 status: "published"
 kind: "showcase"
 library_id: "art-teaching-a-machine-to-sound-like-me"
-group: "How the day went"
+group: "Content"
 cover:
-  kicker: "How the day went"
+  kicker: "Content"
   subtitle: "Almost every word on this site is written by AI, and every word is supposed to sound like me."
   accent: "a machine"
 tags: ["copywriting", "process"]

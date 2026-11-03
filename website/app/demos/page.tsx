@@ -73,7 +73,10 @@ function Card({ entry }: { entry: Entry }) {
         )}
       </div>
       <div className="entry-card-text">
-        <p className="entry-row-kicker">{entry.cover.kicker}</p>
+        <p className="entry-row-kicker">
+          {entry.cover.kicker}
+          {entry.video && <span className="entry-type-tag">Video article</span>}
+        </p>
         <h2 className="entry-card-title">
           <Link href={entryUrl(entry.slug)}>{entry.title}</Link>
         </h2>
