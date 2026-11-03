@@ -20,6 +20,7 @@ import {
   VideoFrame,
 } from "../best/parts";
 import { Machine36 } from "../best/machine";
+import { HeroVideo } from "./hero-video";
 import "./home.css";
 
 /*
@@ -57,44 +58,44 @@ export function BestHome() {
   const pipelineArticle = pageHref("art-pipeline-promise");
   return (
     <main>
-      {/* 1. Hero */}
-      <Band tone="dark" glow pad="sm" labelledBy="home-title" className="bh-hero" bare>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="bh-hero-circle" src="/addvery/hero-circle.webp" alt="" width={472} height={460} aria-hidden="true" />
-        <div className="bx-wrap bh-hero-grid">
-          <div>
+      {/* 1. Hero: the "Keep the promise" film. On a desktop its poster is the band's background, the words
+          sit left and the player takes the 16:9 box on the right; on a phone the poster is a 16:9 frame on
+          top and the words sit under it (home.css, "Hero"). The film comes first in the source so the play
+          button is first in tab order, matching the phone layout. */}
+      <Band tone="dark" pad="sm" labelledBy="home-title" className="bh-hero bh-promise" bare>
+        <div className="bh-promise-grid">
+          <HeroVideo
+            youtube="zVnA-AMuNfc"
+            poster="/home/hero-promise.webp"
+            playLabel={t("home.hero.7")}
+            newTab={t("home.hero.8")}
+            title={t("home.hero.6")}
+            tag={t("home.hero.6")}
+          />
+          <div className="bh-promise-copy">
             <EyebrowRow>{t("home.hero.1")}</EyebrowRow>
-            <h1 id="home-title" className="bx-h1">
-              Two ways to pay for AI: cut labor, or increase revenue
+            <h1 id="home-title" className="bx-h1 bh-promise-h1">
+              {t("home.hero.4")}
             </h1>
-            <p className="bx-lead bh-hero-lead">
-              <strong>GTM engineers who put AI in your pipeline take the second one.</strong> Your people get more done, you bring in more work, and that
-              pays for the AI without dropping half your team.
-            </p>
+            <p className="bh-promise-ask">{t("home.hero.5")}</p>
+            <p className="bh-promise-gold">{t("home.hero.6")}</p>
             <div className="bh-byline">
               <span className="bh-byline-photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/about/alex-headshot-480.webp" alt="" width={48} height={48} />
+                <img src="/about/alex-headshot-480.webp" alt="" width={40} height={40} />
               </span>
               <p>
-                <span className="bh-byline-name">Alex Alderman</span>
-                <span className="bh-byline-role">Applying to Addvery as a GTM engineer</span>
+                <span className="bh-byline-name">{t("home.hero.9")}</span>
+                <span className="bh-byline-role">{t("home.hero.10")}</span>
               </p>
             </div>
             <div className="bh-actions">
-              <GradientButton href="#machine">{t("home.hero.2")}</GradientButton>
+              <GradientButton href="#machine" className="bh-promise-btn">
+                {t("home.hero.2")}
+              </GradientButton>
               <ArrowLink href="/for">{t("home.hero.3")}</ArrowLink>
             </div>
           </div>
-          <VideoFrame
-            size="hero"
-            youtube="XVqOE_-COOQ"
-            label="GTM engineers are the solution to the biggest social question of the AI era"
-            caption={'"gtm engineers are the solution to the biggest social question of the ai era"'}
-            meta="Day 1, 16:33"
-            length="0:59"
-            poster="https://i.ytimg.com/vi/XVqOE_-COOQ/maxresdefault.jpg"
-          />
         </div>
       </Band>
 
