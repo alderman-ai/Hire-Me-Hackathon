@@ -85,8 +85,6 @@
   "skills.stakeholder-landing-pages.1": "Instead of one pitch for everyone, every decision-maker gets a page of their own, in their company's look. There are six.",
   "skills.taste-grading-booth.1": "I grade moments blind, one key each, with 30% locked away first so the rubric gets tested on my taste. 126 of 127 graded. The rubric's next.",
   "skills.transcript-to-article.1": "You talk, it writes a near-final article that still sounds like you, and you do the last 10%. Three of my articles started this way.",
-  "hack.strip.before": "Still building. Day 2 goes live in {countdown}",
-  "hack.strip.live": "Live now: Day 2 of the build",
   "log.intro.title": "Day 1: the build is the demo",
   "log.intro.body": "On 2 November, Day 1, I directed more than 15 Claude Code sessions live while they built this site. The build itself is one of the skills I'm here to show off, so this is every update as it happened, rough edges included.",
   "hack.menu.label": "Day 1",
@@ -96,5 +94,9 @@
   "log.feed.title": "Day 1 feed",
   "demos.intro": "What I made during the hackathon besides the site itself: some written up, some on video. Newest first.",
   "hack.menu.day2": "Day 2 Update",
-  "day2.title": "Day 2"
+  "day2.title": "Day 2",
+  "hack.status.live": "LIVE!",
+  "hack.status.break": "On Break",
+  "hack.status.finished": "Finished at {when}",
+  "hack.status.built": "Built in: {duration}"
 }

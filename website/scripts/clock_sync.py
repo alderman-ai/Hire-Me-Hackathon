@@ -35,6 +35,8 @@ LOG = WORK / "sync.log"
 PID = WORK / "sync.pid"
 # Manual corrections, counted as time already used: [{"seconds": 3600, "reason": "...", "at": "..."}].
 ADJUST = WORK / "adjustments.json"
+# Written when Alex calls the end: {"at": <epoch seconds>}. Turns the site's bar to "Finished".
+FINISHED = WORK / "finished.json"
 
 
 def log(text: str) -> None:
@@ -81,10 +83,14 @@ def build_status() -> dict:
     running_since = None
     status, current = "idle", None
     sessions = []
+    last_end = None
     videos = youtube_ids()
     for sid, record in sorted(session_records().items()):
         spans = record.get("spans") or []
         closed = sum(s["end"] - s["start"] for s in spans if s.get("end"))
+        ends = [s["end"] for s in spans if s.get("end")]
+        if ends:
+            last_end = max(ends) if last_end is None else max(last_end, max(ends))
         seconds = closed
         state = record.get("state")
         if spans and spans[-1].get("end") is None:
@@ -106,6 +112,14 @@ def build_status() -> dict:
     adjust = sum(float(a.get("seconds") or 0) for a in (read_json(ADJUST, []) or []))
     banked += adjust
     clock = read_json(CLOCK_FILE, {}) or {}
+    finished_at = None
+    marked = read_json(FINISHED, None)
+    if isinstance(marked, dict) and marked.get("at"):
+        finished_at = float(marked["at"])
+    elif banked >= BUDGET_SECONDS and status != "recording":
+        finished_at = last_end
+    if finished_at is not None and status != "recording":
+        status, current = "finished", None
     return {
         "budget_seconds": BUDGET_SECONDS,
         "banked_seconds": round(banked, 1),
@@ -114,6 +128,8 @@ def build_status() -> dict:
         "status": status,
         "session": current,
         "hackathon_start": clock.get("start_epoch"),
+        "finished_at": finished_at,
+        "built_seconds": round(min(banked, BUDGET_SECONDS), 1),
         "sessions": sessions,
     }
 

@@ -347,12 +347,16 @@ a {
   white-space: nowrap;
 }
 
-/* The words around the countdown may be cut short; the countdown never is. */
+/* The status, then the countdown (or, once finished, the finish time and the build time). */
 .hack-split {
   display: flex;
   align-items: baseline;
+  gap: 14px;
   min-width: 0;
 }
+
+.hack-label { font-size: 20px; font-weight: 700; color: var(--av-white); }
+.hack-sep { align-self: stretch; width: 1px; background: var(--hack-rule); }
 
 .hack-part {
   min-width: 0;
@@ -382,9 +386,13 @@ a {
   box-shadow: 0 0 12px rgba(94, 227, 155, .45);
 }
 
-/* Once it's live, the dot breathes and the line turns green. */
-.hack-strip[data-state="live"] .hack-dot { animation: hack-pulse 2s ease-out infinite; }
-.hack-strip[data-state="live"] .hack-text { color: var(--hack-green); font-weight: 600; }
+/* LIVE!: the dot breathes, and the status and the countdown are green. On Break: a grey dot and the
+   countdown frozen, dimmed. Finished: a still green dot. */
+.hack-strip[data-state="live"] .hack-line .hack-dot { animation: hack-pulse 2s ease-out infinite; }
+.hack-strip[data-state="live"] .hack-label { color: var(--hack-green); }
+.hack-strip[data-state="break"] .hack-line .hack-dot { background: #8a8d96; box-shadow: none; }
+.hack-strip[data-state="break"] .hack-count { opacity: .6; }
+.hack-strip[data-state="finished"] .hack-line .hack-dot { box-shadow: none; }
 
 @keyframes hack-pulse {
   0% { box-shadow: 0 0 0 0 rgba(94, 227, 155, .55); }
@@ -401,6 +409,7 @@ a {
 .hack-menu-label {
   display: flex;
   align-items: center;
+  white-space: nowrap;
   padding-right: 16px;
   color: var(--hack-text);
   font-size: 15px;
@@ -455,7 +464,7 @@ a {
 .hack-item:focus-visible::after { transform: scaleX(1); }
 
 @media (prefers-reduced-motion: reduce) {
-  .hack-strip[data-state="live"] .hack-dot { animation: none; }
+  .hack-strip[data-state="live"] .hack-line .hack-dot { animation: none; }
   .hack-item::after { transition: none; }
 }
 
@@ -489,12 +498,17 @@ a {
 @media (max-width: 479px) {
   .hack-line { gap: 10px; padding: 7px 12px; font-size: 13px; }
   .hack-dot { width: 10px; height: 10px; }
-  .hack-menu-label { padding-left: 12px; }
+  .hack-menu-label { padding-left: 12px; padding-right: 8px; }
+  .hack-item { padding: 0 11px; }
+  .hack-item::after { left: 11px; right: 11px; }
+  .hack-group + .hack-group { margin-left: 8px; }
+  .hack-label { font-size: 15px; }
   /* On a phone the status wraps to a second line rather than lose its words. */
   .hack-line { align-items: flex-start; }
   .hack-dot { margin-top: 5px; }
-  .hack-text, .hack-split { display: block; white-space: normal; }
+  .hack-text, .hack-split { display: flex; flex-wrap: wrap; gap: 2px 10px; white-space: normal; }
   .hack-part { white-space: normal; overflow: visible; }
+  .hack-sep { display: none; }
 }
 
 .nav {

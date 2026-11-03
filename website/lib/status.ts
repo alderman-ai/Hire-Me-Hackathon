@@ -16,7 +16,9 @@ export type Status = {
   budget_seconds: number;
   banked_seconds: number;
   running_since: number | null;
-  status: "recording" | "paused" | "idle";
+  status: "recording" | "paused" | "idle" | "finished";
+  finished_at?: number | null; // epoch seconds, set once the build is called done (clock_sync.py)
+  built_seconds?: number; // recorded time used, capped at the budget
   session: string | null;
   hackathon_start: number | null;
   sessions: SessionInfo[];
