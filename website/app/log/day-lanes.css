@@ -27,7 +27,7 @@
 .dl-btn-main { border-color: transparent; background: var(--av-gradient-button); }
 
 /* The chart: names on the left (sticky), the plot on the right. Wider than a phone, so it scrolls in its own box. */
-.dl-scroll { overflow-x: auto; overscroll-behavior-x: contain; border-radius: var(--av-radius-md); }
+.dl-scroll { overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; border-radius: var(--av-radius-md); }
 .dl-chart { display: grid; grid-template-columns: var(--dl-label) minmax(560px, 1fr); min-width: 760px; }
 
 .dl-labels { position: sticky; left: 0; z-index: 4; margin: 0; padding: var(--dl-gutter) 0 var(--dl-axis); list-style: none; background: var(--dl-bg); }
