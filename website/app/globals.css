@@ -358,6 +358,15 @@ a {
 .hack-label { font-size: 20px; font-weight: 700; color: var(--av-white); }
 .hack-sep { align-self: stretch; width: 1px; background: var(--hack-rule); }
 
+/* Finished: the status on its own line, then "Built in" and the contact line together under it. */
+.hack-strip[data-state="finished"] .hack-split {
+  flex-wrap: wrap;
+  gap: 2px 18px;
+}
+.hack-strip[data-state="finished"] .hack-label { flex: 0 0 100%; }
+.hack-strip[data-state="finished"] .hack-part { overflow: visible; text-overflow: clip; white-space: nowrap; font-size: 14px; line-height: 20px; }
+.hack-strip[data-state="finished"] .hack-sep { display: none; }
+
 .hack-ask a {
   color: var(--hack-green);
   text-decoration: underline;
