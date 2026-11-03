@@ -20,10 +20,15 @@ Alex works with orchestration directly in this chat; he's short on time and on u
 **In flight:**
 1. DONE 12:30: article 1, "AI workflows are always a managed service", is live at /demos/ai-workflows-are-always-a-managed-service (website reported to the old session).
 2. `s-d5-blog-articles` (83225601, Sonnet): Alex dictates article 2 ("If AI won't replace half your team, put it in your pipeline") there directly, with the `dictate-article` skill (round 2 asks only questions that change the article). It sends you each finished article; you route it to `website` as an article entry.
-3. The spoken redline: Alex `/start`s the rig and scrolls the live site saying "banana" (start of an item) and "cucumber" (end). After `/process`: run `python orchestrationedlineedline_extract.py --session OBS\Processed\<folder>`, then stage 2 from `orchestrationedline\README.md` (Sonnet subagents read the frames), then one batch: layout to `website`, words through `alex-voice`. Then a short write-up of the method as a Day 2 highlight (W110), through `dictate-article`/`alex-voice`, with real numbers from the session.
+3. The spoken redline: Alex `/start`s the rig and scrolls the live site saying "banana" (start of an item) and "cucumber" (end). After `/process`: run `python orchestration
+edline
+edline_extract.py --session OBS\Processed\<folder>`, then stage 2 from `orchestration
+edline\README.md` (Sonnet subagents read the frames), then one batch: layout to `website`, words through `alex-voice`. Then a short write-up of the method as a Day 2 highlight (W110), through `dictate-article`/`alex-voice`, with real numbers from the session.
 4. `comfy-collab` (dbc0300e) and `comfy-video`: Alex approved two videos with it directly ("Is this thing on?", a Day 1 time-lapse of the 41 deploys, and "Keep the promise", about a minute), budget about 2,100 Comfy credits, about 156 spent by about 12:15. Blocked, like `website`'s time-lapse, on screenshots of Day 1's protected preview deployments: Alex needs to extend the claude.ai Vercel connector to the `alex-alderman-s-projects` team (asked twice; still open).
 5. Alex meets Ivana at 4 pm today. Her message drafts are in `orchestration\local
 otes\ivana.md`; unknown whether he's sent it.
+
+6. `website` is at about 350k tokens (12:30): refresh it from `website\HANDOFF.md` (757d27c) at the next quiet moment (same-name refresh, stop and remove the old id, roster commit). Launch the successor with `--model sonnet` unless a real design build is queued.
 
 **Paused today:** `orch-site-map`, `orch-briefing` (usage). `orch-alex-prep` is idle. Low priority, only if there's slack: retire DoD-17 (the LinkedIn content piece was killed) with the `change-dod` skill.
 
