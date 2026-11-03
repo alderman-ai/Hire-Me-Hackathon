@@ -28,7 +28,7 @@ Production deployment `ds72hjxle` (3 Nov 09:2x), from `c496a68`, built with all 
 
 ## Deploying
 
-**Preview:** `bash scripts/preview_deploy.sh` (all four flags, never `--prod`). It exports **HEAD** to `$CLAUDE_JOB_DIR\tmp\clean-deploy`, so commit first. It also copies the git-ignored assets in: `public\addvery\`, `public\people\`, `public\demos\linkedin-voice\`, `public\about\` (with `wall-full\`, 178 files), `app\demos\_og\glow.jpg`, and `local\about\`, `local\org-diagrams.json`, `local\research\`. A preview needs a Vercel login; check it on a local build instead.
+**Preview:** `bash scripts/preview_deploy.sh` (all four flags, never `--prod`). It exports **HEAD** to `$CLAUDE_JOB_DIR\tmp\clean-deploy`, so commit first. It also copies the git-ignored assets in: `public\addvery\`, `public\people\`, `public\about\` (with `wall-full\`, 178 files), `app\demos\_og\glow.jpg`, and `local\about\`, `local\org-diagrams.json`, `local\research\`. A preview needs a Vercel login; check it on a local build instead.
 
 **Production:**
 ```bash
