@@ -12,6 +12,7 @@ import { forHref } from "./for-href";
 import type { StakeholderNotice, StakeholderPage } from "../../stakeholders";
 import { AfterQuotes, Chips, Lens, P4_CHIPS } from "./lens";
 import { QuoteCollection, quotesFor } from "./quotes";
+import { AgentRow } from "../../agent/agent-row";
 import "./personal.css";
 
 // A personal page on the new site (BUILD.md 5 and 6, the best-of build), built only when NEW_SITE=1:
@@ -272,6 +273,11 @@ export function PersonalPage({
 
       {/* ---------- P6: recommended for you (the heading is a working label until alex-voice) ---------- */}
       <RecommendCarousel heading="Recommended for you" cards={cards} forSlug={slug} people={PAGE_SLUGS} />
+
+      {/* The agent row: this page, handed to the visitor's own AI (app/agent). */}
+      <div className="art-container">
+        <AgentRow path={`/for/${slug}`} />
+      </div>
 
       {/* ---------- P7: the notice ---------- */}
       <aside className="sh-notice" aria-labelledby="for-notice">

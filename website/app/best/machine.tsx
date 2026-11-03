@@ -1,6 +1,5 @@
-import wall from "@/content/video-wall.json";
 import { t } from "../copy";
-import { entryUrl, findEntry, type Entry } from "../articles/entries";
+import { entryUrl, findEntry } from "../articles/entries";
 import {
   ArrowLink,
   Band,
@@ -35,32 +34,22 @@ import { dayOf } from "../day-label";
  * frame and the links to C2 and C1 simply leave themselves out rather than break the page.
  */
 
-export const C2_SLUG = "36-outbound-workflows-and-the-one-variable-behind-them";
-export const C1_SLUG = "sorting-twelve-leads-into-36-workflows-rules-first-then-jev";
+import {
+  ASSETS,
+  C1_LINK,
+  C1_SLUG,
+  C2_SLUG,
+  KNOWN_CAPTION,
+  MACHINE,
+  MACHINE_FIGURES,
+  MESSAGES,
+  ROUTING,
+  c2,
+  machineStatLabels,
+  wallTile,
+} from "./machine-words";
 
-const ASSETS = `/demos-assets/${C2_SLUG}`;
-
-/** The C2 entry, if this build can show it. */
-export function c2(): Entry | undefined {
-  return findEntry(C2_SLUG);
-}
-
-type Tile = { youtube_id: string; start: number; length: string; title: string; session: string; prague: string };
-
-/** The video wall's tile for a clip, to find its length and name. Matched on id and start. */
-function wallTile(id: string, start: number): Tile | undefined {
-  for (const row of wall.rows) for (const tile of row.tiles as Tile[]) if (tile.youtube_id === id && tile.start === start) return tile;
-  return undefined;
-}
-
-// The caption words for the clip tonight (quoted from its card S10-e). When the walkthrough replaces the
-// clip, the id changes, this entry no longer matches, and the caption falls back to the wall tile's title.
-const KNOWN_CAPTION: Record<string, { caption: string; meta: string }> = {
-  "9vLcPuSVmLo": {
-    caption: "\"we're not tooling it up to run we're not training the classifier agent we're explaining what all the pieces are\"",
-    meta: "Day 1, 16:36",
-  },
-};
+export { C1_SLUG, C2_SLUG, c2 };
 
 /** The 36 frame: plays the video named in the C2 entry. Nothing if the entry isn't visible or has no video. */
 export function WalkthroughFrame({ mode }: { mode?: "inline" | "dialog" }) {
@@ -84,20 +73,9 @@ export function WalkthroughFrame({ mode }: { mode?: "inline" | "dialog" }) {
   );
 }
 
-const STAT_FALLBACK = [
-  "36 workflows cover four Addvery ICPs in Czech, German and English, with three tactics each.",
-  "Message 1 of every workflow is one variable, written for each lead before import.",
-  "No workflow has a lead, none is started, and nothing sends.",
-];
-
 /** The three stats: the numbers 36, 1 and 0 over the lines 2 to 4 of C2's [!summary] callout. */
 export function MachineStats() {
-  const body = c2()?.body ?? "";
-  const lines = body
-    .split("\n")
-    .map((l) => /^>\s*-\s+(.*)$/.exec(l)?.[1]?.trim())
-    .filter((x): x is string => !!x);
-  const labels = lines.length >= 4 ? lines.slice(1, 4) : STAT_FALLBACK;
+  const labels = machineStatLabels();
   return (
     <StatList>
       <Stat num="36" label={labels[0]} />
@@ -107,43 +85,28 @@ export function MachineStats() {
   );
 }
 
+function withBold(text: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
+
 /** "Rules first, then a decision model": how routing works, the four counts, and C1's twelve-lead result. `id` defaults to "routing". */
 export function Routing({ id = "routing" }: { id?: string }) {
   return (
     <>
       <h3 id={id} className="bx-h3 bx-mt-4">
-        Rules first, then a decision model
+        {ROUTING.title}
       </h3>
-      <p className="bx-lead bx-lead-narrow">
-        Rules do most of the sorting: industry, headcount, country, profile language.{" "}
-        <strong>They&rsquo;re free, exact, and anyone on your team can read why a lead went where.</strong> When a rule can&rsquo;t decide
-        (&ldquo;Financial Services&rdquo; says too little), Jev, a classification model from TypeSafe, gets one narrow question. Under 75% sure, or
-        two answers close? A person decides.
-      </p>
+      <p className="bx-lead bx-lead-narrow">{withBold(ROUTING.before)}</p>
       <ol className="bx-flow bx-mt-2" aria-label="How one lead finds its workflow">
-        <li>
-          <span className="bx-flow-n">4 of 12</span>
-          <b>Rules</b>industry, headcount, country and profile language settle most of the calls
-        </li>
-        <li>
-          <span className="bx-flow-n">7 of 12</span>
-          <b>Jev</b>one narrow question when a rule can&rsquo;t decide
-        </li>
-        <li>
-          <span className="bx-flow-n">75%</span>
-          <b>A person</b>decides when the model is under 75% sure, or two answers are close
-        </li>
-        <li>
-          <span className="bx-flow-n">1 of 36</span>
-          <b>One workflow</b>the lead lands in exactly one of the 36, with its reason
-        </li>
+        {ROUTING.flow.map((f) => (
+          <li key={f.n}>
+            <span className="bx-flow-n">{f.n}</span>
+            <b>{f.what}</b>
+            {f.text}
+          </li>
+        ))}
       </ol>
-      <p className="bx-lead bx-lead-narrow">
-        A lead that fits lands in exactly one of the 36 workflows, with its reason next to it. I&rsquo;m not running real data through it, so I
-        tested it on twelve fictional leads: 4 placed by rules alone, 7 needed the model at least once, 1 fit nothing. Honest caveat: the model
-        isn&rsquo;t called in this run either, so the hard cases show answers a person labelled. That&rsquo;s how this starts for real anyway: your
-        labels tune the questions.
-      </p>
+      <p className="bx-lead bx-lead-narrow">{ROUTING.after}</p>
     </>
   );
 }
@@ -157,34 +120,21 @@ export function MachineMatrix({ legend }: { legend: string }) {
 export function MachineMessages() {
   return (
     <MessageRow>
-      <Message label="custom_message_1 · Coho Last Mile (fictional) · Last-mile logistics · EN · signal">
-        Hi Dana, Coho Last Mile announced its move into Hungary in October. In a new market you start with no network, systems or brand, and what gets decided in the first months shapes the cost per parcel for years. How far along is the last-mile plan there?
-      </Message>
-      <Message label="custom_message_1 · Tailspin Parcel CZ (fictional) · Last-mile logistics · CS · problem" lang="cs">
-        Dobrý den, firma Tailspin Parcel CZ doručuje většinu zásilek až ke dveřím a doručení domů funguje, jen když je někdo doma. Opakované pokusy o doručení pak ukrajují z marže každé trasy. Řešíte teď úspěšnost prvního doručení, nebo to máte pod kontrolou?
-      </Message>
+      {[MESSAGES.coho, MESSAGES.tailspin].map((msg) => (
+        <Message key={msg.label} label={msg.label} lang={msg.lang}>
+          {msg.text}
+        </Message>
+      ))}
     </MessageRow>
   );
 }
 
-/** The two C2 figures: the folder of 36 switched off, and message 1 as one variable. */
 export function MachineFigures() {
   return (
     <FigureRow>
-      <Figure
-        src={`${ASSETS}/workflows-folder.png`}
-        width={1568}
-        height={686}
-        alt="Six of the 36 workflows in the project's GetSales folder, named by ICP, language and tactic, each switched off with 0 contacts"
-        caption="Every toggle off and every count at 0: none of the 36 is running"
-      />
-      <Figure
-        src={`${ASSETS}/message-1-variable.png`}
-        width={1047}
-        height={613}
-        alt="The Retail loyalty, English, proof workflow in the GetSales builder, its first message set to the single variable custom_message_1"
-        caption="Message 1 is one lead field; everything after it is fixed text"
-      />
+      {MACHINE_FIGURES.map((f) => (
+        <Figure key={f.src} src={f.src} width={f.width} height={f.height} alt={f.alt} caption={f.caption} />
+      ))}
     </FigureRow>
   );
 }
@@ -197,7 +147,7 @@ export function MachineLinks() {
   return (
     <LinkRow>
       {has2 && <ArrowLink href={entryUrl(C2_SLUG)}>{t("shared.entry.1")}</ArrowLink>}
-      {c1 && <ArrowLink href={entryUrl(C1_SLUG)}>Sorting twelve leads into 36 workflows: rules first, then Jev</ArrowLink>}
+      {c1 && <ArrowLink href={entryUrl(C1_SLUG)}>{C1_LINK}</ArrowLink>}
     </LinkRow>
   );
 }
@@ -208,11 +158,9 @@ export function Machine36() {
     <Band tone="ink" id="machine" labelledBy="machine-title">
       <EyebrowRow>{t("home.machine.1")}</EyebrowRow>
       <h2 id="machine-title" className="bx-h2">
-        How to send every lead a first message written for them
+        {MACHINE.title}
       </h2>
-      <p className="bx-lead">
-        Outbound at Addvery&rsquo;s size isn&rsquo;t one campaign. It&rsquo;s buyer types times languages times angles, and every lead has to land in exactly one of them.
-      </p>
+      <p className="bx-lead">{MACHINE.lead}</p>
       <div className="bx-machine-top">
         <WalkthroughFrame />
         <MachineStats />

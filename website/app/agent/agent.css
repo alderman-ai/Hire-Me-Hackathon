@@ -1,0 +1,171 @@
+/* /agent and the "Ask your AI about this page" row. Addvery's tokens (addvery-tokens.css); the page's
+   title band is article.css's doc band, like /privacy. */
+
+/* ---------- /agent ---------- */
+
+.agent-h1 {
+  text-transform: none;
+}
+
+.agent-body {
+  padding: 4.5rem 0 6rem;
+  background: var(--av-white, #fff);
+}
+
+.agent-card {
+  max-width: 860px;
+  padding: 2rem;
+  border: 1px solid var(--av-line-on-light, rgba(0, 0, 0, 0.2));
+  border-left: 3px solid var(--av-amethyst, #8b3fcf);
+  border-radius: var(--av-radius-sm, 8px);
+  background: #faf8ff;
+}
+
+.agent-prompt {
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.agent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.agent-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.625rem 1.125rem;
+  border: 0;
+  border-radius: var(--av-radius-sm, 8px);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: var(--av-button-size, 15px);
+  font-weight: 500;
+  line-height: var(--av-button-lh, 28px);
+  letter-spacing: var(--av-button-tracking, 0.45px);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: filter var(--av-dur-base, 0.3s) ease, background-color var(--av-dur-base, 0.3s) ease, color var(--av-dur-base, 0.3s) ease;
+}
+
+.agent-btn:focus-visible {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 3px;
+}
+
+.agent-btn-fill {
+  background: var(--av-gradient-button, linear-gradient(25deg, #642df0 35%, #d445eb));
+  box-shadow: var(--av-shadow-button, none);
+  color: var(--av-white, #fff);
+}
+
+.agent-btn-fill:hover {
+  filter: brightness(1.08);
+}
+
+.agent-btn-line {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--av-amethyst, #8b3fcf);
+  color: var(--av-plum, #4a1d73);
+}
+
+.agent-btn-line:hover,
+.agent-btn-line.is-done {
+  background: var(--av-amethyst, #8b3fcf);
+  color: var(--av-white, #fff);
+}
+
+.agent-btn-icon {
+  display: inline-flex;
+}
+
+.agent-map {
+  margin: 2rem 0 0;
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: var(--av-body-size, 18px);
+  line-height: var(--av-body-lh, 28px);
+}
+
+.agent-map a,
+.agent-row a {
+  color: var(--av-plum, #4a1d73);
+  text-decoration: underline;
+  text-decoration-color: var(--av-amethyst, #8b3fcf);
+  text-underline-offset: 0.2em;
+}
+
+.agent-map a:hover,
+.agent-row a:hover {
+  color: var(--av-amethyst, #8b3fcf);
+}
+
+@media screen and (max-width: 767px) {
+  .agent-body {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .agent-card {
+    padding: 1.25rem;
+  }
+
+  .agent-prompt {
+    font-size: 0.9375rem;
+  }
+
+  .agent-actions {
+    flex-direction: column;
+  }
+
+  .agent-btn {
+    width: 100%;
+  }
+}
+
+/* ---------- The row near the end of an article and a personal page ---------- */
+
+.agent-row {
+  width: min(var(--entry-measure, 720px), calc(100% - 2 * var(--entry-gutter, 1.5rem)));
+  margin: 2.5rem auto;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--av-line-on-light, rgba(0, 0, 0, 0.2));
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--av-text-on-light, #5e6873);
+}
+
+/* On a personal page the row sits in the page's container, left-aligned with the notice under it. */
+.art-container > .agent-row {
+  width: auto;
+  max-width: 720px;
+  margin: 2.5rem 0;
+}
+
+.agent-row-inner {
+  margin: 0;
+}
+
+.agent-row-label {
+  color: var(--av-ink, #151515);
+  font-weight: 500;
+}
+
+.agent-row a {
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.agent-row-sep {
+  color: var(--av-text-on-light, #5e6873);
+}

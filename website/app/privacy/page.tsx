@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { marked, type Tokens } from "marked";
 import { Reveal } from "../motion";
+import { markdownAlternate } from "../page-meta";
 import "../article.css";
 
 // The privacy notice for the GetSales alert (BUILD S-D3-B3). Text from getsales\site\privacy.md,
@@ -13,6 +14,7 @@ import "../article.css";
 export const metadata: Metadata = {
   title: "Privacy notice · Hire Me Hackathon",
   robots: { index: false, follow: false },
+  alternates: { types: markdownAlternate("/privacy") },
 };
 
 // The markdown's leading H1 goes into the title band; tables get a scrolling box of their own.

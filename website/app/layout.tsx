@@ -12,6 +12,7 @@ import { newNavLinks } from "./site-links";
 import { t } from "./copy";
 import type { HackWords } from "./hack-strip";
 import videos from "@/content/videos.json";
+import { SITE_META } from "./page-meta";
 
 // The hackathon menu bar above the header (app/hack-strip.tsx), on the new site only. Day 1's menu points
 // into /log's sections; an item shows once its section is on the page (`ready`).
@@ -51,7 +52,7 @@ const outfit = Outfit({ subsets: ["latin", "latin-ext"], variable: "--font-outfi
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin", "latin-ext"], weight: ["600"], variable: "--font-jakarta" });
 
 const SITE = "https://hire-me-hackathon.vercel.app";
-const DESCRIPTION = "A GTM engineer's skillset, built live in 12 hours by Alex Alderman, steering a team of AI agents.";
+const DESCRIPTION = SITE_META.description;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),

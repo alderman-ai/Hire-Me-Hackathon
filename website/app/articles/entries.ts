@@ -417,6 +417,17 @@ export function countWord(n: number): string {
   return n < 10 ? WORDS[n] : String(n);
 }
 
+/** The "How this post was made" box's lead sentence (app/articles/parts.tsx MadeBox; the agent track too). */
+export function madeLead(made: Made, what: string): string {
+  const minutes = `${made.minutes_talked} minute${made.minutes_talked === 1 ? "" : "s"}`;
+  return (
+    `Alex talked this ${what} through for ${minutes} (${formatNumber(made.words_spoken)} words). The blog pipeline ` +
+    `drafted it from his dictation in his words, in ${countWord(made.stages.length)} checked stages (` +
+    `${formatNumber(made.words_drafted)} words)` +
+    (made.share_changed_by_alex === null ? "." : `; Alex edited and approved it, changing ${made.share_changed_by_alex}% of the words.`)
+  );
+}
+
 export function capitalise(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
@@ -440,6 +451,29 @@ export function lengthLabel(e: Entry): string | undefined {
   if (e.reading_minutes && !NEW_SITE) return `${e.reading_minutes} min read`;
   if (e.video) return "Video";
   return undefined;
+}
+
+// /articles' order is fixed (Alex, 3 Nov), not newest first. Anything not listed follows, newest first.
+// The agent track (lib/agent-track) lists them in the same order.
+const ORDER = [
+  "who-writes-the-linkedin-posts-for-your-outreach-accounts",
+  "first-ai-project-sales-pipeline",
+  "ai-workflows-are-always-a-managed-service",
+  "36-outbound-workflows-and-the-one-variable-behind-them",
+  "sorting-twelve-leads-into-36-workflows-rules-first-then-jev",
+  "teaching-a-machine-to-sound-like-me",
+  "build-it-in-their-brand",
+  "label-every-piece-before-you-build-a-page",
+  "best-of-three-instead-of-redlining",
+];
+
+/** Entries in /articles' order. */
+export function ordered(entries: Entry[]): Entry[] {
+  const rank = (e: Entry) => {
+    const i = ORDER.indexOf(e.slug);
+    return i === -1 ? ORDER.length : i;
+  };
+  return entries.map((e, n) => ({ e, n })).sort((x, y) => rank(x.e) - rank(y.e) || x.n - y.n).map((x) => x.e);
 }
 
 export function entryUrl(slug: string): string {

@@ -1,4 +1,4 @@
-import { capitalise, countWord, formatDate, formatNumber, type Entry, type Made } from "./entries";
+import { capitalise, countWord, formatDate, formatNumber, madeLead, type Entry, type Made } from "./entries";
 import videos from "@/content/videos.json";
 import { dayOf } from "../day-label";
 
@@ -84,12 +84,7 @@ export function MadeBox({ made, what }: { made: Made; what: string }) {
         How this {what} was made
       </h2>
       <p className="entry-made-lead">
-        Alex talked this {what} through for {minutes} ({formatNumber(made.words_spoken)} words). The blog pipeline
-        drafted it from his dictation in his words, in {countWord(made.stages.length)} checked stages (
-        {formatNumber(made.words_drafted)} words)
-        {made.share_changed_by_alex === null
-          ? "."
-          : `; Alex edited and approved it, changing ${made.share_changed_by_alex}% of the words.`}
+        {madeLead(made, what)}
       </p>
       <ol className="entry-made-steps">
         {steps.map((s) => (

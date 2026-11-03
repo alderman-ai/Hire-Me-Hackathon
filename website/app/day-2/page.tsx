@@ -5,6 +5,7 @@ import { NEW_SITE } from "../flags";
 import { t } from "../copy";
 import day2 from "@/content/feed-day2.json";
 import videos from "@/content/videos.json";
+import { DAY2_META, markdownAlternate } from "../page-meta";
 
 // /day-2: Day 2's feed, newest on top (3 Nov; Alex: "this as Day 2 Update, have website place it at top of
 // day 2 feed. and add button to it on top hackaton nav bar"). Posts are content/feed-day2.json, in the same
@@ -12,8 +13,9 @@ import videos from "@/content/videos.json";
 // (content/videos.json), the same test that shows its cell on the hackathon bar (app/layout.tsx).
 
 export const metadata: Metadata = {
-  title: "Day 2 · Hire Me Hackathon",
-  description: "Day 2 of the Hire Me Hackathon, newest on top.",
+  title: `${DAY2_META.title} · Hire Me Hackathon`,
+  description: DAY2_META.description,
+  alternates: { types: markdownAlternate("/day-2") },
 };
 
 const READY = Boolean((videos as Record<string, string | undefined>).S17);

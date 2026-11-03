@@ -6,6 +6,11 @@ import { Reveal, RotateIn } from "./motion";
 import { ArrowSwap } from "./site-chrome";
 import { NEW_SITE } from "./flags";
 import { BestHome } from "./home/best-home";
+import type { Metadata } from "next";
+import { markdownAlternate } from "./page-meta";
+
+// The home page's Markdown twin, /index.md (lib/agent-track); every other field comes from the layout.
+export const metadata: Metadata = { alternates: { types: markdownAlternate("/") } };
 
 // The home page, after addvery.com: their hero (the H1 slides in from the left, and the countdown
 // and the "start here" box take the place of their two photo cards, rotating in from opposite

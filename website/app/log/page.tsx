@@ -5,6 +5,7 @@ import { NEW_SITE } from "../flags";
 import { t } from "../copy";
 import { Highlights } from "./highlights";
 import Timelapse from "./timelapse";
+import { LOG_META, markdownAlternate } from "../page-meta";
 
 // /log: Day 1's page (3 Nov, Alex: "Have the highlight portion on top ... then the second link on the
 // hackathon menu goes to the feed"). In order: the page's intro (its one h1), the highlights
@@ -13,8 +14,9 @@ import Timelapse from "./timelapse";
 // links to each section. Only the new site has this page; any other build answers 404 here.
 
 export const metadata: Metadata = {
-  title: "Day 1 · Hire Me Hackathon",
-  description: "Day 1 of the Hire Me Hackathon as it happened, newest on top.",
+  title: `${LOG_META.title} · Hire Me Hackathon`,
+  description: LOG_META.description,
+  alternates: { types: markdownAlternate("/log") },
 };
 
 export default function LogPage() {

@@ -21,6 +21,8 @@ import { Slot, SkillsBehind, type SlotName } from "../slots";
 import { LIST_SLUGS, recommendAll, type RecCard } from "../../recommend";
 import { t } from "../../copy";
 import { EntryEnd, MarkSeen } from "../entry-end";
+import { markdownAlternate } from "../../page-meta";
+import { AgentRow } from "../../agent/agent-row";
 import "../../article.css";
 import "../demos.css";
 import "../slots.css";
@@ -66,7 +68,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: entry.description,
     authors: [{ name: "Alex Alderman" }],
     keywords: entry.tags.length ? entry.tags : undefined,
-    alternates: { canonical: url },
+    alternates: { canonical: url, types: markdownAlternate(url) },
     robots: live ? { index: true, follow: true } : { index: false, follow: false },
     openGraph: {
       type: "article",
@@ -261,6 +263,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         </div>
       )}
 
+      {NEW_SITE && <AgentRow path={entryUrl(entry.slug)} />}
       {c2Skills && <SkillsBehind />}
       {NEW_SITE && (
         <>

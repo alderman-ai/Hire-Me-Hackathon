@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { t } from "../copy";
 import Link from "next/link";
-import { entryUrl, formatDate, lengthLabel, showUnpublished, STATUS_LABEL, visibleEntries, type Entry } from "./entries";
+import { entryUrl, formatDate, lengthLabel, ordered, showUnpublished, STATUS_LABEL, visibleEntries, type Entry } from "./entries";
+import { ARTICLES_META, markdownAlternate } from "../page-meta";
 import { CoverGlow } from "./parts";
 import "../article.css";
 import "./demos.css";
@@ -11,14 +12,13 @@ import "./demos.css";
 // when there is one. A production build lists published entries only; with none, a plain empty state.
 // Not linked from the home page yet: the website session wires the menu when the first entry is live.
 
-const TITLE = "Articles"; // the menu's word for this page (3 Nov)
-const DESCRIPTION =
-  "Alex Alderman's GTM engineering work, written up: outbound, content, and AI your team uses.";
+const TITLE = ARTICLES_META.title; // the menu's word for this page (3 Nov)
+const DESCRIPTION = ARTICLES_META.description;
 
 export const metadata: Metadata = {
   title: `${TITLE} · Hire Me Hackathon`,
   description: DESCRIPTION,
-  alternates: { canonical: "/articles" },
+  alternates: { canonical: "/articles", types: markdownAlternate("/articles") },
   openGraph: {
     type: "website",
     url: "/articles",
@@ -28,27 +28,6 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
-
-// The order is fixed (Alex, 3 Nov), not newest first. Anything not listed follows, newest first.
-const ORDER = [
-  "who-writes-the-linkedin-posts-for-your-outreach-accounts",
-  "first-ai-project-sales-pipeline",
-  "ai-workflows-are-always-a-managed-service",
-  "36-outbound-workflows-and-the-one-variable-behind-them",
-  "sorting-twelve-leads-into-36-workflows-rules-first-then-jev",
-  "teaching-a-machine-to-sound-like-me",
-  "build-it-in-their-brand",
-  "label-every-piece-before-you-build-a-page",
-  "best-of-three-instead-of-redlining",
-];
-
-function ordered(entries: Entry[]): Entry[] {
-  const rank = (e: Entry) => {
-    const i = ORDER.indexOf(e.slug);
-    return i === -1 ? ORDER.length : i;
-  };
-  return entries.map((e, n) => ({ e, n })).sort((x, y) => rank(x.e) - rank(y.e) || x.n - y.n).map((x) => x.e);
-}
 
 /** The lead visual: the poster, else the first figure in the body, else the video's poster frame. */
 function thumbnail(e: Entry): string | undefined {

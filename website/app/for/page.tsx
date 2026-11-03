@@ -6,6 +6,7 @@ import { Reveal } from "../motion";
 import { gridIntro, portraitFor, stakeholderGate, titleLines } from "../stakeholders";
 import { ClipFrame, clipFor } from "./[slug]/quotes";
 import "../article.css";
+import { FOR_META, FOR_SOURCES_LINE, markdownAlternate } from "../page-meta";
 import "./for.css";
 
 // The stakeholder section's front page: the six people at Addvery, as a grid of portraits after
@@ -17,9 +18,10 @@ import "./for.css";
 const ROBOTS = { index: false, follow: false } as const;
 
 export const metadata: Metadata = {
-  title: "Six pages for Addvery · Hire Me Hackathon",
-  description: "One page for each of six people at Addvery: what Alex Alderman would build for their part of the business.",
+  title: `${FOR_META.title} · Hire Me Hackathon`,
+  description: FOR_META.description,
   robots: ROBOTS,
+  alternates: { types: markdownAlternate("/for") },
 };
 
 /** The line under a title: growth's is her own words, the other five a site-copy key. */
@@ -127,7 +129,7 @@ export default function ForIndex() {
           </ul>
 
           <p className="for-note">
-            Every page draws only on public sources, and each one says which. {t("shared.takedown.1")}{" "}
+            {FOR_SOURCES_LINE} {t("shared.takedown.1")}{" "}
             <Link href="/privacy">{notice.privacy_label}</Link>.
           </p>
           <p className="for-note is-credit">

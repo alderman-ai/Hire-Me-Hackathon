@@ -1,0 +1,828 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import stakeholdersRaw from "@/content/stakeholders.json";
+import quotesRaw from "@/content/quotes.json";
+import highlightsRaw from "@/content/highlights.json";
+import timelapseRaw from "@/content/timelapse.json";
+import feedJson from "@/content/feed.json";
+import day2Json from "@/content/feed-day2.json";
+import summaryJson from "@/content/summary.json";
+import videosJson from "@/content/videos.json";
+import skillsJson from "@/content/skills.json";
+import { t, type CopyKey } from "@/app/copy";
+import { NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "@/app/flags";
+import { formatDate, madeLead, ordered, visibleEntries, type Entry } from "@/app/articles/entries";
+import { pageHref, recommendFor, type ListSlug } from "@/app/recommend";
+import { gridIntro, stakeholderGate, titleLines, type StakeholderPage } from "@/app/stakeholders";
+import { dayOf } from "@/app/day-label";
+import { ABOUT_META, ARTICLES_META, DAY2_META, FOR_META, FOR_SOURCES_LINE, LOG_META, SITE_META } from "@/app/page-meta";
+import {
+  HOME_ABOUT,
+  HOME_ACCOUNT_QUOTE,
+  HOME_ACCOUNT_STEPS,
+  HOME_ARGUMENT,
+  HOME_LIMITS_TITLE,
+  HOME_SIX,
+  HOME_SKILLS_TITLE,
+  MOMENTS,
+  NUMBERS,
+} from "@/app/home/home-words";
+import { C1_LINK, C1_SLUG, C2_SLUG, MACHINE, MACHINE_FIGURES, MESSAGES, ROUTING, c2, machineStatLabels, walkthroughWords } from "@/app/best/machine-words";
+import { GROWTH_LENS } from "@/app/for/[slug]/lens-words";
+import { CRM_LINE, limitsDefault } from "@/app/best/words";
+import { wallClips, clock } from "@/app/videos/clips";
+import { readAboutCopy } from "@/app/about/copy";
+import { ABOUT_PHOTOS, CLIP_S02_E, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "@/app/about/clips";
+import { FACTS, LINKS } from "@/app/about/profile";
+import { wallCards, wallSpan } from "@/app/about/wall-data";
+import { fullWallCards } from "@/app/about/wall-full-data";
+import { LLMS_SUMMARY } from "@/app/agent/copy";
+import { BASE, LLMS_FULL_URL, LLMS_URL, REPO_URL, abs, humanUrl, keyOf, mdUrl, mmss, youtube } from "./site";
+import { articleBodyMd, blockquote, fixLinks, htmlToMd, plainLine, videoLink } from "./md";
+
+// The agent track: every page a person can open, as one Markdown doc, built from the same loaders and the
+// same production gates the pages use (published entries only, approved landings only, the four build
+// flags), so it can't drift from what a person sees and never shows a draft. One function per page type;
+// each returns { key, path, title, humanUrl, markdown }. Served as /<path>.md and by content negotiation
+// (next.config.mjs), listed in /llms.txt, concatenated in /llms-full.txt.
+//
+// Pages left out on purpose: redirected or cut routes (/docs/*, /d3 to /d12, /demos/*), and /d1 and /d2,
+// the older demo pages (links to them go to the human page). The P3 "lens" blocks of /for/<slug> are
+// still inline JSX (app/for/[slug]/lens.tsx) and aren't in the track yet.
+
+export type Doc = {
+  /** "index", "articles", "articles/<slug>", "for/<slug>", ... */
+  key: string;
+  /** The .md path: "/index.md", "/articles.md", ... */
+  path: string;
+  title: string;
+  humanUrl: string;
+  markdown: string;
+  /** One line for /llms.txt and the "Where next" lists. */
+  note: string;
+  /** The link text in /llms.txt, when the title alone doesn't say what the page is. */
+  label?: string;
+};
+
+type Next = { key: string; title: string; why: string };
+
+const WALL_FULL = process.env.WALL_FULL === "1";
+const DAY2_READY = Boolean((videosJson as Record<string, string | undefined>).S17);
+const sessionVideo = videosJson as Record<string, string | undefined>;
+
+// ---------------------------------------------------------------- what exists in this build
+
+function articles(): Entry[] {
+  return ordered(visibleEntries());
+}
+
+/** The six pages a production build shows: the gate, and only a landing that's approved. */
+function people(): StakeholderPage[] {
+  return stakeholderGate().pages.filter((p) => p.landing?.approved === true);
+}
+
+let keyCache: Set<string> | null = null;
+/** Every doc key this build has. */
+export function docKeys(): Set<string> {
+  if (keyCache) return keyCache;
+  const keys = new Set<string>();
+  if (!NEW_SITE) return (keyCache = keys);
+  keys.add("index");
+  keys.add("about");
+  keys.add("articles");
+  for (const e of articles()) keys.add(`articles/${e.slug}`);
+  if (VIDEO_WALL) keys.add("videos");
+  if (SKILLS_PAGE) keys.add("skills");
+  if (people().length) {
+    keys.add("for");
+    for (const p of people()) keys.add(`for/${p.slug}`);
+  }
+  keys.add("log");
+  if (DAY2_READY) keys.add("day-2");
+  keys.add("privacy");
+  return (keyCache = keys);
+}
+
+/** A site path or URL, as the track links it: the doc's .md when it has one, else the absolute human URL. */
+function link(href: string): string {
+  let h = href;
+  if (h.startsWith(BASE)) h = h.slice(BASE.length) || "/";
+  if (h.startsWith("https://hire-me-hackathon.vercel.app")) h = h.slice("https://hire-me-hackathon.vercel.app".length) || "/";
+  if (!h.startsWith("/")) return href;
+  const key = keyOf(h);
+  return docKeys().has(key) ? mdUrl(key) : abs(h);
+}
+
+/** A link inside one page ("#machine"): the page's human URL with the anchor. */
+const anchor = (key: string, hash: string) => `${humanUrl(key)}${hash}`;
+
+function frame(key: string, title: string, rawBody: string, next: Next[]): string {
+  const body = rawBody.replace(/\n{3,}/g, "\n\n");
+  const seen = new Set<string>([key]);
+  const list = next.filter((n) => docKeys().has(n.key) && !seen.has(n.key) && seen.add(n.key)).slice(0, 6);
+  return [
+    `# ${title}`,
+    `Human version: ${humanUrl(key)} · Site map: ${LLMS_URL}`,
+    body.trim(),
+    "## Where next",
+    list.map((n) => `- [${n.title}](${mdUrl(n.key)}): ${n.why}`).join("\n"),
+  ].join("\n\n") + "\n";
+}
+
+const labelled = (label: string, d: Doc): Doc => ({ ...d, label });
+
+function doc(key: string, title: string, note: string, body: string, next: Next[]): Doc {
+  return { key, path: key === "index" ? "/index.md" : `/${key}.md`, title, humanUrl: humanUrl(key), markdown: frame(key, title, body, next), note };
+}
+
+/** "**bold**" stays bold, "[words](/path)" links go absolute. */
+const rich = (text: string) => fixLinks(text, link);
+
+// ---------------------------------------------------------------- notes and "Where next" items
+
+function videosNote(): string {
+  const clips = wallClips();
+  return `${clips.length} clips from the build, each with Alex's own line from it and a YouTube link at its start; ${clips.filter((c) => c.featured).length} are marked to start with.`;
+}
+function skillsNote(): string {
+  const n = (skillsJson.groups as { items: unknown[] }[]).reduce((a, g) => a + g.items.length, 0);
+  return `The ${n} reusable skills that came out of the build, each with a line on what it does.`;
+}
+
+const NOTE: Record<string, () => string> = {
+  index: () => SITE_META.description,
+  about: () => ABOUT_META.description,
+  articles: () => ARTICLES_META.description,
+  videos: videosNote,
+  skills: skillsNote,
+  for: () => FOR_META.description,
+  log: () => LOG_META.description,
+  "day-2": () => DAY2_META.description,
+  privacy: () => privacyParts().first,
+};
+const TITLE: Record<string, () => string> = {
+  index: () => t("home.hero.4"),
+  about: () => ABOUT_META.title,
+  articles: () => ARTICLES_META.title,
+  videos: () => "Videos",
+  skills: () => "Skills",
+  for: () => gridIntro()?.heading ?? FOR_META.title,
+  log: () => t("log.intro.title"),
+  "day-2": () => t("day2.title"),
+  privacy: () => privacyParts().title,
+};
+
+function page(key: string): Next {
+  return { key, title: TITLE[key](), why: NOTE[key]() };
+}
+
+function articleItem(e: Entry): Next {
+  return { key: `articles/${e.slug}`, title: e.title, why: e.cover.subtitle };
+}
+
+/** A recommend.json list as "Where next" items: the cards whose pages have docs, in the list's order. */
+function recommended(list: ListSlug): Next[] {
+  return recommendFor(list)
+    .map((c) => ({ key: keyOf(c.href), title: c.title, why: c.why }))
+    .filter((n) => docKeys().has(n.key));
+}
+
+/** The articles after `slug` in /articles' order, wrapping round. */
+function nextArticles(slug: string | null, n: number): Next[] {
+  const all = articles();
+  const at = slug ? all.findIndex((e) => e.slug === slug) : -1;
+  const order = [...all.slice(at + 1), ...all.slice(0, Math.max(at, 0))].filter((e) => e.slug !== slug);
+  return order.slice(0, n).map(articleItem);
+}
+
+// ---------------------------------------------------------------- shared pieces
+
+function quoteWith(text: string, when: string, id: string, start?: number): string {
+  return `${blockquote(text)}\n>\n> [${when}](${youtube(id, start)})`;
+}
+
+function clipLine(c: AboutClip): string {
+  return `${videoLink(c.quote, c.youtube, c.start, c.end ?? undefined, c.length)}, ${c.meta}`;
+}
+
+// ---------------------------------------------------------------- the 36-workflow block (home, growth)
+
+function walkthroughMd(): string {
+  const v = c2()?.video;
+  const ww = walkthroughWords();
+  if (!v || !ww) return "";
+  const caption = ww.caption ? `\n\n${blockquote(ww.caption)}${ww.meta ? `\n>\n> ${ww.meta}` : ""}` : "";
+  return `${videoLink(ww.label, v.youtube_id, v.start, v.end)}${caption}`;
+}
+
+function statsMd(): string {
+  const stats = machineStatLabels();
+  return `- **36**: ${stats[0]}\n- **1**: ${stats[1]}\n- **0**: ${stats[2]}`;
+}
+
+function figuresMd(): string {
+  return MACHINE_FIGURES.map((f) => `![${f.alt}](${abs(f.src)})\n\n*${f.caption}*`).join("\n\n");
+}
+
+function messagesMd(order: (keyof typeof MESSAGES)[]): string {
+  return order.map((k) => `**${MESSAGES[k].label}**\n\n${blockquote(MESSAGES[k].text)}`).join("\n\n");
+}
+
+function machineLinksMd(): string {
+  const c1 = articles().find((e) => e.slug === C1_SLUG);
+  return [
+    c2() ? `- [${t("shared.entry.1")}](${link(`/articles/${C2_SLUG}`)})` : "",
+    c1 ? `- [${C1_LINK}](${link(`/articles/${C1_SLUG}`)})` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+// ---------------------------------------------------------------- / (index.md)
+
+function homeDoc(): Doc {
+  const key = "index";
+  const parts: string[] = [];
+  parts.push(t("home.hero.1"));
+  parts.push(`**${t("home.hero.5")}**`);
+  parts.push(`[Video: ${t("home.hero.6")}](${youtube("zVnA-AMuNfc")})`);
+  parts.push(`${t("home.hero.9")}, ${t("home.hero.10")}`);
+
+  parts.push(`## ${t("home.numbers.1")}`);
+  parts.push(NUMBERS.map((n, i) => `- **${n.k}**: ${i === 0 ? t("home.numbers.2") : n.v}`).join("\n"));
+
+  // The machine.
+  parts.push(`## ${MACHINE.title}`);
+  parts.push(`*${t("home.machine.1")}.* ${MACHINE.lead}`);
+  parts.push(walkthroughMd());
+  parts.push(statsMd());
+  parts.push(`### ${ROUTING.title}`);
+  parts.push(ROUTING.before);
+  parts.push(ROUTING.flow.map((f, i) => `${i + 1}. **${f.what}** (${f.n}): ${f.text}`).join("\n"));
+  parts.push(ROUTING.after);
+  parts.push(figuresMd());
+  parts.push(machineLinksMd());
+
+  // The account.
+  parts.push(`## ${t("home.account.2")}`);
+  parts.push(`*${t("home.account.1")}.*`);
+  parts.push(quoteWith(HOME_ACCOUNT_QUOTE.text, HOME_ACCOUNT_QUOTE.when, HOME_ACCOUNT_QUOTE.youtube, HOME_ACCOUNT_QUOTE.start));
+  parts.push(
+    HOME_ACCOUNT_STEPS.map(
+      (s, i) => `${i + 1}. **[${s.title}](${s.href.startsWith("#") ? anchor(key, s.href) : link(s.href)})**: ${s.text}`,
+    ).join("\n"),
+  );
+  parts.push(`### ${HOME_LIMITS_TITLE}`);
+  parts.push(`${t("home.limits.1")}:\n\n${limitsDefault().map((l) => `- ${l}`).join("\n")}`);
+  parts.push(`${blockquote(CRM_LINE)}\n>\n> ${t("shared.crm.1")}`);
+
+  // The six.
+  parts.push(`## ${HOME_SIX.title}`);
+  parts.push(
+    (stakeholdersRaw.pages as { slug: string; name: string; title: string }[])
+      .map((p) => `- [${p.name}](${link(`/for/${p.slug}`)}): ${p.title.split(" · ")[0].replace(/, Addvery$/, "")}`)
+      .join("\n"),
+  );
+  parts.push(quoteWith(HOME_SIX.quote.text, HOME_SIX.quote.when, HOME_SIX.quote.youtube, HOME_SIX.quote.start));
+
+  // The argument.
+  parts.push(`## ${HOME_ARGUMENT.title}`);
+  parts.push(`*${t("home.argument.1")}.* ${HOME_ARGUMENT.lead}`);
+  const cv = HOME_ARGUMENT.chainVideo;
+  parts.push(
+    HOME_ARGUMENT.chain
+      .map((line, i) => `${i + 1}. ${line}${i === 0 ? `\n   ${videoLink(cv.label, cv.youtube, cv.start, cv.end, cv.length)}` : ""}`)
+      .join("\n"),
+  );
+  parts.push(quoteWith(HOME_ARGUMENT.quote.text, HOME_ARGUMENT.quote.when, HOME_ARGUMENT.quote.youtube, HOME_ARGUMENT.quote.start));
+  const pipeline = pageHref("art-pipeline-promise");
+  if (pipeline) parts.push(`[${HOME_ARGUMENT.articleLink}](${link(pipeline)})`);
+
+  // Moments that became skills.
+  parts.push(`## ${t("home.skills.1")}`);
+  parts.push(`${blockquote(HOME_SKILLS_TITLE)}\n\n${t("home.skills.2")}`);
+  parts.push(MOMENTS.map((m) => `- **${m.name}** (${m.time}): ${m.quote}`).join("\n"));
+  if (docKeys().has("skills")) parts.push(`[${t("home.skills.3")}](${mdUrl("skills")})`);
+
+  // About me.
+  parts.push(`## ${HOME_ABOUT.title}`);
+  parts.push(HOME_ABOUT.paragraphs.join("\n\n"));
+  parts.push(`[${t("shared.about.1")}](${mdUrl("about")})`);
+
+  return labelled("Home", doc(key, TITLE.index(), NOTE.index(), parts.join("\n\n"), [
+    ...recommended("default").slice(0, 3),
+    page("about"),
+    page("for"),
+    page("videos"),
+  ]));
+}
+
+// ---------------------------------------------------------------- /articles
+
+function articlesDoc(): Doc {
+  const list = articles();
+  const body = [
+    t("demos.intro"),
+    list.map((e, i) => `${i + 1}. [${e.title}](${mdUrl(`articles/${e.slug}`)}): ${e.description}`).join("\n"),
+  ].join("\n\n");
+  return doc("articles", TITLE.articles(), NOTE.articles(), body, [...nextArticles(null, 3), page("videos"), page("about")]);
+}
+
+function articleDoc(e: Entry): Doc {
+  const key = `articles/${e.slug}`;
+  const parts: string[] = [];
+  parts.push(`*${e.cover.subtitle}*`);
+  parts.push(`${e.author} · ${formatDate(e.date)}${e.group ? ` · ${e.group}` : ""}`);
+  if (e.video) parts.push(videoLink(e.title, e.video.youtube_id, e.video.start, e.video.end));
+  if (e.body.trim()) parts.push(articleBodyMd(e.body, link));
+  if (e.made) parts.push(`**How this ${e.kind === "video" ? "entry" : "post"} was made.** ${madeLead(e.made, e.kind === "video" ? "entry" : "post")}`);
+  // "Next for you": C2 always points at C1 (app/articles/[slug]/page.tsx), then the default list, then the order.
+  const forced = e.slug === C2_SLUG ? articles().filter((x) => x.slug === C1_SLUG).map(articleItem) : [];
+  const next = [...forced, ...recommended("default").filter((n) => n.key !== key), ...nextArticles(e.slug, 4)].slice(0, 4);
+  return doc(key, e.title, e.description, parts.join("\n\n"), [...next, page("articles")]);
+}
+
+// ---------------------------------------------------------------- /videos
+
+function videosDoc(): Doc {
+  const clips = wallClips();
+  const legend = t("videos.legend");
+  const star = legend.charAt(0).toUpperCase() + legend.slice(1);
+  const byHref = new Map(articles().map((e) => [`/articles/${e.slug}`, e]));
+  const body = [
+    t("videos.intro"),
+    `${clips.length} clips, in the wall's order. The ${clips.filter((c) => c.featured).length} marked "${star}" are the ones to watch first.`,
+    clips
+      .map((c, i) => {
+        const art = c.article ? byHref.get(c.article) : undefined;
+        return [
+          `### ${i + 1}. ${c.tag}${c.featured ? ` (${star})` : ""}`,
+          blockquote(c.hook),
+          `[Video: ${c.tag}, ${clock(c.duration_s)}](${youtube(c.youtube_id, c.start)})`,
+          art ? `Article: [${art.title}](${mdUrl(`articles/${art.slug}`)})` : "",
+        ]
+          .filter(Boolean)
+          .join("\n\n");
+      })
+      .join("\n\n"),
+  ].join("\n\n");
+  return doc("videos", TITLE.videos(), NOTE.videos(), body, [...nextArticles(null, 3), page("about"), page("log")]);
+}
+
+// ---------------------------------------------------------------- /skills
+
+type SkillItem = {
+  id: string;
+  name: string;
+  line: string;
+  path?: string;
+  link?: { href: string; label: string };
+  moment?: { time: string; session: string; text: string };
+};
+
+function skillsDoc(): Doc {
+  const groups = skillsJson.groups as { title: string; items: SkillItem[] }[];
+  const parts: string[] = [blockquote(HOME_SKILLS_TITLE), t("skills.hero.1")];
+  for (const g of groups) {
+    parts.push(`## ${t(g.title as CopyKey)}`);
+    for (const s of g.items) {
+      const bits = [`### ${s.name}`, `${t(s.line as CopyKey)}${s.link ? ` [${s.link.label}](${link(s.link.href)})` : ""}`];
+      if (s.moment) bits.push(`${blockquote(`“${s.moment.text}”`)}\n>\n> ${s.moment.time} · ${dayOf(s.moment.session)}`);
+      if (s.path) bits.push(`\`${s.path}\``);
+      parts.push(bits.join("\n\n"));
+    }
+  }
+  parts.push(`${blockquote(CRM_LINE)}\n>\n> ${t("shared.crm.1")}`);
+  return doc("skills", TITLE.skills(), NOTE.skills(), parts.join("\n\n"), [
+    page("log"),
+    page("day-2"),
+    ...nextArticles(null, 2),
+    page("about"),
+  ]);
+}
+
+// ---------------------------------------------------------------- /about
+
+function aboutDoc(): Doc {
+  const copy = readAboutCopy();
+  const story = copy.sections.slice(0, -1);
+  const belief = copy.sections[copy.sections.length - 1];
+  const blocks = (bs: typeof belief.blocks) =>
+    bs.map((b) => (b.kind === "quote" ? `${blockquote(htmlToMd(b.html, link))}\n>\n> ${b.by}` : htmlToMd(b.html, link))).join("\n\n");
+  const parts: string[] = [htmlToMd(copy.leadHtml, link)];
+
+  parts.push("## At a glance");
+  const facts = FACTS.map((f) => `- **${f.term}**: ${f.detail}`);
+  facts.push(`- **${t("about.glance.1")}**: [${t("about.glance.2")}](${link("/")})`);
+  facts.push(`- **${LINKS.site.label}**: [${LINKS.site.href}](${LINKS.site.href}) (${LINKS.site.note})`);
+  parts.push(facts.join("\n"));
+
+  for (const s of story) {
+    parts.push(`## ${s.title}`);
+    parts.push(blocks(s.blocks));
+    if (s.title.startsWith("The job I want")) parts.push(clipLine(CLIP_S02_E));
+  }
+  parts.push(`## ${belief.title}`);
+  const firstQuote = Math.max(0, belief.blocks.findIndex((b) => b.kind === "quote"));
+  parts.push(blocks(belief.blocks.slice(0, firstQuote)));
+  parts.push(clipLine(CLIP_S12_M));
+  parts.push(blocks(belief.blocks.slice(firstQuote)));
+  const longVersion = copy.articleLinkText ? pageHref("art-pipeline-promise") : undefined;
+  if (longVersion && copy.articleLinkText) parts.push(`[${copy.articleLinkText}](${link(longVersion)})`);
+
+  parts.push(`## ${t("about.work.2")}`);
+  parts.push(`*${t("about.work.1")}.*`);
+  parts.push(WORK_CLIPS.map((c) => `- ${clipLine(c)}`).join("\n"));
+  parts.push(ABOUT_PHOTOS.map((p) => `![${p.alt}](${abs(p.src)})\n\n*${t(p.caption)}*`).join("\n\n"));
+
+  const written = recommended("about");
+  if (written.length) {
+    parts.push(`## ${t("about.written.1")}`);
+    parts.push(written.map((n) => `- [${n.title}](${mdUrl(n.key)}): ${n.why}`).join("\n"));
+  }
+
+  // The LinkedIn wall: every post as written, newest first, with its LinkedIn link.
+  type WallLike = {
+    date: string;
+    dayLong: string;
+    url: string;
+    text: string;
+    document?: { title: string } | null;
+    link?: { title: string; site: string; url: string } | null;
+    poll?: { question: string; options: string[] } | null;
+    quote_of?: { url: string; by_alex: boolean; author: string | null; text?: string } | null;
+  };
+  const posts: WallLike[] = WALL_FULL ? fullWallCards() : wallCards();
+  parts.push("## From my LinkedIn");
+  parts.push(
+    `${posts.length} of my posts from ${wallSpan(posts)}, newest first, as I wrote them. Profile: [${LINKS.linkedin.href}](${LINKS.linkedin.href})`,
+  );
+  for (const p of posts) {
+    const bits = [`### ${p.dayLong}`, blockquote(p.text)];
+    if (p.document?.title) bits.push(`Document: ${p.document.title}`);
+    if (p.link) bits.push(`Link: [${p.link.title || p.link.site}](${p.link.url})`);
+    if (p.poll) bits.push(`Poll: ${p.poll.question}\n\n${p.poll.options.map((o) => `- ${plainLine(o)}`).join("\n")}`);
+    if (p.quote_of) {
+      const who = p.quote_of.by_alex ? "my earlier post" : p.quote_of.author ? `a post by ${p.quote_of.author}` : "a post";
+      bits.push(`Quoting [${who}](${p.quote_of.url})${p.quote_of.by_alex && p.quote_of.text ? `:\n\n${blockquote(p.quote_of.text)}` : ""}`);
+    }
+    bits.push(`[On LinkedIn](${p.url})`);
+    parts.push(bits.join("\n\n"));
+  }
+  return doc("about", TITLE.about(), NOTE.about(), parts.join("\n\n"), [
+    ...recommended("about").slice(0, 3),
+    page("videos"),
+    page("for"),
+  ]);
+}
+
+// ---------------------------------------------------------------- /for and /for/<slug>
+
+type QuoteItem =
+  | { card: string; time: string; session: string; text: string; also?: string; youtube?: string; start?: number; end?: number }
+  | { post_id: string; date: string; text: string; also?: string; url: string };
+const QUOTES = quotesRaw as unknown as { lists: Record<string, QuoteItem[]>; clips: Record<string, QuoteItem> };
+
+function quoteItem(q: QuoteItem): string {
+  if ("post_id" in q) return `${blockquote(q.text)}\n>\n> [${q.date}, LinkedIn](${q.url})${q.also ? `\n\n${q.also}` : ""}`;
+  const when = `${q.time} · ${dayOf(q.session)}`;
+  const src = q.youtube ? `[${when}](${youtube(q.youtube, q.start)})` : when;
+  return `${blockquote(q.text)}\n>\n> ${src}${q.also ? `\n\n${q.also}` : ""}`;
+}
+
+function personTitle(p: StakeholderPage) {
+  return titleLines(p.title).join(", and ");
+}
+
+function forDoc(): Doc {
+  const intro = gridIntro();
+  const { notice } = stakeholderGate();
+  const parts: string[] = [];
+  if (intro) parts.push(intro.paragraphs.map(rich).join("\n\n"));
+  const clip = QUOTES.clips["S02-j"] as Extract<QuoteItem, { card: string }> | undefined;
+  if (clip?.youtube) parts.push(`${videoLink(clip.text, clip.youtube, clip.start, clip.end)}, ${dayOf(clip.session)}, ${clip.time}`);
+  parts.push(
+    people()
+      .map((p) => {
+        const lens = p.lens ?? (p.lens_key ? t(p.lens_key as CopyKey) : "");
+        return `- [${p.name}](${mdUrl(`for/${p.slug}`)}), ${personTitle(p)}${lens ? `: ${lens}` : ""}`;
+      })
+      .join("\n"),
+  );
+  parts.push(`${FOR_SOURCES_LINE} ${t("shared.takedown.1")} [${notice.privacy_label}](${link("/privacy")}).`);
+  return doc("for", TITLE.for(), NOTE.for(), parts.join("\n\n"), [
+    ...people().slice(0, 3).map((p) => ({ key: `for/${p.slug}`, title: p.name, why: personTitle(p) })),
+    page("index"),
+    page("about"),
+  ]);
+}
+
+type Landing = { approved?: boolean; lead?: string; lead_key?: string; note?: string; made_line?: string; sign?: string };
+
+function personDoc(p: StakeholderPage): Doc {
+  const key = `for/${p.slug}`;
+  const raw = (stakeholdersRaw.pages as { slug: string; landing?: Landing }[]).find((x) => x.slug === p.slug)?.landing ?? {};
+  const { notice } = stakeholderGate();
+  const first = p.name.split(" ")[0];
+  const parts: string[] = [];
+  const lead = [raw.lead_key ? t(raw.lead_key as CopyKey) : "", raw.lead ? rich(raw.lead) : ""].filter(Boolean).join(" ");
+  if (lead) parts.push(lead);
+  parts.push(`For: **${p.name}**, ${personTitle(p)}
+
+From: Alex Alderman, ${t("home.hero.10")}`);
+  if (raw.note) {
+    parts.push("## A note from Alex");
+    parts.push(raw.note.split(/\n\s*\n/).map((x) => rich(x.trim())).join("\n\n"));
+    parts.push(raw.sign ?? "Alex Alderman");
+  }
+  if (p.slug === "growth") {
+    parts.push(`## ${GROWTH_LENS.title}`);
+    parts.push(GROWTH_LENS.lead);
+    parts.push(walkthroughMd());
+    parts.push(statsMd());
+    parts.push(messagesMd(["tailspin", "coho"]));
+    parts.push(figuresMd());
+    parts.push(machineLinksMd());
+  }
+  const quotes = QUOTES.lists[p.slug] ?? [];
+  const qKey = `for-${p.slug}.quotes.1`;
+  if (quotes.length) {
+    parts.push(`## ${t(qKey as CopyKey)}`);
+    parts.push(quotes.map(quoteItem).join("\n\n"));
+  }
+  if (raw.made_line) {
+    parts.push("## How this page was made");
+    parts.push(`${rich(raw.made_line)}${docKeys().has("skills") ? ` [${t("shared.made.1")}](${mdUrl("skills")})` : ""}`);
+  }
+  parts.push(`## ${notice.heading}`);
+  const noticeLines = [p.slug !== "growth" ? notice.why : "", p.sources ?? notice.sources, `${t("shared.takedown.2")} [${notice.privacy_label}](${link("/privacy")}).`];
+  parts.push(noticeLines.filter(Boolean).join("\n\n"));
+  return labelled(`${p.name}'s page`, doc(key, `Hi ${first},`, personTitle(p), parts.join("\n\n"), [
+    ...recommended(p.slug as ListSlug).slice(0, 4),
+    page("for"),
+    page("about"),
+  ]));
+}
+
+// ---------------------------------------------------------------- feed posts (/log, /day-2)
+
+type Block = {
+  type: string;
+  text?: string;
+  items?: string[];
+  points?: { lead: string; text?: string; quote?: { text: string; source: string; href?: string; note?: string } }[];
+  source?: string;
+  href?: string;
+  note?: string;
+  title?: string;
+  blocks?: Block[];
+  session?: string;
+  start?: number;
+  end?: number;
+  slug?: string;
+  src?: string;
+  alt?: string;
+  caption?: string;
+};
+type Post = { id: string; at: string; kind: string; session?: string; title: string; blocks: Block[] };
+
+function feedQuote(q: { text: string; source: string; href?: string; note?: string }): string {
+  const src = q.href ? `[${q.source}](${q.href})` : q.source;
+  return `${blockquote(`“${q.text}”`)}\n>\n> ${src}${q.note ? `. ${q.note}` : ""}`;
+}
+
+function blocksMd(blocks: Block[], post: Post): string {
+  return blocks
+    .map((b) => {
+      switch (b.type) {
+        case "p":
+          return plainLine(b.text ?? "");
+        case "list":
+          return (b.items ?? []).map((i) => `- ${i}`).join("\n");
+        case "points":
+          return (b.points ?? [])
+            .map((pt) => `- **${pt.lead}**${pt.text ? ` ${pt.text}` : ""}${pt.quote ? `\n\n${feedQuote(pt.quote).replace(/^/gm, "  ")}` : ""}`)
+            .join("\n");
+        case "quote":
+          return feedQuote({ text: b.text ?? "", source: b.source ?? "", href: b.href, note: b.note });
+        case "highlight":
+          return `**${b.title ?? ""}**\n\n${blocksMd(b.blocks ?? [], post)}`;
+        case "video": {
+          const id = sessionVideo[b.session ?? ""];
+          return id ? videoLink(`${post.title} (${dayOf(b.session)})`, id, b.start, b.end) : "";
+        }
+        case "image":
+          return `![${b.alt ?? ""}](${abs(b.src ?? "")})${b.caption ? `\n\n*${b.caption}*` : ""}`;
+        case "summary":
+          return `**${summaryJson.headline}**\n\n${(summaryJson.paragraphs as string[]).join("\n\n")}`;
+        case "doc-link": {
+          const href = b.href ?? `/docs/${b.slug}`;
+          return href.startsWith("/docs/") ? "" : `[${b.text ?? href}](${link(href)})`;
+        }
+        case "status-board":
+          return "";
+        default:
+          return b.text ? plainLine(b.text) : "";
+      }
+    })
+    .filter(Boolean)
+    .join("\n\n");
+}
+
+function postMd(p: Post): string {
+  const meta = `${p.kind} · ${p.at.slice(11, 16)}${p.session ? ` · ${dayOf(p.session)}` : ""}`;
+  return `### ${p.title}\n\n*${meta}*\n\n${blocksMd(p.blocks, p)}`;
+}
+
+const isStatus = (p: Post) => p.id === "status" || p.blocks.some((b) => b.type === "status-board");
+
+// ---------------------------------------------------------------- /log
+
+type Beat = { n: number; kind: "high" | "low"; session: string; prague: string; youtube: string; start: number; end: number | null; length: string; quote: { text: string; time: string } };
+type Centre = Beat & {
+  segments: { key: string; from: number; to: number }[];
+  marks: { key: string; at: number; prague: string }[];
+  quotes: { text: string; time: string }[];
+};
+
+function logDoc(): Doc {
+  const H = highlightsRaw as unknown as {
+    arc: { type: "chart" | "beat" | "centre"; id: string }[];
+    beats: Record<string, Beat>;
+    centre: Record<string, Centre>;
+    words: Record<string, string>;
+  };
+  const w = (k: string) => H.words[k] ?? "";
+  const kind = (k: "high" | "low") => w(`highlights.legend.${k}`);
+  const parts: string[] = [t("log.intro.body")];
+
+  parts.push(`## ${w("highlights.heading")}`);
+  parts.push(w("highlights.intro"));
+  for (const item of H.arc) {
+    if (item.type === "beat") {
+      const b = H.beats[item.id];
+      const label = w(`highlights.beat.${item.id}.label`);
+      parts.push(
+        [
+          `### ${b.n}. ${label}`,
+          `*${kind(b.kind)}, ${b.prague.slice(0, 5)}*`,
+          w(`highlights.beat.${item.id}.setup`),
+          `${blockquote(`“${b.quote.text}”`)}\n>\n> ${dayOf(b.session)}, ${b.quote.time}`,
+          videoLink(label, b.youtube, b.start || undefined, b.end ?? undefined, b.length),
+        ].join("\n\n"),
+      );
+    } else if (item.type === "centre") {
+      const c = H.centre[item.id];
+      const title = w(`highlights.centre.${item.id}.title`);
+      const bits = [`### ${c.n}. ${title}`, `*${kind("low")}, ${c.prague.slice(0, 5)}*`, w(`highlights.centre.${item.id}.setup`)];
+      bits.push(videoLink(title, c.youtube, c.start || undefined, c.end ?? undefined, c.length));
+      const caption = w(`highlights.centre.${item.id}.caption`);
+      if (caption) bits.push(caption);
+      bits.push(c.segments.map((s) => `- ${mmss(s.from - c.start)}: ${w(`highlights.centre.${item.id}.seg.${s.key}`)}`).join("\n"));
+      bits.push(c.marks.map((m) => `- ${m.prague}: ${w(`highlights.centre.${item.id}.mark.${m.key}`)}`).join("\n"));
+      bits.push(c.quotes.map((q) => `${blockquote(`“${q.text}”`)}\n>\n> ${dayOf(c.session)}, ${q.time}`).join("\n\n"));
+      const after = w(`highlights.centre.${item.id}.after`);
+      if (after) bits.push(after);
+      parts.push(bits.filter(Boolean).join("\n\n"));
+    } else {
+      // A chart: its title and its caption, when the caption needs no numbers filled in.
+      const title = w(`highlights.${item.id}.title`);
+      const caption = w(`highlights.${item.id}.caption`);
+      if (title) parts.push(`### ${title}${caption && !caption.includes("{") ? `\n\n${caption}` : ""}`);
+    }
+  }
+
+  const tl = timelapseRaw as unknown as { words: Record<string, string>; frames: unknown[] };
+  if (tl.frames.length) {
+    parts.push(`## ${tl.words["timelapse.title"]}`);
+    parts.push(tl.words["timelapse.intro"]);
+  }
+
+  parts.push(`## ${t("log.feed.title")}`);
+  const posts = (feedJson.posts as Post[]).filter((p) => !isStatus(p)).sort((a, b) => b.at.localeCompare(a.at));
+  parts.push(posts.map(postMd).join("\n\n"));
+  return doc("log", TITLE.log(), NOTE.log(), parts.join("\n\n"), [page("day-2"), page("skills"), page("videos"), page("index")]);
+}
+
+function day2Doc(): Doc {
+  const posts = (day2Json.posts as Post[]).slice().sort((a, b) => b.at.localeCompare(a.at));
+  return doc("day-2", TITLE["day-2"](), NOTE["day-2"](), posts.map(postMd).join("\n\n"), [
+    page("log"),
+    page("skills"),
+    page("videos"),
+    ...nextArticles(null, 2),
+  ]);
+}
+
+// ---------------------------------------------------------------- /privacy
+
+let privacyCache: { title: string; body: string; first: string } | null = null;
+function privacyParts() {
+  if (privacyCache) return privacyCache;
+  const md = readFileSync(path.join(/* turbopackIgnore: true */ process.cwd(), "content", "privacy.md"), "utf8").replace(/\r\n?/g, "\n").trim();
+  const m = /^# (.+)\n+/.exec(md);
+  const title = m ? m[1].trim() : "Privacy notice";
+  const body = m ? md.slice(m[0].length) : md;
+  const first = body.split(/\n\s*\n/)[0].trim();
+  privacyCache = { title, body, first };
+  return privacyCache;
+}
+
+function privacyDoc(): Doc {
+  return doc("privacy", TITLE.privacy(), NOTE.privacy(), fixLinks(privacyParts().body, link), [page("for"), page("about"), page("index")]);
+}
+
+// ---------------------------------------------------------------- the whole track
+
+let cache: Doc[] | null = null;
+
+/** Every doc, in /llms.txt's order. Empty on a build without the new site. */
+export function allDocs(): Doc[] {
+  if (cache && process.env.NODE_ENV !== "development") return cache;
+  keyCache = null;
+  const keys = docKeys();
+  const docs: Doc[] = [];
+  if (keys.has("index")) docs.push(homeDoc());
+  if (keys.has("about")) docs.push(aboutDoc());
+  if (keys.has("articles")) docs.push(articlesDoc(), ...articles().map(articleDoc));
+  if (keys.has("videos")) docs.push(videosDoc());
+  if (keys.has("for")) docs.push(forDoc(), ...people().map(personDoc));
+  if (keys.has("skills")) docs.push(skillsDoc());
+  if (keys.has("log")) docs.push(logDoc());
+  if (keys.has("day-2")) docs.push(day2Doc());
+  if (keys.has("privacy")) docs.push(privacyDoc());
+  cache = docs;
+  return docs;
+}
+
+export function findDoc(key: string): Doc | undefined {
+  return allDocs().find((d) => d.key === key);
+}
+
+/** The .md URL of a human page, for the "Ask your AI" row and the alternate link; undefined without a doc. */
+export function mdUrlFor(path: string): string | undefined {
+  const key = keyOf(path);
+  return docKeys().has(key) ? mdUrl(key) : undefined;
+}
+
+// ---------------------------------------------------------------- /llms.txt and /llms-full.txt
+
+const item = (d: Doc) => `- [${d.label ?? d.title}](${mdUrl(d.key)}): ${d.note}`;
+
+export function llmsTxt(): string {
+  const docs = allDocs();
+  const by = (k: string) => docs.find((d) => d.key === k);
+  const u = (k: string) => (by(k) ? mdUrl(k) : humanUrl(k));
+  const routing = [C1_SLUG, C2_SLUG]
+    .map((s) => by(`articles/${s}`))
+    .filter((d): d is Doc => !!d)
+    .map((d) => mdUrl(d.key))
+    .join(", ");
+  const sections: string[] = [];
+  sections.push(`# Alex Alderman: ${SITE_META.title}`);
+  sections.push(blockquote(LLMS_SUMMARY));
+  sections.push(`## How to show someone around
+
+Someone handed you this site. Be their guide, not a summary of everything.
+
+1. Ask what they're after, offering these starting points in one line each:
+   - Who Alex is and the job he wants → ${u("about")}
+   - How he decides which outbound message each lead gets (ICP routing) → ${routing}
+   - What he thinks about AI in go-to-market → ${u("articles")}
+   - The videos, each with a line on what's in it → ${u("videos")}
+   - How this site was built in 12 hours, live, and the reusable skills from it → ${u("log")}, ${u("day-2")}, ${u("skills")}
+   - If they're one of the six people at Addvery, their own page → ${u("for")}
+2. Fetch only the pages that answer them. Every page ends with "Where next" links: follow those rather than guessing URLs.
+3. When you quote or summarise a page, give the human link from its "Human version" line so they can click through. For a video, give the link and the line that says what's in it.
+4. Quote Alex's own words where you can. Don't rewrite him into marketing copy.`);
+  const list = (title: string, ds: (Doc | undefined)[]) => {
+    const ok = ds.filter((d): d is Doc => !!d);
+    if (ok.length) sections.push(`## ${title}\n\n${ok.map(item).join("\n")}`);
+  };
+  list("Start here", [by("index"), by("about")]);
+  list("Articles", [by("articles"), ...docs.filter((d) => d.key.startsWith("articles/"))]);
+  list("Videos", [by("videos")]);
+  list("For Addvery", [by("for"), ...docs.filter((d) => d.key.startsWith("for/"))]);
+  list("Skills", [by("skills")]);
+  list("How it was built", [by("log"), by("day-2")]);
+  const optional = [
+    by("privacy") ? item(by("privacy")!) : "",
+    `- [Everything in one file](${LLMS_FULL_URL}): every page above, in this order, in one Markdown file.`,
+    `- [The code on GitHub](${REPO_URL}): the site's public repo.`,
+    ...EXTRA_OPTIONAL,
+  ].filter(Boolean);
+  sections.push(`## Optional\n\n${optional.join("\n")}`);
+  return sections.join("\n\n") + "\n";
+}
+
+/** More lines for llms.txt's Optional section (the MCP server adds itself here). */
+const EXTRA_OPTIONAL: string[] = [];
+
+export function llmsFullTxt(): string {
+  return (
+    allDocs()
+      .map((d) => `Source: ${mdUrl(d.key)}\n\n${d.markdown.trim()}`)
+      .join("\n\n---\n\n") + "\n"
+  );
+}
+

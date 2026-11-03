@@ -1,4 +1,5 @@
 // The menu's links, shared by the header (a client component) and the footer (a server component).
+import { NAV_LABEL } from "./agent/copy";
 
 export const NAV_LINKS = [
   { href: "/#feed", label: "Live feed" },
@@ -21,6 +22,7 @@ export function newNavLinks({ videos, skills }: { videos: boolean; skills: boole
     { href: "/about#linkedin", label: "LinkedIn posts" },
     { href: "/about", label: "About me" },
     { href: "/for", label: "For Addvery" },
+    { href: "/agent", label: NAV_LABEL },
   ];
 }
 

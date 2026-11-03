@@ -22,6 +22,7 @@ import "../../article.css";
 import "../for.css";
 import { NEW_SITE } from "../../flags";
 import { PersonalPage } from "./personal";
+import { markdownAlternate } from "../../page-meta";
 
 // One page per key person at Addvery, addressed to their role: /for/<slug>. The grid at /for opens it.
 //
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!page) return { title: "Hire Me Hackathon", robots: ROBOTS };
   // Without an approved landing: role-based on purpose, so the name stays out of the tab title and
   // any link preview. The landing is the link Alex sends that person, so it greets them by name.
-  if (!page.landing) return { title: `For ${page.label} · Hire Me Hackathon`, description: page.framing, robots: ROBOTS };
+  if (!page.landing) return { title: `For ${page.label} · Hire Me Hackathon`, description: page.framing, robots: ROBOTS, alternates: { types: markdownAlternate(`/for/${page.slug}`) } };
   const title = `Hi ${firstName(page)}: a page for you, from Alex Alderman`;
   const description = greetingSummary(page.landing.greeting);
   const url = `/for/${page.slug}`;
@@ -64,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: title },
     description,
     robots: ROBOTS,
-    alternates: { canonical: url },
+    alternates: { canonical: url, types: markdownAlternate(url) },
     openGraph: { type: "website", url, siteName: "Hire Me Hackathon", title, description },
     twitter: { card: "summary_large_image", title, description },
   };

@@ -21,6 +21,17 @@ import {
 } from "../best/parts";
 import { Machine36 } from "../best/machine";
 import { HeroVideo } from "./hero-video";
+import {
+  HOME_ABOUT,
+  HOME_ACCOUNT_QUOTE,
+  HOME_ACCOUNT_STEPS,
+  HOME_ARGUMENT,
+  HOME_LIMITS_TITLE,
+  HOME_SIX,
+  HOME_SKILLS_TITLE,
+  MOMENTS,
+  NUMBERS,
+} from "./home-words";
 import "./home.css";
 
 /*
@@ -36,22 +47,11 @@ function roleOf(title: string) {
   return title.split(" · ")[0].replace(/, Addvery$/, "");
 }
 
-const NUMBERS: { href: string; k: string; v: string }[] = [
-  { href: "#icps", k: "4 × 3 × 3", v: "" }, // v: home.numbers.2
-  { href: "#account", k: "279 results · $1.24", v: "6 Apify scrapers, in about 17 minutes" },
-  { href: "#account", k: "57 people · $0.003", v: "107 model calls" },
-  { href: "#routing", k: "12 leads", v: "4 placed by rules alone" },
-  { href: "#machine", k: "36 workflows · 1 variable", v: "Nothing here sends." },
-  { href: "#six", k: "6 pages", v: "A personal landing page for each decision-maker" },
-];
 
-const MOMENTS: { skill: string; time: string; quote: string; name: string }[] = [
-  { skill: "spec-driven-agent-team", time: "11:36 · Day 1", quote: "\"they shoot all of his scenes first even if it's not in chronological order of the movie\"", name: "Running a team of AI helpers from one plan" },
-  { skill: "operator-attention-controls", time: "13:44 · Day 1", quote: "\"Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.\"", name: "Keeping a team of AI helpers from running off without me" },
-  { skill: "account-scrape-apify", time: "15:13 · Day 1", quote: "\"so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run\"", name: "Account research scraper on Apify, with no logins" },
-  { skill: "account-people-classifier", time: "15:40 · Day 1", quote: "\"set up a JEV classification that determines whether they are someone sending cold outreach, right?\"", name: "Account mapping: classifying every employee and post at a target company" },
-  { skill: "outbound-workflow-factory", time: "16:36 · Day 1", quote: "\"So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12.\"", name: "Outbound workflow factory: 36 GetSales sequences from one copy file per ICP" },
-];
+/** "a **b** c" as text and <strong>. */
+function withBold(text: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
 
 export function BestHome() {
   // data-needs="art-pipeline-promise": the link shows once the article has a page.
@@ -126,37 +126,18 @@ export function BestHome() {
         <Quote
           className="bh-account-quote"
           maxWidth={900}
-          text={'"if you\'re like on month four and I have your 90-day goals from your job advert that\'s like gold for crafting like custom messaging"'}
-          source={<QuoteSource youtube="MyYnFOQCagc" start={145}>Day 1, 15:09</QuoteSource>}
+          text={HOME_ACCOUNT_QUOTE.text}
+          source={<QuoteSource youtube={HOME_ACCOUNT_QUOTE.youtube} start={HOME_ACCOUNT_QUOTE.start}>{HOME_ACCOUNT_QUOTE.when}</QuoteSource>}
         />
         <StepList>
-          <Step
-            id="icps"
-            n="01"
-            href="/skills#icp-grid-from-client-site"
-            bigText="4 ICPs"
-            title="ICP grid built from the client's own website"
-            text="The four ICPs come from Addvery's own website: retail loyalty, telco customer value, consumer lending and last-mile logistics."
-          />
-          <Step
-            n="02"
-            href="/d1"
-            image={{ src: "/d1/01-overview-1280.webp", alt: "Research board: Addvery as scraped from public sources" }}
-            title="Account research scraper on Apify, with no logins"
-            text="6 Apify scrapers, $1.24, 279 results in about 17 minutes."
-          />
-          <Step
-            n="03"
-            href="/d2"
-            image={{ src: "/d1/03-linkedin-activity-1280.webp", alt: "LinkedIn activity board: who posted in the last 90 days by function, counts only" }}
-            title="Account mapping: classifying every employee"
-            text="At 16:04 it ran on all 57 people who list Addvery on LinkedIn: public profiles and posts, no login. Counts only, no names."
-          />
+          {HOME_ACCOUNT_STEPS.map((s) => (
+            <Step key={s.n} id={s.id} n={s.n} href={s.href} bigText={s.bigText} image={s.image} title={s.title} text={s.text} />
+          ))}
         </StepList>
         <div className="bh-two">
           <div>
             <EyebrowRow>{t("home.limits.1")}</EyebrowRow>
-            <h2 className="bx-h2">It was built to be legible more than functional</h2>
+            <h2 className="bx-h2">{HOME_LIMITS_TITLE}</h2>
           </div>
           <Limits />
         </div>
@@ -168,10 +149,10 @@ export function BestHome() {
       {/* 6. Six faces */}
       <Band tone="dark" glow id="six" labelledBy="six-title">
         <SectionHead
-          eyebrow="For Addvery"
-          title="A personal landing page for each decision-maker"
+          eyebrow={HOME_SIX.eyebrow}
+          title={HOME_SIX.title}
           titleId="six-title"
-          action={<ArrowLink href="/for">All six pages</ArrowLink>}
+          action={<ArrowLink href="/for">{HOME_SIX.action}</ArrowLink>}
         />
         <ul className="bh-faces">
           {stakeholders.pages.map((p) => (
@@ -188,8 +169,8 @@ export function BestHome() {
         <Quote
           className="bx-mt-4"
           maxWidth={860}
-          text={'"as part of my research into your company i try to identify who the stakeholders are and like what your main objections are"'}
-          source={<QuoteSource youtube="lo486cSVBcM" start={958}>Day 1, 17:50</QuoteSource>}
+          text={HOME_SIX.quote.text}
+          source={<QuoteSource youtube={HOME_SIX.quote.youtube} start={HOME_SIX.quote.start}>{HOME_SIX.quote.when}</QuoteSource>}
         />
       </Band>
 
@@ -197,49 +178,41 @@ export function BestHome() {
       <Band tone="lilac" labelledBy="argument">
         <SectionHead
           eyebrow={t("home.argument.1")}
-          title="Put AI in your pipeline first"
+          title={HOME_ARGUMENT.title}
           titleId="argument"
-          lead="For the people who really want to save their team, and really want to do AI the ethical way (whatever that means), the order matters."
-          action={pipelineArticle ? <ArrowLink href={pipelineArticle}>If AI won&rsquo;t replace half your team, put it in your pipeline</ArrowLink> : undefined}
+          lead={HOME_ARGUMENT.lead}
+          action={pipelineArticle ? <ArrowLink href={pipelineArticle}>{HOME_ARGUMENT.articleLink}</ArrowLink> : undefined}
         />
         <ol className="bh-chain">
-          <li>
-            <span className="bh-chain-n" aria-hidden="true">01</span>
-            <blockquote>
-              <p>&quot;We want to bring an AI in, but we&apos;re not going to fire half the team.&quot;</p>
-            </blockquote>
-            <VideoFrame
-              size="sm"
-              youtube="qrBNOsSYGrQ"
-              start={415}
-              end={501}
-              label="We want to bring an AI in, but we're not going to fire half the team (Day 1, 11:13)"
-              meta="Day 1, 11:13"
-              length="1:26"
-              still="/videos/S02-f.webp"
-              mode="dialog"
-            />
-          </li>
-          <li>
-            <span className="bh-chain-n" aria-hidden="true">02</span>
-            <blockquote>
-              <p>&quot;If it&apos;s not lowering their labor costs, then it has to be increasing their revenue.&quot;</p>
-            </blockquote>
-          </li>
-          <li>
-            <span className="bh-chain-n" aria-hidden="true">03</span>
-            <blockquote>
-              <p>&quot;The first place you need to put AI is in your pipeline, so that you can upskill your people to get more done and at the same time bring in more work.&quot;</p>
-            </blockquote>
-          </li>
+          {HOME_ARGUMENT.chain.map((line, i) => (
+            <li key={line}>
+              <span className="bh-chain-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <blockquote>
+                <p>{line}</p>
+              </blockquote>
+              {i === 0 && (
+                <VideoFrame
+                  size="sm"
+                  youtube={HOME_ARGUMENT.chainVideo.youtube}
+                  start={HOME_ARGUMENT.chainVideo.start}
+                  end={HOME_ARGUMENT.chainVideo.end}
+                  label={HOME_ARGUMENT.chainVideo.label}
+                  meta={HOME_ARGUMENT.chainVideo.meta}
+                  length={HOME_ARGUMENT.chainVideo.length}
+                  still={HOME_ARGUMENT.chainVideo.still}
+                  mode="dialog"
+                />
+              )}
+            </li>
+          ))}
         </ol>
         <Quote
           className="bx-mt-4"
           xl
           mark
           maxWidth={980}
-          text="The only way to get the leverage of AI and not need to drop half your team is if you're also leveraging the amount of new work you're getting."
-          source={<QuoteSource youtube="lo486cSVBcM" start={1657}>Day 1, 18:01</QuoteSource>}
+          text={HOME_ARGUMENT.quote.text}
+          source={<QuoteSource youtube={HOME_ARGUMENT.quote.youtube} start={HOME_ARGUMENT.quote.start}>{HOME_ARGUMENT.quote.when}</QuoteSource>}
         />
       </Band>
 
@@ -247,7 +220,7 @@ export function BestHome() {
       <Band tone="ink" id="skills" labelledBy="skills-title">
         <SectionHead
           eyebrow={t("home.skills.1")}
-          title={'"it took me 12 hours today but here\'s all of the skills that we built that are reusable."'}
+          title={HOME_SKILLS_TITLE}
           titleId="skills-title"
           lead={t("home.skills.2")}
           action={<ArrowLink href="/skills">{t("home.skills.3")}</ArrowLink>}
@@ -270,16 +243,14 @@ export function BestHome() {
             <img src="/about/alex-headshot-800.webp" alt="Alex Alderman" width={800} height={1000} loading="lazy" decoding="async" />
           </figure>
           <div>
-            <EyebrowRow>About me</EyebrowRow>
+            <EyebrowRow>{HOME_ABOUT.eyebrow}</EyebrowRow>
             <h2 id="who" className="bx-h2">
-              I&rsquo;m a marketer turned GTM engineer, and I think AI should grow your team, not shrink it.
+              {HOME_ABOUT.title}
             </h2>
             <div className="bh-about-copy">
-              <p>
-                I spent 10 years freelancing in B2B marketing, the standard path into GTM engineering. Then I took an <strong>AI sabbatical</strong>: nine
-                months of doing nothing but building in Claude Code.
-              </p>
-              <p>Now I want to apply what I&rsquo;ve learned in theory and actually get the satisfaction of making numbers go up.</p>
+              {HOME_ABOUT.paragraphs.map((p) => (
+                <p key={p}>{withBold(p)}</p>
+              ))}
             </div>
             <div className="bh-actions">
               <GradientButton href="/about">{t("shared.about.1")}</GradientButton>

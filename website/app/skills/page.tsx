@@ -5,6 +5,8 @@ import data from "@/content/skills.json";
 import { t, type CopyKey } from "../copy";
 import { SKILLS_PAGE } from "../flags";
 import { Band, CrmBand, EyebrowRow } from "../best/parts";
+import { markdownAlternate } from "../page-meta";
+import { HOME_SKILLS_TITLE } from "../home/home-words";
 import "./skills.css";
 import { dayOf } from "../day-label";
 
@@ -15,7 +17,7 @@ import { dayOf } from "../day-label";
 
 export const metadata: Metadata = {
   title: "Skills · Hire Me Hackathon",
-  alternates: { canonical: "/skills" },
+  alternates: { canonical: "/skills", types: markdownAlternate("/skills") },
 };
 
 type Item = {
@@ -28,7 +30,7 @@ type Item = {
 };
 type Group = { title: string; items: Item[] };
 
-const HERO_QUOTE = `"it took me 12 hours today but here's all of the skills that we built that are reusable."`;
+const HERO_QUOTE = HOME_SKILLS_TITLE;
 
 export default function SkillsPage() {
   if (!SKILLS_PAGE) notFound();

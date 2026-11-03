@@ -24,6 +24,8 @@ import {
 } from "../../best/parts";
 import { C1_SLUG, C2_SLUG, MachineFigures, MachineLinks, MachineStats, WalkthroughFrame } from "../../best/machine";
 import { ClipFrame, QuoteCollection, clipFor, lensQuotes } from "./quotes";
+import { MESSAGES } from "../../best/machine-words";
+import { GROWTH_LENS } from "./lens-words";
 import "./lens.css";
 
 // The P3 "lens" blocks of /for/<slug> (BUILD.md 5 and 6) and the small blocks that trail P4. Each page's
@@ -101,11 +103,7 @@ const C1_ASSETS = `/demos-assets/${C1_SLUG}`;
 function GrowthLens() {
   return (
     <Band tone="ink" labelledBy="pl-walk">
-      <SectionHead
-        title="36 outbound workflows and the one variable behind them"
-        titleId="pl-walk"
-        lead="Four ICPs, three languages, three tactics, and one personal first message per lead."
-      />
+      <SectionHead title={GROWTH_LENS.title} titleId="pl-walk" lead={GROWTH_LENS.lead} />
       <div className="pl-walk">
         <WalkthroughFrame />
       </div>
@@ -113,12 +111,11 @@ function GrowthLens() {
         <MachineStats />
       </div>
       <MessageRow>
-        <Message label="custom_message_1 · Tailspin Parcel CZ (fictional) · Last-mile logistics · CS · problem" lang="cs">
-          Dobrý den, firma Tailspin Parcel CZ doručuje většinu zásilek až ke dveřím a doručení domů funguje, jen když je někdo doma. Opakované pokusy o doručení pak ukrajují z marže každé trasy. Řešíte teď úspěšnost prvního doručení, nebo to máte pod kontrolou?
-        </Message>
-        <Message label="custom_message_1 · Coho Last Mile (fictional) · Last-mile logistics · EN · signal">
-          Hi Dana, Coho Last Mile announced its move into Hungary in October. In a new market you start with no network, systems or brand, and what gets decided in the first months shapes the cost per parcel for years. How far along is the last-mile plan there?
-        </Message>
+        {[MESSAGES.tailspin, MESSAGES.coho].map((msg) => (
+          <Message key={msg.label} label={msg.label} lang={msg.lang}>
+            {msg.text}
+          </Message>
+        ))}
       </MessageRow>
       <MachineFigures />
       <MachineLinks />

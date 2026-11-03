@@ -13,6 +13,8 @@ import "./best.css";
 
 export { VideoFrame, type VideoFrameProps } from "./video-frame";
 export { watchUrl };
+export { CRM_LINE, limitsDefault } from "./words";
+import { CRM_LINE, limitsDefault } from "./words";
 
 // ---------------------------------------------------------------- bands and headings
 
@@ -456,16 +458,6 @@ export function FigureRow({ children }: { children: ReactNode }) {
   return <div className="bx-figs">{children}</div>;
 }
 
-/** The four things he can't show yet. The first is shared.limits.1. */
-export function limitsDefault(): string[] {
-  return [
-    t("shared.limits.1"),
-    "The Czech and German still need a native read.",
-    "The leads are fictional, with one public fact each and nothing private.",
-    "Nothing is trained here.",
-  ];
-}
-
 /** A list with a gradient dot and a purple rule per line. `items` defaults to the four limits. */
 export function Limits({ items = limitsDefault(), columns = 1 }: { items?: ReactNode[]; columns?: 1 | 2 }) {
   return (
@@ -478,10 +470,6 @@ export function Limits({ items = limitsDefault(), columns = 1 }: { items?: React
 }
 
 // ---------------------------------------------------------------- the CRM band
-
-/** His line from 20:45 on build day. */
-export const CRM_LINE =
-  "Imagine your conversion rate if this is how you reached out to everyone in your CRM. Not only is it possible but the ROI would be unbelievable.";
 
 /** The selling-point band: his CRM line, large, on amethyst, with caption shared.crm.1. Used on home, /for/ceo and /skills. */
 export function CrmBand() {

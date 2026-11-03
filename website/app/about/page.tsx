@@ -9,12 +9,13 @@ import { NEW_SITE } from "../flags";
 import { LIST_SLUGS, RECOMMEND_ON, pageHref, recommendFor } from "../recommend";
 import { RecommendCarousel } from "../recommend-carousel";
 import { VideoFrame } from "../best/parts";
-import { CLIP_S02_E, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "./clips";
+import { ABOUT_PHOTOS, CLIP_S02_E, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "./clips";
 import { AI_PORTFOLIO_SLUG, FACTS, LINKS, SHOW_ZERO_COUNTS } from "./profile";
 import { LinkedInWall } from "./wall";
 import { wallCards, wallSpan } from "./wall-data";
 import { LinkedInWallFull } from "./wall-full";
 import { fullWallCards } from "./wall-full-data";
+import { ABOUT_META, markdownAlternate } from "../page-meta";
 import "./about.css";
 import "./wall-full.css";
 
@@ -36,15 +37,14 @@ const WALL_FULL = process.env.WALL_FULL === "1";
 // (./wall-data.ts), the settings ./profile.ts, the images public/about/ (scripts/about_assets.py makes
 // them all; local/ and public/about/ are git-ignored and deploy from the working tree).
 
-const TITLE = "About Alex Alderman";
-const DESCRIPTION =
-  "Alex Alderman, a marketer turned GTM engineer in Prague: his background, the job he wants, and a wall of his LinkedIn posts about AI.";
+const TITLE = ABOUT_META.title;
+const DESCRIPTION = ABOUT_META.description;
 
 // The preview image is ./opengraph-image.tsx (the headshot beside the title, in the site's card template).
 export const metadata: Metadata = {
   title: `${TITLE} · Hire Me Hackathon`,
   description: DESCRIPTION,
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "/about", types: markdownAlternate("/about") },
   openGraph: {
     type: "profile",
     firstName: "Alex",
@@ -248,30 +248,13 @@ export default function AboutPage() {
               ))}
             </ul>
             <div className="about-photos">
-              <figure>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/setup-2026-11-02.jpg"
-                  width={2400}
-                  height={1800}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Alex's desk on build day: three monitors with terminal windows and a session video, a microphone and a red-backlit keyboard, two bright ring lights, and a grey office chair in front."
-                />
-                <figcaption>{t("about.work.3")}</figcaption>
-              </figure>
-              <figure>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/dog-walk-2026-11-02.jpg"
-                  width={1200}
-                  height={1600}
-                  loading="lazy"
-                  decoding="async"
-                  alt="A small brown and white wire-haired dog lying on the hallway floor by the door, with shoes, a school backpack, a scooter and a helmet behind him."
-                />
-                <figcaption>{t("about.work.4")}</figcaption>
-              </figure>
+              {ABOUT_PHOTOS.map((ph) => (
+                <figure key={ph.src}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={ph.src} width={ph.width} height={ph.height} loading="lazy" decoding="async" alt={ph.alt} />
+                  <figcaption>{t(ph.caption)}</figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
