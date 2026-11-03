@@ -170,12 +170,6 @@
           "name": "Grading booth: turning one person's taste into a tested rubric",
           "line": "skills.taste-grading-booth.1",
           "path": "legibility\\grading\\"
-        },
-        {
-          "id": "agent-view-generator",
-          "name": "Agent view: a whole website as plain Markdown for AI agents",
-          "line": "skills.agent-view-generator.1",
-          "path": "scraping\\agent-view\\generate.py"
         }
       ]
     }
