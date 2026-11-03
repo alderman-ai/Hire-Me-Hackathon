@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { demoName, entryUrl, formatDate, lengthLabel, showUnpublished, STATUS_LABEL, visibleEntries, type Entry } from "./entries";
+import { entryUrl, formatDate, lengthLabel, showUnpublished, STATUS_LABEL, visibleEntries, type Entry } from "./entries";
 import { CoverGlow } from "./parts";
 import "../article.css";
 import "./demos.css";
@@ -39,7 +39,6 @@ function Row({ entry }: { entry: Entry }) {
   const thumb = thumbnail(entry);
   const isVideo = !!entry.video;
   const length = lengthLabel(entry);
-  const demo = entry.deliverable ? demoName(entry.deliverable) : undefined;
   return (
     <li className={`entry-row${thumb ? " has-thumb" : ""}`}>
       {thumb && (
@@ -63,7 +62,6 @@ function Row({ entry }: { entry: Entry }) {
         <p className="entry-row-info">
           <time dateTime={entry.date}>{formatDate(entry.date)}</time>
           {length && length !== "Video" && <span>{length}</span>}
-          {demo && <span>Demo {demo.n}</span>}
         </p>
         {entry.status !== "published" && (
           <p className="entry-row-flag">
