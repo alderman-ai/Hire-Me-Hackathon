@@ -6,7 +6,7 @@
       "at": "2026-11-03T12:01",
       "kind": "Update",
       "session": "S19",
-      "title": "[words coming: S19 update title]",
+      "title": "Banana, cucumber, and a better computer",
       "blocks": [
         {
           "type": "video",
@@ -16,7 +16,7 @@
         },
         {
           "type": "p",
-          "text": "[words coming: S19 update paragraph]"
+          "text": "Turns out I can't screen record and generate video at the same time, or everything crashes. Honestly, I need a better computer. I'm also approving content that's 90% done, last-mile edits on videos and articles. Then comes banana cucumber, my feedback game: I scroll the site, say banana, talk through what to change, say cucumber, and it grabs a screenshot from anywhere in between. The clock only ticks down while I'm recording, so I subtract the editing time by hand. Hurrah."
         }
       ]
     },
@@ -42,7 +42,7 @@
         {
           "type": "doc-link",
           "href": "/log#highlights",
-          "text": "[words coming: link label to Day 1's highlights]"
+          "text": "See the Day 1 highlights"
         }
       ]
     },
