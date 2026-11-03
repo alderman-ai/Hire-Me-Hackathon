@@ -1,6 +1,6 @@
 ---
 name: dictate-article
-description: Turn a few minutes of spoken dictation into a short, well-rounded article with media slots. Alex dictates the topic for 2 to 5 minutes, gets back the 5 to 10 questions that matter most for a complete article, answers them all in one dictated burst, then receives a draft whose order follows the argument (not the order he said things in), a list of what's still missing, and media slots describing the image, video or graphic that would bridge each section. Use when Alex says "write an article", "dictate an article", "I want to talk through a post", or "/dictate-article". Works in any project; inside a project with a media library it can also match the slots to existing clips and graphics.
+description: Turn a few minutes of spoken dictation into a short, well-rounded article with media slots. Alex dictates the topic for 2 to 5 minutes, gets back only the questions that would change the article (often 2 to 4, never padded), answers them all in one dictated burst, then receives a draft whose order follows the argument (not the order he said things in), a list of what's still missing, and media slots describing the image, video or graphic that would bridge each section. Use when Alex says "write an article", "dictate an article", "I want to talk through a post", or "/dictate-article". Works in any project; inside a project with a media library it can also match the slots to existing clips and graphics.
 ---
 
 # dictate-article
@@ -26,7 +26,7 @@ Read the dictation against what a well-rounded article needs:
 9. **The opening.** A moment, line or scene that earns the first paragraph.
 10. **The ending.** Where it lands: a line, a callback, a consequence.
 
-Ask only about what the dictation leaves thin or missing: **5 to 10 questions**, most important first, each one line, numbered, with a few words on why it matters. Don't ask what he already answered. End with: "Answer them all in one go, in any order; skip any you don't care about."
+Ask only about what the dictation leaves thin or missing, and only questions whose answer would change the article: **0 to 10, never padded to a number**. A long dictation that already has the point, the proof and the ending usually needs 2 to 4; if it needs none, skip round 2 and say so. Most important first, each one line, numbered, with a few words on why it matters. Don't ask what he already answered, and don't ask for what the draft can do without (a cost figure, a list of signs) unless it's load-bearing. End with: "Answer them all in one go, in any order; skip any you don't care about."
 
 ## Round 3: the draft (a subagent; keep the session lean)
 
