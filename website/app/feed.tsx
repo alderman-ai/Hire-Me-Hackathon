@@ -237,7 +237,7 @@ export function FeedPost({ post, linkDemo = true }: { post: Post; linkDemo?: boo
 }
 
 // The newest post, after Addvery's featured episode: media on the left, the post on the right.
-function FeaturedPost({ post }: { post: Post }) {
+export function FeaturedPost({ post }: { post: Post }) {
   const mediaIndex = post.blocks.findIndex((b) => b.type === "video" || b.type === "image");
   const media = mediaIndex >= 0 ? post.blocks[mediaIndex] : undefined;
   const rest = post.blocks.filter((_, i) => i !== mediaIndex);

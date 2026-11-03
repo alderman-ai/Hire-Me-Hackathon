@@ -11,6 +11,7 @@ import { YourPagePill } from "./your-page";
 import { newNavLinks } from "./site-links";
 import { t } from "./copy";
 import type { HackWords } from "./hack-strip";
+import videos from "@/content/videos.json";
 
 // The hackathon menu bar above the header (app/hack-strip.tsx), on the new site only. Day 1's menu points
 // into /log's sections; an item shows once its section is on the page (`ready`).
@@ -19,12 +20,17 @@ const HACK_ITEMS = [
   { href: "/log#timelapse", label: "hack.menu.timelapse", ready: false },
   { href: "/log#feed", label: "hack.menu.feed", ready: true },
 ] as const;
+// Day 2's cell (Alex, 3 Nov: a "Day 2 Update" button on the bar) shows once S17's video is uploaded.
+const DAY2_READY = Boolean((videos as Record<string, string | undefined>).S17);
 const HACK: HackWords | undefined = NEW_SITE
   ? {
       before: t("hack.strip.before"),
       live: t("hack.strip.live"),
       menuLabel: t("hack.menu.label"),
-      items: HACK_ITEMS.filter((i) => i.ready).map((i) => ({ href: i.href, label: t(i.label) })),
+      groups: [
+        { label: t("hack.menu.label"), items: HACK_ITEMS.filter((i) => i.ready).map((i) => ({ href: i.href, label: t(i.label) })) },
+        { fresh: true, items: DAY2_READY ? [{ href: "/day-2", label: t("hack.menu.day2") }] : [] },
+      ].filter((g) => g.items.length > 0),
     }
   : undefined;
 

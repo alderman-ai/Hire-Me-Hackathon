@@ -20,7 +20,9 @@ import { useEffect, useState } from "react";
 export const LIVE_AT_MS = Date.UTC(2026, 10, 3, 8, 45, 0);
 
 export type HackItem = { href: string; label: string };
-export type HackWords = { before: string; live: string; menuLabel: string; items: HackItem[] };
+/** A run of menu cells: Day 1's (with its "Day 1" label), then Day 2's (`fresh`: the newest, with a dot). */
+export type HackGroup = { label?: string; fresh?: boolean; items: HackItem[] };
+export type HackWords = { before: string; live: string; menuLabel: string; groups: HackGroup[] };
 
 /** 3,735,000 ms becomes "1:02:15". */
 function hms(ms: number) {
@@ -73,18 +75,25 @@ export function HackStrip({ words }: { words: HackWords }) {
           )}
         </p>
         <nav className="hack-menu" aria-label={words.menuLabel}>
-          <span className="hack-menu-label" aria-hidden="true">
-            {words.menuLabel}
-          </span>
-          <ul>
-            {words.items.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hack-item">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {words.groups.map((g, gi) => (
+            <div key={gi} className={`hack-group${g.fresh ? " is-fresh" : ""}`}>
+              {g.label && (
+                <span className="hack-menu-label" aria-hidden="true">
+                  {g.label}
+                </span>
+              )}
+              <ul>
+                {g.items.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="hack-item">
+                      {g.fresh && <span className="hack-dot hack-item-dot" aria-hidden="true" />}
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </nav>
       </div>
     </div>

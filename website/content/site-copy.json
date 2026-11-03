@@ -94,5 +94,7 @@
   "hack.menu.timelapse": "Time-lapse",
   "hack.menu.feed": "Feed",
   "log.feed.title": "Day 1 feed",
-  "demos.intro": "What I made during the hackathon besides the site itself: some written up, some on video. Newest first."
+  "demos.intro": "What I made during the hackathon besides the site itself: some written up, some on video. Newest first.",
+  "hack.menu.day2": "Day 2 Update",
+  "day2.title": "Day 2"
 }

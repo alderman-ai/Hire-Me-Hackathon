@@ -417,6 +417,11 @@ a {
 
 .hack-menu li { display: flex; }
 
+/* Day 1's cells, then Day 2's: each group is its own run of cells, with a gap between them. */
+.hack-group { display: flex; align-items: stretch; }
+.hack-group + .hack-group { margin-left: 16px; }
+.hack-item-dot { width: 8px; height: 8px; margin-right: 10px; box-shadow: none; }
+
 .hack-item {
   position: relative;
   display: flex;

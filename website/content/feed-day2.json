@@ -1,0 +1,19 @@
+{
+  "about": "Day 2's feed (3 Nov), newest on top: same post shape as content/feed.json, shown at /day-2.",
+  "posts": [
+    {
+      "id": "day2-update",
+      "at": "2026-11-03T10:16",
+      "kind": "Update",
+      "session": "S17",
+      "title": "Day 2 Update",
+      "blocks": [
+        {
+          "type": "video",
+          "session": "S17",
+          "start": 0
+        }
+      ]
+    }
+  ]
+}
