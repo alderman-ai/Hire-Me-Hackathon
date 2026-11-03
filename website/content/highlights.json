@@ -9,10 +9,6 @@
   "arc": [
     {
       "type": "chart",
-      "id": "derby"
-    },
-    {
-      "type": "chart",
       "id": "map"
     },
     {
@@ -336,12 +332,7 @@
     "highlights.centre.kill.mark.bad": "\"So that was bad\"",
     "highlights.centre.kill.mark.ask": "Asking for every session back",
     "highlights.centre.kill.after": "At 13:44 the whole recovery became a skill, so if it ever happens again, it's an instant fix.",
-    "derby.title": "The Day 1 derby",
-    "derby.caption": "Each tin racer is one Claude Code session, and it doesn't move until that session saves finished work (a commit), so looking busy won't help.",
     "derby.kill.label": "I meant to end one",
-    "derby.standings.heading": "Final standings (everyone places)",
-    "derby.summary": "{lanes} Claude Code sessions raced from {start} to {end}, with {commits} commits between them. At {kill_time} I ended all sessions by accident, and the {dropped} racers on the track dropped out, then came back between 13:32 and 13:48. {winner} won by a single commit, {winner_commits} to {runner_up}'s 133, and {last} came last.",
-    "derby.leads.heading": "Who led, and from when",
     "derby.scrub.label": "Race clock, 09:45 to 23:45"
   },
   "data": {

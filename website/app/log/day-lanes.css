@@ -1,0 +1,98 @@
+/* The day across the clock (app/log/day-lanes.tsx). Classes start with dl-; the shell is .hl-chart from
+   highlights.css. HTML positioned by percent: crisp at every width, names pinned on the left. */
+
+.hl-chart.dl { --dl-row: 26px; --dl-gutter: 58px; --dl-axis: 30px; --dl-label: 176px; --dl-bg: #1f1d23; background: var(--dl-bg); }
+
+.dl-banner { margin: -.5rem 0 1.25rem; max-width: 46rem; color: var(--av-text-on-dark); font-size: 1rem; line-height: 1.5; }
+
+.dl-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; margin-bottom: .75rem; }
+.dl-clock {
+  margin: 0;
+  min-width: 5ch;
+  font-family: var(--av-font-numeric);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  background: var(--av-gradient-stat-plus);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dl-clock.is-off { visibility: hidden; }
+.dl-controls { display: flex; gap: .5rem; }
+.dl-btn { min-height: 44px; padding: 0 1.25rem; border: 1px solid var(--av-outline-on-dark); border-radius: var(--av-radius-pill); background: transparent; color: var(--av-white); font: 500 .9375rem/1 var(--av-font-sans); cursor: pointer; }
+.dl-btn:hover { border-color: var(--av-lavender); }
+.dl-btn-main { border-color: transparent; background: var(--av-gradient-button); }
+
+/* The chart: names on the left (sticky), the plot on the right. Wider than a phone, so it scrolls in its own box. */
+.dl-scroll { overflow-x: auto; overscroll-behavior-x: contain; border-radius: var(--av-radius-md); }
+.dl-chart { display: grid; grid-template-columns: var(--dl-label) minmax(560px, 1fr); min-width: 760px; }
+
+.dl-labels { position: sticky; left: 0; z-index: 4; margin: 0; padding: var(--dl-gutter) 0 var(--dl-axis); list-style: none; background: var(--dl-bg); }
+.dl-labels li { display: flex; align-items: center; gap: .5rem; height: var(--dl-row); padding-right: .5rem; overflow: hidden; white-space: nowrap; color: var(--av-lilac-200); font-family: var(--av-font-body-haas); font-size: 13px; }
+.dl-labels li:nth-child(odd) { background: rgba(255, 255, 255, 0.035); }
+.dl-num { flex: none; width: 1.4rem; color: var(--av-mauve-500); font-family: var(--av-font-numeric); font-size: 11px; text-align: right; font-variant-numeric: tabular-nums; }
+
+.dl-plot { position: relative; padding: 0 24px 0 14px; }
+.dl-gutter { height: var(--dl-gutter); }
+.dl-rows { position: relative; isolation: isolate; height: calc(var(--dl-rows) * var(--dl-row)); }
+.dl-row { position: relative; height: var(--dl-row); }
+.dl-row:nth-child(odd)::before { content: ""; position: absolute; z-index: -1; left: -14px; right: -24px; top: 0; bottom: 0; background: rgba(255, 255, 255, 0.035); }
+.dl-grid { position: absolute; z-index: 0; top: 0; bottom: 0; width: 1px; background: var(--hl-grid); pointer-events: none; }
+.dl-seg { position: absolute; z-index: 1; top: 6px; height: 14px; border-radius: 3px; background: var(--hl-bar); }
+.dl-tok {
+  position: absolute;
+  top: 3px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-left: -10px;
+  border: 2px solid #151515;
+  border-radius: 50%;
+  background: var(--av-lavender);
+  color: #151515;
+  font-family: var(--av-font-numeric);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  box-sizing: content-box;
+}
+.dl-axis { position: relative; height: var(--dl-axis); }
+.dl-axis span { position: absolute; top: 8px; transform: translateX(-50%); color: var(--av-text-on-dark); font-family: var(--av-font-numeric); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Everything that sits over the rows: kill line, markers, playhead. Same insets as the plot. */
+.dl-over { position: absolute; inset: 0 24px 0 14px; pointer-events: none; }
+.dl-killline { position: absolute; top: calc(var(--dl-gutter) - 6px); bottom: var(--dl-axis); width: 2px; margin-left: -1px; background: var(--av-orchid); }
+
+.dl-mk { position: absolute; top: calc(6px + var(--r) * 26px); z-index: 3; width: 0; }
+.dl-mk a { position: absolute; left: -11px; top: 0; display: block; line-height: 0; pointer-events: auto; border-radius: 4px; }
+.dl-mk svg { overflow: visible; }
+.dl-mk polygon { stroke: none; }
+.dl-mk text { fill: #151515; font-family: var(--av-font-numeric); font-size: 9.5px; font-weight: 700; }
+.dl-mk-high polygon { fill: var(--hl-high); }
+.dl-mk-low polygon { fill: var(--hl-low); }
+.dl-mk-line { position: absolute; left: 0; top: 22px; width: 0; height: calc(var(--dl-gutter) - 28px - var(--r) * 26px + var(--dl-rows) * var(--dl-row)); border-left: 1px dashed; opacity: .5; }
+.dl-mk-high .dl-mk-line { border-color: var(--hl-high); }
+.dl-mk-low .dl-mk-line { border-color: var(--hl-low); }
+.dl-mk.is-hidden { visibility: hidden; }
+.dl-mk a:focus-visible { outline: 2px solid var(--av-white); outline-offset: 1px; }
+
+.dl-play { position: absolute; top: calc(var(--dl-gutter) - 6px); bottom: 0; width: 2px; margin-left: -1px; background: var(--av-white); }
+.dl-play-chip { position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); padding: 1px 6px; border-radius: 4px; background: var(--av-white); color: #151515; font-family: var(--av-font-numeric); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.dl-key { display: flex; align-items: center; gap: .6rem; margin: .9rem 0 0; color: var(--av-text-on-dark); font-size: .9375rem; line-height: 1.4; }
+.dl-key-line { flex: none; width: 2px; height: 18px; background: var(--av-orchid); }
+.dl-key.is-on { color: var(--av-white); font-weight: 500; }
+
+.dl-scrub { position: relative; margin-top: .5rem; }
+.dl-scrub input[type="range"] { width: 100%; height: 44px; margin: 0; background: transparent; cursor: pointer; -webkit-appearance: none; appearance: none; }
+.dl-scrub input[type="range"]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--av-violet), var(--av-orchid)); }
+.dl-scrub input[type="range"]::-moz-range-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--av-violet), var(--av-orchid)); }
+.dl-scrub input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; margin-top: -6px; border: 2px solid #151515; border-radius: 50%; background: var(--av-lavender); }
+.dl-scrub input[type="range"]::-moz-range-thumb { width: 14px; height: 14px; border: 2px solid #151515; border-radius: 50%; background: var(--av-lavender); }
+.dl-scrub input[type="range"]:focus-visible { outline: 2px solid var(--av-lavender); outline-offset: 2px; border-radius: 6px; }
+.dl-scrub-tick { position: absolute; top: 10px; width: 2px; height: 24px; margin-left: -1px; background: var(--av-white); pointer-events: none; }

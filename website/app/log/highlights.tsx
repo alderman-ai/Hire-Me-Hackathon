@@ -1,7 +1,7 @@
 import "../best/best.css";
 import "./highlights.css";
 import { VideoFrame } from "../best/video-frame";
-import { Derby, type DerbyData } from "./derby";
+import { DayLanes } from "./day-lanes";
 import raw from "@/content/highlights.json";
 
 /*
@@ -41,7 +41,7 @@ type Data = {
   commits_per_hour: number[][];
   commits_by_folder: [string, number][];
   recording: { id: string; start_min: number; seconds: number }[];
-  derby: DerbyData;
+  derby: { start: number; end: number; kill: number; lanes: { lane: string; killed: boolean; back: number | null }[] };
   totals: { named_lanes: number; subagents: number; commits: number; recorded_seconds: number; recorded_sessions: number };
 };
 
@@ -140,73 +140,35 @@ function niceMax(v: number) {
   return { max: step * 4, step };
 }
 
-// ------------------------------------------------------------------ swimlane
-
-function Swimlane() {
-  const lanes = D.swimlane;
-  const W = 880, left = 172, right = 16, top = 62, rowH = 20;
-  const H = top + lanes.length * rowH + 30;
-  const from = J_AXIS.from * 60, to = J_AXIS.to * 60;
-  const k = (W - left - right) / (to - from);
-  const x = (min: number) => left + (Math.max(min, from) - from) * k;
-  const ticks: number[] = [];
-  for (let h = J_AXIS.from; h <= J_AXIS.to; h += 2) ticks.push(h);
-  const bottom = top + lanes.length * rowH;
-  return (
-    <Chart
-      id="map"
-      vars={{ lanes: D.totals.named_lanes, subagents: D.totals.subagents }}
-      table={
-        <table>
-          <thead>
-            <tr><th scope="col">Session</th><th scope="col">Ran</th><th scope="col">Subagents</th></tr>
-          </thead>
-          <tbody>
-            {lanes.map((l) => (
-              <tr key={l.lane}>
-                <th scope="row">{l.lane}</th>
-                <td>{l.runs.map((r) => `${hm(r[0])}-${hm(r[1])}`).join(", ")}</td>
-                <td>{l.subagents}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      }
-    >
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="hl-ct-map hl-cs-map" focusable="false">
-        {ticks.map((h) => (
-          <g key={h}>
-            <line className="hl-grid" x1={x(h * 60)} x2={x(h * 60)} y1={top} y2={bottom} />
-            <text className="hl-axis" x={x(h * 60)} y={bottom + 18} textAnchor="middle">
-              {String(h % 24).padStart(2, "0")}:00
-            </text>
-          </g>
-        ))}
-        {lanes.map((l, i) => {
-          const y = top + i * rowH;
-          return (
-            <g key={l.lane}>
-              {i % 2 === 0 && <rect className="hl-zebra" x={0} y={y} width={W} height={rowH} />}
-              <text className="hl-lane" x={left - 8} y={y + 14} textAnchor="end">
-                {l.lane}
-              </text>
-              {l.runs.map((r, j) => (
-                <rect key={j} className="hl-bar" x={x(r[0])} y={y + 5} width={Math.max(3, x(r[1]) - x(r[0]))} height={10} rx={3}>
-                  <title>{`${l.lane}: ${hm(r[0])}-${hm(r[1])}, ${l.subagents} subagents`}</title>
-                </rect>
-              ))}
-            </g>
-          );
-        })}
-        {MARKERS.map((m) => (
-          <ChartMarker key={m.n} m={m} x={x(m.minute)} y={m.n % 2 ? 16 : 40} bottom={bottom} />
-        ))}
-      </svg>
-    </Chart>
-  );
-}
+// ------------------------------------------------------------------ the day across the clock (one chart: lanes, kill, triangles)
 
 const J_AXIS = { from: J.axis.map_from_hour, to: J.axis.map_to_hour };
+
+function DayAcrossTheClock() {
+  const back: Record<string, number> = {};
+  for (const l of D.derby.lanes) if (l.killed && l.back !== null) back[l.lane] = l.back;
+  const vars = { lanes: D.totals.named_lanes, subagents: D.totals.subagents, kill_time: "13:20:55" };
+  return (
+    <DayLanes
+      lanes={D.swimlane}
+      markers={MARKERS.map((m) => ({ n: m.n, kind: m.kind, minute: m.minute, href: m.id in J.centre ? `#hl-centre-${m.id}` : `#hl-beat-${m.id}` }))}
+      k={{ start: D.derby.start, end: D.derby.end, kill: D.derby.kill, back }}
+      axisFrom={J_AXIS.from}
+      axisTo={J_AXIS.to}
+      words={{
+        title: w("highlights.map.title"),
+        banner: w("highlights.map.caption", vars),
+        summary: w("highlights.map.summary", vars),
+        kill: w("derby.kill.label"),
+        scroll: w("highlights.scroll.hint"),
+        scrub: w("derby.scrub.label"),
+        table: w("highlights.table.toggle"),
+        high: w("highlights.legend.high"),
+        low: w("highlights.legend.low"),
+      }}
+    />
+  );
+}
 
 // ------------------------------------------------------------------ hourly bars
 
@@ -529,23 +491,7 @@ export function Highlights() {
           if (item.type === "beat") return <BeatBlock key={key} id={item.id} />;
           if (item.type === "centre") return <Centrepiece key={key} id={item.id} />;
           switch (item.id) {
-            case "derby":
-              return (
-                <Derby
-                  key={key}
-                  data={D.derby}
-                  words={{
-                    title: w("derby.title"),
-                    caption: w("derby.caption"),
-                    kill: w("derby.kill.label"),
-                    standings: w("derby.standings.heading"),
-                    summary: w("derby.summary"),
-                    leads: w("derby.leads.heading"),
-                    scrub: w("derby.scrub.label"),
-                  }}
-                />
-              );
-            case "map": return <Swimlane key={key} />;
+            case "map": return <DayAcrossTheClock key={key} />;
             case "commits": return <HourBars key={key} id="commits" rows={D.commits_per_hour} unit="Commits" />;
             case "subagents": return <HourBars key={key} id="subagents" rows={D.subagents_per_hour} unit="Subagents" />;
             case "folders": return <Folders key={key} />;
