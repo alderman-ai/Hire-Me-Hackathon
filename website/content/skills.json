@@ -6,8 +6,7 @@
         {
           "id": "icp-grid-from-client-site",
           "name": "ICP grid built from the client's own website",
-          "line": "skills.icp-grid-from-client-site.1",
-          "path": "getsales\\icps\\grid.md"
+          "line": "skills.icp-grid-from-client-site.1"
         },
         {
           "id": "account-scrape-apify",
@@ -35,14 +34,13 @@
           "moment": {
             "time": "15:40",
             "session": "S09",
-            "text": "set up a JEV classification that determines whether they are someone sending cold outreach, right?"
+            "text": "set up a JEV [a classification model] classification that determines whether they are someone sending cold outreach, right?"
           }
         },
         {
           "id": "research-desk",
           "name": "Research desk: budgeted research with three wildcards",
-          "line": "skills.research-desk.1",
-          "path": "research\\SPEC.md"
+          "line": "skills.research-desk.1"
         }
       ]
     },
@@ -52,8 +50,7 @@
         {
           "id": "lead-router",
           "name": "Lead router: sorting leads into ICPs, rules first",
-          "line": "skills.lead-router.1",
-          "path": "getsales\\routing\\route.py"
+          "line": "skills.lead-router.1"
         },
         {
           "id": "outbound-workflow-factory",
@@ -63,8 +60,7 @@
             "time": "16:36",
             "session": "S10",
             "text": "So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12."
-          },
-          "path": "getsales\\icps\\build_workflows.py"
+          }
         },
         {
           "id": "stakeholder-landing-pages",
@@ -97,8 +93,7 @@
             "time": "18:02",
             "session": "S12",
             "text": "just like a wall of linkedin posts like as many as like 20 to 40 of them"
-          },
-          "path": "scraping\\build_wall.py"
+          }
         }
       ]
     },
@@ -108,18 +103,12 @@
         {
           "id": "publish-leak-scan",
           "name": "Pre-publish leak checks",
-          "line": "skills.publish-leak-scan.1",
-          "path": "blog-pipeline\\scripts\\scan.py"
+          "line": "skills.publish-leak-scan.1"
         },
         {
           "id": "onepassword-batch",
           "name": "One-approval secret handling for scraping and AI keys",
-          "line": "skills.onepassword-batch.1",
-          "moment": {
-            "time": "14:12",
-            "session": "S07",
-            "text": "do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator"
-          }
+          "line": "skills.onepassword-batch.1"
         }
       ]
     },
@@ -128,48 +117,43 @@
       "items": [
         {
           "id": "spec-driven-agent-team",
-          "name": "Charter and executable specs: running a team of AI sessions",
+          "name": "Running a team of AI helpers from one plan",
           "line": "skills.spec-driven-agent-team.1",
           "moment": {
             "time": "11:36",
             "session": "S03",
             "text": "they shoot all of his scenes first even if it's not in chronological order of the movie"
-          },
-          "path": "CHARTER.md"
+          }
         },
         {
           "id": "operator-attention-controls",
-          "name": "Operator controls: answer desk, roster, context watch and recovery",
+          "name": "Keeping a team of AI helpers from running off without me",
           "line": "skills.operator-attention-controls.1",
           "moment": {
             "time": "13:44",
             "session": "S07",
             "text": "Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix."
-          },
-          "path": "answer-desk\\ASKING.md"
+          }
         },
         {
           "id": "capture-rig",
-          "name": "Recording rig: every session filmed, transcribed and searchable",
+          "name": "Recording everything I say and making it searchable",
           "line": "skills.capture-rig.1"
         },
         {
           "id": "build-in-public-feed",
-          "name": "Build-in-public analyzer: recordings into posts and clips",
-          "line": "skills.build-in-public-feed.1",
-          "path": "legibility\\posted.md"
+          "name": "Posts written from my own recordings",
+          "line": "skills.build-in-public-feed.1"
         },
         {
           "id": "transcript-to-article",
-          "name": "Transcript-to-article kit",
-          "line": "skills.transcript-to-article.1",
-          "path": "blog-pipeline\\PIPELINE.md"
+          "name": "Talk it out, get an article",
+          "line": "skills.transcript-to-article.1"
         },
         {
           "id": "taste-grading-booth",
-          "name": "Grading booth: turning one person's taste into a tested rubric",
-          "line": "skills.taste-grading-booth.1",
-          "path": "legibility\\grading\\"
+          "name": "Teaching AI my taste, then testing it",
+          "line": "skills.taste-grading-booth.1"
         }
       ]
     }

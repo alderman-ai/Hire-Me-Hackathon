@@ -8,6 +8,7 @@ import { Reveal, RotateIn } from "./motion";
 import { ArrowSwap } from "./site-chrome";
 import FeedOpen from "./feed-open";
 import "./feed-compact.css";
+import { dayOf, dayLabel } from "./day-label";
 
 // The live feed: content/feed.json, newest on top (sorted by `at`). s-d9-legibility sends new posts.
 // Laid out after Addvery's podcast index: the newest post is a wide dark featured block, the rest
@@ -70,7 +71,7 @@ function Video({ session, start, end }: { session: string; start: number; end?: 
       {id ? (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${id}${qs ? `?${qs}` : ""}`}
-          title={/^S\d+$/.test(session) ? `Session ${session}, webcam` : "Video"}
+          title={/^S\d+$/.test(session) ? `${dayOf(session)}, webcam` : "Video"}
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
@@ -212,7 +213,7 @@ function PostMeta({ post, linkDemo, latest }: { post: Post; linkDemo: boolean; l
       <span className={`post-kind post-kind-${post.kind.toLowerCase()}`}>{post.kind}</span>
       <span className="post-tags">
         <time dateTime={post.at}>{post.at.slice(11, 16)}</time>
-        {post.session && <span> · {post.session}</span>}
+        {post.session && <span> · {dayLabel(post.session)}</span>}
         {demo && (
           <span>
             {" · "}

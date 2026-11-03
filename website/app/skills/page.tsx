@@ -6,6 +6,7 @@ import { t, type CopyKey } from "../copy";
 import { SKILLS_PAGE } from "../flags";
 import { Band, CrmBand, EyebrowRow } from "../best/parts";
 import "./skills.css";
+import { dayOf } from "../day-label";
 
 // /skills (VERDICT.md W14; orchestration\local\mockups\best\BUILD.md 8): the 20 public skills, four groups.
 // Each card's id is the skill's id, because every "Skills behind this" chip links /skills#<id>. The list is
@@ -68,7 +69,7 @@ export default function SkillsPage() {
                   {s.moment && (
                     <blockquote className="sk-moment">
                       <span>
-                        {s.moment.time} &middot; {s.moment.session}
+                        {s.moment.time} &middot; {dayOf(s.moment.session)}
                       </span>
                       &ldquo;{s.moment.text}&rdquo;
                     </blockquote>

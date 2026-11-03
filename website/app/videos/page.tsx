@@ -7,6 +7,7 @@ import { IS_PRODUCTION_BUILD, VIDEO_WALL } from "../flags";
 import { entryUrl, visibleEntries } from "../demos/entries";
 import { VideoWall, type WallRow } from "./video-wall";
 import "./videos.css";
+import { dayOf } from "../day-label";
 
 // /videos (VERDICT.md 2.3; build request W13): rows of 16:9 tiles, each opening a native <dialog> with
 // the player, the summary and "Read the article" when an article carries that video. The rows come from
@@ -57,7 +58,7 @@ export default function VideosPage() {
         start: t.start,
         end: t.end ?? null,
         length: t.length,
-        meta: t.session && t.prague ? `${t.session} · ${t.prague}` : null,
+        meta: t.session && t.prague ? `${dayOf(t.session)} · ${t.prague}` : null,
         still: t.still,
         article: articleFor(t) ?? null,
       })),

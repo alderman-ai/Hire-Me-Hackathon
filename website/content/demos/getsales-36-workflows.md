@@ -1,7 +1,7 @@
 ---
 title: "36 sequences, and who goes into which one"
 slug: "36-outbound-workflows-and-the-one-variable-behind-them"
-description: "It doesn't matter how many outbound sequences you have. It matters who gets put into which one: 36 GetSales workflows and a custom first message for every lead."
+description: "Outbound where every lead lands in the sequence that fits them, opening on a message written for that one person: 36 sequences built for Addvery."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
@@ -17,71 +17,71 @@ cover:
 tags: ["outbound", "getsales", "classification"]
 reading_minutes: 4
 ---
-It doesn't matter how many outbound sequences you have. **It matters who gets put into which one.**
+Most outbound runs on one sequence of messages, maybe one per customer type. Everyone on the list gets the same words in the same order.
 
-For Addvery I built 36 of them in GetSales. Four ICPs (ideal customer profiles) taken from your own website, if it's accurate. Each one in English, Czech and German. Each language with three tactics. And 36 isn't the impressive part.
+It doesn't matter how many sequences you have. **It matters who gets put into which one.**
 
-Before AI, this was my thing. It's what I did at the company you probably know me from, and it's how I got into AI in the first place: automations first, everything else after.
+That's what I do: I build outbound where every lead lands in the sequence that fits them, and the first message is written for that one person. Before AI, this was my thing, at the company you probably know me from.
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/36-grid.png
-> A 4 x 3 x 3 grid: four ICPs by English, Czech and German by signal, problem and proof, adding up to 36 workflows
+> A 4 x 3 x 3 grid: four customer types by English, Czech and German by signal, problem and proof, adding up to 36 sequences
 
 ## Writing the sequences is the easy part
 
-AI is terrible at outreach copy, and the reason is pretty logical. When everyone's blasting you with messages, the only thing that makes you read one is differentiation. AI can't do differentiation, because it's literally trained on convergence. The exact opposite.
+For Addvery I built 36 of them in GetSales, the outreach tool I use. Four customer types taken from your own website, if it's accurate: retail loyalty, telco customer value, consumer lending and last-mile logistics. Each in English, Czech and German. Each language with three angles: signal (something just happened at their company), problem (a known pain, tied to one fact about them) and proof (an Addvery case that looks like them).
 
-I still write a lot of my sequences by hand. That's not the hard part, and a lot of them are reusable. These 36 sit in their own folder, apart from my own outbound, and a script created all of them in about seven minutes.
+A script built all 36 in about seven minutes, in their own folder apart from my own outbound.
 
-The ICPs are retail loyalty, telco customer value, consumer lending, and last-mile logistics. The tactics: signal (something just happened at their company), problem (a known pain, tied to one fact about them) and proof (an Addvery case that looks like them).
+AI is terrible at outreach copy. The only thing that makes you read a message is differentiation, and AI is literally trained on convergence. The exact opposite. So I still write a lot of mine by hand. That's not the hard part.
 
-Every one of the 36 opens the same way. Message 1 is a single variable, `custom_message_1`, imported as a field of the lead CSV. The follow-ups are fixed text for that language and tactic. **The first message is always custom**, written for that one person before the list goes in. Nothing here is tooled to send, and none of the 36 has a lead in it yet.
+Every one of the 36 opens the same way: **the first message is written for that one person before the list goes in.** The follow-ups are fixed for that language and angle. Nothing sends yet, and no leads are in them.
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflow-message-1.png
-> One workflow open in the GetSales builder, message 1 set to the single variable {{custom_message_1}} with the fixed follow-ups under it
+> One of the 36 open in GetSales: the first message is a placeholder filled in per person, and every count is still zero
 
-| Lead (fictional) | Workflow | custom_message_1 |
+Two made-up leads and their first messages:
+
+| Lead (fictional) | Sequence | First message |
 | --- | --- | --- |
-| Coho Last Mile | Demo · Last-mile logistics · EN · signal | Hi Dana, Coho Last Mile announced its move into Hungary in October. In a new market you start with no network, systems or brand, and what gets decided in the first months shapes the cost per parcel for years. How far along is the last-mile plan there? |
-| Tailspin Parcel CZ | Demo · Last-mile logistics · CS · problem | Dobrý den, firma Tailspin Parcel CZ doručuje většinu zásilek až ke dveřím a doručení domů funguje, jen když je někdo doma. Opakované pokusy o doručení pak ukrajují z marže každé trasy. Řešíte teď úspěšnost prvního doručení, nebo to máte pod kontrolou? |
+| Coho Last Mile | Last-mile logistics · English · signal | Hi Dana, Coho Last Mile announced its move into Hungary in October. In a new market you start with no network, systems or brand, and what gets decided in the first months shapes the cost per parcel for years. How far along is the last-mile plan there? |
+| Tailspin Parcel CZ | Last-mile logistics · Czech · problem | Dobrý den, firma Tailspin Parcel CZ doručuje většinu zásilek až ke dveřím a doručení domů funguje, jen když je někdo doma. Opakované pokusy o doručení pak ukrajují z marže každé trasy. Řešíte teď úspěšnost prvního doručení, nebo to máte pod kontrolou? |
 
 ## The first message comes from research nobody wants to do
 
-The signal I watch most is someone switching jobs. Don't bother them in week one, they're busy. Go find their job advert instead. Job adverts almost always carry 90-day goals now: what we expect in month one, two, three, the first half of the year. You do not understand how much value is in those. **You get the roadmap of what that person is doing, and the timeline of when to reach out.** "We expect you to redesign this system at the six-month mark." If that lines up with what you sell, that's your opening.
+The signal I watch most is someone switching jobs. Don't bother them in week one, they're busy. Go find their job advert instead. They almost always spell out 90-day goals now: what we expect in month one, two, three. You do not understand how much value is in those. **You get the roadmap of what that person is doing, and the timeline of when to reach out.** "We expect you to redesign this system at the six-month mark." If that lines up with what you sell, that's your opening.
 
-And it costs nothing. Pull your key accounts straight from your CRM and have an agent collect their job adverts for the roles that matter. (Junior marketer? Probably not.)
+And it costs nothing. Pull your key accounts from your CRM and have AI collect their job adverts for the roles that matter. (Junior marketer? Probably not.)
 
-Same with LinkedIn. I spent time on it every day for eight years, and I don't want to anymore. Now Claude in Chrome can take over the browser and scroll a Sales Navigator feed daily, looking for specific things. With your long buying cycles, paying thousands for buy-signal data can make sense. For most companies, those triggers are now available from Claude.
+> [!video] V7VgtPe8BVk
+> A job advert is the roadmap for the first message
+
+## Who goes where is a sorting problem
 
 That research tells you what to say. It doesn't tell you which of the 36 someone belongs in.
 
-> [!video] V7VgtPe8BVk
-> S18, 3 Nov
+This is the part I care about most. One of the coolest tools in AI is one no one's heard of, because it doesn't write anything. It's a classification model: it gives you odds. It works out of the box and gets better as you train it. Give it a profile plus everything you know about their company, and it answers narrow questions. Is this a good person to reach out to? Which customer type?
 
-## Who goes where is a classification problem
-
-This is the part I care about most. Jev is one of the coolest tools to come out in AI, and no one's heard of it, because it's not an LLM. It's a classification model: it doesn't write anything, it gives you likelihoods. It does fine out of the box, you can train it over time, and it plugs straight into Claude. Give it a profile plus everything you know about their company, and it answers narrow questions. Is this a good person to reach out to? Which ICP?
-
-It doesn't have to stop at ICP, either. Anyone who's really good at sales mirrors people: if they're informal, you're informal. There's this dance, right? You can read a lot of it from their posts, or from any interview they're in, even in a language you don't speak. Then you judge which sequence fits their personality. This is where the fun happens.
+It can go further. Anyone who's really good at sales mirrors people: if they're informal, you're informal. You can read a lot of that from their posts or interviews, even in a language you don't speak, and pick the sequence that fits their personality. This is where the fun happens.
 
 > [!video] rDUsnHrAwv0
-> S18, 3 Nov
+> A classification model that decides who goes into which sequence
 
-## Building is a phase, not the deliverable
+## Building is a phase, refining is the work
 
-Say you've got 120 sequences. You ask Jev which one should get the best results for each person on your list, then you watch. I expected this one to win, it's getting bad results, so tweak how Jev decides. Or kill the sequence that's always worse than the others.
+Say you've got 120 sequences. You ask the model which one should do best for each person, then you watch. The one you expected to win gets bad results, so you tweak how the model decides. Or you kill the sequence that's always worse than the others.
 
-**Nothing in AI is a one-time setup where you press play.** Refining is the main work: looking at the data, constantly asking whether the approach is working and what to switch. That's a systems management job, not a type-things-into-Claude-Code job. (Although you do have to be pretty good at Claude Code to make it work.)
-
-And honestly, I'm not there yet. It has to be so ICP-specific that nothing ready-made will ever fit a company out of the box. It gets custom built. (Here, Jev is only explained. Nothing's trained.)
+**Nothing in AI is a one-time setup where you press play.** Refining is the main work: looking at the data, asking whether the approach is working and what to switch. That's a systems management job, not a type-things-into-AI job.
 
 > [!video] IEVscs4eg5c
-> S18, 3 Nov
+> Ask which sequence should win, watch the results, then tweak it or kill it
+
+It also has to be built so your salespeople, who aren't AI experts, can run it, and they need the training to do it.
 
 > [!video] kV7KD1-pRCE
-> S18, 3 Nov
+> Building is a phase. Refining is the main work.
 
 ## Every account, not only the key ones
 
-Personalization and volume aren't an either-or anymore, and the personalization can be off the charts.
+Personalization and volume aren't an either-or anymore. Honestly, I'm not there yet on doing all of it automatically: it has to be custom built for each company, because nothing ready-made fits. (For these 36, no model is trained yet.)
 
 The reaction I'm after is "I can't believe you put in all this effort just to pitch me." Now imagine everyone in your CRM feeling that way. Then imagine your conversion rate.

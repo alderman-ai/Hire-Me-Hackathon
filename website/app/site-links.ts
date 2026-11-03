@@ -6,7 +6,6 @@ export const NAV_LINKS = [
   { href: "/demos", label: "GTM demos" },
   { href: "/for", label: "For Addvery" },
   { href: "/about", label: "About Alex" },
-  { href: "/docs/charter", label: "The plan" },
 ];
 
 export const CTA = { href: "/#s02", label: "Watch the explainer" };
@@ -27,6 +26,5 @@ export function newNavLinks({ videos, skills }: { videos: boolean; skills: boole
 /** The new site's footer: the day's log, the plan, privacy and the public repo (working labels). */
 export const NEW_FOOTER_LINKS = [
   { href: "/log", label: "The log" },
-  { href: "/docs/charter", label: "The plan" },
   { href: "https://github.com/alderman-ai/Hire-Me-Hackathon", label: "The code on GitHub" },
 ];

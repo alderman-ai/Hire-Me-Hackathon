@@ -1,7 +1,7 @@
 ---
-title: "Sorting twelve leads into 36 workflows: rules first, then Jev"
+title: "Who gets which message: rules first, a model for the rest"
 slug: "sorting-twelve-leads-into-36-workflows-rules-first-then-jev"
-description: "A one-minute terminal run: twelve fictional leads sorted by ICP, language and tactic, with rules doing most of the work and narrow model questions for the rest."
+description: "How I make sure every lead gets the right outreach, in the right language, before anyone writes to them: plain rules do most of the sorting, a model handles the rest, and every decision shows its reason."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
@@ -15,70 +15,64 @@ cover:
   subtitle: "Every lead lands in exactly one workflow, and every decision shows what settled it."
   accent: "rules first"
 tags: ["outbound", "classification"]
-reading_minutes: 3
+reading_minutes: 4
 ---
-<!-- W5 (website, 2 Nov): placed from getsales/site/demo-2.md as is (words: Claude Doc e50390db). Front matter added for the new site: library_id, group, the router's first figure as its card image. K4 brings the rest (VERDICT.md 2.3). Status stays draft: previews only. -->
-<!-- Video slot: when s-d9-legibility sends CLIPPED S-D3-C2, set kind to "video", add video (youtube_id, start) after deliverable, and rewrite this summary against the transcript. Words: Claude Doc e50390db (GetSales demo entries). Figures: getsales/site/assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/. -->
+A lead comes out of a LinkedIn search with "Entertainment Providers" in the industry column. Read the company description and it's a paid streaming service selling subscriptions online. That's exactly who your Oneplay story was written for. A rule matching on industry would never send it there.
 
-One terminal run sorts twelve fictional, already enriched leads into [the 36 GetSales workflows I built for Addvery](/demos/36-outbound-workflows-and-the-one-variable-behind-them), and prints the reason behind every decision.
+Across a whole list, every wrong guess sends a good message to the wrong person.
 
-It ends on one line: 12 leads, 4 placed by rules alone, 7 that needed a model's answer for at least one decision, 1 no fit.
+**That's the skill: I sort every lead into the right customer type, language and approach before anyone writes to it, and every decision says why.** Plain rules do most of the work. For the rest I use Jev, a classification model from TypeSafe: it doesn't write, it picks from a short list of answers and tells you how sure it is.
 
-> [!summary]
-> - Each lead gets three decisions: its ICP, its language and its tactic.
-> - Rules settle most of them, from industry, headcount, country, profile language and signal age.
-> - Jev answers one narrow question when an industry label is too vague.
-> - A lead that fits nothing is logged with its reason, and nothing is imported or sent.
-> - The same model already ran on Addvery's 57 real people. Counts only, at the end.
+## Rules settled 25 of 34 decisions
 
-## The input
+For Addvery I built [36 outreach sequences](/demos/36-outbound-workflows-and-the-one-variable-behind-them): the four customer types on your website, each in English, Czech and German, each with three openings. Something that just happened at their company, a known pain, or one of your case stories that looks like them.
 
-Each lead has an industry, a headcount, a country, a job title, a profile language and its latest signal with a date. For a client, that's a Sales Navigator search per ICP, exported to CSV.
-
-## Rules settle most of it
-
-Three rules do most of the work, in this order:
-
-- Industry and headcount give the ICP. Groceries with 4,200 staff is retail loyalty; software with 120 staff fits nothing.
-- Country and profile language give the language. Slovakia reads Czech, Austria gets German, and an English profile overrides both.
-- A signal under 90 days old makes the lead signal-led. A job post 27 days old counts; an app relaunch 263 days old doesn't.
+Then I ran twelve fictional leads through the sorter, printing every decision with what settled it. 4 leads were placed by rules alone, 7 needed the model at least once, and 1 fit nothing. Of the 34 decisions, rules settled 25.
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png
-> Terminal run, part 1: fictional leads L01 to L04, each decision tagged rule or Jev, ending on its workflow
-> The full run, part 1 of 3: violet marks a rule, amber marks a question for Jev
+> Screen output, part 1: four fictional leads, each decision tagged rule or Jev, each lead ending on its sequence
+> Part 1 of 3: violet means a rule decided, amber means a question for the model
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-2.png
-> Terminal run, part 2: fictional leads L05 to L08, each decision tagged rule or Jev, ending on its workflow
-> Part 2 of 3: L06 is one of the two hard cases, shown again below
+> Screen output, part 2: four more fictional leads, each decision tagged rule or Jev, each lead ending on its sequence
+> Part 2 of 3: the Slovak lender here is one of the two hard cases further down
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-3.png
-> Terminal run, part 3: fictional leads L09 to L12, each decision tagged rule or Jev, ending on its workflow, then the summary
-> Part 3 of 3: L12 fits no ICP and is logged with its reason; nothing is imported or sent
+> Screen output, part 3: the last four fictional leads, each decision tagged rule or Jev, then the one-line summary
+> Part 3 of 3: the software company fits no customer type and is logged with its reason; nothing is imported or sent
 
-Rules are free, exact, and anyone can read why a lead went where it did.
+## Rules go first because they're free
 
-## A narrow question for the rest
+The customer type comes from industry and company size: a grocery chain with 4,200 staff goes under retail loyalty, a software company with 120 fits nothing. The language comes from country and the language of their LinkedIn profile: Slovakia gets Czech, Austria gets German, and a profile written in English overrides both. And news under 90 days old means the message opens on it: a job post from 27 days ago counts, an app relaunch from 263 days ago doesn't.
 
-An industry label like "Financial Services" says too little. So Jev gets one question over the company's public description, with names stripped out first: which of these four does this company sell, none of them, or can't tell? It answers with a probability for each option.
+**Rules cost nothing, they're exact, and anyone on your team can read why a lead went where it did.**
 
-An answer counts only at 0.75 or above and 0.25 ahead of the next; otherwise a person decides. The same kind of question picks proof or problem. A streaming service looks like Addvery's Oneplay case; a domestic courier looks like nothing yet.
+## The model gets one narrow question at a time
+
+"Financial Services" says too little for a rule. So the model reads the company's public description, names stripped out first, and answers one question: which of your four customer types is this, none of them, or can't tell?
+
+**An answer only counts if the model is at least 75% sure and 25 points ahead of its second choice.** Otherwise a person decides. The same kind of question picks the opening. A streaming service looks like your Oneplay case. A domestic courier looks like none of your stories yet, so its message opens on a known pain instead.
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-hard-cases.png
-> Terminal output for L06 and L11, whose industry labels are too broad for a rule: each shows its Jev question and the answer a person labelled
-> The two hard cases, where a rule can't decide the ICP
+> Screen output for a Slovak lender and a Czech streaming service, whose industry labels are too broad for a rule: each shows the question the model gets and the answer a person labelled
+> The two hard cases, where no rule can decide the customer type
 
-The router has never called Jev. These two hard cases show hand labels, not a live model answer: this demo needs to be legible more than it needs to be functional. The same model did run on real people, though.
+Honest caveat: the model isn't called in this run. The hard cases show answers a person labelled, and nothing was imported or sent. That's how this starts for real anyway, right? Your labels are what tune the questions.
 
-## No fit is an answer too
+## A lead that fits nothing is an answer too
 
-The software company is logged with its reason, and that log shows which search was too wide. Next, the client's LLM writes each lead's `custom_message_1`, a person checks a sample, and the CSV is imported. Nothing in this demo is imported or sent.
+The software company gets logged with its reason, "B2B software, 120 employees", and nobody writes to it. That log tells you which LinkedIn search was too wide.
 
-## The same model, on Addvery's 57 real people
+After that, replies and meetings show which sequences work. A lead in the wrong one (a reply like "we don't run a loyalty programme") gets relabelled by a person and becomes a new example. When the model keeps making the same call, it becomes a rule.
 
-This part is real. At 15:39 on build day I asked for a Jev classification of everyone at Addvery, to see if I could rebuild its sales team from public data. (Maybe that's over-engineering.)
+## Then I ran the same model on your team
 
-At 16:04 it ran on all 57 people who list Addvery on LinkedIn: public profiles and posts, no login. Narrow questions again: what does this person do, and do they send outreach? Jev labelled 55 of them. For the other 2 it wasn't sure enough, and job-title rules decided.
+This part is real. Mid-afternoon on the day I built this, I stopped counting your people on LinkedIn by hand and handed it over: classify everyone at Addvery, and tell me who sends outreach. I wanted to see if I could rebuild your sales team from public data. (Maybe that's over-engineering.)
 
-**Nobody at Addvery holds a sales, business development or RevOps title, and Jev rates 10 people as likely doing outreach anyway.** A signal, not a fact. But it's the first thing I want to know about any account: who actually sells?
+It read all 57 people who list Addvery on LinkedIn: public profiles and posts, no login. For 55 it was sure enough what they do. For the other 2, their job titles decided.
 
-107 model calls, $0.003. The next account is a new input file. The charts are on [my research on Addvery](/d2), counts only, no names.
+**Nobody at Addvery holds a sales, business development or revenue operations title, and the model rates 10 people as likely doing outreach anyway.** That fits the rest of what I found: your new business runs on leaders and consultants posting and speaking. A signal, not a fact. But it's the first thing I want to know about any account: who actually sells? The charts are on [my research on Addvery](/d2), counts only, no names.
+
+That's where sorting pays for a team like yours. Your leaders and consultants belong in the conversation, not working out whether "Financial Services" means a bank or a lender. They get a list where every lead already sits in the right sequence, with the reason next to it.
+
+Reading 57 profiles and 50 posts cost the model $0.003. The next account is just a new list.

@@ -1,7 +1,7 @@
 ---
 title: "Best of three, instead of redlining everything one by one"
 slug: "best-of-three-instead-of-redlining"
-description: "The night my own site got away from me, I stopped redlining and had three agents argue instead. Six steps, built around the one real bottleneck: me."
+description: "I have AI build three competing versions of a big piece of work, each arguing its case and naming its weak spot, so the person whose judgment counts picks and combines instead of redlining one draft line by line."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
@@ -15,60 +15,56 @@ cover:
 tags: ["orchestration", "process"]
 reading_minutes: 4
 ---
-At about 20:15 on build day, I couldn't steer my own website anymore. The agents weren't the bottleneck. I was: **one person can't redline seven pages across three versions of the same site**, and that's what I was trying to do.
+At about 20:15 on build day, I couldn't steer my own website anymore. There was a live site and a seven-page mockup, they disagreed with each other, and a lot of the decisions about what went where were silly.
 
-So I fixed it in six steps. It's how I'd run any client deliverable that gets assembled out of a lot of parts.
+The AI wasn't the bottleneck. I was. **One person can't redline seven pages across versions that disagree**, and that's exactly what I was trying to do.
 
-## 1. The layout wasn't a design problem
+So I stopped correcting and started choosing. **When a big piece of work needs a senior person's judgment, I have AI build three complete versions, each arguing its own case, so that person spends their time picking and combining instead of redlining one draft line by line.** It's how I'd run anything a team assembles out of a lot of parts.
 
-By evening there was a live site and a mockup, and they disagreed with each other. Decisions about what went where looked silly. Here's what I typed to the AI session running everything:
+## The problem wasn't the layout
+
+Here's what I typed to the AI running the build:
 
 > [!quote]
 > I want to be able to give you high-signal feedback on principles of how I want this built but I don't know because there are multiple versions of everything.
 > Alex Alderman, in his notes, 2 Nov 2026
 
-Nobody had placed things badly on purpose. There were hundreds of pieces, and nobody, me included, could see them all at once. Of the clips alone: "apparently there are hundreds of them, I haven't seen any of them."
+Nobody had placed things badly on purpose. There were hundreds of pieces, and nobody, me included, could see them all at once. Of the video clips alone: "apparently there are hundreds of them, I haven't seen any of them."
 
-That's a combination problem. And in a combination problem, the bottleneck is whoever has to hold every piece in their head. That morning I'd said it on camera: "if operator time is the bottleneck, what's even tighter bottleneck is operator focus." By 20:15 I was living it.
+That morning I'd said on camera that my time was the bottleneck, and my focus was an even tighter one. By 20:15 I was living it.
 
-## 2. Make every piece legible, to me and to the agents
+So before anything moved, every piece got listed and described: 201 written pieces, 204 video items and 24 reusable AI skills. The point was that an AI could decide whether a piece fits **without asking me**. (That step has its own article.)
 
-The week before, I'd posted that for years I'd designed everything with context as the bottleneck, and that it had moved. "Now it's something else. Legibility."
+## Three versions, each arguing for itself
 
-So before anything got moved, every piece got listed and described: 201 written pieces, 204 video items, 24 reusable skills. I graded 126 of the day's clip moments in a grading booth: Great, Yes, Maybe or No.
+Then three AI agents each built the full site from the same pieces, in the same branding, around a different argument. One led with my thesis, one with the proof, one with the story of the day.
 
-Every Great, Yes and Maybe got a side card, 74 in all: the gist, my exact words, its themes from one shared list of 14 tags, what it links to, what it could serve as, and the watch-outs. Then a catalog of every usable piece: 178 rows.
+I'd asked for five. I cut it to three because I'd already used 69% of my AI usage, and "that's a little scary". (I was also completely drained. Not my most strategic hour.)
 
-A grade isn't a promise. Great or Yes "just means it's acceptable". The card is there so an agent can decide whether a piece fits **without asking me**. I call that async human in the loop: "once you have all my responses everything else is executable without me."
+Honestly, the mockups mattered less than the reasoning. Each agent wrote down its goal, the story it was telling, why that story matters, its riskiest choice and where it's weakest. **That let me judge arguments instead of pixels.**
 
-## 3. Let three agents argue for a whole stance
+I wasn't reacting to a block on one page. I was reacting to the thesis version admitting it promised revenue with no conversion number behind it. And to the story version, which put my low points at the center of a hiring page, warning me that "a CEO skimming could read candour as chaos."
 
-Then three agents each built a full mockup from one stance. Same branding, same pieces, a different argument: *promise* led with the thesis, *machine* with the proof, *day* with the story.
+Those are calls only I can make. Nudging a heading isn't.
 
-I'd asked for five and cut it to three, because I'd used 69% of my usage and "that's a little scary". (I was also completely drained. Not my most strategic hour.)
+## Take the best of each
 
-The mockups matter less than the reasoning. Each agent wrote down its goal, its narrative, why it matters, its riskiest choice and where it's weakest. **That let me judge stances instead of pixels.** I wasn't reacting to a block on one page. I was reacting to promise naming its own hole: "the thesis promises revenue, but the evidence shows legibility."
+This is what made it cheap. **Two of the three said their own weak spot gets fixed by borrowing from another.** The proof version admitted it opens on numbers and I "appear small", and its own fix was to open on me and keep the numbers underneath. The story version admitted its proof arrives late, and said its fallback would land close to the proof version anyway, "so the morning's best-of costs little."
 
-## 4. Take the best of each
+So a fourth agent combined them. The thesis version gave the frame and the argument, the proof version gave the proof, and the story version gave the person: the day in clock order, low points kept. Eleven pages. Every new line of copy was flagged and rewritten in my voice while the pages went into the real site.
 
-This is what made it cheap. **Two of the three said their weak spot gets fixed by borrowing from another.** machine admitted it opens on numbers and I "appear small", and its own fix was a person-first hero on top. day admitted the proof arrives late, and said its fallback "converges with the machine version, so the morning's best-of costs little."
+It went live at 23:40, under three and a half hours after I'd lost control of it. Not finished, and that's fine. I'd rather redline the real site than a fourth mockup.
 
-So a fourth agent combined them. promise gave the frame and the argument, machine gave the proof, day gave the person: the day in clock order, low points kept. Eleven pages.
+## The last 10% happens on one version
 
-Every new word got marked as a draft, 89 of them. Three agents rewrote those through my voice skill in parallel, while the website session ported the pages into the real site.
+Redlining is still the slow part, and it's where the night started: me, with no clean surface to give notes on. So once the site was live, every page got copied onto a design canvas I can mark up directly. **I redline one version now, not three.**
 
-## 5. Ship it before it's perfect
+## Your best people should choose, not correct
 
-It went live at 23:40. Not finished, and that's fine. I was always going to redline that version in the morning, and I'd rather redline the real site than a fourth mockup.
+AI drafts fast and cheap now. What's expensive is the hour your head of marketing spends redlining a draft that was the wrong shape to begin with.
 
-## 6. Do the last 10% on a surface built for it
+So I set it up the other way around. Three versions of the campaign, the landing page or the pitch, each making a different case and saying where it's weakest. Your senior person reads three arguments, picks a direction and says what to steal from the other two. Then one version gets the line edits, once.
 
-Redlining means marking up a draft with your corrections. It's the slow part, and it's where the night started: me, with no clean surface to give notes on.
+Extra drafts cost machine time. Redlining costs your best people's time, and that's the part that doesn't scale.
 
-So once it was live, a subagent recaptured every page (14 pages) onto a Claude Design canvas, a copy of the site I can mark up directly. **I redline one version now, not three.**
-
-## Any deliverable built from parts works like this
-
-A pile of pieces, a few defensible ways to put them together, and one person whose judgment is the scarce input. You can have 20 agents running side by side. You can't review 20 versions.
-
-The bottleneck is always, always, always human. So spend the human last, on the 10% only a human can do.
+You can have 20 agents running side by side. You can't review 20 versions. The bottleneck is always, always, always human, so spend the human on the choice and the last 10%, and nowhere else.

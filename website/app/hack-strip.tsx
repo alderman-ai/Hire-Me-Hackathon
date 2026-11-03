@@ -114,10 +114,12 @@ export function HackStrip({ words }: { words: HackWords }) {
             </span>
           ) : (
             <span className="hack-text hack-split">
-              <span className="hack-label">{state === "live" ? words.live : words.onBreak}</span>
-              <span className="hack-count" role="timer">
-                {clock ? hms(clock.seconds) : "0:00:00"}
-              </span>
+              {state !== "pending" && <span className="hack-label">{state === "live" ? words.live : words.onBreak}</span>}
+              {state === "live" && clock && (
+                <span className="hack-count" role="timer">
+                  {hms(clock.seconds)}
+                </span>
+              )}
             </span>
           )}
         </p>

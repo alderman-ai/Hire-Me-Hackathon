@@ -261,7 +261,7 @@ function Cofounder1Lens({ slug }: { slug: string }) {
             </h2>
             {managed && (
               <div className="bx-mt-3">
-                <ClipFrame item={managed} caption meta="S10, 16:31" />
+                <ClipFrame item={managed} caption meta="Day 1, 16:31" />
               </div>
             )}
           </div>
@@ -280,7 +280,7 @@ function Cofounder1Lens({ slug }: { slug: string }) {
                 text={"\"so you can imagine a sliding scale that's vertical and so on the bottom is the training and on top is the external building\""}
                 source={
                   <a href={watchUrl("PQIZoQ-Ic2w")} target="_blank" rel="noopener noreferrer">
-                    S10, 16:31<span className="sr-only"> (YouTube, new tab)</span>
+                    Day 1, 16:31<span className="sr-only"> (YouTube, new tab)</span>
                   </a>
                 }
               />
@@ -302,7 +302,7 @@ function Cofounder2Lens() {
     <>
       <Band tone="ink" labelledBy="pl-human">
         <div className="pl-two">
-          {human && <ClipFrame item={human} meta="S02, 11:15" />}
+          {human && <ClipFrame item={human} meta="Day 1, 11:15" />}
           <div>
             <h2 id="pl-human" className="bx-h2">
               &ldquo;That&rsquo;s the niche, right? So good that they think you spent three days building it just for them when an agent was running in the background for a couple hours.&rdquo;
@@ -328,7 +328,7 @@ function BiRows() {
   const rows: Row[] = [
     { count: "279 · $1.24", how: "6 Apify scrapers, $1.24, 279 results in about 17 minutes.", check: <Link href="/d1">/d1</Link> },
     { count: "57", how: "At 16:04 it ran on all 57 people who list Addvery on LinkedIn: public profiles and posts, no login.", check: <Link href="/d2">/d2</Link> },
-    { count: "55 of 57", how: "Jev labelled 55 of them. For the other 2 it wasn't sure enough, and job-title rules decided.", check: <Link href="/d2">/d2</Link> },
+    { count: "55 of 57", how: "Jev (a classification model) labelled 55 of them. For the other 2 it wasn't sure enough, and job-title rules decided.", check: <Link href="/d2">/d2</Link> },
     { count: "56", how: "One \"employee\" turned out to be an outside English teacher and was taken out (57 became 56).", check: <Link href="/d1">/d1</Link> },
     { count: "107 · $0.003", how: "107 model calls, $0.003. Counts only, no names.", check: <Link href="/d2">/d2</Link> },
     {
@@ -405,7 +405,7 @@ function BiLens() {
             src={`${C1_ASSETS}/router-hard-cases.png`}
             width={1606}
             height={2034}
-            alt="Terminal output for L06 and L11, whose industry labels are too broad for a rule: each shows its Jev question and the answer a person labelled"
+            alt="Terminal output for the Woodgrove and Litware leads, whose industry labels are too broad for a rule: each shows its Jev question and the answer a person labelled"
             caption="Terminal output for the two fictional leads whose industry labels are too broad for a rule. Violet marks a rule, amber a question for Jev."
           />
           {rule && <ClipFrame item={rule} caption />}

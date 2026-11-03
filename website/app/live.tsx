@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type CSSProperties } from "react";
 import { POLL_MS, STATUS_URL, Status, hms, remaining } from "@/lib/status";
+import { dayOf } from "./day-label";
 
 function useStatus(): Status | null {
   const [status, setStatus] = useState<Status | null>(null);
@@ -81,9 +82,9 @@ export default function Countdown() {
   const label = left.stale
     ? "Clock stopped: lost the signal from the rig"
     : left.running
-      ? `Recording ${status.session}`
+      ? `Recording ${dayOf(status.session)}`
       : status.status === "paused"
-        ? `${status.session} paused`
+        ? `${dayOf(status.session)} paused`
         : "Between sessions";
   const time = hms(left.seconds);
   return (

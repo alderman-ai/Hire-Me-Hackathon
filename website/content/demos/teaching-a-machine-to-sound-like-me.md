@@ -1,7 +1,7 @@
 ---
 title: "Teaching a machine to sound like me"
 slug: "teaching-a-machine-to-sound-like-me"
-description: "Almost every word on this site is written by AI, and every word is supposed to sound like me. Getting there took about 2,500 of my LinkedIn posts, a lot of refining, and a skill built around one problem: an AI is a terrible judge of its own writing."
+description: "I capture how a person writes and talks so AI drafts in their voice and they only proofread, which now takes me about 20% of the time it used to."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
@@ -15,61 +15,56 @@ cover:
 tags: ["copywriting", "process"]
 reading_minutes: 4
 ---
-Almost every word on this site is written by AI, and every word is supposed to sound like me. Getting there took about 2,500 of my LinkedIn posts, a lot of refining, and one problem I'd already called out in July: an AI is a terrible judge of its own writing.
-
-## Day 1: my own site talked about me like a stranger
-
-On Day 1 the agents writing the copy turned out what I called, at 20:29, "this weird mix of super formal and really awkward, and that's not me." Third person, too. My own job application used my full name, like I wasn't in the room.
+When I started building this site, the AI writing its copy talked about me in the third person. My own job application used my full name, like I wasn't in the room. I called it "this weird mix of super formal and really awkward, and that's not me."
 
 What stung was that the fix was sitting right there. "You have so many transcripts of how I talk. None of it sounds like me. I hate that."
 
-I've been copywriting for a long time, and my rule for this build was clear: no copywriting "without an actual skill enabled please, for the love of God." A skill is a reusable set of instructions an AI agent follows. By 21:01 that evening mine was built, checked against my own posts and running. It's called alex-voice, nothing a visitor reads gets written without it, and it's run more than 40 times.
+You've read outreach like that. It reads like nobody in particular wrote it. That's the problem I fix: **I capture how a person writes and talks, so AI drafts in their voice and they only proofread.** Almost every word on this site was drafted that way.
 
-## About 2,500 posts, refined in stages
+## It started with about 2,500 of my posts
 
-My brand voice started from a LinkedIn corpus of **about 2,500 posts**, and it's gone through many refinement stages since. First came a grading rubric, the list of rules a draft gets judged against, built from my own grades: posts I graded with notes, then 60 graded blind, with my rewrites and critiques. Then a skill for writing my LinkedIn posts against it. In October I admitted that yes, it would be AI, "But I have too much pride for slop, so I guess we're going to have to build it right."
+My voice started from a corpus of **about 2,500 of my LinkedIn posts**, plus my constant dictation transcripts. Then it went through a lot of refining. First came a set of rules for my LinkedIn posts, built from posts I'd marked up and rewritten by hand. Then a version for the web, with new rules from my messages, my recordings, my recent posts and my complaints about the copy on this site. 27 rules in all.
 
-alex-voice is the web version. 13 rules carried over, 4 LinkedIn-only ones got dropped, and 14 new ones came from a voice guide built on my messages and recordings, from my 34 original LinkedIn posts of May to October 2026, and from my complaints about the site copy. 27 rules, each with an ID.
+In October I admitted that yes, it would be AI, "But I have too much pride for slop, so I guess we're going to have to build it right."
 
-## My AI loves its own writing
+When the site copy came out wrong, the groundwork was there, and about half an hour later the web version was running. Nothing a visitor reads here gets written without it, and it's run more than 40 times.
 
-Opus is the AI model I run most of my work on. In July I wrote that "opus judges opus like the obama award meme", as in Obama giving Obama a medal. Ask an AI agent to grade its own draft and you get the same ceremony every time.
+## The hard part: AI loves its own writing
 
-That's the major obstacle, and the skill is built around it. **The writer never grades itself.** Every run starts from my words, then:
+One of the biggest obstacles was the AI's bias toward its own writing. Ask it to judge its own draft and it hands itself a medal every time. In July I wrote that it's "like the obama award meme": Obama giving Obama a medal.
 
-1. The writer, an AI agent, gets the rules phrased as instructions, a brief and my words. Never the rubric itself.
-2. A script checks every countable rule with no AI call: em dashes, length, my name in the third person. A fail goes straight back.
-3. A grader, a separate AI agent whose only job is to judge, reads the full rubric (about 18,000 characters), the brief, my words and the draft. It's brand new every attempt, with no history of the writing session, and the writer never talks to it.
-4. The writer gets back **only the IDs of the failed rules**, never the grader's reasoning.
+So the whole thing is built around one rule. **The writer never judges itself.**
 
-That last step matters most. As the skill puts it: "Grader prose teaches the writer what the judge likes to hear; the IDs tell it what to fix." Up to three attempts, then it stops. It never runs "one more". Every grade gets logged with the grader's findings, so I tune the rubric from evidence (because I do evals like a grown up).
+A writer AI gets my words, a brief and the rules phrased as instructions. A plain script then checks everything countable, like length and my name in the third person. A fail goes straight back, no AI involved.
+
+What passes goes to a separate judge AI, brand new for every attempt, with the full rules and the draft. It has no memory of the writing, and the writer never talks to it.
+
+The writer gets back **only the numbers of the rules it broke**, never the judge's reasoning. If it saw the reasoning, it would learn what the judge likes to hear. The numbers just tell it what to fix. Three attempts, then it stops.
 
 > [!figure] /demos-assets/teaching-a-machine-to-sound-like-me/writer-grader-split.png
-> Diagram: my words and a brief go to the writer, a script checks the countable rules, a fresh grader checks the rest, and only failed rule IDs go back.
+> My words and a brief go to the writer, a script checks the countable rules, a fresh judge checks the rest, and only the numbers of the failed rules go back.
 
-## First, it graded me
+## I tested it on my own writing first
 
-Before trusting the grader with anyone's copy, I pointed it at mine. Five of my own posts, graded blind: the grader wasn't told they were mine. If it called my writing unpublishable, the rubric was broken. It didn't. The two that fell short failed on length, which is honestly my own most-repeated complaint. One of them calls itself "rambling" in its own text.
+Before trusting the judge with anything, I pointed it at five of my own posts without telling it they were mine. If it called my writing unpublishable, the rules were wrong. It didn't. The two that fell short failed on length, which is honestly my own most-repeated complaint. One of them calls itself "rambling" in its own text.
 
 Fair.
 
-Three rules still got loosened for flagging my real writing. The closer rule, for one, failed my deadpan "TL;DR someone broke my workflow and it's frustrating lol".
+Three rules still got loosened because they flagged my real writing. The rule on endings, for one, failed my deadpan "TL;DR someone broke my workflow and it's frustrating lol".
 
 > [!figure] /demos-assets/teaching-a-machine-to-sound-like-me/check-on-own-posts.png
-> The rubric checked against five of my own LinkedIn posts, and the three rules I loosened afterwards because they flagged my real writing.
+> The rules checked against five of my own LinkedIn posts, and the three I loosened because they flagged my real writing.
 
-## Fenced in, not gone
+## Proofreading takes me a fifth of the time
 
-None of that makes the bias disappear. On the LinkedIn rubric, machine graders gave ten Greats where I gave three. A machine pass means a draft clears every rule, not that I'd call it great. So **my own read is the final test**. I wrote in October that "this is just software and mistakes are a skill issue". If a bad line ships, that's on me.
+The bias doesn't disappear. It's fenced in. On my LinkedIn rules, the machine judges handed out ten top marks where I handed out three. A draft that clears every rule is clean, not great. So my own read is still the last step, and if a bad line ships, that's on me. As I wrote in October, "this is just software and mistakes are a skill issue".
 
-## About 20% of the time it used to
+The number I actually track is my own time. Proofreading machine-written text in my voice takes me **about 20% of the time it used to**.
 
-The number I actually track is my own time. Proofreading machine-written text in my voice takes me **about 20% of the time it used to**. That's the success metric.
+## What it does for a sales team
 
-## What I build for salespeople
+As I wrote in August, "It's ... HARD ... to set up efficient content ops pipelines that match your brand voice and brand manual 1:1."
 
-Outreach has my Day 1 problem: it reads like nobody in particular wrote it. As I wrote in August, "It's ... HARD ... to set up efficient content ops pipelines that match your brand voice and brand manual 1:1."
+That's what I help salespeople who do outreach build for themselves. Rules from their own posts and their call or dictation transcripts, a writer that drafts against them, and a judge that isn't the writer, **so their outreach sounds like them**. The rep stops writing from a blank page and spends that time checking drafts that already sound right. It doesn't replace the rep. It puts the rep's own voice on every message in the pipeline.
 
-So that's what I do. I help salespeople who do outreach build the same thing for themselves, from their own posts and their call or dictation transcripts, **so their outreach sounds like them**. It doesn't replace the rep. It puts the rep's own voice on every message in the pipeline.
-
-On Day 1 I typed what this site is for: "Imagine your conversion rate if this is how you reached out to everyone in your CRM." That only works if it sounds like you. Just don't let the writer hand itself the medal.
+When I started this site, I put its whole point in one line: "Imagine your conversion rate if this is how you reached out to everyone in your CRM." That only works if it sounds like you. Just don't let the writer hand itself the medal.

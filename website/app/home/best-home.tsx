@@ -45,12 +45,11 @@ const NUMBERS: { href: string; k: string; v: string }[] = [
 ];
 
 const MOMENTS: { skill: string; time: string; quote: string; name: string }[] = [
-  { skill: "spec-driven-agent-team", time: "11:36 · S03", quote: "\"they shoot all of his scenes first even if it's not in chronological order of the movie\"", name: "Charter and executable specs: running a team of AI sessions" },
-  { skill: "operator-attention-controls", time: "13:44 · S07", quote: "\"Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.\"", name: "Operator controls: answer desk, roster, context watch and recovery" },
-  { skill: "onepassword-batch", time: "14:12 · S07", quote: "\"do not move any secret keys if the rig is recording an obs session require it to stop first and alert operator\"", name: "One-approval secret handling for scraping and AI keys" },
-  { skill: "account-scrape-apify", time: "15:13 · S08", quote: "\"so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run\"", name: "Account research scraper on Apify, with no logins" },
-  { skill: "account-people-classifier", time: "15:40 · S09", quote: "\"set up a JEV classification that determines whether they are someone sending cold outreach, right?\"", name: "Account mapping: classifying every employee and post at a target company" },
-  { skill: "outbound-workflow-factory", time: "16:36 · S10", quote: "\"So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12.\"", name: "Outbound workflow factory: 36 GetSales sequences from one copy file per ICP" },
+  { skill: "spec-driven-agent-team", time: "11:36 · Day 1", quote: "\"they shoot all of his scenes first even if it's not in chronological order of the movie\"", name: "Running a team of AI helpers from one plan" },
+  { skill: "operator-attention-controls", time: "13:44 · Day 1", quote: "\"Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.\"", name: "Keeping a team of AI helpers from running off without me" },
+  { skill: "account-scrape-apify", time: "15:13 · Day 1", quote: "\"so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run\"", name: "Account research scraper on Apify, with no logins" },
+  { skill: "account-people-classifier", time: "15:40 · Day 1", quote: "\"set up a JEV classification that determines whether they are someone sending cold outreach, right?\"", name: "Account mapping: classifying every employee and post at a target company" },
+  { skill: "outbound-workflow-factory", time: "16:36 · Day 1", quote: "\"So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12.\"", name: "Outbound workflow factory: 36 GetSales sequences from one copy file per ICP" },
 ];
 
 export function BestHome() {
@@ -92,7 +91,7 @@ export function BestHome() {
             youtube="XVqOE_-COOQ"
             label="GTM engineers are the solution to the biggest social question of the AI era"
             caption={'"gtm engineers are the solution to the biggest social question of the ai era"'}
-            meta="S10, 16:33"
+            meta="Day 1, 16:33"
             length="0:59"
             poster="https://i.ytimg.com/vi/XVqOE_-COOQ/maxresdefault.jpg"
           />
@@ -127,7 +126,7 @@ export function BestHome() {
           className="bh-account-quote"
           maxWidth={900}
           text={'"if you\'re like on month four and I have your 90-day goals from your job advert that\'s like gold for crafting like custom messaging"'}
-          source={<QuoteSource youtube="MyYnFOQCagc" start={145}>S08, 15:09</QuoteSource>}
+          source={<QuoteSource youtube="MyYnFOQCagc" start={145}>Day 1, 15:09</QuoteSource>}
         />
         <StepList>
           <Step
@@ -189,7 +188,7 @@ export function BestHome() {
           className="bx-mt-4"
           maxWidth={860}
           text={'"as part of my research into your company i try to identify who the stakeholders are and like what your main objections are"'}
-          source={<QuoteSource youtube="lo486cSVBcM" start={958}>S12, 17:50</QuoteSource>}
+          source={<QuoteSource youtube="lo486cSVBcM" start={958}>Day 1, 17:50</QuoteSource>}
         />
       </Band>
 
@@ -213,8 +212,8 @@ export function BestHome() {
               youtube="qrBNOsSYGrQ"
               start={415}
               end={501}
-              label="We want to bring an AI in, but we're not going to fire half the team (S02, 11:13)"
-              meta="S02, 11:13"
+              label="We want to bring an AI in, but we're not going to fire half the team (Day 1, 11:13)"
+              meta="Day 1, 11:13"
               length="1:26"
               still="/videos/S02-f.webp"
               mode="dialog"
@@ -239,7 +238,7 @@ export function BestHome() {
           mark
           maxWidth={980}
           text="The only way to get the leverage of AI and not need to drop half your team is if you're also leveraging the amount of new work you're getting."
-          source={<QuoteSource youtube="lo486cSVBcM" start={1657}>S12, 18:01</QuoteSource>}
+          source={<QuoteSource youtube="lo486cSVBcM" start={1657}>Day 1, 18:01</QuoteSource>}
         />
       </Band>
 

@@ -1,6 +1,7 @@
 import quotes from "@/content/quotes.json";
 import { VideoFrame, watchUrl } from "../../best/parts";
 import "./lens.css";
+import { dayOf } from "../../day-label";
 
 // P4: one person's collection of Alex's own lines, in clock order (BUILD.md 6). The data is
 // content/quotes.json (`lists[slug]`); the words are Alex's, exactly as transcribed or posted.
@@ -63,9 +64,9 @@ export function ClipFrame({ item, size, caption, meta }: { item: MomentItem; siz
       still={item.still}
       length={item.len}
       size={size}
-      label={`${item.session}, ${item.time}`}
+      label={`${dayOf(item.session)}, ${item.time}`}
       caption={caption ? item.text : undefined}
-      meta={meta ?? (caption ? `${item.session}, ${item.time}` : undefined)}
+      meta={meta ?? (caption ? `${dayOf(item.session)}, ${item.time}` : undefined)}
     />
   );
 }
@@ -86,7 +87,7 @@ export function QuoteCard({ item }: { item: QuoteItem }) {
       </li>
     );
   }
-  const label = `${item.time} · ${item.session}`;
+  const label = `${item.time} · ${dayOf(item.session)}`;
   return (
     <li className="pq-card">
       {item.youtube ? (

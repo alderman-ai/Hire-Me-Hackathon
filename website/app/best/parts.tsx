@@ -292,8 +292,8 @@ export type MatrixHit = { cell: number; text: string; title: string };
 
 /** Where four of the fictional leads landed (BUILD.md 3, item 3). Cell numbers run row by row. */
 export const MATRIX_HITS: MatrixHit[] = [
-  { cell: 12, text: "L11", title: "L11 Litware Stream CZ (fictional)" },
-  { cell: 20, text: "L06", title: "L06 Woodgrove Úver SK (fictional): Slovak leads get Czech" },
+  { cell: 12, text: "Litware", title: "Litware Stream (Czech telco, fictional)" },
+  { cell: 20, text: "Woodgrove", title: "Woodgrove Úver (Slovak lender, fictional): Slovak leads get Czech" },
   { cell: 29, text: "Tailspin", title: "Tailspin Parcel CZ (fictional)" },
   { cell: 34, text: "Coho", title: "Coho Last Mile (fictional)" },
 ];
@@ -308,7 +308,7 @@ const TACTICS = ["signal", "problem", "proof"];
 export type MatrixProps = {
   /** The legend text for the gradient cells (t("home.machine.2") on home, t("entry.matrix.1") on the entry). */
   legend: ReactNode;
-  /** Legend for the outlined cell. Default: "Demo · Retail loyalty · EN · proof". */
+  /** Legend for the outlined cell. Default: "Retail loyalty, English, proof". */
   shownLegend?: ReactNode;
   /** Override the highlighted cells. Default: `MATRIX_HITS`. */
   hits?: MatrixHit[];
@@ -320,7 +320,7 @@ export type MatrixProps = {
  * The 36 workflows as a table: four ICPs by three languages by three tactics, with the hit cells
  * (gradient) and the outlined cell 9, and a legend. Scrolls sideways on a phone, inside its own box.
  */
-export function Matrix({ legend, shownLegend = "Demo · Retail loyalty · EN · proof", hits = MATRIX_HITS, shown = MATRIX_SHOWN }: MatrixProps) {
+export function Matrix({ legend, shownLegend = "Retail loyalty, English, proof", hits = MATRIX_HITS, shown = MATRIX_SHOWN }: MatrixProps) {
   return (
     <>
       <div className="bx-matrix-wrap" tabIndex={0} role="region" aria-label="The 36 workflows, scrollable">

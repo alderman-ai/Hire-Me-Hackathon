@@ -1,5 +1,6 @@
 import { capitalise, countWord, formatDate, formatNumber, type Entry, type Made } from "./entries";
 import videos from "@/content/videos.json";
+import { dayOf } from "../day-label";
 
 // Pieces shared by the entry page and the index.
 
@@ -103,11 +104,11 @@ export function MadeBox({ made, what }: { made: Made; what: string }) {
         Dictated {formatDate(d)}, {t} (Prague) · {made.pipeline}
         {made.rig_session && (
           <>
-            {" · Filmed in session "}
+            {" · Filmed on "}
             {sessionVideo ? (
-              <a href={`https://www.youtube.com/watch?v=${sessionVideo}`}>{made.rig_session}</a>
+              <a href={`https://www.youtube.com/watch?v=${sessionVideo}`}>{dayOf(made.rig_session)}</a>
             ) : (
-              made.rig_session
+              dayOf(made.rig_session)
             )}
           </>
         )}

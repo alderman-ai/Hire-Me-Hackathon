@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import "./your-page.css";
 
 const KEY = "hmh-your-page";
+const FIRST_KEY = "hmh-first-page";
 
 /** The visitor's own page slug: ?for= first, then the remembered one; only a known slug counts. */
 export function readYourPage(known: string[]): string | null {
@@ -57,7 +58,20 @@ export function RememberYourPage({ slug }: { slug: string }) {
  */
 export function YourPagePill({ people, variant }: { people: Record<string, string>; variant: "inline" | "bar" }) {
   const [slug, setSlug] = useState<string | null>(null);
-  useEffect(() => setSlug(readYourPage(Object.keys(people))), [people]);
+  // Shown only when the first page this visitor opened in this session was their own /for/<slug> page.
+  // Someone who only opened another person's page later, or Alex looking around, never sees a name.
+  useEffect(() => {
+    let first: string | null = null;
+    try {
+      first = window.sessionStorage.getItem(FIRST_KEY);
+      if (!first) {
+        first = window.location.pathname;
+        window.sessionStorage.setItem(FIRST_KEY, first);
+      }
+    } catch {}
+    const m = first ? /^\/for\/([^/]+)\/?$/.exec(first) : null;
+    setSlug(m && Object.keys(people).includes(m[1]) ? m[1] : null);
+  }, [people]);
   if (!slug) return null;
   return (
     <Link href={`/for/${slug}`} className={`your-page your-page-${variant}`}>

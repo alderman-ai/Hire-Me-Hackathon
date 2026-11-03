@@ -15,6 +15,7 @@ import {
   StatList,
   VideoFrame,
 } from "./parts";
+import { dayOf } from "../day-label";
 
 /*
  * The 36-workflow block (BUILD.md 2 and 3, item 3), in pieces so each page takes what it needs:
@@ -57,7 +58,7 @@ function wallTile(id: string, start: number): Tile | undefined {
 const KNOWN_CAPTION: Record<string, { caption: string; meta: string }> = {
   "9vLcPuSVmLo": {
     caption: "\"we're not tooling it up to run we're not training the classifier agent we're explaining what all the pieces are\"",
-    meta: "S10, 16:36",
+    meta: "Day 1, 16:36",
   },
 };
 
@@ -75,7 +76,7 @@ export function WalkthroughFrame({ mode }: { mode?: "inline" | "dialog" }) {
       end={v.end}
       label={label}
       caption={known?.caption ?? tile?.title}
-      meta={known?.meta ?? (tile ? `${tile.session}, ${tile.prague}` : undefined)}
+      meta={known?.meta ?? (tile ? `${dayOf(tile.session)}, ${tile.prague}` : undefined)}
       length={tile?.length}
       poster={`https://i.ytimg.com/vi/${v.youtube_id}/maxresdefault.jpg`}
       mode={mode}
@@ -123,7 +124,7 @@ export function Routing({ id = "routing" }: { id?: string }) {
         </li>
         <li>
           <span className="bx-flow-n">7 of 12</span>
-          <b>Jev</b>one narrow question when a rule can&rsquo;t decide
+          <b>Jev (a classification model)</b>one narrow question when a rule can&rsquo;t decide
         </li>
         <li>
           <span className="bx-flow-n">0.75</span>
@@ -173,7 +174,7 @@ export function MachineFigures() {
         src={`${ASSETS}/message-1-variable.png`}
         width={1047}
         height={613}
-        alt="The workflow Demo · Retail loyalty · EN · proof in the GetSales builder, its first message set to the single variable custom_message_1"
+        alt="The Retail loyalty, English, proof workflow in the GetSales builder, its first message set to the single variable custom_message_1"
         caption="Message 1 is one lead field; everything after it is fixed text"
       />
     </FigureRow>
