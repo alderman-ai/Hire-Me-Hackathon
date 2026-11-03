@@ -42,7 +42,7 @@ What passes goes to a separate judge AI, brand new for every attempt, with the f
 The writer gets back **only the numbers of the rules it broke**, never the judge's reasoning. If it saw the reasoning, it would learn what the judge likes to hear. The numbers just tell it what to fix. Three attempts, then it stops.
 
 > [!figure] /demos-assets/teaching-a-machine-to-sound-like-me/writer-grader-split.png
-> My words and a brief go to the writer, a script checks the countable rules, a fresh judge checks the rest, and only the numbers of the failed rules go back.
+> Flow: an AI writes a draft, a separate checker AI grades it against my rules, failures go back to the writer, passing drafts reach me to proofread.
 
 ## I tested it on my own writing first
 
