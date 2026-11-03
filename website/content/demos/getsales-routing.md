@@ -13,7 +13,7 @@ poster: "/demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-j
 cover:
   kicker: "Outbound"
   subtitle: "Every lead lands in exactly one workflow, and every decision shows what settled it."
-  accent: "why each lead went where"
+  accent: "why each lead"
 tags: ["outbound", "classification"]
 reading_minutes: 4
 ---
