@@ -1,7 +1,7 @@
 {
   "words": {
-    "timelapse.title": "[words coming: heading for the deployments time-lapse]",
-    "timelapse.intro": "[words coming: one or two lines saying each frame is the live home page as one of the day's production deployments, in the order they went up]"
+    "timelapse.title": "Every version that went live",
+    "timelapse.intro": "Every time a new version of this site went live on Day 1, the home page got a frame here, 10:31 to 23:40. The gap from 12:16 to 13:50 has 13:20 in it."
   },
   "deployments": [
     {

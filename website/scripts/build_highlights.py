@@ -111,15 +111,14 @@ def recording():
 
 # Commit prefix ("[website] ...") to the roster name (SESSIONS.md) that is also the swimlane lane.
 # Where the prefix is a folder rather than a session name, the session that owns that folder.
+# 3 Nov: no folding. A lane counts only its own folder's prefix, exactly as the folders chart does, so the
+# two never disagree on the page ([roster], [s2-orchestrator] and [s1-research] count for no racer).
 PREFIX_TO_LANE = {
     "orchestration": "orchestration",
-    "roster": "orchestration",            # SESSIONS.md edits are orchestration's
-    "s2-orchestrator": "orchestration",   # S2 is run by orchestration (no session of its own)
     "website": "website",
     "legibility": "s-d9-legibility",
     "getsales": "s-d3-getsales",
     "research": "s1-research",
-    "s1-research": "s1-research",
     "answer-desk": "answer-desk",
     "scraping": "s-d1-scraping",
     "linkedin-content": "s-d7-linkedin-content",
@@ -152,7 +151,7 @@ def derby():
         t = (local(iso) - DAY0).total_seconds() / 60
         m = re.match(r"\[([^\]]+)\]", subj)
         events.append((t, PREFIX_TO_LANE.get(m.group(1).strip().lower()) if m else None))
-    events.sort()
+    events.sort(key=lambda e: e[0])  # by time only: an unmapped commit has no lane to compare
     start = int(events[0][0] // DERBY_STEP * DERBY_STEP)
     end = int(-(-events[-1][0] // DERBY_STEP) * DERBY_STEP)
     unattributed = sum(1 for _, l in events if l is None)
