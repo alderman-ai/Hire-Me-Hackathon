@@ -1,117 +1,97 @@
 # Handoff: website
 
-Written 2 Nov at 21:47 Prague by the `website` session started after the crash (Claude session 01UyYB1sQdTqDrzVEZnktDyZ, job 2d36e96a), at orchestration's context-refresh request. Updated at 22:10 by its successor (job 91fdba88) after W13. **Run `date` before writing any time**: estimated stamps ran ahead today, twice.
+Written 3 Nov at 08:15 Prague by the `website` session (job 91fdba88, Claude session 01UyYB1sYto5RMbi9fvTBjr1), for its same-name successor at orchestration's context refresh. **Run `date` before writing any time.**
 
-## LIVE since 23:40: the best-of build (supersedes the "Parked overnight" notes below)
+## Tell yourself first
 
-Alex picked the combined version at 22:4x and gave his go-live in advance (`orchestration\local\ALEX-WANTS.md` W55, W58); he redlines the live version in the morning (W59). Spec: `orchestration\local\mockups\best\BUILD.md`. Production deployment r8987w3hr, from 9e75838, built with **NEW_SITE, WALL_FULL, VIDEO_WALL and SKILLS_PAGE**. `builds.md` (23:40) has the full list.
+1. **Production is the best-of build plus one entry, and every production deploy needs all four flags** (`NEW_SITE`, `WALL_FULL`, `VIDEO_WALL`, `SKILLS_PAGE`). A plain `vercel deploy --prod` puts the old site back. The recipe is under "Deploying".
+2. **This morning Alex redlines the live site** on a Claude Design canvas (`orchestration\local\ALEX-WANTS.md` W59, W60; plan in `orchestration\local\overnight\MORNING.md`). Build requests come from `orchestration`, `orch-site-map` and `orch-alex-prep`. Ask the asker whether a change goes to production at once (last night's go-live was given in advance, W58) or to a preview first (RULES.md rule 1). After each request, send the asker one line with the URL and what changed.
+3. **Rules that bite:** no words without `alex-voice` (rule 2: you place words, you don't write them); **no asks on any page** (rule 11: no one-ask block, no `ask_line`, no questions block); no time picker; nothing about Canva; a No grade comes off.
+4. **Clock:** loop pid 28388 (since 20:02 on 2 Nov), idle, 3.06 h left; last rig line "S16 stopped" (21:13). Rig was resumed for the morning, so expect clock lines (CLAUDE.md, "Clock messages"). Check `.clock\sync.pid` and the tail of `.clock\sync.log` first.
+5. **Budget:** Alex's hard stop is 83 to 85% of the month's usage (W53); 71% was used at 22:43. Be frugal: few subagents, cheap models, no fan-out.
+6. Hand off again at about 350k tokens: finish the request you're on, update this file, tell orchestration.
 
-- **Production deploys from now on need all four flags:** `vercel deploy --prod --yes --build-env NEW_SITE=1 --build-env WALL_FULL=1 --build-env VIDEO_WALL=1 --build-env SKILLS_PAGE=1`. A plain `--prod` build would put the old site back.
-- **Words:** `content\site-copy.json` holds every new string by key (`t()` in `app\copy.ts`); `scripts\apply_copy.py` swaps in orchestration's `copy\*.json` and `copy\notes.json` by key and slug. Notes live in `stakeholders.json` `pages[i].landing` (`lead`, `lead_key`, `note`, `made_line`); `approved` is true on all six. `questions` and `ask_line` are retired (rule 11: no asks).
-- **Code map:** shared parts `app\best\` (parts, the 36-workflow `machine.tsx` reading C2's `video` field), home `app\home\`, the six lens blocks and quote lists `app\for\[slug]\lens.tsx`, `quotes.tsx` with `content\quotes.json`, `/skills` `app\skills\` with `content\skills.json`, C2's additions through `> [!slot]` markers (`app\demos\slots.tsx`).
-- **The walkthrough swap:** when the GetSales walkthrough is cut, change only `video` in `content\demos\getsales-36-workflows.md`; home, Ivana's page and the entry follow. Then the `data-swap` words (BUILD.md §2) through alex-voice.
-- **Checks:** `scripts\check\audit_page.mjs <url> <out>` (any page), `render_pages.py` then `python -I ..\blog-pipeline\scripts\scan.py <out>` for the leak scan. The scan's "website deny list not found" is harmless: `sync_docs.py`'s patterns are secret shapes the scan already checks.
+## What's live
 
-## Parked overnight (Alex, 22:05, via orchestration)
+Production deployment `hrgw6z0x1` (3 Nov 00:1x), from `36da31e`, built with all four flags. `builds.md` rows 23:40 and 00:1x have the detail.
 
-- **No website updates tonight.** Overnight, orchestration builds three alternative mockups; in the morning Alex picks one and `website` builds it out. Start nothing (W14 included) before that.
-- **Two rules that change the build:** (1) **no asks on any page**: drop the one-ask block (P6) and every `ask_line` from every `/for` page; pages give, they never ask. (2) **The 5/10/20/60 time picker is retired for good** (it already never ships; see W1).
-- **The wall's alt text is parked, not built:** `local\parked\wall-alt.patch` (git-ignored) wires orchestration's 92 alt lines (`scraping\site\linkedin-wall\alt.json`) into `content\linkedin-wall-full.json`, `scripts\about_assets.py`, `app\about\wall-full-data.ts` and the video cover in `wall-full.tsx` (the 34-post wall's checked alts still win; carousel pages read "Page n of N: <alt>"; link previews stay alt="" since their title names them). Orchestration said skip it at 22:05. Only when asked again: `git apply website/local/parked/wall-alt.patch` from the repo root, typecheck, preview.
-
-## Read first
-
-1. `CLAUDE.md` (the course change at the top: attended work only, one build at a time, keep the PC light).
-2. `..\RULES.md` (Alex's ten rules; it wins over every older plan). Rule 1: every change goes to a **preview** first, and production moves only on Alex's yes. Rule 2: no words without `alex-voice`; you write no copy.
-3. `..\orchestration\assembly\VERDICT.md` (git-ignored, on disk): §2 is the site's new structure, §4.1 is your numbered build list (W1 to W16).
-4. `builds.md`, the last ten rows: what each W item changed and its preview.
-
-**Who asks:** build requests come from `orchestration` (and `orch-alex-prep`, `orch-site-map`). Ask `orchestration`, not Alex, when something's unclear. After each request, send `orchestration` one line with the preview URL and what changed. Clock lines come from `rig` (see CLAUDE.md, "Clock messages").
-
-## Where section 4 stands (21:47)
-
-| # | State | Commit | Preview |
-| --- | --- | --- | --- |
-| W1 deploy safety | BUILT. `app\page.tsx` is the live home again (27716be). The welcome, time picker and summary carousel stay in git, imported by nothing, and never ship. | 429d041 | kha3g7fdn |
-| W2 carousel + pill | BUILT on website's **placeholder** `content\recommend.json` (K1 replaces it) | 87c7234, 4ddfe5d | 203pda2gw |
-| W3 `/for/<slug>` P1 to P7 | BUILT; K2's words not in yet, so previews show marked placeholders | 278113e, d68bf81 | kp2t6a31b |
-| W4 entry template | BUILT: `video.start`/`end` (captions on), no read times, crumb, Next for you, rail, Back to your page | c75c3b6, df4d0a6 | o17683wof |
-| W5 C1, C2 | BUILT as drafts from `getsales\site\demo-*.md`; `/d3` → C2. K4's copy fixes are logged with orchestration | 4494d07 | ct2rju3xo |
-| W6 13 clip-articles | **PARKED** (Alex, 21:23): graded clips don't each become an entry. Side cards in `..\legibility\cards\`, then compilation agents decide. Nothing will land in `clip-articles\`. The W4 template is what those entries use. | | |
-| W7 chrome and cleanup | BUILT: new menu and footer, `/d3` to `/d12` redirects, `/d1` `/d2` stripped, feed at `/log`, interim home | 3762e1b | **nr24z43xm (latest)** |
-| W8 articles | NEXT. Waits on Alex approving `art-pipeline-promise` and `art-managed-service` (A4, A8); then fill `ARTICLE-2-LINK` in `local\about\about-me.md` | | |
-| W9 checkpoint 1 | `publish-leak-scan` (DoD-22) on the preview, Alex walks Ivana's page, then promote (see "Going live") | | |
-| W10 to W12 | Not started | | |
-| W13 `/videos` | BUILT behind `VIDEO_WALL=1`: five rows, 55 tiles, from `scripts\build_video_wall.py` (library + side cards + the booth's latest grades; rerun it after more grading). Six verdict pieces graded No are off (`builds.md`, 22:03). Words go in `content\video-words.json` | ee2ab30, 920cdaf | **elj1v4aja (latest)** |
-| W14 to W16 | Not started; parked by Alex (22:05). `SKILLS_PAGE` is already in `app\flags.ts`, and `newNavLinks()` adds Skills to the menu when it's set | | |
-
-The latest preview, with everything above: https://hire-me-hackathon-elj1v4aja-alex-alderman-s-projects.vercel.app (superseded: the best-of build is in production, see the top). (Vercel login; Alex's Chrome is signed in). Older ones are `https://hire-me-hackathon-<id>-alex-alderman-s-projects.vercel.app` with the ids above. Production is unchanged since 18:57, and was checked after every item.
-
-## The two build flags (`app\flags.ts`)
-
-- **`NEW_SITE=1`**: the verdict's whole new structure. That covers the carousel, the pill, the personal pages, the entry template's new parts, the menu, footer and redirects, `/log`, the interim home and C1/C2's redirect. Only previews set it. Without it, a build is today's live site, so HEAD is always safe for an urgent production deploy, a takedown for example.
-- **`WALL_FULL=1`**: the 94-post LinkedIn wall on `/about` (orchestration's BUILD, 20:55; a11y-checked, see `builds.md` 21:16). It's separate because W12 promotes it on its own glance.
-- **`VIDEO_WALL=1`** (W13) and **`SKILLS_PAGE=1`** (W14, no page yet): each needs `NEW_SITE` too, and has its own flag because Alex promotes each on its own glance (M1). Without it the route is a 404 and the menu leaves it out (`newNavLinks()` in `app\site-links.ts`, called on the server only).
-- `IS_PRODUCTION_BUILD` (`VERCEL_ENV === "production"`): placeholders never render in production, and a `recommend.json` with `"placeholder": true` shows no carousel there.
-- At a checkpoint, going live means building production **with** the flags (see "Going live"), then later deleting the old branches.
-
-## Content shapes other sessions write into
-
-- **K1 → `content\recommend.json`** (orchestration delivers it through alex-voice; today it's website's placeholder):
-  `{ "placeholder": false, "lists": { "default": [...], "growth": [...], "ceo": [...], "cofounder-1": [...], "cofounder-2": [...], "delivery": [...], "bi": [...] } }`. Each item is `{ "id": <library id>, "why": <the line under the card>, "fallback": <library id or null> }`. An optional `"capabilities"` list is what a cold visitor's "Next for you" walks. Cards take titles from the pages themselves.
-  Ids resolve in `app\recommend.ts`: `demo-d1-scraping-briefing` → /d1, `demo-d2-company-research` → /d2, `demo-linkedin-voice-entry` → the LinkedIn entry, and any entry whose front matter has `library_id` (C1 `demo-getsales-routing`, C2 `demo-getsales-36-workflows`). An unresolved id falls back to its fallback, else it's skipped.
-- **K2 → `content\stakeholders.json`, `pages[i].landing`**: `note` (80 to 150 words, paragraphs split by a blank line), `questions` `[{ "q", "a" }]` (at most 3, none for growth), `made_line`, `ask_line`. Markdown links `[words](/path)` work in all four, and internal links get `?for=<slug>`. `landing.approved: true` is the gate: production shows the note and P4 to P6 only then. Rendered by `app\for\[slug]\personal.tsx`.
-- **Entries** (`content\demos\*.md`): new optional front-matter keys are `library_id`, `group` (the crumb: "How I'd reach your accounts", "What I think", "How the day went"; working names), and `video.end`.
-- **Names on the six pages:** unchanged, deliberately. Each matches the person's own LinkedIn profile: Stepan Hyks, Milos Cerovsky, Pavel Novak, David Srenk (Addvery's site says "Šrenk"), Ivana Karhanová, Lukáš Marek. The diacritic forms in the verdict come from agent-written dossiers. orchestration has this.
-- **Working labels** waiting for alex-voice: "Recommended for you", "Your page · <name>", "Questions you might have", "Next for you", "Articles", "← Back to your page", the menu's "About me", the footer's "The log", "The plan", "The code on GitHub", and the wall's "Quoting my post from…", "Poll", "<n> pages", "Plays on LinkedIn".
+| Route | What |
+| --- | --- |
+| `/` | The best-of home (`app\home\best-home.tsx`). In order: hero (pipeline headline, S10-c clip), numbers strip, the 36-workflow machine, the account, limits, CRM band, six faces, the argument, moments that became skills, the carousel, the about strip |
+| `/for`, `/for/<slug>` ×6 | Lens lines plus S02-j on `/for`. Each personal page is P1 to P7: hello with `lead`, note, lens block, quote collection, made line, carousel, notice. No questions, no asks. `approved: true` on all six |
+| `/skills` | 20 skills in four groups, eight moments, CRM band |
+| `/videos` | The wall: 55 tiles in five rows, built from the booth's grades |
+| `/about` | Glance row, S02-e, S12-m, How I work (six clips and two photos), What I've written, and the 94-post wall with alt text |
+| `/demos` and entries | C2 `36-outbound-workflows-and-the-one-variable-behind-them` (with matrix, "Why I built this first", "Runs again"), C1 `sorting-twelve-leads-into-36-workflows-rules-first-then-jev`, `linkedin-posts-in-addverys-voice-graded-blind`, and `best-of-three-instead-of-redlining` (kind `showcase`) |
+| `/d1`, `/d2`, `/log`, `/privacy`, `/docs/charter` | Unchanged; `/log` is the old feed. `/d3` to `/d12` redirect (`app\redirects.ts`) |
 
 ## Deploying
 
-**Preview (every W item):** `bash scripts/preview_deploy.sh` from the repo root or `website\`. It exports HEAD into `$CLAUDE_JOB_DIR\tmp\clean-deploy`, copies every git-ignored asset in, and runs `vercel deploy --yes --build-env WALL_FULL=1 --build-env NEW_SITE=1 --build-env VIDEO_WALL=1`, with no `--prod`. Commit first: it deploys HEAD, not the working tree.
+**Preview:** `bash scripts/preview_deploy.sh` (all four flags, never `--prod`). It exports **HEAD** to `$CLAUDE_JOB_DIR\tmp\clean-deploy`, so commit first. It also copies the git-ignored assets in: `public\addvery\`, `public\people\`, `public\demos\linkedin-voice\`, `public\about\` (with `wall-full\`, 178 files), `app\demos\_og\glow.jpg`, and `local\about\`, `local\org-diagrams.json`, `local\research\`. A preview needs a Vercel login; check it on a local build instead.
 
-**Production (only on Alex's yes, or a takedown):**
-
+**Production:**
 ```bash
-cd "/c/Users/alder/Desktop/Hire me hackaton"; D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"
-# if a dev server ran there: stop it, then remove its node_modules junction with  cmd //c rmdir "$(cygpath -w "$D/node_modules")"
-rm -rf "$D"; mkdir -p "$D"
-git archive --format=tar HEAD:website > "$D.tar" && tar -xf "$D.tar" -C "$D" && rm "$D.tar"
-mkdir -p "$D/.vercel" "$D/public/addvery" "$D/public/people" "$D/public/demos" "$D/local"; cp website/.vercel/project.json "$D/.vercel/"
-cp website/public/addvery/* "$D/public/addvery/"; cp website/public/people/* "$D/public/people/"
-cp -r website/public/demos/linkedin-voice "$D/public/demos/"; cp website/app/demos/_og/glow.jpg "$D/app/demos/_og/"
-cp -r website/public/about "$D/public/"
-cp -r website/local/org-diagrams.json website/local/research website/local/about "$D/local/"
-cd "$D" && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes          # today's site
-# going live at a checkpoint:  vercel deploy --prod --yes --build-env NEW_SITE=1 [--build-env WALL_FULL=1]
-# then check with curl: /about 200 "From my LinkedIn", one /about/wall image 200, /for/growth 200, /demos 200
+cd "/c/Users/alder/Desktop/Hire me hackaton/website" && EXPORT_ONLY=1 bash scripts/preview_deploy.sh
+D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"   # no dev server running there, no node_modules junction left in it
+cd "$D" && rm -rf .next && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes --build-env NEW_SITE=1 --build-env WALL_FULL=1 --build-env VIDEO_WALL=1 --build-env SKILLS_PAGE=1
+# then curl the routes above for 200, and check the menu reads Articles|Videos|Skills|About me|For Addvery
 ```
+Don't use `vercel curl`: it would create a protection-bypass secret on the project.
 
-Git-ignored but deployed: `public\addvery\` (24), `public\people\` (18), `public\demos\linkedin-voice\` (18), `app\demos\_og\glow.jpg`, `public\about\` (20, plus `wall-full\` 178), `local\about\about-me.md`, `local\org-diagrams.json`, `local\research\` (7). The app reads only those three from `local\`. `public\demos-assets\` (C1 and C2 figures) is tracked. Don't use `vercel curl`: it would create a protection-bypass secret on the project, a settings change nobody asked for (orchestration agreed, 21:22).
+**Local check (PC-light):**
+1. `EXPORT_ONLY=1 bash scripts/preview_deploy.sh`.
+2. Junction `node_modules` into the export: `cmd /c mklink /J "<export>\node_modules" "<website>\node_modules"`.
+3. Start `node node_modules\next\dist\bin\next dev --webpack -p 3101` hidden (`Start-Process -WindowStyle Hidden`), with the four flags set in its environment. Add `VERCEL_ENV=production` to see exactly what production shows.
 
-**Going live at W9:** run `publish-leak-scan` on the preview first. K1 must have replaced the placeholder list, or production shows no carousel. Entries go live by setting `status: "published"`, and C1/C2 are drafts until Alex approves them.
+The server serves the export, so copy an edited file across before rechecking. Before re-exporting or deploying: stop it (kill processes whose command line contains `clean-deploy`), then `cmd /c rmdir "<export>\node_modules"`. Never delete the export with the junction still in it.
 
-## Checking a change locally (PC-light)
+## Words, and where they live
 
-- Vercel's preview needs a Vercel login, and the connector can't see this team's deployments. So check on a local dev server of the **same export**:
-  1. `EXPORT_ONLY=1 bash scripts/preview_deploy.sh`.
-  2. Junction `node_modules` into the export: `cmd /c mklink /J "<export>\node_modules" "<website>\node_modules"`.
-  3. Start `npx next dev --webpack -p 3101` there, hidden, with `NEW_SITE=1` and `WALL_FULL=1` set in its environment. Add `VERCEL_ENV=production` to test the production gate.
-- Why the export: a dev server (pid 8612, not ours, started 20:10, no flags) already holds port 3100 in `website\`, and Next 16 refuses a second dev server in the same folder. Turbopack won't follow the junction, hence `--webpack`.
-- **Never** delete the export with the junction in it. `scripts\preview_deploy.sh` removes the junction by `rmdir` first, so stop the dev server before running it.
-- The dev server serves the export, not `website\`: copy an edited file across (or commit and re-export) before rechecking.
-- Headless checks: `scripts\check\audit_videos.mjs` (/videos: contrast, targets, rows, the dialog by keyboard, phone and 200% zoom), `scripts\check\audit_wall.mjs` (Chrome over the DevTools protocol with its own throwaway profile: contrast, targets, keyboard, phone width). `scripts\check\new_site_check.py` (W7's route checks against :3101). Don't use Alex's Chrome window while the rig records.
+- **New strings by key:** `content\site-copy.json`, read through `t()` in `app\copy.ts` (a missing key fails the build). `scripts\apply_copy.py [--check]` swaps in orchestration's `orchestration\local\mockups\best\copy\*.json` ({KEY: text}) and `copy\notes.json` ({slug: note}); it skips `spans.json`.
+- **Personal pages:** `content\stakeholders.json` `pages[i].landing`, with `lead` (Ivana's starts with `lead_key` `for-growth.note.history`), `note` (paragraphs split by a blank line, `**bold**`), `made_line`, `sign`, and `approved`. `questions` and `ask_line` are retired. `pages[i].lens` / `lens_key` are the `/for` lens lines. Quotes: `content\quotes.json`.
+- **`/skills`:** `content\skills.json` (each `line` is a `skills.<id>.1` key).
+- **`/videos`:** `content\video-words.json` (intro, row labels, per-id title and summary; empty, so titles are the library's working titles and production shows no placeholders). Rows come from `scripts\build_video_wall.py` → `content\video-wall.json` plus stills in `public\videos\` (rerun after more grading; the grades are from 21:54).
+- **Entries:** `content\demos\*.md` (front matter is validated in `app\demos\entries.ts`). `kind: article` needs a `made` box with real numbers, so an entry without them is `showcase`. `library_id` makes an entry resolve in `app\recommend.ts`. Any `data-needs` link (e.g. `art-pipeline-promise` on home, `/about` and C2's "Why I built this first") appears by itself once an entry carries that `library_id`.
 
-## Still open from before the verdict
+## The walkthrough swap (MORNING item 3; orch-alex-prep has the scene card)
 
-- **The six review artifacts (18:58) are superseded.** Alex now approves each page on the preview (A5, A6), with K2's words in `landing`. If he saved edits on any old artifact (`apply_review_edits.py` reads them back), they're raw material for K2: tell orchestration, don't republish them. The stray `page-1.md` artifact (AW6Ld5n5CKuBHBX7JR3tj2) is still there, for Alex to delete.
-- **/about:** `AI_PORTFOLIO_SLUG` in `app\about\profile.ts` (morning, M7), and `ARTICLE-2-LINK` in `local\about\about-me.md` (W8). W12 adds `m-s12-o` and `m-s02-e`.
-- **The wall's alt text:** 76 of the 92 images have generic alt text. Writing real descriptions means looking at each image; it's flagged to orchestration as words.
-- **Webcam uploads:** S13 to S16 aren't uploaded yet (`CLAUDE.md`, "Video"). Run one at a time, only when nothing is recording.
-- **Two `h1`s on the home page** (live too): the S02 summary block renders its headline as an `h1` (`app\feed.tsx`, line 158). Minor; fix it in W11's restack.
-- **D12 agent view:** `/llms.txt` is the morning's optional W16 step (generator: `..\scraping\agent-view\`).
-- **Clock:** loop pid 28388 (since 20:02). The last line from rig was "S16 stopped" (21:13), leaving 3.06 h. Check `.clock\sync.pid` and the log tail at the start of every session.
+When the 36-workflow walkthrough is cut and uploaded, change only `video.youtube_id` (and `start`/`end`) in `content\demos\getsales-36-workflows.md`. Home, Ivana's page and the C2 entry all read it from there (`app\best\machine.tsx`). Then, through alex-voice:
+- the C2 paragraph that starts "The video is me at 16:36 on build day...";
+- `message-1-variable.png`, which should become a still from the walkthrough (see C2's own comment);
+- Ivana's note already says "Start with the 3-minute video below", which only becomes true then (tonight the frame plays the 1:52 clip).
+
+## Code map
+
+- `app\flags.ts`: the four flags plus `IS_PRODUCTION_BUILD`. Menu: `newNavLinks()` in `app\site-links.ts`, called on the server.
+- `app\best\`: shared parts (`parts.tsx`, `best.css`, `video-frame.tsx`) and `machine.tsx` (the 36 block: frame, stats, routing, matrix, messages, figures, links).
+- `app\home\`: the home page.
+- `app\for\[slug]\`: `personal.tsx`, `lens.tsx` (six P3 blocks), `quotes.tsx`, `for-href.ts`.
+- `app\skills\`: the `/skills` page.
+- `app\videos\`: the wall, with a dialog player.
+- `app\about\`: the page plus `clips.ts`; the wall is `wall-full*`.
+- `app\demos\`: `markdown.ts` (callouts, including `[!slot]`), `slots.tsx` (C2's three additions only), `entry-end.tsx` (C2's "Next for you" is forced to C1).
+- `app\recommend.ts`: lists (including `about`); a card falls back to its page's dek; `pageHref()`.
+
+## Open and parked
+
+- **Best-of-three entry:** it's `showcase` because it has no `made` numbers. If orchestration sends them, switch it to `article`. Alex decides at the redline whether its usage line ("69%... that's a little scary") and "completely drained" stay.
+- **Six verdict pieces graded No, off `/videos`:** `clip-c-s08-same-thing-tomorrow`, `clip-c-s09-assistant-can-do`, `clip-c-s07-making-decisions`, `clip-c-s04-legibility-born`, `m-s04-b` and `m-s12-o`. Orchestration knows. Clip starts and ends follow `cards.json`, 2 to 3 s off the mockups.
+- **Webcam uploads S13 to S16** aren't done (CLAUDE.md, "Video"). Run them one at a time, with nothing recording.
+- **Minor:**
+  - `/log` may render two h1s (the S02 summary headline in `app\feed.tsx`); not checked since the move.
+  - `/llms.txt` (W16, optional).
+  - `AI_PORTFOLIO_SLUG` is empty.
+  - The stray review artifact `page-1.md` (AW6Ld5n5CKuBHBX7JR3tj2) is for Alex to delete.
+- **Retired:** the six 18:58 review artifacts, the 5/10/20/60 picker (`time-picker.tsx`, `welcome.tsx`; in git, imported by nothing), and the old K1/K2 placeholder shapes.
+
+## Checks
+
+- `node scripts\check\audit_page.mjs <url> <outdir>`: any page at 1,440 and 390 px. It reports sideways scroll, h1 count, heading skips, alt text, broken images, small targets and placeholders, and saves full-page JPEGs. Small inline text links are exempt from the target-size rule.
+- `audit_videos.mjs` (the `/videos` dialog by keyboard) and `audit_wall.mjs` (`/about` wall).
+- **Leak scan (DoD-22):** first `python scripts\check\render_pages.py http://localhost:3101 <out>` (every route's visible text, alt text and links), then `python -I ..\blog-pipeline\scripts\scan.py <out>`. The expected hits are the charter naming the proposal and his outbound (allowed), LinkedIn post URLs in `/about`'s links, and `/d2`'s public Addvery email and privacy-PDF URL. Its "website deny list not found" is harmless: `sync_docs.py`'s patterns are secret shapes the scan already checks.
 
 ## Working notes
 
-- Long Python through Bash heredocs mangles `\a`, `\t` and `\r` in strings. Write the script to `$CLAUDE_JOB_DIR\tmp` and run it, or use `chr(92)`.
-- `git archive` writes CRLF (`core.autocrlf=true`), so compare exports with `diff --strip-trailing-cr`.
-- `vercel deploy` prints a "Promote to production" hint even for a preview; a preview without `--prod` never touches the alias.
+- Long Python in Bash heredocs mangles backslashes (`\t`, `\[`); write the script to `$CLAUDE_JOB_DIR\tmp` and run it.
+- `git archive` writes CRLF, so compare with `diff --strip-trailing-cr`. Commit path-limited with `[website]` (`..\GIT.md`).
+- Last night four Sonnet subagents ported the pages, one owner per folder, and the session committed and checked each. Their brief carried the hard limits: no dev server or build, at most two `tsc` runs, no git writes, edit only their own files.
