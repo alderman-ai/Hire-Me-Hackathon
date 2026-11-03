@@ -54,7 +54,7 @@ The customer type comes from industry and company size: a grocery chain with 4,2
 **An answer only counts if the model is at least 75% sure and 25 points ahead of its second choice.** Otherwise a person decides. The same kind of question picks the opening. A streaming service looks like your Oneplay case. A domestic courier looks like none of your stories yet, so its message opens on a known pain instead.
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-hard-cases.png
-> Screen output for a Slovak lender and a Czech streaming service, whose industry labels are too broad for a rule: each shows the question the model gets and the answer a person labelled
+> Screen output for a Slovak lender and a Czech streaming service, whose labels are too broad for a rule: the question the model gets and the answer a person gave
 > The two hard cases, where no rule can decide the customer type
 
 Honest caveat: the model isn't called in this run. The hard cases show answers a person labelled, and nothing was imported or sent. That's how this starts for real anyway, right? Your labels are what tune the questions.
