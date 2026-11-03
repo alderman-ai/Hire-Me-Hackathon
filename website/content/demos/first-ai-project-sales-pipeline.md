@@ -1,6 +1,6 @@
 ---
-title: "Keep the promise: put AI in your pipeline first"
-slug: "keep-the-promise"
+title: "Why your first AI project should be your sales pipeline"
+slug: "first-ai-project-sales-pipeline"
 description: "Companies promised AI wouldn't cut half their team. Keeping that promise means AI has to grow revenue, and that starts in your pipeline."
 author: "Alex Alderman"
 date: "2026-11-03"
@@ -11,7 +11,7 @@ group: "AI in your team"
 cover:
   kicker: "AI in your team"
   subtitle: "If AI isn't lowering your labor costs, it has to be increasing your revenue"
-  accent: "put AI in your pipeline first"
+  accent: "your sales pipeline"
 tags: ["pipeline", "outreach"]
 reading_minutes: 5
 ---

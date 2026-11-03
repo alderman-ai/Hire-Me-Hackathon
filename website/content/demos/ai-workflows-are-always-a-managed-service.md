@@ -1,5 +1,5 @@
 ---
-title: "AI workflows are always a managed service"
+title: "Why an AI workflow you buy still needs someone to run it"
 slug: "ai-workflows-are-always-a-managed-service"
 description: "AI workflows break when the models change and stall when nobody uses them, so I build, teach your team, or mix the two, and stay on as the tools move."
 author: "Alex Alderman"
@@ -11,7 +11,7 @@ group: "AI in your team"
 cover:
   kicker: "AI in your team"
   subtitle: "An AI workflow is never a product but always a managed service"
-  accent: "managed service"
+  accent: "someone to run it"
 tags: ["managed-service", "adoption"]
 reading_minutes: 4
 ---

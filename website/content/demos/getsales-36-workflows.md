@@ -1,5 +1,5 @@
 ---
-title: "36 sequences, and a first message written for every lead"
+title: "How to send every lead a first message written for them"
 slug: "36-outbound-workflows-and-the-one-variable-behind-them"
 description: "I built 36 sequences for your four customer types in English, Czech and German, each opening on a message written for that one person."
 author: "Alex Alderman"

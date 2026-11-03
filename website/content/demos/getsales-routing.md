@@ -1,5 +1,5 @@
 ---
-title: "Every lead in the right sequence, and why it's there"
+title: "Lead routing you can check: the right sequence for every lead, and the reason"
 slug: "sorting-twelve-leads-into-36-workflows-rules-first-then-jev"
 description: "Before anyone writes to a lead, I sort it into the right customer type, language and approach, and every decision comes with its reason."
 author: "Alex Alderman"
@@ -13,7 +13,7 @@ poster: "/demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-j
 cover:
   kicker: "Outbound"
   subtitle: "Every lead lands in exactly one workflow, and every decision shows what settled it."
-  accent: "right sequence"
+  accent: "the reason"
 tags: ["outbound", "classification"]
 reading_minutes: 4
 ---

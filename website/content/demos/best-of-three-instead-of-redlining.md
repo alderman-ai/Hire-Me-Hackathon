@@ -1,5 +1,5 @@
 ---
-title: "Your best people should choose, not correct"
+title: "Let AI draft three versions so your best people only choose"
 slug: "best-of-three-instead-of-redlining"
 description: "I have AI build three full versions of a big piece of work, each arguing its case and naming its weak spot, so your senior people pick and combine instead of redlining one draft line by line."
 author: "Alex Alderman"
@@ -11,7 +11,7 @@ group: "AI in your team"
 cover:
   kicker: "AI in your team"
   subtitle: "The night my own site got away from me, I stopped redlining and had three agents argue instead."
-  accent: "choose"
+  accent: "only choose"
 tags: ["orchestration", "process"]
 reading_minutes: 4
 ---

@@ -1,5 +1,5 @@
 ---
-title: "A page for every stakeholder, from content you already have"
+title: "How to give every stakeholder their own page from content you already have"
 slug: "label-every-piece-before-you-build-a-page"
 description: "I label every piece of content you already have, once, so AI can build a different story for each person you sell to without starting from a blank page."
 author: "Alex Alderman"
