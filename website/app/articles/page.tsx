@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 // The order is fixed (Alex, 3 Nov), not newest first. Anything not listed follows, newest first.
 const ORDER = [
   "who-writes-the-linkedin-posts-for-your-outreach-accounts",
-  "if-ai-wont-replace-half-your-team",
+  "keep-the-promise",
   "ai-workflows-are-always-a-managed-service",
   "36-outbound-workflows-and-the-one-variable-behind-them",
   "sorting-twelve-leads-into-36-workflows-rules-first-then-jev",

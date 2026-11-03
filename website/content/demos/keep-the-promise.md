@@ -1,7 +1,7 @@
 ---
-title: "If AI won't replace half your team, put it in your pipeline"
-slug: "if-ai-wont-replace-half-your-team"
-description: "If AI isn't going to cut half your team, its return has to come from new business, so I put AI in your pipeline, where the same team brings in more work."
+title: "Keep the promise: put AI in your pipeline first"
+slug: "keep-the-promise"
+description: "Companies promised AI wouldn't cut half their team. Keeping that promise means AI has to grow revenue, and that starts in your pipeline."
 author: "Alex Alderman"
 date: "2026-11-03"
 status: "published"
@@ -11,7 +11,7 @@ group: "AI in your team"
 cover:
   kicker: "AI in your team"
   subtitle: "If AI isn't lowering your labor costs, it has to be increasing your revenue"
-  accent: "put it in your pipeline"
+  accent: "put AI in your pipeline first"
 tags: ["pipeline", "outreach"]
 reading_minutes: 5
 ---
