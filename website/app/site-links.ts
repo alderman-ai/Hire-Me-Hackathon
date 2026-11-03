@@ -18,6 +18,7 @@ export function newNavLinks({ videos, skills }: { videos: boolean; skills: boole
     { href: "/articles", label: "Articles" },
     ...(videos ? [{ href: "/videos", label: "Videos" }] : []),
     ...(skills ? [{ href: "/skills", label: "Skills" }] : []),
+    { href: "/about#linkedin", label: "LinkedIn posts" },
     { href: "/about", label: "About me" },
     { href: "/for", label: "For Addvery" },
   ];
