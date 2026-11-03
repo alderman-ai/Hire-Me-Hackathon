@@ -72,7 +72,7 @@ Per attempt `i`:
 3. **Log before grading**: append `## Attempt <i>` and the draft to `<run>/log.md`.
 4. **Assemble** (PowerShell tool):
    `& "<skill>/scripts/assemble-payload.ps1" -DraftFile <run>/attempt-<i>.md -BriefFile <run>/brief.md -SourceFile <run>/source.md -OutFile <run>/payload-<i>.md`
-5. **Grade** with one fresh subagent: the Agent tool, `subagent_type: general-purpose`, `model: opus`,
+5. **Grade** with one fresh subagent: the Agent tool, `subagent_type: general-purpose`, `model: sonnet`,
    prompt exactly as in "Grader dispatch" below. One dispatch per attempt. The writer never grades itself
    and never edits the draft between logging and dispatch.
 6. **Check the return shape**: exactly `grade: <Unpublishable|Good|Great>` and `failed_ids: <IDs or
@@ -117,6 +117,11 @@ same content, framed as the deliverable it is.
   if it halts, the rubric is defective.
 - No brief, or no reader or purpose in it.
 - A second malformed grader return, or a citation-validation failure (exit 1).
+
+## Models (Alex, 3 Nov: Sonnet wherever it costs no more than about 5% of output quality)
+
+- **Grader: Sonnet.** Grading against a written rubric is well within Sonnet, and a grader from a different model than the writer also weakens the model's bias toward its own writing.
+- **Writer: Opus for articles and notes to people he knows; Sonnet for short page copy, labels, captions and summaries under about 150 words.** The session that runs the skill picks its own model accordingly (whoever spawns the run sets `model`).
 
 ## Cost
 
