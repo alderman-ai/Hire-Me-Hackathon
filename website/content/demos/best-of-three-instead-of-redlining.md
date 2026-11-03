@@ -1,7 +1,7 @@
 ---
 title: "Let AI draft three versions so your best people only choose"
 slug: "best-of-three-instead-of-redlining"
-description: "I have AI build three full versions of a big piece of work, each arguing its case and naming its weak spot, so your senior people pick and combine instead of redlining one draft line by line."
+description: "I have AI build three full versions of a big piece, each naming its weak spot, so senior people pick, not redline."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"

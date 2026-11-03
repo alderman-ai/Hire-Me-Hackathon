@@ -1,7 +1,7 @@
 ---
-title: "Outreach in your prospect's own brand, lifted from their website"
+title: "Why outreach in the prospect's own brand gets read"
 slug: "build-it-in-their-brand"
-description: "Outreach in the prospect's own brand shows at a glance it wasn't sent to everyone, and since their website hands over most of the brand guide, I can pull it in about an hour."
+description: "Outreach in the prospect's own brand shows it wasn't sent to everyone, and I can pull it from their site in an hour."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"

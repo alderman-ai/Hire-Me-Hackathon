@@ -1,7 +1,7 @@
 ---
 title: "Teaching AI to sound like you, so you only proofread"
 slug: "teaching-a-machine-to-sound-like-me"
-description: "I capture how a person writes and talks so AI drafts in their voice and they only proofread, which now takes me about 20% of the time it used to."
+description: "I capture how a person writes so AI drafts in their voice and they only proofread, in about 20% of the time it took."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"

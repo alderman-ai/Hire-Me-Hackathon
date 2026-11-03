@@ -1,7 +1,7 @@
 ---
 title: "Who writes the LinkedIn posts for your outreach accounts?"
 slug: "who-writes-the-linkedin-posts-for-your-outreach-accounts"
-description: "Every LinkedIn account your team sends outreach from posts every week, on brand, without your salespeople writing a word of it."
+description: "Every LinkedIn account your team sends outreach from posts every week, on brand, without salespeople writing a word."
 author: "Alex Alderman"
 date: "2026-11-03"
 status: "published"

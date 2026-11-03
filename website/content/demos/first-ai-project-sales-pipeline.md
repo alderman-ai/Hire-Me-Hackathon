@@ -1,7 +1,7 @@
 ---
 title: "Why your first AI project should be your sales pipeline"
 slug: "first-ai-project-sales-pipeline"
-description: "Companies promised AI wouldn't cut half their team. Keeping that promise means AI has to grow revenue, and that starts in your pipeline."
+description: "Companies promised AI wouldn't cut half their team. Keeping that promise means AI grows revenue, in your pipeline."
 author: "Alex Alderman"
 date: "2026-11-03"
 status: "published"

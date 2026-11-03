@@ -1,7 +1,7 @@
 ---
 title: "Why an AI workflow you buy still needs someone to run it"
 slug: "ai-workflows-are-always-a-managed-service"
-description: "AI workflows break when the models change and stall when nobody uses them, so I build, teach your team, or mix the two, and stay on as the tools move."
+description: "AI workflows break when models change and stall when nobody uses them, so I build, teach your team, and stay on."
 author: "Alex Alderman"
 date: "2026-11-03"
 status: "published"

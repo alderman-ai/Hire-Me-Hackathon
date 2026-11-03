@@ -1,7 +1,7 @@
 ---
-title: "How to give every stakeholder their own page from content you already have"
+title: "Personalised pages for every buyer, from content you have"
 slug: "label-every-piece-before-you-build-a-page"
-description: "I label every piece of content you already have, once, so AI can build a different story for each person you sell to without starting from a blank page."
+description: "I label all your existing content once, so AI can build a different story for each buyer, not from a blank page."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
@@ -11,7 +11,7 @@ group: "Content"
 cover:
   kicker: "Content"
   subtitle: "On Day 1's night I had hundreds of pieces and couldn't see what went with what."
-  accent: "every stakeholder"
+  accent: "every buyer"
 tags: ["legibility", "personalisation"]
 reading_minutes: 4
 ---
