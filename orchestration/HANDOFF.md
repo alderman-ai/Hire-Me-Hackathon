@@ -2,6 +2,14 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
+## Update, about 21:15 on 3 Nov: the agent version is live (orchestration 8b57493d)
+
+Alex's last ask (W186): "a fully agentic version that lets an agentic agent start somewhere and navigate the whole site and let the user navigate what they're interested in." Researched (llms.txt v2, Vercel's and Cloudflare's markdown content negotiation, "Open in Claude/ChatGPT" buttons, MCP, WebMCP) and shipped by an Opus builder in `website\`: production `dvm3sim01` (21:07), commits 4cd8c55 to ec65f94, rows in `website\builds.md`. This brings back D12 / DoD-25 in a new form.
+- **Ways in:** `/llms.txt` (a guide for the agent plus the map), `/llms-full.txt`, a `.md` twin of every page (39 docs, each under 30k characters, all links absolute, "Where next" on each), `Accept: text/markdown` on any URL, `/mcp` (public, read-only: site_map, read_page, search_site), WebMCP (no origin-trial token; needs Alex's Google account), and for people: "For your AI" in the menu leads to `/agent` (Open in Claude, Open in ChatGPT, Copy the prompt) and an "Ask your AI about this page" row on articles and /for pages. Copy through `alex-voice` (run 2026-11-03-95, Great on attempt 2).
+- **Code:** `website\lib\agent-track\` generates every doc from the same loaders and gates as the pages, so it can't drift or leak a draft.
+- **Tested:** two live acceptance runs (Addvery's head of growth on ICP routing; the CEO with five minutes). Each navigated from llms.txt by links alone. The first run's fixes (oversized about.md, /d1 and /d2 without twins, an "ask first" dead end, a skipped block on /for/cofounder-1) are in.
+- **W187, how Alex comes across as a GTM engineer:** two independent Opus reviews in `orchestration\local\gtm-review\` (`site.md`, `transcripts.md`, git-ignored). Both: hire as a mid-level, AI-native GTM engineer; proof (no career numbers) and the pipeline stopping at the sequencer are the gaps. Offered him: an "after the sequence" piece from S17/S18 through `alex-voice`, and naming or cutting "the company you probably know me from" in the routing article. Waiting on his word.
+
 ## Update, about 15:30 on 3 Nov: start here (orchestration 8b57493d)
 
 Alex is in a meeting, then wrapping up. He gave full trust ("You don't need my approval for anything. Just make it the best you can"). Read `RULES.md`, then `orchestration\local\ALEX-WANTS.md` W129 to W185.
