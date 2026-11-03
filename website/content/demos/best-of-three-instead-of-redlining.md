@@ -21,7 +21,7 @@ So I fixed it in six steps. It's how I'd run any client deliverable that gets as
 
 ## 1. The layout wasn't a design problem
 
-By evening there was a live site, a mockup and a status board, and they disagreed with each other. Decisions about what went where looked silly. Here's what I typed to the AI session running everything:
+By evening there was a live site and a mockup, and they disagreed with each other. Decisions about what went where looked silly. Here's what I typed to the AI session running everything:
 
 > [!quote]
 > I want to be able to give you high-signal feedback on principles of how I want this built but I don't know because there are multiple versions of everything.

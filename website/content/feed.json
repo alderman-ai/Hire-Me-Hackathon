@@ -2,17 +2,6 @@
   "intro": "Everything that happens in the hackathon lands here, newest on top. Every working session is recorded and numbered: S01, S02 and so on. All times are Prague (CET).",
   "posts": [
     {
-      "id": "status",
-      "at": "2026-11-02T18:45",
-      "kind": "Status",
-      "title": "What's being built today",
-      "blocks": [
-        {
-          "type": "status-board"
-        }
-      ]
-    },
-    {
       "id": "research-lists",
       "at": "2026-11-02T14:10",
       "kind": "Milestone",
@@ -146,7 +135,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Alex lists the ten demos in the status board above. One of them is an agent that watches these recordings and keeps this website up to date, which is how much of this feed gets here. He also explains why he spends the first hours planning instead of building."
+          "text": "Alex lists the demos for the day. One of them is an agent that watches these recordings and keeps this website up to date, which is how much of this feed gets here. He also explains why he spends the first hours planning instead of building."
         },
         {
           "type": "quote",
@@ -458,7 +447,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Between 14:22 and 14:34, a temporary agent drafts a plan (a spec) for each demo: scraping, outbound, the blog pipeline and its three articles, the Canva templates, the LinkedIn content and the Canva video. Each plan opens with the questions it needs Alex to answer, so he answers them in one go and the agent carries on without him."
+          "text": "Between 14:22 and 14:34, a temporary agent drafts a plan (a spec) for each demo: scraping, outbound, and the blog pipeline with its three articles. Each plan opens with the questions it needs Alex to answer, so he answers them in one go and the agent carries on without him."
         },
         {
           "type": "p",
@@ -470,7 +459,7 @@
         },
         {
           "type": "p",
-          "text": "Alex also set a rule for everything the agents put in front of him: name it in plain words, open with all the context, and use no internal codes like \"D2\" or \"S1\"."
+          "text": "Alex also set a rule for everything the agents put in front of him: name it in plain words, open with all the context, and use no internal codes."
         }
       ]
     },
@@ -693,7 +682,7 @@
         },
         {
           "type": "p",
-          "text": "His research landed at about 15:34, and within minutes four pieces of work picked it up:"
+          "text": "His research landed at about 15:34, and within minutes three pieces of work picked it up:"
         },
         {
           "type": "points",
@@ -709,10 +698,6 @@
             {
               "lead": "The scraping demo has its input.",
               "text": "Its section on the site can now be built from Alex's results."
-            },
-            {
-              "lead": "Every demo gets its own page.",
-              "text": "At Alex's request, the status board now links to a page per demo, /d1 to /d10."
             }
           ]
         },
@@ -725,22 +710,6 @@
           "text": "A lot of things I'm really happy to make judgment calls of, like, look, this doesn't need my attention, this can run without me.",
           "source": "Alex, S08, 15:12",
           "href": "https://youtu.be/MyYnFOQCagc?t=268"
-        }
-      ]
-    },
-    {
-      "id": "all-demos-agents",
-      "at": "2026-11-02T16:42",
-      "kind": "Milestone",
-      "title": "Every demo now has an agent on it",
-      "roles": [
-        "CEO",
-        "COO"
-      ],
-      "blocks": [
-        {
-          "type": "p",
-          "text": "As of 16:42, all ten demos have an agent working on them. The last two started at 16:42: the blog articles and the Canva design video. Both are doing groundwork until Alex gives them what they need from him."
         }
       ]
     },
@@ -866,7 +835,7 @@
             },
             {
               "lead": "No more plan approvals.",
-              "text": "Alex signs off only what the finish line names: the six key people, the brand on the templates and LinkedIn posts, and the last touches on each blog post."
+              "text": "Alex signs off only what the finish line names: the six key people and the last touches on each blog post."
             },
             {
               "lead": "Public information is fair game.",
@@ -1047,7 +1016,7 @@
       "kind": "Update",
       "title": "The day so far",
       "summary": true,
-      "summary_line": "From the first recording at 10:25 to ten demos under way: the plan, one big mistake, the research, a reset, and what's built.",
+      "summary_line": "From the first recording at 10:25 to the demos under way: the plan, one big mistake, the research, a reset, and what's built.",
       "roles": [
         "CEO",
         "COO",
@@ -1104,15 +1073,15 @@
           "points": [
             {
               "lead": "Live on the site:",
-              "text": "the scraping demo's briefing page (18:02), and the GTM demos list with its first entry, five LinkedIn posts graded blind (18:12)."
+              "text": "the scraping demo's briefing page (18:02)."
             },
             {
               "lead": "Built:",
-              "text": "the outbound demo's 36 workflows in GetSales, none switched on; five LinkedIn templates and the asset pack for building them in Canva."
+              "text": "the outbound demo's 36 workflows in GetSales, none switched on."
             },
             {
               "lead": "Waiting on Alex alone:",
-              "text": "eight things only he can do. Four reviews (the templates, the LinkedIn posts, the text of the six people's pages, and the story of day one), three recordings (two outbound demos and the Canva video) and one pick (the brand-motion ideas)."
+              "text": "a few things only he can do: reviewing the text of the six people's pages, recording the two outbound demos, and picking the brand-motion ideas."
             },
             {
               "lead": "Tonight:",

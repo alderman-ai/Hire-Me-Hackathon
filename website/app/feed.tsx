@@ -70,14 +70,14 @@ function Video({ session, start, end }: { session: string; start: number; end?: 
       {id ? (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${id}${qs ? `?${qs}` : ""}`}
-          title={`Session ${session}, webcam`}
+          title={/^S\d+$/.test(session) ? `Session ${session}, webcam` : "Video: Keep the promise"}
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
       ) : (
-        <div className="video-empty">The {session} recording goes up here soon.</div>
+        <div className="video-empty">This video goes up here soon.</div>
       )}
     </RotateIn>
   );

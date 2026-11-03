@@ -2,6 +2,22 @@
   "about": "Day 2's feed (3 Nov), newest on top: same post shape as content/feed.json, shown at /day-2.",
   "posts": [
     {
+      "id": "day2-keep-the-promise",
+      "at": "2026-11-03T13:30",
+      "kind": "Update",
+      "title": "Keep the promise",
+      "blocks": [
+        {
+          "type": "video",
+          "session": "keep-the-promise"
+        },
+        {
+          "type": "p",
+          "text": "For AI to save a company money, there has to be a return. If it isn't lowering labor costs, it has to be raising revenue, so I'd start with the pipeline. I build it and train you to use or maintain it, or I teach you to build it. I've been teaching and training for over 20 years. GTM is kind of the role that lets companies keep their promise. My voice only, visuals from Comfy Cloud."
+        }
+      ]
+    },
+    {
       "id": "day2-s19",
       "at": "2026-11-03T12:01",
       "kind": "Update",
