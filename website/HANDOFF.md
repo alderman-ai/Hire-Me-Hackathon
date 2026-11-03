@@ -14,8 +14,18 @@ Written 3 Nov at 08:15 Prague by the `website` session (job 91fdba88, Claude ses
 
 ## What's live
 
-Production deployment `ousjonawr` (3 Nov ~10:30, PROMOTE 10), from `6f201fd`, built with all four flags: the hackathon menu bar (still the 09:45-countdown status; the LIVE!/On Break/Finished status is in `09c6685`, not live yet), `/log` as Day 1's page (highlights, derby, compact feed), M5 (the LinkedIn voice entry gone), `/demos` titled Articles, the cofounder-2 lead, and the three M6 articles first in the default carousel. Before it: `ds72hjxle` (09:2x, M3), `jzmclzh9z` (09:13, M1+M2), `hrgw6z0x1` (00:1x). `builds.md` has the detail.
-- **Next to ship:** `/day-2` with S17's "Day 2 Update" (gated on `content\videos.json` S17), the bar's LIVE!/On Break/Finished status, and rig's composite of S17 in place of the webcam upload. Orchestration sends PROMOTE straight after the check (Alex pre-approved, 10:5x).
+Production deployment `a7zkod9dw` (3 Nov 10:44), from `7c1b688`, built with all four flags. It carries:
+- the hackathon menu bar: status LIVE! / On Break / Finished from the recording clock, with "Day 1 › Highlights | Feed" and a "Day 2 Update" cell;
+- `/log` as Day 1's page: highlights with the merged session chart (`app\log\day-lanes.tsx`; the derby is gone), and the compact feed;
+- `/day-2` with the Day 2 Update, which plays rig's S17 composite `NeASfMN1Kcc` whole, with orchestration's paragraph;
+- M5 (the LinkedIn voice entry gone), and `/demos` titled Articles;
+- the three M6 articles, first in the default carousel.
+
+Before it: `ousjonawr` (10:30, PROMOTE 10), `ds72hjxle` (09:2x, M3), `jzmclzh9z` (09:13, M1+M2), `hrgw6z0x1` (00:1x). `builds.md` has the detail.
+- **Open:** the time-lapse has code (`app\log\timelapse.tsx`, `scripts\build_timelapse.py`) but no frames. The Vercel MCP can't reach the project's 41 Day 1 deployments, so it needs Alex to grant the connector access or OK a temporary bypass key. Orchestration also wants 1920×1080 frames kept as files, plus `<deployment>.boxes.json`, for comfy-collab. `/day-2` skips from h1 to the post's h3. `6FlJ9h3IHzQ` (S17 webcam only) is unlisted and unused.
+- **New tools:**
+  - `scripts\upload_file.py`: uploads any finished MP4 unlisted under a `content\videos.json` key (`--replace`).
+  - `scripts\check\` plus `$CLAUDE_JOB_DIR\tmp\derby_shot.mjs`: CDP viewport shots of an element mid-animation.
 - **Finishing the build:** write `.clock\finished.json` as `{"at": <epoch seconds>}` when Alex calls the end; the sync then publishes `finished` and the bar reads "Finished at ... / Built in: ...". The clock loop is now pid 9044 (restarted 10:25 for the new fields).
 
 | Route | What |
