@@ -14,7 +14,7 @@ Written 3 Nov at 08:15 Prague by the `website` session (job 91fdba88, Claude ses
 
 ## What's live
 
-Production deployment `jzmclzh9z` (3 Nov 09:13), from `710fa93`, built with all four flags: the best-of build plus the build strip (M1+M2, `app\hack-strip.tsx`) and `/log`'s Day 1 intro. The one before was `hrgw6z0x1` (00:1x, `36da31e`). `builds.md` rows 23:40, 00:1x and 3 Nov 09:13 have the detail.
+Production deployment `ds72hjxle` (3 Nov 09:2x), from `c496a68`, built with all four flags: the best-of build plus the build strip (M1+M2, `app\hack-strip.tsx`), `/log`'s Day 1 intro, and M3's Day 1 wording with `/d2` down to one h1. Before it: `jzmclzh9z` (09:13, M1+M2) and `hrgw6z0x1` (00:1x, `36da31e`). `builds.md` rows 23:40, 00:1x, 3 Nov 09:13 and 09:2x have the detail.
 
 | Route | What |
 | --- | --- |
