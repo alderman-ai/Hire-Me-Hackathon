@@ -59,7 +59,7 @@ ROWS = [
 SESSIONS_ROW = ("sessions", "Whole sessions", [f"session-s{n:02d}" for n in range(1, 13)])
 
 # Held until Alex says yes (VERDICT.md 2.3; M8).
-HELD = {"clip-c-s05-deletion-live", "clip-c-s07-answer-desk", "m-s12-f"}
+HELD = {"clip-c-s05-deletion-live", "clip-c-s07-answer-desk", "m-s12-f", "m-s12-j"}
 
 # A Great with a card joins the row of its card's first theme.
 THEME_ROW = {

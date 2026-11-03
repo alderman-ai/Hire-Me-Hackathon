@@ -510,20 +510,6 @@
           "end": 1015
         },
         {
-          "id": "m-s12-j",
-          "kind": "moment",
-          "title": "The day-one story ask",
-          "youtube_id": "lo486cSVBcM",
-          "start": 1248,
-          "length": "1:03",
-          "session": "S12",
-          "prague": "17:55",
-          "grade": "G",
-          "moment": "S12-j",
-          "still": "/videos/S12-j.webp",
-          "end": 1311
-        },
-        {
           "id": "clip-day1-1-movie-actor",
           "kind": "clip",
           "title": "The movie-actor rule",
