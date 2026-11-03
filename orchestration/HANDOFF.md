@@ -2,7 +2,7 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
-## Update, about 13:20 on 3 Nov: start here (handoff from 116ccb82, to save usage)
+## Update, about 12:30 on 3 Nov: start here (handoff from 116ccb82, to save usage)
 
 Alex works with orchestration directly in this chat; he's short on time and on usage (19% of the plan left at about 12:00, less now). Be token-conscious: short replies, Sonnet for every subagent except full articles (Opus), no polling. Read `RULES.md`, then `orchestration\local\ALEX-WANTS.md` from W62 (this morning's asks; record each new ask there the same turn). Skip the older sections below unless you need them.
 
@@ -21,7 +21,7 @@ Alex works with orchestration directly in this chat; he's short on time and on u
 1. `website`: publishing article 1, "AI workflows are always a managed service" (155b523, rewritten from today's dictation), with two graphics; it reports in one line.
 2. `s-d5-blog-articles` (83225601, Sonnet): Alex dictates article 2 ("If AI won't replace half your team, put it in your pipeline") there directly, with the `dictate-article` skill (round 2 asks only questions that change the article). It sends you each finished article; you route it to `website` as an article entry.
 3. The spoken redline: Alex `/start`s the rig and scrolls the live site saying "banana" (start of an item) and "cucumber" (end). After `/process`: run `python orchestrationedlineedline_extract.py --session OBS\Processed\<folder>`, then stage 2 from `orchestrationedline\README.md` (Sonnet subagents read the frames), then one batch: layout to `website`, words through `alex-voice`. Then a short write-up of the method as a Day 2 highlight (W110), through `dictate-article`/`alex-voice`, with real numbers from the session.
-4. `comfy-collab` (dbc0300e) and `comfy-video`: Alex approved two videos with it directly ("Is this thing on?", a Day 1 time-lapse of the 41 deploys, and "Keep the promise", about a minute), budget about 2,100 Comfy credits, about 156 spent at 13:10. Blocked, like `website`'s time-lapse, on screenshots of Day 1's protected preview deployments: Alex needs to extend the claude.ai Vercel connector to the `alex-alderman-s-projects` team (asked twice; still open).
+4. `comfy-collab` (dbc0300e) and `comfy-video`: Alex approved two videos with it directly ("Is this thing on?", a Day 1 time-lapse of the 41 deploys, and "Keep the promise", about a minute), budget about 2,100 Comfy credits, about 156 spent by about 12:15. Blocked, like `website`'s time-lapse, on screenshots of Day 1's protected preview deployments: Alex needs to extend the claude.ai Vercel connector to the `alex-alderman-s-projects` team (asked twice; still open).
 5. Alex meets Ivana at 4 pm today. Her message drafts are in `orchestration\local
 otes\ivana.md`; unknown whether he's sent it.
 
