@@ -2,6 +2,17 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
+## Update, about 08:00 on 3 Nov: start here (fresh session, Alex works with you directly)
+
+Alex asked for a fresh orchestration session ("launch a new you and then me and you will get to work"). He talks to orchestration directly this morning: this chat is his one surface. Read `orchestration\local\overnight\MORNING.md` next; it's still the plan (his morning in order, the rough edges, the open facts).
+
+Since 00:20:
+- **Preservation dump, done (Alex's ask):** `C:\Users\alder\Desktop\Full site outread\` (outside the repo). `METHODOLOGY.md` is the document that codifies the overnight method: label every piece, grade for taste, side cards and catalog, three stance mockups, best-of merge, keyed spans through `alex-voice`, parallel port. `extract_transcripts.py` re-extracts every transcript of the project (84 sessions, 377 subagents at 07:50) into `transcripts\` with `INDEX.md`, `RELATIONSHIPS.md`, `TIMELINE.md` and `catalog.json`; re-run it to pick up today. Building skills from it is out of scope for now.
+- **Reboots at 07:55 (Alex: only sessions with work left):** `rig` (now session `4bad902f`, a copy of 1a1ba6cb; old id removed): healthy, nothing recording, ready for his `/start`. `orch-alex-prep` (759cb6b8): bringing `alex-prep\scenes\getsales-demos.md` in line with MORNING.md item 3, the 36-workflow walkthrough; it pings you when ready. `orch-briefing` (8bc2476e): answers "what next?" from MORNING.md's order. Their 20:25 hold is lifted for those parts only. `orch-site-map` (5a971503) is live and still holding. Roster commit 2689501.
+- **Alex, about 08:00:** "no need to boot up any of the non essential sessions." The eleven paused sessions stay paused.
+- `website` (91fdba88) is idle at about 300k+ tokens: hand it off before a long build. The context-watch cron isn't running.
+- **Your first step, the handoff's step 4:** the previous orchestration session is `e0e1d9d2`. Once `claude agents --json` shows it idle (or after 10 minutes either way), run `claude stop e0e1d9d2`, then `claude rm e0e1d9d2`, check that exactly one `orchestration` is live, put your id and the handoff time in its `SESSIONS.md` row and commit that file on its own. Then tell Alex in one or two lines that you're ready, and work with him from MORNING.md.
+
 ## Update, 00:20 on 3 Nov: the combined version is live
 
 Alex asked at about 22:4x for the best of the three mockups combined and pushed live; he redlines it in the morning on a Claude Design canvas. **Live at 23:40** (https://hire-me-hackathon.vercel.app, deployment from 9e75838; production deploys need all four flags: NEW_SITE, WALL_FULL, VIDEO_WALL, SKILLS_PAGE). The redline canvas is https://claude.ai/artifact/EdXPA75GqZCSFbDub4Ndu2. An article on the method is committed (01e1e1d) and was sent to `website` at 00:17 to publish as an entry. `orchestration\local\overnight\MORNING.md` is rewritten for this state: read it first.
