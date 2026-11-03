@@ -14,6 +14,7 @@ cover:
   accent: "someone to run it"
 tags: ["managed-service", "adoption"]
 reading_minutes: 4
+poster: "/demos-assets/ai-workflows-are-always-a-managed-service/build-teach-slider.png"
 ---
 A lot of AI gets sold like this: "We'll build you this workflow. You pay us, we build it, transaction over, and it works like software."
 
@@ -41,6 +42,7 @@ Say I build something for your sales team. The easiest a workflow can possibly b
 
 > [!figure] /demos-assets/ai-workflows-are-always-a-managed-service/slash-command.png
 > one slash command typed into a terminal, with a whole workflow behind that single line
+> That's the whole interface: one typed line. Your people still have to remember to type it
 
 And they need to know it well enough that the friction doesn't make them decide never to use it. A workflow nobody opens is money spent on nothing.
 
@@ -53,6 +55,9 @@ The marketers say a good build is wizard magic: anyone can use it, no skill gap.
 > Alex Alderman, 3 Nov 2026
 
 ## You pick the spot between building and teaching
+
+> [!video] LnXzjUVoVpU
+> The choice every company has to make: use what others build, maintain it, or build it yourself
 
 Every setup sits somewhere on a slider. At the bottom, I do most of the building. Slide up, and I build less while your team learns more.
 
@@ -84,6 +89,7 @@ Transformation has to be part of the whole company: leadership bought in, and th
 
 > [!figure] /demos-assets/ai-workflows-are-always-a-managed-service/who-owns-the-change.png
 > who owns the change: leadership and line managers above the team, the vendor beside it, building and teaching
+> Leadership and line managers carry the change. The vendor sits beside your team, building and teaching
 
 ## Harder than they'll tell you
 

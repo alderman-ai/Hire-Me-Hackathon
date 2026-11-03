@@ -8,14 +8,15 @@ status: "published"
 kind: "showcase"
 library_id: "demo-getsales-36-workflows"
 group: "Outbound"
-video:
-  youtube_id: "_vgNB5ubKjA"
-  start: 0
 cover:
   kicker: "Outbound"
   subtitle: "36 GetSales workflows for Addvery, and a custom first message for every lead."
 tags: ["outbound", "getsales", "classification"]
 reading_minutes: 4
+video:
+  youtube_id: "_vgNB5ubKjA"
+  start: 146
+  end: 222
 ---
 Most outbound runs on one sequence of messages, maybe one per customer type. Everyone on the list gets the same words in the same order.
 
@@ -25,6 +26,7 @@ That's what I do: I build outbound where every lead lands in the sequence that f
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/36-grid.png
 > Four customer types, three languages and three angles: a 4 x 3 x 3 grid of 36 sequences
+> Each square is one sequence: a customer type across the top, a language down the side, an angle in each color
 
 ## Writing the sequences is the easy part
 
@@ -34,8 +36,9 @@ A script built all 36 in about seven minutes, in their own folder apart from my 
 
 Every one of the 36 opens the same way: **the first message is written for that one person before the list goes in.** The follow-ups are fixed. Nothing sends yet, and no leads are in them.
 
-> [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflow-message-1.png
+> [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/message-1-variable.png
 > One of the 36 in GetSales: the first message is a placeholder filled in per person, every count at zero
+> The message box holds one field, custom_message_1, which I fill for each person before the list goes in
 
 Two made-up leads:
 
@@ -50,8 +53,8 @@ The signal I watch most is someone switching jobs. Don't bother them in week one
 
 And it costs nothing. Pull your key accounts from your CRM and have AI collect their job adverts for the roles that matter. (Junior marketer? Probably not.)
 
-> [!video] V7VgtPe8BVk
-> A job advert is the roadmap for the first message
+> [!video] _vgNB5ubKjA 369 433
+> Where I look first: a new hire's job advert, with their goals for the first 90 days
 
 ## Who goes where is a sorting problem
 
@@ -59,24 +62,24 @@ Research tells you what to say, not which of the 36 someone belongs in.
 
 One of the coolest tools in AI is one no one's heard of, because it doesn't write anything. It's a classification model: it gives you odds. Give it a profile plus everything you know about their company, and it answers narrow questions. Is this a good person to reach out to? Which customer type?
 
-It can go further. Anyone good at sales mirrors people: if they're informal, you're informal. Read their posts or interviews, even in a language you don't speak, and pick the sequence that fits their personality. This is where the fun happens.
+> [!video] _vgNB5ubKjA 669 713
+> The questions the model answers about each lead: worth contacting, which customer type, which tone
 
-> [!video] rDUsnHrAwv0
-> A classification model that decides who goes into which sequence
+It can go further. Anyone good at sales mirrors people: if they're informal, you're informal. Read their posts or interviews, even in a language you don't speak, and pick the sequence that fits their personality. This is where the fun happens.
 
 ## Building is a phase, refining is the work
 
 Say you've got 120 sequences. The model picks the one that should do best for each person, then you watch. When your favorite gets bad results, you tweak how the model decides, or kill the sequence that's always worse.
 
-**Nothing in AI is a one-time setup where you press play.** Refining is the main work: looking at the data and asking what to switch. That's a systems management job, not a type-things-into-AI job.
+> [!video] _vgNB5ubKjA 730 774
+> Ask the model which sequence should win, watch the results, then tweak the model or kill the loser
 
-> [!video] IEVscs4eg5c
-> Ask which sequence should win, watch the results, then tweak it or kill it
+**Nothing in AI is a one-time setup where you press play.** Refining is the main work: looking at the data and asking what to switch. That's a systems management job, not a type-things-into-AI job.
 
 It also has to be built so your salespeople, who aren't AI experts, can run it.
 
-> [!video] kV7KD1-pRCE
-> Building is a phase. Refining is the main work.
+> [!video] _vgNB5ubKjA 886 926
+> Built so your salespeople can run it, then refined: why building is a phase, not the deliverable
 
 ## Every account, not only the key ones
 

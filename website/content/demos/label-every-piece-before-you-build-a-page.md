@@ -14,6 +14,11 @@ cover:
   accent: "every buyer"
 tags: ["legibility", "personalisation"]
 reading_minutes: 4
+video:
+  youtube_id: "NeASfMN1Kcc"
+  start: 52
+  end: 125
+poster: "/demos-assets/label-every-piece-before-you-build-a-page/bi-lead-lines.png"
 ---
 By the evening of my first day building this site, I had hundreds of pieces of content and couldn't tell you which ones went together. The pages kept stacking the wrong things, and a lot of the decisions about what went where were, honestly, silly.
 
@@ -37,6 +42,7 @@ Every clip I kept got a label card, 74 of them. A card is what an AI reads inste
 
 > [!figure] /demos-assets/label-every-piece-before-you-build-a-page/side-card-13-20.png
 > the card for the moment I shut down every AI assistant by accident: what happens, my words, its themes, its links and what to watch out for
+> What an AI reads instead of watching 33 seconds of me: the gist and my words on the left, links and watch-outs on the right.
 
 Take the worst moment of my day. At 13:20 I accidentally shut down every AI assistant running the project: "So that was bad." Its card tags it failure and recovery, personality, building in public. It links forward to me asking a fresh assistant to bring them all back, then to 13:44, when the rescue became an instant fix for next time. Its watch-out: a stranger needs one line on what got shut down.
 
@@ -44,6 +50,7 @@ Take the worst moment of my day. At 13:20 I accidentally shut down every AI assi
 
 > [!figure] /demos-assets/label-every-piece-before-you-build-a-page/theme-vocabulary.png
 > the 14 themes every card draws from, and how many of the 74 cards carry each one
+> Check the counts: 35 cards on running lots of AI at once, 3 on sorting leads. That gap is the hole I get to further down.
 
 The cards were honest about me, too. They caught me claiming six months of prior work in two clips and about nine months in another. Better a label catches that than a prospect. (The rough edge: I typed no notes while grading, so every "where it could be used" is the AI's call, not mine.)
 
@@ -51,6 +58,7 @@ Then everything usable went into one catalog: 178 rows, each with its themes, th
 
 > [!figure] /demos-assets/label-every-piece-before-you-build-a-page/catalog-rows.png
 > five of the 178 catalog rows: what each piece is, its themes, the jobs it can do in a story and who it fits most
+> Five rows. The last line of each, who it serves, is what sends a piece to the CEO's page or the delivery lead's.
 
 ## Same library, six different stories
 
@@ -60,8 +68,12 @@ The BI lead gets every data-handling moment I have: keys set up off camera, a le
 
 > [!figure] /demos-assets/label-every-piece-before-you-build-a-page/bi-lead-lines.png
 > one reader's path: the BI lead's set of my lines, each with the clip it's from and why it matters to that role
+> The BI lead's path: keys set up off camera, a leak check, cited photos. Each line says where it's from and why it matters to them.
 
 At 11:17 that morning I'd promised exactly this: "the agent's going to look at which transcripts are going to match which stakeholder." The labels made that sentence true.
+
+> [!video] qrBNOsSYGrQ 696 731
+> 11:17 on day one: a page for every stakeholder, and an agent matching my transcripts to each one
 
 They also showed me a hole. Sorting leads into ideal customer profiles is the thing I most wanted to show off, and I had three moments on it, only one of them Great. Better to learn that the night before than after the links went out.
 
@@ -72,5 +84,8 @@ Outbound used to be "two things that you had to balance, personalization and vol
 The expensive part isn't writing the pages. It's knowing what you've got. And the inputs mostly exist already, in work your team does anyway. All I was doing that day was my work.
 
 **Label your library once, and an AI can build a page per stakeholder, per account.** That morning I admitted "I cannot do this to 30 companies a day yet." The labelling is the yet. I could do this same project tomorrow in a lot less time, and every page after that gets cheaper. Picture your conversion rate if every key account in your CRM got a page like this.
+
+> [!video] qrBNOsSYGrQ 270 303
+> Day one, 11:11: this is a costly signal, and I can't do it for 30 companies a day. Yet.
 
 None of you is going to read all of this, and I know it. That's why each of the six gets a path. The labels already know which one.

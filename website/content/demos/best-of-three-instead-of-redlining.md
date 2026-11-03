@@ -33,6 +33,9 @@ Nobody had placed things badly on purpose. There were hundreds of pieces, and no
 
 That morning I'd said on camera that my time was the bottleneck, and my focus was an even tighter one. By 20:15 I was living it.
 
+> [!video] M38hI3M3Heo 724 741
+> That morning, on camera: if my time is the bottleneck, my focus is an even tighter one
+
 So before anything moved, every piece got listed and described: 201 written pieces, 204 video items and 24 reusable AI skills. The point was that an AI could decide whether a piece fits **without asking me**. (That step has its own article.)
 
 ## Three versions, each arguing for itself
@@ -51,6 +54,9 @@ Those are calls only I can make. Nudging a heading isn't.
 
 This is what made it cheap. **Two of the three said their own weak spot gets fixed by borrowing from another.** The proof version admitted it opens on numbers and I "appear small", and its own fix was to open on me and keep the numbers underneath. The story version admitted its proof arrives late, and said its fallback would land close to the proof version anyway, "so the morning's best-of costs little."
 
+> [!figure] /demos-assets/best-of-three-instead-of-redlining/three-versions.png
+> Three versions of the same piece, each leading with a different case and naming its riskiest choice, then combined into one
+
 So a fourth agent combined them. The thesis version gave the frame and the argument, the proof version gave the proof, and the story version gave the person: the day in clock order, low points kept. Eleven pages. Every new line of copy was flagged and rewritten in my voice while the pages went into the real site.
 
 It went live at 23:40, under three and a half hours after I'd lost control of it. Not finished, and that's fine. I'd rather redline the real site than a fourth mockup.
@@ -66,5 +72,8 @@ AI drafts fast and cheap now. What's expensive is the hour your head of marketin
 So I set it up the other way around. Three versions of the campaign, the landing page or the pitch, each making a different case and saying where it's weakest. Your senior person reads three arguments, picks a direction and says what to steal from the other two. Then one version gets the line edits, once.
 
 Extra drafts cost machine time. Redlining costs your best people's time, and that's the part that doesn't scale.
+
+> [!video] NyD-epukcWs 2037 2054
+> Build day, about 5 pm: it's not what the agents can focus on. The bottleneck is always human
 
 You can have 20 agents running side by side. You can't review 20 versions. The bottleneck is always, always, always human, so spend the human on the choice and the last 10%, and nowhere else.

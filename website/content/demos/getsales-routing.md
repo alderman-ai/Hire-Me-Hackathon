@@ -9,13 +9,13 @@ kind: "showcase"
 deliverable: "d3"
 library_id: "demo-getsales-routing"
 group: "Outbound"
-poster: "/demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png"
 cover:
   kicker: "Outbound"
   subtitle: "Every lead lands in exactly one workflow, and every decision shows what settled it."
   accent: "why each lead"
 tags: ["outbound", "classification"]
 reading_minutes: 4
+poster: "/demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png"
 ---
 A lead comes out of a LinkedIn search with "Entertainment Providers" in the industry column. Read the company description and it's a paid streaming service selling subscriptions online. That's exactly who your Oneplay story was written for. A rule matching on industry would never send it there.
 
@@ -31,15 +31,7 @@ Then I ran twelve fictional leads through the sorter, printing every decision wi
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png
 > Screen output, part 1: four fictional leads, each decision tagged rule or Jev, each lead ending on its sequence
-> Part 1 of 3: violet means a rule decided, amber means a question for the model
-
-> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-2.png
-> Screen output, part 2: four more fictional leads, each decision tagged rule or Jev, each lead ending on its sequence
-> Part 2 of 3: the Slovak lender here is one of the two hard cases further down
-
-> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-3.png
-> Screen output, part 3: the last four fictional leads, each decision tagged rule or Jev, then the one-line summary
-> Part 3 of 3: the software company fits no customer type and is logged with its reason; nothing is imported or sent
+> Part 1 of 3. Violet means a rule decided, amber means the model got a question. The grocery chain at the top took three rules
 
 ## Rules go first because they're free
 
@@ -51,11 +43,14 @@ The customer type comes from industry and company size: a grocery chain with 4,2
 
 "Financial Services" says too little for a rule. So the model reads the company's public description, names stripped out first, and answers one question: which of your four customer types is this, none of them, or can't tell?
 
+> [!video] _vgNB5ubKjA 634 654
+> What Jev is: a classification model that doesn't write text, it gives likelihoods and judgment calls
+
 **An answer only counts if the model is at least 75% sure and 25 points ahead of its second choice.** Otherwise a person decides. The same kind of question picks the opening. A streaming service looks like your Oneplay case. A domestic courier looks like none of your stories yet, so its message opens on a known pain instead.
 
-> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-hard-cases.png
-> Screen output for a Slovak lender and a Czech streaming service, whose labels are too broad for a rule: the question the model gets and the answer a person gave
-> The two hard cases, where no rule can decide the customer type
+> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-2.png
+> Screen output, part 2: four more fictional leads, each decision tagged rule or Jev, each lead ending on its sequence
+> Part 2 of 3. Look at the Slovak lender: "Financial Services" is too broad for a rule, so the model gets the question, in amber
 
 Honest caveat: the model isn't called in this run. The hard cases show answers a person labelled, and nothing was imported or sent. That's how this starts for real anyway, right? Your labels are what tune the questions.
 
@@ -63,11 +58,18 @@ Honest caveat: the model isn't called in this run. The hard cases show answers a
 
 The software company gets logged with its reason, "B2B software, 120 employees", and nobody writes to it. That log tells you which LinkedIn search was too wide.
 
+> [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-3.png
+> Screen output, part 3: the last four fictional leads, each decision tagged rule or Jev, then the one-line summary
+> Part 3 of 3. The software company at the bottom fits no customer type: logged with its reason, no sequence, no message
+
 After that, replies and meetings show which sequences work. A lead in the wrong one (a reply like "we don't run a loyalty programme") gets relabelled by a person and becomes a new example. When the model keeps making the same call, it becomes a rule.
 
 ## Then I ran the same model on your team
 
 This part is real. Mid-afternoon on the day I built this, I stopped counting your people on LinkedIn by hand and handed it over: classify everyone at Addvery, and tell me who sends outreach. I wanted to see if I could rebuild your sales team from public data. (Maybe that's over-engineering.)
+
+> [!video] cNI9EgxHUbk 1348 1371
+> Build day, mid-afternoon: I ask for a model that finds who at Addvery sends outreach
 
 It read all 57 people who list Addvery on LinkedIn: public profiles and posts, no login. For 55 it was sure enough what they do. For the other 2, their job titles decided.
 

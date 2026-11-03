@@ -25,6 +25,9 @@ This site is built in Addvery's own colors, type and motion, with a personal pag
 
 Before AI, outreach was a trade between personalization and volume. You could do heavy research, but that took so long you kept it to your key accounts. Or you shotgun blasted everyone. Most people ended up in the middle or with the shotgun, and at the time the shotgun was actually correct.
 
+> [!video] qrBNOsSYGrQ 203 237
+> The old trade in my own words: research a few key accounts, or blast everyone
+
 People always knew which one they were getting. A first name in line one proves nothing. Time spent on you specifically was the costly signal. What's new is that you don't have to pick anymore. Once it's automated, it looks costly, and it isn't.
 
 ## Your website hands over most of your brand guide
@@ -33,12 +36,16 @@ Your website sends every visitor's browser your colors, fonts, spacing, buttons 
 
 At about 15:30 on build day, I told the AI building this site to make it "as cloned as possible to the Addvery website", copied from the site itself, not guessed.
 
+> [!video] cNI9EgxHUbk 480 510
+> Build day: I tell the AI to make this site as close to addvery.com as it can, logos and icons too
+
 It went through 7 of addvery.com's pages at four screen sizes, from desktop down to phone, and wrote down the exact look of everything on screen, down to the 1,129 animation triggers.
 
 The new look was done at 16:30. About an hour. Out came 225 lines of brand rules: the blacks, the violet-to-orchid gradient, text sizes for every screen, the spacing, the 10-pixel rounded corners, and the way images rotate in as you scroll, to the degree. (-20, -10 and +8. No really.)
 
 > [!figure] /demos-assets/build-it-in-their-brand/addvery-brand-tokens.png
 > Addvery's colors, gradients and fonts, as pulled from addvery.com
+> Pulled from addvery.com, not guessed: the neutrals, the violet-to-orchid gradients and the type
 
 The rough edge is fonts. Two of Addvery's fonts are free, so they're exact. The headline font is licensed, so a free lookalike stands in, at maybe 80 to 85% of the look. That's the gap in the last 10%, and like staff photos and client logos, you shouldn't take it anyway.
 
@@ -50,11 +57,13 @@ The background is one fixed image with two colored blocks marking where things g
 
 > [!figure] /demos-assets/build-it-in-their-brand/backdrop-and-finished-card.png
 > The empty background with its two placeholder blocks, beside the finished card
+> Left, the fixed background with its two colored blocks. Right, the same background with the photo and the card dropped in
 
 **The design never changes. The AI only gets the words**, and each one is counted before it goes on the card: 30 characters for the name, 39 for role and company, 26 for the topic, 115 for the blurb.
 
 > [!figure] /demos-assets/build-it-in-their-brand/card-field-mapping.png
 > What the AI writes, where it lands, and its character limit
+> Each label is one field the AI fills, with its rule. The ones marked static never change
 
 Over the limit, the run stops instead of trimming, because a silent fix ships looking almost right and nobody notices until it's public. And the limits are measured, not guessed: at 140 characters, a test card shipped cut off mid-sentence at 116 while a 128-character blurb fit fine. 115 is the longest that actually fits.
 
@@ -63,6 +72,9 @@ Over the limit, the run stops instead of trimming, because a silent fix ships lo
 Once the design is locked, the next card costs a filled-in form and one look to check it. Pull a company's brand once, and every stakeholder gets their own words in a layout that never moves. At the meetup rehearsal, four cards for the same speaker came back with four different blurbs and topics, and one identical layout. **Different words for every person, the same brand to the pixel.**
 
 Everyone's blasting out AI: low quality, high volume. The space is for work so good they think you spent three days building it just for them, when an agent ran in the background for a couple of hours.
+
+> [!video] qrBNOsSYGrQ 517 566
+> Once it's automated it looks costly and isn't: work so good they think you spent three days on it
 
 I can't do it to 30 companies a day. Yet. What I built is reusable, so a new company would take half the time.
 

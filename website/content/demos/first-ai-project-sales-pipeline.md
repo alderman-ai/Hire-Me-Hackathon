@@ -14,6 +14,9 @@ cover:
   accent: "your sales pipeline"
 tags: ["pipeline", "outreach"]
 reading_minutes: 5
+video:
+  youtube_id: "Oh9u-oT5sk0"
+  start: 0
 ---
 A lot of companies are saying some version of this: "We want to bring AI in, but we're not going to fire half the team."
 
@@ -29,9 +32,6 @@ If you really want to save your team, the order matters.
 > The first place you need to put AI is in your pipeline, so that you can upskill your people to get more done and at the same time bring in more work. Otherwise you're going to have very uncomfortable decisions, and your comfort levels may vary.
 > Alex Alderman, on camera, 2 Nov 2026
 
-> [!video] qrBNOsSYGrQ 425 499
-> On camera, 2 Nov: keep your team, and put AI in the pipeline first
-
 In sales, the whole information-gathering process is completely automatable. So I build the tools for the salespeople, or whoever's doing outreach, and teach them how to use them. The meeting prep alone is tons of hours people save on preparing pitches.
 
 ## What that looks like when I build it
@@ -44,9 +44,7 @@ The other build was 36 outreach workflows in GetSales: four main customer profil
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflows-folder.png
 > six of the 36 outreach workflows, each named by customer profile, language and tactic, all switched off with no contacts in them
-
-> [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/message-1-variable.png
-> one workflow open: a day after a lead connects, the message it sends is a single field, written for that one lead before the list goes in
+> Each name is customer profile, language and tactic. All switched off, zero contacts: nothing sends
 
 ## You don't have to pick between personalization and volume
 
@@ -64,6 +62,10 @@ Everyone's blasting out AI, low quality, high volume. There's going to be a spac
 
 My goal is something that costs one to three or four euros, about 98% automated, where anyone who gets it thinks they're one of your top one or two accounts, because no one else would put that much effort in. **Imagine if you could make everyone in your CRM feel that way.**
 
+> [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/message-1-variable.png
+> one workflow open: a day after a lead connects, the message it sends is a single field, written for that one lead before the list goes in
+> Look at the message box: one field, written for that one lead before the list goes in. That's the effort, automated
+
 ## The bottleneck is always human
 
 You can have 20 AI agents running side by side, so time is no longer the bottleneck. The bottleneck is focus, judgment, discernment.
@@ -72,14 +74,14 @@ You can have 20 AI agents running side by side, so time is no longer the bottlen
 > The bottleneck is always, always, always human. It's not the amount of stuff that the agents can focus on, it's humans.
 > Alex Alderman, on camera, 2 Nov 2026
 
-> [!video] 0_OKP-0C6Xk
-> On camera, 2 Nov: the bottleneck is always human
-
 So the tools come with training. Getting real people to actually use AI is the part you can't automate. The companies that win the next decade won't have the best AI. They'll have the most literate people.
 
 ## Someone has to keep refining it
 
 It's still not free: every run costs money. So if it's all built in the first month, why do you still need someone? Because it needs to work better, it needs to get cheaper, people need to learn how to use it, and it needs upgrading, constantly.
+
+> [!video] qrBNOsSYGrQ 597 609
+> Built in month one, so why keep me? To make it work better and cheaper, and teach people to use it
 
 A first build starts on the expensive side. I know how to make it more efficient, but a build done in 12 hours under time pressure won't be.
 
