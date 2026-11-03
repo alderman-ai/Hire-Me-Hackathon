@@ -17,7 +17,7 @@ reading_minutes: 4
 video:
   youtube_id: "NeASfMN1Kcc"
   start: 52
-  end: 125
+  end: 121
 poster: "/demos-assets/label-every-piece-before-you-build-a-page/bi-lead-lines.png"
 ---
 By the evening of my first day building this site, I had hundreds of pieces of content and couldn't tell you which ones went together. The pages kept stacking the wrong things, and a lot of the decisions about what went where were, honestly, silly.
@@ -85,7 +85,7 @@ The expensive part isn't writing the pages. It's knowing what you've got. And th
 
 **Label your library once, and an AI can build a page per stakeholder, per account.** That morning I admitted "I cannot do this to 30 companies a day yet." The labelling is the yet. I could do this same project tomorrow in a lot less time, and every page after that gets cheaper. Picture your conversion rate if every key account in your CRM got a page like this.
 
-> [!video] qrBNOsSYGrQ 270 303
+> [!video] qrBNOsSYGrQ 270 308
 > Day one, 11:11: this is a costly signal, and I can't do it for 30 companies a day. Yet.
 
 None of you is going to read all of this, and I know it. That's why each of the six gets a path. The labels already know which one.

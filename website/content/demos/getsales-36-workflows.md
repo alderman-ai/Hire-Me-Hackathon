@@ -15,7 +15,7 @@ tags: ["outbound", "getsales", "classification"]
 reading_minutes: 4
 video:
   youtube_id: "_vgNB5ubKjA"
-  start: 146
+  start: 139
   end: 222
 ---
 Most outbound runs on one sequence of messages, maybe one per customer type. Everyone on the list gets the same words in the same order.
@@ -62,7 +62,7 @@ Research tells you what to say, not which of the 36 someone belongs in.
 
 One of the coolest tools in AI is one no one's heard of, because it doesn't write anything. It's a classification model: it gives you odds. Give it a profile plus everything you know about their company, and it answers narrow questions. Is this a good person to reach out to? Which customer type?
 
-> [!video] _vgNB5ubKjA 669 713
+> [!video] _vgNB5ubKjA 665 713
 > The questions the model answers about each lead: worth contacting, which customer type, which tone
 
 It can go further. Anyone good at sales mirrors people: if they're informal, you're informal. Read their posts or interviews, even in a language you don't speak, and pick the sequence that fits their personality. This is where the fun happens.
@@ -71,14 +71,14 @@ It can go further. Anyone good at sales mirrors people: if they're informal, you
 
 Say you've got 120 sequences. The model picks the one that should do best for each person, then you watch. When your favorite gets bad results, you tweak how the model decides, or kill the sequence that's always worse.
 
-> [!video] _vgNB5ubKjA 730 774
+> [!video] _vgNB5ubKjA 736 774
 > Ask the model which sequence should win, watch the results, then tweak the model or kill the loser
 
 **Nothing in AI is a one-time setup where you press play.** Refining is the main work: looking at the data and asking what to switch. That's a systems management job, not a type-things-into-AI job.
 
 It also has to be built so your salespeople, who aren't AI experts, can run it.
 
-> [!video] _vgNB5ubKjA 886 926
+> [!video] _vgNB5ubKjA 883 926
 > Built so your salespeople can run it, then refined: why building is a phase, not the deliverable
 
 ## Every account, not only the key ones
