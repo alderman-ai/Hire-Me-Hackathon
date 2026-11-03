@@ -29,34 +29,52 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
-/** A poster, else the video's YouTube thumbnail, else none. */
+// The order is fixed (Alex, 3 Nov), not newest first. Anything not listed follows, newest first.
+const ORDER = [
+  "who-writes-the-linkedin-posts-for-your-outreach-accounts",
+  "if-ai-wont-replace-half-your-team",
+  "ai-workflows-are-always-a-managed-service",
+  "36-outbound-workflows-and-the-one-variable-behind-them",
+  "sorting-twelve-leads-into-36-workflows-rules-first-then-jev",
+  "teaching-a-machine-to-sound-like-me",
+  "build-it-in-their-brand",
+  "label-every-piece-before-you-build-a-page",
+  "best-of-three-instead-of-redlining",
+];
+
+function ordered(entries: Entry[]): Entry[] {
+  const rank = (e: Entry) => {
+    const i = ORDER.indexOf(e.slug);
+    return i === -1 ? ORDER.length : i;
+  };
+  return entries.map((e, n) => ({ e, n })).sort((x, y) => rank(x.e) - rank(y.e) || x.n - y.n).map((x) => x.e);
+}
+
+/** The lead visual: the poster, else the first figure in the body, else the video's poster frame. */
 function thumbnail(e: Entry): string | undefined {
   if (e.poster) return e.poster;
+  const fig = /\[!figure\]\s+(\S+)/.exec(e.body ?? "");
+  if (fig) return fig[1];
   if (e.video) return `https://i.ytimg.com/vi/${e.video.youtube_id}/hqdefault.jpg`;
   return undefined;
 }
 
-function Row({ entry }: { entry: Entry }) {
+function Card({ entry }: { entry: Entry }) {
   const thumb = thumbnail(entry);
-  const isVideo = !!entry.video;
   const length = lengthLabel(entry);
   return (
-    <li className={`entry-row${thumb ? " has-thumb" : ""}`}>
-      {thumb && (
-        <div className="entry-row-thumb">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={thumb} alt="" loading="lazy" width={480} height={270} />
-          {isVideo && <span className="entry-row-play" aria-hidden="true" />}
-        </div>
-      )}
-      <div className="entry-row-text">
-        <p className="entry-row-meta">
-          <span className={`post-kind ${isVideo ? "post-kind-session" : "post-kind-insight"}`}>
-            {isVideo ? "Video" : "Article"}
-          </span>
-          <span className="entry-row-kicker">{entry.cover.kicker}</span>
-        </p>
-        <h2 className="entry-row-title">
+    <li className="entry-card">
+      <div className="entry-card-thumb">
+        {thumb ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={thumb} alt="" loading="lazy" />
+        ) : (
+          <span className="entry-card-blank" aria-hidden="true" />
+        )}
+      </div>
+      <div className="entry-card-text">
+        <p className="entry-row-kicker">{entry.cover.kicker}</p>
+        <h2 className="entry-card-title">
           <Link href={entryUrl(entry.slug)}>{entry.title}</Link>
         </h2>
         <p className="entry-row-dek">{entry.cover.subtitle}</p>
@@ -75,7 +93,7 @@ function Row({ entry }: { entry: Entry }) {
 }
 
 export default function DemosIndex() {
-  const entries = visibleEntries();
+  const entries = ordered(visibleEntries());
   const preview = showUnpublished();
   const hidden = preview ? entries.filter((e) => e.status !== "published").length : 0;
 
@@ -93,7 +111,7 @@ export default function DemosIndex() {
             </p>
           )}
           <p className="art-back">
-            <Link href="/">← Back to the live feed</Link>
+            <Link href="/">← Back to the home page</Link>
           </p>
           <div className="entry-kicker-row">
             <span className="entry-kicker-bar" aria-hidden="true" />
@@ -114,21 +132,20 @@ export default function DemosIndex() {
             All entries
           </h2>
           {entries.length > 0 ? (
-            <ol className="entry-list">
+            <ol className="entry-grid">
               {entries.map((e) => (
-                <Row key={e.slug} entry={e} />
+                <Card key={e.slug} entry={e} />
               ))}
             </ol>
           ) : (
             <div className="entry-empty">
-              <p className="entry-empty-title">No demos are published yet.</p>
+              <p className="entry-empty-title">No articles are published yet.</p>
               <p className="entry-empty-body">
-                Each one goes up here when Alex has finished it, as a written post or a video. Until then, the live
-                feed shows the work as it happens.
+                Each one goes up here when it is finished.
               </p>
               <p>
                 <Link href="/" className="entry-empty-link">
-                  Go to the live feed
+                  Go to the home page
                 </Link>
               </p>
             </div>

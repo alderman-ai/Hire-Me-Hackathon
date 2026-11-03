@@ -1505,3 +1505,114 @@
   line-height: 1.45;
   text-wrap: pretty;
 }
+
+
+/* ---------- The index as a grid of cards (3 Nov) ---------- */
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 720px) {
+  .entry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1120px) {
+  .entry-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.entry-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--av-lilac-300, #e3dfea);
+  border-radius: var(--av-radius-lg, 10px);
+  background: var(--av-white, #fff);
+}
+
+.entry-card-thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--av-plum-900, #26222c);
+}
+
+.entry-card-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.entry-card-blank {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--av-plum-900, #26222c), var(--av-plum, #4a1d73));
+}
+
+.entry-card-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.entry-card-text > .entry-row-kicker {
+  margin: 0 0 0.625rem;
+}
+
+.entry-card-title {
+  margin: 0;
+  color: var(--av-ink, #151515);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.3125rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: var(--av-editorial-tracking, -0.02em);
+  text-wrap: balance;
+}
+
+.entry-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.entry-card-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.entry-card-title a:hover,
+.entry-card-title a:focus-visible {
+  color: var(--av-amethyst, #8b3fcf);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.entry-card:focus-within {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 3px;
+}
+
+.entry-card .entry-row-dek {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.entry-card .entry-row-info {
+  margin-top: auto;
+  padding-top: 1rem;
+}
