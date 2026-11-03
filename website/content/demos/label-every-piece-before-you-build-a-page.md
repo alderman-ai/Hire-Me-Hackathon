@@ -36,7 +36,7 @@ So I started with the part no AI should do. I watched every clip, one at a time,
 Every clip I kept got a label card, 74 of them. A card is what an AI reads instead of watching the video: the gist, my exact words (a script rejects any quote that isn't word for word), one to four themes, which other pieces it connects to, where it could be used, and what to watch out for.
 
 > [!figure] /demos-assets/label-every-piece-before-you-build-a-page/side-card-13-20.png
-> the card for the moment I shut down every AI assistant by accident: what happens, my exact words, its themes, what it links to, where it could go and what to watch out for
+> the card for the moment I shut down every AI assistant by accident: what happens, my words, its themes, its links and what to watch out for
 
 Take the worst moment of my day. At 13:20 I accidentally shut down every AI assistant running the project: "So that was bad." Its card tags it failure and recovery, personality, building in public. It links forward to me asking a fresh assistant to bring them all back, then to 13:44, when the rescue became an instant fix for next time. Its watch-out: a stranger needs one line on what got shut down.
 
