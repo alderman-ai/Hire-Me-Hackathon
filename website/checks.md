@@ -24,3 +24,9 @@ Run at every forking gate and once after the night's last build (SPEC.md §7 ste
 - **Leak scan** (`..\blog-pipeline\scripts\scan.py`): 99 fails, every one expected. 91 secret-shaped runs, all on URL lines (89 LinkedIn post links on `/about`'s wall, 2 links to Addvery's public privacy PDF on `/d2`). 2 contact hits: Addvery's public info email on `/d2`. 6 deny hits: the charter on `/docs/charter` naming the proposal and his outbound, which DoD-22 allows. 413 NAME warnings (site names, headings). Nothing printed.
 - **Audit** (`audit_page.mjs`, 1,440 and 390 px): `/`, `/log`, `/for/growth`, `/privacy` have one h1 each and no sideways scroll. `/log` keeps its older h1 to h3 skip (post titles).
 - **Result:** clean for M1+M2.
+
+## 3 Nov, ~09:35 · before promoting M3 (Day 1 wording) and /d2's one h1, on the M3 preview's build (c496a68)
+
+- **Pages:** all 21 routes rendered from the export with the four flags and `VERCEL_ENV=production`, all 200. The two new lines read as sent: `/d2` "I ran it myself on Day 1, and what it found fed..."; `/log` "Day 1 really was costly (I can't do this for 30 companies a day)...". `/d2` and `/log` each have one h1.
+- **Leak scan:** the same 99 expected fails as at 09:25, and nothing new: 91 secret-shaped runs, all on URL lines (89 LinkedIn on `/about`, 2 Addvery's public PDF on `/d2`), 2 contact hits (Addvery's public email on `/d2`), 6 deny hits in the charter. Nothing printed.
+- **Result:** clean for M3.
