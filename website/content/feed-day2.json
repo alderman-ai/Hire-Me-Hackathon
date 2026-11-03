@@ -2,6 +2,90 @@
   "about": "Day 2's feed (3 Nov), newest on top: same post shape as content/feed.json, shown at /day-2.",
   "posts": [
     {
+      "id": "day2-s19",
+      "at": "2026-11-03T12:01",
+      "kind": "Update",
+      "session": "S19",
+      "title": "[words coming: S19 update title]",
+      "blocks": [
+        {
+          "type": "video",
+          "session": "S19",
+          "start": 1,
+          "end": 162
+        },
+        {
+          "type": "p",
+          "text": "[words coming: S19 update paragraph]"
+        }
+      ]
+    },
+    {
+      "id": "day2-walkthrough",
+      "at": "2026-11-03T11:58",
+      "kind": "Update",
+      "title": "36 sequences, and who goes into which one",
+      "blocks": [
+        {
+          "type": "doc-link",
+          "href": "/demos/36-outbound-workflows-and-the-one-variable-behind-them",
+          "text": "Read the full write-up"
+        }
+      ]
+    },
+    {
+      "id": "day2-highlights",
+      "at": "2026-11-03T11:19",
+      "kind": "Update",
+      "title": "Day 1's highs and lows",
+      "blocks": [
+        {
+          "type": "doc-link",
+          "href": "/log#highlights",
+          "text": "[words coming: link label to Day 1's highlights]"
+        }
+      ]
+    },
+    {
+      "id": "day2-art-voice",
+      "at": "2026-11-03T10:30",
+      "kind": "Update",
+      "title": "Teaching a machine to sound like me",
+      "blocks": [
+        {
+          "type": "doc-link",
+          "href": "/demos/teaching-a-machine-to-sound-like-me",
+          "text": "Read the full write-up"
+        }
+      ]
+    },
+    {
+      "id": "day2-art-label",
+      "at": "2026-11-03T10:30",
+      "kind": "Update",
+      "title": "Label every piece before you build a page",
+      "blocks": [
+        {
+          "type": "doc-link",
+          "href": "/demos/label-every-piece-before-you-build-a-page",
+          "text": "Read the full write-up"
+        }
+      ]
+    },
+    {
+      "id": "day2-art-brand",
+      "at": "2026-11-03T10:30",
+      "kind": "Update",
+      "title": "Build it in their brand",
+      "blocks": [
+        {
+          "type": "doc-link",
+          "href": "/demos/build-it-in-their-brand",
+          "text": "Read the full write-up"
+        }
+      ]
+    },
+    {
       "id": "day2-update",
       "at": "2026-11-03T10:16",
       "kind": "Update",

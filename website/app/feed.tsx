@@ -267,7 +267,7 @@ export function FeaturedPost({ post }: { post: Post }) {
 }
 
 // The white column of cards between dark bands.
-function Column({ posts }: { posts: Post[] }) {
+export function Column({ posts }: { posts: Post[] }) {
   return (
     <section className="feed-column on-light" aria-label="Earlier posts">
       <div className="feed-column-inner">

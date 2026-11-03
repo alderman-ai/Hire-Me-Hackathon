@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FeaturedPost, FeedPost, type Post } from "../feed";
+import { Column, FeaturedPost, type Post } from "../feed";
 import { NEW_SITE } from "../flags";
 import { t } from "../copy";
 import day2 from "@/content/feed-day2.json";
@@ -28,18 +28,12 @@ export default function Day2Page() {
           <h1 id="day2-title" className="feed-heading">
             {t("day2.title")}
           </h1>
+          {/* The posts' h3 titles sit under an h2, so the outline runs h1, h2, h3. */}
+          <h2 className="sr-only">{t("hack.menu.day2")}</h2>
           {newest && <FeaturedPost post={newest} />}
         </div>
       </section>
-      {older.length > 0 && (
-        <section className="feed-col" aria-label={t("day2.title")}>
-          <div className="container">
-            {older.map((p) => (
-              <FeedPost key={p.id} post={p} />
-            ))}
-          </div>
-        </section>
-      )}
+      {older.length > 0 && <Column posts={older} />}
     </main>
   );
 }

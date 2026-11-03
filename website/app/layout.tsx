@@ -28,9 +28,9 @@ const HACK: HackWords | undefined = NEW_SITE
       onBreak: t("hack.status.break"),
       finished: t("hack.status.finished"),
       built: t("hack.status.built"),
-      menuLabel: t("hack.menu.label"),
+      menuLabel: "Hire Me Hackathon",
       groups: [
-        { label: t("hack.menu.label"), items: HACK_ITEMS.filter((i) => i.ready).map((i) => ({ href: i.href, label: t(i.label) })) },
+        { items: HACK_ITEMS.filter((i) => i.ready).map((i) => ({ href: i.href, label: t(i.label) })) },
         { fresh: true, items: DAY2_READY ? [{ href: "/day-2", label: t("hack.menu.day2") }] : [] },
       ].filter((g) => g.items.length > 0),
     }
