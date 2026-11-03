@@ -86,12 +86,6 @@
           "line": "skills.brand-clone-tokens.1"
         },
         {
-          "id": "brand-voice-posts-graded-blind",
-          "name": "LinkedIn posts in a brand's voice, graded blind",
-          "line": "skills.brand-voice-posts-graded-blind.1",
-          "path": "linkedin-content\\PIPELINE.md"
-        },
-        {
           "id": "linkedin-wall-builder",
           "name": "LinkedIn wall: a person's best posts as social proof",
           "line": "skills.linkedin-wall-builder.1",

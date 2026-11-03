@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   demoName,
   draftLine,
@@ -117,8 +117,14 @@ function jsonLd(entry: Entry): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
+// Entries taken off the site, and where their old links go now (3 Nov, M5: Alex, "that gets killed").
+const RETIRED: Record<string, string> = {
+  "linkedin-posts-in-addverys-voice-graded-blind": "/demos",
+};
+
 export default async function EntryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (RETIRED[slug]) redirect(RETIRED[slug]);
   const entry = findEntry(slug);
   if (!entry) notFound();
 

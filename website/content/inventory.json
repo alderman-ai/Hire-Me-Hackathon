@@ -954,18 +954,6 @@
       "total_min": 14,
       "one_line": "Full S02 webcam: Alex explains why this hackathon exists and what it builds.",
       "notes": "Unlisted YouTube upload of the S02 webcam, 829 s from the rig's manifest (YouTube oEmbed 200). Embedded in /#post-s02 from 62 s."
-    },
-    {
-      "path": "/demos/linkedin-posts-in-addverys-voice-graded-blind",
-      "title": "LinkedIn posts in Addvery's voice, graded blind",
-      "kind": "demo-entry",
-      "live": true,
-      "words": 1600,
-      "read_min": 7,
-      "video_min": 0,
-      "total_min": 7,
-      "one_line": "Five posts in Addvery's voice, each scored blind against 21 voice rules.",
-      "notes": "Added by website at 18:40 from the template's own read-time estimate (about 7 min)."
     }
   ]
 }

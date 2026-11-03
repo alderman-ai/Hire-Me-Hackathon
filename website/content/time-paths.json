@@ -51,12 +51,11 @@
   "paths": {
     "5": ["/d1", "/#post-insight-bottleneck"],
     "10": ["/d1", "/for/<your-slug>", "/#post-workflows-built", "/#post-research-in", "/#post-insight-bottleneck"],
-    "20": ["/d1", "/for/<your-slug>", "/#post-workflows-built", "/demos/linkedin-posts-in-addverys-voice-graded-blind", "/#post-s11"],
+    "20": ["/d1", "/for/<your-slug>", "/#post-workflows-built", "/#post-s11"],
     "60": [
       "/d1",
       "/for/<your-slug>",
       "/#post-workflows-built",
-      "/demos/linkedin-posts-in-addverys-voice-graded-blind",
       "/d2",
       "/#post-s02",
       "/#post-reset",

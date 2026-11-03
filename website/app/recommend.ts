@@ -33,9 +33,8 @@ export const RECOMMEND_ON = NEW_SITE && !(PLACEHOLDER && IS_PRODUCTION_BUILD);
 
 // Library ids whose page is a published entry under another slug. Entries made from now on carry
 // `library_id` in their front matter instead.
-const ENTRY_SLUG: Record<string, string> = {
-  "demo-linkedin-voice-entry": "linkedin-posts-in-addverys-voice-graded-blind",
-};
+// (The LinkedIn voice entry, "demo-linkedin-voice-entry", came off the site on 3 Nov, M5.)
+const ENTRY_SLUG: Record<string, string> = {};
 
 /** `dek` is the page's own one-liner: a card shows it when its list item has no why-line. */
 type Target = { href: string; title: string; dek?: string; image?: RecImage; youtube?: string };

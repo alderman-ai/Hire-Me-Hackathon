@@ -16,7 +16,7 @@
       {
         "id": "so-good-ai-that-it-looks-human",
         "why": "",
-        "fallback": "demo-linkedin-voice-entry"
+        "fallback": "art-best-of-three-instead-of-redlining"
       },
       {
         "id": "art-managed-service",
@@ -38,7 +38,7 @@
       {
         "id": "so-good-ai-that-it-looks-human",
         "why": "",
-        "fallback": "demo-linkedin-voice-entry"
+        "fallback": "art-best-of-three-instead-of-redlining"
       },
       {
         "id": "art-pipeline-promise",
@@ -175,7 +175,7 @@
       {
         "id": "art-managed-service",
         "why": "",
-        "fallback": "demo-linkedin-voice-entry"
+        "fallback": "art-best-of-three-instead-of-redlining"
       },
       {
         "id": "art-ai-slop-to-ai-ops",

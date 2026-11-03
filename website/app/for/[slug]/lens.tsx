@@ -60,7 +60,6 @@ const CHIP = {
   apify: { skill: "account-scrape-apify", label: "Account research scraper on Apify, with no logins" },
   people: { skill: "account-people-classifier", label: "Account mapping: classifying every employee and post at a target company" },
   brand: { skill: "brand-clone-tokens", label: "Brand clone: a company's live site turned into design tokens" },
-  voice: { skill: "brand-voice-posts-graded-blind", label: "LinkedIn posts in a brand's voice, graded blind" },
   article: { skill: "transcript-to-article", label: "Transcript-to-article kit" },
 } satisfies Record<string, Chipped>;
 
@@ -295,43 +294,12 @@ function Cofounder1Lens({ slug }: { slug: string }) {
 
 // ---------------------------------------------------------------- cofounder-2
 
-const VOICE_ENTRY = "linkedin-posts-in-addverys-voice-graded-blind";
+// The LinkedIn voice entry's block came off this page on 3 Nov (M5); the S02 clip block stays.
 
 function Cofounder2Lens() {
   const human = clipFor("S02-h");
-  const entry = findEntry(VOICE_ENTRY);
   return (
     <>
-      {entry && (
-        <Band tone="light" labelledBy="pl-voice">
-          <EyebrowRow>{t("for-cofounder-2.voice.1")}</EyebrowRow>
-          <Link href={entryUrl(VOICE_ENTRY)} className="pl-entry">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/demos/linkedin-voice/post-2/slide-1.webp"
-              alt="The first slide of a LinkedIn carousel written in Addvery's voice"
-              width={540}
-              height={675}
-              loading="lazy"
-              decoding="async"
-            />
-            <span className="pl-entry-body">
-              <h2 id="pl-voice" className="bx-h2 pl-entry-title">
-                LinkedIn posts in Addvery&rsquo;s voice, graded blind
-              </h2>
-              <span className="bx-lead">
-                Five posts in Addvery&rsquo;s company voice met all 21 rules of a voice rubric, scored by an AI judge that wrote none of them. The same AI, asked for Addvery&rsquo;s voice without the rubric, met 12.
-              </span>
-              <span className="bx-link pl-entry-go">
-                {t("for-cofounder-2.voice.2")}
-                <svg className="bx-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z" />
-                </svg>
-              </span>
-            </span>
-          </Link>
-        </Band>
-      )}
       <Band tone="ink" labelledBy="pl-human">
         <div className="pl-two">
           {human && <ClipFrame item={human} meta="S02, 11:15" />}
@@ -341,7 +309,7 @@ function Cofounder2Lens() {
             </h2>
             <p className="bx-lead">{t("for-cofounder-2.look.1")}</p>
             <div className="bx-mt-2">
-              <Chips items={[CHIP.brand, CHIP.voice, CHIP.article]} />
+              <Chips items={[CHIP.brand, CHIP.article]} />
             </div>
           </div>
         </div>
