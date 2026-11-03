@@ -45,7 +45,7 @@ That's the major obstacle, and the skill is built around it. **The writer never 
 That last step matters most. As the skill puts it: "Grader prose teaches the writer what the judge likes to hear; the IDs tell it what to fix." Up to three attempts, then it stops. It never runs "one more". Every grade gets logged with the grader's findings, so I tune the rubric from evidence (because I do evals like a grown up).
 
 > [!figure] /demos-assets/teaching-a-machine-to-sound-like-me/writer-grader-split.png
-> the writer/grader split, drawn as a diagram: my words and a brief go to the writer; a script checks every countable rule; a fresh grader with the full rubric
+> Diagram: my words and a brief go to the writer, a script checks the countable rules, a fresh grader checks the rest, and only failed rule IDs go back.
 
 ## First, it graded me
 
@@ -56,7 +56,7 @@ Fair.
 Three rules still got loosened for flagging my real writing. The closer rule, for one, failed my deadpan "TL;DR someone broke my workflow and it's frustrating lol".
 
 > [!figure] /demos-assets/teaching-a-machine-to-sound-like-me/check-on-own-posts.png
-> the check on my own writing: five of my own posts graded blind, the rules each one failed, and the three rules loosened afterwards
+> The rubric checked against five of my own LinkedIn posts, and the three rules I loosened afterwards because they flagged my real writing.
 
 ## Fenced in, not gone
 
