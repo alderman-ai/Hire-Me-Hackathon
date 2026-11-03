@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import stakeholdersRaw from "@/content/stakeholders.json";
 import quotesRaw from "@/content/quotes.json";
+import clientQuotes from "@/content/recommendations.json";
 import highlightsRaw from "@/content/highlights.json";
 import timelapseRaw from "@/content/timelapse.json";
 import feedJson from "@/content/feed.json";
@@ -471,6 +472,14 @@ function aboutDoc(): Doc {
     parts.push(`## ${t("about.written.1")}`);
     parts.push(written.map((n) => `- [${n.title}](${mdUrl(n.key)}): ${n.why}`).join("\n"));
   }
+
+  parts.push(`## ${t("about.clients.1")}`);
+  parts.push(
+    clientQuotes
+      .map((q) => `${blockquote(q.quote)}\n>\n> ${q.name}, ${q.role} (${q.relation}, ${q.date})`)
+      .join("\n\n"),
+  );
+  parts.push(`${t("about.clients.2")}: ${clientQuotes[0].link}`);
 
   // The LinkedIn wall has its own docs (wallDocs), so this one stays short.
   const pages = wallPages();

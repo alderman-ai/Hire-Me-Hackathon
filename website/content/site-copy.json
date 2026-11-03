@@ -108,5 +108,7 @@
   "hack.status.built": "Built in: {duration}",
   "hack.status.left": "{time} left",
   "videos.intro": "Nobody wants to sit through hours of me talking (I'm a bit of a rambly talker), so these are the moments worth keeping from the two days I built this site live. You'll hear what I think about outbound, AI in a sales team and the GTM engineer role, plus the highs and lows of the build. If you only watch a few, start with the starred ones.",
-  "videos.legend": "start here"
+  "videos.legend": "start here",
+  "about.clients.1": "What my clients said",
+  "about.clients.2": "All recommendations on LinkedIn"
 }

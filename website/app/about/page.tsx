@@ -8,6 +8,7 @@ import { t } from "../copy";
 import { NEW_SITE } from "../flags";
 import { LIST_SLUGS, RECOMMEND_ON, pageHref, recommendFor } from "../recommend";
 import { RecommendCarousel } from "../recommend-carousel";
+import clientQuotes from "@/content/recommendations.json";
 import { VideoFrame } from "../best/parts";
 import { ABOUT_PHOTOS, CLIP_S02_E, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "./clips";
 import { AI_PORTFOLIO_SLUG, FACTS, LINKS, SHOW_ZERO_COUNTS } from "./profile";
@@ -262,6 +263,37 @@ export default function AboutPage() {
 
       {NEW_SITE && RECOMMEND_ON && (
         <RecommendCarousel heading={t("about.written.1")} cards={recommendFor("about")} people={PAGE_SLUGS} />
+      )}
+
+      {NEW_SITE && (
+        <section className="about-clients" aria-labelledby="clients">
+          <div className="about-container about-clients-inner">
+            <h2 id="clients" className="about-h2">
+              {t("about.clients.1")}
+            </h2>
+            <div className="about-clients-grid">
+              {clientQuotes.map((q) => (
+                <figure key={q.name} className="about-client">
+                  <blockquote>
+                    <p>{q.quote}</p>
+                  </blockquote>
+                  <figcaption>
+                    <strong>{q.name}</strong>, {q.role}
+                    <span className="about-client-rel">
+                      {q.relation}, {q.date}
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <p className="about-clients-all">
+              <a href={clientQuotes[0].link} target="_blank" rel="noopener noreferrer">
+                {t("about.clients.2")}
+                <span className="sr-only"> (new tab)</span>
+              </a>
+            </p>
+          </div>
+        </section>
       )}
 
       <section className={WALL_FULL ? "about-wall about-wall-full" : "about-wall"} aria-labelledby="linkedin">

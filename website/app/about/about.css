@@ -1190,3 +1190,87 @@ html.wall-dialog-open body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* What my clients said: four public LinkedIn recommendations, two columns on desktop, one on phones. */
+.about-clients {
+  padding: 5rem 0 1rem;
+}
+
+.about-clients-inner {
+  max-width: var(--av-container);
+}
+
+.about-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.about-client {
+  margin: 0;
+  padding: 1.75rem;
+  background: var(--av-lilac-100);
+  border: 1px solid var(--av-lilac-300);
+  border-radius: var(--av-radius-2xl);
+  overflow-wrap: anywhere;
+}
+
+.about-client blockquote {
+  margin: 0;
+}
+
+.about .about-client blockquote p {
+  margin: 0;
+  max-width: none;
+  color: var(--av-ink);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.about-client figcaption {
+  margin-top: 1rem;
+  color: #4d4a55;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.about-client figcaption strong {
+  color: var(--av-ink);
+  font-weight: 600;
+}
+
+.about-client-rel {
+  display: block;
+}
+
+.about-clients-all {
+  margin: 1.5rem 0 0;
+  font-size: 0.9375rem;
+}
+
+.about-clients-all a {
+  color: var(--av-plum);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.about-clients-all a:hover {
+  color: var(--av-amethyst);
+}
+
+@media screen and (max-width: 767px) {
+  .about-clients {
+    padding: 3.5rem 0 0.5rem;
+  }
+
+  .about-clients-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-client {
+    padding: 1.25rem;
+  }
+}
