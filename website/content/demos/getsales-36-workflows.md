@@ -9,7 +9,7 @@ kind: "showcase"
 library_id: "demo-getsales-36-workflows"
 group: "How I'd reach your accounts"
 video:
-  youtube_id: "9vLcPuSVmLo"
+  youtube_id: "_vgNB5ubKjA"
   start: 0
 cover:
   kicker: "How I'd reach your accounts"
@@ -36,7 +36,8 @@ The ICPs are retail loyalty, telco customer value, consumer lending, and last-mi
 
 Every one of the 36 opens the same way. Message 1 is a single variable, `custom_message_1`, imported as a field of the lead CSV. The follow-ups are fixed text for that language and tactic. **The first message is always custom**, written for that one person before the list goes in. Nothing here is tooled to send, and none of the 36 has a lead in it yet.
 
-<!-- slot 2: still from rig -->
+> [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/workflow-message-1.png
+> One workflow open in the GetSales builder, message 1 set to the single variable {{custom_message_1}} with the fixed follow-ups under it
 
 | Lead (fictional) | Workflow | custom_message_1 |
 | --- | --- | --- |
@@ -53,7 +54,8 @@ Same with LinkedIn. I spent time on it every day for eight years, and I don't wa
 
 That research tells you what to say. It doesn't tell you which of the 36 someone belongs in.
 
-<!-- slot 3: clip s18-c3 -->
+> [!video] V7VgtPe8BVk
+> S18, 3 Nov
 
 ## Who goes where is a classification problem
 
@@ -61,7 +63,8 @@ This is the part I care about most. Jev is one of the coolest tools to come out 
 
 It doesn't have to stop at ICP, either. Anyone who's really good at sales mirrors people: if they're informal, you're informal. There's this dance, right? You can read a lot of it from their posts, or from any interview they're in, even in a language you don't speak. Then you judge which sequence fits their personality. This is where the fun happens.
 
-<!-- slot 4: clip s18-c4 -->
+> [!video] rDUsnHrAwv0
+> S18, 3 Nov
 
 ## Building is a phase, not the deliverable
 
@@ -71,7 +74,11 @@ Say you've got 120 sequences. You ask Jev which one should get the best results 
 
 And honestly, I'm not there yet. It has to be so ICP-specific that nothing ready-made will ever fit a company out of the box. It gets custom built. (Here, Jev is only explained. Nothing's trained.)
 
-<!-- slot 5: clip s18-c5, then clip s18-c6 -->
+> [!video] IEVscs4eg5c
+> S18, 3 Nov
+
+> [!video] kV7KD1-pRCE
+> S18, 3 Nov
 
 ## Every account, not only the key ones
 

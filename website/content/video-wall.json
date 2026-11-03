@@ -8,6 +8,16 @@
       "label": "Ideas",
       "tiles": [
         {
+          "id": "clip-s18-c1",
+          "kind": "clip",
+          "title": "AI can't do differentiation",
+          "youtube_id": "ppGVU8sNvDo",
+          "start": 0,
+          "length": "0:33",
+          "session": "S18",
+          "still": "/videos/s18-c1.webp"
+        },
+        {
           "id": "m-s02-c",
           "kind": "moment",
           "title": "Knowledge arbitrage: \"Now you can do both\"",
@@ -221,6 +231,16 @@
       "key": "icps",
       "label": "Filtering ICPs",
       "tiles": [
+        {
+          "id": "clip-s18-c2",
+          "kind": "clip",
+          "title": "The first message is always custom",
+          "youtube_id": "zeoPMc_xNVY",
+          "start": 0,
+          "length": "0:57",
+          "session": "S18",
+          "still": "/videos/s18-c2.webp"
+        },
         {
           "id": "m-s08-b",
           "kind": "moment",
