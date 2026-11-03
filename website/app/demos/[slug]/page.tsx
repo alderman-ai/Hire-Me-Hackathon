@@ -47,7 +47,8 @@ function embedSrc(v: NonNullable<Entry["video"]>): string {
 }
 
 export function generateStaticParams() {
-  return visibleEntries().map((e) => ({ slug: e.slug }));
+  // Retired slugs are built too, so their old links redirect instead of 404ing (dynamicParams is off).
+  return [...visibleEntries().map((e) => ({ slug: e.slug })), ...Object.keys(RETIRED).map((slug) => ({ slug }))];
 }
 
 const SITE = "https://hire-me-hackathon.vercel.app";
