@@ -1,6 +1,7 @@
 import "../best/best.css";
 import "./highlights.css";
 import { VideoFrame } from "../best/video-frame";
+import { Derby, type DerbyData } from "./derby";
 import raw from "@/content/highlights.json";
 
 /*
@@ -40,6 +41,7 @@ type Data = {
   commits_per_hour: number[][];
   commits_by_folder: [string, number][];
   recording: { id: string; start_min: number; seconds: number }[];
+  derby: DerbyData;
   totals: { named_lanes: number; subagents: number; commits: number; recorded_seconds: number; recorded_sessions: number };
 };
 
@@ -527,6 +529,22 @@ export function Highlights() {
           if (item.type === "beat") return <BeatBlock key={key} id={item.id} />;
           if (item.type === "centre") return <Centrepiece key={key} id={item.id} />;
           switch (item.id) {
+            case "derby":
+              return (
+                <Derby
+                  key={key}
+                  data={D.derby}
+                  words={{
+                    title: w("derby.title"),
+                    caption: w("derby.caption"),
+                    kill: w("derby.kill.label"),
+                    standings: w("derby.standings.heading"),
+                    summary: w("derby.summary"),
+                    leads: w("derby.leads.heading"),
+                    scrub: w("derby.scrub.label"),
+                  }}
+                />
+              );
             case "map": return <Swimlane key={key} />;
             case "commits": return <HourBars key={key} id="commits" rows={D.commits_per_hour} unit="Commits" />;
             case "subagents": return <HourBars key={key} id="subagents" rows={D.subagents_per_hour} unit="Subagents" />;

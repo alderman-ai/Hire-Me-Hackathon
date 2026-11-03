@@ -107,6 +107,131 @@ def recording():
     return rows
 
 
+# ---------------------------------------------------------------- derby (the race of the day)
+
+# Commit prefix ("[website] ...") to the roster name (SESSIONS.md) that is also the swimlane lane.
+# Where the prefix is a folder rather than a session name, the session that owns that folder.
+PREFIX_TO_LANE = {
+    "orchestration": "orchestration",
+    "roster": "orchestration",            # SESSIONS.md edits are orchestration's
+    "s2-orchestrator": "orchestration",   # S2 is run by orchestration (no session of its own)
+    "website": "website",
+    "legibility": "s-d9-legibility",
+    "getsales": "s-d3-getsales",
+    "research": "s1-research",
+    "s1-research": "s1-research",
+    "answer-desk": "answer-desk",
+    "scraping": "s-d1-scraping",
+    "linkedin-content": "s-d7-linkedin-content",
+    "canva-video": "s-d10-canva-video",
+    "canva-templates": "s-d6-canva-templates",
+    "blog-pipeline": "s-d4-blog-pipeline",
+    "blog-articles": "s-d5-blog-articles",
+    "wave2-specs": "wave2-specs",
+    "bootstrap": "s0-bootstrap",
+    "s0-bootstrap": "s0-bootstrap",
+    "obs": "rig",                          # the capture rig lives in OBS/
+    "alex-prep": "orch-alex-prep",
+    "site-map": "orch-site-map",
+    "briefing": "orch-briefing",
+}
+KILL_MIN = 13 * 60 + 20 + 55 / 60  # 13:20:55, Prague
+DERBY_STEP = 5
+ALWAYS_RACE = ["rig"]  # on the track at the kill and one of the sessions that handle the recording
+
+
+def derby():
+    cat = json.load(open(CATALOG, encoding="utf-8"))
+    out = subprocess.run(
+        ["git", "-C", REPO, "log", "--since=2026-11-02T00:00:00+01:00", "--until=2026-11-03T00:00:00+01:00", "--format=%aI|%s"],
+        capture_output=True, text=True, encoding="utf-8", check=True,
+    ).stdout.splitlines()
+    events = []  # (minute float, lane or None)
+    for line in out:
+        iso, _, subj = line.partition("|")
+        t = (local(iso) - DAY0).total_seconds() / 60
+        m = re.match(r"\[([^\]]+)\]", subj)
+        events.append((t, PREFIX_TO_LANE.get(m.group(1).strip().lower()) if m else None))
+    events.sort()
+    start = int(events[0][0] // DERBY_STEP * DERBY_STEP)
+    end = int(-(-events[-1][0] // DERBY_STEP) * DERBY_STEP)
+    unattributed = sum(1 for _, l in events if l is None)
+
+    totals = collections.Counter(l for _, l in events if l)
+    ranked = [l for l, _ in totals.most_common() if l not in ALWAYS_RACE]
+    chosen = ranked[: 12 - len(ALWAYS_RACE)] + ALWAYS_RACE
+
+    raw = collections.defaultdict(list)  # lane -> [(start, end)] minutes float
+    for s in cat["sessions"]:
+        if not s["names"]:
+            continue
+        a, b = local(s["start"]), local(s["end"])
+        if b < DAY0 or a >= DAY1:
+            continue
+        raw[s["names"][0]].append(((a - DAY0).total_seconds() / 60, min(1440.0, (b - DAY0).total_seconds() / 60)))
+
+    grid = list(range(start, end + 1, DERBY_STEP))
+    lanes = []
+    for lane in chosen:
+        times = [t for t, l in events if l == lane]
+        runs = []
+        for a, b in sorted(raw[lane]):
+            if runs and a - runs[-1][1] <= 5:
+                runs[-1][1] = max(runs[-1][1], b)
+            else:
+                runs.append([a, b])
+        on = []
+        killed = False
+        for a, b in runs:
+            if a < KILL_MIN < b:
+                killed = True
+                after = [t for t in times if t >= KILL_MIN]
+                starts_after = [x for x, _ in raw[lane] if x > KILL_MIN]
+                back = min(after + starts_after) if (after or starts_after) else b
+                back = min(back, b)
+                on += [[a, KILL_MIN], [back, b]]
+            else:
+                on.append([a, b])
+        # a lane that is alive but has commits before its first record (rig): the first commit counts as entry
+        first_seen = min([on[0][0]] + times[:1]) if on else (times[0] if times else 0)
+        if on and first_seen < on[0][0]:
+            on[0][0] = first_seen
+        cum, k = [], 0
+        for g in grid:
+            while k < len(times) and times[k] <= g:
+                k += 1
+            cum.append(k)
+        lanes.append({
+            "lane": lane,
+            "total": len(times),
+            "enter": round(on[0][0], 2),
+            "leave": round(on[-1][1], 2),
+            "killed": killed,
+            "back": round(on[-1][0], 2) if killed else None,
+            "on": [[round(a, 2), round(b, 2)] for a, b in on],
+            "cum": cum,
+        })
+    # lanes numbered by their first appearance, so the numbers read like starting gates
+    lanes.sort(key=lambda L: (L["enter"], L["lane"]))
+    for i, L in enumerate(lanes, 1):
+        L["n"] = i
+    # who led when (by cumulative commits, ties keep the earlier leader)
+    leads = []
+    cur = None
+    for gi, g in enumerate(grid):
+        best = max(lanes, key=lambda L: (L["cum"][gi], -L["n"]))
+        if best["cum"][gi] > 0 and best["lane"] != cur:
+            cur = best["lane"]
+            leads.append([g, cur])
+    return {
+        "start": start, "end": end, "step": DERBY_STEP, "kill": round(KILL_MIN, 3),
+        "lanes": lanes, "leads": leads,
+        "totals": {"commits": len(events), "racing_commits": sum(L["total"] for L in lanes), "unattributed": unattributed, "lanes_all": len(raw), "lanes_racing": len(lanes)},
+        "mapping": PREFIX_TO_LANE,
+        "chosen_note": "top 11 attributed lanes by commits, plus rig (on the track at the kill; its commits are the [obs] prefix)",
+    }
+
+
 def main():
     lanes, subs_hour, subs_total, named, allrec = sessions()
     c_hour, c_folder, c_total = commits()
@@ -118,6 +243,7 @@ def main():
         "commits_by_folder": [[k, v] for k, v in c_folder.most_common(10)]
         + ([["other", sum(v for _, v in c_folder.most_common()[10:])]] if len(c_folder) > 10 else []),
         "recording": rec,
+        "derby": derby(),
         "totals": {
             "named_lanes": len(lanes),
             "named_session_records": named,
@@ -133,6 +259,7 @@ def main():
         "subagents_per_hour": "Full site outread/catalog.json: each subagent's start, 2 Nov Prague time",
         "commits_per_hour": "git log of the repo, author date, 2 Nov Prague time",
         "commits_by_folder": "git log subjects: the [folder] prefix",
+        "derby": "git log commits (author time, Prague) matched by [prefix] to roster names (see data.derby.mapping); presence from Full site outread/catalog.json session records, split at the 13:20:55 kill",
         "recording": "OBS/Processed/S*/session.json: start of the first span and elapsed_seconds",
     }
     j = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
