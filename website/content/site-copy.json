@@ -95,5 +95,6 @@
   "hack.menu.label": "Day 1",
   "hack.menu.highlights": "Highlights",
   "hack.menu.timelapse": "Time-lapse",
-  "hack.menu.feed": "Feed"
+  "hack.menu.feed": "Feed",
+  "log.feed.title": "Day 1 feed"
 }

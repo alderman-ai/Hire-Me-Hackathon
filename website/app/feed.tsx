@@ -301,15 +301,17 @@ function CompactPost({ post }: { post: Post }) {
 /**
  * `hideStatus`: the new site drops the status board (VERDICT.md 2.7). `asPage`: on /log, the feed is
  * the page, so its heading is the page's h1. `head`: /log's own intro (log.intro.* in site-copy.json),
- * which takes the place of the "Live feed" heading and the feed's intro line.
+ * which takes the place of the "Live feed" heading and the feed's intro line (an empty body drops it).
+ * `section`: the feed is one section of /log under the page's own h1, so its heading is an h2.
  */
 export default function Feed({
   hideStatus = false,
   asPage = false,
   head,
-}: { hideStatus?: boolean; asPage?: boolean; head?: { title: string; body: string } } = {}) {
+  section = false,
+}: { hideStatus?: boolean; asPage?: boolean; head?: { title: string; body: string }; section?: boolean } = {}) {
   const [newest, ...older] = feedPosts().filter((p) => !(hideStatus && isStatus(p)));
-  const Heading = asPage ? "h1" : "h2";
+  const Heading = asPage && !section ? "h1" : "h2";
   if (asPage) {
     // /log: every post is a row; its body opens on demand (app/feed-compact.css).
     const rows = feedPosts().filter((p) => !(hideStatus && isStatus(p)));
@@ -321,7 +323,7 @@ export default function Feed({
             <Heading id="feed-heading" className="feed-heading">
               {head ? head.title : "Live feed"}
             </Heading>
-            <p className="feed-intro">{head ? head.body : feed.intro}</p>
+            {(head ? head.body : feed.intro) && <p className="feed-intro">{head ? head.body : feed.intro}</p>}
           </Reveal>
           <ol className="fc-list">
             {rows.map((post) => (

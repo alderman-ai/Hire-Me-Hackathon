@@ -1,0 +1,860 @@
+{
+ "comfy_video": null,
+ "comfy_video_shape": "when set: {\"youtube\": \"<id>\", \"start\": 0, \"end\": null, \"length\": \"m:ss\"}. Its label is the word key highlights.comfy.label. Null renders nothing.",
+ "day": "2026-11-02",
+ "axis": {
+  "map_from_hour": 10,
+  "map_to_hour": 24
+ },
+ "arc": [
+  {
+   "type": "chart",
+   "id": "map"
+  },
+  {
+   "type": "beat",
+   "id": "S02-f"
+  },
+  {
+   "type": "beat",
+   "id": "S03-n"
+  },
+  {
+   "type": "beat",
+   "id": "S04-k"
+  },
+  {
+   "type": "beat",
+   "id": "day1-2"
+  },
+  {
+   "type": "chart",
+   "id": "commits"
+  },
+  {
+   "type": "centre",
+   "id": "kill"
+  },
+  {
+   "type": "beat",
+   "id": "S07-d"
+  },
+  {
+   "type": "chart",
+   "id": "subagents"
+  },
+  {
+   "type": "beat",
+   "id": "S08-c"
+  },
+  {
+   "type": "beat",
+   "id": "S10-h"
+  },
+  {
+   "type": "beat",
+   "id": "day1-5"
+  },
+  {
+   "type": "chart",
+   "id": "folders"
+  },
+  {
+   "type": "beat",
+   "id": "S12-a"
+  },
+  {
+   "type": "chart",
+   "id": "recording"
+  }
+ ],
+ "beats": {
+  "S02-f": {
+   "n": 1,
+   "kind": "high",
+   "grade": "G",
+   "session": "S02",
+   "prague": "11:13:32",
+   "minute": 673,
+   "youtube": "qrBNOsSYGrQ",
+   "start": 412,
+   "end": 499,
+   "length": "1:27",
+   "quote": {
+    "text": "we want to bring an ai in but we're not going to fire half the team",
+    "time": "11:13:32"
+   }
+  },
+  "S03-n": {
+   "n": 2,
+   "kind": "low",
+   "grade": "G",
+   "session": "S03",
+   "prague": "11:58:16",
+   "youtube": "rnFQPYyUmew",
+   "start": 0,
+   "end": null,
+   "length": "0:55",
+   "quote": {
+    "text": "one of the biggest things for you to learn in AI is that it's always front loaded",
+    "time": "11:58:16"
+   }
+  },
+  "S04-k": {
+   "n": 3,
+   "kind": "low",
+   "grade": "G",
+   "session": "S04",
+   "prague": "12:35:41",
+   "youtube": "U7j50NbM29U",
+   "start": 0,
+   "end": null,
+   "length": "0:59",
+   "quote": {
+    "text": "I don't think it's bad enough that I need to start over and I don't think I have time to start over",
+    "time": "12:35:41"
+   }
+  },
+  "day1-2": {
+   "n": 4,
+   "kind": "low",
+   "grade": "G",
+   "session": "S05",
+   "prague": "12:55:58",
+   "youtube": "r2DIjaHF_js",
+   "start": 0,
+   "end": null,
+   "length": "0:48",
+   "quote": {
+    "text": "this is like uncomfortably stressful",
+    "time": "12:55:58"
+   }
+  },
+  "S07-d": {
+   "n": 6,
+   "kind": "high",
+   "grade": "G",
+   "session": "S07",
+   "prague": "13:44:21",
+   "youtube": "NULD_WteCRM",
+   "start": 474,
+   "end": 511,
+   "length": "0:37",
+   "quote": {
+    "text": "Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.",
+    "time": "13:44:21"
+   }
+  },
+  "S08-c": {
+   "n": 7,
+   "kind": "high",
+   "grade": "G",
+   "session": "S08",
+   "prague": "15:12:12",
+   "youtube": "MyYnFOQCagc",
+   "start": 278,
+   "end": 346,
+   "length": "1:08",
+   "quote": {
+    "text": "i've got one session that's just watching all this looking for anything that's like blocked on me",
+    "time": "15:12:12"
+   }
+  },
+  "S10-h": {
+   "n": 8,
+   "kind": "low",
+   "grade": "G",
+   "session": "S10",
+   "prague": "16:43:41",
+   "youtube": "enaeHqxjeCc",
+   "start": 0,
+   "end": null,
+   "length": "1:36",
+   "quote": {
+    "text": "everything's a little bit off the rails and we need to get everything back on the rails",
+    "time": "16:43:41"
+   }
+  },
+  "day1-5": {
+   "n": 9,
+   "kind": "low",
+   "grade": "G",
+   "session": "S10",
+   "prague": "16:58:19",
+   "youtube": "0_OKP-0C6Xk",
+   "start": 0,
+   "end": null,
+   "length": "0:53",
+   "quote": {
+    "text": "the bottleneck is always always always human",
+    "time": "16:58:19"
+   }
+  },
+  "S12-a": {
+   "n": 10,
+   "kind": "high",
+   "grade": "G",
+   "session": "S12",
+   "prague": "17:35:44",
+   "youtube": "lo486cSVBcM",
+   "start": 89,
+   "end": 131,
+   "length": "0:42",
+   "quote": {
+    "text": "everything is 75% plus done now",
+    "time": "17:35:44"
+   }
+  }
+ },
+ "centre": {
+  "kill": {
+   "n": 5,
+   "kind": "low",
+   "grade": "G",
+   "session": "S05",
+   "prague": "13:17:12",
+   "minute": 800,
+   "youtube": "EoLyMiV77R0",
+   "start": 2226,
+   "end": 2546,
+   "length": "5:20",
+   "bounds_note": "Starts on 'let's process all those orchestration...' (2226.2 s in the S05 transcript) and ends after 'I need to report on that' (2544.9 s). Source cards: S05-n, day1-3. The kill itself is at about 2402 s (13:20:08); 'So that was bad' at 2449.9 s.",
+   "segments": [
+    {
+     "key": "weeds",
+     "from": 2226,
+     "to": 2399
+    },
+    {
+     "key": "kill",
+     "from": 2399,
+     "to": 2450
+    },
+    {
+     "key": "bad",
+     "from": 2450,
+     "to": 2490
+    },
+    {
+     "key": "recovery",
+     "from": 2490,
+     "to": 2546
+    }
+   ],
+   "marks": [
+    {
+     "key": "kill",
+     "at": 2402,
+     "prague": "13:20:08"
+    },
+    {
+     "key": "bad",
+     "at": 2450,
+     "prague": "13:20:55"
+    },
+    {
+     "key": "ask",
+     "at": 2491,
+     "prague": "13:21:37"
+    }
+   ],
+   "quotes": [
+    {
+     "text": "So that was bad.",
+     "time": "13:20:55",
+     "source": "day1-3"
+    },
+    {
+     "text": "I ended all sessions, including all the ones that handle the recording.",
+     "time": "13:21:06",
+     "source": "day1-3"
+    },
+    {
+     "text": "that's fun to learn things in this way",
+     "time": "13:21:37",
+     "source": "S05-n"
+    }
+   ]
+  }
+ },
+ "words": {
+  "highlights.heading": "[words coming: section heading for the Day 1 highlights]",
+  "highlights.intro": "[words coming: one-line intro to Day 1's highs and lows, set at the top of the section]",
+  "highlights.legend.high": "[words coming: label for a high, one or two words]",
+  "highlights.legend.low": "[words coming: label for a low, one or two words]",
+  "highlights.legend.hint": "[words coming: how to read the numbered triangles, which tie every chart to a clip below]",
+  "highlights.comfy.label": "[words coming: name of the highlight video, for the player]",
+  "highlights.clip.play": "[words coming: link text for opening the clip on YouTube]",
+  "highlights.table.toggle": "[words coming: toggle text for the data table behind a chart]",
+  "highlights.scroll.hint": "[words coming: one line telling phone readers the chart scrolls sideways]",
+  "highlights.map.title": "[words coming: chart title, the day's sessions across the clock]",
+  "highlights.map.summary": "[words coming: text summary of the swimlane chart, for screen readers and as its caption; tokens {lanes} {subagents} are filled in]",
+  "highlights.map.caption": "[words coming: how to read the swimlane: one row per named session, a bar for each time it ran]",
+  "highlights.commits.title": "[words coming: chart title, commits to the repo per hour]",
+  "highlights.commits.summary": "[words coming: text summary of the commits chart; tokens {commits} {peak_hour} {peak} are filled in]",
+  "highlights.commits.caption": "[words coming: caption linking the commit rhythm to the accident at 13:20]",
+  "highlights.subagents.title": "[words coming: chart title, subagents started per hour]",
+  "highlights.subagents.summary": "[words coming: text summary of the subagents chart; tokens {subagents} {peak_hour} {peak} are filled in]",
+  "highlights.subagents.caption": "[words coming: caption on how the work fanned out after the recovery]",
+  "highlights.folders.title": "[words coming: chart title, commits by folder]",
+  "highlights.folders.summary": "[words coming: text summary of the folders chart; tokens {commits} {top_folder} {top} are filled in]",
+  "highlights.folders.caption": "[words coming: caption on where the day's commits landed]",
+  "highlights.recording.title": "[words coming: chart title, recorded minutes per session]",
+  "highlights.recording.summary": "[words coming: text summary of the recording chart; tokens {sessions} {hours} {longest} {longest_min} are filled in]",
+  "highlights.recording.caption": "[words coming: caption on recorded time against the 12-hour budget]",
+  "highlights.beat.S02-f.label": "[words coming: what this high was, the thesis said out loud, S02 at 11:13]",
+  "highlights.beat.S02-f.setup": "[words coming: one line of setup before the clip]",
+  "highlights.beat.S03-n.label": "[words coming: what this low was, the slow noon start with nothing running yet, S03 at 11:58]",
+  "highlights.beat.S03-n.setup": "[words coming: one line of setup before the clip]",
+  "highlights.beat.S04-k.label": "[words coming: what this low was, a bad feeling about the opening document and no time to restart, S04 at 12:35]",
+  "highlights.beat.S04-k.setup": "[words coming: one line of setup before the clip]",
+  "highlights.beat.day1-2.label": "[words coming: what this low was, too many new things at once, S05 at 12:55]",
+  "highlights.beat.day1-2.setup": "[words coming: one line of setup before the clip]",
+  "highlights.beat.S07-d.label": "[words coming: what this high was, the recovery turned into a reusable skill, S07 at 13:44]",
+  "highlights.beat.S07-d.setup": "[words coming: one line of setup that points back to the 13:20 accident]",
+  "highlights.beat.S08-c.label": "[words coming: what this high was, a tour of what runs without him, S08 at 15:12]",
+  "highlights.beat.S08-c.setup": "[words coming: one line of setup before the clip]",
+  "highlights.beat.S10-h.label": "[words coming: what this low was, the halt when everything was off the rails, S10 at 16:43]",
+  "highlights.beat.S10-h.setup": "[words coming: one line of setup before the clip]",
+  "highlights.beat.day1-5.label": "[words coming: what this low was, the bottleneck is always human, S10 at 16:58]",
+  "highlights.beat.day1-5.setup": "[words coming: one line of setup before the clip]",
+  "highlights.beat.S12-a.label": "[words coming: what this high was, seven hours in and the work turning to design, S12 at 17:35; his feeling at that moment, not a progress figure]",
+  "highlights.beat.S12-a.setup": "[words coming: one line of setup before the clip]",
+  "highlights.centre.kill.title": "[words coming: title of the low point, the day all the sessions were closed by accident, S05 at 13:20]",
+  "highlights.centre.kill.setup": "[words coming: what the sessions are and what he was trying to do, so a stranger can follow the clip]",
+  "highlights.centre.kill.caption": "[words coming: one line under the player, the clip is raw and runs five minutes]",
+  "highlights.centre.kill.scrub": "[words coming: label for the bar under the player that marks the four stretches of the clip]",
+  "highlights.centre.kill.seg.weeds": "[words coming: the build-up, lost in the weeds and asking for an update]",
+  "highlights.centre.kill.seg.kill": "[words coming: the accident]",
+  "highlights.centre.kill.seg.bad": "[words coming: 'So that was bad' and what he says happened]",
+  "highlights.centre.kill.seg.recovery": "[words coming: dictating the recovery to a fresh session]",
+  "highlights.centre.kill.mark.kill": "[words coming: tick label for the accident]",
+  "highlights.centre.kill.mark.bad": "[words coming: tick label for 'So that was bad']",
+  "highlights.centre.kill.mark.ask": "[words coming: tick label for the ask to bring every session back]",
+  "highlights.centre.kill.after": "[words coming: one line pointing ahead to 13:44, where the recovery becomes a skill]"
+ },
+ "data": {
+  "swimlane": [
+   {
+    "lane": "briefing-build",
+    "runs": [
+     [
+      650,
+      833
+     ]
+    ],
+    "subagents": 0
+   },
+   {
+    "lane": "meta-specs",
+    "runs": [
+     [
+      650,
+      822
+     ]
+    ],
+    "subagents": 3
+   },
+   {
+    "lane": "orchestration",
+    "runs": [
+     [
+      650,
+      1440
+     ]
+    ],
+    "subagents": 174
+   },
+   {
+    "lane": "bg-launch-test-website",
+    "runs": [
+     [
+      653,
+      654
+     ]
+    ],
+    "subagents": 0
+   },
+   {
+    "lane": "website",
+    "runs": [
+     [
+      666,
+      1440
+     ]
+    ],
+    "subagents": 21
+   },
+   {
+    "lane": "rig",
+    "runs": [
+     [
+      667,
+      1314
+     ]
+    ],
+    "subagents": 0
+   },
+   {
+    "lane": "answer-desk",
+    "runs": [
+     [
+      771,
+      772
+     ],
+     [
+      780,
+      1143
+     ]
+    ],
+    "subagents": 0
+   },
+   {
+    "lane": "watcher",
+    "runs": [
+     [
+      771,
+      1137
+     ]
+    ],
+    "subagents": 0
+   },
+   {
+    "lane": "s0-bootstrap",
+    "runs": [
+     [
+      819,
+      830
+     ]
+    ],
+    "subagents": 2
+   },
+   {
+    "lane": "briefing",
+    "runs": [
+     [
+      826,
+      1137
+     ]
+    ],
+    "subagents": 0
+   },
+   {
+    "lane": "s-d9-legibility",
+    "runs": [
+     [
+      826,
+      1152
+     ]
+    ],
+    "subagents": 13
+   },
+   {
+    "lane": "s1-research",
+    "runs": [
+     [
+      830,
+      1143
+     ]
+    ],
+    "subagents": 34
+   },
+   {
+    "lane": "wave2-specs",
+    "runs": [
+     [
+      847,
+      948
+     ]
+    ],
+    "subagents": 5
+   },
+   {
+    "lane": "s-d1-scraping",
+    "runs": [
+     [
+      880,
+      1152
+     ]
+    ],
+    "subagents": 4
+   },
+   {
+    "lane": "addvery-research",
+    "runs": [
+     [
+      881,
+      926
+     ],
+     [
+      932,
+      1137
+     ]
+    ],
+    "subagents": 10
+   },
+   {
+    "lane": "s-d3-getsales",
+    "runs": [
+     [
+      890,
+      1148
+     ]
+    ],
+    "subagents": 30
+   },
+   {
+    "lane": "s-d4-blog-pipeline",
+    "runs": [
+     [
+      892,
+      1035
+     ]
+    ],
+    "subagents": 10
+   },
+   {
+    "lane": "s-d6-canva-templates",
+    "runs": [
+     [
+      948,
+      1152
+     ]
+    ],
+    "subagents": 8
+   },
+   {
+    "lane": "s-d7-linkedin-content",
+    "runs": [
+     [
+      948,
+      1139
+     ]
+    ],
+    "subagents": 23
+   },
+   {
+    "lane": "s-d10-canva-video",
+    "runs": [
+     [
+      999,
+      1143
+     ]
+    ],
+    "subagents": 3
+   },
+   {
+    "lane": "s-d5-blog-articles",
+    "runs": [
+     [
+      1002,
+      1152
+     ]
+    ],
+    "subagents": 29
+   },
+   {
+    "lane": "orch-alex-prep",
+    "runs": [
+     [
+      1136,
+      1314
+     ]
+    ],
+    "subagents": 0
+   },
+   {
+    "lane": "orch-site-map",
+    "runs": [
+     [
+      1136,
+      1314
+     ]
+    ],
+    "subagents": 4
+   },
+   {
+    "lane": "orch-briefing",
+    "runs": [
+     [
+      1140,
+      1143
+     ],
+     [
+      1211,
+      1314
+     ]
+    ],
+    "subagents": 0
+   }
+  ],
+  "subagents_per_hour": [
+   [
+    9,
+    1
+   ],
+   [
+    10,
+    1
+   ],
+   [
+    11,
+    0
+   ],
+   [
+    12,
+    4
+   ],
+   [
+    13,
+    4
+   ],
+   [
+    14,
+    27
+   ],
+   [
+    15,
+    29
+   ],
+   [
+    16,
+    51
+   ],
+   [
+    17,
+    32
+   ],
+   [
+    18,
+    59
+   ],
+   [
+    19,
+    17
+   ],
+   [
+    20,
+    27
+   ],
+   [
+    21,
+    73
+   ],
+   [
+    22,
+    16
+   ],
+   [
+    23,
+    33
+   ]
+  ],
+  "commits_per_hour": [
+   [
+    9,
+    1
+   ],
+   [
+    10,
+    2
+   ],
+   [
+    11,
+    2
+   ],
+   [
+    12,
+    8
+   ],
+   [
+    13,
+    59
+   ],
+   [
+    14,
+    130
+   ],
+   [
+    15,
+    80
+   ],
+   [
+    16,
+    126
+   ],
+   [
+    17,
+    140
+   ],
+   [
+    18,
+    130
+   ],
+   [
+    19,
+    24
+   ],
+   [
+    20,
+    37
+   ],
+   [
+    21,
+    37
+   ],
+   [
+    22,
+    9
+   ],
+   [
+    23,
+    12
+   ]
+  ],
+  "commits_by_folder": [
+   [
+    "orchestration",
+    134
+   ],
+   [
+    "website",
+    133
+   ],
+   [
+    "legibility",
+    84
+   ],
+   [
+    "getsales",
+    70
+   ],
+   [
+    "research",
+    57
+   ],
+   [
+    "roster",
+    55
+   ],
+   [
+    "answer-desk",
+    53
+   ],
+   [
+    "scraping",
+    34
+   ],
+   [
+    "linkedin-content",
+    30
+   ],
+   [
+    "canva-video",
+    26
+   ],
+   [
+    "other",
+    121
+   ]
+  ],
+  "recording": [
+   {
+    "id": "S01",
+    "start_min": 625,
+    "seconds": 541
+   },
+   {
+    "id": "S02",
+    "start_min": 667,
+    "seconds": 829
+   },
+   {
+    "id": "S03",
+    "start_min": 685,
+    "seconds": 2323
+   },
+   {
+    "id": "S04",
+    "start_min": 736,
+    "seconds": 1365
+   },
+   {
+    "id": "S05",
+    "start_min": 760,
+    "seconds": 2959
+   },
+   {
+    "id": "S06",
+    "start_min": 814,
+    "seconds": 127
+   },
+   {
+    "id": "S07",
+    "start_min": 816,
+    "seconds": 2300
+   },
+   {
+    "id": "S08",
+    "start_min": 907,
+    "seconds": 482
+   },
+   {
+    "id": "S09",
+    "start_min": 917,
+    "seconds": 1560
+   },
+   {
+    "id": "S10",
+    "start_min": 984,
+    "seconds": 2180
+   },
+   {
+    "id": "S11",
+    "start_min": 1027,
+    "seconds": 263
+   },
+   {
+    "id": "S12",
+    "start_min": 1054,
+    "seconds": 2746
+   },
+   {
+    "id": "S13",
+    "start_min": 1105,
+    "seconds": 1650
+   },
+   {
+    "id": "S14",
+    "start_min": 1142,
+    "seconds": 475
+   },
+   {
+    "id": "S15",
+    "start_min": 1197,
+    "seconds": 1709
+   },
+   {
+    "id": "S16",
+    "start_min": 1246,
+    "seconds": 1660
+   }
+  ],
+  "totals": {
+   "named_lanes": 24,
+   "named_session_records": 56,
+   "session_records_on_day": 78,
+   "subagents": 374,
+   "commits": 797,
+   "recorded_seconds": 23169,
+   "recorded_sessions": 16
+  }
+ },
+ "sources": {
+  "swimlane": "Full site outread/catalog.json: sessions with an official name, 2 Nov Prague time; a lane is one name, restarts merged when under 5 minutes apart",
+  "subagents_per_hour": "Full site outread/catalog.json: each subagent's start, 2 Nov Prague time",
+  "commits_per_hour": "git log of the repo, author date, 2 Nov Prague time",
+  "commits_by_folder": "git log subjects: the [folder] prefix",
+  "recording": "OBS/Processed/S*/session.json: start of the first span and elapsed_seconds"
+ }
+}

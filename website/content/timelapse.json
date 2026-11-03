@@ -1,0 +1,214 @@
+{
+  "words": {
+    "timelapse.title": "[words coming: heading for the deployments time-lapse]",
+    "timelapse.intro": "[words coming: one or two lines saying each frame is the live home page as one of the day's production deployments, in the order they went up]"
+  },
+  "deployments": [
+    {
+      "id": "m4fgz7YnZ",
+      "time": "10:31",
+      "host": "nzit76jme"
+    },
+    {
+      "id": "KpufEA3LB",
+      "time": "10:49",
+      "host": "8qjpsc075"
+    },
+    {
+      "id": "tXsL26TWt",
+      "time": "10:53",
+      "host": "4o9nhd6vz"
+    },
+    {
+      "id": "KwYVb9QE9",
+      "time": "11:30",
+      "host": "f6lfhubl8"
+    },
+    {
+      "id": "cNMb4jtx6",
+      "time": "12:16",
+      "host": "9oyfpkqcu"
+    },
+    {
+      "id": "2vk4hvXFU",
+      "time": "13:50",
+      "host": "36vyjb157"
+    },
+    {
+      "id": "TsfLHZcL2",
+      "time": "13:52",
+      "host": "kjv19w91x"
+    },
+    {
+      "id": "k6nWxvKFn",
+      "time": "14:18",
+      "host": "aheghig6q"
+    },
+    {
+      "id": "ake4yosbb",
+      "time": "14:28",
+      "host": "3s1pr0o24"
+    },
+    {
+      "id": "HEZFJzUzM",
+      "time": "14:45",
+      "host": "jy8coq5k6"
+    },
+    {
+      "id": "ZgnhY7EQo",
+      "time": "14:49",
+      "host": "4sz82ebuy"
+    },
+    {
+      "id": "VnrzyW8iM",
+      "time": "15:00",
+      "host": "gnpd7ay91"
+    },
+    {
+      "id": "ai58bJjx4",
+      "time": "15:02",
+      "host": "mocgzra2u"
+    },
+    {
+      "id": "gqbJ3wjNY",
+      "time": "15:14",
+      "host": "7fzeqrolj"
+    },
+    {
+      "id": "Wk7FRcCVd",
+      "time": "15:18",
+      "host": "g6m133s0z"
+    },
+    {
+      "id": "gBcswwqUA",
+      "time": "15:40",
+      "host": "mvuwzhw7s"
+    },
+    {
+      "id": "iYqcddhSi",
+      "time": "15:50",
+      "host": "3q7dpv9rj"
+    },
+    {
+      "id": "8TDZXF34T",
+      "time": "15:55",
+      "host": "md5r8z6uc"
+    },
+    {
+      "id": "ZPawvPnRu",
+      "time": "16:28",
+      "host": "pa4020koc"
+    },
+    {
+      "id": "5SSM38Nbo",
+      "time": "16:32",
+      "host": "br8y8d0rg"
+    },
+    {
+      "id": "7UxjfY2Cq",
+      "time": "16:34",
+      "host": "27oias74h"
+    },
+    {
+      "id": "ChNyvmvdm",
+      "time": "16:44",
+      "host": "c0zd707ox"
+    },
+    {
+      "id": "ufKES4GPj",
+      "time": "17:13",
+      "host": "9sfgczu68"
+    },
+    {
+      "id": "nMTER1611",
+      "time": "17:18",
+      "host": "onn5owoc6"
+    },
+    {
+      "id": "UYLbUDUvn",
+      "time": "17:18",
+      "host": "o1cw92599"
+    },
+    {
+      "id": "UsDSafabZ",
+      "time": "17:25",
+      "host": "atsqvvevh"
+    },
+    {
+      "id": "A1qfDTomL",
+      "time": "17:32",
+      "host": "e7m8yl7bv"
+    },
+    {
+      "id": "36hs1euj3",
+      "time": "17:46",
+      "host": "dj3gh6j6k"
+    },
+    {
+      "id": "tcTCmhKqL",
+      "time": "17:50",
+      "host": "o6lheij8s"
+    },
+    {
+      "id": "Aemz1YikC",
+      "time": "18:02",
+      "host": "j3hpwozr1"
+    },
+    {
+      "id": "QnYQ5GA68",
+      "time": "18:03",
+      "host": "hvyaae32s"
+    },
+    {
+      "id": "YisRe95Ya",
+      "time": "18:13",
+      "host": "5o9bbs8xc"
+    },
+    {
+      "id": "vDiSvTBUR",
+      "time": "18:22",
+      "host": "5eocw9gsm"
+    },
+    {
+      "id": "iBNUBhKBN",
+      "time": "18:23",
+      "host": "ddiy1crbu"
+    },
+    {
+      "id": "DPhgUtcad",
+      "time": "18:26",
+      "host": "m0q2fxbhg"
+    },
+    {
+      "id": "g3fbpWd1k",
+      "time": "18:45",
+      "host": "q7gyt7l5h"
+    },
+    {
+      "id": "PSnbNeBaL",
+      "time": "18:46",
+      "host": "g2qhdw3e2"
+    },
+    {
+      "id": "qpodT36TK",
+      "time": "18:49",
+      "host": "91p8bstg9"
+    },
+    {
+      "id": "zFs9ekt7e",
+      "time": "18:50",
+      "host": "evsr2azvo"
+    },
+    {
+      "id": "EGg2w4tqw",
+      "time": "18:57",
+      "host": "lm9ts2z4k"
+    },
+    {
+      "id": "RkksL38pQ",
+      "time": "23:40",
+      "host": "r8987w3hr"
+    }
+  ],
+  "frames": []
+}

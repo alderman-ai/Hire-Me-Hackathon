@@ -15,7 +15,7 @@ import type { HackWords } from "./hack-strip";
 // The hackathon menu bar above the header (app/hack-strip.tsx), on the new site only. Day 1's menu points
 // into /log's sections; an item shows once its section is on the page (`ready`).
 const HACK_ITEMS = [
-  { href: "/log#highlights", label: "hack.menu.highlights", ready: false },
+  { href: "/log#highlights", label: "hack.menu.highlights", ready: true },
   { href: "/log#timelapse", label: "hack.menu.timelapse", ready: false },
   { href: "/log#feed", label: "hack.menu.feed", ready: true },
 ] as const;
