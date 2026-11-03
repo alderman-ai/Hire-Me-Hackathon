@@ -21,7 +21,10 @@ export function readResearchDocs(): ResearchDoc[] {
       const title = base.replace(/^\d+\s+/, "").replace(/\s+-\s+/, ": ");
       const slug = base.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       const markdown = readFileSync(path.join(DIR, f), "utf-8");
-      return { slug, title, html: marked.parse(markdown, { async: false }) as string };
+      // A file's own "# " title becomes an h2, so /d2 keeps its one h1 (3 Nov, orchestration). h1 and h2
+      // share one style in .art-rich, so nothing changes to the eye. Literal "<h1" in the text is escaped.
+      const html = (marked.parse(markdown, { async: false }) as string).replace(/<(\/?)h1\b/g, "<$1h2");
+      return { slug, title, html };
     });
 }
 
