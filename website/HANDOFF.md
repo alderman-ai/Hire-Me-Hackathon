@@ -1,44 +1,94 @@
 # Handoff: website
 
-Written 3 Nov at 08:15 Prague by the `website` session (job 91fdba88, Claude session 01UyYB1sYto5RMbi9fvTBjr1), for its same-name successor at orchestration's context refresh. **Run `date` before writing any time.**
+Written 3 Nov at 13:1x Prague by the `website` session (job e539ec86), for its same-name successor at orchestration's context refresh. **Run `date` before writing any time.** The older sections below "What's live" (routes, deploying, words, code map, checks) still hold, except where this top part says otherwise.
 
 ## Tell yourself first
 
-1. **Production is the best-of build plus one entry, and every production deploy needs all four flags** (`NEW_SITE`, `WALL_FULL`, `VIDEO_WALL`, `SKILLS_PAGE`). A plain `vercel deploy --prod` puts the old site back. The recipe is under "Deploying".
-2. **This morning Alex redlines the live site** on a Claude Design canvas (`orchestration\local\ALEX-WANTS.md` W59, W60; plan in `orchestration\local\overnight\MORNING.md`). Build requests come from `orchestration`, `orch-site-map` and `orch-alex-prep`. Ask the asker whether a change goes to production at once (last night's go-live was given in advance, W58) or to a preview first (RULES.md rule 1). After each request, send the asker one line with the URL and what changed.
-   - **Standing rule from `orchestration`, 3 Nov ~08:25:** every build request goes to a preview first (rule 1). Promote a batch to production only on `PROMOTE <request numbers>` from orchestration, after Alex has looked. Each promote gets the leak scan (see "Checks") and all four flags. A request that wants otherwise says so explicitly.
-3. **Rules that bite:** no words without `alex-voice` (rule 2: you place words, you don't write them); **no asks on any page** (rule 11: no one-ask block, no `ask_line`, no questions block); no time picker; nothing about Canva; a No grade comes off.
-4. **Clock:** loop pid 9044 (restarted 10:25 on 3 Nov for `finished_at` and `built_seconds`), idle, 2.92 h left; last rig line "S17 stopped" (10:16). Expect clock lines (CLAUDE.md, "Clock messages"). Check `.clock\sync.pid` and the tail of `.clock\sync.log` first.
-5. **Budget (Alex, about 12:00 on 3 Nov: 19% of Claude usage left to finish):**
-   - Use Sonnet subagents for mechanical work: copy swaps, placements, redirects, figure re-renders from given text, leak scans, layout checks, uploads, and builds.md and HANDOFF upkeep. Keep Opus only for real design builds.
-   - Check at both widths only when layout changed. A words-only change gets one quick look.
-   - Keep messages to orchestration to one or two lines.
-   - Fold small fixes, such as the `/day-2` h1 to h3 skip, into the next real change.
-6. Hand off again at about 350k tokens: finish the request you're on, update this file, tell orchestration.
+1. **Every production deploy needs all four flags** (`NEW_SITE`, `WALL_FULL`, `VIDEO_WALL`, `SKILLS_PAGE`). A plain `vercel deploy --prod` puts the old site back. The recipe is under "Deploying".
+2. **Who asks, and when it ships.**
+   - Requests come from `orchestration` (session 8b57493d since about 12:45), from `rig` (clock lines and Alex's /process asks), and from `comfy-collab` (the video work). Alex also talks to you directly.
+   - Since about 10:5x Alex has pre-approved pushing ("Push everything through. I trust you. Just make it live."). So check locally, run the leak scan, deploy to production yourself, and send orchestration one line: "BUILT <what>: live since HH:MM (<deployment>)".
+   - Hold a push only for a factual or visual fault, and say why. Example: the time-lapse frames with broken logos were held until comfy-collab recaptured them.
+3. **Rules that bite.**
+   - No words without `alex-voice`: you place words, you don't write them. Orchestration sends the words as `{key: text}`.
+   - No asks on any page (rule 11). A recording that ends on "would love to set it up for you" gets cut before that line.
+   - No grades shown as a selling point.
+   - The six people appear only by role on figures.
+   - Screen captures: crop out bookmarks bars and the taskbar (see the S18 still).
+4. **Clock.** The loop is pid 9044 (restarted 10:25 on 3 Nov). On each rig line, check the loop, run `python scripts\clock_sync.py --once`, and reply to `rig [90aa29]` in one line with what `status.json` shows. Two sessions named `rig` exist, so use that ref.
+   - Status at 13:09: recording S20. Adjustments now total 13,800 s (`.clock\adjustments.json`, the last one Alex's 1 h 20 min at 12:52).
+   - To finish the build, write `.clock\finished.json` as `{"at": <epoch seconds>}` when Alex calls the end. The bar then reads "Finished at 8:32pm on 3 Nov · Built in: 11 hrs 36 mins" (the format).
+5. **Budget** (Alex, about 12:00: 19% of usage left).
+   - Sonnet subagents for mechanical work: placements, uploads, figure renders, copy swaps. Opus only for real design builds.
+   - Both widths only when the layout changes.
+   - Keep messages short.
 
 ## What's live
 
-Production deployment `5b5w340og` (3 Nov 12:30), from `2071784`, built with all four flags. It carries:
-- **The hackathon bar:** status LIVE! / On Break / Finished from the recording clock, with cells Day 1 Highlights | Day 1 Feed | Day 2 Feed (from `HACK_ITEMS` and the Day 2 group in `app\layout.tsx`).
-- **`/log`, Day 1's page:**
-  - the highlights with the merged session chart `app\log\day-lanes.tsx`;
-  - the low point: rig's 3:38 cut `sBVgT-LbEQo`, in three beats;
-  - the compact feed.
-- **`/day-2`:** a real feed from `content\feed-day2.json`, with 8 posts:
-  - on top, S19's update `mBa187jP1rc`;
-  - then the S18 walkthrough, the Comfy videos post, Day 1's highs and lows, the three articles, and S17's update `NeASfMN1Kcc`.
-- **C2 (`content\demos\getsales-36-workflows.md`):** the S18 article, with its full video `_vgNB5ubKjA`, which also plays on home and Ivana's page; clips c3 to c6; the grid; and the still cropped to the builder. Clips c1 and c2 are on `/videos`.
-- **Articles:** four, under How the day went: teaching-a-machine, label-every-piece, build-it-in-their-brand, ai-workflows-are-always-a-managed-service. Also: M5 (the LinkedIn voice entry is gone), and `/demos` is titled Articles.
+Production `46dwp8ra7` (3 Nov 13:09), from `51f9b11`, with all four flags. Every earlier deploy is in `builds.md`.
 
-The earlier production deploys are logged in `builds.md`.
-- **Open:**
-  - The time-lapse has code (`app\log\timelapse.tsx`, `scripts\build_timelapse.py`) but no frames. The Vercel MCP can't reach the project's 41 Day 1 deployments, so it needs Alex to grant the connector access or OK a temporary bypass key. Orchestration also wants 1920×1080 frames kept as files, plus `<deployment>.boxes.json`, for comfy-collab.
-  - The YouTube ids `6FlJ9h3IHzQ` (S17 webcam only) are unlisted and unused.
-  - At 12:30, two live sessions answered to the name `orchestration`; that's for orchestration to sort out.
-- **New tools:**
-  - `scripts\upload_file.py`: uploads any finished MP4 unlisted under a `content\videos.json` key (`--replace`).
-  - `scripts\check\` plus `$CLAUDE_JOB_DIR\tmp\derby_shot.mjs`: CDP viewport shots of an element mid-animation.
-- **Finishing the build:** write `.clock\finished.json` as `{"at": <epoch seconds>}` when Alex calls the end; the sync then publishes `finished` and the bar reads "Finished at ... / Built in: ...". The clock loop is now pid 9044 (restarted 10:25 for the new fields).
+- **Hackathon bar** (`app\hack-strip.tsx`; the cells come from `HACK_ITEMS` and the Day 2 group in `app\layout.tsx`).
+  - The status follows the recording clock: "LIVE!" with the countdown ticking, "On Break" with it frozen, then "Finished at / Built in".
+  - Cells: Day 1 Highlights, Day 1 Feed, then Day 2 Feed with a green dot.
+- **`/log`, Day 1's page.**
+  - The intro (h1).
+  - `#highlights`, in `app\log\highlights.tsx` and `content\highlights.json`:
+    - the merged session chart, `day-lanes.tsx`;
+    - the clips;
+    - the low point: rig's 3:38 cut `sBVgT-LbEQo`, in three beats;
+    - an empty Comfy slot at the top (`comfy_video: null` renders nothing).
+  - `#timelapse`: 41 deploy frames from comfy-collab, in `public\timelapse\` and `content\timelapse.json`.
+  - `#feed`: the compact rows.
+- **`/day-2`**, from `content\feed-day2.json`, newest first:
+  - S19 "Banana, cucumber, and a better computer" (`mBa187jP1rc`, 0:01 to 2:42);
+  - the S18 walkthrough entry;
+  - "Two videos, made today with Comfy";
+  - Day 1's highs and lows;
+  - the three morning articles;
+  - S17's "Day 2 Update" (`NeASfMN1Kcc`).
+- **C2** (`content\demos\getsales-36-workflows.md`, "36 sequences, and who goes into which one"):
+  - the S18 article;
+  - the full video `_vgNB5ubKjA`, which also plays on home and Ivana's page;
+  - clips c3 to c6, the grid, and the builder still.
+  - Clips c1 and c2 are on `/videos`.
+- **Articles** (kind showcase, group How the day went):
+  - `teaching-a-machine-to-sound-like-me`;
+  - `label-every-piece-before-you-build-a-page`;
+  - `build-it-in-their-brand`;
+  - `ai-workflows-are-always-a-managed-service` (library_id `art-managed-service`).
+- **Gone:** the LinkedIn voice entry (redirects to `/demos`), the derby and the 09:45 countdown.
+
+## Held
+
+Nothing is held. Every commit up to `51f9b11` is live.
+
+## Coming
+
+- **Two Comfy videos from comfy-collab.**
+  - "Is this thing on?" is Day 1 as a time-lapse film, 2:00 to 2:30. It goes in `/log`'s Comfy slot (`content\highlights.json` `comfy_video`), and probably also gets a Day 2 feed post.
+  - "Keep the promise" is 60 to 90 s. Ask orchestration where it goes.
+  - For each one:
+    1. Upload it unlisted with `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_file.py <file> <KEY> "<title>"`.
+    2. Embed it.
+    3. Ask orchestration for any words.
+- **Articles 2 and 3 from orchestration**, rewritten from Alex's dictation like the managed-service one.
+  - The pattern: body word for word; leave out the internal front matter, "## Gaps" and "## Media slots"; kind showcase; figures from the named sources.
+  - If an article replaces an existing entry, keep its slug or `library_id` so the carousel spots and links hold.
+- **The spoken-redline batch ("banana cucumber").** Alex scrolls the site, says banana, talks through the change, says cucumber, and a screenshot is taken in between. Expect a batch of numbered changes from orchestration.
+- **Loose ends.**
+  - The YouTube uploads `6FlJ9h3IHzQ` (S17 webcam only) and `NeASfMN1Kcc`'s twin are unused and unlisted. Only Alex can delete them; the rig's sign-in can't.
+  - `/day-2` has no intro paragraph, only the h1 "Day 2".
+
+## Tools added today
+
+- `scripts\upload_file.py`: uploads any MP4 unlisted under a `content\videos.json` key (`--replace` to swap one).
+- `scripts\build_timelapse.py <shots dir> <mp4>`: the shots are named `<host>.png`. comfy-collab's frames are `deploy-HHMM.png`, mapped through its `INDEX.md`.
+- `$CLAUDE_JOB_DIR\tmp\derby_shot.mjs` and `tl_shot.mjs`: CDP viewport shots of one element mid-animation. Set the element id inside the file.
+- `$CLAUDE_JOB_DIR\tmp\apply_words.py <site> <words.json>`: applies `{key: text}` to `highlights.json` and `timelapse.json` words, and reports any unknown keys.
+- Leak-scan summary: `scan.py` over `render_pages.py` output. Then `scan_ctx3.py` (with the folder name swapped) confirms every secret-shaped hit sits on a URL line. The expected set is 89 LinkedIn URLs on `/about`, 2 Addvery PDF links and 2 emails on `/d2`, and 6 charter terms.
+- The second and third export folders (`tmp\alt`, `tmp\alt2`) were for parallel previews. They aren't needed now; the main export is `tmp\clean-deploy`.
+
+## Routes (from 08:15; see What's live for today's changes)
 
 | Route | What |
 | --- | --- |
