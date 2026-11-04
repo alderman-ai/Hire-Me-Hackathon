@@ -76,6 +76,8 @@ export function HeroVideo({ youtube, poster, playLabel, newTab, title, tag }: He
     <div className="bh-promise-media" data-playing={playing ? "" : undefined}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img className="bh-promise-poster" src={poster} alt="" width={1920} height={1080} fetchPriority="high" decoding="async" />
+      {/* Addvery's violet over the film's orange still (home.css, "the tint"); never over the player. */}
+      <span className="bh-promise-tint" aria-hidden="true" />
       <span className="bh-promise-shade" aria-hidden="true" />
       <div className="bh-promise-stage">{stage}</div>
       <p className="bh-promise-tag" aria-hidden="true">

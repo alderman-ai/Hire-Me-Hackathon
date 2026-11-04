@@ -6,10 +6,14 @@
    the player fills on a press. The small "Keep the promise" sits in the band's bottom-right corner.
    Below 992 px: the poster is a full-width 16:9 frame (play button centred, the small line in its
    bottom-right corner) and the words sit under it on black.
+   Colours (4 Nov, Alex: the gold read as another brand): Addvery's own. The still wears a violet tint (the
+   tint, below) and the accents are lavender and the violet-to-orchid gradient (app/addvery-tokens.css).
    Contrast, measured on the still under this shade at 1024 to 1920 px wide (worst pixel behind each line):
-   the h1 white 5.8:1 or better, the second line 6.9:1, the gold line 6.8:1, the corner line 7.4:1. */
+   the h1 white 5.8:1 or better, the second line 6.9:1. Rechecked on 4 Nov with the tint, the glyphs hidden
+   and the brightest backdrop pixel taken at 1024, 1440 and 1920 px: the large "Keep the promise" line 4.7:1
+   at its orchid end (10.4:1 at its lavender start), the corner line (lavender) 10.8:1 or better. */
 .bx-band.bh-promise {
-  --bh-gold: #fd971f; /* the film's orange */
+  --bh-accent: var(--av-lavender, #d3c3ff); /* the hero's flat accent on dark */
   /* The left edge of .bx-wrap's content (1230 px column, 40 px padding), and a narrower right margin. */
   --bh-pl: max(2.5rem, calc((100% - 1150px) / 2));
   --bh-pr: max(2.5rem, calc((100% - 1150px) / 4));
@@ -40,6 +44,17 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 32%;
+}
+
+/* The tint: the brand gradient blended as hue only, so the still keeps its own light and depth and the
+   orange tubes glow violet to orchid instead (it reads as violet light, not a filter). Under the shade. */
+.bh-promise-tint {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(25deg, var(--av-violet, #6645eb) 15%, var(--av-orchid, #d445eb) 85%);
+  mix-blend-mode: hue;
 }
 
 .bh-promise-shade {
@@ -105,7 +120,7 @@
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, .96);
-  box-shadow: 0 0 0 10px rgba(253, 151, 31, .16), 0 18px 50px rgba(0, 0, 0, .55);
+  box-shadow: 0 0 0 10px rgba(102, 69, 235, .24), 0 18px 50px rgba(0, 0, 0, .55);
   color: var(--av-ink);
   cursor: pointer;
   transition: transform .3s var(--ease-out-quart), background-color .3s ease;
@@ -113,12 +128,12 @@
 
 .bh-promise-play-mark { width: 2.25rem; height: 2.25rem; margin-left: .25rem; }
 
-/* A gold ring that ripples out twice on load (under 5 s), only for people who haven't asked for less motion. */
+/* A lavender ring that ripples out twice on load (under 5 s), only for people who haven't asked for less motion. */
 .bh-promise-play::after {
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px solid var(--bh-gold);
+  border: 2px solid var(--bh-accent);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
@@ -134,7 +149,7 @@
 }
 
 @media (hover: hover) {
-  .bh-promise-play:hover { background: var(--bh-gold); transform: scale(1.05); }
+  .bh-promise-play:hover { background: var(--av-gradient-button); color: #fff; transform: scale(1.05); }
 }
 
 .bh-promise .bh-promise-play:focus-visible {
@@ -153,7 +168,7 @@
   align-items: center;
   gap: .625rem;
   margin: 0;
-  color: var(--bh-gold);
+  color: var(--bh-accent);
   font-family: var(--av-font-display);
   font-size: .875rem;
   font-weight: 600;
@@ -184,9 +199,15 @@
   text-wrap: balance;
 }
 
+/* "Keep the promise" (the class name is from the gold days): lavender into orchid, as text. */
 .bh-promise-gold {
+  width: fit-content;
   margin-top: 1.25rem;
-  color: var(--bh-gold);
+  color: var(--bh-accent);
+  background: linear-gradient(90deg, var(--av-lavender, #d3c3ff), var(--av-orchid, #d445eb));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: var(--av-font-display);
   font-size: clamp(1.75rem, 2.5vw, 2.25rem);
   font-weight: 600;
@@ -251,7 +272,7 @@
 
   .bh-promise-player,
   .bh-promise .bh-promise-player:focus-visible { border-radius: 0; box-shadow: none; outline-offset: -3px; }
-  .bh-promise-play { width: 4.5rem; height: 4.5rem; box-shadow: 0 0 0 8px rgba(253, 151, 31, .16), 0 12px 36px rgba(0, 0, 0, .55); }
+  .bh-promise-play { width: 4.5rem; height: 4.5rem; box-shadow: 0 0 0 8px rgba(102, 69, 235, .24), 0 12px 36px rgba(0, 0, 0, .55); }
   .bh-promise-play-mark { width: 1.75rem; height: 1.75rem; margin-left: .1875rem; }
   .bh-promise .bh-promise-play:focus-visible { box-shadow: 0 0 0 10px rgba(0, 0, 0, .6), 0 12px 36px rgba(0, 0, 0, .55); }
   .bh-promise-tag { right: 1rem; bottom: .75rem; gap: .5rem; font-size: .8125rem; }
