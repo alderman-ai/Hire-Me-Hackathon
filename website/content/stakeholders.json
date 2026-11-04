@@ -132,7 +132,7 @@
       "label": "Addvery's CEO",
       "title": "CEO & Business Consultant, Addvery",
       "framing": "Revenue first: what I'd point Claude Code at, and the plan by quarters",
-      "note": "Your backlog and your revenue goal have one answer: someone who runs Claude Code at full capacity, as their whole job, pointed at pipeline first. That's where five times comes from.",
+      "note": "Your backlog and your revenue goal have one answer: someone who runs Claude Code at full capacity, as their whole job, pointed at pipeline first. I've also done outbound in your exact industry, for other companies like yours in the Czech Republic.",
       "note_is_draft": false,
       "demos": [
         {
@@ -163,22 +163,22 @@
       },
       "landing": {
         "approved": true,
-        "greeting": "Hi Štěpán. In September you wrote: „jednoduše to všechno už sami po nocích s CC nestíháme :)“ (We just can't keep up with it all ourselves any more, even working nights with Claude Code.) And Addvery wants to grow five times. I think both problems have the same answer, and it starts with revenue.",
+        "greeting": "Hi Štěpán. That someone could be me. (Technically, this page is a CV. A very long one.) I'd point Claude Code at revenue first, because Addvery wants to grow five times. The best way there is a team you already have: your consultants.",
         "concerns": [
           {
-            "q": "When does this bring revenue?",
+            "q": "How soon do calls get booked?",
             "lead": "After the setup quarter.",
-            "a": "Booking starts once the accounts are ready, and the first city sprint comes around month three or four. That's why the setup fee covers only the first quarter."
+            "a": "The accounts need that quarter to get ready, so I won't promise you calls in 30 days. Revenue then follows your own buying cycle, which is about a year."
           },
           {
             "q": "My consultants are busy at clients. Will they do this?",
             "lead": "Not all of them, and that's fine.",
-            "a": "About 20 senior accounts are enough, and each consultant only approves drafts. Getting them to agree is the slowest step, so it starts first."
+            "a": "About 20 senior accounts are enough, and each consultant only approves the messages. Getting them to agree is the slowest step, so it starts first."
           },
           {
             "q": "Will it sound like AI?",
-            "lead": "It should sound like each consultant.",
-            "a": "Nothing goes out without the consultant's yes, so it has to sound like them. This site's copy works the same way: my voice skill writes it, and a separate grader checks it."
+            "lead": "No, because I write it by hand.",
+            "a": "I use AI 40 to 50 hours a week, but after 8 years of outreach, messages are the one thing I still write better than Claude."
           },
           {
             "q": "Czech and work authorisation.",
@@ -196,7 +196,7 @@
             "href": "/articles/36-outbound-workflows-and-the-one-variable-behind-them"
           },
           {
-            "title": "How I sort each lead into one of the 36",
+            "title": "How a classification model sorts each lead into the right sequence",
             "href": "/articles/sorting-twelve-leads-into-36-workflows-rules-first-then-jev"
           },
           {
@@ -208,7 +208,7 @@
             "href": "/skills"
           }
         ],
-        "lead": "In September you wrote:",
+        "lead": "That someone could be me. (Technically, this page is a CV. A very long one.)",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""

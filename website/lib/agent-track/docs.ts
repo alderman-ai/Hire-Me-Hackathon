@@ -786,9 +786,11 @@ function linkedMd(text: string, phrase: string, href: string): string {
   return i < 0 ? text : `${text.slice(0, i)}[${phrase}](${href})${text.slice(i + phrase.length)}`;
 }
 
-/** The lead of a recalibrated page: the line, the quote in Czech with its English gloss, then the rest. */
+/** The lead of a recalibrated page: the line, the quote with its gloss when it has one, then the rest. */
 function recalLeadMd(slug: string): string[] {
-  return [rich(rw(slug, "landing.lead")), `> ${rw(slug, "landing.lead_quote.cz")}\n>\n> ${rw(slug, "landing.lead_quote.en")}`, rich(rw(slug, "landing.lead_after"))];
+  const cz = forText(slug, "landing.lead_quote.cz");
+  const en = forText(slug, "landing.lead_quote.en");
+  return [rich(rw(slug, "landing.lead")), ...(cz && en ? [`> ${cz}\n>\n> ${en}`] : []), rich(rw(slug, "landing.lead_after"))];
 }
 
 /** The blocks of a recalibrated page (recal.tsx RecalBody), as Markdown, in the page's order. */
@@ -812,7 +814,7 @@ function recalBodyMd(slug: string, concerns: { q: string; lead?: string; a: stri
     ...section("offer"),
     `## ${rw(slug, "landing.proof.heading")}`,
     rich(rw(slug, "landing.proof.switch")),
-    rich(linkedMd(rw(slug, "landing.proof.workflows"), "The 36 GetSales workflows", "/articles/36-outbound-workflows-and-the-one-variable-behind-them")),
+    rich(rw(slug, "landing.proof.workflows")),
     rich(linkedMd(rw(slug, "landing.proof.agent"), "/llms.txt", "/llms.txt")),
     "```\n" + rw(slug, "landing.proof.agent_command") + "\n```",
     ...(concerns.length

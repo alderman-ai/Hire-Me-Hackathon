@@ -82,19 +82,26 @@ export function RecalTitle({ slug, id }: { slug: string; id: string }) {
   );
 }
 
-/** The lead: the line, the quote in Czech with its English gloss under it, then the rest. */
+/**
+ * The lead: the line, then the rest. A quote in Czech with its English gloss sits between them only when
+ * both keys have words (fix 1 on 4 Nov emptied them on purpose: the CEO's hero has no quote).
+ */
 export function RecalLead({ slug }: { slug: string }) {
+  const cz = forText(slug, "landing.lead_quote.cz");
+  const en = forText(slug, "landing.lead_quote.en");
   return (
     <div className="for-land-lead pp-lead rc-lead">
       <p>
         <Rich text={w(slug, "landing.lead")} slug={slug} />
       </p>
-      <blockquote className="rc-quote">
-        <p lang="cs" className="rc-quote-cs">
-          {w(slug, "landing.lead_quote.cz")}
-        </p>
-        <p className="rc-quote-en">{w(slug, "landing.lead_quote.en")}</p>
-      </blockquote>
+      {cz && en && (
+        <blockquote className="rc-quote">
+          <p lang="cs" className="rc-quote-cs">
+            {cz}
+          </p>
+          <p className="rc-quote-en">{en}</p>
+        </blockquote>
+      )}
       <p>
         <Rich text={w(slug, "landing.lead_after")} slug={slug} />
       </p>
@@ -184,10 +191,7 @@ export function RecalBody({ slug, concerns }: { slug: string; concerns: LandingC
             <Rich text={w(slug, "landing.proof.switch")} slug={slug} />
           </p>
           <p>
-            <Rich
-              text={linked(w(slug, "landing.proof.workflows"), "The 36 GetSales workflows", "/articles/36-outbound-workflows-and-the-one-variable-behind-them")}
-              slug={slug}
-            />
+            <Rich text={w(slug, "landing.proof.workflows")} slug={slug} />
           </p>
           <p>
             <Rich text={linked(w(slug, "landing.proof.agent"), "/llms.txt", "/llms.txt")} slug={slug} />

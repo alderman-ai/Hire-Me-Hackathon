@@ -37,6 +37,7 @@
   margin: 0;
 }
 
+.rc-lead > p + p,
 .rc-lead > p + .rc-quote,
 .rc-lead > .rc-quote + p {
   margin-top: 1rem;

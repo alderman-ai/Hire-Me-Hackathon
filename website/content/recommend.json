@@ -74,7 +74,7 @@
       },
       {
         "id": "demo-getsales-36-workflows",
-        "why": "The 36 workflows I built for Addvery, one first message per lead.",
+        "why": "How AI can run 30 to 50 message sequences, with a model choosing one for each lead.",
         "fallback": "demo-d1-scraping-briefing",
         "image": {
           "src": "/demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/36-grid-card.png",
