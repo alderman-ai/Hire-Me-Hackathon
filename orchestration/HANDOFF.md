@@ -19,7 +19,7 @@ How (project `prj_rT9kFM97a02ouvSsMrZZRYqJi4jo`, team `team_m6QeC9FHcO8dk7PvEHtf
 
    So skip any hit inside a burst of other page routes (within 2 seconds). The MCP's `get_runtime_logs` answered 403.
 
-The watch script used on 4 Nov does both every 10 minutes and exits on the first new visit, so the session gets one notice and then re-arms it: `C:\Users\alder\.claude\jobs\a77ec41a\tmp\watch_ceo_visits.py`. That folder is deleted with the job, so copy the script into `orchestration\local\` if it's gone.
+The watch script used on 4 Nov does both every 10 minutes and exits on the first new visit, so the session gets one notice and then re-arms it: `orchestration\local\visit-watch\watch_ceo_visits.py` (git-ignored). Run it with `python -I` as a background command.
 
 Before the watch started (by Prague hour, from Web Analytics): /for/ceo had one desktop visitor from Czechia at 18:00 on 2 Nov; a mobile visitor from Czechia at 06:00 on 3 Nov (2 views); desktop, Czechia, at 21:00 on 3 Nov and at 10:00, 11:00 and 12:00 on 4 Nov; and in the 16:00 hour on 4 Nov, after Alex's email (about 15:40), one desktop visitor from Czechia (2 views) and one from Ireland (1 view). None had a referrer. Several of these are probably Alex or our own checks.
 
