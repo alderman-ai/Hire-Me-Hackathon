@@ -49,7 +49,7 @@ export function LeadCard() {
                   caption={t(s.clip.caption)}
                   meta={t(s.clip.meta)}
                   length={s.clip.length}
-                  poster={s.clip.poster}
+                  still={s.clip.still}
                 />
               </div>
             )}

@@ -33,7 +33,7 @@ export type LeadStep = {
   caveat?: CopyKey;
   text?: CopyKey;
   /** The Jev clip (step 2). */
-  clip?: { youtube: string; label: CopyKey; caption: CopyKey; meta: CopyKey; length: string; poster: string };
+  clip?: { youtube: string; label: CopyKey; caption: CopyKey; meta: CopyKey; length: string; still: string };
   /** The matrix with only this lead's cell lit (step 4). */
   matrix?: { legend: CopyKey };
   /** Message 1 in Czech, then in English (step 5). */
@@ -67,7 +67,8 @@ export const LEAD_STEPS: LeadStep[] = [
       caption: "home.proof.step2.clip.caption",
       meta: "home.proof.step2.clip.meta",
       length: "0:59",
-      poster: "https://i.ytimg.com/vi/rDUsnHrAwv0/maxresdefault.jpg",
+      // A local still, the frame cropped to the recording's content area: no tab bar, bookmarks or taskbar.
+      still: "/videos/s18-c4.webp",
     },
   },
   {
