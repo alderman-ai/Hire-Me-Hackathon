@@ -293,68 +293,25 @@
   .bh-promise-play:hover { transform: none; }
 }
 
-/* ---------- Numbers strip ---------- */
-.bh-readout-title { margin-bottom: 1rem; }
-
-.bh-readout {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--av-line-on-dark);
-  list-style: none;
-}
-
-.bh-readout li { border-right: 1px solid var(--av-line-on-dark); min-width: 0; }
-.bh-readout li:last-child { border-right: 0; }
-
-.bh-readout a {
-  display: flex;
-  flex-direction: column;
-  gap: .375rem;
-  height: 100%;
-  min-height: 44px;
-  padding: 1.5rem 1.25rem 1.75rem;
-  color: var(--av-text-on-dark);
-  text-decoration: none;
-  transition: background .3s ease;
-}
-
-.bh-readout a:hover { background: var(--av-surface-dark-card); }
-.bh-readout-n { color: var(--av-lavender); font-family: var(--av-font-numeric); font-weight: 600; font-size: .8125rem; }
-.bh-readout-k { color: #fff; font-family: var(--av-font-numeric); font-weight: 600; font-size: 1.25rem; line-height: 1.3; letter-spacing: -.01em; }
-.bh-readout-v { font-size: .9375rem; line-height: 1.45; }
-
-@media (max-width: 1100px) {
-  .bh-readout { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .bh-readout li:nth-child(3) { border-right: 0; }
-  .bh-readout li:nth-child(-n+3) { border-bottom: 1px solid var(--av-line-on-dark); }
-}
-
-@media (max-width: 600px) {
-  .bh-readout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .bh-readout li { border-right: 0 !important; border-bottom: 1px solid var(--av-line-on-dark); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bh-readout a, .bh-faces img { transition: none; }
-  .bh-faces a:hover img { transform: none; }
-}
-
-/* ---------- Account ---------- */
+/* ---------- Prose in the bands (4 Nov rewrite): a copy key's paragraphs, **bold** as <strong> ---------- */
+.bh-prose { max-width: 46rem; margin-top: 2rem; }
+.bh-prose p { margin: 0; color: var(--bx-body); font-size: var(--av-rich-size); line-height: var(--av-rich-lh); text-wrap: pretty; }
+.bh-prose p + p { margin-top: 1.125rem; }
+.bh-prose strong { color: var(--bx-fg); font-weight: 600; }
+.bh-prose .bh-muted { font-size: 1rem; }
 .bh-two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: start; margin-top: 4rem; }
-.bh-account-quote { margin-bottom: 3rem; }
 @media (max-width: 991px) { .bh-two { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } }
 
-/* ---------- Six faces ---------- */
-.bh-faces { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+/* ---------- 2. Six faces, each with the hook line the /for grid shows ---------- */
+.bh-prose-six { margin-bottom: 3rem; }
+.bh-faces { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.25rem 1rem; margin: 0; padding: 0; list-style: none; }
 .bh-faces li { min-width: 0; }
 
 .bh-faces a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .625rem;
+  gap: .5rem;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -366,6 +323,7 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 50% 0;
+  margin-bottom: .125rem;
   border: 1px solid var(--av-border-photo);
   border-radius: var(--av-radius-xl);
   filter: grayscale(1);
@@ -375,41 +333,106 @@
 .bh-faces a:hover img { transform: translateY(-3px); }
 .bh-faces span { font-family: var(--av-font-display); font-size: 1rem; line-height: 1.3; }
 .bh-faces small { color: var(--av-text-on-dark); font-family: var(--av-font-body-haas); font-size: .8125rem; line-height: 1.35; }
-@media (max-width: 767px) { .bh-faces { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.bh-face-hook { color: var(--av-lilac-200); font-size: .8125rem; font-style: normal; line-height: 1.4; text-wrap: balance; }
+.bh-takedown { max-width: 46rem; margin: 2.5rem 0 0; color: var(--av-text-on-dark); font-size: .9375rem; line-height: 1.6; }
+.bh-takedown a { color: #fff; text-decoration: underline; text-decoration-color: var(--av-lavender); text-underline-offset: .2em; }
+@media (max-width: 991px) { .bh-faces { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .bh-faces { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-/* ---------- The argument ---------- */
-.bh-chain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--av-gutter); margin: 0; padding: 0; list-style: none; }
+@media (prefers-reduced-motion: reduce) {
+  .bh-faces img { transition: none; }
+  .bh-faces a:hover img { transform: none; }
+}
 
-.bh-chain li {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  min-width: 0;
-  padding: 2rem 1.75rem 1.75rem;
-  border: 1px solid var(--av-lilac-300);
+/* ---------- 3. The argument: the personalization line (a dark image, on lilac with the card radius) ---------- */
+.bh-argument-fig { max-width: 980px; margin-top: 2.5rem; }
+.bh-argument-fig img { border-color: var(--av-lilac-300); border-radius: var(--av-radius-lg); }
+.bh-argument-fig figcaption { color: var(--av-text-on-light); }
+
+/* ---------- 4. Proof: the fiction note, read before the card ---------- */
+.bh-fiction {
+  max-width: 46rem;
+  margin: 2.5rem 0 0;
+  padding: .25rem 0 .25rem 1.125rem;
+  border-left: 3px solid var(--av-lavender);
+  color: var(--av-lilac-200);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.bh-fiction strong { color: #fff; font-weight: 600; }
+
+/* ---------- The lead card (lead-card.tsx) ----------
+   Tags: Rule violet with white text (5.8:1), Jev orchid with ink text (5.1:1), Person a lavender outline with
+   lavender text (11.3:1 on ink). Never violet text on ink, never white on orchid. Addvery tokens only. */
+.lc {
+  max-width: 62rem;
+  margin-top: 2rem;
+  padding: 2rem 2.25rem 2.25rem;
+  border: 1px solid var(--av-border-dark-card);
   border-radius: var(--av-radius-lg);
-  background: #fff;
+  background: var(--av-surface-dark-card);
 }
 
-.bh-chain-n {
-  font-family: var(--av-font-numeric);
+.lc-title { margin: 0; color: #fff; font-family: var(--av-font-display); font-size: 1.375rem; font-weight: 500; line-height: 1.3; letter-spacing: -.01em; }
+
+.lc-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; margin: 1.25rem 0 0; }
+.lc-fields div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .625rem 0; border-bottom: 1px solid var(--av-line-on-dark); }
+.lc-fields dt { color: var(--av-text-on-dark); font-size: .9375rem; }
+.lc-fields dd { margin: 0; color: #fff; font-size: 1rem; font-weight: 500; text-align: right; }
+
+.lc-steps { display: grid; gap: 2.25rem; margin: 2.75rem 0 0; padding: 0; list-style: none; }
+
+/* Each step on its own 3 px rule: violet, orchid, lavender, or the violet-to-orchid gradient. */
+.lc-step { position: relative; min-width: 0; padding-left: 1.5rem; }
+.lc-step::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 3px; border-radius: 3px; background: var(--lc-rule); }
+.lc-violet { --lc-rule: var(--av-violet); }
+.lc-orchid { --lc-rule: var(--av-orchid); }
+.lc-lavender { --lc-rule: var(--av-lavender); }
+.lc-gradient { --lc-rule: linear-gradient(180deg, var(--av-violet), var(--av-orchid)); }
+
+.lc-step-title { margin: 0; color: #fff; font-family: var(--av-font-display); font-size: 1.1875rem; font-weight: 500; line-height: 1.3; }
+.lc-lead { margin: .5rem 0 0; color: var(--av-text-on-dark); font-size: 1rem; line-height: 1.6; }
+.lc-lines { display: grid; gap: .75rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.lc-lines li { display: flex; align-items: baseline; gap: .75rem; color: var(--av-lilac-200); font-size: 1rem; line-height: 1.55; }
+
+.lc-tag {
+  flex: none;
+  min-width: 4.25rem;
+  padding: .0625rem .5rem;
+  border: 1px solid transparent;
+  border-radius: var(--av-radius-pill, 999px);
+  font-size: .8125rem;
   font-weight: 600;
-  font-size: 3rem;
-  line-height: 1;
-  letter-spacing: -1px;
-  background-image: var(--av-gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  line-height: 1.5;
+  text-align: center;
 }
 
-.bh-chain blockquote { margin: 0; }
-.bh-chain blockquote p { color: var(--av-ink); font-family: var(--av-font-display); font-size: 1.375rem; font-weight: 500; line-height: 1.35; letter-spacing: -.01em; }
-.bh-chain .bx-vid { margin-top: auto; }
-.bh-chain .bx-vid-meta { color: var(--av-text-on-light); }
-@media (max-width: 991px) { .bh-chain { grid-template-columns: minmax(0, 1fr); } }
+.lc-tag-rule { background: var(--av-violet); color: #fff; }
+.lc-tag-jev { background: var(--av-orchid); color: var(--av-ink); }
+.lc-tag-person { border-color: var(--av-lavender); color: var(--av-lavender); }
 
-/* ---------- About strip ---------- */
+.lc-clip { max-width: 30rem; margin-top: 1.5rem; }
+.lc-caveat { margin: 1rem 0 0; color: var(--av-text-on-dark); font-size: .9375rem; line-height: 1.6; }
+.lc-text { margin: .75rem 0 0; color: var(--av-lilac-200); font-size: 1rem; line-height: 1.55; }
+.lc-matrix, .lc-messages { margin-top: 1.25rem; }
+
+@media (max-width: 767px) {
+  .lc { padding: 1.25rem 1.125rem 1.5rem; }
+  .lc-fields { grid-template-columns: minmax(0, 1fr); }
+  .lc-step { padding-left: 1.125rem; }
+  .lc-lines li { flex-direction: column; gap: .375rem; }
+}
+
+/* ---------- 5. The team: words left, the activity board right ---------- */
+.bh-team { margin-top: 2.5rem; }
+.bh-team .bh-prose { margin-top: 0; }
+.bh-team-fig img { border-color: var(--av-lilac-300); }
+
+/* ---------- 6. The build ---------- */
+.bh-build-clip { max-width: 44rem; margin-top: 2.5rem; }
+
+/* ---------- 8. About strip ---------- */
 .bh-about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
 .bh-about-photo { margin: 0; max-width: 360px; }
 .bh-about-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border: 1px solid var(--av-border-photo); border-radius: var(--av-radius-xl); }

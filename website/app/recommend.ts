@@ -25,7 +25,8 @@ export type RecCard = {
 
 export const LIST_SLUGS = ["default", "growth", "ceo", "cofounder-1", "cofounder-2", "delivery", "bi"] as const;
 /** A person's list, or the default. "about" is /about's own list ("What I've written"), not a person. */
-export type ListSlug = (typeof LIST_SLUGS)[number] | "about";
+// "home" (4 Nov) is the home page's own list; it stays out of LIST_SLUGS, which also names the six people.
+export type ListSlug = (typeof LIST_SLUGS)[number] | "about" | "home";
 
 const PLACEHOLDER = (data as { placeholder?: boolean }).placeholder === true;
 

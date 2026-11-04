@@ -152,24 +152,3 @@ export function MachineLinks() {
     </LinkRow>
   );
 }
-
-/** The whole block on an ink band: home's section #machine. */
-export function Machine36() {
-  return (
-    <Band tone="ink" id="machine" labelledBy="machine-title">
-      <EyebrowRow>{t("home.machine.1")}</EyebrowRow>
-      <h2 id="machine-title" className="bx-h2">
-        {MACHINE.title}
-      </h2>
-      <p className="bx-lead">{MACHINE.lead}</p>
-      <div className="bx-machine-top">
-        <WalkthroughFrame />
-        <MachineStats />
-      </div>
-      <Routing />
-      <MachineMatrix legend={t("home.machine.2")} />
-      <MachineFigures />
-      <MachineLinks />
-    </Band>
-  );
-}

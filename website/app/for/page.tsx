@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { t, type CopyKey } from "../copy";
 import { Reveal } from "../motion";
-import { gridIntro, portraitFor, stakeholderGate, titleLines } from "../stakeholders";
+import { gridIntro, lensLine, portraitFor, stakeholderGate, titleLines } from "../stakeholders";
 import { ClipFrame, clipFor } from "./[slug]/quotes";
 import "../article.css";
 import { FOR_META, FOR_SOURCES_LINE, markdownAlternate } from "../page-meta";
@@ -24,10 +24,8 @@ export const metadata: Metadata = {
   alternates: { types: markdownAlternate("/for") },
 };
 
-/** The line under a title: growth's is her own words, the other five a site-copy key. */
-function lens(page: { lens?: string; lens_key?: string }): string | undefined {
-  return page.lens ?? (page.lens_key ? t(page.lens_key as CopyKey) : undefined);
-}
+/** The line under a title (app/stakeholders.ts lensLine, shared with the home's six). */
+const lens = lensLine;
 
 function ArrowIcon() {
   return (

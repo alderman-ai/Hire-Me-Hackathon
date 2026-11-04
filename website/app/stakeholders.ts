@@ -1,4 +1,5 @@
 import stakeholdersJson from "@/content/stakeholders.json";
+import { t, type CopyKey } from "./copy";
 
 // The stakeholder pages: one page per key person at Addvery, addressed to their role (/for/<slug>),
 // and the grid of all six that opens them (/for).
@@ -251,4 +252,9 @@ export function greetingSummary(greeting: string): string {
 /** "Job A, Co · Job B, Co2" -> ["Job A, Co", "Job B, Co2"]: one line per job. */
 export function titleLines(title: string): string[] {
   return title.split(/\s+·\s+/).filter(Boolean);
+}
+
+/** A page's hook line, as the /for grid and the home's six show it: growth's is her own words, the others a site-copy key. */
+export function lensLine(page: { lens?: string; lens_key?: string }): string | undefined {
+  return page.lens ?? (page.lens_key ? t(page.lens_key as CopyKey) : undefined);
 }

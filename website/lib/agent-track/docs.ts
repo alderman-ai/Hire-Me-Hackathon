@@ -12,22 +12,13 @@ import skillsJson from "@/content/skills.json";
 import { t, type CopyKey } from "@/app/copy";
 import { IS_PRODUCTION_BUILD, NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "@/app/flags";
 import { forCopySlugs, forList, forText, isPlaceholder, recalReady } from "@/app/for/[slug]/for-copy";
-import { formatDate, madeLead, ordered, visibleEntries, type Entry } from "@/app/articles/entries";
+import { entryUrl, findEntry, formatDate, madeLead, ordered, visibleEntries, type Entry } from "@/app/articles/entries";
 import { pageHref, recommendFor, type ListSlug } from "@/app/recommend";
-import { gridIntro, stakeholderGate, titleLines, type StakeholderPage } from "@/app/stakeholders";
+import { gridIntro, lensLine, stakeholderGate, titleLines, type StakeholderPage } from "@/app/stakeholders";
 import { dayOf } from "@/app/day-label";
 import { ABOUT_META, ARTICLES_META, DAY2_META, FOR_META, FOR_SOURCES_LINE, LOG_META, SITE_META } from "@/app/page-meta";
-import {
-  HOME_ABOUT,
-  HOME_ACCOUNT_QUOTE,
-  HOME_ACCOUNT_STEPS,
-  HOME_ARGUMENT,
-  HOME_LIMITS_TITLE,
-  HOME_SIX,
-  HOME_SKILLS_TITLE,
-  MOMENTS,
-  NUMBERS,
-} from "@/app/home/home-words";
+import { LEAD_FIELDS, LEAD_STEPS, LEAD_TAG, LEAD_TITLE } from "@/app/home/lead-card-words";
+import { HOME_SKILLS_TITLE } from "@/app/home/home-words";
 import { C1_LINK, C1_SLUG, C2_SLUG, MACHINE, MACHINE_FIGURES, MACHINE_STAT_NUMS, MESSAGES, ROUTING, c2, machineStatLabels, walkthroughWords } from "@/app/best/machine-words";
 import {
   BI_LENS,
@@ -274,75 +265,96 @@ function machineLinksMd(): string {
 
 function homeDoc(): Doc {
   const key = "index";
+  // The home's words are site-copy keys (app/home/best-home.tsx reads the same keys in the same order).
+  const say = (k: CopyKey) => rich(t(k));
   const parts: string[] = [];
+
+  // The hero (its h1 is the doc's title).
   parts.push(t("home.hero.1"));
   parts.push(`**${t("home.hero.5")}**`);
   parts.push(`[Video: ${t("home.hero.6")}](${youtube("zVnA-AMuNfc")})`);
   parts.push(`${t("home.hero.9")}, ${t("home.hero.10")}`);
 
-  parts.push(`## ${t("home.numbers.1")}`);
-  parts.push(NUMBERS.map((n, i) => `- **${n.k}**: ${i === 0 ? t("home.numbers.2") : n.v}`).join("\n"));
+  // 1. What you're looking at.
+  parts.push(`## ${t("home.what.2")}`);
+  parts.push(say("home.what.3"));
+  parts.push(quoteWith(t("home.what.quote"), t("home.what.quote_source"), "qrBNOsSYGrQ", 668));
 
-  // The machine.
-  parts.push(`## ${MACHINE.title}`);
-  parts.push(`*${t("home.machine.1")}.* ${MACHINE.lead}`);
-  parts.push(walkthroughMd());
-  parts.push(statsMd());
-  parts.push(`### ${ROUTING.title}`);
-  parts.push(ROUTING.before);
-  parts.push(ROUTING.flow.map((f, i) => `${i + 1}. **${f.what}** (${f.n}): ${f.text}`).join("\n"));
-  parts.push(ROUTING.after);
-  parts.push(figuresMd());
-  parts.push(machineLinksMd());
-
-  // The account.
-  parts.push(`## ${t("home.account.2")}`);
-  parts.push(`*${t("home.account.1")}.*`);
-  parts.push(quoteWith(HOME_ACCOUNT_QUOTE.text, HOME_ACCOUNT_QUOTE.when, HOME_ACCOUNT_QUOTE.youtube, HOME_ACCOUNT_QUOTE.start));
+  // 2. A page for each of you.
+  parts.push(`## ${t("home.six.2")}`);
+  parts.push(say("home.six.3"));
   parts.push(
-    HOME_ACCOUNT_STEPS.map(
-      (s, i) => `${i + 1}. **[${s.title}](${s.href.startsWith("#") ? anchor(key, s.href) : link(s.href)})**: ${s.text}`,
-    ).join("\n"),
-  );
-  parts.push(`### ${HOME_LIMITS_TITLE}`);
-  parts.push(`${t("home.limits.1")}:\n\n${limitsDefault().map((l) => `- ${l}`).join("\n")}`);
-  parts.push(`${blockquote(CRM_LINE)}\n>\n> ${t("shared.crm.1")}`);
-
-  // The six.
-  parts.push(`## ${HOME_SIX.title}`);
-  parts.push(
-    (stakeholdersRaw.pages as { slug: string; name: string; title: string }[])
-      .map((p) => `- [${p.name}](${link(`/for/${p.slug}`)}): ${p.title.split(" · ")[0].replace(/, Addvery$/, "")}`)
+    (stakeholdersRaw.pages as { slug: string; name: string; title: string; lens?: string; lens_key?: string }[])
+      .map((p) => {
+        const hook = lensLine(p);
+        return `- [${p.name}](${link(`/for/${p.slug}`)}), ${p.title.split(" · ")[0].replace(/, Addvery$/, "")}${hook ? `: ${hook}` : ""}`;
+      })
       .join("\n"),
   );
-  parts.push(quoteWith(HOME_SIX.quote.text, HOME_SIX.quote.when, HOME_SIX.quote.youtube, HOME_SIX.quote.start));
+  parts.push(`${t("shared.takedown.1")} [${stakeholderGate().notice.privacy_label}](${link("/privacy")}).`);
 
-  // The argument.
-  parts.push(`## ${HOME_ARGUMENT.title}`);
-  parts.push(`*${t("home.argument.1")}.* ${HOME_ARGUMENT.lead}`);
-  const cv = HOME_ARGUMENT.chainVideo;
-  parts.push(
-    HOME_ARGUMENT.chain
-      .map((line, i) => `${i + 1}. ${line}${i === 0 ? `\n   ${videoLink(cv.label, cv.youtube, cv.start, cv.end, cv.length)}` : ""}`)
-      .join("\n"),
-  );
-  parts.push(quoteWith(HOME_ARGUMENT.quote.text, HOME_ARGUMENT.quote.when, HOME_ARGUMENT.quote.youtube, HOME_ARGUMENT.quote.start));
+  // 3. My one argument.
+  parts.push(`## ${t("home.argument.2")}`);
+  parts.push(say("home.argument.3"));
+  parts.push(`![${t("home.argument.figure.alt")}](${abs("/demos-assets/if-ai-wont-replace-half-your-team/personalisation-volume.png")})\n\n*${t("home.argument.figure.caption")}*`);
   const pipeline = pageHref("art-pipeline-promise");
-  if (pipeline) parts.push(`[${HOME_ARGUMENT.articleLink}](${link(pipeline)})`);
+  if (pipeline) parts.push(`[${t("home.argument.link")}](${link(pipeline)})`);
 
-  // Moments that became skills.
-  parts.push(`## ${t("home.skills.1")}`);
-  parts.push(`${blockquote(HOME_SKILLS_TITLE)}\n\n${t("home.skills.2")}`);
-  parts.push(MOMENTS.map((m) => `- **${m.name}** (${m.time}): ${m.quote}`).join("\n"));
-  if (docKeys().has("skills")) parts.push(`[${t("home.skills.3")}](${mdUrl("skills")})`);
+  // 4. One lead, from a LinkedIn search to its first message (app/home/lead-card-words.ts).
+  parts.push(`## ${t("home.proof.2")}`);
+  parts.push(say("home.proof.3"));
+  parts.push(say("home.proof.fiction"));
+  parts.push(`### ${t(LEAD_TITLE)}`);
+  parts.push(LEAD_FIELDS.map((f) => `- **${t(f.label)}**: ${t(f.value)}`).join("\n"));
+  for (const s of LEAD_STEPS) {
+    const lines: string[] = [`**${t(s.title)}**${s.lead ? ` ${t(s.lead)}` : ""}`];
+    if (s.lines) lines.push(s.lines.map((l) => `- ${t(LEAD_TAG[l.tag])}: ${t(l.text)}`).join("\n"));
+    if (s.clip) lines.push(`${videoLink(t(s.clip.label), s.clip.youtube, undefined, undefined, s.clip.length)}: ${t(s.clip.caption)}, ${t(s.clip.meta)}`);
+    if (s.caveat) lines.push(t(s.caveat));
+    if (s.text) lines.push(t(s.text));
+    // The matrix as one line: the card's lead (row L11) lit in cell 12, Telco CVM, CS, proof.
+    if (s.matrix) lines.push(`${t(s.matrix.legend)}: Telco CVM, CS, proof.`);
+    if (s.messages) {
+      lines.push(`${t(s.messages.labelCs)}:\n\n${blockquote(t(s.messages.cs))}`);
+      lines.push(`${t(s.messages.labelEn)}:\n\n${blockquote(t(s.messages.en))}`);
+    }
+    parts.push(lines.join("\n\n"));
+  }
+  parts.push(say("home.proof.twelve"));
+  parts.push(t("shared.limits.1"));
+  parts.push(`${blockquote(CRM_LINE)}\n>\n> ${t("shared.crm.1")}`);
+  const proofLinks = [
+    findEntry(C2_SLUG) ? `[${t("home.proof.link_sequences")}](${link(entryUrl(C2_SLUG))})` : "",
+    findEntry(C1_SLUG) ? `[${t("home.proof.link_routing")}](${link(entryUrl(C1_SLUG))})` : "",
+  ].filter(Boolean);
+  if (proofLinks.length) parts.push(proofLinks.join(" · "));
 
-  // About me.
-  parts.push(`## ${HOME_ABOUT.title}`);
-  parts.push(HOME_ABOUT.paragraphs.join("\n\n"));
+  // 5. The same model on Addvery's own team.
+  parts.push(`## ${t("home.team.2")}`);
+  parts.push(say("home.team.3"));
+  parts.push(`![${t("home.team.figure.alt")}](${abs("/d1/03-linkedin-activity-1280.webp")})\n\n*${t("home.team.figure.caption")}*`);
+  parts.push(`[${t("home.team.link")}](${link("/d1")})`);
+
+  // 6. One person, a team of Claude Code sessions.
+  parts.push(`## ${t("home.build.2")}`);
+  parts.push(say("home.build.3"));
+  parts.push(`${videoLink(t("home.build.clip.label"), "S2NTaJHUmTM", undefined, undefined, "0:33")}: ${t("home.build.clip.caption")}, ${t("home.build.clip.meta")}`);
+  parts.push(say("home.build.4"));
+  parts.push(quoteWith(t("home.build.quote"), t("home.build.quote_source"), "NULD_WteCRM", 474));
+  parts.push(say("home.build.5"));
+  parts.push(
+    [docKeys().has("skills") ? `[${t("home.skills.3")}](${mdUrl("skills")})` : "", `[${t("home.build.log_link")}](${link("/log")})`]
+      .filter(Boolean)
+      .join(" · "),
+  );
+
+  // 8. About me.
+  parts.push(`## ${t("home.about.2")}`);
+  parts.push(say("home.about.3"));
   parts.push(`[${t("shared.about.1")}](${mdUrl("about")})`);
 
   return labelled("Home", doc(key, TITLE.index(), NOTE.index(), parts.join("\n\n"), [
-    ...recommended("default").slice(0, 3),
+    ...recommended("home").slice(0, 3),
     page("about"),
     page("for"),
     page("videos"),

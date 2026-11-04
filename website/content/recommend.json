@@ -202,6 +202,38 @@
         "why": "",
         "fallback": "demo-d1-scraping-briefing"
       }
+    ],
+    "home": [
+      {
+        "id": "art-after-the-sequence",
+        "why": "What I do once the sequences are live: find what works, and kill what doesn't.",
+        "fallback": null
+      },
+      {
+        "id": "art-build-it-in-their-brand",
+        "why": "Why this site is in your brand, not mine.",
+        "fallback": null
+      },
+      {
+        "id": "art-content-distribution",
+        "why": "Who writes the weekly posts for every account you send from.",
+        "fallback": null
+      },
+      {
+        "id": "art-teaching-a-machine-to-sound-like-me",
+        "why": "How AI drafts in a person's voice, so they only proofread.",
+        "fallback": null
+      },
+      {
+        "id": "art-managed-service",
+        "why": "Why an AI workflow still needs someone to run it after it's built.",
+        "fallback": null
+      },
+      {
+        "id": "art-best-of-three-instead-of-redlining",
+        "why": "The method behind this page: three full drafts, and I only chose.",
+        "fallback": null
+      }
     ]
   }
 }

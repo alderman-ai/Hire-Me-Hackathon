@@ -294,7 +294,7 @@ export type MatrixHit = { cell: number; text: string; title: string };
 
 /** Where four of the fictional leads landed (BUILD.md 3, item 3). Cell numbers run row by row. */
 export const MATRIX_HITS: MatrixHit[] = [
-  { cell: 12, text: "Litware", title: "Litware Stream (Czech telco, fictional)" },
+  { cell: 12, text: "Litware", title: t("home.proof.matrix_hit_title") },
   { cell: 20, text: "Woodgrove", title: "Woodgrove Úver (Slovak lender, fictional): Slovak leads get Czech" },
   { cell: 29, text: "Tailspin", title: "Tailspin Parcel CZ (fictional)" },
   { cell: 34, text: "Coho", title: "Coho Last Mile (fictional)" },
@@ -310,8 +310,8 @@ const TACTICS = ["signal", "problem", "proof"];
 export type MatrixProps = {
   /** The legend text for the gradient cells (t("home.machine.2") on home, t("entry.matrix.1") on the entry). */
   legend: ReactNode;
-  /** Legend for the outlined cell. Default: "Retail loyalty, English, proof". */
-  shownLegend?: ReactNode;
+  /** Legend for the outlined cell. Default: "Retail loyalty, English, proof"; null shows no second legend item (the home, 4 Nov). */
+  shownLegend?: ReactNode | null;
   /** Override the highlighted cells. Default: `MATRIX_HITS`. */
   hits?: MatrixHit[];
   /** Override the outlined cell number. Default: 9. */
@@ -381,10 +381,12 @@ export function Matrix({ legend, shownLegend = "Retail loyalty, English, proof",
           <i className="bx-key-hit" aria-hidden="true" />
           {legend}
         </span>
-        <span>
-          <i className="bx-key-shown" aria-hidden="true" />
-          {shownLegend}
-        </span>
+        {shownLegend !== null && (
+          <span>
+            <i className="bx-key-shown" aria-hidden="true" />
+            {shownLegend}
+          </span>
+        )}
       </p>
     </>
   );
