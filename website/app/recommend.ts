@@ -9,7 +9,8 @@ import { IS_PRODUCTION_BUILD, NEW_SITE } from "./flags";
 // fallback id. An item shows the page the site has for its id, else its fallback's page, else it's
 // skipped, so no card ever points at a placeholder. The order of each list is the reading path.
 
-export type RecItem = { id: string; why: string; fallback?: string | null };
+/** `image`: this list's own card image for the item's page, in place of its video still (4 Nov: the CEO's list). */
+export type RecItem = { id: string; why: string; fallback?: string | null; image?: RecImage };
 export type RecImage = { src: string; width: number; height: number };
 export type RecCard = {
   key: string;
@@ -73,11 +74,14 @@ export function recommendFor(list: ListSlug): RecCard[] {
   const seen = new Set<string>();
   const cards: RecCard[] = [];
   for (const item of items) {
-    const t = pageFor(item.id) ?? (item.fallback ? pageFor(item.fallback) : undefined);
+    const own = pageFor(item.id);
+    const t = own ?? (item.fallback ? pageFor(item.fallback) : undefined);
     if (!t || seen.has(t.href)) continue;
     seen.add(t.href);
     const { dek, ...rest } = t;
-    cards.push({ key: `${item.id}:${t.href}`, ...rest, why: item.why || dek || "", placeholder: PLACEHOLDER });
+    // A list's own image for the item's page (not its fallback's) replaces the page's video still.
+    const cover = own && item.image ? { image: item.image, youtube: undefined } : {};
+    cards.push({ key: `${item.id}:${t.href}`, ...rest, ...cover, why: item.why || dek || "", placeholder: PLACEHOLDER });
   }
   return cards;
 }

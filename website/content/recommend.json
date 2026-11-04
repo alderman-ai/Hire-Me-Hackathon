@@ -75,7 +75,12 @@
       {
         "id": "demo-getsales-36-workflows",
         "why": "The 36 workflows I built for Addvery, one first message per lead.",
-        "fallback": "demo-d1-scraping-briefing"
+        "fallback": "demo-d1-scraping-briefing",
+        "image": {
+          "src": "/demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/36-grid-card.png",
+          "width": 1440,
+          "height": 810
+        }
       },
       {
         "id": "art-content-distribution",

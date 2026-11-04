@@ -3,6 +3,7 @@ import { allDemos } from "./deliverables";
 import { NAV_LINKS, NEW_FOOTER_LINKS, newNavLinks } from "./site-links";
 import { NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "./flags";
 import "./best/footer-line.css";
+import { FooterLine } from "./footer-line";
 
 // Addvery's footer (#151515, logo first, then columns of links that turn into gradient text on
 // hover), with our links only.
@@ -22,7 +23,7 @@ export function SiteFooter() {
           <span className="nav-divider" aria-hidden="true" />
           <span className="nav-site">Hire Me Hackathon</span>
         </Link>
-        {NEW_SITE && <p className="footer-line">GTM engineers who focus AI on the pipeline are the ones helping companies keep their promise.</p>}
+        {NEW_SITE && <FooterLine />}
         <div className="footer-columns">
           <nav className="footer-col" aria-label="Site">
             <p className="footer-head">The project</p>
