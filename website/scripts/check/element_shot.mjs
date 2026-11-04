@@ -23,6 +23,8 @@ const send = (method, params = {}) => new Promise((r) => { const id = ++seq; pen
 const ev = async (e) => (await send("Runtime.evaluate", { expression: e, awaitPromise: true, returnByValue: true })).result?.result?.value;
 try {
   await send("Emulation.setDeviceMetricsOverride", { width: +width, height: 900, deviceScaleFactor: 1, mobile: +width < 700 });
+  // Never counted in Vercel Web Analytics: the site's opt-out flag (app/site-analytics.tsx) on every page.
+  await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.setItem('va-disable','1')}catch(e){}" });
   await send("Page.navigate", { url });
   for (let i = 0; i < 80; i++) { await sleep(500); if ((await ev("document.readyState")) === "complete") break; }
   await ev(`(async () => { for (let y = 0; y < document.body.scrollHeight; y += innerHeight * 0.7) { scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } await new Promise(r => setTimeout(r, 800)); })()`);

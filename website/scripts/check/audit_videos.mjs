@@ -101,6 +101,8 @@ const dialogState = String.raw`(() => { const d = document.querySelector('dialog
 
 async function load(width, height, mobile, scale) {
   await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: scale, mobile });
+  // Never counted in Vercel Web Analytics: the site's opt-out flag (app/site-analytics.tsx) on every page.
+  await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.setItem('va-disable','1')}catch(e){}" });
   await send("Page.navigate", { url });
   for (let i = 0; i < 60; i++) { await sleep(500); if ((await evaluate("document.readyState")) === "complete" && (await evaluate("!!document.querySelector('button.vw-tile')"))) break; }
   // Scroll down the page and along each row so lazy images load.

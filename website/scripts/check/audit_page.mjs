@@ -84,6 +84,8 @@ const AUDIT = String.raw`(() => {
 
 async function load(width, height, mobile, scale) {
   await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: scale, mobile });
+  // Never counted in Vercel Web Analytics: the site's opt-out flag (app/site-analytics.tsx) on every page.
+  await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.setItem('va-disable','1')}catch(e){}" });
   await send("Page.navigate", { url });
   for (let i = 0; i < 80; i++) { await sleep(500); if ((await evaluate("document.readyState")) === "complete") break; }
   await sleep(1500);
