@@ -419,6 +419,63 @@
 .lc-text { margin: .75rem 0 0; color: var(--av-lilac-200); font-size: 1rem; line-height: 1.55; }
 .lc-matrix, .lc-messages { margin-top: 1.25rem; }
 
+/* Step 5's notes (fix 1, 4 Nov): the AI-wrote-this line before the messages, the custom-message note and
+   the closing line after them. */
+.lc-note { max-width: 44rem; margin: 1.25rem 0 0; color: var(--av-lilac-200); font-size: 1rem; line-height: 1.6; text-wrap: pretty; }
+.lc-note strong { color: #fff; font-weight: 600; }
+.lc-note-before { margin-top: .75rem; }
+
+/* The four inputs the first message is built from: lavender outline chips (like the Person pill), held in a
+   bracket that narrows into one filled target, "Message 1". One row on desktop, 2 x 2 on a phone. The chips
+   are a real list; the bracket's join and the target are decorative (aria-hidden). */
+.lc-inputs { display: flex; flex-direction: column; align-items: center; max-width: 52rem; margin-top: 1.25rem; }
+
+.lc-chips {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .625rem;
+  width: 100%;
+  margin: 0;
+  padding: 0 .75rem .875rem;
+  border: 1px solid rgba(211, 195, 255, .4);
+  border-top: 0;
+  border-radius: 0 0 var(--av-radius-lg) var(--av-radius-lg);
+  list-style: none;
+}
+
+.lc-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: .5rem .75rem;
+  border: 1px solid var(--av-lavender);
+  border-radius: var(--av-radius-lg);
+  color: var(--av-lavender);
+  font-size: .875rem;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.lc-join { display: flex; flex-direction: column; align-items: center; }
+.lc-join-line { width: 1px; height: 1.25rem; background: rgba(211, 195, 255, .6); }
+
+.lc-target {
+  padding: .3125rem .875rem;
+  border-radius: var(--av-radius-pill, 999px);
+  background: var(--av-lavender);
+  color: var(--av-ink);
+  font-size: .8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .lc-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 .5rem .625rem; gap: .5rem; }
+  .lc-chip { padding: .5rem; font-size: .8125rem; }
+}
+
 @media (max-width: 767px) {
   .lc { padding: 1.25rem 1.125rem 1.5rem; }
   .lc-fields { grid-template-columns: minmax(0, 1fr); }

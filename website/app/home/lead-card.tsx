@@ -7,6 +7,11 @@ import { LEAD_FIELDS, LEAD_STEPS, LEAD_TAG, LEAD_TITLE, type LeadTag } from "./l
 // settled it: Rule (violet fill, white text), Jev (orchid fill, ink text), Person (lavender outline).
 // Words: lead-card-words.ts. Styles: home.css, "The lead card". Headings: h3 for the card, h4 per step.
 
+/** "a **b** c" as text and <strong>. */
+function withBold(text: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
+
 function Tag({ tag }: { tag: LeadTag }) {
   return <span className={`lc-tag lc-tag-${tag}`}>{t(LEAD_TAG[tag])}</span>;
 }
@@ -61,14 +66,35 @@ export function LeadCard() {
               </div>
             )}
             {s.messages && (
-              <div className="lc-messages">
-                <MessageRow>
-                  <Message label={t(s.messages.labelCs)} lang="cs">
-                    {t(s.messages.cs)}
-                  </Message>
-                  <Message label={t(s.messages.labelEn)}>{t(s.messages.en)}</Message>
-                </MessageRow>
-              </div>
+              <>
+                {s.messages.before && <p className="lc-note lc-note-before">{withBold(t(s.messages.before))}</p>}
+                <div className="lc-messages">
+                  <MessageRow>
+                    <Message label={t(s.messages.labelCs)} lang="cs">
+                      {t(s.messages.cs)}
+                    </Message>
+                    <Message label={t(s.messages.labelEn)}>{t(s.messages.en)}</Message>
+                  </MessageRow>
+                </div>
+                {s.messages.after && <p className="lc-note">{withBold(t(s.messages.after))}</p>}
+                {s.messages.inputs && (
+                  <div className="lc-inputs">
+                    <ul className="lc-chips">
+                      {s.messages.inputs.map((k) => (
+                        <li key={k} className="lc-chip">
+                          {t(k)}
+                        </li>
+                      ))}
+                    </ul>
+                    {/* The four join into the message: decorative, the list above says it in words. */}
+                    <div className="lc-join" aria-hidden="true">
+                      <span className="lc-join-line" />
+                      <span className="lc-target">{t(s.messages.labelCs).split(",")[0]}</span>
+                    </div>
+                  </div>
+                )}
+                {s.messages.close && <p className="lc-note">{t(s.messages.close)}</p>}
+              </>
             )}
           </li>
         ))}

@@ -36,8 +36,21 @@ export type LeadStep = {
   clip?: { youtube: string; label: CopyKey; caption: CopyKey; meta: CopyKey; length: string; still: string };
   /** The matrix with only this lead's cell lit (step 4). */
   matrix?: { legend: CopyKey };
-  /** Message 1 in Czech, then in English (step 5). */
-  messages?: { labelCs: CopyKey; cs: CopyKey; labelEn: CopyKey; en: CopyKey };
+  /**
+   * Message 1 in Czech, then in English (step 5). Fix 1 (4 Nov): `before` is the lead line above the Czech;
+   * after the English come `after`, the four `inputs` the message is built from (chips joined into
+   * "Message 1"), and `close`.
+   */
+  messages?: {
+    labelCs: CopyKey;
+    cs: CopyKey;
+    labelEn: CopyKey;
+    en: CopyKey;
+    before?: CopyKey;
+    after?: CopyKey;
+    inputs?: CopyKey[];
+    close?: CopyKey;
+  };
 };
 
 export const LEAD_STEPS: LeadStep[] = [
@@ -91,6 +104,15 @@ export const LEAD_STEPS: LeadStep[] = [
       cs: "home.proof.step5.message_cs",
       labelEn: "home.proof.step5.label_en",
       en: "home.proof.step5.message_en",
+      before: "home.proof.step5.note.1",
+      after: "home.proof.step5.note.2",
+      inputs: [
+        "home.proof.step5.inputs.0",
+        "home.proof.step5.inputs.1",
+        "home.proof.step5.inputs.2",
+        "home.proof.step5.inputs.3",
+      ],
+      close: "home.proof.step5.note.close",
     },
   },
 ];

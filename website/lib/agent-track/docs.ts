@@ -315,8 +315,13 @@ function homeDoc(): Doc {
     // The matrix as one line: the card's lead (row L11) lit in cell 12, Telco CVM, CS, proof.
     if (s.matrix) lines.push(`${t(s.matrix.legend)}: Telco CVM, CS, proof.`);
     if (s.messages) {
-      lines.push(`${t(s.messages.labelCs)}:\n\n${blockquote(t(s.messages.cs))}`);
-      lines.push(`${t(s.messages.labelEn)}:\n\n${blockquote(t(s.messages.en))}`);
+      const m = s.messages;
+      if (m.before) lines.push(rich(t(m.before)));
+      lines.push(`${t(m.labelCs)}:\n\n${blockquote(t(m.cs))}`);
+      lines.push(`${t(m.labelEn)}:\n\n${blockquote(t(m.en))}`);
+      if (m.after) lines.push(rich(t(m.after)));
+      if (m.inputs) lines.push(m.inputs.map((k) => `- ${t(k)}`).join("\n"));
+      if (m.close) lines.push(t(m.close));
     }
     parts.push(lines.join("\n\n"));
   }
