@@ -26,8 +26,7 @@ export function newNavLinks({ videos, skills }: { videos: boolean; skills: boole
   ];
 }
 
-/** The new site's footer: the day's log, the plan, privacy and the public repo (working labels). */
+/** The new site's footer: the day's log (working label). The repo link is gone: the repo went private on 4 Nov. */
 export const NEW_FOOTER_LINKS = [
   { href: "/log", label: "The log" },
-  { href: "https://github.com/alderman-ai/Hire-Me-Hackathon", label: "The code on GitHub" },
 ];

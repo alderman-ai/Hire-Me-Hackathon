@@ -8,7 +8,7 @@ import "./best/footer-line.css";
 // hover), with our links only.
 
 export function SiteFooter() {
-  // The new site drops the twelve demo links (VERDICT.md 2.7) and adds the log, the plan and the repo.
+  // The new site drops the twelve demo links (VERDICT.md 2.7) and adds the log.
   const demos = NEW_SITE ? [] : allDemos();
   const half = Math.ceil(demos.length / 2);
   const columns = NEW_SITE ? [] : [demos.slice(0, half), demos.slice(half)];

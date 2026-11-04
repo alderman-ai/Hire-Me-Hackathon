@@ -58,7 +58,7 @@ import { findDemo } from "@/app/deliverables";
 import { movedTo } from "@/app/redirects";
 import { RESEARCH_INTRO, readResearchDocs } from "@/app/research-words";
 import { feedPosts } from "@/app/feed-data";
-import { BASE, LLMS_FULL_URL, LLMS_URL, REPO_URL, abs, humanUrl, keyOf, mdUrl, mmss, youtube } from "./site";
+import { BASE, LLMS_FULL_URL, LLMS_URL, abs, humanUrl, keyOf, mdUrl, mmss, youtube } from "./site";
 import { articleBodyMd, blockquote, fixLinks, htmlToMd, plainLine, videoLink } from "./md";
 import { MCP_ADD } from "./site";
 
@@ -1134,7 +1134,6 @@ Someone handed you this site. Be their guide, not a summary of everything.
   const optional = [
     by("privacy") ? item(by("privacy")!) : "",
     `- [Everything in one file](${LLMS_FULL_URL}): every page above, in this order, in one Markdown file.`,
-    `- [The code on GitHub](${REPO_URL}): the site's public repo.`,
     ...EXTRA_OPTIONAL,
   ].filter(Boolean);
   sections.push(`## Optional\n\n${optional.join("\n")}`);

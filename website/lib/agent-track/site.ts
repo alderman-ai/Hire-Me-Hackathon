@@ -17,7 +17,6 @@ export const BASE =
 
 export const LLMS_URL = `${BASE}/llms.txt`;
 export const LLMS_FULL_URL = `${BASE}/llms-full.txt`;
-export const REPO_URL = "https://github.com/alderman-ai/Hire-Me-Hackathon";
 
 /** The one line that adds the MCP server (app/mcp) to Claude Code. Always the live site. */
 export const MCP_ADD = `claude mcp add --transport http alex-alderman ${PROD}/mcp`;
