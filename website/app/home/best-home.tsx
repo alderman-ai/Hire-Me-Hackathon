@@ -105,7 +105,7 @@ export function BestHome() {
         <SectionHead eyebrow={t("home.what.1")} title={t("home.what.2")} titleId="what-title" />
         <Paras k="home.what.3" />
         <Quote
-          className="bx-mt-4"
+          className="bh-q"
           maxWidth={860}
           text={t("home.what.quote")}
           source={<QuoteSource youtube="qrBNOsSYGrQ" start={668}>{t("home.what.quote_source")}</QuoteSource>}
@@ -172,7 +172,7 @@ export function BestHome() {
           <p>{t("home.proof.twelve")}</p>
           <p className="bh-muted">{t("shared.limits.1")}</p>
         </div>
-        <Quote className="bx-mt-4" text={CRM_LINE} source={t("shared.crm.1")} xl mark maxWidth={1000} />
+        <Quote className="bh-q" text={CRM_LINE} source={t("shared.crm.1")} xl mark maxWidth={1000} />
         {(sequences || routing) && (
           <LinkRow>
             {sequences && <ArrowLink href={sequences}>{t("home.proof.link_sequences")}</ArrowLink>}
@@ -221,7 +221,7 @@ export function BestHome() {
         </div>
         <Paras k="home.build.4" className="bx-mt-3" />
         <Quote
-          className="bx-mt-3"
+          className="bh-q"
           maxWidth={900}
           text={t("home.build.quote")}
           source={<QuoteSource youtube="NULD_WteCRM" start={474}>{t("home.build.quote_source")}</QuoteSource>}

@@ -299,6 +299,8 @@
 .bh-prose p + p { margin-top: 1.125rem; }
 .bh-prose strong { color: var(--bx-fg); font-weight: 600; }
 .bh-prose .bh-muted { font-size: 1rem; }
+/* A quote after prose: .bx-q sets margin 0 after the bx-mt-* helpers, so the home spaces its quotes itself. */
+.bx-q.bh-q { margin-top: 3rem; }
 .bh-two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: start; margin-top: 4rem; }
 @media (max-width: 991px) { .bh-two { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } }
 
