@@ -1,0 +1,17 @@
+{
+  "_about": "Words for /for/ceo as orchestration sends them ({key: text}, through alex-voice), kept verbatim. Read by app/for/[slug]/for-copy.ts. A value starting with [placeholder] shows on previews only; while any guide value is a placeholder, a production build shows no agent block and has no /for/ceo/llms.txt.",
+  "landing.agent.line": "[placeholder] One line, right after the opening paragraph, inviting him to hand this page to his own AI.",
+  "landing.agent.button": "[placeholder] Open in Claude",
+  "landing.agent.alt": "[placeholder] Copy the prompt for another AI",
+  "agent.ceo.prompt": "[placeholder] Read {guide_url} and follow it. It walks you through one page of Alex Alderman's site, made for Addvery's CEO.",
+  "agent.ceo.guide_title": "[placeholder] The CEO's page, for your AI",
+  "agent.ceo.guide_note": "[placeholder] The order to read the CEO's page in, with a line on why each step.",
+  "agent.ceo.guide_intro": "[placeholder] An intro written to the AI: who it's reading for, what he cares about, and how to walk him through the pages below in order.",
+  "agent.ceo.order": [
+    { "href": "/for/ceo", "why": "[placeholder] His page: start here." },
+    { "href": "/articles/ai-workflows-are-always-a-managed-service", "why": "[placeholder] Reason for step 2." },
+    { "href": "/articles/36-outbound-workflows-and-the-one-variable-behind-them", "why": "[placeholder] Reason for step 3." },
+    { "href": "/about", "why": "[placeholder] Reason for step 4." },
+    { "href": "/log", "why": "[placeholder] Reason for step 5." }
+  ]
+}

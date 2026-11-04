@@ -13,6 +13,7 @@ import type { StakeholderNotice, StakeholderPage } from "../../stakeholders";
 import { AfterQuotes, Chips, Lens, P4_CHIPS } from "./lens";
 import { QuoteCollection, quotesFor } from "./quotes";
 import { AgentRow } from "../../agent/agent-row";
+import { AgentGuide } from "./agent-guide";
 import "./personal.css";
 
 // A personal page on the new site (BUILD.md 5 and 6, the best-of build), built only when NEW_SITE=1:
@@ -182,6 +183,8 @@ export function PersonalPage({
                   </p>
                 </div>
               ) : null}
+              {/* Right after the opening paragraph and its byline: hand this page to your own AI (only a page with a guide). */}
+              <AgentGuide slug={slug} />
             </div>
             <RotateIn as="figure" from="bottom-right" angle={8} delay={150} duration={800} fade={600} onLoad className="for-land-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}

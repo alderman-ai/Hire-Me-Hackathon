@@ -2,8 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-/** "Copy the prompt": writes `text` to the clipboard and shows a tick for two seconds. */
-export function CopyButton({ text, label }: { text: string; label: string }) {
+/**
+ * "Copy the prompt": writes `text` to the clipboard and shows a tick for two seconds. Without a clipboard it
+ * selects the element `targetId` (showing it first if it's hidden), so the prompt can be copied by hand.
+ */
+export function CopyButton({ text, label, targetId = "agent-prompt-text" }: { text: string; label: string; targetId?: string }) {
   const [done, setDone] = useState(false);
   useEffect(() => {
     if (!done) return;
@@ -17,7 +20,8 @@ export function CopyButton({ text, label }: { text: string; label: string }) {
       setDone(true);
     } catch {
       // No clipboard (an old browser, a blocked permission): select the prompt so it can be copied by hand.
-      const el = document.getElementById("agent-prompt-text");
+      const el = document.getElementById(targetId);
+      if (el?.hidden) el.hidden = false;
       const sel = window.getSelection();
       if (el && sel) {
         const range = document.createRange();

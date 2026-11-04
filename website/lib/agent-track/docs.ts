@@ -11,7 +11,8 @@ import summaryJson from "@/content/summary.json";
 import videosJson from "@/content/videos.json";
 import skillsJson from "@/content/skills.json";
 import { t, type CopyKey } from "@/app/copy";
-import { NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "@/app/flags";
+import { IS_PRODUCTION_BUILD, NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "@/app/flags";
+import { forCopySlugs, forText, forValue, isPlaceholder } from "@/app/for/[slug]/for-copy";
 import { formatDate, madeLead, ordered, visibleEntries, type Entry } from "@/app/articles/entries";
 import { pageHref, recommendFor, type ListSlug } from "@/app/recommend";
 import { gridIntro, stakeholderGate, titleLines, type StakeholderPage } from "@/app/stakeholders";
@@ -58,7 +59,7 @@ import { findDemo } from "@/app/deliverables";
 import { movedTo } from "@/app/redirects";
 import { RESEARCH_INTRO, readResearchDocs } from "@/app/research-words";
 import { feedPosts } from "@/app/feed-data";
-import { BASE, LLMS_FULL_URL, LLMS_URL, abs, humanUrl, keyOf, mdUrl, mmss, youtube } from "./site";
+import { BASE, LLMS_FULL_URL, LLMS_URL, PROD, abs, humanUrl, keyOf, mdUrl, mmss, youtube } from "./site";
 import { articleBodyMd, blockquote, fixLinks, htmlToMd, plainLine, videoLink } from "./md";
 import { MCP_ADD } from "./site";
 
@@ -752,6 +753,123 @@ From: Alex Alderman, ${t("home.hero.10")}`);
   ]));
 }
 
+// ---------------------------------------------------------------- /for/<slug>/llms.txt, a page's own guide
+
+// A personal page can carry a guide written to the visitor's AI: an intro, then the pages in the order to
+// read them with a line on why each, then "Where next". Its words come from the page's words file
+// (app/for/[slug]/for-copy.ts, content/for-copy/<slug>.json) under agent.<slug>.*; the page's block that
+// opens it (landing.agent.*) is in app/for/[slug]/agent-guide.tsx. Built from the same gates as the page:
+// only an approved page in this build, only steps whose pages are in this build, and on a production build
+// only once no word is a placeholder. Served at /for/<slug>/llms.txt (app/for/[slug]/llms.txt/route.ts).
+
+export type PersonGuide = {
+  slug: string;
+  /** "for/ceo/llms.txt": its key in /agent-track.json, so read_page finds it by path. */
+  key: string;
+  /** This build's URL of the guide. */
+  url: string;
+  title: string;
+  note: string;
+  markdown: string;
+  /** The prompt the page's button sends, with {guide_url} and {page_url} filled in with production URLs. */
+  prompt: string;
+  /** The page's block: its line, the Open in Claude button's label, the copy button's label. */
+  line: string;
+  button: string;
+  alt: string;
+};
+
+type GuideStep = { href: string; why: string };
+
+/** agent.<slug>.order as steps: a list of {href, why}, or text with one step per line ("1. /path: why", "- [x](/path): why"). */
+function guideSteps(slug: string, v: unknown): GuideStep[] {
+  if (Array.isArray(v)) {
+    return v.map((x, i) => {
+      const o = x as { href?: string; url?: string; why?: string; reason?: string };
+      const href = o.href ?? o.url;
+      if (!href) throw new Error(`content/for-copy/${slug}.json: agent.${slug}.order item ${i + 1} has no href`);
+      return { href, why: (o.why ?? o.reason ?? "").trim() };
+    });
+  }
+  if (typeof v !== "string") return [];
+  return v
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter(Boolean)
+    .map((l) => {
+      const s = l.replace(/^(?:\d+[.)]|[-*•])\s*/, "");
+      const md = /^\[[^\]]*\]\(([^)\s]+)\)\s*(?:[:—–-]\s*)?(.*)$/.exec(s);
+      if (md) return { href: md[1], why: md[2].trim() };
+      const bare = /^(https?:\/\/\S+|\/\S*)\s*(?:[—–-]\s+)?(.*)$/.exec(s);
+      if (bare) return { href: bare[1].replace(/[:,;.]$/, ""), why: bare[2].replace(/^[:—–-]\s*/, "").trim() };
+      throw new Error(`content/for-copy/${slug}.json: can't read agent.${slug}.order line "${l}"`);
+    });
+}
+
+/** One step as a list line: a page of this build links its doc; a step whose page isn't in this build is left out. */
+function guideStepMd(step: GuideStep): string | null {
+  let h = step.href;
+  for (const origin of [BASE, PROD]) if (h.startsWith(origin)) h = h.slice(origin.length) || "/";
+  if (!h.startsWith("/")) return `[${h}](${h})${step.why ? `: ${rich(step.why)}` : ""}`;
+  const key = keyOf(h);
+  const d = findDoc(key);
+  if (!d) return null;
+  return `[${d.label ?? d.title}](${mdUrl(key)})${step.why ? `: ${rich(step.why)}` : ""}`;
+}
+
+const guideCache = new Map<string, PersonGuide | null>();
+
+/** A page's guide, or undefined when this build has none for it. */
+export function personGuide(slug: string): PersonGuide | undefined {
+  if (guideCache.has(slug) && process.env.NODE_ENV !== "development") return guideCache.get(slug) ?? undefined;
+  const g = buildGuide(slug);
+  guideCache.set(slug, g ?? null);
+  return g;
+}
+
+function buildGuide(slug: string): PersonGuide | undefined {
+  const p = people().find((x) => x.slug === slug);
+  if (!p || !docKeys().has(`for/${slug}`)) return undefined;
+  const k = (name: string) => forText(slug, name);
+  const words = {
+    intro: k(`agent.${slug}.guide_intro`),
+    prompt: k(`agent.${slug}.prompt`),
+    line: k("landing.agent.line"),
+    button: k("landing.agent.button"),
+    alt: k("landing.agent.alt"),
+  };
+  const order = forValue(slug, `agent.${slug}.order`);
+  if (Object.values(words).some((w) => !w) || !order) return undefined;
+  const title = k(`agent.${slug}.guide_title`) ?? `${p.name}'s page`;
+  const note = k(`agent.${slug}.guide_note`) ?? personTitle(p);
+  if (IS_PRODUCTION_BUILD && [...Object.values(words), title, note, order].some(isPlaceholder)) return undefined;
+
+  // The prompt goes into a claude.ai URL: the role only, never the person's name.
+  const pageUrl = `${PROD}/for/${slug}`;
+  const prodGuide = `${pageUrl}/llms.txt`;
+  const prompt = words.prompt!.replace(/\{guide_url\}/g, prodGuide).replace(/\{page_url\}/g, pageUrl);
+  for (const part of p.name.split(/\s+/).filter((x) => x.length > 2)) {
+    if (prompt.toLowerCase().includes(part.toLowerCase())) throw new Error(`agent.${slug}.prompt names ${part}: the prompt names the role only`);
+  }
+  if (/\{[a-z_]+\}/.test(prompt)) throw new Error(`agent.${slug}.prompt has an unknown {field}`);
+
+  const steps = guideSteps(slug, order)
+    .map(guideStepMd)
+    .filter((x): x is string => !!x);
+  if (!steps.length) return undefined;
+  const key = `for/${slug}/llms.txt`;
+  const body = [rich(words.intro!), steps.map((s, i) => `${i + 1}. ${s}`).join("\n")].join("\n\n");
+  const markdown = frame(key, title, body, [...recommended(slug as ListSlug).slice(0, 4), page("for"), page("about")], humanUrl(`for/${slug}`));
+  return { slug, key, url: `${BASE}/${key}`, title, note, markdown, prompt, line: words.line!, button: words.button!, alt: words.alt! };
+}
+
+/** Every guide this build has. */
+export function personGuides(): PersonGuide[] {
+  return forCopySlugs()
+    .map(personGuide)
+    .filter((g): g is PersonGuide => !!g);
+}
+
 // ---------------------------------------------------------------- feed posts (/log, /day-2)
 
 type Block = {
@@ -1121,9 +1239,15 @@ Someone handed you this site. Be their guide, not a summary of everything.
 2. Fetch only the pages that answer them. Every page ends with "Where next" links: follow those rather than guessing URLs.
 3. When you quote or summarise a page, give the human link from its "Human version" line so they can click through. For a video, give the link and the line that says what's in it.
 4. Quote Alex's own words where you can. Don't rewrite him into marketing copy.`);
+  // A personal page's own guide (/for/<slug>/llms.txt) is listed right under the page.
+  const guides = new Map(personGuides().map((g) => [`for/${g.slug}`, g]));
   const list = (title: string, ds: (Doc | undefined)[]) => {
     const ok = ds.filter((d): d is Doc => !!d);
-    if (ok.length) sections.push(`## ${title}\n\n${ok.map(item).join("\n")}`);
+    const lines = ok.flatMap((d) => {
+      const g = guides.get(d.key);
+      return g ? [item(d), `- [${g.title}](${g.url}): ${g.note}`] : [item(d)];
+    });
+    if (ok.length) sections.push(`## ${title}\n\n${lines.join("\n")}`);
   };
   list("Start here", [by("index"), by("about"), ...docs.filter((d) => d.key.startsWith("about/"))]);
   list("Articles", [by("articles"), ...docs.filter((d) => d.key.startsWith("articles/"))]);
@@ -1146,9 +1270,14 @@ const EXTRA_OPTIONAL: string[] = [
 ];
 
 export function llmsFullTxt(): string {
+  const guides = new Map(personGuides().map((g) => [`for/${g.slug}`, g]));
   return (
     allDocs()
-      .map((d) => `Source: ${mdUrl(d.key)}\n\n${d.markdown.trim()}`)
+      .flatMap((d) => {
+        const g = guides.get(d.key);
+        const own = `Source: ${mdUrl(d.key)}\n\n${d.markdown.trim()}`;
+        return g ? [own, `Source: ${g.url}\n\n${g.markdown.trim()}`] : [own];
+      })
       .join("\n\n---\n\n") + "\n"
   );
 }
