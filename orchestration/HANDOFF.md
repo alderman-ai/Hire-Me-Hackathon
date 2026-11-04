@@ -2,6 +2,15 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
+## Update, about 13:40 on 4 Nov: start here (handoff from 8b57493d, context refresh)
+
+Alex works with orchestration directly in this chat again. **Read `Private\addvery-interview\ORCHESTRATION-HANDOFF.md` first** (git-ignored: your first steps, what's in flight, his open calls), then `Private\addvery-interview\STRATEGY-AND-FINDINGS.md`, `RULES.md`, and `orchestration\local\ALEX-WANTS.md` from W193.
+- Sessions: only `orchestration` and `website` (534b5bd8) run. Every other session was removed from agent view at 11:24 (transcripts kept).
+- Live: b9hb08gdb (13:28, the /log time-lapse removed). Earlier today: the GitHub repo links came off the site (miad2hoeb).
+- On a preview, waiting for Alex's yes: the recalibrated /for/ceo page, and the "36 workflows" framing reworded site-wide.
+- `Private\` at the root is git-ignored (3aa56f9): anything private goes there, never in tracked files.
+- The repo's switch to private is stuck at GitHub ("a previous visibility change is still in progress").
+
 ## Update, about 21:15 on 3 Nov: the agent version is live (orchestration 8b57493d)
 
 Alex's last ask (W186): "a fully agentic version that lets an agentic agent start somewhere and navigate the whole site and let the user navigate what they're interested in." Researched (llms.txt v2, Vercel's and Cloudflare's markdown content negotiation, "Open in Claude/ChatGPT" buttons, MCP, WebMCP) and shipped by an Opus builder in `website\`: production `dvm3sim01` (21:07), commits 4cd8c55 to ec65f94, rows in `website\builds.md`. This brings back D12 / DoD-25 in a new form.
