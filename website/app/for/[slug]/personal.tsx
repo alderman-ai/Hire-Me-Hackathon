@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import raw from "@/content/stakeholders.json";
 import { t, type CopyKey } from "../../copy";
 import { IS_PRODUCTION_BUILD, SKILLS_PAGE } from "../../flags";
@@ -8,12 +7,13 @@ import { RotateIn } from "../../motion";
 import { RecommendCarousel } from "../../recommend-carousel";
 import { LIST_SLUGS, recommendFor, type ListSlug } from "../../recommend";
 import { RememberYourPage } from "../../your-page";
-import { forHref } from "./for-href";
 import type { StakeholderNotice, StakeholderPage } from "../../stakeholders";
 import { AfterQuotes, Chips, Lens, P4_CHIPS } from "./lens";
 import { QuoteCollection, quotesFor } from "./quotes";
 import { AgentRow } from "../../agent/agent-row";
 import { AgentGuide } from "./agent-guide";
+import { Rich } from "./rich";
+import { RecalBody, RecalLead, RecalTitle, recalReady } from "./recal";
 import "./personal.css";
 
 // A personal page on the new site (BUILD.md 5 and 6, the best-of build), built only when NEW_SITE=1:
@@ -25,6 +25,8 @@ import "./personal.css";
 //   P6  Recommended for you: the slug's list from content/recommend.json
 //   P7  the notice: why this page exists (not on the growth page), the sources line, the takedown offer
 // No questions, no ask, no "reply to my LinkedIn message" (Alex, 22:05: pages only give).
+// A recalibrated page (4 Nov, the CEO's; recal.tsx) keeps P1's portrait and byline, P5 to P7, and swaps the
+// hello, the lead and P2 to P4 for its own blocks; the agent block (agent-guide.tsx) follows the byline.
 //
 // The gate: a production build shows the lead, P2 to P5 only once `landing.approved` is true; before that,
 // only the hello, the carousel and P7. A preview build shows the unapproved words too, marked as a draft,
@@ -61,49 +63,6 @@ const P4: Record<string, { tone: BandTone; title: CopyKey }> = {
 function rawLanding(slug: string): K2 {
   const p = (raw.pages as { slug: string; landing?: K2 }[]).find((x) => x.slug === slug);
   return p?.landing ?? {};
-}
-
-/** Text with Markdown links: internal ones keep the visitor's page in ?for=. */
-function Inline({ text, slug }: { text: string; slug: string }) {
-  const out: ReactNode[] = [];
-  const re = /\[([^\]]+)\]\(([^)\s]+)\)/g;
-  let last = 0;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(text))) {
-    if (m.index > last) out.push(text.slice(last, m.index));
-    const [, words, href] = m;
-    out.push(
-      href.startsWith("/") ? (
-        <Link key={m.index} href={forHref(href, slug)}>
-          {words}
-        </Link>
-      ) : (
-        <a key={m.index} href={href}>
-          {words}
-        </a>
-      ),
-    );
-    last = m.index + m[0].length;
-  }
-  if (last < text.length) out.push(text.slice(last));
-  return <>{out}</>;
-}
-
-/** Text with **bold** and Markdown links. */
-function Rich({ text, slug }: { text: string; slug: string }) {
-  return (
-    <>
-      {text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
-        i % 2 === 1 ? (
-          <strong key={i}>
-            <Inline text={part} slug={slug} />
-          </strong>
-        ) : (
-          <Inline key={i} text={part} slug={slug} />
-        ),
-      )}
-    </>
-  );
 }
 
 /** Preview only: where Alex's words haven't arrived. Never rendered by a production build. */
@@ -144,6 +103,9 @@ export function PersonalPage({
   const quotes = quotesFor(slug);
   const chips = P4_CHIPS[slug];
   const skills = SKILLS_PAGE ? "/skills#stakeholder-landing-pages" : null;
+  // A recalibrated page (4 Nov, the CEO's): its own words file (for-copy.ts) replaces P1's hello and lead
+  // and P2 to P4 with its own blocks (recal.tsx). Nothing of it shows until the page may show its words.
+  const recal = showWords && recalReady(slug);
 
   return (
     <main className="art art-for for-landing pp">
@@ -160,10 +122,18 @@ export function PersonalPage({
               {!isApproved && !IS_PRODUCTION_BUILD && (
                 <p className="sh-draft-strip">Draft for Alex&apos;s review: preview only, not on the live site</p>
               )}
-              <h1 id="for-hello" className="for-hello">
-                Hi {first},
-              </h1>
-              {showWords && hasLead ? (
+              {recal ? (
+                <>
+                  <RecalTitle slug={slug} id="for-hello" />
+                  <p className="rc-hello">Hi {first},</p>
+                  <RecalLead slug={slug} />
+                </>
+              ) : (
+                <h1 id="for-hello" className="for-hello">
+                  Hi {first},
+                </h1>
+              )}
+              {recal ? null : showWords && hasLead ? (
                 <p className="for-land-lead pp-lead">
                   {k2.lead_key && <>{t(k2.lead_key as CopyKey)} </>}
                   {k2.lead && <Rich text={k2.lead} slug={slug} />}
@@ -218,8 +188,10 @@ export function PersonalPage({
         </div>
       </section>
 
+      {recal && <RecalBody slug={slug} concerns={page.landing?.concerns ?? []} />}
+
       {/* ---------- P2: the note ---------- */}
-      {showWords && k2.note && (
+      {!recal && showWords && k2.note && (
         <Band tone="light" pad="sm" label="A note from Alex">
           <div className="pp-note">
             {k2.note.split(/\n\s*\n/).map((para, i) => (
@@ -239,10 +211,10 @@ export function PersonalPage({
       )}
 
       {/* ---------- P3: the lens block ---------- */}
-      {showWords && <Lens slug={slug} />}
+      {!recal && showWords && <Lens slug={slug} />}
 
       {/* ---------- P4: Alex's own lines, in clock order ---------- */}
-      {showWords && p4 && quotes.length > 0 && (
+      {!recal && showWords && p4 && quotes.length > 0 && (
         <Band tone={p4.tone} labelledBy="pp-quotes">
           <h2 id="pp-quotes" className="bx-h2">
             {t(p4.title)}
@@ -256,7 +228,7 @@ export function PersonalPage({
           )}
         </Band>
       )}
-      {showWords && <AfterQuotes slug={slug} />}
+      {!recal && showWords && <AfterQuotes slug={slug} />}
 
       {/* ---------- P5: how this page was made ---------- */}
       {showWords && k2.made_line && (

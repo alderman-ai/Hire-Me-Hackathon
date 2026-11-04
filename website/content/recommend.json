@@ -68,24 +68,24 @@
     ],
     "ceo": [
       {
-        "id": "art-pipeline-promise",
-        "why": "",
+        "id": "art-after-the-sequence",
+        "why": "Where the RFP idea comes from, and how to build mutual connections first.",
         "fallback": "demo-getsales-routing"
       },
       {
-        "id": "art-managed-service",
-        "why": "",
-        "fallback": "demo-d2-company-research"
-      },
-      {
-        "id": "knowledge-arbitrage",
-        "why": "",
+        "id": "demo-getsales-36-workflows",
+        "why": "The 36 workflows I built for Addvery, one first message per lead.",
         "fallback": "demo-d1-scraping-briefing"
       },
       {
-        "id": "art-day-one",
-        "why": "",
-        "fallback": null
+        "id": "art-content-distribution",
+        "why": "Why every sending account posts every week, and who writes the posts.",
+        "fallback": "art-managed-service"
+      },
+      {
+        "id": "art-teaching-a-machine-to-sound-like-me",
+        "why": "How the skill that writes in my voice works, with its own grader.",
+        "fallback": "art-build-it-in-their-brand"
       }
     ],
     "cofounder-1": [

@@ -127,11 +127,8 @@ function isPage(p: unknown): p is StakeholderPage {
     Array.isArray(page.demos) &&
     page.demos.length >= 2 &&
     page.demos.length <= 4 &&
-    page.demos.every((d) => d && typeof d.n === "number" && isText(d.why)) &&
-    !!page.ask &&
-    isText(page.ask.short) &&
-    isText(page.ask.heading) &&
-    isText(page.ask.body)
+    page.demos.every((d) => d && typeof d.n === "number" && isText(d.why))
+    // `ask` is no longer required (rule 11: pages only give, no asks); the CEO's is empty since 4 Nov.
   );
 }
 

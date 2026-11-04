@@ -12,7 +12,7 @@ import videosJson from "@/content/videos.json";
 import skillsJson from "@/content/skills.json";
 import { t, type CopyKey } from "@/app/copy";
 import { IS_PRODUCTION_BUILD, NEW_SITE, SKILLS_PAGE, VIDEO_WALL } from "@/app/flags";
-import { forCopySlugs, forText, forValue, isPlaceholder } from "@/app/for/[slug]/for-copy";
+import { forCopySlugs, forList, forText, isPlaceholder, recalReady } from "@/app/for/[slug]/for-copy";
 import { formatDate, madeLead, ordered, visibleEntries, type Entry } from "@/app/articles/entries";
 import { pageHref, recommendFor, type ListSlug } from "@/app/recommend";
 import { gridIntro, stakeholderGate, titleLines, type StakeholderPage } from "@/app/stakeholders";
@@ -718,27 +718,38 @@ function personDoc(p: StakeholderPage): Doc {
   const raw = (stakeholdersRaw.pages as { slug: string; landing?: Landing }[]).find((x) => x.slug === p.slug)?.landing ?? {};
   const { notice } = stakeholderGate();
   const first = p.name.split(" ")[0];
+  // A recalibrated page (app/for/[slug]/recal.tsx) reads as its page does: its title, the hello and the
+  // lead with the quote, then its own blocks in place of the note, the lens and the quotes.
+  const recal = recalReady(p.slug);
   const parts: string[] = [];
-  const lead = [raw.lead_key ? t(raw.lead_key as CopyKey) : "", raw.lead ? rich(raw.lead) : ""].filter(Boolean).join(" ");
-  if (lead) parts.push(lead);
+  if (recal) {
+    parts.push(`Hi ${first},`, ...recalLeadMd(p.slug));
+  } else {
+    const lead = [raw.lead_key ? t(raw.lead_key as CopyKey) : "", raw.lead ? rich(raw.lead) : ""].filter(Boolean).join(" ");
+    if (lead) parts.push(lead);
+  }
   parts.push(`For: **${p.name}**, ${personTitle(p)}
 
 From: Alex Alderman, ${t("home.hero.10")}`);
-  if (raw.note) {
-    parts.push("## A note from Alex");
-    parts.push(raw.note.split(/\n\s*\n/).map((x) => rich(x.trim())).join("\n\n"));
-    parts.push(raw.sign ?? "Alex Alderman");
+  if (recal) {
+    parts.push(...recalBodyMd(p.slug, p.landing?.concerns ?? []));
+  } else {
+    if (raw.note) {
+      parts.push("## A note from Alex");
+      parts.push(raw.note.split(/\n\s*\n/).map((x) => rich(x.trim())).join("\n\n"));
+      parts.push(raw.sign ?? "Alex Alderman");
+    }
+    parts.push(...lensMd(p.slug));
+    const quotes = QUOTES.lists[p.slug] ?? [];
+    const qKey = `for-${p.slug}.quotes.1`;
+    if (quotes.length) {
+      parts.push(`## ${t(qKey as CopyKey)}`);
+      parts.push(quotes.map(quoteItem).join("\n\n"));
+    }
+    const chips = P4_CHIPS[p.slug];
+    if (chips && SKILLS_PAGE) parts.push(chipsMd(chips.label ?? "Skills behind this", chips.items));
+    parts.push(...afterQuotesMd(p.slug));
   }
-  parts.push(...lensMd(p.slug));
-  const quotes = QUOTES.lists[p.slug] ?? [];
-  const qKey = `for-${p.slug}.quotes.1`;
-  if (quotes.length) {
-    parts.push(`## ${t(qKey as CopyKey)}`);
-    parts.push(quotes.map(quoteItem).join("\n\n"));
-  }
-  const chips = P4_CHIPS[p.slug];
-  if (chips && SKILLS_PAGE) parts.push(chipsMd(chips.label ?? "Skills behind this", chips.items));
-  parts.push(...afterQuotesMd(p.slug));
   if (raw.made_line) {
     parts.push("## How this page was made");
     parts.push(`${rich(raw.made_line)}${docKeys().has("skills") ? ` [${t("shared.made.1")}](${mdUrl("skills")})` : ""}`);
@@ -746,11 +757,69 @@ From: Alex Alderman, ${t("home.hero.10")}`);
   parts.push(`## ${notice.heading}`);
   const noticeLines = [p.slug !== "growth" ? notice.why : "", p.sources ?? notice.sources, `${t("shared.takedown.2")} [${notice.privacy_label}](${link("/privacy")}).`];
   parts.push(noticeLines.filter(Boolean).join("\n\n"));
-  return labelled(`${p.name}'s page`, doc(key, `Hi ${first},`, personTitle(p), parts.join("\n\n"), [
-    ...recommended(p.slug as ListSlug).slice(0, 4),
-    page("for"),
-    page("about"),
-  ]));
+  const title = (recal && forText(p.slug, "title")) || `Hi ${first},`;
+  return labelled(`${p.name}'s page`, doc(key, title, personTitle(p), parts.join("\n\n"), personNext(p.slug)));
+}
+
+/**
+ * A personal page's "Where next": its carousel, then /for and /about. A recalibrated page's route never
+ * meets the labour framing: no pipeline-promise article and no /log (4 Nov, the CEO's page).
+ */
+function personNext(slug: string): Next[] {
+  const next = [...recommended(slug as ListSlug).slice(0, 4), page("for"), page("about")];
+  if (!recalReady(slug)) return next;
+  const pipeline = pageHref("art-pipeline-promise");
+  const out = new Set(["log", ...(pipeline ? [keyOf(pipeline)] : [])]);
+  return next.filter((n) => !out.has(n.key) && !n.key.startsWith("log/"));
+}
+
+/** A recalibrated page's word for a key; a missing key is a build error. */
+function rw(slug: string, key: string): string {
+  const v = forText(slug, key);
+  if (!v) throw new Error(`content/for-copy/${slug}.json: no words for "${key}"`);
+  return v;
+}
+
+/** Text with its first `phrase` as a Markdown link (the copy names the words to link). */
+function linkedMd(text: string, phrase: string, href: string): string {
+  const i = text.indexOf(phrase);
+  return i < 0 ? text : `${text.slice(0, i)}[${phrase}](${href})${text.slice(i + phrase.length)}`;
+}
+
+/** The lead of a recalibrated page: the line, the quote in Czech with its English gloss, then the rest. */
+function recalLeadMd(slug: string): string[] {
+  return [rich(rw(slug, "landing.lead")), `> ${rw(slug, "landing.lead_quote.cz")}\n>\n> ${rw(slug, "landing.lead_quote.en")}`, rich(rw(slug, "landing.lead_after"))];
+}
+
+/** The blocks of a recalibrated page (recal.tsx RecalBody), as Markdown, in the page's order. */
+function recalBodyMd(slug: string, concerns: { q: string; lead?: string; a: string }[]): string[] {
+  const section = (part: string) => [`## ${rw(slug, `landing.${part}.heading`)}`, rich(rw(slug, `landing.${part}.body`))];
+  const steps = ["q1", "q2", "q3", "q4"].map((q, i) => {
+    const s = rw(slug, `landing.plan.${q}`);
+    const at = s.indexOf(": ");
+    return `${i + 1}. ${at > 0 ? `**${s.slice(0, at)}:** ${s.slice(at + 2)}` : `**${s}**`}`;
+  });
+  return [
+    ...section("person"),
+    ...section("join"),
+    ...section("argument"),
+    ...section("strategy"),
+    ...section("how"),
+    `## ${rw(slug, "landing.plan.heading")}`,
+    rich(rw(slug, "landing.plan.intro")),
+    steps.join("\n"),
+    rich(rw(slug, "landing.plan.close")),
+    ...section("offer"),
+    `## ${rw(slug, "landing.proof.heading")}`,
+    rich(rw(slug, "landing.proof.switch")),
+    rich(linkedMd(rw(slug, "landing.proof.workflows"), "The 36 GetSales workflows", "/articles/36-outbound-workflows-and-the-one-variable-behind-them")),
+    rich(linkedMd(rw(slug, "landing.proof.agent"), "/llms.txt", "/llms.txt")),
+    "```\n" + rw(slug, "landing.proof.agent_command") + "\n```",
+    ...(concerns.length
+      ? ["## What I'm guessing you're concerned with", ...concerns.map((c) => `### ${c.q}\n\n${c.lead ? `**${c.lead}** ` : ""}${c.a}`)]
+      : []),
+    `${blockquote(CRM_LINE)}\n>\n> ${t("shared.crm.1")}`,
+  ];
 }
 
 // ---------------------------------------------------------------- /for/<slug>/llms.txt, a page's own guide
@@ -781,29 +850,13 @@ export type PersonGuide = {
 
 type GuideStep = { href: string; why: string };
 
-/** agent.<slug>.order as steps: a list of {href, why}, or text with one step per line ("1. /path: why", "- [x](/path): why"). */
-function guideSteps(slug: string, v: unknown): GuideStep[] {
-  if (Array.isArray(v)) {
-    return v.map((x, i) => {
-      const o = x as { href?: string; url?: string; why?: string; reason?: string };
-      const href = o.href ?? o.url;
-      if (!href) throw new Error(`content/for-copy/${slug}.json: agent.${slug}.order item ${i + 1} has no href`);
-      return { href, why: (o.why ?? o.reason ?? "").trim() };
-    });
-  }
-  if (typeof v !== "string") return [];
-  return v
-    .split(/\r?\n/)
-    .map((l) => l.trim())
-    .filter(Boolean)
-    .map((l) => {
-      const s = l.replace(/^(?:\d+[.)]|[-*•])\s*/, "");
-      const md = /^\[[^\]]*\]\(([^)\s]+)\)\s*(?:[:—–-]\s*)?(.*)$/.exec(s);
-      if (md) return { href: md[1], why: md[2].trim() };
-      const bare = /^(https?:\/\/\S+|\/\S*)\s*(?:[—–-]\s+)?(.*)$/.exec(s);
-      if (bare) return { href: bare[1].replace(/[:,;.]$/, ""), why: bare[2].replace(/^[:—–-]\s*/, "").trim() };
-      throw new Error(`content/for-copy/${slug}.json: can't read agent.${slug}.order line "${l}"`);
-    });
+/** agent.<slug>.order (app/for/[slug]/for-copy.ts forList) as steps: each item's href or url, and its why. */
+function guideSteps(slug: string, items: Record<string, string>[]): GuideStep[] {
+  return items.map((o, i) => {
+    const href = o.href ?? o.url;
+    if (!href) throw new Error(`content/for-copy/${slug}.json: agent.${slug}.order[${i}] has no url`);
+    return { href, why: (o.why ?? o.reason ?? "").trim() };
+  });
 }
 
 /** One step as a list line: a page of this build links its doc; a step whose page isn't in this build is left out. */
@@ -811,9 +864,13 @@ function guideStepMd(step: GuideStep): string | null {
   let h = step.href;
   for (const origin of [BASE, PROD]) if (h.startsWith(origin)) h = h.slice(origin.length) || "/";
   if (!h.startsWith("/")) return `[${h}](${h})${step.why ? `: ${rich(step.why)}` : ""}`;
-  const key = keyOf(h);
+  // "/for/ceo.md" and "/index.md" are the docs of "/for/ceo" and "/".
+  const key = keyOf(h.replace(/\.md(?=$|[?#])/, ""));
   const d = findDoc(key);
-  if (!d) return null;
+  if (!d) {
+    console.warn(`agent guide: ${step.href} has no page in this build, left out`);
+    return null;
+  }
   return `[${d.label ?? d.title}](${mdUrl(key)})${step.why ? `: ${rich(step.why)}` : ""}`;
 }
 
@@ -838,10 +895,11 @@ function buildGuide(slug: string): PersonGuide | undefined {
     button: k("landing.agent.button"),
     alt: k("landing.agent.alt"),
   };
-  const order = forValue(slug, `agent.${slug}.order`);
-  if (Object.values(words).some((w) => !w) || !order) return undefined;
-  const title = k(`agent.${slug}.guide_title`) ?? `${p.name}'s page`;
-  const note = k(`agent.${slug}.guide_note`) ?? personTitle(p);
+  const order = forList(slug, `agent.${slug}.order`);
+  if (Object.values(words).some((w) => !w) || !order.length) return undefined;
+  // Without a guide title or note of its own: the page's title, and the intro's first sentence.
+  const title = k(`agent.${slug}.guide_title`) ?? k("title") ?? `${p.name}'s page`;
+  const note = k(`agent.${slug}.guide_note`) ?? (words.intro!.split(/(?<=[.!?])\s+/)[0] || personTitle(p));
   if (IS_PRODUCTION_BUILD && [...Object.values(words), title, note, order].some(isPlaceholder)) return undefined;
 
   // The prompt goes into a claude.ai URL: the role only, never the person's name.
@@ -859,7 +917,7 @@ function buildGuide(slug: string): PersonGuide | undefined {
   if (!steps.length) return undefined;
   const key = `for/${slug}/llms.txt`;
   const body = [rich(words.intro!), steps.map((s, i) => `${i + 1}. ${s}`).join("\n")].join("\n\n");
-  const markdown = frame(key, title, body, [...recommended(slug as ListSlug).slice(0, 4), page("for"), page("about")], humanUrl(`for/${slug}`));
+  const markdown = frame(key, title, body, personNext(slug), humanUrl(`for/${slug}`));
   return { slug, key, url: `${BASE}/${key}`, title, note, markdown, prompt, line: words.line!, button: words.button!, alt: words.alt! };
 }
 

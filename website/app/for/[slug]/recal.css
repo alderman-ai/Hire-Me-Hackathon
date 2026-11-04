@@ -1,0 +1,330 @@
+/* A recalibrated personal page (recal.tsx; 4 Nov, the CEO's). The bands are app/best's (best.css); the
+   hero is the landing hero (for.css), with the title as the h1 above a smaller "Hi <name>,". */
+
+/* ---------- The hero's text ---------- */
+.rc-title {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* The Czech half (his own words, half quoted) in the lavender of the site's accents. */
+.rc-title-cs {
+  color: var(--av-lavender, #d3c3ff);
+}
+
+.rc-hello {
+  margin: 2rem 0 0;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.rc-lead {
+  margin-top: 1rem;
+}
+
+.rc-lead p {
+  margin: 0;
+}
+
+.rc-lead > p + .rc-quote,
+.rc-lead > .rc-quote + p {
+  margin-top: 1rem;
+}
+
+/* His September line: the Czech as he wrote it, the English gloss under it, muted. */
+.rc-quote {
+  margin: 0;
+  padding: 0.25rem 0 0.25rem 1.125rem;
+  border-left: 2px solid var(--av-lavender, #d3c3ff);
+}
+
+.rc-quote p {
+  margin: 0;
+}
+
+.rc-quote-cs {
+  color: var(--av-white, #fff);
+  font-style: italic;
+}
+
+.rc-quote .rc-quote-en {
+  margin-top: 0.375rem;
+  color: var(--av-lilac-200, #ebdcff);
+  font-size: 0.875em;
+  line-height: 1.5;
+}
+
+/* ---------- Prose in the bands ---------- */
+.rc-h2 {
+  max-width: 46rem;
+}
+
+.rc-prose {
+  max-width: 44rem;
+}
+
+.rc-prose p,
+.rc-prose ul {
+  margin: 1.25rem 0 0;
+  color: var(--bx-body);
+  font-size: 1.1875rem;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.rc-h2 + .rc-prose > :first-child {
+  margin-top: 1.75rem;
+}
+
+.rc-prose strong {
+  color: var(--bx-fg);
+  font-weight: 600;
+}
+
+.rc-prose a {
+  color: var(--bx-link, inherit);
+  text-decoration: underline;
+  text-decoration-color: var(--bx-accent);
+  text-underline-offset: 0.2em;
+}
+
+.rc-list {
+  padding: 0;
+  list-style: none;
+}
+
+.rc-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.rc-list li + li {
+  margin-top: 0.5rem;
+}
+
+.rc-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.7em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--av-gradient-row, linear-gradient(90deg, #6645eb, #d445eb));
+}
+
+/* ---------- The join: one pull line ---------- */
+.rc-join-head {
+  max-width: 46rem;
+  margin: 0;
+  color: var(--av-lavender, #d3c3ff);
+  font-family: var(--av-font-sans, "Outfit", sans-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rc-join-body {
+  max-width: 50rem;
+  margin: 1rem 0 0;
+  color: var(--av-white, #fff);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.rc-join-body strong {
+  font-weight: 500;
+  color: var(--av-lavender, #d3c3ff);
+}
+
+/* ---------- The quarters: a four-step timeline ---------- */
+.rc-quarters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rc-quarters li {
+  position: relative;
+  padding-top: 3.25rem;
+}
+
+/* The line the steps sit on, running on to the next step. */
+.rc-quarters li::before {
+  content: "";
+  position: absolute;
+  left: 2.75rem;
+  right: -1.5rem;
+  top: 1.25rem;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(211, 195, 255, 0.7), rgba(211, 195, 255, 0.15));
+}
+
+.rc-quarters li:last-child::before {
+  right: 0;
+  background: linear-gradient(90deg, rgba(211, 195, 255, 0.7), rgba(211, 195, 255, 0));
+}
+
+.rc-q-n {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: var(--av-gradient-button, linear-gradient(25deg, #642df0 35%, #d445eb));
+  color: var(--av-white, #fff);
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.rc-quarters p {
+  margin: 0;
+  color: var(--bx-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.rc-quarters strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--bx-fg);
+  font-family: var(--av-font-display, "Inter Tight", Arial, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.rc-close {
+  margin-top: 1rem;
+}
+
+/* ---------- The offer ---------- */
+.rc-offer p {
+  font-size: 1.375rem;
+  line-height: 1.55;
+}
+
+/* ---------- Proof: the MCP command, copyable ---------- */
+.rc-command {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  max-width: 50rem;
+  margin-top: 1.5rem;
+}
+
+.rc-command pre {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0.875rem 1rem;
+  overflow-x: auto;
+  border-radius: var(--av-radius-sm, 8px);
+  background: var(--av-ink, #151515);
+  color: var(--av-white, #fff);
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.rc-command pre:focus-visible {
+  outline: 2px solid var(--av-amethyst, #8b3fcf);
+  outline-offset: 3px;
+}
+
+.rc-command .agent-btn {
+  flex: none;
+  min-width: 48px;
+  padding: 0.625rem 0.875rem;
+}
+
+/* ---------- Tablets and phones ---------- */
+@media screen and (max-width: 991px) {
+  .rc-quarters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2rem;
+  }
+
+  .rc-quarters li:nth-child(2n)::before {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .rc-title {
+    font-size: 2.125rem;
+  }
+
+  .rc-hello {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .rc-prose p,
+  .rc-prose ul {
+    font-size: 1.0625rem;
+  }
+
+  .rc-join-body {
+    font-size: 1.5rem;
+  }
+
+  .rc-offer p {
+    font-size: 1.1875rem;
+  }
+
+  /* The quarters as a vertical timeline: the numbers on a line down the left. */
+  .rc-quarters {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.75rem;
+  }
+
+  .rc-quarters li {
+    min-height: 2.5rem;
+    padding: 0 0 0 3.5rem;
+  }
+
+  .rc-quarters li::before,
+  .rc-quarters li:nth-child(2n)::before {
+    left: 1.1875rem;
+    right: auto;
+    top: 2.75rem;
+    bottom: -1.5rem;
+    width: 2px;
+    height: auto;
+    background: rgba(211, 195, 255, 0.35);
+  }
+
+  .rc-quarters li:last-child::before {
+    display: none;
+  }
+
+  .rc-command pre {
+    font-size: 0.8125rem;
+  }
+}

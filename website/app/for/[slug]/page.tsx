@@ -14,7 +14,6 @@ import {
   stakeholderGate,
   stakeholderSlugs,
   titleLines,
-  type LandingConcern,
   type StakeholderPage,
 } from "../../stakeholders";
 import { readingPath, type PathItem, type ReadingPath } from "../reading-time";
@@ -22,6 +21,8 @@ import "../../article.css";
 import "../for.css";
 import { NEW_SITE } from "../../flags";
 import { PersonalPage } from "./personal";
+import { Concerns } from "./concerns";
+import { forText, recalReady } from "./for-copy";
 import { markdownAlternate } from "../../page-meta";
 
 // One page per key person at Addvery, addressed to their role: /for/<slug>. The grid at /for opens it.
@@ -58,8 +59,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Without an approved landing: role-based on purpose, so the name stays out of the tab title and
   // any link preview. The landing is the link Alex sends that person, so it greets them by name.
   if (!page.landing) return { title: `For ${page.label} · Hire Me Hackathon`, description: page.framing, robots: ROBOTS, alternates: { types: markdownAlternate(`/for/${page.slug}`) } };
-  const title = `Hi ${firstName(page)}: a page for you, from Alex Alderman`;
-  const description = greetingSummary(page.landing.greeting);
+  // A recalibrated page (recal.tsx) has its own title, and its whole greeting is the preview's description.
+  const recal = NEW_SITE && recalReady(page.slug);
+  const title = (recal && forText(page.slug, "title")) || `Hi ${firstName(page)}: a page for you, from Alex Alderman`;
+  const description = recal ? page.landing.greeting : greetingSummary(page.landing.greeting);
   const url = `/for/${page.slug}`;
   return {
     title: { absolute: title },
@@ -316,34 +319,6 @@ function LandingHero({ page, greeting, path, draft }: { page: StakeholderPage; g
             </figcaption>
           </RotateIn>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Concerns({ concerns }: { concerns: LandingConcern[] }) {
-  if (concerns.length === 0) return null;
-  return (
-    <section className="for-qa" aria-labelledby="for-concerns">
-      <div className="art-container for-split">
-        <div className="for-split-head">
-          <h2 id="for-concerns" className="for-h2">
-            What I&apos;m guessing you&apos;re concerned with
-          </h2>
-          <p className="for-dek">Your likely questions, as I imagine you&apos;d put them, and my answers.</p>
-        </div>
-        <ul className="for-qa-list">
-          {concerns.map((c) => (
-            <li key={c.q} className="for-qa-item">
-              <h3 className="for-qa-q">{c.q}</h3>
-              <p className="for-qa-a">
-                {c.lead && <strong className="for-qa-lead">{c.lead}</strong>}
-                {c.lead && " "}
-                {c.a}
-              </p>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

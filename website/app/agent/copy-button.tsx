@@ -6,7 +6,18 @@ import { useEffect, useState } from "react";
  * "Copy the prompt": writes `text` to the clipboard and shows a tick for two seconds. Without a clipboard it
  * selects the element `targetId` (showing it first if it's hidden), so the prompt can be copied by hand.
  */
-export function CopyButton({ text, label, targetId = "agent-prompt-text" }: { text: string; label: string; targetId?: string }) {
+export function CopyButton({
+  text,
+  label,
+  targetId = "agent-prompt-text",
+  hideLabel = false,
+}: {
+  text: string;
+  label: string;
+  targetId?: string;
+  /** An icon-only button: the label is read by screen readers only. */
+  hideLabel?: boolean;
+}) {
   const [done, setDone] = useState(false);
   useEffect(() => {
     if (!done) return;
@@ -46,7 +57,7 @@ export function CopyButton({ text, label, targetId = "agent-prompt-text" }: { te
           </svg>
         )}
       </span>
-      <span>{label}</span>
+      <span className={hideLabel ? "sr-only" : undefined}>{label}</span>
       <span className="sr-only" aria-live="polite">
         {done ? "✓" : ""}
       </span>

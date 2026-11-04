@@ -127,12 +127,12 @@
     },
     {
       "slug": "ceo",
-      "name": "Stepan Hyks",
+      "name": "Štěpán Hykš",
       "role": "CEO",
       "label": "Addvery's CEO",
       "title": "CEO & Business Consultant, Addvery",
-      "framing": "What Alex Alderman would build for Addvery, seen from the CEO's chair, and what he'd need from you to make it real.",
-      "note": "You decide whether a GTM engineer earns a seat at Addvery, so here are the economics in two lines. AI pays for itself by cutting labour costs or by growing revenue. I'd point it at revenue, so the whole team grows with it. All I'd need from you is which piece to make real first.",
+      "framing": "Revenue first: what I'd point Claude Code at, and the plan by quarters",
+      "note": "Your backlog and your revenue goal have one answer: someone who runs Claude Code at full capacity, as their whole job, pointed at pipeline first. That's where five times comes from.",
       "note_is_draft": false,
       "demos": [
         {
@@ -157,28 +157,28 @@
         "research-in"
       ],
       "ask": {
-        "short": "The demo you'd want first",
-        "heading": "Which of these would you want working at Addvery first?",
-        "body": "One demo number in reply to my LinkedIn message. That's the whole ask."
+        "short": "",
+        "heading": "",
+        "body": ""
       },
       "landing": {
         "approved": true,
-        "greeting": "Hi Stepan. I could have sent you a CV. Instead I spent one recorded day doing the job in public, since a role like this would need your yes. Here are my guesses at your questions, with the proof linked.",
+        "greeting": "Hi Štěpán. In September you wrote: „jednoduše to všechno už sami po nocích s CC nestíháme :)“ (We just can't keep up with it all ourselves any more, even working nights with Claude Code.) And Addvery wants to grow five times. I think both problems have the same answer, and it starts with revenue.",
         "concerns": [
           {
-            "q": "Is this another AI-buzz hire?",
-            "lead": "I'd hold myself to your line.",
-            "a": "You've said a role at Addvery isn't a ride on the AI buzz. I've spent nine months doing nothing but building with Claude Code, and this site is the result. (Technically still a CV. A very long one, with a live feed.)"
+            "q": "When does this bring revenue?",
+            "lead": "After the setup quarter.",
+            "a": "Booking starts once the accounts are ready, and the first city sprint comes around month three or four. That's why the setup fee covers only the first quarter."
           },
           {
-            "q": "Where's something running that others can see?",
-            "lead": "Right here.",
-            "a": "A dozen agents built this site from one written plan, and every decision is logged in the open."
+            "q": "My consultants are busy at clients. Will they do this?",
+            "lead": "Not all of them, and that's fine.",
+            "a": "About 20 senior accounts are enough, and each consultant only approves drafts. Getting them to agree is the slowest step, so it starts first."
           },
           {
-            "q": "Can I swim without a lifeguard?",
-            "lead": "That was the whole day.",
-            "a": "Agents made the easy calls, I made the hard ones, and the log shows which was which. The slowest part was decisions waiting on me."
+            "q": "Will it sound like AI?",
+            "lead": "It should sound like each consultant.",
+            "a": "Nothing goes out without the consultant's yes, so it has to sound like them. This site's copy works the same way: my voice skill writes it, and a separate grader checks it."
           },
           {
             "q": "Czech and work authorisation.",
@@ -188,33 +188,32 @@
         ],
         "reading_list": [
           {
-            "title": "Seven hours in: my evening check-in, on video. Start here if you open one thing.",
-            "href": "/#post-s11"
+            "title": "The plan above, in practice: what I do once the sequences go live",
+            "href": "/articles/what-to-do-after-your-outbound-sequences-go-live"
           },
           {
-            "title": "Outbound in GetSales: the 36 workflows",
-            "href": "/d3"
+            "title": "How every lead gets a first message written for them",
+            "href": "/articles/36-outbound-workflows-and-the-one-variable-behind-them"
           },
           {
-            "title": "“The bottleneck is always human”: what the day taught me about running agents. Spoiler: the title gives it away.",
-            "href": "/#post-insight-bottleneck"
+            "title": "How I sort each lead into one of the 36",
+            "href": "/articles/sorting-twelve-leads-into-36-workflows-rules-first-then-jev"
           },
           {
-            "title": "The legibility analyzer: an agent that reports what changed, so nobody has to ask",
-            "href": "/d9"
+            "title": "Who writes the posts for your consultants' accounts",
+            "href": "/articles/who-writes-the-linkedin-posts-for-your-outreach-accounts"
           },
           {
-            "title": "The plan the agents worked from",
-            "href": "/docs/charter"
+            "title": "The 18 skills that came out of the build",
+            "href": "/skills"
           }
         ],
-        "lead": "I could have sent you a CV. Instead I spent one recorded day doing the job in public, since a role like this would need your yes.",
-        "note": "If AI won't cut half the team, the return has to come from more business. **That's why I'd put AI in your pipeline first,** and it's what this page is about.\n\nSo that's where I started. Below is me saying it on camera, then what I built for Addvery in 12 hours: four ICPs from your own case studies, 36 outbound workflows and one personal first message per lead. None of it sends, and no real data ran through it.\n\nFurther down is what happens after the first build. An AI workflow is always a managed service, because the models always change. It starts on the expensive side, so **someone has to keep making it cheaper.** And the keys stayed off camera all day. (Leaking your secrets on video is the fastest way not to get hired.)",
+        "lead": "In September you wrote:",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""
       },
-      "sources": "Its facts come only from Addvery's public website, your public job title, and your public LinkedIn post of 21 September 2026 on hiring an AI Strategy Consultant.",
+      "sources": "The facts on it come from Addvery's own case studies, your public LinkedIn posts of 21 September and 29 October 2026, and Ivana Karhanová's public posts of 18, 30 and 31 October 2026.",
       "lens_key": "for.lens.ceo"
     },
     {
