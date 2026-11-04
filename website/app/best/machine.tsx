@@ -46,6 +46,7 @@ import {
   ROUTING,
   c2,
   machineStatLabels,
+  MACHINE_STAT_NUMS,
   wallTile,
 } from "./machine-words";
 
@@ -78,9 +79,9 @@ export function MachineStats() {
   const labels = machineStatLabels();
   return (
     <StatList>
-      <Stat num="30-50" label={labels[0]} />
-      <Stat num="1" label={labels[1]} />
-      <Stat num="0" label={labels[2]} />
+      {MACHINE_STAT_NUMS.map((num, i) => (
+        <Stat key={num} num={num} label={labels[i]} />
+      ))}
     </StatList>
   );
 }

@@ -51,7 +51,10 @@ const STAT_FALLBACK = [
   "No sequence has a lead, none is started, and nothing sends.",
 ];
 
-/** The three stat lines under 36, 1 and 0: lines 2 to 4 of C2's [!summary] callout, else the fallback. */
+/** The three stats' numbers, for the page (machine.tsx) and its Markdown (lib/agent-track) alike. */
+export const MACHINE_STAT_NUMS = ["30-50", "1", "0"] as const;
+
+/** The three stat lines under the numbers: lines 2 to 4 of C2's [!summary] callout, else the fallback. */
 export function machineStatLabels(): string[] {
   const body = c2()?.body ?? "";
   const lines = body

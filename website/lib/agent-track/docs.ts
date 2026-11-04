@@ -28,7 +28,7 @@ import {
   MOMENTS,
   NUMBERS,
 } from "@/app/home/home-words";
-import { C1_LINK, C1_SLUG, C2_SLUG, MACHINE, MACHINE_FIGURES, MESSAGES, ROUTING, c2, machineStatLabels, walkthroughWords } from "@/app/best/machine-words";
+import { C1_LINK, C1_SLUG, C2_SLUG, MACHINE, MACHINE_FIGURES, MACHINE_STAT_NUMS, MESSAGES, ROUTING, c2, machineStatLabels, walkthroughWords } from "@/app/best/machine-words";
 import {
   BI_LENS,
   CEO_LENS,
@@ -249,7 +249,7 @@ function walkthroughMd(): string {
 
 function statsMd(): string {
   const stats = machineStatLabels();
-  return `- **36**: ${stats[0]}\n- **1**: ${stats[1]}\n- **0**: ${stats[2]}`;
+  return MACHINE_STAT_NUMS.map((num, i) => `- **${num}**: ${stats[i]}`).join("\n");
 }
 
 function figuresMd(): string {
