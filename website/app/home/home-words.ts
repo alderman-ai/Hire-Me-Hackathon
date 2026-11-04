@@ -6,7 +6,7 @@ export const NUMBERS: { href: string; k: string; v: string }[] = [
   { href: "#account", k: "279 results · $1.24", v: "6 Apify scrapers, in about 17 minutes" },
   { href: "#account", k: "57 people · $0.003", v: "107 model calls" },
   { href: "#routing", k: "12 leads", v: "4 placed by rules alone" },
-  { href: "#machine", k: "36 workflows · 1 variable", v: "Nothing here sends." },
+  { href: "#machine", k: "1 classifier · 1 variable", v: "Nothing here sends." },
   { href: "#six", k: "6 pages", v: "A personal landing page for each decision-maker" },
 ];
 
@@ -15,7 +15,7 @@ export const MOMENTS: { skill: string; time: string; quote: string; name: string
   { skill: "operator-attention-controls", time: "13:44 · Day 1", quote: "\"Please go ahead and codify that as a skill so that if I need to use it again, it's an instant fix.\"", name: "Keeping a team of AI helpers from running off without me" },
   { skill: "account-scrape-apify", time: "15:13 · Day 1", quote: "\"so i checked to see that no nothing leaked or anything like that and now i can kind of chill and let that run\"", name: "Account research scraper on Apify, with no logins" },
   { skill: "account-people-classifier", time: "15:40 · Day 1", quote: "\"set up a JEV classification that determines whether they are someone sending cold outreach, right?\"", name: "Account mapping: classifying every employee and post at a target company" },
-  { skill: "outbound-workflow-factory", time: "16:36 · Day 1", quote: "\"So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12.\"", name: "Outbound workflow factory: 36 GetSales sequences from one copy file per ICP" },
+  { skill: "outbound-workflow-factory", time: "16:36 · Day 1", quote: "\"So there are four main ICPs, three different languages, let's say English, Czech, German, and so that's 12.\"", name: "Outbound sequence factory: one copy file per ICP, every GetSales sequence out" },
 ];
 
 // Quotes are Alex's, verbatim, with the second they start at.

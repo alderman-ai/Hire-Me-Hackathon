@@ -57,7 +57,7 @@ export function WalkthroughFrame({ mode }: { mode?: "inline" | "dialog" }) {
   if (!v) return null;
   const tile = wallTile(v.youtube_id, v.start ?? 0);
   const known = KNOWN_CAPTION[v.youtube_id];
-  const label = tile?.title ?? "The 36 outbound workflows, walked through";
+  const label = tile?.title ?? "30 to 50 sequences behind one classifier, walked through";
   return (
     <VideoFrame
       youtube={v.youtube_id}
@@ -78,7 +78,7 @@ export function MachineStats() {
   const labels = machineStatLabels();
   return (
     <StatList>
-      <Stat num="36" label={labels[0]} />
+      <Stat num="30-50" label={labels[0]} />
       <Stat num="1" label={labels[1]} />
       <Stat num="0" label={labels[2]} />
     </StatList>

@@ -41,7 +41,7 @@
       "demos": [
         {
           "n": 3,
-          "why": "36 workflows built from Addvery's own industry pages, in English, Czech and German, each opening with a first message written for its lead."
+          "why": "An approach for running 30 to 50 sequences by ICP, language and tactic, with a classifier sending each lead to the right one."
         },
         {
           "n": 1,
@@ -95,7 +95,7 @@
         ],
         "reading_list": [
           {
-            "title": "Outbound in GetSales: the 36 workflows and how leads get sorted into them",
+            "title": "Outbound in GetSales: 30 to 50 sequences and how leads get sorted into them",
             "href": "/d3"
           },
           {
@@ -118,12 +118,12 @@
         "lead_key": "for-growth.note.history",
         "sign": "Alex",
         "lead": "**sending you a CV felt wrong.**",
-        "note": "So when you answered my comment on the road to 1 billion CZK with \"let's find out how to make it possible\", I took you literally and spent 12 hours building my application to Addvery, live. It's in your branding, not mine, for a reason: I don't want there to be a next company.\n\nYou're hiring salespeople now. The first place you need to put AI is in your pipeline, so they start with one that already runs. That's the core of this page: **36 workflows, and how each lead finds the right one.** Four ICPs from your own website, in English, Czech and German, three tactics each.\n\nStart with the walkthrough video below. (Honest rough edge: nothing has sent, and the Czech and German still need a native read.)\n\nSee you soon.",
+        "note": "So when you answered my comment on the road to 1 billion CZK with \"let's find out how to make it possible\", I took you literally and spent 12 hours building my application to Addvery, live. It's in your branding, not mine, for a reason: I don't want there to be a next company.\n\nYou're hiring salespeople now. The first place you need to put AI is in your pipeline, so they start with one that already runs. That's the core of this page: **an approach for running 30 to 50 sequences, and how a classifier sends each lead to the right one.** My example uses four ICPs from your own website, in English, Czech and German, three tactics each.\n\nStart with the walkthrough video below. (Honest rough edge: nothing has sent, and the Czech and German still need a native read.)\n\nSee you soon.",
         "made_line": "This page came out of a reusable skill. Once it's built it's built: point it at your top 100 accounts and every decision-maker gets one.",
         "questions": [],
         "ask_line": ""
       },
-      "lens": "36 workflows, and how each lead finds the right one."
+      "lens": "30 to 50 sequences, and how each lead finds the right one."
     },
     {
       "slug": "ceo",
@@ -228,7 +228,7 @@
       "demos": [
         {
           "n": 3,
-          "why": "36 workflows, one per customer profile, language and approach, and how a classifier would send each lead to the right one. Point that routing at the group, and each lead goes to the company that fits."
+          "why": "An approach for 30 to 50 sequences, one per customer profile, language and approach, with a classifier sending each lead to the right one. Point that routing at the group, and each lead goes to the company that fits."
         },
         {
           "n": 9,
@@ -370,7 +370,7 @@
             "href": "/d1"
           },
           {
-            "title": "Outbound in GetSales: the 36 workflows",
+            "title": "Outbound in GetSales: 30 to 50 sequences, one classifier",
             "href": "/d3"
           },
           {
@@ -496,7 +496,7 @@
         },
         {
           "n": 3,
-          "why": "36 workflows: four customer profiles × three languages × three approaches, the segments a pipeline report would break down by."
+          "why": "Sequences by customer profile, language and approach (36 in my example), the segments a pipeline report would break down by."
         },
         {
           "n": 9,
@@ -551,7 +551,7 @@
             "href": "/d3"
           },
           {
-            "title": "The 36 workflows, built and switched off: how leads get classified",
+            "title": "The example's 36 sequences, built and switched off: how leads get classified",
             "href": "/#post-workflows-built"
           },
           {

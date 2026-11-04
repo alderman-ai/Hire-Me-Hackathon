@@ -1,7 +1,7 @@
 ---
-title: "How to send every lead a first message written for them"
+title: "30 to 50 different drip sequences, one classification model"
 slug: "36-outbound-workflows-and-the-one-variable-behind-them"
-description: "I built 36 sequences for your four customer types in English, Czech and German, each opening with a message for one."
+description: "Up to 30 to 50 different drip sequences by language, ICP and tactic, all filtered through a classification model."
 author: "Alex Alderman"
 date: "2026-11-02"
 status: "published"
@@ -10,7 +10,7 @@ library_id: "demo-getsales-36-workflows"
 group: "Outbound"
 cover:
   kicker: "Outbound"
-  subtitle: "36 GetSales workflows for Addvery, and a custom first message for every lead."
+  subtitle: "30 to 50 drip sequences by language, ICP and tactic, a classifier routing each lead."
 tags: ["outbound", "getsales", "classification"]
 reading_minutes: 4
 video:
@@ -25,12 +25,12 @@ It doesn't matter how many sequences you have. **It matters who gets put into wh
 That's what I do: I build outbound where every lead lands in the sequence that fits them, and the first message is written for that one person. Before AI, this was my thing, at the company you probably know me from.
 
 > [!figure] /demos-assets/36-outbound-workflows-and-the-one-variable-behind-them/36-grid.png
-> Four customer types, three languages and three angles: a 4 x 3 x 3 grid of 36 sequences
+> My example: four customer types, three languages, three angles. That 4 x 3 x 3 grid is 36 sequences.
 > Each square is one sequence: a customer type across the top, a language down the side, an angle in each color
 
 ## Writing the sequences is the easy part
 
-For Addvery I built 36 of them in GetSales, the outreach tool I use. Four customer types taken from your own website, if it's accurate: retail loyalty, telco customer value, consumer lending and last-mile logistics. Each in English, Czech and German. Each language with three angles: signal (news at their company), problem (a known pain) and proof (an Addvery case like theirs).
+To show how it works I set up 36 of them in GetSales, the outreach tool I use. Four customer types taken from your own website, if it's accurate: retail loyalty, telco customer value, consumer lending and last-mile logistics. Each in English, Czech and German. Each language with three angles: signal (news at their company), problem (a known pain) and proof (an Addvery case like theirs).
 
 A script built all 36 in about seven minutes, in their own folder apart from my own outbound.
 

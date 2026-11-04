@@ -325,9 +325,9 @@ export type MatrixProps = {
 export function Matrix({ legend, shownLegend = "Retail loyalty, English, proof", hits = MATRIX_HITS, shown = MATRIX_SHOWN }: MatrixProps) {
   return (
     <>
-      <div className="bx-matrix-wrap" tabIndex={0} role="region" aria-label="The 36 workflows, scrollable">
+      <div className="bx-matrix-wrap" tabIndex={0} role="region" aria-label="The example's 36 sequences, scrollable">
         <table className="bx-matrix">
-          <caption className="sr-only">The 36 workflows: four ICPs by three languages by three tactics</caption>
+          <caption className="sr-only">The example's 36 sequences: four ICPs by three languages by three tactics</caption>
           <thead>
             <tr>
               <th rowSpan={2} scope="col">

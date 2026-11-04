@@ -6,7 +6,7 @@ import { SKILLS_PAGE } from "../../flags";
 // module, so the agent track (lib/agent-track) reads exactly what each personal page shows.
 
 export const GROWTH_LENS = {
-  title: "36 outbound workflows and the one variable behind them",
+  title: "30 to 50 outbound sequences and the one variable behind them",
   lead: "Four ICPs, three languages, three tactics, and one personal first message per lead.",
 };
 
@@ -22,7 +22,7 @@ export type LensStep = {
 
 const C2_ASSETS = `/demos-assets/${C2_SLUG}`;
 const C1_ASSETS = `/demos-assets/${C1_SLUG}`;
-const FOLDER = { src: `${C2_ASSETS}/workflows-folder.png`, alt: "Six of the 36 workflows in the project's GetSales folder, each switched off" };
+const FOLDER = { src: `${C2_ASSETS}/workflows-folder.png`, alt: "Six of the example's 36 sequences in a GetSales folder, each switched off" };
 const ROUTER = { src: `${C1_ASSETS}/router-run-1.png`, alt: "The lead router sorting twelve fictional leads in a terminal" };
 const D1_BOARD = { src: "/d1/01-overview-1280.webp", alt: "Research board: Addvery as scraped from public sources" };
 
@@ -102,8 +102,8 @@ export function cofounder1Steps(): LensStep[] {
   }
   if (findEntry(C2_SLUG)) {
     steps.push({
-      title: "36 outbound workflows and the one variable behind them",
-      text: "Message 1 of every workflow is one variable, written for each lead before import.",
+      title: "30 to 50 outbound sequences and the one variable behind them",
+      text: "Message 1 of every sequence is one variable, written for each lead before import.",
       href: entryUrl(C2_SLUG),
       entry: true,
       image: FOLDER,
@@ -135,8 +135,8 @@ export function biRows(): { count: string; how: string; check: { href: string; l
     },
     {
       count: "36 · 0",
-      how: "Every toggle off and every count at 0: none of the 36 is running.",
-      check: c2 ? { href: entryUrl(C2_SLUG), label: "36 workflows", entry: true } : null,
+      how: "Every toggle off and every count at 0: none of the example's 36 is running.",
+      check: c2 ? { href: entryUrl(C2_SLUG), label: "the 36-sequence example", entry: true } : null,
     },
   ];
 }

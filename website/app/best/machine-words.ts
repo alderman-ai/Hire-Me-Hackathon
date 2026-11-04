@@ -39,16 +39,16 @@ export function walkthroughWords(): { label: string; caption?: string; meta?: st
   const tile = wallTile(v.youtube_id, v.start ?? 0);
   const known = KNOWN_CAPTION[v.youtube_id];
   return {
-    label: tile?.title ?? "The 36 outbound workflows, walked through",
+    label: tile?.title ?? "30 to 50 sequences behind one classifier, walked through",
     caption: known?.caption ?? tile?.title,
     meta: known?.meta ?? (tile ? `${dayOf(tile.session)}, ${tile.prague}` : undefined),
   };
 }
 
 const STAT_FALLBACK = [
-  "36 workflows cover four Addvery ICPs in Czech, German and English, with three tactics each.",
-  "Message 1 of every workflow is one variable, written for each lead before import.",
-  "No workflow has a lead, none is started, and nothing sends.",
+  "An approach for running up to 30 to 50 different drip sequences by ICP, language and tactic. My example has 36.",
+  "Message 1 of every sequence is one variable, written for each lead before import.",
+  "No sequence has a lead, none is started, and nothing sends.",
 ];
 
 /** The three stat lines under 36, 1 and 0: lines 2 to 4 of C2's [!summary] callout, else the fallback. */
@@ -70,10 +70,10 @@ export const ROUTING = {
     { n: "4 of 12", what: "Rules", text: "industry, headcount, country and profile language settle most of the calls" },
     { n: "7 of 12", what: "Jev", text: "one narrow question when a rule can\u2019t decide" },
     { n: "75%", what: "A person", text: "decides when the model is under 75% sure, or two answers are close" },
-    { n: "1 of 36", what: "One workflow", text: "the lead lands in exactly one of the 36, with its reason" },
+    { n: "1 sequence", what: "One sequence", text: "the lead lands in exactly one, with its reason" },
   ],
   after:
-    "A lead that fits lands in exactly one of the 36 workflows, with its reason next to it. I\u2019m not running real data through it, so I tested it on twelve fictional leads: 4 placed by rules alone, 7 needed the model at least once, 1 fit nothing. Honest caveat: the model isn\u2019t called in this run either, so the hard cases show answers a person labelled. That\u2019s how this starts for real anyway: your labels tune the questions.",
+    "A lead that fits lands in exactly one sequence, with its reason next to it. I\u2019m not running real data through it, so I tested it on twelve fictional leads: 4 placed by rules alone, 7 needed the model at least once, 1 fit nothing. Honest caveat: the model isn\u2019t called in this run either, so the hard cases show answers a person labelled. That\u2019s how this starts for real anyway: your labels tune the questions.",
 };
 
 /** The two C2 figures: the folder of 36 switched off, and message 1 as one variable. */
@@ -82,8 +82,8 @@ export const MACHINE_FIGURES = [
     src: `${ASSETS}/workflows-folder.png`,
     width: 1568,
     height: 686,
-    alt: "Six of the 36 workflows in the project's GetSales folder, named by ICP, language and tactic, each switched off with 0 contacts",
-    caption: "Every toggle off and every count at 0: none of the 36 is running",
+    alt: "Six of the example's 36 sequences in a GetSales folder, named by ICP, language and tactic, each switched off with 0 contacts",
+    caption: "Every toggle off and every count at 0: none of them is running",
   },
   {
     src: `${ASSETS}/message-1-variable.png`,
@@ -94,12 +94,12 @@ export const MACHINE_FIGURES = [
   },
 ];
 
-export const C1_LINK = "Sorting twelve leads into 36 workflows: rules first, then Jev";
+export const C1_LINK = "Sorting twelve leads into sequences: rules first, then Jev";
 
 /** Home's #machine heading and lead. */
 export const MACHINE = {
-  title: "How to send every lead a first message written for them",
-  lead: "Outbound at Addvery\u2019s size isn\u2019t one campaign. It\u2019s buyer types times languages times angles, and every lead has to land in exactly one of them.",
+  title: "30 to 50 different drip sequences, one classification model",
+  lead: "Outbound at scale isn\u2019t one campaign. It\u2019s buyer types times languages times angles, and a classifier has to put every lead in exactly one of them.",
 };
 
 

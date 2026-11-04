@@ -25,7 +25,7 @@ Across a whole list, every wrong guess sends a good message to the wrong person.
 
 ## Rules settled 25 of 34 decisions
 
-For Addvery I built [36 outreach sequences](/articles/36-outbound-workflows-and-the-one-variable-behind-them): the four customer types on your website, each in English, Czech and German, each with three openings. Something that just happened at their company, a known pain, or one of your case stories that looks like them.
+In the demo I set up [36 example outreach sequences](/articles/36-outbound-workflows-and-the-one-variable-behind-them): the four customer types on your website, each in English, Czech and German, each with three openings. Something that just happened at their company, a known pain, or one of your case stories that looks like them.
 
 Then I ran twelve fictional leads through the sorter, printing every decision with what settled it. 4 leads were placed by rules alone, 7 needed the model at least once, and 1 fit nothing. Of the 34 decisions, rules settled 25.
 

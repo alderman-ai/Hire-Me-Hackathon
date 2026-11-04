@@ -1,6 +1,6 @@
 {
   "about.glance.1": "Built for Addvery",
-  "about.glance.2": "36 workflows, six pages and {skills} reusable skills, built live in 12 hours",
+  "about.glance.2": "One classifier behind 30 to 50 sequences, six pages and {skills} reusable skills, built live in 12 hours",
   "about.work.1": "How I work",
   "about.work.2": "My CV doesn't really get looked at, so here's me working",
   "about.work.3": "My desk at 14:19 on build day",
@@ -85,7 +85,7 @@
   "skills.linkedin-wall-builder.1": "Someone's public LinkedIn posts as one wall, word for word, images and all. Mine took 6.6 seconds and $0.19 for 94 posts.",
   "skills.onepassword-batch.1": "Every key a task needs comes through one 1Password approval. Nothing gets printed, and the whole scraping run went by with no key on screen.",
   "skills.operator-attention-controls.1": "All the questions wait in one place and I answer them one at a time. If I don't, the helper decides and says why. When I closed everything by accident, it was all back in 9 minutes.",
-  "skills.outbound-workflow-factory.1": "One copy file per ICP goes in, every GetSales sequence comes out, message 1 already set to the one variable. All 36 took 7 minutes.",
+  "skills.outbound-workflow-factory.1": "One copy file per ICP goes in, every GetSales sequence comes out, message 1 already set to the one variable. My 36-sequence example took 7 minutes.",
   "skills.publish-leak-scan.1": "Before anything gets committed or published, it's scanned for API keys, banned terms, emails and phone numbers. The 19 clips got a frame checked every two seconds.",
   "skills.research-desk.1": "About four questions per list, then three wildcards who chase the biggest question nobody asked. That got me 27 reports, all indexed.",
   "skills.spec-driven-agent-team.1": "One short plan says why and what. Each piece of work gets its own brief, its own AI helper and a log of every call it made without me. About 15 helpers, 739 commits, one day.",

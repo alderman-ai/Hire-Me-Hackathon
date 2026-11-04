@@ -54,7 +54,7 @@
         },
         {
           "id": "outbound-workflow-factory",
-          "name": "Outbound workflow factory: 36 GetSales sequences from one copy file per ICP",
+          "name": "Outbound sequence factory: one copy file per ICP, every GetSales sequence out",
           "line": "skills.outbound-workflow-factory.1",
           "moment": {
             "time": "16:36",
