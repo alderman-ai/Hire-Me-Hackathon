@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight, Outfit, Plus_Jakarta_Sans } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { SiteAnalytics } from "./site-analytics";
 import "./addvery-tokens.css";
 import "./globals.css";
 import { SiteHeader } from "./site-chrome";
@@ -106,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteFooter />
         {PEOPLE && <YourPagePill people={PEOPLE} variant="bar" />}
         {NEW_SITE && <WebMcp />}
-        <Analytics />
+        <SiteAnalytics />
       </body>
     </html>
   );
