@@ -14,6 +14,7 @@ import { AgentRow } from "../../agent/agent-row";
 import { AgentGuide } from "./agent-guide";
 import { Rich } from "./rich";
 import { RecalBody, RecalLead, RecalTitle, recalReady } from "./recal";
+import { forText } from "./for-copy";
 import "./personal.css";
 
 // A personal page on the new site (BUILD.md 5 and 6, the best-of build), built only when NEW_SITE=1:
@@ -106,6 +107,7 @@ export function PersonalPage({
   // A recalibrated page (4 Nov, the CEO's): its own words file (for-copy.ts) replaces P1's hello and lead
   // and P2 to P4 with its own blocks (recal.tsx). Nothing of it shows until the page may show its words.
   const recal = showWords && recalReady(slug);
+  const madeLine = recal ? forText(slug, "landing.made_line") : k2.made_line;
 
   return (
     <main className="art art-for for-landing pp">
@@ -231,11 +233,12 @@ export function PersonalPage({
       {!recal && showWords && <AfterQuotes slug={slug} />}
 
       {/* ---------- P5: how this page was made ---------- */}
-      {showWords && k2.made_line && (
+      {/* A recalibrated page takes its made line from its words file; empty there means no block (the CEO's, 4 Nov). */}
+      {showWords && madeLine && (
         <Band tone="lilac" pad="sm" label="How this page was made">
           <div className="pp-made">
             <p>
-              <Rich text={k2.made_line} slug={slug} />
+              <Rich text={madeLine} slug={slug} />
             </p>
             {skills && (
               <Link href={skills} className="pp-pill">

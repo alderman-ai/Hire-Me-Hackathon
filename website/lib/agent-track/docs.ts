@@ -749,9 +749,11 @@ From: Alex Alderman, ${t("home.hero.10")}`);
     if (chips && SKILLS_PAGE) parts.push(chipsMd(chips.label ?? "Skills behind this", chips.items));
     parts.push(...afterQuotesMd(p.slug));
   }
-  if (raw.made_line) {
+  // A recalibrated page takes its made line from its words file; empty there means no section (the CEO's).
+  const madeLine = recal ? forText(p.slug, "landing.made_line") : raw.made_line;
+  if (madeLine) {
     parts.push("## How this page was made");
-    parts.push(`${rich(raw.made_line)}${docKeys().has("skills") ? ` [${t("shared.made.1")}](${mdUrl("skills")})` : ""}`);
+    parts.push(`${rich(madeLine)}${docKeys().has("skills") ? ` [${t("shared.made.1")}](${mdUrl("skills")})` : ""}`);
   }
   parts.push(`## ${notice.heading}`);
   const noticeLines = [p.slug !== "growth" ? notice.why : "", p.sources ?? notice.sources, `${t("shared.takedown.2")} [${notice.privacy_label}](${link("/privacy")}).`];
