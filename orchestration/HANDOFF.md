@@ -2,6 +2,19 @@
 
 Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (id `e41f29c0`, at about 440k tokens, flagged ROT by the context watch). Read this, then `RULES.md` at the repo root, then `orchestration\local\ALEX-WANTS.md` (git-ignored; Alex's verbatim words tonight, W1 to W32), then `orchestration\assembly\VERDICT.md` (git-ignored). Take every time from `Get-Date`. The 20:11 handover this replaces is in git history.
 
+## Standing order: visits to /for/ceo (Alex, 4 Nov, about 16:15)
+
+Alex: "make a note for future orchestrators to alert me on visits to that subpage". He emailed the CEO a link to the site on 4 Nov. Every orchestration session keeps this watch. When the page gets a real visit, tell Alex in chat, or with PushNotification when he's away. Say when it was (Prague time) and, where the data has them, the country, device and referrer. Never claim to know who visited: the data never says.
+
+How (project `prj_rT9kFM97a02ouvSsMrZZRYqJi4jo`, team `team_m6QeC9FHcO8dk7PvEHtfkAod`):
+1. **Vercel Web Analytics (the right tool).** `@vercel/analytics` is already in `website\app\layout.tsx`, but at 16:15 on 4 Nov the API answered "Web Analytics not found", so it isn't enabled on the project yet. Alex enables it himself in the Vercel dashboard (project, Analytics, Enable), and it counts from the next production deploy on. Then use the Vercel MCP: `aggregate_pageviews` with `filter: requestPath eq '/for/ceo'` and `by: ["hour","country"]` (or `referrerHostname`, `deviceType`). It counts real browsers only, so our own curl checks don't show, but our Chrome checks do: subtract the times this session opened the page.
+2. **Request logs (fallback, weak).** From `website\`, run `vercel --scope team_m6QeC9FHcO8dk7PvEHtfkAod logs --project prj_rT9kFM97a02ouvSsMrZZRYqJi4jo --environment production --no-branch --since 1h --json -n 100` and filter on `requestPath` starting `/for/ceo`. That includes `/for/ceo.md` and `/for/ceo/llms.txt`, which an AI agent reads. The limits:
+   - The records have no IP or user agent.
+   - The call returns only the latest 100.
+   - `website`'s route checks after every ship hit `/for/ceo` too.
+
+   So a hit counts as a visit only if it isn't part of a burst (several routes in the same second) and isn't within about 10 minutes of a ship or one of our own checks. The MCP's `get_runtime_logs` answered 403 on 4 Nov, so use the CLI.
+
 ## Update, about 14:15 on 4 Nov (orchestration a77ec41a)
 
 - 8b57493d stopped and removed at 13:32; a77ec41a is the one `orchestration`. Alex works with it directly.
