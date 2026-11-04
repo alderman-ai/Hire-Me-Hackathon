@@ -4,14 +4,13 @@ import Feed from "../feed";
 import { NEW_SITE } from "../flags";
 import { t } from "../copy";
 import { Highlights } from "./highlights";
-import Timelapse from "./timelapse";
 import { LOG_META, markdownAlternate } from "../page-meta";
 
 // /log: Day 1's page (3 Nov, Alex: "Have the highlight portion on top ... then the second link on the
 // hackathon menu goes to the feed"). In order: the page's intro (its one h1), the highlights
-// (app/log/highlights.tsx, #highlights), the deployments time-lapse (app/log/timelapse.tsx, #timelapse;
-// it renders nothing until it has frames), then the feed as compact rows (#feed). The hackathon menu bar
-// links to each section. Only the new site has this page; any other build answers 404 here.
+// (app/log/highlights.tsx, #highlights), then the feed as compact rows (#feed). The hackathon menu bar
+// links to each section. (The deployments time-lapse was removed on 4 Nov, Alex: its first frames showed
+// unstyled pages.) Only the new site has this page; any other build answers 404 here.
 
 export const metadata: Metadata = {
   title: `${LOG_META.title} · Hire Me Hackathon`,
@@ -32,7 +31,6 @@ export default function LogPage() {
         </div>
       </section>
       <Highlights />
-      <Timelapse />
       <Feed hideStatus asPage section head={{ title: t("log.feed.title"), body: "" }} />
     </main>
   );

@@ -4,7 +4,6 @@ import stakeholdersRaw from "@/content/stakeholders.json";
 import quotesRaw from "@/content/quotes.json";
 import clientQuotes from "@/content/recommendations.json";
 import highlightsRaw from "@/content/highlights.json";
-import timelapseRaw from "@/content/timelapse.json";
 import feedJson from "@/content/feed.json";
 import day2Json from "@/content/feed-day2.json";
 import summaryJson from "@/content/summary.json";
@@ -1056,12 +1055,6 @@ function logDoc(): Doc {
       const caption = w(`highlights.${item.id}.caption`);
       if (title) parts.push(`### ${title}${caption && !caption.includes("{") ? `\n\n${caption}` : ""}`);
     }
-  }
-
-  const tl = timelapseRaw as unknown as { words: Record<string, string>; frames: unknown[] };
-  if (tl.frames.length) {
-    parts.push(`## ${tl.words["timelapse.title"]}`);
-    parts.push(tl.words["timelapse.intro"]);
   }
 
   parts.push(`## ${t("log.feed.title")}`);

@@ -19,7 +19,6 @@ import { WebMcp } from "./agent/webmcp";
 // into /log's sections; an item shows once its section is on the page (`ready`).
 const HACK_ITEMS = [
   { href: "/log#highlights", label: "hack.menu.highlights", ready: true },
-  { href: "/log#timelapse", label: "hack.menu.timelapse", ready: false },
   { href: "/log#feed", label: "hack.menu.feed", ready: true },
 ] as const;
 // Day 2's cell (Alex, 3 Nov: a "Day 2 Update" button on the bar) shows once S17's video is uploaded.
