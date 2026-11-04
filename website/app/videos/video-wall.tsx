@@ -3,7 +3,7 @@
 /*
  * The video wall (/videos): one flat wall of clips in wall order, three columns on a desktop, two on a
  * tablet, one on a phone. Each card is its poster frame (with a play mark and the length), Alex's hook
- * line verbatim, and a small topic tag. The clips to start with have a gold border and a gold star badge;
+ * line verbatim, and a small topic tag. The clips to start with have a violet-to-orchid edge and star badge;
  * the star carries the words ("Start here"), so the border is never the only sign.
  *
  * A card opens one shared native <dialog> (as on the /about wall): the player, and "Read the article" when
@@ -61,7 +61,7 @@ function PlayIcon() {
   );
 }
 
-/** The gold star badge, as on a featured card's poster. Decorative: say what it means next to it. */
+/** The star badge, as on a featured card's poster. Decorative: say what it means next to it. */
 export function StarMark({ small = false }: { small?: boolean }) {
   return (
     <span className={small ? "vw-star vw-star-sm" : "vw-star"} aria-hidden="true">

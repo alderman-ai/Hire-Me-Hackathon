@@ -1,11 +1,11 @@
 /* /videos (app/videos): one flat wall of clips on Addvery's ink, under a black cover with the kit's two
    glows (as on /articles). Cards: the poster frame (16:9), a play mark, the length, his hook line and a
-   small topic tag. The clips to start with carry a gold border and a gold star badge. The player opens in
+   small topic tag. The clips to start with carry a violet-to-orchid edge and star badge (Addvery's colours, 4 Nov). The player opens in
    a native <dialog>. Tokens from addvery-tokens.css; every rule sits under .vw or html.vw-dialog-open. */
 
 .vw {
   --vw-pad: var(--av-section-pad-x);
-  --vw-gold: #fd971f;
+  --vw-feature: var(--av-gradient-row, linear-gradient(90deg, #6645eb, #d445eb));
   --vw-radius: var(--av-radius-2xl);
   background: var(--av-ink);
   color: var(--av-text-on-dark);
@@ -173,11 +173,13 @@
     box-shadow var(--av-dur-ix) var(--ease-out-quart);
 }
 
-/* The clips to start with: a 2 px gold edge (the border plus a 1 px line just inside it, drawn over the
-   poster) and a warm glow. The star badge says the same in words. */
+/* The clips to start with: a 2 px edge in Addvery's violet-to-orchid gradient, drawn just inside the card
+   (over the poster) as a masked ring, and an orchid glow. The 1 px border goes clear and the background
+   stops at it, so the card keeps its size and the ring meets the page. The star badge says the same in words. */
 .vw-card.is-featured {
-  border-color: var(--vw-gold);
-  box-shadow: 0 18px 44px -28px rgba(253, 151, 31, 0.55);
+  border-color: transparent;
+  background-clip: padding-box;
+  box-shadow: 0 18px 44px -28px rgba(212, 69, 235, 0.5);
 }
 
 .vw-card.is-featured::after {
@@ -185,8 +187,12 @@
   position: absolute;
   inset: 0;
   z-index: 3;
-  border: 1px solid var(--vw-gold);
+  padding: 2px;
   border-radius: calc(var(--vw-radius) - 1px);
+  background: var(--vw-feature);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   pointer-events: none;
 }
 
@@ -199,8 +205,8 @@
   }
 
   .vw-card.is-featured:hover {
-    border-color: var(--vw-gold);
-    box-shadow: 0 26px 54px -24px rgba(253, 151, 31, 0.6);
+    border-color: transparent;
+    box-shadow: 0 26px 54px -24px rgba(212, 69, 235, 0.55);
   }
 }
 
@@ -213,7 +219,7 @@
 }
 
 .vw-card.is-featured:focus-visible {
-  box-shadow: 0 26px 54px -24px rgba(253, 151, 31, 0.6);
+  box-shadow: 0 26px 54px -24px rgba(212, 69, 235, 0.55);
 }
 
 /* The lift, on hover and on keyboard focus; none under prefers-reduced-motion. */
@@ -287,7 +293,7 @@
   margin-left: 2px;
 }
 
-/* The gold star badge, top left; the length sits bottom right, the play mark in the middle. */
+/* The star badge (the brand gradient, a white star), top left; the length sits bottom right, the play mark in the middle. */
 .vw-star-badge {
   position: absolute;
   top: 12px;
@@ -304,8 +310,8 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--vw-gold);
-  color: var(--av-ink);
+  background: var(--av-gradient-button, linear-gradient(25deg, #642df0 35%, #d445eb));
+  color: var(--av-white, #fff);
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
