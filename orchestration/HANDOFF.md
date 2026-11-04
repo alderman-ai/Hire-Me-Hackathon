@@ -6,14 +6,22 @@ Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (i
 
 Alex: "make a note for future orchestrators to alert me on visits to that subpage". He emailed the CEO a link to the site on 4 Nov. Every orchestration session keeps this watch. When the page gets a real visit, tell Alex in chat, or with PushNotification when he's away. Say when it was (Prague time) and, where the data has them, the country, device and referrer. Never claim to know who visited: the data never says.
 
-How (project `prj_rT9kFM97a02ouvSsMrZZRYqJi4jo`, team `team_m6QeC9FHcO8dk7PvEHtfkAod`):
-1. **Vercel Web Analytics (the right tool).** `@vercel/analytics` is already in `website\app\layout.tsx`, but at 16:15 on 4 Nov the API answered "Web Analytics not found", so it isn't enabled on the project yet. Alex enables it himself in the Vercel dashboard (project, Analytics, Enable), and it counts from the next production deploy on. Then use the Vercel MCP: `aggregate_pageviews` with `filter: requestPath eq '/for/ceo'` and `by: ["hour","country"]` (or `referrerHostname`, `deviceType`). It counts real browsers only, so our own curl checks don't show, but our Chrome checks do: subtract the times this session opened the page.
-2. **Request logs (fallback, weak).** From `website\`, run `vercel --scope team_m6QeC9FHcO8dk7PvEHtfkAod logs --project prj_rT9kFM97a02ouvSsMrZZRYqJi4jo --environment production --no-branch --since 1h --json -n 100` and filter on `requestPath` starting `/for/ceo`. That includes `/for/ceo.md` and `/for/ceo/llms.txt`, which an AI agent reads. The limits:
+How (project `prj_rT9kFM97a02ouvSsMrZZRYqJi4jo`, team `team_m6QeC9FHcO8dk7PvEHtfkAod`). Run both from `website\`:
+1. **Vercel Web Analytics, through the CLI.** It's on (the dashboard's Analytics tab has data from 2 Nov). The Vercel MCP's `aggregate_pageviews` and `count_pageviews` wrongly answer "Web Analytics not found", so use the CLI:
+   ```
+   vercel api "/v1/query/web-analytics/visits/aggregate?projectId=prj_rT9kFM97a02ouvSsMrZZRYqJi4jo&teamId=team_m6QeC9FHcO8dk7PvEHtfkAod&since=<ISO>&until=<ISO>&by=hour&by=country&filter=requestPath%20eq%20'%2Ffor%2Fceo'&limit=50" --method GET
+   ```
+   Swap `country` for `deviceType` or `referrerHostname` as needed. Timestamps come back in UTC (Prague is UTC+1 in winter). It counts real browsers only, so curl checks don't show, but any Chrome check of production does, and so does Alex opening his own link.
+2. **Request logs, for the agent versions.** These are `/for/ceo.md` and `/for/ceo/llms.txt`, which Web Analytics can't see. Run `vercel --scope team_m6QeC9FHcO8dk7PvEHtfkAod logs --project prj_rT9kFM97a02ouvSsMrZZRYqJi4jo --environment production --no-branch --since 15m --json -n 100` and filter on `requestPath`. The limits:
    - The records have no IP or user agent.
    - The call returns only the latest 100.
-   - `website`'s route checks after every ship hit `/for/ceo` too.
+   - `website`'s route checks after every ship hit these paths too.
 
-   So a hit counts as a visit only if it isn't part of a burst (several routes in the same second) and isn't within about 10 minutes of a ship or one of our own checks. The MCP's `get_runtime_logs` answered 403 on 4 Nov, so use the CLI.
+   So skip any hit inside a burst of other page routes (within 2 seconds). The MCP's `get_runtime_logs` answered 403.
+
+The watch script used on 4 Nov does both every 10 minutes and exits on the first new visit, so the session gets one notice and then re-arms it: `C:\Users\alder\.claude\jobs\a77ec41a\tmp\watch_ceo_visits.py`. That folder is deleted with the job, so copy the script into `orchestration\local\` if it's gone.
+
+Before the watch started (by Prague hour, from Web Analytics): /for/ceo had one desktop visitor from Czechia at 18:00 on 2 Nov; a mobile visitor from Czechia at 06:00 on 3 Nov (2 views); desktop, Czechia, at 21:00 on 3 Nov and at 10:00, 11:00 and 12:00 on 4 Nov; and in the 16:00 hour on 4 Nov, after Alex's email (about 15:40), one desktop visitor from Czechia (2 views) and one from Ireland (1 view). None had a referrer. Several of these are probably Alex or our own checks.
 
 ## Update, about 14:15 on 4 Nov (orchestration a77ec41a)
 
