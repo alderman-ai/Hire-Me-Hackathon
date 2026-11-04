@@ -39,7 +39,7 @@ import {
 import { CRM_LINE, limitsDefault } from "@/app/best/words";
 import { wallClips, clock } from "@/app/videos/clips";
 import { readAboutCopy } from "@/app/about/copy";
-import { ABOUT_PHOTOS, CLIP_S02_E, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "@/app/about/clips";
+import { ABOUT_PHOTOS, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "@/app/about/clips";
 import { FACTS, LINKS } from "@/app/about/profile";
 import { wallCards, wallSpan } from "@/app/about/wall-data";
 import { fullWallCards } from "@/app/about/wall-full-data";
@@ -469,7 +469,6 @@ function aboutDoc(): Doc {
   for (const s of story) {
     parts.push(`## ${s.title}`);
     parts.push(blocks(s.blocks));
-    if (s.title.startsWith("The job I want")) parts.push(clipLine(CLIP_S02_E));
   }
   parts.push(`## ${belief.title}`);
   const firstQuote = Math.max(0, belief.blocks.findIndex((b) => b.kind === "quote"));

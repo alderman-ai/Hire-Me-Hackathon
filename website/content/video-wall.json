@@ -46,20 +46,6 @@
           "end": 318
         },
         {
-          "id": "m-s02-e",
-          "kind": "moment",
-          "title": "\"I don't want there to be a next company\"",
-          "youtube_id": "qrBNOsSYGrQ",
-          "start": 380,
-          "length": "0:31",
-          "session": "S02",
-          "prague": "11:12",
-          "grade": "G",
-          "moment": "S02-e",
-          "still": "/videos/S02-e.webp",
-          "end": 411
-        },
-        {
           "id": "m-s02-f",
           "kind": "moment",
           "title": "AI in the pipeline first; upskill, don't fire",

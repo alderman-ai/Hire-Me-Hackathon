@@ -10,7 +10,7 @@ import { LIST_SLUGS, RECOMMEND_ON, pageHref, recommendFor } from "../recommend";
 import { RecommendCarousel } from "../recommend-carousel";
 import clientQuotes from "@/content/recommendations.json";
 import { VideoFrame } from "../best/parts";
-import { ABOUT_PHOTOS, CLIP_S02_E, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "./clips";
+import { ABOUT_PHOTOS, CLIP_S12_M, WORK_CLIPS, type AboutClip } from "./clips";
 import { AI_PORTFOLIO_SLUG, FACTS, LINKS, SHOW_ZERO_COUNTS } from "./profile";
 import { LinkedInWall } from "./wall";
 import { wallCards, wallSpan } from "./wall-data";
@@ -205,7 +205,6 @@ export default function AboutPage() {
                   {s.title}
                 </h2>
                 <Blocks blocks={s.blocks} />
-                {NEW_SITE && s.title.startsWith("The job I want") && <Clip clip={CLIP_S02_E} tone="light" />}
               </section>
             ))}
           </div>

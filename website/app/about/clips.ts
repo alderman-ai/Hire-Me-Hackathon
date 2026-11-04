@@ -13,16 +13,6 @@ export type AboutClip = {
   meta: string;
 };
 
-export const CLIP_S02_E: AboutClip = {
-  still: "/videos/S02-e.webp",
-  youtube: "qrBNOsSYGrQ",
-  start: 383,
-  end: 414,
-  length: "0:31",
-  quote: '"to be clear I don\'t want there to be a next company"',
-  meta: "Day 1, 11:12",
-};
-
 export const CLIP_S12_M: AboutClip = {
   still: "/videos/S12-m.webp",
   youtube: "lo486cSVBcM",
