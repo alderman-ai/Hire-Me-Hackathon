@@ -1,172 +1,175 @@
 # Handoff: website
 
-Written 3 Nov at 13:1x Prague by the `website` session (job e539ec86), for its same-name successor at orchestration's context refresh. **Run `date` before writing any time.** The older sections below "What's live" (routes, deploying, words, code map, checks) still hold, except where this top part says otherwise.
+Written 4 Nov at 19:59 Prague by the `website` session (job 534b5bd8) for its same-name successor, at Alex's request (context at 70%). It replaces the 3 Nov 13:10 handoff. Every build since then has a row in `builds.md` (newest at the bottom). **Run `date` before you write any time.**
 
 ## Tell yourself first
 
-1. **Every production deploy needs all four flags** (`NEW_SITE`, `WALL_FULL`, `VIDEO_WALL`, `SKILLS_PAGE`). A plain `vercel deploy --prod` puts the old site back. The recipe is under "Deploying".
-2. **Who asks, and when it ships.**
-   - Requests come from `orchestration` (session 8b57493d since about 12:45), from `rig` (clock lines and Alex's /process asks), and from `comfy-collab` (the video work). Alex also talks to you directly.
-   - Since about 10:5x Alex has pre-approved pushing ("Push everything through. I trust you. Just make it live."). So check locally, run the leak scan, deploy to production yourself, and send orchestration one line: "BUILT <what>: live since HH:MM (<deployment>)".
-   - Hold a push only for a factual or visual fault, and say why. Example: the time-lapse frames with broken logos were held until comfy-collab recaptured them.
-3. **Rules that bite.**
-   - No words without `alex-voice`: you place words, you don't write them. Orchestration sends the words as `{key: text}`.
-   - No asks on any page (rule 11). A recording that ends on "would love to set it up for you" gets cut before that line.
-   - No grades shown as a selling point.
+1. **The situation.**
+   - The hackathon is finished. `.clock\finished.json` is written and the bar reads "Finished at 10:01pm on 3 Nov · Built in: 11 hrs 21 mins". No clock lines come from `rig`. Don't restart the clock loop.
+   - Only `orchestration` runs (session a77ec41a since 13:32 on 4 Nov). It is your only requester and the only place questions go; the answer desk is paused.
+   - The GitHub repo `alderman-ai/Hire-Me-Hackathon` is private now. The site has no link to it; keep it that way.
+2. **How a build flows.**
+   - Orchestration sends `BUILD` / `REQUEST` (sometimes `+ SHIP`). The words come as a JSON file in `..\orchestration\local\copy\*.json`, written through alex-voice.
+   - Place every word exactly. Never rewrite, and never add words (UI labels included, unless a key exists). The `_structure` or `_note` key is the build spec. If a key can't go where the spec says, say so instead of improvising.
+   - Default: a preview first, then send orchestration the link. Production only on orchestration's word (`SHIP`, carrying Alex's yes). Orchestration can say a change goes straight to production (deletions, "quick clean then push").
+   - Reply in one message: what changed, what you checked, anything skipped and why, then the preview link or the production deployment id and commit.
+3. **Every deploy needs all four flags:** `NEW_SITE`, `WALL_FULL`, `VIDEO_WALL`, `SKILLS_PAGE`. A plain `vercel deploy --prod` puts the old site back.
+4. **Rules that bite** (all from Alex, all still in force):
+   - No new words, and no asks on any page (rule 11).
+   - No gold, amber or orange anywhere. Addvery tokens only (`app\addvery-tokens.css`): violet `#6645eb`, orchid `#d445eb`, amethyst `#8b3fcf`, lavender `#d3c3ff`.
+     - Never violet text on ink (3.1:1), never white on orchid (3.6:1).
+   - The home page is for Addvery only: no line for visitors from elsewhere (W216).
    - The six people appear only by role on figures.
-   - Screen captures: crop out bookmarks bars and the taskbar (see the S18 still).
-4. **Clock.** The loop is pid 9044 (restarted 10:25 on 3 Nov). On each rig line, check the loop, run `python scripts\clock_sync.py --once`, and reply to `rig [90aa29]` in one line with what `status.json` shows. Two sessions named `rig` exist, so use that ref.
-   - Status at 13:09: recording S20. Adjustments now total 13,800 s (`.clock\adjustments.json`, the last one Alex's 1 h 20 min at 12:52).
-   - To finish the build, write `.clock\finished.json` as `{"at": <epoch seconds>}` when Alex calls the end. The bar then reads "Finished at 8:32pm on 3 Nov · Built in: 11 hrs 36 mins" (the format).
-5. **Budget** (Alex, about 12:00: 19% of usage left).
-   - Sonnet subagents for mechanical work: placements, uploads, figure renders, copy swaps. Opus only for real design builds.
-   - Both widths only when the layout changes.
-   - Keep messages short.
+   - Screen captures: crop out tab bars, bookmarks bars and the taskbar (`public\videos\s18-c4.webp` is the example).
+   - "Sequences", not "workflows": Alex didn't build 36 workflows; it's an approach for 30 to 50 sequences, and his example has 36.
+   - Addvery's staff count is 56; 57 is the number of profiles the model read.
+   - No "next company" line anywhere (removed site-wide on 4 Nov).
+   - On `/for/ceo`, his AI's route never meets the labour framing: no pipeline-promise article and no `/log` in his "Where next", and no "keep the promise" footer line.
+5. **Keep the PC light.** One build at a time. Stop every local server you start (see Deploying).
 
 ## What's live
 
-Production `46dwp8ra7` (3 Nov 13:09), from `51f9b11`, with all four flags. Every earlier deploy is in `builds.md`.
+**Production `m44erl63e`** (`dpl_4Cawjx3q4L6UBmWqyDBsqfF4oiAm`, 4 Nov 16:30), built from `98684ca` with all four flags. Later commits touch only `scripts\check\`, `builds.md` and this file, none of which deploy. Check it any time with `MSYS_NO_PATHCONV=1 vercel inspect hire-me-hackathon.vercel.app`.
 
-- **Hackathon bar** (`app\hack-strip.tsx`; the cells come from `HACK_ITEMS` and the Day 2 group in `app\layout.tsx`).
-  - The status follows the recording clock: "LIVE!" with the countdown ticking, "On Break" with it frozen, then "Finished at / Built in".
-  - Cells: Day 1 Highlights, Day 1 Feed, then Day 2 Feed with a green dot.
-- **`/log`, Day 1's page.**
-  - The intro (h1).
-  - `#highlights`, in `app\log\highlights.tsx` and `content\highlights.json`:
-    - the merged session chart, `day-lanes.tsx`;
-    - the clips;
-    - the low point: rig's 3:38 cut `sBVgT-LbEQo`, in three beats;
-    - an empty Comfy slot at the top (`comfy_video: null` renders nothing).
-  - `#timelapse`: 41 deploy frames from comfy-collab, in `public\timelapse\` and `content\timelapse.json`.
-  - `#feed`: the compact rows.
-- **`/day-2`**, from `content\feed-day2.json`, newest first:
-  - S19 "Banana, cucumber, and a better computer" (`mBa187jP1rc`, 0:01 to 2:42);
-  - the S18 walkthrough entry;
-  - "Two videos, made today with Comfy";
-  - Day 1's highs and lows;
-  - the three morning articles;
-  - S17's "Day 2 Update" (`NeASfMN1Kcc`).
-- **C2** (`content\demos\getsales-36-workflows.md`, "36 sequences, and who goes into which one"):
-  - the S18 article;
-  - the full video `_vgNB5ubKjA`, which also plays on home and Ivana's page;
-  - clips c3 to c6, the grid, and the builder still.
-  - Clips c1 and c2 are on `/videos`.
-- **Articles** (kind showcase, group How the day went):
-  - `teaching-a-machine-to-sound-like-me`;
-  - `label-every-piece-before-you-build-a-page`;
-  - `build-it-in-their-brand`;
-  - `ai-workflows-are-always-a-managed-service` (library_id `art-managed-service`).
-- **Gone:** the LinkedIn voice entry (redirects to `/demos`), the derby and the 09:45 countdown.
+What changed since the 3 Nov handoff, in order (details in `builds.md`):
+- **3 Nov evening:**
+  - The agent version: `lib\agent-track\`, a `.md` twin of every page, `/llms.txt`, `/llms-full.txt`, `/agent`, `/mcp` and WebMCP.
+  - /about's client recommendations.
+  - The article "What to do after your outbound sequences go live".
+  - The Finished bar.
+  - (`builds.md` has no rows for the last three, 21:38 to 22:05, production `bfik4z43z`.)
+- **4 Nov:**
+  - Repo links removed.
+  - `/log` time-lapse removed.
+  - `/for/ceo` recalibrated after Alex's interview (plus four fix rounds).
+  - "36 workflows" reworded to 30 to 50 sequences across the site.
+  - The home page rewritten.
+  - The hero tinted violet; /videos without gold.
+  - The routing captures' Jev labels in orchid; "57 profiles".
+  - The next-company line removed.
+  - The Web Analytics opt-out.
 
-## Held
+### /for/ceo, a recalibrated personal page
+- **Words:** `content\for-copy\ceo.json`, orchestration's file kept as sent. Keys are flat; lists arrive as `key[i].field`; `_` keys are notes.
+  - `app\for\[slug]\for-copy.ts`: `forText`, `forList` and `recalReady`. A value starting `[placeholder]` shows on previews only; production hides the whole recalibrated page until none is left.
+  - `stakeholders.json`'s ceo page mirrors the shared fields (name Štěpán Hykš, greeting, lead, note, framing, sources, concerns, reading_list). Its `ask` is empty, and the gate in `app\stakeholders.ts` no longer requires `ask`.
+- **Page:** `personal.tsx` branches on `recalReady(slug)`.
+  - `recal.tsx`: `RecalTitle` (the h1, Czech half `lang="cs"`), `RecalLead` (the quote renders only if both quote keys have words; fix 1 emptied them), and `RecalBody`. RecalBody holds the person, join, argument, strategy, how it runs, the quarters timeline, the offer, proof with a copyable MCP line, concerns (`concerns.tsx`, shared with the old landing) and the CRM band.
+  - The made line comes from the words file, and an empty one means no block (fix 4).
+  - No lens, old note or quote collection. Styles are in `recal.css`.
+- **Agent block** (`agent-guide.tsx`, after the byline): Open in Claude with `agent.ceo.prompt`, plus a copy-the-prompt fallback. It renders only for a page that has a guide.
+- **His guide:** `/for/ceo/llms.txt` (`app\for\[slug]\llms.txt\route.ts`, `personGuide` in `lib\agent-track\docs.ts`).
+  - It's listed under his page in `/llms.txt`, and `/agent-track.json` carries it, so the MCP tool `read_page "/for/ceo/llms.txt"` works.
+  - Its title falls back to the page title and its note to the intro's first sentence (no `guide_title` or `guide_note` was ever sent).
+  - `personNext()` keeps the pipeline-promise article and `/log` out of his "Where next".
+- **His carousel:** `recommend.json` `lists.ceo`. Its second item carries its own `image` (`36-grid-card.png`), via the optional `RecItem.image` in `app\recommend.ts`.
+- **Footer line:** `app\footer-line.tsx` leaves "...keep their promise" off `/for/ceo` (`HIDDEN_ON`).
 
-Nothing is held. Every commit up to `51f9b11` is live.
+### / (the home, rewritten 4 Nov, plus fix 1)
+- **Sections:** `app\home\best-home.tsx` renders eight of them: the hero, `#what`, `#six`, `#argument`, `#proof`, `#team`, `#build`, the carousel and `#who`. Every word is a `home.*` key in `content\site-copy.json`. The spec is the `_structure` of `..\orchestration\local\copy\home-4nov.json` (and `-fix1.json`).
+- **The lead card:** `lead-card-words.ts` (keys only, so `index.md` reads the same) and `lead-card.tsx`. It holds:
+  - the seven fields from sample.csv row L11;
+  - five steps on violet, orchid, lavender and gradient rules, with Rule, Jev and Person pills;
+  - the Jev clip with the local still `/videos/s18-c4.webp`;
+  - the Matrix with only Litware lit (`shownLegend={null}` hides the second legend item);
+  - both messages;
+  - fix 1: note.1 above the messages, then note.2, the four input chips joined into "Message 1", and note.close.
+- **Carousel:** `recommend.json` `lists.home` (six articles). `ListSlug` includes `"home"`, but `LIST_SLUGS` doesn't.
+- **The six faces:** each carries its hook line through `lensLine()` in `app\stakeholders.ts`, which the /for grid uses too.
+- **Hero:** words unchanged. The still has a violet-to-orchid hue tint (`.bh-promise-tint`, `mix-blend-mode: hue`). The accents are lavender and the brand gradient. Contrast is measured in home.css's comment.
+- **Removed:** `Machine36` is deleted, and `home-words.ts` holds only `HOME_SKILLS_TITLE` (which /skills imports).
+- **`/index.md`:** `homeDoc` in `docs.ts` mirrors the same keys in the same order.
 
-## Coming
+### Smaller things that live in code now
+- `MACHINE_STAT_NUMS` (`app\best\machine-words.ts`) feeds the stat numbers to both the page and its Markdown ("30-50", "1", "0").
+- `MATRIX_HITS[0].title` is `t("home.proof.matrix_hit_title")`. Matrix's screen-reader text says "sequence {n}".
+- /videos featured cards: a 2 px violet-to-orchid ring (masked) and a gradient star badge.
+- **Web Analytics opt-out** (`app\site-analytics.tsx`, replacing `<Analytics />` in the layout):
+  - `?me=on` sets localStorage `va-disable` and drops that pageview; `?me=off` clears it. A flagged browser sends nothing.
+  - The param is stripped with `history.replaceState`, and every storage access is in try/catch.
+  - Alex's link: https://hire-me-hackathon.vercel.app/?me=on, once per browser.
+  - Vercel's script already skips HeadlessChrome, and `scripts\check\*.mjs` set `va-disable` on every page anyway.
+  - Tested live with `scripts\check\va_test.mjs` (`REAL_UA=1`): a flagged browser sends nothing, `?me=off` sends one `POST /8f3da83105c529e2/view`.
 
-- **Two Comfy videos from comfy-collab.**
-  - "Is this thing on?" is Day 1 as a time-lapse film, 2:00 to 2:30. It goes in `/log`'s Comfy slot (`content\highlights.json` `comfy_video`), and probably also gets a Day 2 feed post.
-  - "Keep the promise" is 60 to 90 s. Ask orchestration where it goes.
-  - For each one:
-    1. Upload it unlisted with `..\OBS\rig\.venv\Scripts\python.exe scripts\upload_file.py <file> <KEY> "<title>"`.
-    2. Embed it.
-    3. Ask orchestration for any words.
-- **Articles 2 and 3 from orchestration**, rewritten from Alex's dictation like the managed-service one.
-  - The pattern: body word for word; leave out the internal front matter, "## Gaps" and "## Media slots"; kind showcase; figures from the named sources.
-  - If an article replaces an existing entry, keep its slug or `library_id` so the carousel spots and links hold.
-- **The spoken-redline batch ("banana cucumber").** Alex scrolls the site, says banana, talks through the change, says cucumber, and a screenshot is taken in between. Expect a batch of numbered changes from orchestration.
-- **Loose ends.**
-  - The YouTube upload `6FlJ9h3IHzQ` (S17 webcam only) is unused and unlisted. Only Alex can delete it; the rig's sign-in can't.
-  - `/day-2` has no intro paragraph, only the h1 "Day 2".
-
-## Tools added today
-
-- `scripts\upload_file.py`: uploads any MP4 unlisted under a `content\videos.json` key (`--replace` to swap one).
-- `scripts\build_timelapse.py <shots dir> <mp4>`: the shots are named `<host>.png`. comfy-collab's frames are `deploy-HHMM.png`, mapped through its `INDEX.md`.
-- `$CLAUDE_JOB_DIR\tmp\derby_shot.mjs` and `tl_shot.mjs`: CDP viewport shots of one element mid-animation. Set the element id inside the file.
-- `$CLAUDE_JOB_DIR\tmp\apply_words.py <site> <words.json>`: applies `{key: text}` to `highlights.json` and `timelapse.json` words, and reports any unknown keys.
-- Leak-scan summary: `scan.py` over `render_pages.py` output. Then `scan_ctx3.py` (with the folder name swapped) confirms every secret-shaped hit sits on a URL line. The expected set is 89 LinkedIn URLs on `/about`, 2 Addvery PDF links and 2 emails on `/d2`, and 6 charter terms.
-- The second and third export folders (`tmp\alt`, `tmp\alt2`) were for parallel previews. They aren't needed now; the main export is `tmp\clean-deploy`.
-
-## Routes (from 08:15; see What's live for today's changes)
+## Routes
 
 | Route | What |
 | --- | --- |
-| `/` | The best-of home (`app\home\best-home.tsx`). In order: hero (pipeline headline, S10-c clip), numbers strip, the 36-workflow machine, the account, limits, CRM band, six faces, the argument, moments that became skills, the carousel, the about strip |
-| `/for`, `/for/<slug>` ×6 | Lens lines plus S02-j on `/for`. Each personal page is P1 to P7: hello with `lead`, note, lens block, quote collection, made line, carousel, notice. No questions, no asks. `approved: true` on all six |
-| `/skills` | 20 skills in four groups, eight moments, CRM band |
-| `/videos` | The wall: 55 tiles in five rows, built from the booth's grades |
-| `/about` | Glance row, S02-e, S12-m, How I work (six clips and two photos), What I've written, and the 94-post wall with alt text |
-| `/demos` and entries | C2 `36-outbound-workflows-and-the-one-variable-behind-them` (with matrix, "Why I built this first", "Runs again"), C1 `sorting-twelve-leads-into-36-workflows-rules-first-then-jev`, `linkedin-posts-in-addverys-voice-graded-blind`, and `best-of-three-instead-of-redlining` (kind `showcase`) |
-| `/d1`, `/d2`, `/log`, `/privacy`, `/docs/charter` | Unchanged; `/log` is the old feed. `/d3` to `/d12` redirect (`app\redirects.ts`) |
-
-## Deploying
-
-**Preview:** `bash scripts/preview_deploy.sh` (all four flags, never `--prod`). It exports **HEAD** to `$CLAUDE_JOB_DIR\tmp\clean-deploy`, so commit first. It also copies the git-ignored assets in: `public\addvery\`, `public\people\`, `public\about\` (with `wall-full\`, 178 files), `app\demos\_og\glow.jpg`, and `local\about\`, `local\org-diagrams.json`, `local\research\`. A preview needs a Vercel login; check it on a local build instead.
-
-**Production:**
-```bash
-cd "/c/Users/alder/Desktop/Hire me hackaton/website" && EXPORT_ONLY=1 bash scripts/preview_deploy.sh
-D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"   # no dev server running there, no node_modules junction left in it
-cd "$D" && rm -rf .next && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes --build-env NEW_SITE=1 --build-env WALL_FULL=1 --build-env VIDEO_WALL=1 --build-env SKILLS_PAGE=1
-# then curl the routes above for 200, and check the menu reads Articles|Videos|Skills|About me|For Addvery
-```
-Don't use `vercel curl`: it would create a protection-bypass secret on the project.
-
-**Local check (PC-light):**
-1. `EXPORT_ONLY=1 bash scripts/preview_deploy.sh`.
-2. Junction `node_modules` into the export: `cmd /c mklink /J "<export>\node_modules" "<website>\node_modules"`.
-3. Start `node node_modules\next\dist\bin\next dev --webpack -p 3101` hidden (`Start-Process -WindowStyle Hidden`), with the four flags set in its environment. Add `VERCEL_ENV=production` to see exactly what production shows.
-
-The server serves the export, so copy an edited file across before rechecking. Before re-exporting or deploying: stop it (kill processes whose command line contains `clean-deploy`), then `cmd /c rmdir "<export>\node_modules"`. Never delete the export with the junction still in it.
+| `/` | The home (above) |
+| `/for`, `/for/<slug>` ×6 | Grid with hook lines; personal pages P1 to P7 (`personal.tsx`), with `/for/ceo` recalibrated, plus `/for/ceo/llms.txt` |
+| `/articles`, `/articles/<slug>` | Entries from `content\demos\*.md` (`/demos/*` redirect here) |
+| `/videos` | The wall from `content\videos-wall.json` (33 clips) |
+| `/skills`, `/about`, `/d1`, `/d2` (+ `/d2/<note>`), `/privacy` | As before (/about lost the S02-e clip) |
+| `/log`, `/day-2` | Day 1 page (highlights, feed; no time-lapse) and the Day 2 feed |
+| `/agent`, `/mcp`, `/llms.txt`, `/llms-full.txt`, `/agent-track.json`, `/<page>.md` | The agent version |
+| `/docs/*` | Redirects to `/` |
 
 ## Words, and where they live
+- **`content\site-copy.json`:** flat keys read with `t()` (`app\copy.ts`). A missing or empty key fails the build, and `{skills}` is filled in.
+- **`content\for-copy\<slug>.json`:** a recalibrated page's words file (`ceo` only).
+- **`content\stakeholders.json`:** the six pages (`landing`, `lens` / `lens_key`, `sources`, `notice`).
+- **`content\recommend.json`:** lists `default`, the six, `about` and `home`; an item may carry `image`.
+- **Entries:** `content\demos\*.md`.
+- **/videos:** `content\videos-wall.json`.
+- **`content\video-wall.json`:** the old wall, still read by `machine-words.ts` for tile titles.
+- **Quotes:** `content\quotes.json`.
 
-- **New strings by key:** `content\site-copy.json`, read through `t()` in `app\copy.ts` (a missing key fails the build). `scripts\apply_copy.py [--check]` swaps in orchestration's `orchestration\local\mockups\best\copy\*.json` ({KEY: text}) and `copy\notes.json` ({slug: note}); it skips `spans.json`.
-- **Personal pages:** `content\stakeholders.json` `pages[i].landing`, with `lead` (Ivana's starts with `lead_key` `for-growth.note.history`), `note` (paragraphs split by a blank line, `**bold**`), `made_line`, `sign`, and `approved`. `questions` and `ask_line` are retired. `pages[i].lens` / `lens_key` are the `/for` lens lines. Quotes: `content\quotes.json`.
-- **`/skills`:** `content\skills.json` (each `line` is a `skills.<id>.1` key).
-- **`/videos`:** `content\video-words.json` (intro, row labels, per-id title and summary; empty, so titles are the library's working titles and production shows no placeholders). Rows come from `scripts\build_video_wall.py` → `content\video-wall.json` plus stills in `public\videos\` (rerun after more grading; the grades are from 21:54).
-- **Entries:** `content\demos\*.md` (front matter is validated in `app\demos\entries.ts`). `kind: article` needs a `made` box with real numbers, so an entry without them is `showcase`. `library_id` makes an entry resolve in `app\recommend.ts`. Any `data-needs` link (e.g. `art-pipeline-promise` on home, `/about` and C2's "Why I built this first") appears by itself once an entry carries that `library_id`.
-
-## The walkthrough swap (MORNING item 3; orch-alex-prep has the scene card)
-
-When the 36-workflow walkthrough is cut and uploaded, change only `video.youtube_id` (and `start`/`end`) in `content\demos\getsales-36-workflows.md`. Home, Ivana's page and the C2 entry all read it from there (`app\best\machine.tsx`). Then, through alex-voice:
-- the C2 paragraph that starts "The video is me at 16:36 on build day...";
-- `message-1-variable.png`, which should become a still from the walkthrough (see C2's own comment);
-- Ivana's note already says "Start with the 3-minute video below", which only becomes true then (tonight the frame plays the 1:52 clip).
-
-## Code map
-
-- `app\flags.ts`: the four flags plus `IS_PRODUCTION_BUILD`. Menu: `newNavLinks()` in `app\site-links.ts`, called on the server.
-- `app\best\`: shared parts (`parts.tsx`, `best.css`, `video-frame.tsx`) and `machine.tsx` (the 36 block: frame, stats, routing, matrix, messages, figures, links).
-- `app\home\`: the home page.
-- `app\for\[slug]\`: `personal.tsx`, `lens.tsx` (six P3 blocks), `quotes.tsx`, `for-href.ts`.
-- `app\skills\`: the `/skills` page.
-- `app\videos\`: the wall, with a dialog player.
-- `app\about\`: the page plus `clips.ts`; the wall is `wall-full*`.
-- `app\demos\`: `markdown.ts` (callouts, including `[!slot]`), `slots.tsx` (C2's three additions only), `entry-end.tsx` (C2's "Next for you" is forced to C1).
-- `app\recommend.ts`: lists (including `about`); a card falls back to its page's dek; `pageHref()`.
-
-## Open and parked
-
-- **Best-of-three entry:** it's `showcase` because it has no `made` numbers. If orchestration sends them, switch it to `article`. Alex decides at the redline whether its usage line ("69%... that's a little scary") and "completely drained" stay.
-- **Six verdict pieces graded No, off `/videos`:** `clip-c-s08-same-thing-tomorrow`, `clip-c-s09-assistant-can-do`, `clip-c-s07-making-decisions`, `clip-c-s04-legibility-born`, `m-s04-b` and `m-s12-o`. Orchestration knows. Clip starts and ends follow `cards.json`, 2 to 3 s off the mockups.
-- **Webcam uploads S13 to S16** aren't done (CLAUDE.md, "Video"). Run them one at a time, with nothing recording.
-- **Minor:**
-  - `/log` may render two h1s (the S02 summary headline in `app\feed.tsx`); not checked since the move.
-  - `/llms.txt` (W16, optional).
-  - `AI_PORTFOLIO_SLUG` is empty.
-  - The stray review artifact `page-1.md` (AW6Ld5n5CKuBHBX7JR3tj2) is for Alex to delete.
-- **Retired:** the six 18:58 review artifacts, the 5/10/20/60 picker (`time-picker.tsx`, `welcome.tsx`; in git, imported by nothing), and the old K1/K2 placeholder shapes.
+## Deploying
+- **Preview:** `bash scripts/preview_deploy.sh`.
+  - It exports **HEAD** to `$CLAUDE_JOB_DIR\tmp\clean-deploy` (so commit first), copies the git-ignored assets in, and deploys with the four flags.
+  - A preview needs a Vercel login, so headless Chrome can't open one. Check on a local build instead. Don't create share or bypass links.
+- **Production:**
+  ```bash
+  cd "/c/Users/alder/Desktop/Hire me hackaton/website" && EXPORT_ONLY=1 bash scripts/preview_deploy.sh
+  D="$(cygpath -u "$CLAUDE_JOB_DIR")/tmp/clean-deploy"   # no dev server running there, no node_modules junction left in it
+  cd "$D" && rm -rf .next && MSYS_NO_PATHCONV=1 vercel deploy --prod --yes --build-env NEW_SITE=1 --build-env WALL_FULL=1 --build-env VIDEO_WALL=1 --build-env SKILLS_PAGE=1
+  ```
+- **Promoting a preview exactly:** deploy its export again with `--prod` (check `git diff <preview commit> HEAD -- .` shows only builds.md or HANDOFF.md).
+- **A hotfix while unapproved changes sit on main** (used at 13:28 for the time-lapse):
+  1. `git worktree add -b <tmp branch> <tmp dir> <production commit>`, then cherry-pick the fix.
+  2. `git archive <commit>:website` into its own folder, and copy the git-ignored assets as `preview_deploy.sh` does.
+  3. Deploy with `--prod`.
+  4. `git worktree remove`, then `git branch -D`.
+- **Local check:**
+  1. `EXPORT_ONLY=1 bash scripts/preview_deploy.sh`, then `cmd /c mklink /J "<export>\node_modules" "<website>\node_modules"`.
+  2. Start `node node_modules\next\dist\bin\next dev --webpack -p 3101` hidden (`Start-Process -WindowStyle Hidden -PassThru`), with the four flags set in its environment. Add `VERCEL_ENV=production` to see what production shows: placeholders and draft strips gone.
+  3. The server serves the export, so copy an edited file across before rechecking.
+  4. To stop: kill the PID and its children (`Get-CimInstance Win32_Process | ? ParentProcessId -eq <pid>`), then `cmd /c rmdir "<export>\node_modules"`. Never delete the export with the junction still in it.
 
 ## Checks
+- `node scripts\check\audit_page.mjs <url> <outdir>`: 1440 and 390 px.
+  - It reports h1 count, heading skips, sideways scroll, broken images, alt text, small targets and placeholders.
+  - It saves full-page JPEGs; cut them with `node scripts\check\crops.mjs <full.jpg> <prefix> <height> <width>`.
+- `node scripts\check\element_shot.mjs <url> <selector> <width> <out.png>`: one element.
+- **Leak scan** (`render_pages.py` reports every route's status):
+  1. `python scripts\check\render_pages.py http://localhost:3101 <out>`.
+  2. `python -I ..\blog-pipeline\scripts\scan.py <out> > scan.out`.
+  3. `python -I scripts\check\scan_sum.py scan.out`.
+  - Expected: 111 fail, all on URL lines (89 LinkedIn URLs on /about, 2 Addvery PDF links on /d2, 2 prompt links per article) plus 2 CONTACT hits for /d2's public info@addvery.com.
+- **Analytics:** `REAL_UA=1 MSYS_NO_PATHCONV=1 node scripts\check\va_test.mjs https://hire-me-hackathon.vercel.app "/?me=on" /about "/?me=off"`. The `?me=off` step adds one real pageview.
 
-- `node scripts\check\audit_page.mjs <url> <outdir>`: any page at 1,440 and 390 px. It reports sideways scroll, h1 count, heading skips, alt text, broken images, small targets and placeholders, and saves full-page JPEGs. Small inline text links are exempt from the target-size rule.
-- `audit_videos.mjs` (the `/videos` dialog by keyboard) and `audit_wall.mjs` (`/about` wall).
-- **Leak scan (DoD-22):** first `python scripts\check\render_pages.py http://localhost:3101 <out>` (every route's visible text, alt text and links), then `python -I ..\blog-pipeline\scripts\scan.py <out>`. The expected hits are the charter naming the proposal and his outbound (allowed), LinkedIn post URLs in `/about`'s links, and `/d2`'s public Addvery email and privacy-PDF URL. Its "website deny list not found" is harmless: `sync_docs.py`'s patterns are secret shapes the scan already checks.
+## Working notes (gotchas)
+- **Shell traps:**
+  - Bash heredocs mangle backslashes (`\u2019`, `\\.`) and sometimes quotes. Write a script with the Write tool into `$CLAUDE_JOB_DIR\tmp` and run it with `python -I`.
+  - Git Bash turns `/path` arguments into `C:/Program Files/Git/path`: set `MSYS_NO_PATHCONV=1`.
+  - `npx tsc ... | tail` hides tsc's exit code: redirect to a file, then `echo $?`.
+- **Code traps:**
+  - `.bx-q { margin: 0 }` beats the `bx-mt-*` helpers. The home spaces its quotes with `.bx-q.bh-q`.
+  - A Next `page.tsx` can't export helpers (that's why `concerns.tsx` exists).
+- **Edits and commits:**
+  - JSON edits: load, change, then dump with `ensure_ascii=False, indent=2` and a `\n` ending; that matches the files. For files you'd rather not reformat (the wall JSONs), remove objects as text.
+  - Commit path-limited with `[website]` (`..\GIT.md`). Orchestration pushes now; GIT.md's "the watcher pushes" is stale while the watcher is paused.
+  - Keep `builds.md`: one row per build, newest at the bottom.
 
-## Working notes
-
-- Long Python in Bash heredocs mangles backslashes (`\t`, `\[`); write the script to `$CLAUDE_JOB_DIR\tmp` and run it.
-- `git archive` writes CRLF, so compare with `diff --strip-trailing-cr`. Commit path-limited with `[website]` (`..\GIT.md`).
-- Last night four Sonnet subagents ported the pages, one owner per folder, and the session committed and checked each. Their brief carried the hard limits: no dev server or build, at most two `tsc` runs, no git writes, edit only their own files.
+## Open and parked (nothing is half-done; the working tree is clean)
+- **YouTube titles**, Alex's channel only: the walkthrough `_vgNB5ubKjA` is titled "Hire Me Hackathon, the 36 GetSales workflows (full walkthrough)", and it shows in the embed on the 36 article, the home's old spots and Ivana's page.
+- **Flags orchestration knows about and left for now:**
+  - `skills.operator-attention-controls.1` says "all back in 9 minutes"; the feed says about seven, and the home says "under ten".
+  - `/log.md` opens on "we're not going to fire half the team", the `/llms.txt` summary says "cut labor or increase revenue", and other pages' "Where next" lists include the pipeline article.
+  - The content-distribution article's caption "yellow is a post I had to chase" belongs to a different figure (the old hand-kept tracker).
+- **Dead code and leftovers, harmless:**
+  - `Routing` in `machine.tsx`; `CeoLens` and `ceoSteps` (lines 41 and 50 of `lens-words.ts` still say "36 workflows", but nothing renders them now).
+  - `scripts\build_timelapse.py`; `public\videos\S02-e.webp` and `public\videos\wall\s02-e.webp` (unreferenced).
+- **`builds.md`** has no rows for 3 Nov 21:38 to 22:05 (About recommendations, the after-the-sequence article, the Finished bar; production `bfik4z43z`).
+- **`local\research\06 How the research was done.md`** (git-ignored, deploys to /d2) lost its public-repo bullet on 4 Nov, so it now differs from `..\Addvery Research\for-site\`.
+- **`CLAUDE.md` is out of date** ("Repo: public"; the clock and rig duties; "don't push"). It isn't yours to edit unless orchestration asks.
