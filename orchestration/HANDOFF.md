@@ -6,7 +6,7 @@ Written 2 Nov, 21:15 to 21:52 Prague, by the outgoing `orchestration` session (i
 
 - 8b57493d stopped and removed at 13:32; a77ec41a is the one `orchestration`. Alex works with it directly.
 - Live: production i6nlhkahe (14:00, commit 6b3f046, all four flags): the recalibrated /for/ceo (closing made line removed, Alex: "Just kill that final CTA"), and the "36 workflows" framing reworded site-wide. Checked logged out.
-- In flight: the home page rewrite. Alex's redline and pick are in the git-ignored `orchestration\local\home-redline\` (REDLINE.md, three drafts, COMBINED.md when done); the copy goes to `orchestration\local\copy\home-4nov.json` through alex-voice. The hero's new violet colours and /videos' border are on a `website` preview and ship together with the rewrite, as one release for /. The home page is for Addvery only and never addresses anyone else (W216).
+- Live since 14:50: production 3l1fle074 (commit 5ad2c84, all four flags): the home page rewrite (Alex: "Ship it"), the violet hero, /videos without gold. Checked logged out. Before that, the home rewrite was in flight: Alex's redline and pick are in the git-ignored `orchestration\local\home-redline\` (REDLINE.md, three drafts, COMBINED.md when done); the copy goes to `orchestration\local\copy\home-4nov.json` through alex-voice. The hero's new violet colours and /videos' border are on a `website` preview and ship together with the rewrite, as one release for /. The home page is for Addvery only and never addresses anyone else (W216).
 
 ## Update, about 13:40 on 4 Nov: start here (handoff from 8b57493d, context refresh)
 
