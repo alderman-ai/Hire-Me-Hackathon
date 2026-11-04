@@ -23,6 +23,20 @@ The watch script used on 4 Nov does both every 10 minutes and exits on the first
 
 Before the watch started (by Prague hour, from Web Analytics): /for/ceo had one desktop visitor from Czechia at 18:00 on 2 Nov; a mobile visitor from Czechia at 06:00 on 3 Nov (2 views); desktop, Czechia, at 21:00 on 3 Nov and at 10:00, 11:00 and 12:00 on 4 Nov; and in the 16:00 hour on 4 Nov, after Alex's email (about 15:40), one desktop visitor from Czechia (2 views) and one from Ireland (1 view). None had a referrer. Alex's Chrome history shows he opened /for/ceo at 16:05 and 16:10, so the 16:00 Czech visitor was him. The Ireland one (Windows, Chrome, desktop, 1 view, about 20 to 35 minutes after the email) was not; Addvery's mail runs on Microsoft 365, so it may be a link scanner. Since 16:30 (production m44erl63e), https://hire-me-hackathon.vercel.app/?me=on stops a browser counting (?me=off undoes it). It is set in Alex's Chrome (Default profile), which also covers our Chrome checks; headless checks were never counted. Vercel analytics is often blocked by ad blockers, so a missing visit proves nothing.
 
+## Update, about 19:55 on 4 Nov: start here (a77ec41a hands off, ROT at 69%)
+
+- **Why now:** `orchestration\context_check.py` at 19:51 flagged ROT on `orchestration` a77ec41a (69.1%, 690k tokens) and `website` 534b5bd8 (70.0%, 700k, idle since 16:32). The context-watch cron was not running (`CronList` empty). It was never re-created after the 13:32 handoff, or it was lost with Alex's `/clear`.
+- **Since about 16:30** this session worked on a private matter for Alex, outside the hackathon. Every detail and the lessons are in the git-ignored `orchestration\local\HANDOFF-4nov-evening.md`; read it first. The only hackathon-repo change is the `rig` row in `SESSIONS.md` (89923d2).
+- **Running:**
+  - `rig` 74f8ba9e: relaunched for one private recording. Ask Alex whether to stop it.
+  - The /for/ceo visit watch: the old run (pid 43864), tied to this job. Re-arm it from the lasting path, then stop 43864.
+  - `website` 534b5bd8: idle and ROT. Refresh it before its next task.
+- **First steps, in order:**
+  1. Re-create the context-watch cron (`13,43 * * * *`; the prompt per SPEC section 8 with the 20:12 rules: skip paused sessions, the clock check, push when ahead).
+  2. Re-arm the /for/ceo watch (standing order above).
+  3. Note the new orchestration id in `SESSIONS.md`.
+  4. Ask Alex about `rig`.
+
 ## Update, about 14:15 on 4 Nov (orchestration a77ec41a)
 
 - 8b57493d stopped and removed at 13:32; a77ec41a is the one `orchestration`. Alex works with it directly.
