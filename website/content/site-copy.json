@@ -60,7 +60,7 @@
   "shared.takedown.1": "If you're one of the six and you'd rather not have a page, it comes down.",
   "shared.takedown.2": "If you'd rather this page didn't exist, that's fine. It comes down.",
   "skills.account-briefing-boards.1": "Imagine if every pitch started with a briefing like this: four boards you can read in a minute. Addvery's four are on",
-  "skills.account-people-classifier.1": "Who's at a company, what they do, and do they actually sell? Maybe that's over-engineering. Still: 57 people, 107 model calls, $0.003, and I only show counts.",
+  "skills.account-people-classifier.1": "Who's at a company, what they do, and do they actually sell? Maybe that's over-engineering. Still: 57 profiles, 107 model calls, $0.003, and I only show counts.",
   "skills.account-scrape-apify.1": "Everyone at a company, their posts and their podcast transcripts, all public, and I never log into anyone's LinkedIn. Addvery cost $1.24 for 279 results.",
   "skills.agent-view-generator.1": "A plain Markdown copy of the site, plus /llms.txt, built from the same files as the pages, so it can't drift. 77 files so far, not live yet.",
   "skills.brand-clone-tokens.1": "Give it a company's live site and it pulls the real colours, fonts, spacing and motion, at four screen widths. That's where this site's look came from.",

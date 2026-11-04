@@ -360,12 +360,12 @@ export function Matrix({ legend, shownLegend = "Retail loyalty, English, proof",
                       {hit ? (
                         <>
                           {hit.text}
-                          <span className="sr-only"> ({hit.title}, workflow {n})</span>
+                          <span className="sr-only"> ({hit.title}, sequence {n})</span>
                         </>
                       ) : (
                         <>
                           {n}
-                          {n === shown && <span className="sr-only"> (the highlighted workflow: Retail loyalty, EN, proof)</span>}
+                          {n === shown && <span className="sr-only"> (the highlighted sequence: Retail loyalty, EN, proof)</span>}
                         </>
                       )}
                     </td>

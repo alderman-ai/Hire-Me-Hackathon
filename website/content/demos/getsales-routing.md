@@ -31,7 +31,7 @@ Then I ran twelve fictional leads through the sorter, printing every decision wi
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-1.png
 > Screen output, part 1: four fictional leads, each decision tagged rule or Jev, each lead ending on its sequence
-> Part 1 of 3. Violet means a rule decided, amber means the model got a question. The grocery chain at the top took three rules
+> Part 1 of 3. Violet means a rule decided, orchid means the model got a question. The grocery chain at the top took three rules
 
 ## Rules go first because they're free
 
@@ -50,7 +50,7 @@ The customer type comes from industry and company size: a grocery chain with 4,2
 
 > [!figure] /demos-assets/sorting-twelve-leads-into-36-workflows-rules-first-then-jev/router-run-2.png
 > Screen output, part 2: four more fictional leads, each decision tagged rule or Jev, each lead ending on its sequence
-> Part 2 of 3. Look at the Slovak lender: "Financial Services" is too broad for a rule, so the model gets the question, in amber
+> Part 2 of 3. Look at the Slovak lender: "Financial Services" is too broad for a rule, so the model gets the question, in orchid
 
 Honest caveat: the model isn't called in this run. The hard cases show answers a person labelled, and nothing was imported or sent. That's how this starts for real anyway, right? Your labels are what tune the questions.
 
@@ -71,7 +71,7 @@ This part is real. Mid-afternoon on the day I built this, I stopped counting you
 > [!video] cNI9EgxHUbk 1348 1371
 > Build day, mid-afternoon: I ask for a model that finds who at Addvery sends outreach
 
-It read all 57 people who list Addvery on LinkedIn: public profiles and posts, no login. For 55 it was sure enough what they do. For the other 2, their job titles decided.
+It read all 57 profiles that list Addvery on LinkedIn: public profiles and posts, no login. For 55 it was sure enough what they do. For the other 2, their job titles decided.
 
 **Nobody at Addvery holds a sales, business development or revenue operations title, and the model rates 10 people as likely doing outreach anyway.** That fits the rest of what I found: your new business runs on leaders and consultants posting and speaking. A signal, not a fact. But it's the first thing I want to know about any account: who actually sells? The charts are on [my research on Addvery](/d2), counts only, no names.
 

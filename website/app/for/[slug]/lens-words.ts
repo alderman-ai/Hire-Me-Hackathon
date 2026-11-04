@@ -124,7 +124,7 @@ export function biRows(): { count: string; how: string; check: { href: string; l
   const c2 = findEntry(C2_SLUG);
   return [
     { count: "279 · $1.24", how: "6 Apify scrapers, $1.24, 279 results in about 17 minutes.", check: { href: "/d1", label: "/d1" } },
-    { count: "57", how: "At 16:04 it ran on all 57 people who list Addvery on LinkedIn: public profiles and posts, no login.", check: { href: "/d2", label: "/d2" } },
+    { count: "57", how: "At 16:04 it ran on all 57 profiles that list Addvery on LinkedIn: public profiles and posts, no login.", check: { href: "/d2", label: "/d2" } },
     { count: "55 of 57", how: "Jev (a classification model) labelled 55 of them. For the other 2 it wasn't sure enough, and job-title rules decided.", check: { href: "/d2", label: "/d2" } },
     { count: "56", how: "One \"employee\" turned out to be an outside English teacher and was taken out (57 became 56).", check: { href: "/d1", label: "/d1" } },
     { count: "107 · $0.003", how: "107 model calls, $0.003. Counts only, no names.", check: { href: "/d2", label: "/d2" } },
@@ -155,7 +155,7 @@ export const BI_LENS = {
     width: 1606,
     height: 2034,
     alt: "Terminal output for the Woodgrove and Litware leads, whose industry labels are too broad for a rule: each shows its Jev question and the answer a person labelled",
-    caption: "Terminal output for the two fictional leads whose industry labels are too broad for a rule. Violet marks a rule, amber a question for Jev.",
+    caption: "Terminal output for the two fictional leads whose industry labels are too broad for a rule. Violet marks a rule, orchid a question for Jev.",
   },
   limitsTitle: "It was built to be legible more than functional",
 };
