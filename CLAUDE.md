@@ -4,7 +4,7 @@ This project is called hire me hackaton. It's about 12 hours of total work, reco
 
 This switch is either `active` or `disabled`. Only Alex changes it. When he does, change that one word and the line under the list.
 
-- **At the start of every session, before anything else,** tell Alex in one line: "Context monitoring: disabled. Confirm?" (or "active"). Wait for his answer. He confirms it or switches it, then says what he wants to do.
+- **At the start of every session, before anything else,** tell Alex in one line: "Context monitoring: disabled. Confirm?" (or "active"), then get on with his request without waiting. Silence counts as a yes: if he ignores the line or moves on to his next prompt, the switch stays where it is. Change it only when he says to.
 - **Active:** read `orchestration\CONTEXT-WATCH.md` in full and carry out everything in it, starting with its cron.
 - **Disabled:** create no cron and run no context watch. Leave other sessions' context alone unless Alex asks.
 
