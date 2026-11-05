@@ -1,5 +1,15 @@
 This project is called hire me hackaton. It's about 12 hours of total work, recorded via obs, with the end result an entire website showing a demonstration of my entire skillset as a gtm engineer built live. It will be built by a combination of executable specs, and parallel work between the operator and several assistants.
 
+## Context monitoring: disabled
+
+This switch is either `active` or `disabled`. Only Alex changes it. When he does, change that one word and the line under the list.
+
+- **At the start of every session, before anything else,** tell Alex in one line: "Context monitoring: disabled. Confirm?" (or "active"). Wait for his answer. He confirms it or switches it, then says what he wants to do.
+- **Active:** read `orchestration\CONTEXT-WATCH.md` in full and carry out everything in it, starting with its cron.
+- **Disabled:** create no cron and run no context watch. Leave other sessions' context alone unless Alex asks.
+
+Set to disabled by Alex on 5 Nov at about 10:05 ("right now, I don't need you to be watching context. I just need to have a one-on-one session with you").
+
 ## Charter
 
 The charter below is the parent context for the whole project. It is never executed, and no session edits it except through S2's skills. `CHARTER.md` is the source of truth.
@@ -15,9 +25,7 @@ The root session is the parent session, named `orchestration`. It coordinates an
 - `orch-alex-prep`, in `alex-prep\`: everything that needs Alex, and `Open tasks.md`
 - `orch-briefing`, in `briefing\` (renamed from `briefing` at 18:59): monitors everything and answers "what should I do next?"
 
-This session watches their context like every other session's.
-
-**Since 19:58: the course change** (Alex, after the crash). Only six sessions run: this one, the three sub-orchestrators, `website` and `rig`. Every other session is paused (`SESSIONS.md`, "Paused"). Design and copy happen only with Alex attending, one item at a time, from the finish list in the root `STATUS.md`. With `watcher` paused, this session commits and pushes. Canva is off for every session (`orchestration\canva_guard.py`, `orchestration\CANVA-ON`). The context watch skips paused sessions.
+**Since 19:58: the course change** (Alex, after the crash). Only six sessions run: this one, the three sub-orchestrators, `website` and `rig`. Every other session is paused (`SESSIONS.md`, "Paused"). Design and copy happen only with Alex attending, one item at a time, from the finish list in the root `STATUS.md`. With `watcher` paused, this session commits and pushes. Canva is off for every session (`orchestration\canva_guard.py`, `orchestration\CANVA-ON`).
 
 **Standing order (Alex, 4 Nov): alert Alex whenever `/for/ceo` gets a visit** (the CEO's page; he emailed it to him on 4 Nov). Every orchestration session keeps this watch running and tells Alex in chat, or with a push notification when he's away. How to watch, and its limits, are in `orchestration\HANDOFF.md`, "Standing order: visits to /for/ceo".
 

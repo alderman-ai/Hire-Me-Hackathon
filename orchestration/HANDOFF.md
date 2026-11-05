@@ -32,7 +32,7 @@ Before the watch started (by Prague hour, from Web Analytics): /for/ceo had one 
   - The /for/ceo visit watch: the old run (pid 43864), tied to this job. Re-arm it from the lasting path, then stop 43864.
   - `website` 534b5bd8: idle and ROT. Refresh it before its next task.
 - **First steps, in order:**
-  1. Re-create the context-watch cron (`13,43 * * * *`; the prompt per SPEC section 8 with the 20:12 rules: skip paused sessions, the clock check, push when ahead).
+  1. Superseded on 5 Nov at about 10:05: state the context-monitoring switch at the top of the root `CLAUDE.md` to Alex and wait for his confirmation. Only when it's active, follow `orchestration\CONTEXT-WATCH.md` (that's where the cron and its prompt now live).
   2. Re-arm the /for/ceo watch (standing order above).
   3. Note the new orchestration id in `SESSIONS.md`.
   4. Ask Alex about `rig`.
