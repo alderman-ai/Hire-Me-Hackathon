@@ -23,6 +23,15 @@ The watch script used on 4 Nov does both every 10 minutes and exits on the first
 
 Before the watch started (by Prague hour, from Web Analytics): /for/ceo had one desktop visitor from Czechia at 18:00 on 2 Nov; a mobile visitor from Czechia at 06:00 on 3 Nov (2 views); desktop, Czechia, at 21:00 on 3 Nov and at 10:00, 11:00 and 12:00 on 4 Nov; and in the 16:00 hour on 4 Nov, after Alex's email (about 15:40), one desktop visitor from Czechia (2 views) and one from Ireland (1 view). None had a referrer. Alex's Chrome history shows he opened /for/ceo at 16:05 and 16:10, so the 16:00 Czech visitor was him. The Ireland one (Windows, Chrome, desktop, 1 view, about 20 to 35 minutes after the email) was not; Addvery's mail runs on Microsoft 365, so it may be a link scanner. Since 16:30 (production m44erl63e), https://hire-me-hackathon.vercel.app/?me=on stops a browser counting (?me=off undoes it). It is set in Alex's Chrome (Default profile), which also covers our Chrome checks; headless checks were never counted. Vercel analytics is often blocked by ad blockers, so a missing visit proves nothing.
 
+## Update, about 13:35 on 6 Nov: start here (fresh orchestration; 4ac69daa becomes "Wispr Improvements")
+
+- **Read first:** `orchestration\local\HANDOFF-6nov.md` (git-ignored). This session spent 6 Nov on a private matter for Alex, outside the hackathon, and every detail is there: what's live, what's committed but not deployed, the deploy recipe and checks, the copy doc, and his open requests. The repo is public, so none of it goes in tracked files.
+- **Why a fresh session:** Alex asked for one. The previous session (4ac69daa) is renamed "Wispr Improvements" and keeps only the dictation work, outside this repo (`Desktop\Wispr Improvements\`). Don't duplicate it.
+- **Context monitoring:** disabled (root `CLAUDE.md`).
+- **Standing order:** the /for/ceo visit watch (above) was not run on 5 or 6 Nov. Re-arm it from `orchestration\localisit-watch\`.
+- **`rig` 204077e2** is idle, on private terms. Stop and remove it when Alex is done recording.
+- **New user-level skill:** `translation-review` (`~\.claude\skills	ranslation-review\`).
+
 ## Update, about 19:55 on 4 Nov: start here (a77ec41a hands off, ROT at 69%)
 
 - **Why now:** `orchestration\context_check.py` at 19:51 flagged ROT on `orchestration` a77ec41a (69.1%, 690k tokens) and `website` 534b5bd8 (70.0%, 700k, idle since 16:32). The context-watch cron was not running (`CronList` empty). It was never re-created after the 13:32 handoff, or it was lost with Alex's `/clear`.
