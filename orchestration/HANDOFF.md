@@ -28,9 +28,9 @@ Before the watch started (by Prague hour, from Web Analytics): /for/ceo had one 
 - **Read first:** `orchestration\local\HANDOFF-6nov.md` (git-ignored). This session spent 6 Nov on a private matter for Alex, outside the hackathon, and every detail is there: what's live, what's committed but not deployed, the deploy recipe and checks, the copy doc, and his open requests. The repo is public, so none of it goes in tracked files.
 - **Why a fresh session:** Alex asked for one. The previous session (4ac69daa) is renamed "Wispr Improvements" and keeps only the dictation work, outside this repo (`Desktop\Wispr Improvements\`). Don't duplicate it.
 - **Context monitoring:** disabled (root `CLAUDE.md`).
-- **Standing order:** the /for/ceo visit watch (above) was not run on 5 or 6 Nov. Re-arm it from `orchestration\localisit-watch\`.
+- **Standing order:** the /for/ceo visit watch (above) was not run on 5 or 6 Nov. Re-arm it from `orchestration\local\visit-watch\`.
 - **`rig` 204077e2** is idle, on private terms. Stop and remove it when Alex is done recording.
-- **New user-level skill:** `translation-review` (`~\.claude\skills	ranslation-review\`).
+- **New user-level skill:** `translation-review` (`~\.claude\skills\translation-review\`).
 
 ## Update, about 19:55 on 4 Nov: start here (a77ec41a hands off, ROT at 69%)
 
@@ -77,7 +77,7 @@ Alex is in a meeting, then wrapping up. He gave full trust ("You don't need my a
 **Live (production 9un9zhqhn, https://hire-me-hackathon.vercel.app):**
 - Home hero: the "Keep the promise" video essay (zVnA-AMuNfc) with "There are two ways to pay for AI: cut labor or increase revenue. Which did you promise to your team?" and "Keep the promise" in gold.
 - /articles (was /demos, which redirects): 9 articles, each rewritten against `orchestration\localrticles-final\EDITOR-BRIEF.md`. Titles come from a Jev standalone-clarity test (`TITLES.md`). Titles are at most 60 characters and card descriptions at most 120. Media placed by three page reviewers, and clip edges checked against the transcripts (`CLIP-EDGES.md`).
-- /videos: one wall of 34 clips (`orchestration\localideos-wall\wall.json`), with his verbatim hooks and 8 featured clips (gold border and star). "LinkedIn posts" is in the nav.
+- /videos: one wall of 34 clips (`orchestration\local\videos-wall\wall.json`), with his verbatim hooks and 8 featured clips (gold border and star). "LinkedIn posts" is in the nav.
 - Hackathon bar: "38 min left", held while on break (+749 s adjustment in .clock).
 - Cut and removed everywhere: Canva, agent view, LinkedIn content evaluation, the day-one story, the old status board, the /docs pages.
 
@@ -97,7 +97,7 @@ Alex works with orchestration directly in this chat; he's short on time and on u
 - Alex pre-approved shipping ("Push everything through. I trust you. Just make it live."): `website` deploys to production itself after its local check and leak scan; no PROMOTE needed. Production deploys need all four flags.
 - Every visible word goes through `alex-voice` (its grader now runs on Sonnet; Sonnet writer for short copy, Opus for articles). Alt text, mechanical first-person fixes and titles taken verbatim from his words don't need a run.
 - Never show grades ("graded Great") anywhere. No asks on any page (rule 11). Never label pieces "demo". The site itself is the only real demo.
-- Copy files go in `orchestration\local\copy\`; articles in `blog-articlesoice\`; commit them path-limited and push origin yourself (`watcher` is paused).
+- Copy files go in `orchestration\local\copy\`; articles in `blog-articles\voice\`; commit them path-limited and push origin yourself (`watcher` is paused).
 - Message sessions by ref when a name is doubled: `website [f88d58]`, `rig [90aa29]`, `s-d5-blog-articles [3bdf97]`.
 
 **Live now (https://hire-me-hackathon.vercel.app):** the hackathon bar (LIVE! / On Break / Finished from the rig clock; menu Day 1 Highlights | Day 1 Feed | Day 2 Feed); `/log` Day 1 page (highlights, the merged DayLanes chart, the 3:38 session-kill clip in three beats, compact feed); `/day-2` (8 posts: S19, S17 Day 2 Update composite NeASfMN1Kcc, the articles, the S18 walkthrough, the Comfy videos post); four new articles (Teaching a machine to sound like me; Label every piece before you build a page; Build it in their brand, with Apify named, your call made; and the S18 one, "36 sequences, and who goes into which one", on the C2 entry with the full 15:49 video `_vgNB5ubKjA` on home, Ivana's page and C2, clips c3 to c6 inline, c1 and c2 on /videos); the LinkedIn voice entry removed; /demos titled Articles. The full LinkedIn wall data and images are committed.
